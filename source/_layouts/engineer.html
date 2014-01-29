@@ -1,0 +1,26 @@
+{% capture root_url %}{{ site.root | strip_slash }}{% endcapture %}
+{% capture engineer_name_url %}{{ page.who | downcase | replace:' ','-' }}{% endcapture %}
+{% include head.html %}
+<body {% if page.body_id %} id="{{ page.body_id }}" {% endif %} {% if page.sidebar == false %} class="no-sidebar" {% endif %} {% if page.sidebar == 'collapse' or site.sidebar == 'collapse' %} class="collapse-sidebar sidebar-footer" {% endif %}>
+  <header role="banner">{% include header.html %}</header>
+  <nav role="navigation">{% include navigation.html %}</nav>
+  <div id="main">
+    <div class="profile">
+      <img class="profile" src="/engineers/{{engineer_name_url}}/{{engineer_name_url}}.jpg" alt="{{page.who}}"/>
+      <h2>{{page.who}}</h2>
+      <dl>
+        <dt>Title</dt>
+        <dd>{{page.title}}</dd>
+        <dt>Team</dt>
+        <dd>{{page.team}}</dd>
+      </dl>
+    </div>
+    <div id="content">
+      <h1>Meet: {{ page.who }}</h1>
+      {{ content | expand_urls: root_url }}
+    </div>
+  </div>
+  <footer role="contentinfo">{% include footer.html %}</footer>
+  {% include after_footer.html %}
+</body>
+</html>
