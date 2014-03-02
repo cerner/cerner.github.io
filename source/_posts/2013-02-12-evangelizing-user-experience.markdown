@@ -2,6 +2,7 @@
 layout: post
 title: Evangelizing User Experience
 author: cernereng
+author_url: cernereng
 date: 2013-02-12
 tags: [design]
 permalink: /2013/02/evangelizing-user-experience/

@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Thinking in MapReduce
-author: ryan.brush
+author: Ryan Brush
+author_url: ryan-brush
 date: 2013-07-31
 tags: [big data, design, engineering]
 permalink: /2013/07/thinking-in-mapreduce/

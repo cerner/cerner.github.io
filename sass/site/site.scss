@@ -1,0 +1,269 @@
+$primary-color: #1193d2;
+
+* {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+-o-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+img {max-width: 100%;}
+
+body.top-navbar {
+  padding-top: 105px;
+
+  @media screen and (max-width: 980px) {
+    padding-top: 0;
+  }
+}
+
+
+@media screen and (max-width: 980px) {
+  .navbar .btn, .navbar .btn-group {
+    margin-top: 27.5px;
+  }
+}
+
+#banner .brand {
+margin: 0;
+padding: 30px 0 0;
+}
+
+@media (max-width: 767px) {
+  #banner .brand {
+    max-width: 65%;
+  }
+}
+
+#banner .nav > li > a {
+padding: 39px 15px 30px;
+} 
+
+
+
+.page-header {
+  padding-bottom: 12.5px;
+  margin: 27px 0 40.5px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.page-header {
+  border: 0;
+  margin: 0 0 0 20px;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+.page-header img {
+  display: inline;
+  width: auto;
+  height: auto;
+  max-width: inherit;
+  position: relative;
+  left: -20px;
+  background: #C8DBF1;
+}
+
+
+@media (max-width: 480px) {
+  .page-header h1 small {
+    display: block;
+    line-height: 27px;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-header img {
+    display: none;
+  }
+}
+
+@media (max-width: 979px) {
+  /* Fix top padding when using the responsive grid with the fixed topbar */
+  body.top-navbar {
+    padding-top: 0;
+  }
+  #banner .brand {
+    margin-left: 20px;
+  }
+  .page-header img {
+    margin-left: -64%;
+  }
+}
+@media (min-width: 1200px) {
+  .page-header {
+    float: none;
+    width: 100%;
+  }
+  .page-header img {
+    left: -2px;
+  }
+}
+
+.site-header__img {
+  display: inline;
+  width: auto;
+  height: auto;
+  max-width: inherit;
+  position: relative;
+  left: -20px;
+  background: #C8DBF1;
+}
+
+@media (min-width: 1200px) {
+  #main {
+    margin-top: -4em;
+  }
+}
+
+// NEW SINCE TODAY
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+h2 {
+  font-weight: normal;
+  margin: .125em 0;
+  font-size: 25px;
+  line-height: 42px;
+}
+
+h2 b,
+h2 strong {
+  font-weight: normal;
+}
+
+header h2 {
+  font-size: 40px;
+}
+
+.entry {
+  border-bottom: 1px solid #eeeeee;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+
+.sharing, .meta, .pager {
+  margin: 20px 0px 20px 0px;
+}
+
+.meta {
+  font-size: 85%;
+  color: #999999;
+}
+
+.entry-meta {
+  margin-top: 0;
+}
+
+.author .fn {
+  text-transform: capitalize;
+}
+
+
+.page-footer {
+  background-color: #222;
+  color: #999; 
+  padding: 10px 22px;
+  margin: 0 -20px; // Pulls footer full width to override Bootstraps style on body for small viewports
+
+  p {
+    margin-bottom: 0;
+  }
+}
+ 
+
+
+// Site Search
+// --------------------------------------------------
+
+#search-form-wrapper{
+  input {
+    font-size: 85%;
+  }
+
+  #q {
+    width: 75%;
+    height: auto;
+  }
+}
+
+#searchsubmit {
+  width: 30%;
+  margin-left: -10%;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+}
+
+
+
+// Site Search
+// --------------------------------------------------
+
+.archive-listing {
+  border-bottom: 1px solid #eeeeee;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+
+  &:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+} 
+ 
+
+// Engineer Page
+// -------------------------------------------------- 
+.eng-about {
+
+}
+
+.eng-meta {
+
+}
+
+.eng-img {
+  display: block;
+  margin: 0;
+}
+
+.eng-bio {
+  padding: 15px;
+  background: #7ac143;
+  color: #fff;
+
+  dt,
+  dd {
+    line-height: 18px;
+  }
+  
+  dl,
+  dd {
+    margin: 0 0 10px 0;
+  }
+}
+
+
+// WordPress Generated Classes
+// See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+// --------------------------------------------------
+
+.aligncenter,
+.center {
+  display: block;
+  margin: 0 auto;
+}
+
+.alignleft {
+  float: left;
+}
+
+.alignright {
+  float: right;
+}
+
+.alignnone {
+  margin-left: 0;
+  margin-right: 0;
+}

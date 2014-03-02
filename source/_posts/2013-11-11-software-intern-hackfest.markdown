@@ -1,7 +1,8 @@
 ---
 layout: post
 title: 2013 Software Intern Hackfest
-author: frank.rydzewski
+author: Frank Rydzewski
+author_url: frank-rydzewski
 date: 2013-11-11
 tags: [culture, engineering]
 permalink: /2013/11/2013-software-intern-hackfest/

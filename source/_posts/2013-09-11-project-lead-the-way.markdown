@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Project Lead the Way
-author: chris.finn
+author: Chris Finn
+author_url: chris-finn
 date: 2013-09-11
 tags: [culture, engineering]
 permalink: /2013/09/project-lead-the-way/
