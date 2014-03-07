@@ -1,0 +1,49 @@
+---
+layout: default
+single: true
+---
+
+{% if page.sidebar == false %}
+<article id="main" class="hentry span12" role="article">
+{% else %}
+<article id="main" class="hentry span8" role="article">
+{% endif %}
+  {% include article.html %}
+  <footer>
+    <p class="meta">
+      {% include post/author.html %}
+      {% include post/date.html %}{% if updated %}{{ updated }}{% else %}{{ time }}{% endif %}
+      {% include post/categories.html %}
+    </p>
+    {% unless page.sharing == false %}
+      {% include post/sharing.html %}
+    {% endunless %}
+    {% if site.disqus_short_name and page.comments == true %}
+    <section>
+      <h1>Comments</h1>
+      <div id="disqus_thread" aria-live="polite">{% include post/disqus_thread.html %}</div>
+    </section>
+    {% endif %}
+    <ul class="pager">
+      {% if page.previous.url %}
+      <li class="previous"><a class="basic-alignment left"
+        href="{{page.previous.url}}" title="Previous Post:
+        {{page.previous.title}}">&laquo; Previous Post</a></li>
+      {% endif %}
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      {% if page.next.url %}
+      <li class="next"><a class="basic-alignment right" href="{{page.next.url}}"
+        title="Next Post: {{page.next.title}}">Next Post &raquo;</a></li>
+      {% endif %}
+    </ul>
+  </footer>
+</article>
+{% unless page.sidebar == false %}
+<aside class="sidebar-nav span4">
+  {% if site.post_asides.size %}
+    {% include_array post_asides %}
+  {% else %}
+    {% include_array default_asides %}
+  {% endif %}
+</aside>
+{% endunless %}

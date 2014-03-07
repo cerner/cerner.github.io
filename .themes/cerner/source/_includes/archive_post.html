@@ -1,0 +1,10 @@
+{% capture category %}{{ post.categories | size }}{% endcapture %}
+<h2><a href="{{ root_url }}{{ post.url }}">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a></h2>
+{% include post/author.html %}
+{% include post/date.html %}{% if updated %}{{ updated }}{% else %}{{ time }}{% endif %}
+
+{% if category != '0' %}
+<footer>
+  <span class="categories">posted in {{ post.categories | category_links }}</span>
+</footer>
+{% endif %}

@@ -1,0 +1,10 @@
+<section class="well">
+  <h2>Recent Posts</h2>
+  <ul id="recent_posts" class="nav nav-list">
+    {% for post in site.posts limit: site.recent_posts %}
+      <li class="post">
+        <a href="{{ root_url }}{{ post.url }}">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
