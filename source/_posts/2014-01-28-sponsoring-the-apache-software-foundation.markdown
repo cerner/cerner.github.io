@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Sponsoring the Apache Software Foundation
-author: kevin.shekleton
+author: Kevin Shekleton
+author_url: kevin-shekleton
 date: 2014-01-28
 tags: [culture, engineering]
 permalink: /2014/01/sponsoring-the-apache-software-foundation/

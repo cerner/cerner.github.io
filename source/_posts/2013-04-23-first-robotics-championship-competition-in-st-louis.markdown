@@ -1,7 +1,8 @@
 ---
 layout: post
 title: FIRST Robotics Championship Competition in St. Louis
-author: jared.fordham
+author: Jared Fordham
+author_url: jared-fordham
 date: 2013-04-23
 tags: [culture, engineering]
 permalink: /2013/04/first-robotics-championship-competition-in-st-louis/
