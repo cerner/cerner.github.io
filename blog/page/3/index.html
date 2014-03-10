@@ -1,0 +1,516 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Engineering Health</title>
+  <meta name="author" content="Cerner">
+
+  
+  <meta name="description" content="">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://engineering.cerner.com/blog/page/3">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/site/site.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <script src="/javascripts/libs/bootstrap.min.js"></script>
+
+  <link href="/atom.xml" rel="alternate" title="Engineering Health" type="application/atom+xml">
+  
+  
+
+</head>
+
+<body  class="top-navbar  ">
+  <header id="banner" class="navbar navbar-fixed-top" role="banner">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <a class="brand" href="/">
+        <img src="/images/logo2.png" title="Cerner Engineering Health">
+      </a>
+
+      <nav id="nav-main" class="nav-collapse" role="navigation">
+  <ul id="menu-top-menu" class="nav pull-right">
+    <li class="menu-life-as-an-engineer">
+      <a href="/about">Life as an Engineer</a>
+    </li>
+    <li class="menu-who-we-are">
+      <a href="/engineers">Who We Are</a>
+    </li>
+    <li>
+      <a href="/blog/archives">Archives</a>
+    </li>
+  </ul>      
+</nav>
+
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="span8 pull-left page-header">
+      <img class="site-header__img" src="/images/skyline2.png" alt="">    
+    </div>
+
+    
+      <div class="span4 pull-right"> 
+        <div id="search-form-wrapper">
+          <form class="form-search" id="searchform" role="search" action="https://google.com/search" method="get" >
+            <label class="hide" for="q">Search for:</label>
+            <input name="q" type="hidden" value="site:engineering.cerner.com" />
+            <input class="search-query" id="q" name="q" type="text" results="0" placeholder="Search">
+            <input class="btn" id="searchsubmit" type="submit" value="Search" >
+          </form>      
+        </div>
+      </div>
+    
+  </div>
+</div>
+
+  
+  <div class="container">
+    <div class="row-fluid">
+      <div id="main" class="span8" role="main">
+  
+  
+  
+    <article class="entry">
+      
+  <header class="entry-header">
+    
+      <h1 class="entry-title"><a href="/2013/08/the-30-days-of-code-experiment/">The 30 Days of Code Experiment</a></h1>
+    
+    
+      <div class="entry-meta meta">
+        
+  
+  
+
+<span class="byline author vcard">Written by <a href="/engineers/carl-chesser"><span class="fn">Carl Chesser</span></a></span>
+ | 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-06T00:00:00-05:00" pubdate data-updated="true">Aug 6<span>th</span>, 2013</time>
+        
+      </div>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In software development, we solve problems. As we solve these problems, we build connections in our minds of how to look at a problem, relate it to previous problems and solutions, and re-apply past approaches and techniques.</p>
+
+<p>These behavior habits build dogmatic ways of thinking and limit design choices to selective technologies we’ve used in the past. As we all know, you have to continually learn new technologies and different ways of thinking to stay current in the ever-changing landscape of software development. Unfortunately, keeping up-to-date on technologies and approaches isn’t an easy behavior to maintain when you have many other priorities.</p>
+
+<p>This spring, a few engineers wanted to bring focus to this important behavior trait by giving a tech talk on &ldquo;Honing your Craft,&rdquo; which discussed how to continuously strengthen and refine skills. Not only did we want engineers that we work with on a daily basis to be part of the tech talk; we wanted engineers from other teams at Cerner to be involved too. Also, we didn’t just want to talk about it; we wanted to pose a challenge to put people into action and re-enforce these behaviors.</p>
+
+<p>At the end of the talk, we announced the challenge: 30 days of code. It was a challenge like many other &ldquo;30 day&rdquo; programs but was centered on learning new aspects of software development, languages, or just hacking up a tool that you find useful for your day-to-day development. The goal being that after 30 days, new habits and behaviors would be established to help promote continuous learning.</p>
+
+<p>To make this a social learning experience, we built a Ruby web application called &ldquo;mural&rdquo; using async_sinatra and eventmachine to consume our GitHub Enterprise instance and show gists, which contained a code comment of &ldquo;30_days_of_code&rdquo;. The result was really interesting. Similar to Twitter, where you follow a specific hashtag, we were following code snippets of fellow developers. Since most of them were gists, they were small enough so you could easily see what they were doing (without having to go through a mountain of code). With this dashboard, a score was calculated based on count of your posts and was displayed with your avatar. Having scores displayed in descending order added a little peer pressure to keep people active in challenge.</p>
+
+<p><img class="center" src="/assets/2013-08-06-the-30-days-of-code-experiment/30-Days-of-Code.png" width="30" title="Days of Code" ></p>
+
+<p>By the time I got back to my desk, I received questions of where the URL was to see the app, so they could verify their posts were showing. Soon, people wanted GitHub repos to show up with gists, so a pull request was requested for that. We then wanted anonymous gists to also get pulled in, which required developing our own crawler since these were exposed on the gist search. It was apparent that people wanted to share what they were doing, and people wanted to see it.</p>
+
+<p>At the end of the challenge, we returned to the auditorium to highlight some of the posts that came in over the past month. During the 30 days, we had 124 gists posted and 17 different contributions in repos. People were showing their skills over a wide range of technologies. Examples were:</p>
+
+<ul>
+<li><p>Building a plugin to invoke Jenkins commands over a phone (using Siri)</p></li>
+<li><p>Ruby scripts that interact with our Github Enterprise instance API that will send out emails when pull requests or branches are getting old (executed periodically through Jenkins)</p></li>
+<li><p>Clojure application that looks for pull requests based on Github organizations, which have two &ldquo;+1&rdquo; comments (alerting which pull request may be candidates to close out)</p></li>
+<li><p>Illustrating Crucible code interactions by extracting data with python and visualizing with D3
+Using Node.js to flash lights on a Raspberry Pi when a health check from web service is failing</p></li>
+<li><p>Presenting statistics from a storm cluster with Rickshaw</p></li>
+</ul>
+
+
+<p>Eleven people presented what they worked on and learned. It was amazing to see all of the different ideas people came up with in this time frame.</p>
+
+<p>Even more interesting was how quickly people learned from the ideas of others. Not only were developers sharing their code snippets, but they were also sharing the problem they were attempting to solve or the idea of what they wanted invent. For example, the Ruby script which alerted the last committer of a dead branch through email, spawned into other implementations that would send alerts based on different pieces of Github data (ex. old pull requests). Sharing these ideas in their early stages (through code snippets) really accelerates the rate that an idea can be seeded in other minds and helps inspire even more innovation and learning.</p>
+
+<p>This wasn&rsquo;t only a challenge of what we would build, but it was also an experiment of what can happen by taking a small portion of your day and doing something different. By structuring this exercise around a formal challenge that included a competitive aspect, there was additional motivation to get involved and stay involved to the end.</p>
+
+<p>In summary, find a way to take a little time out of your day to try something different; you will be amazed with the different perspectives that you gain.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article class="entry">
+      
+  <header class="entry-header">
+    
+      <h1 class="entry-title"><a href="/2013/07/thinking-in-mapreduce/">Thinking in MapReduce</a></h1>
+    
+    
+      <div class="entry-meta meta">
+        
+  
+  
+
+<span class="byline author vcard">Written by <a href="/engineers/ryan-brush"><span class="fn">Ryan Brush</span></a></span>
+ | 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-31T00:00:00-05:00" pubdate data-updated="true">Jul 31<span>st</span>, 2013</time>
+        
+      </div>
+    
+  </header>
+
+
+  <div class="entry-content"><p><em>This is the blog form of the Thinking in MapReduce talk at StampedeCon 2013. I’ve linked to existing resources for some items discussed in the talk, but the structure and major points are here.</em></p>
+
+<p>We programmers have had it pretty good over the years. In almost all cases, hardware scaled up faster than data size and complexity. Unfortunately, this is changing for many of us. Moore&rsquo;s Law has taken on a new direction; we gain power with parallel processing rather than faster clock cycles. More importantly, the volume of data we need to work with has grown exponentially.</p>
+
+<p>Tackling this problem is tremendously important in healthcare. At the most basic level, healthcare data is too often fragmented and incomplete: an individual’s medical data is spread across multiple systems for different venues of care. Such fragmentation means no one has the complete picture of a person’s health and that means decisions are made with incomplete information. One thing we’re doing at Cerner is securely bringing together this information to enable a number of improvements, ranging from better-informed decisions to understanding and improving the health of entire populations of people. This is only possible with data at huge scale.</p>
+
+<p>This is also opening new opportunities; Peter Norvig shows in the <a href="http://www.youtube.com/watch?v=yvDCzhbjYWs">Unreasonable Effectiveness of Data</a> how simple models over many data points can perform better than complex models with fewer points. Our challenge is to apply this to some of the most complicated and most important data sets that exist.</p>
+
+<h2>New problems and new solutions</h2>
+
+<p>Our first thought may be to tackle such problems using the proven, successful strategy of relational databases. This has lots of advantages, especially the <a href="http://en.wikipedia.org/wiki/ACID">ACID semantics</a> that are easy to reason about and make strong guarantees about correctness. The downside is such guarantees require strong coordination between machines involved and in many cases the cost of that coordination grows as the square of data size.  Such models should be used whenever they can, but to reason about huge data sets holistically means we have to consider different tradeoffs.</p>
+
+<p>So we need new approaches for these problems. Some are clear upfront: as data becomes too large to scale up on single machines, we must scale out across many. Going further, we reach a point where we have too much data to move across a network &mdash; so rather than moving data to our computation, we must move computation to data.</p>
+
+<p>In fact, these simple assertions form the foundation of MapReduce: we move computation to data by running map functions across individual records without moving them over the network and merge and combine, or reduce, the output of those functions into a meaningful result. <a href="http://wiki.apache.org/hadoop/WordCount">Word count</a> is the prototypical example of this pattern in action. MapReduce implementations as offered by Hadoop actually offer a bit more than this, with the following phases:</p>
+
+<ul>
+<li><p><em>Map</em> &mdash; transform or filter individual input records</p></li>
+<li><p><em>Combine</em> &mdash; optional partial merge of map outputs in the mapping process, usually for efficiency</p></li>
+<li><p><em>Shuffle and Sort</em> &mdash; Sort the output of map operations by an arbitrary key and partition map output across reducers</p></li>
+<li><p><em>Reduce</em> &mdash; Process the shuffled map output in the sorted order, emitting our final result.</p></li>
+</ul>
+
+
+<p><img class="center" src="/assets/2013-07-31-thinking-in-mapreduce/MapReduce1.png" title="MapReduce" ></p>
+
+<p>We have our building blocks: we can split data across many machines and apply simple functions against them. Hadoop and MapReduce support this pattern well.  Now we need to answer two questions: How do we use these building blocks effectively and how do we create higher-level value on top of them?</p>
+
+<p>The first step is to maximize parallelism. The most efficient MapReduce jobs shift as much work into the map phase as possible, even to the point where there is little or no data that needs to be sent across the network to the reducer. We can gauge the gains made by scaling out by applying <a href="http://en.wikipedia.org/wiki/Amdahl's_law">Amdahl’s Law</a> where the parallelism is the amount of work we can do in map tasks versus more serial reduce-side operations.</p>
+
+<p>The second step is to compose our <em>map, combine, shuffle, sort, and reduce</em> primitives into higher-level operations. For example:</p>
+
+<ul>
+<li><p><em>Join</em> &mdash; Send distinct inputs to map tasks, and combine them with a common key in the reducers.</p></li>
+<li><p><em>Map-Side Join</em> &mdash; When one data set is much smaller than another, it may be more efficient to simply load it in each map task, eliminating the reduce phase overhead outright.</p></li>
+<li><p><em>Aggregation</em> &mdash; Summarizes big data to be easily computed.</p></li>
+<li><p><em>Loading into external systems</em> &mdash; The output of the above operations can be exported to dedicated tools like R to do further analysis.</p></li>
+</ul>
+
+
+<p>Beyond that, the above operations can be composed into sophisticated process flows to take data from several complex sources, join it together, and distill it down into useful knowledge. The book <a href="http://shop.oreilly.com/product/0636920025122.do">MapReduce Design Patterns</a> discusses all of these patterns and more.</p>
+
+<h2>Higher-Level APIs</h2>
+
+<p>Understanding the above patterns is important but much like how higher-level languages have grown dominant, higher-level libraries have replaced direct MapReduce jobs. At Cerner, we make extensive use of <a href="http://crunch.apache.org">Apache Crunch</a> for our processing infrastructure and of <a href="http://hive.apache.org">Apache Hive</a> for querying data sitting in Hadoop.</p>
+
+<h2>Reasoning About the System</h2>
+
+<p>Most of development history has focused on variations on <a href="http://www.infoq.com/presentations/Value-Values">Place-Oriented Programming</a>, where we have data in objects or database rows and we apply change by updating our data in place.  Yet such a model doesn’t align with MapReduce; when dealing with mass processing of very large data sets, the complexity and inefficiency involved in individual updates becomes overwhelming. The system would become too complicated to perform or reason about. The result is a simple axiom for processing pipelines: <em>start with the questions you want to ask and then transform the data to answer them.</em> Re-processing huge data sets at any time is what Hadoop does best and we can leverage that to view the world as pure functions of our data, rather than trying to juggle in-place updates.</p>
+
+<p>In short, the MapReduce view of the world is a holistic function of your raw data. There are techniques for processing incremental change and persisting processing steps for efficiency but these are optimizations. Start by processing all data holistically and adjust from there.</p>
+
+<h2>Beyond MapReduce</h2>
+
+<p>The paper <a href="http://homes.cs.washington.edu/~alon/files/dataspacesDec05.pdf">From Databases to Dataspaces</a> discusses a new view of integrating and leveraging data. A similar idea has entered the lexicon under the label &ldquo;Data Lake&rdquo; but the principles align: securely bring structured and unstructured data together and apply massive computation to it at any time for any new need. Existing systems are good at efficiently executing known query paths but require a lot of up-front work, either by creating new data models or building out infrastructure for the immediate need. Conversely, Hadoop and MapReduce allow us to ask questions about our data in parallel at massive scale without prior build.</p>
+
+<p>This becomes more powerful as Hadoop becomes a more general fabric for computation. Projects like <a href="http://spark-project.org">Spark</a> can be layered on top of Hadoop to significantly improve processing time for many jobs. SQL- and search-based systems allow faster interrogation of data directly in Hadoop to a wider set of users and domain-specific data models can be quickly computed for new needs.</p>
+
+<p>Ultimately, the gap between the discovery of a novel question and our ability to answer it is shrinking dramatically. The rate of innovation is increasing.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article class="entry">
+      
+  <header class="entry-header">
+    
+      <h1 class="entry-title"><a href="/2013/04/first-robotics-championship-competition-in-st-louis/">FIRST Robotics Championship Competition in St. Louis</a></h1>
+    
+    
+      <div class="entry-meta meta">
+        
+  
+  
+
+<span class="byline author vcard">Written by <a href="/engineers/jared-fordham"><span class="fn">Jared Fordham</span></a></span>
+ | 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-23T00:00:00-05:00" pubdate data-updated="true">Apr 23<span>rd</span>, 2013</time>
+        
+      </div>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="center" src="/assets/2013-04-23-first-robotics-championship-competition-in-st-louis/Ultimate-Ascent.jpg" title="Ultimate Ascent" ></p>
+
+<p>Cerner places a high value on talent development programs offering students the experience to build practical and tangible skills for the modern work environment. As part of this focus, Cerner supports FIRST Robotics, a competition providing experience in software engineering, where students learn to deal with complexity, time constraints, quality, and technical communications. Sound familiar? I wish they had this program when I was a kid!</p>
+
+<p>High school students from Kansas City will be testing their minds, willpower, and teamwork in this global robotics championship competition April 24-27 in St Louis, Missouri. The secret game design was revealed in January, and with just six weeks to build, over 2,000 teams created completely unique robots. Design, engineering, metal fabrication, project management, marketing, and fundraising are all activities that students gain exposure to in this real-world project. Most importantly, they practice creative problem solving in complex team dynamics.</p>
+
+<p>The championship teams you may have seen in the Kansas City Regional are:</p>
+
+<ul>
+<li>Team 1710 &ndash; The Ravonics Revolution</li>
+<li>Team 1730 &ndash; Team Driven</li>
+<li>Team 1806 &ndash; S.W.A.T.</li>
+<li>Team 1939 &ndash; The Kuh-nig-its</li>
+<li>Team 1986 &ndash; Team Titanium</li>
+<li>Team 1987 &ndash; Broncobots</li>
+<li>Team 3528 &ndash; Up Next!</li>
+</ul>
+
+
+<p>Students are challenged with two software programming components: digital media marketing and robot controls. Students will use a wide range of web, mobile, and media development technologies to create their team&rsquo;s marketing strategy.</p>
+
+<p>Robot controls is broken down into two types: autonomous and teleoperated programs. In autonomous mode the robot responds exclusively to preprogrammed commands based on sensor feedback from a camera, accelerometer, gyro, encoders, and more. In teleoperated mode, the robot continues to use sensors but now can receive input from the drive team using game joysticks.</p>
+
+<p>Students can use three different programming languages for the robot control system:</p>
+
+<ol>
+<li>LabVIEW from National Instruments</li>
+<li>C++ with Wind River Workbench</li>
+<li>Java with Netbeans</li>
+</ol>
+
+
+<p>The most important tool for control system programmers is a white board. Students diagram and visualize all the inputs and outputs of each system: motors, actuators, sensors, and driver station. Mapping inputs to outputs is important not just during the construction of the program, but it also helps to train the drive team. Students use online resources, collaborate with other teams, and receive guidance from their technical mentors. Practicing resourcefulness prepares them for the complex professional engineering environment they will soon become a member of.</p>
+
+<p>Cerner is engaged in the Kansas City community at many levels. We are a sustaining partner in the KC STEM Alliance. Many Cerner associates mentor local teams, volunteer at local events, and are involved parents. These experiences exercise student minds in very real and practical ways. They are more prepared for technical and non-technical Cerner careers. Their passion and commitment is the fuel for delivering our future innovation.</p>
+
+<p>Here is this year’s gameplay video:</p>
+
+<iframe width="560" height="315" class="aligncenter" frameborder="0" src="https://www.youtube-nocookie.com/embed/wa5MGEZNrf0?rel=0" allowfullscreen></iframe>
+
+
+<p>For more information, check out the links below:</p>
+
+<ul>
+<li><a href="http://www.usfirst.org/roboticsprograms/first-championship">http://www.usfirst.org/roboticsprograms/first-championship</a></li>
+<li><a href="http://www.kcfirst.org/">http://www.kcfirst.org/</a></li>
+<li><a href="http://www.kcstem.org/">http://www.kcstem.org/</a></li>
+<li><a href="http://www.youtube.com/user/FRCTeamsGlobal">http://www.youtube.com/user/FRCTeamsGlobal</a></li>
+<li><a href="http://wpilib.screenstepslive.com/s/3120">http://wpilib.screenstepslive.com/s/3120</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article class="entry">
+      
+  <header class="entry-header">
+    
+      <h1 class="entry-title"><a href="/2013/04/learn-what-the-rules-dont-cover/">Learn What the Rules Don&#8217;t Cover</a></h1>
+    
+    
+      <div class="entry-meta meta">
+        
+  
+  
+
+<span class="byline author vcard">Written by <a href="/engineers/paul-conklin"><span class="fn">Paul Conklin</span></a></span>
+ | 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-19T00:00:00-05:00" pubdate data-updated="true">Apr 19<span>th</span>, 2013</time>
+        
+      </div>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Most technical problems are like games.  All of them have a way to win and all of them have rules; the easiest way to ensure you always win is to learn the rules inside and out, and more importantly what the rules don’t cover!  Paying attention to what the rules don’t cover is what leads to out of the box thinking.  What sets the great players apart from the rest is learning what the rules don’t cover which allows for creativity and, sometimes, shortcuts.</p>
+
+<p>Recently, I played a game similar to musical chairs. It was a game of diminishing resources (a management exercise) with about 12 of us and six large sheets of paper.  The only rules were: 1) Walk around while the music is playing and 2) Put your foot on a rectangle when the music stopped (he instructor pointed at one of the sheets as a visual queue).  When we first started, there was ample space for each of us to have a foot somewhere on one of the 2’ x 4’ paper.</p>
+
+<p>As the game continued, the instructor started cutting the sheets into smaller and smaller pieces until we got down to 3&#8221; x 5&#8221;.  Most of us were precariously trying to balance and keep a portion of a shoe touching the paper, a few just gave up, and two paid special attention to the rules and found an out.  One gentleman took at a business card and promptly stood on it.  Another just lifted his leg and put it up on the door.  We all were following the same rules but two found what the rules didn’t cover and won.</p>
+
+<p>Most people think that Printing is easy.  You hit a button or Ctrl + P and the paper comes out, right?  This seamless process appears so to users because of the hard work that goes in behind the scenes.  So when I started down this path, I knew a strong foundation would be important. I settled on <a href="http://www.cups.org">CUPS</a> as the basis for my brave new world of printing.  It is open source and has a pretty wide following.  It’s the basis for Apple printing, fairly hardened, and is the backbone of several educational systems printing making it enterprise ready.</p>
+
+<p>The more I worked with it, the more I saw its full potential.  CUPS had turned out to be the most useful &ldquo;Swiss Army Knife&rdquo; in my toolbox.  It is extremely robust and easy to integrate / stack with other solutions.  One great example of this is my &ldquo;Coffee CUPS&rdquo; demo.</p>
+
+<iframe width="560" height="315" class="aligncenter" frameborder="0" src="https://www.youtube-nocookie.com/embed/WzEhKs_CvJc?rel=0" allowfullscreen></iframe>
+
+
+<p>I picked CUPS as the underlying backbone for my new architecture for the same reason.  It had the maximum amount of possibilities with the least amount of rules.  With a minimum amount of rules, it allows for the maximum amount of creativity.  Sure, I could develop my own solution from the ground up where I get to make the rules and have unlimited creativity, and I have had to do that in the past.  In general, if you write your own software, you have the least amount of rules (constraints of the compiler).  OpenSource Software is a close second with few limitations.  Closed source 3rd party software usually has the most rules (ever read a EULA in your life?).  When selecting a solution to a problem, it’s also important to do a cost benefit analysis.  Is it really worth reinventing the wheel?  I’m often reminded of the below picture.  I’ve seen several variations of it over the years (Credit to the picture unknown, but it wasn’t me).</p>
+
+<p>CUPS handles a lot of the general architecture that doesn’t need to be re-invented on either end of the spectrum (managing print queues, accepting jobs, sending jobs to printers, etc) but allows for a lot of creativity in the middle (the middle being what is done to the print job in between getting it from the user and sending it to the printer).  A good example of this (filters) can be found <a href="http://en.wikipedia.org/wiki/File:Cups_simple.svg">here</a>.  CUPS gives you an overall framework of how it will call a filter, and what it expects as a return, but beyond that, it’s up to the programmer.  You can write in pretty much any language you want and alter the print job as much as you want.  I leveraged this to maximize the amount of devices I could talk to and input file types I could accept, while also being able to make business decisions based on the content of the print job.</p>
+
+<p><img class="center" src="/assets/2013-04-19-learn-what-the-rules-dont-cover/HPRW2.jpg" title="HPRW2" ></p>
+
+<p><em>Source: www.projectcartoon.com</em></p>
+
+<p>I think that picture aptly describes the disconnect in all of the processes that exist in problem solving.  So in addition to learning what the rules don’t cover, we need to be keenly aware of what you are trying to accomplish: what is the problem and the success criteria? How do we win the game?</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <ul class="pager">
+    
+    <li class="previous"><a href="/blog/page/4/">&larr; Older posts</a></li>
+    
+    <li><a href="/blog/archives">Blog Archives</a></li>
+    
+    <li class="next"><a href="/blog/page/2/">Newer posts &rarr;</a></li>
+    
+  </ul>
+</div>
+<aside class="sidebar-nav span4" role="complementary">
+  
+    <section class="well">
+  <h2>Recent Posts</h2>
+  <ul id="recent_posts" class="nav nav-list">
+    
+      <li class="post">
+        <a href="/2014/01/sponsoring-the-apache-software-foundation/">Sponsoring the Apache Software Foundation</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2014/01/the-raft-protocol-a-better-paxos/">The Raft Protocol: A Better Paxos?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2014/01/cerner-and-open-source/">Cerner and Open Source</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/11/cerner-tech-talks/">Cerner Tech Talks</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/11/2013-software-intern-hackfest/">2013 Software Intern Hackfest</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section class="well">
+  <h2>GitHub Repos</h2>
+  <ul id="gh_repos" class="nav">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/cerner">@cerner</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'cerner',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo" class="page-footer">
+  <div class="container">
+    <p>&copy; 2014 Cerner</p>
+  </div>
+</footer>
+
+  
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

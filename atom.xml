@@ -1,0 +1,987 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Engineering Health]]></title>
+  <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
+  <link href="http://engineering.cerner.com/"/>
+  <updated>2014-03-09T23:35:13-05:00</updated>
+  <id>http://engineering.cerner.com/</id>
+  <author>
+    <name><![CDATA[Cerner]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Sponsoring the Apache Software Foundation]]></title>
+    <link href="http://engineering.cerner.com/2014/01/sponsoring-the-apache-software-foundation/"/>
+    <updated>2014-01-28T00:00:00-06:00</updated>
+    <id>http://engineering.cerner.com/2014/01/sponsoring-the-apache-software-foundation</id>
+    <content type="html"><![CDATA[<p>Open source plays an integral role within engineering at Cerner. In addition to using open source software throughout our architecture, we <a href="http://engineering.cerner.com/2014/01/cerner-and-open-source/">recently released a few projects</a> back to the community via our <a href="https://github.com/cerner">Github organization</a>.</p>
+
+<p>Today, we’re happy to announce that <a href="http://www.apache.org/foundation/thanks.html">Cerner is now a sponsor</a> of the non-profit <a href="http://www.apache.org/">Apache Software Foundation</a> (ASF). The ASF is home to several projects that are essential components in many of our systems. We’ve blogged previously about several of these projects: <a href="http://engineering.cerner.com/2013/02/composable-mapreduce-with-hadoop-and-crunch/">Hadoop, HBase, Crunch</a>, <a href="http://engineering.cerner.com/2013/03/cerner-and-tycho/">Maven</a>, and <a href="http://engineering.cerner.com/2013/02/near-real-time-processing-over-hadoop-and-hbase/">Storm</a>. In addition to these projects, there are dozens of other ASF projects that we use and have contributed to via patches and enhancements.</p>
+
+<p>Sponsoring the ASF allows us to show support for their mission and to ensure the ASF can continue to provide infrastructure and resources for the open source projects they host.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Raft Protocol: A Better Paxos?]]></title>
+    <link href="http://engineering.cerner.com/2014/01/the-raft-protocol-a-better-paxos/"/>
+    <updated>2014-01-24T00:00:00-06:00</updated>
+    <id>http://engineering.cerner.com/2014/01/the-raft-protocol-a-better-paxos</id>
+    <content type="html"><![CDATA[<p>Among the many compelling talks that attendees come to expect every year at the Strange Loop conference was a <a href="https://thestrangeloop.com/sessions/raft-the-understandable-distributed-protocol">session</a> given by Ben Johnson that provided an overview of a new distributed consensus protocol originating from research at Stanford University, named <a href="http://raftconsensus.github.io/">Raft</a>.</p>
+
+<h2>What is distributed consensus?</h2>
+
+<p>Distributed consensus can be described as the act of reaching agreement among a collection of machines cooperating to solve a problem. With the rise of open source distributed computing and storage platforms, consensus algorithms have become essential tools for replication, and thus, serve to enhance resiliency by eliminating single points of failure.</p>
+
+<p>Examples of distributed consensus in action can often be elusive because such protocols are ordinarily buried inside core systems, and consequently, are largely invisible to application developers. For example, a relational database in a clustered configuration would typically employ a consensus algorithm to coordinate commits with other replicas. And similarly, Apache ZooKeeper, a popular distributed synchronization service used in projects such as HBase and Solr, utilizes a consensus protocol to achieve fault-tolerance by replicating its configuration repository across many servers.</p>
+
+<h2>Raft is about understandability and practicality</h2>
+
+<p>The current Raft <a href="https://ramcloud.stanford.edu/wiki/download/attachments/11370504/raft.pdf">paper</a> argues that while <a href="http://en.wikipedia.org/wiki/Paxos_%28computer_science%29">Paxos</a> has historically dominated both academic and commercial discourse with respect to distributed consensus, the protocol itself is too complicated to reason about and that a more understandable algorithm was needed, not only for educational purposes, but also to serve as a foundation for building practical systems.</p>
+
+<p>An obvious question instinctively arises for the inquisitive reader: what makes Raft better than Paxos? Having personally implemented a replicated log using the Paxos algorithm, there was a natural curiosity in understanding how Raft approached the problem of solving consensus. It is worth noting, however, that comparing Raft and Paxos can be a bit misleading. Even though both address the fundamental problem of reaching consensus among a network of connected machines, Paxos is more academic in nature and primarily concerned with the mechanics of consensus, whereas Raft is oriented around the practical challenges of implementing a replicated log.</p>
+
+<h2>Paxos is about theory</h2>
+
+<p>The seminal work done by Leslie Lamport in 1989 with the design of the Paxos protocol was an important step forward in establishing a theoretical foundation for achieving consensus in asynchronous distributed systems. His contributions were largely academic and centered around reaching agreement on a single value, thus relying on software engineers to translate these ideas into practical solutions, such as replicated databases, which must decide on many values. However, the actual requirements necessary to build a real system, including areas such as leader election, failure detection, and log management, are not present in the Paxos specification, yet add a degree of complexity that almost always significantly alters the original protocol. This is precisely where the Raft designers correctly argue that the absence of specificity leads to great difficulty in applying Paxos to real world problems. A subsequent <a href="http://research.microsoft.com/en-us/um/people/lamport/pubs/paxos-simple.pdf">paper</a> by Lamport in 2001 does an excellent job of making the original protocol accessible to practitioners, and to some degree, proposes techniques for designing a replicated log, but it stops short of being prescriptive in the way that Raft does.</p>
+
+<h2>You say tomāto, I say tomäto</h2>
+
+<p>Raft is unique in many ways compared to typical Paxos implementations, but despite those differences, both are grounded in a similar set of core principles. For example, Raft requires leader election to occur strictly before any new values can be appended to the log, whereas a Paxos implementation would make the election process an implicit outcome of reaching agreement. The Raft designers claim that doing so has the consequence of simplifying log management, particularly with respect to edge cases in which a succession of leadership changes can result in log discrepancies, but the tradeoff is that leader election in Raft is more complicated than its counterpart in Paxos.</p>
+
+<p>What both protocols acknowledge, though, is that leader election is imperative if systems want to ensure progress. The notion of progress simply means that a system eventually does something useful. An important discovery in 1985, called the <a href="http://cs-www.cs.yale.edu/homes/arvind/cs425/doc/fischer.pdf">FLP Impossibility Result</a>, proved that consensus was impossible in asynchronous distributed systems with the presence of only one faulty process. The practical implication follows: a system that cannot reach consensus is a system that cannot make progress. To be clear, the finding did not state that consensus was unreachable, just that some executions cannot reach consensus in bounded time. As a consequence, leader election, combined with timeouts, is often used as a technique for eliminating a class of conditions under which reaching agreement could take an arbitrarily long period of time. Interestingly, the Paxos algorithm as originally described by Lamport, makes no guarantees about progress, so implementations are compelled to incorporate timeouts as a compensatory measure. Raft, on the other hand, is prescriptive about the use of timeouts.</p>
+
+<h2>Raft wins on accessibility</h2>
+
+<p>One especially interesting component of the Raft specification is the mechanism for coordinating changes to cluster membership. The protocol employs a novel approach in which joint consensus is reached using two overlapping majorities, i.e. quorums defined by both the old and new cluster configuration, thereby supporting dynamic elasticity without disruption to operations.</p>
+
+<p>The emergence of Raft has clearly seen a positive embrace by the software development community as evidenced by nearly 40 <a href="http://raftconsensus.github.io/#implementations">open source implementations</a> in a variety of different languages. Even though Paxos is beautifully elegant in describing the essence of distributed consensus, the absence of a comprehensive and prescriptive specification has rendered it inaccessible and notoriously difficult to implement in practical systems.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Cerner and Open Source]]></title>
+    <link href="http://engineering.cerner.com/2014/01/cerner-and-open-source/"/>
+    <updated>2014-01-16T00:00:00-06:00</updated>
+    <id>http://engineering.cerner.com/2014/01/cerner-and-open-source</id>
+    <content type="html"><![CDATA[<p>(This post was written by Nathan Beyer, Bryan Baugher and Jacob Williams.)</p>
+
+<p>The use of open source software has become nearly ubiquitous in contemporary software development and it is no different for us, here at Cerner. We have been using open source software, directly and indirectly, for decades. Over the past decade, we’ve grown in maturity both in our use of open source software as well as our participation in open source communities. Our associates have long been contributors to open source communities, including helping users, logging bugs and enhancements, and submitting patches. Cerner associates also spearheaded the development of the <a href="http://wiki.directproject.org/Java+Reference+Implementation">Java Reference Implementation of the Direct Project</a>.</p>
+
+<p>Recently, we’ve decided to take another step in the open source journey by releasing complete projects on our <a href="https://github.com/cerner">Github organization</a>. Although these projects seem small, they are a big step for us and just the beginning of what we hope to open up and share in the future. We hope you’ll check out these projects and participate in their development.</p>
+
+<h2>Project: knife-tar</h2>
+
+<p>Source: [<a href="https://github.com/cerner/knife-tar">https://github.com/cerner/knife-tar</a>]</p>
+
+<p>Knife-tar is a <a href="http://www.getchef.com/chef/">Chef</a> tool for uploading and downloading Chef components from a tar file. It can be used for creating backups of your chef-server or for uploading released Chef artifacts from a repository.</p>
+
+<h2>Project: scrimp</h2>
+
+<p>Source: [<a href="https://github.com/cerner/scrimp">https://github.com/cerner/scrimp</a>]</p>
+
+<p>Scrimp is a tool for interactively testing <a href="http://thrift.apache.org/">Thrift</a> services in a web browser. It’s meant to fill the same role that browser-based REST clients fill for web services. Given the IDL files for the services, it provides a UI to help construct requests, invoke services, and display formatted responses.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Cerner Tech Talks]]></title>
+    <link href="http://engineering.cerner.com/2013/11/cerner-tech-talks/"/>
+    <updated>2013-11-12T00:00:00-06:00</updated>
+    <id>http://engineering.cerner.com/2013/11/cerner-tech-talks</id>
+    <content type="html"><![CDATA[<p>We are always looking for ways to share knowledge and learn new things within engineering at Cerner. Whether that be through meetups, lunch &amp; learns, conferences, or <a href="https://engineering.cerner.com/2013/08/devcon/">DevCon</a>, we have a variety of outlets available to us.</p>
+
+<p>Today, we’re announcing a new program we recently launched: Cerner Tech Talks.</p>
+
+<p>Cerner Tech Talks brings in great speakers for talks that would be of interest to engineers at Cerner. These talks will be held periodically and will vary widely in their content. Each talk will be recorded and available for viewing via our <a href="http://www.youtube.com/user/CernerEng">Cerner Engineering YouTube channel</a>.</p>
+
+<p>Last week, we held our first tech talk, which you can view below. <a href="http://www.robertvbinder.com/">Robert Binder</a>, an accomplished software testing expert, presented on model-driven development.</p>
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/OSlm6F8YmKc" frameborder="0" allowfullscreen></iframe>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[2013 Software Intern Hackfest]]></title>
+    <link href="http://engineering.cerner.com/2013/11/2013-software-intern-hackfest/"/>
+    <updated>2013-11-11T00:00:00-06:00</updated>
+    <id>http://engineering.cerner.com/2013/11/software-intern-hackfest</id>
+    <content type="html"><![CDATA[<p>Providing opportunities for students to gain experience in software development and grow the skills necessary to excel in their careers after graduation is a top priority for Cerner Engineering. Our annual Software Intern Program gives students insight into the design, implementation, testing, deployment, and maintenance of large-scale software projects, which are often beyond the scope of the typical academic experience.</p>
+
+<p>In 2013, we had a total of 224 interns across all business segments with 107 placed into the Software Intern Program to grow their experience as Software Engineers. Each intern was placed on an engineering team, paired with a dedicated mentor, and immediately began learning to use industry-standard tools and processes. They worked on real projects that will ultimately end up in the hands of our clients and play a part in transforming healthcare through the use of technology.</p>
+
+<p>This summer, interns worked on a wide variety of projects spanning from Eclipse RCP applications, Web services, iPad applications, or working with Big Data in the cloud. They used Java, iOS, Ruby, .NET, and many other technologies to solve problems and create new solutions to ensure each intern learned something new while challenging them to take away a new set of skills at the end of their summer experience.</p>
+
+<p>But it’s not all work &ndash; the summer schedule was full of opportunities to learn about Kansas City, Healthcare, network with other interns in the program, and have as much fun as possible. This year, we kicked off the internship program at a <a href="http://www.sportingkc.com/">Sporting KC</a> soccer game, including a private tailgating event. Interns also got a chance to experience the <a href="http://www.jewell.edu/tucker">Tucker Leadership Lab</a>, attend lunchtime tech-talks, participate in a CodeRetreat, attend our annual Developer’s Conference (<a href="http://www.youtube.com/watch?v=cE0YoFg-hkE">DevCon</a>), go to <a href="https://www.worldsoffun.com/">Worlds of Fun</a>, and go on tours around Kansas City to learn more about the different parts of town and what makes this a great place to live and work.</p>
+
+<p>One of the most fun events this past summer was the <strong>Software Intern Hackfest</strong>. An optional event, Interns formed teams of 2-4 and were given a week with the goal of:</p>
+
+<ol>
+<li>Dream it.</li>
+<li>Build it.</li>
+<li>Present it.</li>
+<li>Profit!!!</li>
+</ol>
+
+
+<p>The teams were given a week to build anything they wanted and presented the end result to a panel of Cerner software developers for prizes and glory. We took some time to sit down with two of the winning teams to get their thoughts on the Hackfest and their overall experience with the internship program.</p>
+
+<h2>Grand Prize winners: <a href="https://engineering.cerner.com/engineers/team-golf/">Team Golf</a></h2>
+
+<p><strong>Addison Shaw, Richard Habeeb</strong></p>
+
+<p><strong>Cerner:</strong> Describe your project and how you created it.</p>
+
+<p><strong>A&amp;R:</strong> When we came up with the project, we thought, in one week, how far could we push ourselves? Let&rsquo;s do a game. We wanted a challenge.</p>
+
+<p>We chose JavaScript because neither of us had much experience with it previously. JavaScript is really cool because it has a lot of game frameworks already. We found KineticJS &ndash; it mainly handled the html 5 canvas. It lets you do simple animations, rotations, and scaling.</p>
+
+<p>When we were coming up with the design of the game, it was more of a &ldquo;create as you go&rdquo; project. We didn&rsquo;t just sit down and immediately come up with a game of aliens, cows and robots. We started out with a framework.</p>
+
+<p>We wanted the game to be dynamically generated, and we wanted it to be a traditional survival game.</p>
+
+<p>We knew it had to be 2-d. We built the framework with a grid structure. We made all the graphics ourselves with a pixelater.</p>
+
+<p><strong>Cerner:</strong> What were your biggest takeaways?</p>
+
+<p><strong>Addison:</strong> I learned a lot of JavaScript and CSS Less along the way. I&rsquo;m a lot more interested in web development now. I also learned that it&rsquo;s okay to go well into the night to finish a project, and it relates to the real-life work environment. Knowing that we were competing against other teams and having the hard stop was motivation. We knew it didn&rsquo;t have to be perfect; we just had to finish.</p>
+
+<p><strong>Richard:</strong> I called it free motivation. It&rsquo;s a competition, and there&rsquo;s that side of me that wants to do really well. There&rsquo;s also a deadline. It&rsquo;s a chance to show off your work to others. The project was very self-directed. We came up with the tools and decided it ourselves. The creativity part was awesome.</p>
+
+<p><strong>Cerner:</strong> What was the most fun?</p>
+
+<p><strong>Addison:</strong> I had Richard over to my house one day. We bought a bunch of snack food and red bull and worked on the game. My mom got us a pizza and it was really fun! We also did some trash talking with other interns. That was fun.</p>
+
+<p><strong>Cerner:</strong> What will you do with your prize? (Raspberry Pi)</p>
+
+<p><strong>Addison:</strong> It was an awesome prize! I want to do something with home automation. We are living in a house [at college] this year. Maybe I’ll create something like clap on lights.</p>
+
+<p><strong>Richard:</strong> I do robotics a lot during the school year and I was thinking of working with it at our club.</p>
+
+<h2>Crowd Favorite: <a href="https://engineering.cerner.com/engineers/team-mad-scientists/">Mad Scientists</a></h2>
+
+<p><strong>Alex Valentine, George Li, Jack Miles</strong></p>
+
+<p><strong>Cerner:</strong> Describe your project and how you created it.</p>
+
+<p><strong>Alex:</strong> It was my idea to make a game. For the longest time, we didn’t know what we wanted to do. Originally we were going to make a 2-D game. We thought it would be easy not making that 3rd dimension. There is a game that puts 2D and 3D together. It looked really simple and easy. So we went with that.</p>
+
+<p><strong>Jack:</strong> A few of us weren’t familiar with C#.</p>
+
+<p><strong>George:</strong> We all liked to play video games! We used Unity to create it. Someone told me if you want to learn Git you should forget everything about SVN. That didn’t necessarily happen for me.</p>
+
+<p><strong>Cerner:</strong> How did you communicate the tasks that needed to be done?</p>
+
+<p><strong>Alex:</strong> We assigned people different aspects of the game. I took characters.</p>
+
+<p><strong>George:</strong> I took responsibilities for weapons.</p>
+
+<p><strong>Jack:</strong> I took charge of enemies.</p>
+
+<p><strong>Cerner:</strong> How did you deal with integration?</p>
+
+<p><strong>Jack:</strong> For the longest time Git was giving me problems. I was on a Mac and they were on PCs.</p>
+
+<p><strong>Alex:</strong> We learned that we should never commit directly to the master branch. Making mistakes and then figuring out how to fix them really helped me learn Git.</p>
+
+<p><strong>George:</strong> I learned more about Git than creating the game and ended up giving a lightning talk on Git. The Unity engine isn’t setup well for source control. We would have to diff in different stuff.</p>
+
+<p><strong>Cerner:</strong> You learned some new technologies – what else did you learn?</p>
+
+<p><strong>Alex:</strong> Start early. Be efficient.</p>
+
+<p><strong>Jack:</strong> If you’re working on new technologies, learn each technology before going too deep. That way when we’re trying to do real work, you aren’t worrying about how to use it.</p>
+
+<p><strong>George:</strong> It was about Wednesday when we still didn’t have anything working. When he told me, &ldquo;I’ll be happy if it shoots,&rdquo; I knew we were in trouble. [Editor’s Note: At the competition, the main character was able to shoot, but only backwards, which was a huge crowd pleaser]</p>
+
+<p><strong>Alex:</strong> When you realize that what you were going to do and your deadline are not going to jive, what do you do? We decided we wanted one of everything instead of having multiples of everything. We needed to scale our project down a bit.</p>
+
+<p><strong>Cerner:</strong> What was the most fun?</p>
+
+<p><strong>Alex:</strong> The lunch meetings were pretty entertaining!</p>
+
+<p><strong>Jack:</strong> The &ldquo;fun&rdquo; of frustration. The [other teams&#8217;] presentations were fun for me because, although we set the goal and didn’t quite make it, you could tell there were a lot of people in the same situation. Everyone who has worked on software has been in our position.</p>
+
+<h3>Learn More</h3>
+
+<p>For more information about the Cerner Summer Intern Program, visit <a href="http://www.cerner.com/About_Cerner/Careers/Student_Development/College_Students/">Cerner Careers Opportunities for College Students</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Project Lead the Way]]></title>
+    <link href="http://engineering.cerner.com/2013/09/project-lead-the-way/"/>
+    <updated>2013-09-11T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/2013/09/project-lead-the-way</id>
+    <content type="html"><![CDATA[<p>Improving the state of healthcare through innovation requires investing in others to join you on the journey; not just for today, but for the decades to come.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2013-09-11-project-lead-the-way/PLTWlogo.jpeg" title="Project Lead the Way" ></p>
+
+<p>Project Lead the Way has established the Computer Science and Software Enginering course that teaches computational thinking to high school students, and it will pilot in 60 schools across the country this fall. Providing exposure to a wide variety of computational and computer science concepts, students can program a story or game in Scratch, write a mobile application for Android, and learn about knowledge discovery and data mining, computer simulation, cybersecurity, GUI programming, web development, version control, and agile software development.</p>
+
+<p>Recently, I had the privilege of working with experts across the country to define the curriculum for Project Lead the Way as well as the opportunity to sit in on the training sessions given to the pilot teachers, hosted at Cerner&rsquo;s Innovation Campus. Bennett Brown, Director of Curriculum and Instruction, led the class into the deep end to solve the hard problems their students would face throughout the course. Experts augmented the training sessions from organizations such as Cerner, Lawrence Livermore National Laboratory, Purdue University, Carnegie Mellon University, University of Virginia, and more.</p>
+
+<p>While the Computer Science and Software Engineering course (CSE) isn&rsquo;t focused specifically on programming, students will pick up introductory skills in a number of languages and environments including Python, MIT App Inventor, JavaScript, Logo, and Scratch among others. As software developers, we all have our origin stories with what sparked our interest in programming; there was a particular moment for each of us where we solved a problem and saw firsthand the power of what software can create. The CSE course seeks to generate those sparks through activities, projects, and problem-based learning.</p>
+
+<p>This course follows in the footsteps of other Project Lead the Way courses in engineering and biomedical science currently operating in over 4,700 schools with more than 10,000 trained teachers.</p>
+
+<h2><strong>What I Learned</strong></h2>
+
+<p>My role in the class was to teach one simple section and provide some practical answers from the industry trenches. I&rsquo;ll let you in on a secret: I&rsquo;m pretty sure I learned more about teaching and how to teach novices than I taught on any particular topic.</p>
+
+<p>Problems and projects in PLTW are designed to be approachable by all students; there is no ceiling for the advanced students who want to go beyond what is specifically covered. The teachers receiving training were given the same end-of-unit problems that their students will face during the year and had to work out solutions in a pair programming environment, often working in their dorms or in the Cerner training rooms until 10pm. The experience level of teachers ranged from those having engineering degrees and multiple years of industry experience before going into teaching to some who had never programmed in their lives before this class.</p>
+
+<p>What I learned was that even in this environment of mixed skill levels, the activity/project/problem-based approach surprisingly requires just a minimal introduction to a new concept. After simple activities which build quick wins, natural curiosity swells up within each of the students; skill and understanding start to form, not just learning a particular technology but how to problem solve using software.</p>
+
+<p>For example, during the App Inventor sections, teachers received step-by-step simple examples of putting together programming blocks to create a simple Android application before working on homework to through one Agile sprint with their partner that evening to come up with their own application from scratch. The next morning, pairs went through their demos in a rotating show-and-tell fashion, showing a variety of apps including a flash card game, as well as a &ldquo;one of these things is not like the other&rdquo; game using the accelerometer for randomization and featuring the appropriate Sesame Street music.</p>
+
+<p>One night during the course I pulled down the Codea app for my iPad and showed my own kids the relationship between a few behaviors in a physics app and the corresponding code in Lua. Three hours later, all of the iPads in the house were engaged in hacking.</p>
+
+<p>In addition to some great instruction over the course from Bennett Brown on a variety of problems in genetics, chaos theory, Tkinter and GUI programming, other highlights included:</p>
+
+<p><a href="https://www-eng.llnl.gov/bios/bios_castillo.html">Vic Castillo</a>, Group Leader in the Quantitative Risk Analysis at Lawrence Livermore National Laboratories with a PhD in computational physics gave a great three hour survey presentation on what he sees as the &ldquo;big three&rdquo; topics in the future of computing: computer simulation and modeling (a subject near and dear to my own origin stories in computing), 3-D printing and mobile robotics featuring almost a dozen demos of cases where modeling was used to learn something new about a real-world system or design. Using just the <a href="http://ccl.northwestern.edu/netlogo/">NetLogo</a> multi-agent programmable modeling environment developed at Northwestern University, Vic showed a variety of models that could be built with just a basic knowledge of the Logo programming language: for instance, modeling the heat absorption of a home design and how different designs and window configurations affect the internal temperature of the living space), &ldquo;solving&rdquo; the game Lunar Lander, or how a First Robotics team modeled the software algorithms incorporated into their <a href="http://turtlebot.com">TurtleBot</a> (think Roomba + netbook + Kinect sensor).</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2013-09-11-project-lead-the-way/Netlogo.png" title="NetLogo" ></p>
+
+<p><a href="http://people.virginia.edu/~jlc6j/">Joanne Cohoon</a> talked about achieving diversity in STEM classrooms and the state of the job market&mdash;how 50% of the jobs available involve some need for computational thinking and the challenges and how teachers can create classroom environments that attract students who might otherwise rule themselves out from the start based on the stereotypes and environments commonly surrounding STEM in schools. With half the workforce needing some kind of computational skill, we can&rsquo;t drive anyone away.</p>
+
+<p>Peter Chapman, a PhD student at Carnegie Mellon University and Technical Leader of the <a href="https://picoctf.com">picoCTF</a> project joined us via Skype to describe the program. Set up along the storyline of an interactive adventure called Toaster Wars, picoCTF is a competition among high school students to solve as many of 57 challenges as they can using whatever means necessary&mdash;hacking, decrypting, reverse engineering, breaking or whatever. The challenges force students to get their hands dirty, learning on their own via documentation and their browser the role of cookies in web security, how to use grep and tar to find a secret key in a file, and other examples designed to give students the experience of tackling unknown problems using the resources available to them.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2013-09-11-project-lead-the-way/Toaster-War.png" title="Toaster War" ></p>
+
+<p>Cerner interns and former Lee&rsquo;s Summit High School Team Driven First Robotics team members Dakota Ewigman and Victoria Utter taught a condensed version of the <a href="http://kcpowersource.com/appcamp/">KC Power Source Android App Camp</a> using <a href="http://appinventor.mit.edu">MIT App Inventor</a> which set the stage for more advanced App Inventor instruction provided by Dave O&#8217;Larte around calling and integrating web services and open APIs. We had developed a simple ballot and question and answer database-backed web service that let students and teachers hack around independently. In the category of unintended learning, and no doubt inspired by their picoCTF hacking, some of the teachers quickly found out how to troll other schools&#8217; services by injecting funny questions and answers about the course material.</p>
+
+<h2><strong>Why It&rsquo;s Cool</strong></h2>
+
+<p>At one point during the week, Bennett Brown shared with me the growth potential for PLTW&rsquo;s CSE program. In the engineering and biomedical engineering pathways, the year-over-year growth has been tremendous which is paving the way for an even faster uptake of the computer science offering. Such an important and widespread channel offers a great opportunity to influence the future of our entire industry and communities. With around 20% of the total pilot schools in this curriculum, Kansas City is getting a head start on building this pool of talent. We can use little advantages such as these to increase the value of KC as a hub for computing and entrepreneurial activity.</p>
+
+<p>An instructor asked me at one point, &ldquo;What is Cerner looking for in high school students who take this course?&rdquo; I had the sense that the question sought an answer more about a specific technology or language. I don&rsquo;t really see that as the focus. Instead, I think what we want is defined more by sparking that interest in solving hard problems and coming away with the understanding that these problems exist in their community and that there are people in the community at companies like Cerner solving those problems every day.</p>
+
+<h2><strong>Why It Matters</strong></h2>
+
+<p>We have a lot to accomplish in &ldquo;engineering health,&rdquo; and K-12 outreach programs can feel like a long game that often take a back seat to immediate concerns around designing and shipping solutions. But seeing how even the less computing-savvy teachers started to get hooked on programming their Android devices or trying to get to the next level in picoCTF while beating their heads against man pages and HTTP dumps, it became clear to me that by getting involved in these programs we can accelerate not only the numbers of students comfortable with computational thinking, but also give them a network of relationships and experiences in their own communities to return to as their career and learning progresses. The long game may not be as long as we think.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[DevCon]]></title>
+    <link href="http://engineering.cerner.com/2013/08/devcon/"/>
+    <updated>2013-08-26T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/2013/08/devcon</id>
+    <content type="html"><![CDATA[<p>(This is a joint post by <a href="https://engineering.cerner.com/engineers/frank-rydzewski/">Frank Rydzewski</a> and <a href="https://engineering.cerner.com/engineers/kevin-shekleton/">Kevin Shekleton</a>)</p>
+
+<p>This past June, 2,500 associates from across Cerner came together for <a href="http://www.youtube.com/watch?v=cE0YoFg-hkE">DevCon</a>, our internal developers conference. Now in its 3rd year, DevCon is a two-day, engineering-led conference that was created to bring together Cerner associates involved in all aspects of development and technology. DevCon is organized and run like many other developer conferences, complete with a call for papers and a talk selection committee. This year, we had 80 talks covering a wide array of topics such as big data, user experience and design, DevOps, and mobile development.</p>
+
+<p>A keynote presentation kicks off each day followed by talks across multiple tracks. <a href="https://twitter.com/skeptomai">Chris Brown</a>, CTO of <a href="http://www.opscode.com/">Opscode</a>, the creators of the open-source <a href="http://wiki.opscode.com/display/chef/Home">Chef Platform</a>, kicked off DevCon this year with a talk on the emergence and importance of DevOps. Within engineering at Cerner, embracing DevOps has had a big cultural impact on how we approach the software and systems we write and operate.</p>
+
+<iframe width="560" height="315" frameborder="0" src="//www.youtube.com/embed/D2hK5WpYaWc?rel=0" allowfullscreen></iframe>
+
+
+<p><a href="http://davehogue.com/">David Hogue</a>, a leading Interaction Designer and instructor at San Francisco State University, kicked off the second day talking about the importance of interaction design in business and software. Hogue&rsquo;s keynote was especially relevant to us as interaction designers play a prominent role in the creation and maintenance of our software.</p>
+
+<iframe width="560" height="315" frameborder="0" src="//www.youtube.com/embed/zaeGuPT1m2o?rel=0" allowfullscreen></iframe>
+
+
+<p>As you can see from the two keynote videos, the visual theme for DevCon this year was 8-bit gaming. Two 1980’s living room setups, packed with vintage NES consoles, CRT televisions, and piles of classic games, provided entertainment and nostalgia during the breaks in the conference schedule. At night, 20 teams competed for bragging rights and <a href="http://en.wikipedia.org/wiki/Retro_Duo">awesome</a> <a href="http://www.makeymakey.com/">prizes</a> at Geek Trivia Night, answering questions ranging from <em>name the sci-fi spaceships</em> to <em>identify the programming language from a snippet of code</em>.</p>
+
+<p>As in previous years, DevCon ends with lightning talks in which anyone can present on a topic of their choosing provided it lasts for no more than 5 minutes. Lightning talks at DevCon can cover the gamut. Past lightning talks have covered Monads in Scala, a visual tour of Comic-Con, and world record strategies in Donkey Kong.</p>
+
+<p>We&rsquo;ve also made available the DevCon 2012 keynote presentations, both from <a href="http://drjeffnorris.com/">Dr. Jeff Norris</a>, a scientist at NASA JPL responsible for the robotic spacecraft in the solar system. Norris talked on remaining agile while working on mission critical systems as well as the importance of specialization in the advancement of fields &mdash; both of these talks are well worth watching.</p>
+
+<p>DevCon allows engineers across organizations to come together to learn and present on a variety of topics, fostering a culture of innovation. It is no wonder then that many engineers at Cerner cite DevCon as their favorite and most anticipated event within Cerner.</p>
+
+<iframe width="560" height="315" frameborder="0" src="//www.youtube.com/embed/QFfmTLmn3Ow?rel=0" allowfullscreen></iframe>
+
+
+
+
+<iframe width="560" height="315" frameborder="0" src="//www.youtube.com/embed/EfXl7X-0wRI?rel=0" allowfullscreen></iframe>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[DevAcademy]]></title>
+    <link href="http://engineering.cerner.com/2013/08/devacademy/"/>
+    <updated>2013-08-14T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/2013/08/devacademy</id>
+    <content type="html"><![CDATA[<p>When I graduated from college, I thought I understood what it meant to develop software in the real world. It required process. It required troubleshooting. It required quality. However, to me, process meant waterfall. Troubleshooting meant trying a few things and then asking for help. Quality meant manual testing.</p>
+
+<p>Agile methods were not unheard of when I graduated in 2001. My professors noted that iterative development was better than waterfall; they just only taught waterfall. Debuggers had been around since the 50’s, but my classmates and I still debugged with what I call &ldquo;Hi Mom!&rdquo; techniques. (We peppered our code with print statements.) Kent Beck had written the JUnit framework 4 years before, but it wasn’t entrenched in the Java culture yet. So it’s not surprising that my education didn’t cover these topics.</p>
+
+<p>It took a few painful experiences in the real world to make me realize the way I programmed in college wasn’t the best way to engineer software. I needed to adopt some new practices.</p>
+
+<p>Not much has changed in terms of software education. Being a part of Cerner’s software engineer training program, I am able to ask every group of new engineers three questions:</p>
+
+<p>&ldquo;Do you use an agile process?&rdquo;</p>
+
+<p>&ldquo;Do you use a debugger when troubleshooting your code?&rdquo;</p>
+
+<p>&ldquo;Do you write automated unit tests?&rdquo;</p>
+
+<p>Cerner has had explosive growth in engineering, so I’ve asked those questions of hundreds of recent graduates. Almost no one says yes. This told me that while colleges are doing a great job of teaching computer science, many schools are not teaching best practices in software development.</p>
+
+<p>Until recently, Cerner wasn’t doing that great of a job of teaching them either. Our training program covered them, but we still saw the new engineers struggle to understand agile development, debug their code, and write their first unit test. One of Cerner’s core values is if you recognize something is broken, you are empowered to fix it. I knew our training program wasn’t working. It became my job to fix it.</p>
+
+<p>Before tackling the whole program, I tried a little experiment. I wanted to see what it would take to get engineers in training to write just one unit test. At the time, training included a class on JUnit. In spite of the class, only 5% of the engineers were writing unit tests for training assignments.</p>
+
+<p>To correct this, I started telling the engineers that I would take points off assignments that didn’t have a unit test. The idea was to create structural motivation. We immediately saw 40% of the engineers writing unit tests. A step forward, but it wasn’t enough.</p>
+
+<p>The biggest obstacle to broader use of unit tests in training was that they didn’t know how to include the testing framework in their Java projects. That, more than the effort of writing the test, was keeping them from doing something we expected of them.</p>
+
+<p>Something was wrong. We were teaching Maven in our training program. If you are not familiar with it, Maven helps you manage your project builds, and as a result, it helps you manage your dependencies. The engineers were already attending a class that taught them how to add dependencies to Java projects. They just weren’t able to associate what they had learned with the goal of bringing JUnit into their projects. They weren’t making the connection.</p>
+
+<p>This connection was missed because engineers were learning about Maven in the absence of a problem. They were being told it’s an important tool, but we hadn’t given them a reason to use it. Later, when they did encounter the problem &ndash; &ldquo;How do I add the JUnit jar to my project?&rdquo; – it was too late. They had forgotten about Maven.</p>
+
+<p>The key was to move the Maven training closer to when they needed the information. This is called &ldquo;Just in Time Teaching.&rdquo; It became the first requirement of the new program.</p>
+
+<p>Another interesting aspect of my experiment is that 40% would write the tests even given the delay between training and practice. It should be obvious to anyone that’s ever taken a college programming class that some programmers can get it from lectures alone. Others have to practice. Any one-size-fits-all approach to training is flawed. The second requirement for the new program was that it must flex to meet the skills and learning styles of the engineers.</p>
+
+<p>With these goals in mind, I started the redesign of Cerner’s training program. My first step was to interview a large sample of our software leaders. I asked them what they wanted engineers to learn. Time and time again, the top answers would be agile development, debugging, and automated unit tests. Surprisingly, it was not a list of technologies like iOS, Hadoop, JSON, or ReST.</p>
+
+<p>The resumes of our newly hired engineers are full of languages and technologies. However, when asked what they wanted of new engineers, our lead architects described practices. If Cerner could get engineers to improve in practices, we could take the great engineers we were hiring and immediately make them more productive.</p>
+
+<p>The scary thing is that sharing knowledge is easy, but changing people’s behavior is hard. Once I realized our problems were about software development behavior and not knowledge, I realized we would need to completely rebuild the way Cerner trains its new engineers. The result is DevAcademy.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2013-08-14-devacademy/DevAcademy.png" title="DevAcademy" ></p>
+
+<p>Imagine you are a new engineer starting at Cerner. In your first week at Cerner, you report to the DevAcademy. The first two weeks focus on in-class instruction and assessment. The goal here is to introduce core software development behaviors and then assess your skills.</p>
+
+<p>After completing the first two weeks of instruction, you join what we call the DevCenter and are assigned a real project. However, that project isn’t assigned by your team. You get to pick. The projects come from all over Cerner including web applications and services, tools to make engineers more productive, and even contributing to open source projects used by Cerner. In picking a project, you are telling Cerner the types of work you find interesting. This helps us determine the best place for you across our diverse range of solutions and technologies.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2013-08-14-devacademy/ManagersTalkingToEngineer1.jpg" title="Manager talking to engineer" ></p>
+
+<p>While working on that first project, you have a dedicated mentor. You are expected to make progress on the project while receiving feedback. You also get just-in-time training on user stories, source code management, unit testing, and scrum. You get to use Cerner’s software development ecosystem in an isolated, safe environment.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2013-08-14-devacademy/Mentoring.jpg" title="Mentoring" ></p>
+
+<p>Once you show readiness to join a team, you are allowed to demo your work to the teams that have open positions. Those teams can then pick the engineer that best fits their team. In this way, Cerner makes sure you are assigned to the right team for both Cerner and you.</p>
+
+<p>DevAcademy recognizes that you should never stop learning, so the program continues well into your first few months on your team. You are offered classes on different technologies and more advanced topics as part of an elective-based training plan. You work with your manager to decide which classes to take. It’s Cerner’s way of making sure all of our engineers continue to grow.</p>
+
+<p>We’ve had 150 engineers join DevAcademy since it was launched. I’ve had the privilege of seeing the new engineers struggle and then succeed on their projects. I’ve seen the light come on when they realize the usefulness good development practices and apply them effectively. I’ve seen them get excited about git and other powerful tools that they didn’t have the opportunity to learn during their formal educations. The best part of my job is that I’ve seen many very good engineers start down the career-long path towards becoming really great ones.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2013-08-14-devacademy/Staff.jpg" title="Staff" ></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The 30 Days of Code Experiment]]></title>
+    <link href="http://engineering.cerner.com/2013/08/the-30-days-of-code-experiment/"/>
+    <updated>2013-08-06T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/2013/08/the-30-days-of-code-experiment</id>
+    <content type="html"><![CDATA[<p>In software development, we solve problems. As we solve these problems, we build connections in our minds of how to look at a problem, relate it to previous problems and solutions, and re-apply past approaches and techniques.</p>
+
+<p>These behavior habits build dogmatic ways of thinking and limit design choices to selective technologies we’ve used in the past. As we all know, you have to continually learn new technologies and different ways of thinking to stay current in the ever-changing landscape of software development. Unfortunately, keeping up-to-date on technologies and approaches isn’t an easy behavior to maintain when you have many other priorities.</p>
+
+<p>This spring, a few engineers wanted to bring focus to this important behavior trait by giving a tech talk on &ldquo;Honing your Craft,&rdquo; which discussed how to continuously strengthen and refine skills. Not only did we want engineers that we work with on a daily basis to be part of the tech talk; we wanted engineers from other teams at Cerner to be involved too. Also, we didn’t just want to talk about it; we wanted to pose a challenge to put people into action and re-enforce these behaviors.</p>
+
+<p>At the end of the talk, we announced the challenge: 30 days of code. It was a challenge like many other &ldquo;30 day&rdquo; programs but was centered on learning new aspects of software development, languages, or just hacking up a tool that you find useful for your day-to-day development. The goal being that after 30 days, new habits and behaviors would be established to help promote continuous learning.</p>
+
+<p>To make this a social learning experience, we built a Ruby web application called &ldquo;mural&rdquo; using async_sinatra and eventmachine to consume our GitHub Enterprise instance and show gists, which contained a code comment of &ldquo;30_days_of_code&rdquo;. The result was really interesting. Similar to Twitter, where you follow a specific hashtag, we were following code snippets of fellow developers. Since most of them were gists, they were small enough so you could easily see what they were doing (without having to go through a mountain of code). With this dashboard, a score was calculated based on count of your posts and was displayed with your avatar. Having scores displayed in descending order added a little peer pressure to keep people active in challenge.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2013-08-06-the-30-days-of-code-experiment/30-Days-of-Code.png" width="30" title="Days of Code" ></p>
+
+<p>By the time I got back to my desk, I received questions of where the URL was to see the app, so they could verify their posts were showing. Soon, people wanted GitHub repos to show up with gists, so a pull request was requested for that. We then wanted anonymous gists to also get pulled in, which required developing our own crawler since these were exposed on the gist search. It was apparent that people wanted to share what they were doing, and people wanted to see it.</p>
+
+<p>At the end of the challenge, we returned to the auditorium to highlight some of the posts that came in over the past month. During the 30 days, we had 124 gists posted and 17 different contributions in repos. People were showing their skills over a wide range of technologies. Examples were:</p>
+
+<ul>
+<li><p>Building a plugin to invoke Jenkins commands over a phone (using Siri)</p></li>
+<li><p>Ruby scripts that interact with our Github Enterprise instance API that will send out emails when pull requests or branches are getting old (executed periodically through Jenkins)</p></li>
+<li><p>Clojure application that looks for pull requests based on Github organizations, which have two &ldquo;+1&rdquo; comments (alerting which pull request may be candidates to close out)</p></li>
+<li><p>Illustrating Crucible code interactions by extracting data with python and visualizing with D3
+Using Node.js to flash lights on a Raspberry Pi when a health check from web service is failing</p></li>
+<li><p>Presenting statistics from a storm cluster with Rickshaw</p></li>
+</ul>
+
+
+<p>Eleven people presented what they worked on and learned. It was amazing to see all of the different ideas people came up with in this time frame.</p>
+
+<p>Even more interesting was how quickly people learned from the ideas of others. Not only were developers sharing their code snippets, but they were also sharing the problem they were attempting to solve or the idea of what they wanted invent. For example, the Ruby script which alerted the last committer of a dead branch through email, spawned into other implementations that would send alerts based on different pieces of Github data (ex. old pull requests). Sharing these ideas in their early stages (through code snippets) really accelerates the rate that an idea can be seeded in other minds and helps inspire even more innovation and learning.</p>
+
+<p>This wasn&rsquo;t only a challenge of what we would build, but it was also an experiment of what can happen by taking a small portion of your day and doing something different. By structuring this exercise around a formal challenge that included a competitive aspect, there was additional motivation to get involved and stay involved to the end.</p>
+
+<p>In summary, find a way to take a little time out of your day to try something different; you will be amazed with the different perspectives that you gain.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Thinking in MapReduce]]></title>
+    <link href="http://engineering.cerner.com/2013/07/thinking-in-mapreduce/"/>
+    <updated>2013-07-31T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/2013/07/thinking-in-mapreduce</id>
+    <content type="html"><![CDATA[<p><em>This is the blog form of the Thinking in MapReduce talk at StampedeCon 2013. I’ve linked to existing resources for some items discussed in the talk, but the structure and major points are here.</em></p>
+
+<p>We programmers have had it pretty good over the years. In almost all cases, hardware scaled up faster than data size and complexity. Unfortunately, this is changing for many of us. Moore&rsquo;s Law has taken on a new direction; we gain power with parallel processing rather than faster clock cycles. More importantly, the volume of data we need to work with has grown exponentially.</p>
+
+<p>Tackling this problem is tremendously important in healthcare. At the most basic level, healthcare data is too often fragmented and incomplete: an individual’s medical data is spread across multiple systems for different venues of care. Such fragmentation means no one has the complete picture of a person’s health and that means decisions are made with incomplete information. One thing we’re doing at Cerner is securely bringing together this information to enable a number of improvements, ranging from better-informed decisions to understanding and improving the health of entire populations of people. This is only possible with data at huge scale.</p>
+
+<p>This is also opening new opportunities; Peter Norvig shows in the <a href="http://www.youtube.com/watch?v=yvDCzhbjYWs">Unreasonable Effectiveness of Data</a> how simple models over many data points can perform better than complex models with fewer points. Our challenge is to apply this to some of the most complicated and most important data sets that exist.</p>
+
+<h2>New problems and new solutions</h2>
+
+<p>Our first thought may be to tackle such problems using the proven, successful strategy of relational databases. This has lots of advantages, especially the <a href="http://en.wikipedia.org/wiki/ACID">ACID semantics</a> that are easy to reason about and make strong guarantees about correctness. The downside is such guarantees require strong coordination between machines involved and in many cases the cost of that coordination grows as the square of data size.  Such models should be used whenever they can, but to reason about huge data sets holistically means we have to consider different tradeoffs.</p>
+
+<p>So we need new approaches for these problems. Some are clear upfront: as data becomes too large to scale up on single machines, we must scale out across many. Going further, we reach a point where we have too much data to move across a network &mdash; so rather than moving data to our computation, we must move computation to data.</p>
+
+<p>In fact, these simple assertions form the foundation of MapReduce: we move computation to data by running map functions across individual records without moving them over the network and merge and combine, or reduce, the output of those functions into a meaningful result. <a href="http://wiki.apache.org/hadoop/WordCount">Word count</a> is the prototypical example of this pattern in action. MapReduce implementations as offered by Hadoop actually offer a bit more than this, with the following phases:</p>
+
+<ul>
+<li><p><em>Map</em> &mdash; transform or filter individual input records</p></li>
+<li><p><em>Combine</em> &mdash; optional partial merge of map outputs in the mapping process, usually for efficiency</p></li>
+<li><p><em>Shuffle and Sort</em> &mdash; Sort the output of map operations by an arbitrary key and partition map output across reducers</p></li>
+<li><p><em>Reduce</em> &mdash; Process the shuffled map output in the sorted order, emitting our final result.</p></li>
+</ul>
+
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2013-07-31-thinking-in-mapreduce/MapReduce1.png" title="MapReduce" ></p>
+
+<p>We have our building blocks: we can split data across many machines and apply simple functions against them. Hadoop and MapReduce support this pattern well.  Now we need to answer two questions: How do we use these building blocks effectively and how do we create higher-level value on top of them?</p>
+
+<p>The first step is to maximize parallelism. The most efficient MapReduce jobs shift as much work into the map phase as possible, even to the point where there is little or no data that needs to be sent across the network to the reducer. We can gauge the gains made by scaling out by applying <a href="http://en.wikipedia.org/wiki/Amdahl's_law">Amdahl’s Law</a> where the parallelism is the amount of work we can do in map tasks versus more serial reduce-side operations.</p>
+
+<p>The second step is to compose our <em>map, combine, shuffle, sort, and reduce</em> primitives into higher-level operations. For example:</p>
+
+<ul>
+<li><p><em>Join</em> &mdash; Send distinct inputs to map tasks, and combine them with a common key in the reducers.</p></li>
+<li><p><em>Map-Side Join</em> &mdash; When one data set is much smaller than another, it may be more efficient to simply load it in each map task, eliminating the reduce phase overhead outright.</p></li>
+<li><p><em>Aggregation</em> &mdash; Summarizes big data to be easily computed.</p></li>
+<li><p><em>Loading into external systems</em> &mdash; The output of the above operations can be exported to dedicated tools like R to do further analysis.</p></li>
+</ul>
+
+
+<p>Beyond that, the above operations can be composed into sophisticated process flows to take data from several complex sources, join it together, and distill it down into useful knowledge. The book <a href="http://shop.oreilly.com/product/0636920025122.do">MapReduce Design Patterns</a> discusses all of these patterns and more.</p>
+
+<h2>Higher-Level APIs</h2>
+
+<p>Understanding the above patterns is important but much like how higher-level languages have grown dominant, higher-level libraries have replaced direct MapReduce jobs. At Cerner, we make extensive use of <a href="http://crunch.apache.org">Apache Crunch</a> for our processing infrastructure and of <a href="http://hive.apache.org">Apache Hive</a> for querying data sitting in Hadoop.</p>
+
+<h2>Reasoning About the System</h2>
+
+<p>Most of development history has focused on variations on <a href="http://www.infoq.com/presentations/Value-Values">Place-Oriented Programming</a>, where we have data in objects or database rows and we apply change by updating our data in place.  Yet such a model doesn’t align with MapReduce; when dealing with mass processing of very large data sets, the complexity and inefficiency involved in individual updates becomes overwhelming. The system would become too complicated to perform or reason about. The result is a simple axiom for processing pipelines: <em>start with the questions you want to ask and then transform the data to answer them.</em> Re-processing huge data sets at any time is what Hadoop does best and we can leverage that to view the world as pure functions of our data, rather than trying to juggle in-place updates.</p>
+
+<p>In short, the MapReduce view of the world is a holistic function of your raw data. There are techniques for processing incremental change and persisting processing steps for efficiency but these are optimizations. Start by processing all data holistically and adjust from there.</p>
+
+<h2>Beyond MapReduce</h2>
+
+<p>The paper <a href="http://homes.cs.washington.edu/~alon/files/dataspacesDec05.pdf">From Databases to Dataspaces</a> discusses a new view of integrating and leveraging data. A similar idea has entered the lexicon under the label &ldquo;Data Lake&rdquo; but the principles align: securely bring structured and unstructured data together and apply massive computation to it at any time for any new need. Existing systems are good at efficiently executing known query paths but require a lot of up-front work, either by creating new data models or building out infrastructure for the immediate need. Conversely, Hadoop and MapReduce allow us to ask questions about our data in parallel at massive scale without prior build.</p>
+
+<p>This becomes more powerful as Hadoop becomes a more general fabric for computation. Projects like <a href="http://spark-project.org">Spark</a> can be layered on top of Hadoop to significantly improve processing time for many jobs. SQL- and search-based systems allow faster interrogation of data directly in Hadoop to a wider set of users and domain-specific data models can be quickly computed for new needs.</p>
+
+<p>Ultimately, the gap between the discovery of a novel question and our ability to answer it is shrinking dramatically. The rate of innovation is increasing.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[FIRST Robotics Championship Competition in St. Louis]]></title>
+    <link href="http://engineering.cerner.com/2013/04/first-robotics-championship-competition-in-st-louis/"/>
+    <updated>2013-04-23T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/2013/04/first-robotics-championship-competition-in-st-louis</id>
+    <content type="html"><![CDATA[<p><img class="center" src="http://engineering.cerner.com/assets/2013-04-23-first-robotics-championship-competition-in-st-louis/Ultimate-Ascent.jpg" title="Ultimate Ascent" ></p>
+
+<p>Cerner places a high value on talent development programs offering students the experience to build practical and tangible skills for the modern work environment. As part of this focus, Cerner supports FIRST Robotics, a competition providing experience in software engineering, where students learn to deal with complexity, time constraints, quality, and technical communications. Sound familiar? I wish they had this program when I was a kid!</p>
+
+<p>High school students from Kansas City will be testing their minds, willpower, and teamwork in this global robotics championship competition April 24-27 in St Louis, Missouri. The secret game design was revealed in January, and with just six weeks to build, over 2,000 teams created completely unique robots. Design, engineering, metal fabrication, project management, marketing, and fundraising are all activities that students gain exposure to in this real-world project. Most importantly, they practice creative problem solving in complex team dynamics.</p>
+
+<p>The championship teams you may have seen in the Kansas City Regional are:</p>
+
+<ul>
+<li>Team 1710 &ndash; The Ravonics Revolution</li>
+<li>Team 1730 &ndash; Team Driven</li>
+<li>Team 1806 &ndash; S.W.A.T.</li>
+<li>Team 1939 &ndash; The Kuh-nig-its</li>
+<li>Team 1986 &ndash; Team Titanium</li>
+<li>Team 1987 &ndash; Broncobots</li>
+<li>Team 3528 &ndash; Up Next!</li>
+</ul>
+
+
+<p>Students are challenged with two software programming components: digital media marketing and robot controls. Students will use a wide range of web, mobile, and media development technologies to create their team&rsquo;s marketing strategy.</p>
+
+<p>Robot controls is broken down into two types: autonomous and teleoperated programs. In autonomous mode the robot responds exclusively to preprogrammed commands based on sensor feedback from a camera, accelerometer, gyro, encoders, and more. In teleoperated mode, the robot continues to use sensors but now can receive input from the drive team using game joysticks.</p>
+
+<p>Students can use three different programming languages for the robot control system:</p>
+
+<ol>
+<li>LabVIEW from National Instruments</li>
+<li>C++ with Wind River Workbench</li>
+<li>Java with Netbeans</li>
+</ol>
+
+
+<p>The most important tool for control system programmers is a white board. Students diagram and visualize all the inputs and outputs of each system: motors, actuators, sensors, and driver station. Mapping inputs to outputs is important not just during the construction of the program, but it also helps to train the drive team. Students use online resources, collaborate with other teams, and receive guidance from their technical mentors. Practicing resourcefulness prepares them for the complex professional engineering environment they will soon become a member of.</p>
+
+<p>Cerner is engaged in the Kansas City community at many levels. We are a sustaining partner in the KC STEM Alliance. Many Cerner associates mentor local teams, volunteer at local events, and are involved parents. These experiences exercise student minds in very real and practical ways. They are more prepared for technical and non-technical Cerner careers. Their passion and commitment is the fuel for delivering our future innovation.</p>
+
+<p>Here is this year’s gameplay video:</p>
+
+<iframe width="560" height="315" class="aligncenter" frameborder="0" src="https://www.youtube-nocookie.com/embed/wa5MGEZNrf0?rel=0" allowfullscreen></iframe>
+
+
+<p>For more information, check out the links below:</p>
+
+<ul>
+<li><a href="http://www.usfirst.org/roboticsprograms/first-championship">http://www.usfirst.org/roboticsprograms/first-championship</a></li>
+<li><a href="http://www.kcfirst.org/">http://www.kcfirst.org/</a></li>
+<li><a href="http://www.kcstem.org/">http://www.kcstem.org/</a></li>
+<li><a href="http://www.youtube.com/user/FRCTeamsGlobal">http://www.youtube.com/user/FRCTeamsGlobal</a></li>
+<li><a href="http://wpilib.screenstepslive.com/s/3120">http://wpilib.screenstepslive.com/s/3120</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Learn What the Rules Don't Cover]]></title>
+    <link href="http://engineering.cerner.com/2013/04/learn-what-the-rules-dont-cover/"/>
+    <updated>2013-04-19T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/2013/04/learn-what-the-rules-dont-cover</id>
+    <content type="html"><![CDATA[<p>Most technical problems are like games.  All of them have a way to win and all of them have rules; the easiest way to ensure you always win is to learn the rules inside and out, and more importantly what the rules don’t cover!  Paying attention to what the rules don’t cover is what leads to out of the box thinking.  What sets the great players apart from the rest is learning what the rules don’t cover which allows for creativity and, sometimes, shortcuts.</p>
+
+<p>Recently, I played a game similar to musical chairs. It was a game of diminishing resources (a management exercise) with about 12 of us and six large sheets of paper.  The only rules were: 1) Walk around while the music is playing and 2) Put your foot on a rectangle when the music stopped (he instructor pointed at one of the sheets as a visual queue).  When we first started, there was ample space for each of us to have a foot somewhere on one of the 2’ x 4’ paper.</p>
+
+<p>As the game continued, the instructor started cutting the sheets into smaller and smaller pieces until we got down to 3&#8221; x 5&#8221;.  Most of us were precariously trying to balance and keep a portion of a shoe touching the paper, a few just gave up, and two paid special attention to the rules and found an out.  One gentleman took at a business card and promptly stood on it.  Another just lifted his leg and put it up on the door.  We all were following the same rules but two found what the rules didn’t cover and won.</p>
+
+<p>Most people think that Printing is easy.  You hit a button or Ctrl + P and the paper comes out, right?  This seamless process appears so to users because of the hard work that goes in behind the scenes.  So when I started down this path, I knew a strong foundation would be important. I settled on <a href="http://www.cups.org">CUPS</a> as the basis for my brave new world of printing.  It is open source and has a pretty wide following.  It’s the basis for Apple printing, fairly hardened, and is the backbone of several educational systems printing making it enterprise ready.</p>
+
+<p>The more I worked with it, the more I saw its full potential.  CUPS had turned out to be the most useful &ldquo;Swiss Army Knife&rdquo; in my toolbox.  It is extremely robust and easy to integrate / stack with other solutions.  One great example of this is my &ldquo;Coffee CUPS&rdquo; demo.</p>
+
+<iframe width="560" height="315" class="aligncenter" frameborder="0" src="https://www.youtube-nocookie.com/embed/WzEhKs_CvJc?rel=0" allowfullscreen></iframe>
+
+
+<p>I picked CUPS as the underlying backbone for my new architecture for the same reason.  It had the maximum amount of possibilities with the least amount of rules.  With a minimum amount of rules, it allows for the maximum amount of creativity.  Sure, I could develop my own solution from the ground up where I get to make the rules and have unlimited creativity, and I have had to do that in the past.  In general, if you write your own software, you have the least amount of rules (constraints of the compiler).  OpenSource Software is a close second with few limitations.  Closed source 3rd party software usually has the most rules (ever read a EULA in your life?).  When selecting a solution to a problem, it’s also important to do a cost benefit analysis.  Is it really worth reinventing the wheel?  I’m often reminded of the below picture.  I’ve seen several variations of it over the years (Credit to the picture unknown, but it wasn’t me).</p>
+
+<p>CUPS handles a lot of the general architecture that doesn’t need to be re-invented on either end of the spectrum (managing print queues, accepting jobs, sending jobs to printers, etc) but allows for a lot of creativity in the middle (the middle being what is done to the print job in between getting it from the user and sending it to the printer).  A good example of this (filters) can be found <a href="http://en.wikipedia.org/wiki/File:Cups_simple.svg">here</a>.  CUPS gives you an overall framework of how it will call a filter, and what it expects as a return, but beyond that, it’s up to the programmer.  You can write in pretty much any language you want and alter the print job as much as you want.  I leveraged this to maximize the amount of devices I could talk to and input file types I could accept, while also being able to make business decisions based on the content of the print job.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2013-04-19-learn-what-the-rules-dont-cover/HPRW2.jpg" title="HPRW2" ></p>
+
+<p><em>Source: www.projectcartoon.com</em></p>
+
+<p>I think that picture aptly describes the disconnect in all of the processes that exist in problem solving.  So in addition to learning what the rules don’t cover, we need to be keenly aware of what you are trying to accomplish: what is the problem and the success criteria? How do we win the game?</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby at Cerner]]></title>
+    <link href="http://engineering.cerner.com/2013/04/ruby-at-cerner/"/>
+    <updated>2013-04-05T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/2013/04/ruby-at-cerner</id>
+    <content type="html"><![CDATA[<p>Cerner&rsquo;s journey with Ruby started in the summer of 2009. We selected Ruby on Rails for rapid development of the <a href="https://store.cerner.com/">Cerner Store</a> to prepare for release at the Cerner Health Conference that year. In three months, with three engineers and a designer, we wrote and released the first version of an e-commerce web application. Two of those engineers, including me, had never worked with Ruby before but quickly realized the power and expressiveness of the language due to resources like <a href="http://mislav.uniqpath.com/poignant-guide/">Why&rsquo;s (Poignant) Guide to Ruby</a>.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2013-04-05-ruby-at-cerner/the.foxes-4c.png" title="Chunky bacon!" ></p>
+
+<p>Our experience with the Cerner Store taught us that Rails led to high productivity. Ruby is a very natural language to write code in and principles like <a href="http://en.wikipedia.org/wiki/Convention_over_configuration">convention over configuration</a> enabled us to solve our problems instead of spending time wrangling the framework. In addition, we valued the good practices of the Ruby community like easy-to-understand code and thorough unit testing with tools that aren&rsquo;t painful.</p>
+
+<p>In the summer of 2010, we attended the first <a href="http://rubymidwest.com/">Ruby Midwest</a> as a team. We learned about developments in Ruby like JRuby and Chef as well as some of the great gems under development. The Cerner Store continued to grow and we learned about maintaining a Rails web app over time.</p>
+
+<p>In early 2012, we were planning a massive undertaking to create a new platform for our Clients&#8217; healthcare data. It was to be called Millennium+ and it needed an architecture that could scale well to petabytes of data and dozens of engineers across many teams. We planned a <a href="https://engineering.cerner.com/2013/02/near-real-time-processing-over-hadoop-and-hbase/">service-oriented architecture</a> and chose Rails to serve as the server side of the application. Our Rails services call JVM services that retrieve data from HBase and serves the resulting data as JSON to the client-side applications, including our iOS app, PowerChart Touch Ambulatory. The high productivity we enjoyed on a small team scaled well to a large team of people who had never written Ruby before.</p>
+
+<p>This was the start of Cerner&rsquo;s Ruby community. We developed reusable libraries and development processes that we continue to use today. The complexities of our architecture also led to the adoption of <a href="http://www.opscode.com/chef/">Chef</a> to automate operations and build a devops mindset. Chef is another integral use of Ruby that penetrates teams that did not use Ruby at all.</p>
+
+<p>When planning our newest platform, <a href="http://www.cerner.com/blog/population_health_management_collaboration_with_advocate_physician_partners/">Population Health</a>, we needed to determine which platform made the most sense for a large-scale development of web applications on a tight timeline. We decided on Rails due in large part to its prioritization of convention over configuration, as well as the existing Ruby community at Cerner. These attributes would enable us to develop applications at the planned pace and scale. This decision is now disseminated to dozens of engineers working on brand new web applications and REST services powering them.</p>
+
+<p>We&rsquo;ve bolstered our internal Ruby community with lots of documentation and guidelines. We make use of the <a href="http://ruby.railstutorial.org/ruby-on-rails-tutorial-book">Ruby on Rails Tutorial book</a> and Why&rsquo;s (Poignant) Guide to train engineers in Ruby. Bozhidar Batsov&rsquo;s <a href="https://github.com/bbatsov/ruby-style-guide">Ruby style guide</a> aligns closely with how we write our code, so we use <a href="https://github.com/bbatsov/rubocop">rubocop</a> to keep ourselves in line. Our development devices run on <a href="https://rvm.io/">RVM</a> and our servers run on <a href="https://www.phusionpassenger.com/">Phusion Passenger</a>.</p>
+
+<p>Ruby has quickly become a very important part of Cerner&rsquo;s engineering culture, primarily as the language behind Rails and Chef. An internal Ruby meetup has begun and there have been presentations involving Ruby at our annual Developer Conference.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2013-04-05-ruby-at-cerner/ruby-midwest-logo-2013.png" title="Ruby Midwest 2013 Logo" ></p>
+
+<p>Additionally, we are sponsoring <a href="http://rubymidwest.com/">Ruby Midwest</a> because we want developers to know that Ruby is highly valued at Cerner. We&rsquo;re also sending a large number of our own associates there to learn.</p>
+
+<p>We look forward to bringing on more engineers to use Ruby and other technologies to engineer the future of healthcare.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Modularity in Medical Imaging]]></title>
+    <link href="http://engineering.cerner.com/2013/03/modularity-in-medical-imaging/"/>
+    <updated>2013-03-29T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/2013/03/modularity-in-medical-imaging</id>
+    <content type="html"><![CDATA[<p>Developers often take for granted the level of flexibility and customization that is available within the software they use every day. Consumers of imaging software have traditionally been completely confined to interpret exams a specific way, and frequently in ways that are unintuitive. Every physician, specialist, technologist, med student, and others across the continuum of care has a preference as to not only how exams are laid out, but what information is displayed with the images and what transformations would be applied or processed automatically. As it turns out, the only workflow they have in common is that they all view exams differently and they all want the experience to be clear and understandable.</p>
+
+<p>We decided to take this to heart in the development of our viewing solution by allowing the application react to the user, opposed to the user reacting to the application and constraining their workflow. Working in the medical community can already be a high stress environment; introducing a piece of software intended to augment patient care that often times makes delivering care more difficult is not a viable solution. Finding the best way to address these issues starts with knowing the solution’s target audience. Before developers can help streamline a workflow, they first have to understand it. If you understand the user’s workflow and how they expect the solution to function, you can design for usability and they will want to use it, as opposed to feeling forced to use it. A key aspect of this is the reliability and simplicity of the application. If the user feels like the application is unstable or overly complex, they will immediately lose interest and view the whole experience as a chore, as opposed to something that can provide value.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2013-03-29-modularity-in-medical-imaging/Figure-1.png" title="Figure 1" ></p>
+
+<p>The interface is the first application element the user encounters. If it feels intimidating and complex, before they even perform any functions, you have set a negative tone for your application and adoption will be low. In the case of imaging, Radiologists often spend more than 60 hours a week reading over 16,000 procedures per year, all in front of the same application. Imagine working with an application that causes frustration throughout your day.  The first impression can propel an application in the marketplace or stifle it.</p>
+
+<p>With the advent of open source software coming to the forefront, there are a variety of options for developing rich applications backed by a large community of contributors. One of those happens to be the Eclipse Rich Client Platform (RCP) and the corresponding Standard Widget Toolkit (SWT). RCP and SWT both provide a way for developers to rapidly develop a professional looking and stable application but are somewhat limiting when viewed from an imaging standpoint. Radiologists typically read on workstations that have three or more monitors and in environments that are dimly lit. Using an application that is primarily grey and white can not only cause eye strain for the user but it can be distracting from what the user is trying to accomplish.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2013-03-29-modularity-in-medical-imaging/Figure-2.png" title="Figure 2" ></p>
+
+<p>Our team addressed this by starting out with the native components and then closely working with radiologists and visual designers to plan a user interface that was not only visually pleasing but also functional. The end result was a set of skinnable SWT widgets that are reusable within any SWT based application and can be specifically themed to match a desired color scheme for an environment.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2013-03-29-modularity-in-medical-imaging/Figure-3.png" title="Figure 3" >)</p>
+
+<p>Another aspect of imaging that we needed to plan for was the wide array of uses (diagnostic versus distribution). In a diagnostic scenario, radiologists will use the solution to perform diagnosis and will use the application within a multi-monitor high-resolution environment. For purposes of distribution imaging, clinicians will view images for reference and often times will view these on a much lower resolution single screen device (such as a laptop). While these two scenarios have vastly different hardware environments, users want the same experience across both and do not want to have to learn a new application depending on the workflow they are targeting at the time. As developers, we can address this by using service APIs instead of hard implementations and then create different assemblies that are easily accessible based on what the user is trying to accomplish. This not only helps address production concerns but allows developers to code against mock data sources and stores using the same API that they would within a fully scaled production environment.</p>
+
+<p>Once we had the basics covered, we rethought how we approached the workflow, and sought to intentionally design for usability and responsiveness within the application. Users previously were constrained to grids and a limited amount of information while reading. With modular components designed to perform specific tasks and provide specific information, the user can now decide how they want to consume and view exams.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2013-03-29-modularity-in-medical-imaging/Figure-4.png" title="Figure 4" ></p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2013-03-29-modularity-in-medical-imaging/Figure-5.png" title="Figure 5" ></p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2013-03-29-modularity-in-medical-imaging/Figure-6.png" title="Figure 6" ></p>
+
+<p>So now we have a solid application for use within diagnostic scenarios, but how do we give access to the enterprise without adding overhead? Following the path of reuse, we decided that we would use the main application that we already had. By starting with these components instead of rebuilding it for the browser or an entirely new framework, we could focus on how we could change the delivery of that application.</p>
+
+<p>We needed a way to deliver the same high power application without requiring the high power hardware. Traditional IT solutions would use Citrix, VMWare, or some other type of commercially available virtualization solution. While these are all great solutions for certain scenarios, the requirement of plugin installation on the client device accessing the application the heavy graphics processing within an imaging solution does not play nicely in these environments.  We can build on what these other solutions use (MS Remote Desktop Services) but choose to marshal the end result in an entirely different way.</p>
+
+<p>If we want to deliver an application via a web browser, we have a limited selection of tools that we can depend on being available. IE has its own quirks and implementations, Chrome has some fancy extras on top of the WebKit rendering engine, and while Safari/Firefox use the same engine they still behave differently. Developing and deploying an application that must be focused on performance for the end user and still usable within a variety of environments has to take all of these constraints and challenges into consideration.</p>
+
+<p>First, we needed a way to communicate between the client and server. The HTML5 WebSocket API is great for this, but only has minimal support and user adoption. Socket.IO has a great framework that allows for WebSocket emulation (or their native use if available) that provides great performance. We decided to use this for our real-time web app and it has proven to be invaluable throughout our development process.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2013-03-29-modularity-in-medical-imaging/Figure-7.png" title="Figure 7" ></p>
+
+<p>Now that we can communicate to the server what the user wants to do, we need a way to provide a representation of the images and UI that corresponds to the user input. The HTML5 Canvas API would seem like a good choice but continually redrawing canvas areas is process intensive and as this API isn’t supported within IE (the vast majority of our user base), it simply wasn’t an option. Instead, we decided to use a streaming mechanism, but couldn’t use the HTTP Streaming spec as this inherently introduces latency, which wouldn’t provide an acceptable user experience. All browsers support JPEG and PNG decompression and we can easily compress representations of the screen and shuttle these to the client. Even better, we can do this with a minimal amount of latency (we eliminate the need for key frames within an MPEG stream); we can choose which frames to drop and we can adjust the quality of each frame on the fly. This allows the client to adapt to the current network constraints and machine capabilities by tracking the effective FPS and adjusting the parameters on a sliding scale accordingly.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2013-03-29-modularity-in-medical-imaging/Figure-8.png" title="Figure 8" ></p>
+
+<p>With all of these tiers in place, we now have an application in the browser that looks identical to the desktop deployment with plugins or installation required.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2013-03-29-modularity-in-medical-imaging/Figure-9.png" title="Figure 9" ></p>
+
+<p>Beyond that, we have an SDK where third parties can build on top of our current deployment and provide even more specialized functionality within the imaging space, while still allowing users to customize their layout and how the data is delivered. We have now managed to deliver the same application to any device with a browser and our developers can develop from a single code line. This pleases our users and makes our developers’ lives easier. A true testament to how ease of development and a simple, yet powerful, user experience can exist in the same application.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Cerner and Tycho]]></title>
+    <link href="http://engineering.cerner.com/2013/03/cerner-and-tycho/"/>
+    <updated>2013-03-27T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/2013/03/cerner-and-tycho</id>
+    <content type="html"><![CDATA[<h2>Introduction</h2>
+
+<p><a href="http://eclipse.org/tycho/">Tycho</a> is a build tool for integration between <a href="http://www.eclipse.org/pde/">PDE</a> and <a href="http://maven.apache.org/">Maven</a>.  Cerner has a long history of working with <a href="http://www.eclipse.org/home/categories/rcp.php">Eclipse RCP</a> but <a href="http://www.eclipse.org/equinox/p2/">P2</a> integration is something of a more recent phenomenon.  This post is going to talk about how Cerner is using Tycho, what prompted our transition to Tycho and how we accomplished moving our build to using Tycho.</p>
+
+<h2>Why we use Tycho</h2>
+
+<p>The first question when evaluating any tool is asking yourself: &ldquo;why would I use that&rdquo;?  In our case, Cerner already has an extensive Maven ecosystem.  For years it has been common practice, when developing Java, to use Maven as the go to build, site, and deployment tool.  What we needed was a set of extensions that allowed us to use all the facets of Maven while creating PDE artifacts.  Traditionally, the set of PDE artifacts that we needed to create and manage was limited to products, targets, and bundles.  Using the Maven conventions, we could build out all of these PDE artifacts while allowing the Maven POM to be the single source of truth for most build projects.  This worked well enough until we needed to rework our assemblies to be comprised of features, inserting another PDE artifact into the build lifecycle.</p>
+
+<p>When we first began RCP development, no tooling existed to help us with creating PDE artifacts through Maven, so we created our own.  When the time came to start integrating additional PDE concepts, so that we could begin the path of integrating with P2 director, there was Tycho.</p>
+
+<h2>How we use Tycho</h2>
+
+<p>We use tycho generally to build the following set of PDE artifacts:</p>
+
+<ul>
+<li>Products</li>
+<li>Features</li>
+<li>Mirrors + Targets</li>
+<li>Mirrors</li>
+</ul>
+
+
+<p>While the mirrors are not technically Eclipse artifacts, we use Tycho to mirror the Eclipse (for now Juno) repositories so that our builds are not hammering the Eclipse update site.  When you have 10&rsquo;s to 100&rsquo;s of users updating targets and running builds, it is just common courtesy to have your own mirror.</p>
+
+<h3>Features</h3>
+
+<p>We began our journey with Tycho by using it to generate P2 repositories from feature definitions.  The bulk of the heavy lifting is accomplished through the use of the tycho-packaging-plugin (as well as the base plugin, tycho-maven-plugin).  Since we deploy all of our plugins through maven, it is ideal to have Maven (Tycho in this case) do the dependency resolution for us and fill out the contents of our feature.  It also does all the work of turning that feature into a p2 repository.</p>
+
+<p>This was actually a nontrivial exercise for us.  While we could have used a single feature definition, we tightly controll the dependencies that are pulled into our assembly.  Therefore, as we looked to breakdown our feature definition it was more complicated than simply pulling in the Juno feature and heaping everything into a feature on top of that.  Since we only use a subset of the Eclipse platform, we only want to pull forward the pieces we use explicitly (we also ran into some rather strange behavior with the Eclipse Jetty features).  We wanted to define the features in such a way that consumers of our platform could select a single feature that represented our core platform + Eclipse (as well as layer in additional functionality related to building their application).  In the end, we defined a set of about 20 features that rolled into a single working repository.  This way, consumers only needed to know the location of a single repository and then could use the metadata in the features to determine which features they needed.</p>
+
+<h3>Products</h3>
+
+<p>Starting at features made sense because there was no existing infrastructure for us to overhaul to build out the features.  The products were a different story.  With the products, we had an entire set of plugins that managed which version of Eclipse was pulled in for the product, how the .product was generated, and how we rolled that into an .exe.</p>
+
+<p>The extra time we took in order to define the features thoroughly actually made this process significantly easier.  Today, we build a set of 8 applications:</p>
+
+<ul>
+<li>CareAware Criticalcare Dashboard</li>
+<li>CareAware Criticalcare Personalized</li>
+<li>CareAware Infusion Management Dashboard</li>
+<li>CareAware Infusion Management Personalized</li>
+</ul>
+
+
+<p>Each of these products also has a corresponding mock build (where we substitute in mock resources to populate data for our views).  The definitions of these products was actually very simple and each ended up being around 8-10 features to create the product.  With the aggregated repository, we had a single repository in each POM where the versions for the features were determined and filled out.  Using the tycho-packaging-plugin and the tycho-p2-director plugin, we were able to automate the build of the corresponding p2 repositories which resulted from the Tycho builds.</p>
+
+<h3>Mirrors + Targets</h3>
+
+<p>Being the kind citizens that we are, we didn&rsquo;t want to abuse the Eclipse p2 release repository (also we didn&rsquo;t want them to cut us off like Maven Central).  To be good citizens in this build world, we decided we needed to mirror the Eclipse repositories ourselves.  Luckily for us, Tycho developers had already anticipated that need!  By using the <a href="http://wiki.eclipse.org/Tycho/Additional_Tools">tycho-p2-extras-plugin</a>, we were able to easily automate the mirroring of the required features from the Eclipse release repository.  Score (another) 1 for Tycho.</p>
+
+<p>As part of the process for deploying these mirrors, we actually used the build-helper-plugin to deploy .target files to point to the mirrors into our maven repository.</p>
+
+<h3>Why not bundles?</h3>
+
+<p>The all important question: Why didn&rsquo;t we do bundles?  The two biggest things stopping us from uplifting our bundles was the lack of an easy way to incorporate non bundle sources into builds and the difficulty in generating sites with code coverage for projects that use both Java and Groovy (a sad state of affairs I don&rsquo;t recommend).  In the end, these hurdles plus the amount of time it would take to uplift our own projects to match the expected build structure was a significant overhaul.  We decided that, for now, the maven-bnd-plugin and m2eclipse can support our needs well enough for bundle development.</p>
+
+<h2>From Custom Maven To Tycho</h2>
+
+<p>So I&rsquo;ve mentioned throughout this blog post about how we moved from custom maven to tycho; so what does that mean exactly?  Back at the dawn of time (as I reckon it, others may know it as 2007), Cerner set down the path of doing Eclipse RCP development.  At the time, there weren&rsquo;t many good tools to automate your PDE builds.  Until very recently, most of the Eclipse projects have used Ant as their build system.  For our ecosystem and needs, it was Maven or bust.  So we set about creating plugins that would help us at all levels of the build.  Maven plugins were created for all of the following actions:</p>
+
+<ul>
+<li>Creating prodcuts</li>
+<li>Creating Manifests for bundles</li>
+<li>Running OSGi tests</li>
+<li>Generating OSGi diff reports (on the manifests)</li>
+<li>Accessing mirrored Eclipse instances</li>
+<li>Generating target platforms based on POM configuration</li>
+</ul>
+
+
+<p>This turned out to be a rather extensive amount of work.  The model worked relatively successfully until a consumer came along with a set of requirements that read an awful lot like: &ldquo;we&rsquo;d like P2 integration included if we move to the iAware platform&rdquo;.  This threw a wrench in our system, because while P2 can work (and does) work by simply using .product files to define content sets, we had no tooling to generate P2 repositories.  We also had no mechanisms that would allow us to update only parts of their application (since this was 5 development teams working in tandem to produce a single assembly).  When all of this converged, we realized our build system had become insufficient and it was time to explore alternatives.  As you can see from the path we took, we started with the least intrusive changes and scaled up from there.  As of this blog, iAware is preparing for the first release using features and products.</p>
+
+<h2>How do we deploy?</h2>
+
+<p>Get ready for one ugly POM configuration:</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2013-03-27-cerner-and-tycho/P2-PomConfiguration-Edit2.png" title="P2 POM Configuration" ></p>
+
+<p>If that isn&rsquo;t enough to scare you, I don&rsquo;t know what is.  I wrote it and it terrifies me.  What it really means though is that I haven&rsquo;t found a great way for deploying p2 repositories as part of the maven build process.  Options exist, such as deploying the zip file of the repository into the maven repo or writing shell scripts to automate the deployment, but neither of these sat well with me.  So I went for the least distasteful choice and wrote some basic ant scripts :).</p>
+
+<p>All in all, Tycho has become a large part of our development ecosystem.  This blog only really touches the surface, but Tycho has become integral at all stages (besides bundle dev) to managing our assemblies.  So, thank you Tycho contributors!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Near Real-time Processing Over Hadoop and HBase]]></title>
+    <link href="http://engineering.cerner.com/2013/02/near-real-time-processing-over-hadoop-and-hbase/"/>
+    <updated>2013-02-27T00:00:00-06:00</updated>
+    <id>http://engineering.cerner.com/2013/02/near-real-time-processing-over-hadoop-and-hbase</id>
+    <content type="html"><![CDATA[<h2>From MapReduce to realtime</h2>
+
+<p>This post covers much of the <a href="http://na.apachecon.com/schedule/presentation/161/">Near-Realtime Processing Over HBase</a> talk I’m giving at <a href="http://na.apachecon.com/">ApacheCon NA 2013</a> in blog form. It also draws from the <a href="http://strataconf.com/stratany2012/public/schedule/detail/25387">Hadoop, HBase, and Healthcare</a> talk from StrataConf/Hadoop World 2012.</p>
+
+<p>The first significant use of Hadoop at Cerner came in building search indexes for patient charts. While creation of simple search indexes is almost commoditized, we wanted a better experience based on clinical semantics. For instance, if a user searches for &ldquo;heart disease&rdquo; and a patient has &ldquo;myocardial infarction&rdquo; documented, that document should be highly ranked in the results.</p>
+
+<p>Analyzing and semantically annotating can be computationally expensive, especially when building indexes that could grow into the billions. Algorithms in this space may be discussed in a future blog post, but for now we focus on creation of an infrastructure up to the computational demands. For this, Hadoop is a great fit. A search index is logically a function of a set of input data, and MapReduce allows us to apply such functions in parallel across an arbitrarily large data set.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2013-02-27-near-real-time-processing-over-hadoop-and-hbase/chart-search-screen.png" title="Chart Search" ></p>
+
+<h4>A trend towards competing needs</h4>
+
+<p>The above pattern is powerful but creates a nice problem to have: people want the output of the processing &mdash; in this case, updates to search indexes &mdash; faster. Since we cannot run a MapReduce job over our entire data set every millisecond, we encounter competing needs; the need to <em>process all data holistically</em> conflicts with the need to <em>quickly apply incremental updates</em> to that processing.</p>
+
+<p>This difference may seem simple, but has deep implications.  For instance:</p>
+
+<ul>
+<li><p>With MapReduce we can move our computation to the data, but fast updates require moving data to computation.</p></li>
+<li><p>MapReduce jobs produce output as a pure function of the input; realtime processing needs to handle outdated state. For instance, we build a phone book and a name changes from Smith to Jones, realtime processing must remove the outdated entry, whereas MapReduce simply rebuilds the whole phone book.</p></li>
+<li><p>MapReduce jobs often assume a static set of complete data, whereas realtime processing may see partial data or new data introduce in an unexpected order.</p></li>
+</ul>
+
+
+<p>And despite these differences, our processing output must be the identical; we need to apply the same logic across very different processing models.</p>
+
+<h2>Realtime and batch layers</h2>
+
+<p>These significant differences mean different processing infrastructures. Nathan Marz described this well in his <a href="http://nathanmarz.com/blog/how-to-beat-the-cap-theorem.html">How to Beat the CAP Theorem</a> post. The result is a system that uses complementary technologies: stream-based processing with <a href="http://storm-project.net/" title="">Storm</a> and batch processing with Hadoop.</p>
+
+<p>Interestingly, <a href="http://hbase.apache.org/" title="">HBase</a> sits at a juncture between realtime and batch processing models. It offers aspects of batch processing; computation can be moved to the data via direct MapReduce support. It also supports realtime patterns with random access and fast</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2013-02-27-near-real-time-processing-over-hadoop-and-hbase/realtime-layer-batch-layer.png" title="Realtime and Batch Layers" ></p>
+
+<p>reads and writes. So our realtime and batch layers can be viewed like this:</p>
+
+<ol>
+<li>Data entering the system is persisted in HBase.</li>
+<li>MapReduce jobs are used to create artifacts useful to consumers at scale.</li>
+<li>Incremental updates are handled in realtime by processing updates to HBase in a Storm cluster, and are applied to the artifacts produced by MapReduce jobs.</li>
+</ol>
+
+
+<h2>Processing HBase updates in realtime</h2>
+
+<p>So new data lands in HBase but how does Storm know to process it? There is precedent here. Google’s <a href="http://research.google.com/pubs/pub36726.html">Percolator paper</a> describes a technique for doing so over BigTable: it writes a notification entry to a column family whenever a row changes. Processing components scan for notifications and process them as they enter the system.</p>
+
+<p>This is the general approach we have taken to initiate processing in Storm. Google’s Percolator strategy does not translate directly to HBase. Differences in the way regions are managed versus BigTable tables made using a different column family impractical. So we use a separate &ldquo;notification&rdquo; table to track changes to the original.  Updates to HBase go through an API that writes notification entries as well as the data itself. We then wrote a specialized Storm spout that scans the notification table to initiate processing of updates.</p>
+
+<p>The result is processing infrastructure like this, with Storm Spouts and bolts complementing conventional MapReduce processing:</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2013-02-27-near-real-time-processing-over-hadoop-and-hbase/processing-diagram.png" title="Processing Diagram" ></p>
+
+<p>The processed data model may be another set of HBase tables, a relational database, or some other data store. Its design should be centered on the needs of the applications and services, letting the processing infrastructure build data for those needs. It is important to note that MapReduce output should be done with a bulk load operation in order to avoid saturating the processed data store with individual updates.</p>
+
+<p>This basic model turns out to be robust. Volume spikes from source systems can be spread throughout the HBase cluster. There are a couple key steps for success here:</p>
+
+<ul>
+<li><p>Regular major compactions on the notification HBase tables are essential. Without major compactions, completed notifications will pile up and performance of the system will gradually degrade.</p></li>
+<li><p>The notification tables themselves may be small in size, but should be aggressively split across the cluster. This spreads load to handle volume spikes and improve concurrency.</p></li>
+</ul>
+
+
+<p>Also note that MapReduce is still an important part of the system. It’s simply a better tool for batch operations like bringing a new data set online or re-processing an existing data set with new logic.</p>
+
+<h2>Measure Everything</h2>
+
+<p>There are a number of moving parts in this system, and good measurements are the best way to ensure it’s working well. For example, in development we found our HBase Region Servers would encounter frequent but short-lived process queues during heavy load. This didn’t look like an issue in HBase, but when we measured the performance of the calling process there was a noticeable degradation. The point is, instrumentation built into Hadoop and HBase are great but not sufficient. Measuring the observed performance at all layers is important to create an optimal system.</p>
+
+<p>There are many good technologies for doing so. We generally use the <a href="https://github.com/codahale/metrics">Metrics API</a> by Coda Hale. Here is an example of HBase client throughput using an instrumented implementation of HTableInterface. The data is collected by the Metrics API and displayed with <a href="http://graphite.wikidot.com/">Graphite</a>:</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2013-02-27-near-real-time-processing-over-hadoop-and-hbase/measure-everything.png" title="Measure Everything" ></p>
+
+<h2>Different models, same logic</h2>
+
+<p>The same logic needs to be applied to both batch and stream processing despite the necessary differences in infrastructure. This is a challenge since the models speak very different languages: InputFormats describe an immutable and complete set of data, whereas event streams expose incremental changes without context.</p>
+
+<p>It turns out the function is the only real commonality between them; simply taking a subset of input and returning useful output. So, our strategy is this:</p>
+
+<p><em>Build all logic as a set of simple functions, then compose and coordinate those functions with higher-level processing libraries.</em></p>
+
+<p>We use Storm to compose our realtime processing and Apache Crunch to compose our MapReduce jobs. Here are some lessons we have learned to apply this strategy effectively:</p>
+
+<h4>Minimize intermediate state</h4>
+
+<p>Persisting intermediate state can be expensive and creates complex relationships between moving parts. This is particularly true if a MapReduce job creates intermediate state used by realtime processing or vice versa. Instead, keep processing pipelines independent whenever possible and combine the results at the end.</p>
+
+<h4>Isolate processing models</h4>
+
+<p>Our MapReduce jobs are typically run on separate infrastructure than realtime processing to ensure expensive jobs do not saturate time-critical processing.</p>
+
+<h4>Be aware of the semantic differences in the processing models</h4>
+
+<p>A &ldquo;join&rdquo; in a MapReduce job sees all data, whereas a &ldquo;join&rdquo; in stream processing gets incremental subsets. If a function needs the full context to execute, that context must be externally loaded in the realtime processing system. In our case, external state is loaded from HBase and cached, but projects like <a href="http://engineering.twitter.com/2012/08/trident-high-level-abstraction-for.html">Trident</a> are now providing some aggregation facilities over storm as well.</p>
+
+<h2>The path forward</h2>
+
+<p>The patterns here have been successful but require significant scaffolding and infrastructure to bring together. Near-realtime processing demands over big data are bound to increase, which means there is an opportunity here; higher level abstractions should emerge. Similar to how tools like Crunch and Hive offer abstractions over MapReduce, it’s likely that similar primitives can express the patterns described here.</p>
+
+<p>How these higher abstractions emerge remains to be seen, but there is one thing I’m sure of: it’s going to be fun.</p>
+
+<h2>Acknowledgments</h2>
+
+<p>I’d like to acknowledge key contributors to building this and related systems: Jason Bray, Ben Brown, Robert Farr, Preston Koprivica, Swarnim Kulkarni, Kyle McGovern, Andrew Olson, Mike Richards, Micah Whitacre, Greg Whitsitt, and others.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Evangelizing User Experience]]></title>
+    <link href="http://engineering.cerner.com/2013/02/evangelizing-user-experience/"/>
+    <updated>2013-02-12T00:00:00-06:00</updated>
+    <id>http://engineering.cerner.com/2013/02/evangelizing-user-experience</id>
+    <content type="html"><![CDATA[<p>In the dark ages of development, great software meant packing in the functionality. People began doing more and more with their software. Updates meant newer and more exciting functionality. Sounds great, right? Of course it does, but something went horribly wrong. Slowly we became inundated with cluttered screens as software developers struggled to find a place to put their latest innovative functionality. Buttons began adding up and before we knew it, we were inventing user interface controls like ribbons to hold all the buttons.</p>
+
+<p><em><strong>On the bright side, things can only get better from here.</strong></em>__</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2013-02-12-evangelizing-user-experience/roadNotes_before.png" title="RoadNotes" ></p>
+
+<p>Somewhere along the straight and narrow path to UI nirvana, we strayed. Distracted by the allure of &ldquo;doing more,&rdquo; we forgot to question why more needed to be done in the first place. We overlooked the importance of designing how something should be done because we were busy discovering new things to do. And, most importantly, we failed to include the user in the development process. Instead, we used inaccurate perceptions and engineering constraints to dictate how users should interact with our solutions.</p>
+
+<p>Fortunately, software developers everywhere are beginning to see the light.</p>
+
+<p>We are entering a new golden age of software solutions—one where the greatness of software is not measured by the number of functions, but by its ease of use. Usability is in the spotlight more now than ever before. Perhaps you&rsquo;ve caught wind of some of these buzz words lately: Usability, User Experience, Interaction Design, Emotional Designer, and User-Centered Design. Generally speaking, they all point to the same thing: making software easier, more elegant, more intuitive, and (dare I say) more enjoyable to use.</p>
+
+<p>Interaction designers may be the instigators of software development’s Great Awakening, but user experience experts cannot do the job alone. It takes a great team to bring everything together and produce an exceptional product. Without user-focused engineering, great ideas and concepts would never come to life, regardless of their theoretical merit. If leadership is not committed to doing whatever it takes to ensure the users have an intuitive, enjoyable experience with our solutions, entire projects and initiatives would never see the light of day. On the other hand, having a team of leaders, designers, and engineers working to produce software that users will love, can produce incredible results.</p>
+
+<p>The creators of Paper by FiftyThree, Apple’s iOS App of the Year, understand the importance of working together to produce an awesome experience. The results of their work speak for themselves. Watch this short video to catch a glimpse of their development culture and ideals:</p>
+
+<iframe width="560" height="315" class="aligncenter" frameborder="0" src="https://www.youtube-nocookie.com/embed/pCoIeqgQoJ4?rel=0"></iframe>
+
+
+<p>We are about to make a big splash of our own in the world of iOS with the eminent release of a new iPad app for ambulatory physicians. Designing fast, smart, and easy workflows, and creating an elegantly robust and beautifully simple interface to go with them has helped foster the rapidly growing culture of flawless execution at Cerner. From the outset of the iOS initiative, user-centered design has been the main focus. We created simple and intuitive interactions for complex user processes. Then, when we thought we had it right, our team of user researchers ran our designs through extensive usability testing, which validated our concepts or helped us discover where we could improve. Based on their feedback, we tweaked the designs, and re-tested. We rinsed and repeated. We are confident that our clients will be pleased. Why? Because we’ve been talking to them throughout the entire process.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2013-02-12-evangelizing-user-experience/pcTouch1.png" title="PowerChart Touch Ambulatory" ></p>
+
+<p>For Paper by FiftyThree, success means getting their users in touch with their creative side. At Cerner, producing amazing software solutions ultimately means improving the workflows of clinicians across the world, which impacts the health and wellbeing of countless individuals. We have a mission, and that mission is to make our solutions intuitive enough so that they simply fade into the background, allowing clinicians to focus on what is truly important: their patients.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Why Engineering Health?]]></title>
+    <link href="http://engineering.cerner.com/2013/02/why-engineering-health/"/>
+    <updated>2013-02-04T00:00:00-06:00</updated>
+    <id>http://engineering.cerner.com/2013/02/why-engineering-health</id>
+    <content type="html"><![CDATA[<p>Hello and welcome to a public face for Cerner Engineering, by Cerner Engineering associates, to talk about engineering, technology, and all of the other awesome things we do.</p>
+
+<p>Cerner has been recognized as a visionary company, transforming the delivery of healthcare around the world. Improving the health of individuals and the delivery of care is an extremely large, complex, ever-changing problem. Along with the efforts of our strategists and consultant organizations, solving this problem takes a ton of smart folks in our Engineering and CernerWorks Hosting organizations, who are free to play with, adopt, and embrace new technologies and ways of working.</p>
+
+<p>Speaking of working differently, I’m currently at a coffee shop, writing this introduction post on my Cerner-issued Mac. I’ve completed a few code reviews for my team online using <a href="http://www.atlassian.com/software/crucible">Crucible</a>, and have been pushing minor tweaks to the code behind this website to our <a href="https://enterprise.github.com/">GitHub Enterprise</a> instance. We collaborate on changes internally as well as directly with our clients using our <a href="http://www.jivesoftware.com/resources/customer-case-studies/cerner/">Jive-powered</a> <a href="https://connect.ucern.com">uCern Connect</a> site.</p>
+
+<p>But it’s more than just how cool is my day&hellip; Cerner understands the value in participating in a meaningful dialog about technology, sharing our discoveries, and learning from our peers in the industry. That’s why this summer our Engineering organization will be holding it’s 3rd annual DevCon, where all of our Engineering associates take two days away from their normal work to present and share their ideas and discoveries with each other. Cerner holds regular Hack Nights, where pizza and drinks are provided to get people together to try out new ideas and new technologies and solve things that may or may not apply to our usual work. Cerner also sends associates to attend and present not only at conferences around technologies we already use, such as <a href="http://na.apachecon.com/">ApacheCon</a>, <a href="http://www.eclipsecon.org/">EclipseCon</a>, <a href="https://us.pycon.org">PyCon</a>, <a href="http://railsconf.com/">RailsConf</a> and <a href="https://developer.apple.com/wwdc/">WWDC</a>, but also at conferences around new technologies and ways of thinking like <a href="http://www.computemidwest.com/">Compute Midwest</a>, <a href="https://thestrangeloop.com/">Strange Loop</a> and <a href="http://sxsw.com/interactive">SXSW</a>.</p>
+
+<p>In a similar vein, by launching this Engineering Health site, we hope to provide transparency to our internal organizations, as well create another way to connect to the broader community involved in solving big problems with software and technology. You will see that in addition to being a leader in the healthcare industry, Cerner is also at the forefront of software technologies. With our <a href="http://engineering.cerner.com/2013/02/composable-mapreduce-with-hadoop-and-crunch/">inaugural blog post</a> from <a href="http://engineering.cerner.com/engineers/ryan-brush/">Ryan Brush</a>, you will get a taste for some cool ways we’re putting big data processing methods to work for some of our new initiatives. Future blog posts will get into other technologies used, lessons learned, and just fun things direct and unfiltered from our Engineering organization.</p>
+
+<p>I hope you enjoy this site, and feel free to connect with us on Twitter <a href="https://twitter.com/cernereng">@CernerEng</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Composable MapReduce With Hadoop and Crunch]]></title>
+    <link href="http://engineering.cerner.com/2013/02/composable-mapreduce-with-hadoop-and-crunch/"/>
+    <updated>2013-02-03T00:00:00-06:00</updated>
+    <id>http://engineering.cerner.com/2013/02/composable-mapreduce-with-hadoop-and-crunch</id>
+    <content type="html"><![CDATA[<p>Most developers know this pattern well: we design a set of schemas to represent our data, and then work with that data via a query language. This works great in most cases, but becomes a challenge as data sets grow to an arbitrary size and complexity. Data sets can become too large to query and update with conventional means.</p>
+
+<p>These challenges often arise with Hadoop, simply because Hadoop is a popular tool to tackle such data sets. It&rsquo;s tempting to apply our familiar patterns: design a data model in Hadoop and query it. Unfortunately, this breaks down for a couple of reasons:</p>
+
+<ol>
+<li>For a large and complex data set, no single data model can efficiently handle all queries against it.</li>
+<li>Even if such a model could be built, it would likely get bogged down in its own complexity and competing needs of different queries.</li>
+</ol>
+
+
+<p>So how do we approach this? Let&rsquo;s look to an aphorism familiar to long-term users of Hadoop:</p>
+
+<h2 align="center">
+<em>
+Start with the questions to be answered, then model the data to answer them.
+</em>
+</h2>
+
+
+<p>Related sets of applications and services tend to ask related questions. Applications doing interactive search queries against a medical record can use one data model, but detecting candidates for health management programs may need another. Both cases must have completely faithful representations of the original data.</p>
+
+<p>Another challenge is leveraging common processing logic between these representations: there may be initial steps of data normalization and cleaning that are common to all needs, and other steps that are useful for some cases. One strategy is for each shared piece of logic to write output to its own data store, which can then be picked up by another job. Oversimplifying, it may look like this:</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2013-02-03-composable-mapreduce-with-hadoop-and-crunch/diagram1.png" title="Diagram 1" ></p>
+
+<p>Such a model can be coordinated with Hadoop-based tools like <a href="http://oozie.apache.org/">Oozie</a>. But this model of persisting every processing stage and using them downstream has some drawbacks:</p>
+
+<ol>
+<li>The structure and location of each intermediate state must be externally defined, creating a barrier to easily leverage the output of one operation in another.</li>
+<li>Data is duplicated unnecessarily. If one of our processing steps requires intermediate data, we must persist it, even if it is used only by other processing steps. Ideally, we could just connect the processing steps without unnecessary persistence. (In some cases, Hadoop itself persists intermediate state for MapReduce jobs, but there are many useful jobs that don&rsquo;t need to do so.)</li>
+<li>Each step must be fully processed before the next step can run. Therefore, each processing step is only as fast as its slowest component.</li>
+<li>Each persistent state must use a data model that can be processed efficiently in bulk. This limits our options for the data store. We must choose something MapReduce friendly, rather than optimizing for the needs of application queries.</li>
+</ol>
+
+
+<p>So how do we solve this? Rather than making intermediate data stores as the point of reuse, let&rsquo;s reason about the system at a higher level: make abstract, distributed data collections our point of reuse for processing. A data collection is a set of data that can be persisted to an arbitrary store when it makes sense, or streamed between processing steps when no persistence is needed. One data collection can be converted to another by applying functions to it. So the above diagram may now look like this, where arrows are functions used to transform data collections:</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2013-02-03-composable-mapreduce-with-hadoop-and-crunch/diagram2.png" title="Diagram 2" ></p>
+
+<p>This has several advantages:</p>
+
+<ol>
+<li>Processing logic becomes reusable. By writing functions that consume and produce collections of data, we can efficiently share processing code as needed.</li>
+<li>Data no longer needs to be stored for processing purposes. We can choose to store it when there is some other benefit.</li>
+<li>The data models need not account for downstream processing; they can align to the needs of apps and services.</li>
+<li>Processing is significantly more efficient as it can stream from one collection to another.</li>
+</ol>
+
+
+<p>This model supports storing and launching processing from intermediate states, but it doesn&rsquo;t require it. Processing downstream items from a raw data set will probably be a regular occurrence, but that need not be the case for other collections.</p>
+
+<p>Perhaps the biggest advantage of this approach is that it makes MapReduce pipelines composable. Logic expressed as functions can be reused and chained together as necessary to solve a problem at hand. Any intermediate state can optionally be persisted, either as a cache of items expensive to process or an artifact useful to applications.</p>
+
+<h4>Implementation Strategy</h4>
+
+<p>So, how does this work?  Here are the key pieces:</p>
+
+<ul>
+<li>All processing input comes from a source. For Cerner, the source is typically data stored in Hadoop or HBase, but other implementations are possible.</li>
+<li>Each source is converted into a data collection, which is described above.</li>
+<li>One or more functions can be run against each data collection, converting it from one form to another. We&rsquo;ll discuss below how this be very efficient.</li>
+<li>Collections can be persisted at any point in the processing pipeline. The persisted collections could be used for external tooling, or simply as a means to cache the results of an expensive computation.</li>
+</ul>
+
+
+<p>Fortunately, a newer MapReduce framework supports this pattern well: <a href="http://incubator.apache.org/crunch/">Apache Crunch</a>, based on Google&rsquo;s <a href="http://dl.acm.org/citation.cfm?id=1806638">FlumeJava paper</a>, represents each data set as a sort of distributed collection, and allows them to be composed together with strongly-typed functions. The output of a Crunch pipeline may be a data model easily loaded into a RDBMs system, inverted index or queried via tools like Apache Hive.</p>
+
+<p>Crunch will also fuse steps in the processing pipeline whenever possible.  This means we can chain our functions together, and they&rsquo;ll automatically be run in the same process. This optimization is significant for many classes of jobs.  And although persisting intermediate state must be done by hand today, it will <a href="https://issues.apache.org/jira/browse/CRUNCH-145">likely be coming</a> in a future version of Crunch itself.</p>
+
+<h3>An end to direct MapReduce jobs</h3>
+
+<p>We may have reached the end of direct implementation of MapReduce jobs. Tools like Cascading and Apache Crunch offer excellent higher-level libraries, and Domain-Specific Languages like Hive and Pig allow the simple creation of queries or processing logic. Here at Cerner, we tend to use Crunch for pipeline processing and Hive for ad hoc queries of data in Hadoop.</p>
+
+<p>MapReduce is a powerful tool, but it may be best viewed as a building block. Composing functions across distributed collections that use MapReduce as its basis lets us reason and leverage our processing logic more effectively.</p>
+]]></content>
+  </entry>
+  
+</feed>

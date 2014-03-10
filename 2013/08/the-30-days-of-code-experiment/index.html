@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>The 30 Days of Code Experiment - Engineering Health</title>
+  <meta name="author" content="Cerner">
+
+  
+  <meta name="description" content="">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://engineering.cerner.com/2013/08/the-30-days-of-code-experiment">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/site/site.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <script src="/javascripts/libs/bootstrap.min.js"></script>
+
+  <link href="/atom.xml" rel="alternate" title="Engineering Health" type="application/atom+xml">
+  
+  
+
+</head>
+
+<body  class="top-navbar  ">
+  <header id="banner" class="navbar navbar-fixed-top" role="banner">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <a class="brand" href="/">
+        <img src="/images/logo2.png" title="Cerner Engineering Health">
+      </a>
+
+      <nav id="nav-main" class="nav-collapse" role="navigation">
+  <ul id="menu-top-menu" class="nav pull-right">
+    <li class="menu-life-as-an-engineer">
+      <a href="/about">Life as an Engineer</a>
+    </li>
+    <li class="menu-who-we-are">
+      <a href="/engineers">Who We Are</a>
+    </li>
+    <li>
+      <a href="/blog/archives">Archives</a>
+    </li>
+  </ul>      
+</nav>
+
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="span8 pull-left page-header">
+      <img class="site-header__img" src="/images/skyline2.png" alt="">    
+    </div>
+
+    
+      <div class="span4 pull-right"> 
+        <div id="search-form-wrapper">
+          <form class="form-search" id="searchform" role="search" action="https://google.com/search" method="get" >
+            <label class="hide" for="q">Search for:</label>
+            <input name="q" type="hidden" value="site:engineering.cerner.com" />
+            <input class="search-query" id="q" name="q" type="text" results="0" placeholder="Search">
+            <input class="btn" id="searchsubmit" type="submit" value="Search" >
+          </form>      
+        </div>
+      </div>
+    
+  </div>
+</div>
+
+  
+  <div class="container">
+    <div class="row-fluid">
+      
+<article id="main" class="hentry span8" role="article">
+
+  
+  <header class="entry-header">
+    
+      <h1 class="entry-title">The 30 Days of Code Experiment</h1>
+    
+    
+      <div class="entry-meta meta">
+        
+  
+  
+
+<span class="byline author vcard">Written by <a href="/engineers/carl-chesser"><span class="fn">Carl Chesser</span></a></span>
+ | 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-06T00:00:00-05:00" pubdate data-updated="true">Aug 6<span>th</span>, 2013</time>
+        
+      </div>
+    
+  </header>
+
+
+<div class="entry-content"><p>In software development, we solve problems. As we solve these problems, we build connections in our minds of how to look at a problem, relate it to previous problems and solutions, and re-apply past approaches and techniques.</p>
+
+<p>These behavior habits build dogmatic ways of thinking and limit design choices to selective technologies we’ve used in the past. As we all know, you have to continually learn new technologies and different ways of thinking to stay current in the ever-changing landscape of software development. Unfortunately, keeping up-to-date on technologies and approaches isn’t an easy behavior to maintain when you have many other priorities.</p>
+
+<p>This spring, a few engineers wanted to bring focus to this important behavior trait by giving a tech talk on &ldquo;Honing your Craft,&rdquo; which discussed how to continuously strengthen and refine skills. Not only did we want engineers that we work with on a daily basis to be part of the tech talk; we wanted engineers from other teams at Cerner to be involved too. Also, we didn’t just want to talk about it; we wanted to pose a challenge to put people into action and re-enforce these behaviors.</p>
+
+<p>At the end of the talk, we announced the challenge: 30 days of code. It was a challenge like many other &ldquo;30 day&rdquo; programs but was centered on learning new aspects of software development, languages, or just hacking up a tool that you find useful for your day-to-day development. The goal being that after 30 days, new habits and behaviors would be established to help promote continuous learning.</p>
+
+<p>To make this a social learning experience, we built a Ruby web application called &ldquo;mural&rdquo; using async_sinatra and eventmachine to consume our GitHub Enterprise instance and show gists, which contained a code comment of &ldquo;30_days_of_code&rdquo;. The result was really interesting. Similar to Twitter, where you follow a specific hashtag, we were following code snippets of fellow developers. Since most of them were gists, they were small enough so you could easily see what they were doing (without having to go through a mountain of code). With this dashboard, a score was calculated based on count of your posts and was displayed with your avatar. Having scores displayed in descending order added a little peer pressure to keep people active in challenge.</p>
+
+<p><img class="center" src="/assets/2013-08-06-the-30-days-of-code-experiment/30-Days-of-Code.png" width="30" title="Days of Code" ></p>
+
+<p>By the time I got back to my desk, I received questions of where the URL was to see the app, so they could verify their posts were showing. Soon, people wanted GitHub repos to show up with gists, so a pull request was requested for that. We then wanted anonymous gists to also get pulled in, which required developing our own crawler since these were exposed on the gist search. It was apparent that people wanted to share what they were doing, and people wanted to see it.</p>
+
+<p>At the end of the challenge, we returned to the auditorium to highlight some of the posts that came in over the past month. During the 30 days, we had 124 gists posted and 17 different contributions in repos. People were showing their skills over a wide range of technologies. Examples were:</p>
+
+<ul>
+<li><p>Building a plugin to invoke Jenkins commands over a phone (using Siri)</p></li>
+<li><p>Ruby scripts that interact with our Github Enterprise instance API that will send out emails when pull requests or branches are getting old (executed periodically through Jenkins)</p></li>
+<li><p>Clojure application that looks for pull requests based on Github organizations, which have two &ldquo;+1&rdquo; comments (alerting which pull request may be candidates to close out)</p></li>
+<li><p>Illustrating Crucible code interactions by extracting data with python and visualizing with D3
+Using Node.js to flash lights on a Raspberry Pi when a health check from web service is failing</p></li>
+<li><p>Presenting statistics from a storm cluster with Rickshaw</p></li>
+</ul>
+
+
+<p>Eleven people presented what they worked on and learned. It was amazing to see all of the different ideas people came up with in this time frame.</p>
+
+<p>Even more interesting was how quickly people learned from the ideas of others. Not only were developers sharing their code snippets, but they were also sharing the problem they were attempting to solve or the idea of what they wanted invent. For example, the Ruby script which alerted the last committer of a dead branch through email, spawned into other implementations that would send alerts based on different pieces of Github data (ex. old pull requests). Sharing these ideas in their early stages (through code snippets) really accelerates the rate that an idea can be seeded in other minds and helps inspire even more innovation and learning.</p>
+
+<p>This wasn&rsquo;t only a challenge of what we would build, but it was also an experiment of what can happen by taking a small portion of your day and doing something different. By structuring this exercise around a formal challenge that included a competitive aspect, there was additional motivation to get involved and stay involved to the end.</p>
+
+<p>In summary, find a way to take a little time out of your day to try something different; you will be amazed with the different perspectives that you gain.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+  
+
+<span class="byline author vcard">Written by <a href="/engineers/carl-chesser"><span class="fn">Carl Chesser</span></a></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-06T00:00:00-05:00" pubdate data-updated="true">Aug 6<span>th</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    
+    <ul class="pager">
+      
+      <li class="previous"><a class="basic-alignment left"
+        href="/2013/07/thinking-in-mapreduce/" title="Previous Post:
+        Thinking in MapReduce">&laquo; Previous Post</a></li>
+      
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      
+      <li class="next"><a class="basic-alignment right" href="/2013/08/devacademy/"
+        title="Next Post: DevAcademy">Next Post &raquo;</a></li>
+      
+    </ul>
+  </footer>
+</article>
+
+<aside class="sidebar-nav span4">
+  
+    <section class="well">
+  <h2>Recent Posts</h2>
+  <ul id="recent_posts" class="nav nav-list">
+    
+      <li class="post">
+        <a href="/2014/01/sponsoring-the-apache-software-foundation/">Sponsoring the Apache Software Foundation</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2014/01/the-raft-protocol-a-better-paxos/">The Raft Protocol: A Better Paxos?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2014/01/cerner-and-open-source/">Cerner and Open Source</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/11/cerner-tech-talks/">Cerner Tech Talks</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/11/2013-software-intern-hackfest/">2013 Software Intern Hackfest</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section class="well">
+  <h2>GitHub Repos</h2>
+  <ul id="gh_repos" class="nav">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/cerner">@cerner</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'cerner',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo" class="page-footer">
+  <div class="container">
+    <p>&copy; 2014 Cerner</p>
+  </div>
+</footer>
+
+  
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

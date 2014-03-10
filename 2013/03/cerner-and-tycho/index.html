@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Cerner and Tycho - Engineering Health</title>
+  <meta name="author" content="Cerner">
+
+  
+  <meta name="description" content="">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://engineering.cerner.com/2013/03/cerner-and-tycho">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/site/site.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <script src="/javascripts/libs/bootstrap.min.js"></script>
+
+  <link href="/atom.xml" rel="alternate" title="Engineering Health" type="application/atom+xml">
+  
+  
+
+</head>
+
+<body  class="top-navbar  ">
+  <header id="banner" class="navbar navbar-fixed-top" role="banner">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <a class="brand" href="/">
+        <img src="/images/logo2.png" title="Cerner Engineering Health">
+      </a>
+
+      <nav id="nav-main" class="nav-collapse" role="navigation">
+  <ul id="menu-top-menu" class="nav pull-right">
+    <li class="menu-life-as-an-engineer">
+      <a href="/about">Life as an Engineer</a>
+    </li>
+    <li class="menu-who-we-are">
+      <a href="/engineers">Who We Are</a>
+    </li>
+    <li>
+      <a href="/blog/archives">Archives</a>
+    </li>
+  </ul>      
+</nav>
+
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="span8 pull-left page-header">
+      <img class="site-header__img" src="/images/skyline2.png" alt="">    
+    </div>
+
+    
+      <div class="span4 pull-right"> 
+        <div id="search-form-wrapper">
+          <form class="form-search" id="searchform" role="search" action="https://google.com/search" method="get" >
+            <label class="hide" for="q">Search for:</label>
+            <input name="q" type="hidden" value="site:engineering.cerner.com" />
+            <input class="search-query" id="q" name="q" type="text" results="0" placeholder="Search">
+            <input class="btn" id="searchsubmit" type="submit" value="Search" >
+          </form>      
+        </div>
+      </div>
+    
+  </div>
+</div>
+
+  
+  <div class="container">
+    <div class="row-fluid">
+      
+<article id="main" class="hentry span8" role="article">
+
+  
+  <header class="entry-header">
+    
+      <h1 class="entry-title">Cerner and Tycho</h1>
+    
+    
+      <div class="entry-meta meta">
+        
+  
+  
+
+<span class="byline author vcard">Written by <a href="/engineers/jonny-wright"><span class="fn">Jonny Wright</span></a></span>
+ | 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-27T00:00:00-05:00" pubdate data-updated="true">Mar 27<span>th</span>, 2013</time>
+        
+      </div>
+    
+  </header>
+
+
+<div class="entry-content"><h2>Introduction</h2>
+
+<p><a href="http://eclipse.org/tycho/">Tycho</a> is a build tool for integration between <a href="http://www.eclipse.org/pde/">PDE</a> and <a href="http://maven.apache.org/">Maven</a>.  Cerner has a long history of working with <a href="http://www.eclipse.org/home/categories/rcp.php">Eclipse RCP</a> but <a href="http://www.eclipse.org/equinox/p2/">P2</a> integration is something of a more recent phenomenon.  This post is going to talk about how Cerner is using Tycho, what prompted our transition to Tycho and how we accomplished moving our build to using Tycho.</p>
+
+<h2>Why we use Tycho</h2>
+
+<p>The first question when evaluating any tool is asking yourself: &ldquo;why would I use that&rdquo;?  In our case, Cerner already has an extensive Maven ecosystem.  For years it has been common practice, when developing Java, to use Maven as the go to build, site, and deployment tool.  What we needed was a set of extensions that allowed us to use all the facets of Maven while creating PDE artifacts.  Traditionally, the set of PDE artifacts that we needed to create and manage was limited to products, targets, and bundles.  Using the Maven conventions, we could build out all of these PDE artifacts while allowing the Maven POM to be the single source of truth for most build projects.  This worked well enough until we needed to rework our assemblies to be comprised of features, inserting another PDE artifact into the build lifecycle.</p>
+
+<p>When we first began RCP development, no tooling existed to help us with creating PDE artifacts through Maven, so we created our own.  When the time came to start integrating additional PDE concepts, so that we could begin the path of integrating with P2 director, there was Tycho.</p>
+
+<h2>How we use Tycho</h2>
+
+<p>We use tycho generally to build the following set of PDE artifacts:</p>
+
+<ul>
+<li>Products</li>
+<li>Features</li>
+<li>Mirrors + Targets</li>
+<li>Mirrors</li>
+</ul>
+
+
+<p>While the mirrors are not technically Eclipse artifacts, we use Tycho to mirror the Eclipse (for now Juno) repositories so that our builds are not hammering the Eclipse update site.  When you have 10&rsquo;s to 100&rsquo;s of users updating targets and running builds, it is just common courtesy to have your own mirror.</p>
+
+<h3>Features</h3>
+
+<p>We began our journey with Tycho by using it to generate P2 repositories from feature definitions.  The bulk of the heavy lifting is accomplished through the use of the tycho-packaging-plugin (as well as the base plugin, tycho-maven-plugin).  Since we deploy all of our plugins through maven, it is ideal to have Maven (Tycho in this case) do the dependency resolution for us and fill out the contents of our feature.  It also does all the work of turning that feature into a p2 repository.</p>
+
+<p>This was actually a nontrivial exercise for us.  While we could have used a single feature definition, we tightly controll the dependencies that are pulled into our assembly.  Therefore, as we looked to breakdown our feature definition it was more complicated than simply pulling in the Juno feature and heaping everything into a feature on top of that.  Since we only use a subset of the Eclipse platform, we only want to pull forward the pieces we use explicitly (we also ran into some rather strange behavior with the Eclipse Jetty features).  We wanted to define the features in such a way that consumers of our platform could select a single feature that represented our core platform + Eclipse (as well as layer in additional functionality related to building their application).  In the end, we defined a set of about 20 features that rolled into a single working repository.  This way, consumers only needed to know the location of a single repository and then could use the metadata in the features to determine which features they needed.</p>
+
+<h3>Products</h3>
+
+<p>Starting at features made sense because there was no existing infrastructure for us to overhaul to build out the features.  The products were a different story.  With the products, we had an entire set of plugins that managed which version of Eclipse was pulled in for the product, how the .product was generated, and how we rolled that into an .exe.</p>
+
+<p>The extra time we took in order to define the features thoroughly actually made this process significantly easier.  Today, we build a set of 8 applications:</p>
+
+<ul>
+<li>CareAware Criticalcare Dashboard</li>
+<li>CareAware Criticalcare Personalized</li>
+<li>CareAware Infusion Management Dashboard</li>
+<li>CareAware Infusion Management Personalized</li>
+</ul>
+
+
+<p>Each of these products also has a corresponding mock build (where we substitute in mock resources to populate data for our views).  The definitions of these products was actually very simple and each ended up being around 8-10 features to create the product.  With the aggregated repository, we had a single repository in each POM where the versions for the features were determined and filled out.  Using the tycho-packaging-plugin and the tycho-p2-director plugin, we were able to automate the build of the corresponding p2 repositories which resulted from the Tycho builds.</p>
+
+<h3>Mirrors + Targets</h3>
+
+<p>Being the kind citizens that we are, we didn&rsquo;t want to abuse the Eclipse p2 release repository (also we didn&rsquo;t want them to cut us off like Maven Central).  To be good citizens in this build world, we decided we needed to mirror the Eclipse repositories ourselves.  Luckily for us, Tycho developers had already anticipated that need!  By using the <a href="http://wiki.eclipse.org/Tycho/Additional_Tools">tycho-p2-extras-plugin</a>, we were able to easily automate the mirroring of the required features from the Eclipse release repository.  Score (another) 1 for Tycho.</p>
+
+<p>As part of the process for deploying these mirrors, we actually used the build-helper-plugin to deploy .target files to point to the mirrors into our maven repository.</p>
+
+<h3>Why not bundles?</h3>
+
+<p>The all important question: Why didn&rsquo;t we do bundles?  The two biggest things stopping us from uplifting our bundles was the lack of an easy way to incorporate non bundle sources into builds and the difficulty in generating sites with code coverage for projects that use both Java and Groovy (a sad state of affairs I don&rsquo;t recommend).  In the end, these hurdles plus the amount of time it would take to uplift our own projects to match the expected build structure was a significant overhaul.  We decided that, for now, the maven-bnd-plugin and m2eclipse can support our needs well enough for bundle development.</p>
+
+<h2>From Custom Maven To Tycho</h2>
+
+<p>So I&rsquo;ve mentioned throughout this blog post about how we moved from custom maven to tycho; so what does that mean exactly?  Back at the dawn of time (as I reckon it, others may know it as 2007), Cerner set down the path of doing Eclipse RCP development.  At the time, there weren&rsquo;t many good tools to automate your PDE builds.  Until very recently, most of the Eclipse projects have used Ant as their build system.  For our ecosystem and needs, it was Maven or bust.  So we set about creating plugins that would help us at all levels of the build.  Maven plugins were created for all of the following actions:</p>
+
+<ul>
+<li>Creating prodcuts</li>
+<li>Creating Manifests for bundles</li>
+<li>Running OSGi tests</li>
+<li>Generating OSGi diff reports (on the manifests)</li>
+<li>Accessing mirrored Eclipse instances</li>
+<li>Generating target platforms based on POM configuration</li>
+</ul>
+
+
+<p>This turned out to be a rather extensive amount of work.  The model worked relatively successfully until a consumer came along with a set of requirements that read an awful lot like: &ldquo;we&rsquo;d like P2 integration included if we move to the iAware platform&rdquo;.  This threw a wrench in our system, because while P2 can work (and does) work by simply using .product files to define content sets, we had no tooling to generate P2 repositories.  We also had no mechanisms that would allow us to update only parts of their application (since this was 5 development teams working in tandem to produce a single assembly).  When all of this converged, we realized our build system had become insufficient and it was time to explore alternatives.  As you can see from the path we took, we started with the least intrusive changes and scaled up from there.  As of this blog, iAware is preparing for the first release using features and products.</p>
+
+<h2>How do we deploy?</h2>
+
+<p>Get ready for one ugly POM configuration:</p>
+
+<p><img class="center" src="/assets/2013-03-27-cerner-and-tycho/P2-PomConfiguration-Edit2.png" title="P2 POM Configuration" ></p>
+
+<p>If that isn&rsquo;t enough to scare you, I don&rsquo;t know what is.  I wrote it and it terrifies me.  What it really means though is that I haven&rsquo;t found a great way for deploying p2 repositories as part of the maven build process.  Options exist, such as deploying the zip file of the repository into the maven repo or writing shell scripts to automate the deployment, but neither of these sat well with me.  So I went for the least distasteful choice and wrote some basic ant scripts :).</p>
+
+<p>All in all, Tycho has become a large part of our development ecosystem.  This blog only really touches the surface, but Tycho has become integral at all stages (besides bundle dev) to managing our assemblies.  So, thank you Tycho contributors!</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+  
+
+<span class="byline author vcard">Written by <a href="/engineers/jonny-wright"><span class="fn">Jonny Wright</span></a></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-27T00:00:00-05:00" pubdate data-updated="true">Mar 27<span>th</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    
+    <ul class="pager">
+      
+      <li class="previous"><a class="basic-alignment left"
+        href="/2013/02/near-real-time-processing-over-hadoop-and-hbase/" title="Previous Post:
+        Near Real-time Processing Over Hadoop and HBase">&laquo; Previous Post</a></li>
+      
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      
+      <li class="next"><a class="basic-alignment right" href="/2013/03/modularity-in-medical-imaging/"
+        title="Next Post: Modularity in Medical Imaging">Next Post &raquo;</a></li>
+      
+    </ul>
+  </footer>
+</article>
+
+<aside class="sidebar-nav span4">
+  
+    <section class="well">
+  <h2>Recent Posts</h2>
+  <ul id="recent_posts" class="nav nav-list">
+    
+      <li class="post">
+        <a href="/2014/01/sponsoring-the-apache-software-foundation/">Sponsoring the Apache Software Foundation</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2014/01/the-raft-protocol-a-better-paxos/">The Raft Protocol: A Better Paxos?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2014/01/cerner-and-open-source/">Cerner and Open Source</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/11/cerner-tech-talks/">Cerner Tech Talks</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/11/2013-software-intern-hackfest/">2013 Software Intern Hackfest</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section class="well">
+  <h2>GitHub Repos</h2>
+  <ul id="gh_repos" class="nav">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/cerner">@cerner</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'cerner',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo" class="page-footer">
+  <div class="container">
+    <p>&copy; 2014 Cerner</p>
+  </div>
+</footer>
+
+  
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

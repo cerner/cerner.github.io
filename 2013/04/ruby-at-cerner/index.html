@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Ruby at Cerner - Engineering Health</title>
+  <meta name="author" content="Cerner">
+
+  
+  <meta name="description" content="">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://engineering.cerner.com/2013/04/ruby-at-cerner">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/site/site.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <script src="/javascripts/libs/bootstrap.min.js"></script>
+
+  <link href="/atom.xml" rel="alternate" title="Engineering Health" type="application/atom+xml">
+  
+  
+
+</head>
+
+<body  class="top-navbar  ">
+  <header id="banner" class="navbar navbar-fixed-top" role="banner">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <a class="brand" href="/">
+        <img src="/images/logo2.png" title="Cerner Engineering Health">
+      </a>
+
+      <nav id="nav-main" class="nav-collapse" role="navigation">
+  <ul id="menu-top-menu" class="nav pull-right">
+    <li class="menu-life-as-an-engineer">
+      <a href="/about">Life as an Engineer</a>
+    </li>
+    <li class="menu-who-we-are">
+      <a href="/engineers">Who We Are</a>
+    </li>
+    <li>
+      <a href="/blog/archives">Archives</a>
+    </li>
+  </ul>      
+</nav>
+
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="span8 pull-left page-header">
+      <img class="site-header__img" src="/images/skyline2.png" alt="">    
+    </div>
+
+    
+      <div class="span4 pull-right"> 
+        <div id="search-form-wrapper">
+          <form class="form-search" id="searchform" role="search" action="https://google.com/search" method="get" >
+            <label class="hide" for="q">Search for:</label>
+            <input name="q" type="hidden" value="site:engineering.cerner.com" />
+            <input class="search-query" id="q" name="q" type="text" results="0" placeholder="Search">
+            <input class="btn" id="searchsubmit" type="submit" value="Search" >
+          </form>      
+        </div>
+      </div>
+    
+  </div>
+</div>
+
+  
+  <div class="container">
+    <div class="row-fluid">
+      
+<article id="main" class="hentry span8" role="article">
+
+  
+  <header class="entry-header">
+    
+      <h1 class="entry-title">Ruby at Cerner</h1>
+    
+    
+      <div class="entry-meta meta">
+        
+  
+  
+
+<span class="byline author vcard">Written by <a href="/engineers/cernereng"><span class="fn">cernereng</span></a></span>
+ | 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-05T00:00:00-05:00" pubdate data-updated="true">Apr 5<span>th</span>, 2013</time>
+        
+      </div>
+    
+  </header>
+
+
+<div class="entry-content"><p>Cerner&rsquo;s journey with Ruby started in the summer of 2009. We selected Ruby on Rails for rapid development of the <a href="https://store.cerner.com/">Cerner Store</a> to prepare for release at the Cerner Health Conference that year. In three months, with three engineers and a designer, we wrote and released the first version of an e-commerce web application. Two of those engineers, including me, had never worked with Ruby before but quickly realized the power and expressiveness of the language due to resources like <a href="http://mislav.uniqpath.com/poignant-guide/">Why&rsquo;s (Poignant) Guide to Ruby</a>.</p>
+
+<p><img class="center" src="/assets/2013-04-05-ruby-at-cerner/the.foxes-4c.png" title="Chunky bacon!" ></p>
+
+<p>Our experience with the Cerner Store taught us that Rails led to high productivity. Ruby is a very natural language to write code in and principles like <a href="http://en.wikipedia.org/wiki/Convention_over_configuration">convention over configuration</a> enabled us to solve our problems instead of spending time wrangling the framework. In addition, we valued the good practices of the Ruby community like easy-to-understand code and thorough unit testing with tools that aren&rsquo;t painful.</p>
+
+<p>In the summer of 2010, we attended the first <a href="http://rubymidwest.com/">Ruby Midwest</a> as a team. We learned about developments in Ruby like JRuby and Chef as well as some of the great gems under development. The Cerner Store continued to grow and we learned about maintaining a Rails web app over time.</p>
+
+<p>In early 2012, we were planning a massive undertaking to create a new platform for our Clients&#8217; healthcare data. It was to be called Millennium+ and it needed an architecture that could scale well to petabytes of data and dozens of engineers across many teams. We planned a <a href="https://engineering.cerner.com/2013/02/near-real-time-processing-over-hadoop-and-hbase/">service-oriented architecture</a> and chose Rails to serve as the server side of the application. Our Rails services call JVM services that retrieve data from HBase and serves the resulting data as JSON to the client-side applications, including our iOS app, PowerChart Touch Ambulatory. The high productivity we enjoyed on a small team scaled well to a large team of people who had never written Ruby before.</p>
+
+<p>This was the start of Cerner&rsquo;s Ruby community. We developed reusable libraries and development processes that we continue to use today. The complexities of our architecture also led to the adoption of <a href="http://www.opscode.com/chef/">Chef</a> to automate operations and build a devops mindset. Chef is another integral use of Ruby that penetrates teams that did not use Ruby at all.</p>
+
+<p>When planning our newest platform, <a href="http://www.cerner.com/blog/population_health_management_collaboration_with_advocate_physician_partners/">Population Health</a>, we needed to determine which platform made the most sense for a large-scale development of web applications on a tight timeline. We decided on Rails due in large part to its prioritization of convention over configuration, as well as the existing Ruby community at Cerner. These attributes would enable us to develop applications at the planned pace and scale. This decision is now disseminated to dozens of engineers working on brand new web applications and REST services powering them.</p>
+
+<p>We&rsquo;ve bolstered our internal Ruby community with lots of documentation and guidelines. We make use of the <a href="http://ruby.railstutorial.org/ruby-on-rails-tutorial-book">Ruby on Rails Tutorial book</a> and Why&rsquo;s (Poignant) Guide to train engineers in Ruby. Bozhidar Batsov&rsquo;s <a href="https://github.com/bbatsov/ruby-style-guide">Ruby style guide</a> aligns closely with how we write our code, so we use <a href="https://github.com/bbatsov/rubocop">rubocop</a> to keep ourselves in line. Our development devices run on <a href="https://rvm.io/">RVM</a> and our servers run on <a href="https://www.phusionpassenger.com/">Phusion Passenger</a>.</p>
+
+<p>Ruby has quickly become a very important part of Cerner&rsquo;s engineering culture, primarily as the language behind Rails and Chef. An internal Ruby meetup has begun and there have been presentations involving Ruby at our annual Developer Conference.</p>
+
+<p><img class="center" src="/assets/2013-04-05-ruby-at-cerner/ruby-midwest-logo-2013.png" title="Ruby Midwest 2013 Logo" ></p>
+
+<p>Additionally, we are sponsoring <a href="http://rubymidwest.com/">Ruby Midwest</a> because we want developers to know that Ruby is highly valued at Cerner. We&rsquo;re also sending a large number of our own associates there to learn.</p>
+
+<p>We look forward to bringing on more engineers to use Ruby and other technologies to engineer the future of healthcare.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+  
+
+<span class="byline author vcard">Written by <a href="/engineers/cernereng"><span class="fn">cernereng</span></a></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-05T00:00:00-05:00" pubdate data-updated="true">Apr 5<span>th</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    
+    <ul class="pager">
+      
+      <li class="previous"><a class="basic-alignment left"
+        href="/2013/03/modularity-in-medical-imaging/" title="Previous Post:
+        Modularity in Medical Imaging">&laquo; Previous Post</a></li>
+      
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      
+      <li class="next"><a class="basic-alignment right" href="/2013/04/learn-what-the-rules-dont-cover/"
+        title="Next Post: Learn what the rules don't cover">Next Post &raquo;</a></li>
+      
+    </ul>
+  </footer>
+</article>
+
+<aside class="sidebar-nav span4">
+  
+    <section class="well">
+  <h2>Recent Posts</h2>
+  <ul id="recent_posts" class="nav nav-list">
+    
+      <li class="post">
+        <a href="/2014/01/sponsoring-the-apache-software-foundation/">Sponsoring the Apache Software Foundation</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2014/01/the-raft-protocol-a-better-paxos/">The Raft Protocol: A Better Paxos?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2014/01/cerner-and-open-source/">Cerner and Open Source</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/11/cerner-tech-talks/">Cerner Tech Talks</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/11/2013-software-intern-hackfest/">2013 Software Intern Hackfest</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section class="well">
+  <h2>GitHub Repos</h2>
+  <ul id="gh_repos" class="nav">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/cerner">@cerner</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'cerner',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo" class="page-footer">
+  <div class="container">
+    <p>&copy; 2014 Cerner</p>
+  </div>
+</footer>
+
+  
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
