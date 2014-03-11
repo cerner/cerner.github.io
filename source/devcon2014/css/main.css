@@ -244,7 +244,7 @@ li {
 }
 
 #banner {
-     background: url("../banner.jpg") repeat scroll 0% 0% transparent;
+     background: url("../img/banner.jpg") repeat scroll 0% 0% transparent;
      height: 795px;
      margin-top: 110px;
      overflow: hidden;
@@ -259,7 +259,7 @@ li {
 }
 .schedule {
 	text-align: left!important;
-	background: url('../sweep1.jpg') no-repeat top right;
+	background: url('../img/sweep1.jpg') no-repeat top right;
 	min-height:477px;
 }
 .sweep {
@@ -292,7 +292,7 @@ li {
 }
 
 #portfolio2 {
-     background: url("../pattern_portfolio.jpg") repeat scroll 0% 0% transparent;
+     background: url("../img/pattern_portfolio.jpg") repeat scroll 0% 0% transparent;
      height: 235px;
      width: 100%;
 }
