@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: 
+Disallow: /devcon2014/
 
 Sitemap: http://engineering.cerner.com/sitemap.xml 
