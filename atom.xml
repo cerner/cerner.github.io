@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2014-03-12T09:51:58-05:00</updated>
+  <updated>2014-03-13T13:47:57-05:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -93,7 +93,7 @@
     <link href="http://engineering.cerner.com/2013/11/cerner-tech-talks/"/>
     <updated>2013-11-12T00:00:00-06:00</updated>
     <id>http://engineering.cerner.com/2013/11/cerner-tech-talks</id>
-    <content type="html"><![CDATA[<p>We are always looking for ways to share knowledge and learn new things within engineering at Cerner. Whether that be through meetups, lunch &amp; learns, conferences, or <a href="https://engineering.cerner.com/2013/08/devcon/">DevCon</a>, we have a variety of outlets available to us.</p>
+    <content type="html"><![CDATA[<p>We are always looking for ways to share knowledge and learn new things within engineering at Cerner. Whether that be through meetups, lunch &amp; learns, conferences, or <a href="http://engineering.cerner.com/2013/08/devcon/">DevCon</a>, we have a variety of outlets available to us.</p>
 
 <p>Today, we’re announcing a new program we recently launched: Cerner Tech Talks.</p>
 
@@ -131,7 +131,7 @@
 
 <p>The teams were given a week to build anything they wanted and presented the end result to a panel of Cerner software developers for prizes and glory. We took some time to sit down with two of the winning teams to get their thoughts on the Hackfest and their overall experience with the internship program.</p>
 
-<h2>Grand Prize winners: <a href="https://engineering.cerner.com/engineers/team-golf/">Team Golf</a></h2>
+<h2>Grand Prize winners: <a href="http://engineering.cerner.com/engineers/team-golf/">Team Golf</a></h2>
 
 <p><strong>Addison Shaw, Richard Habeeb</strong></p>
 
@@ -163,7 +163,7 @@
 
 <p><strong>Richard:</strong> I do robotics a lot during the school year and I was thinking of working with it at our club.</p>
 
-<h2>Crowd Favorite: <a href="https://engineering.cerner.com/engineers/team-mad-scientists/">Mad Scientists</a></h2>
+<h2>Crowd Favorite: <a href="http://engineering.cerner.com/engineers/team-mad-scientists/">Mad Scientists</a></h2>
 
 <p><strong>Alex Valentine, George Li, Jack Miles</strong></p>
 
@@ -273,7 +273,7 @@
     <link href="http://engineering.cerner.com/2013/08/devcon/"/>
     <updated>2013-08-26T00:00:00-05:00</updated>
     <id>http://engineering.cerner.com/2013/08/devcon</id>
-    <content type="html"><![CDATA[<p>(This is a joint post by <a href="https://engineering.cerner.com/engineers/frank-rydzewski/">Frank Rydzewski</a> and <a href="https://engineering.cerner.com/engineers/kevin-shekleton/">Kevin Shekleton</a>)</p>
+    <content type="html"><![CDATA[<p>(This is a joint post by <a href="http://engineering.cerner.com/engineers/frank-rydzewski/">Frank Rydzewski</a> and <a href="http://engineering.cerner.com/engineers/kevin-shekleton/">Kevin Shekleton</a>)</p>
 
 <p>This past June, 2,500 associates from across Cerner came together for <a href="http://www.youtube.com/watch?v=cE0YoFg-hkE">DevCon</a>, our internal developers conference. Now in its 3rd year, DevCon is a two-day, engineering-led conference that was created to bring together Cerner associates involved in all aspects of development and technology. DevCon is organized and run like many other developer conferences, complete with a call for papers and a talk selection committee. This year, we had 80 talks covering a wide array of topics such as big data, user experience and design, DevOps, and mobile development.</p>
 
@@ -580,7 +580,7 @@ Using Node.js to flash lights on a Raspberry Pi when a health check from web ser
 
 <p>In the summer of 2010, we attended the first <a href="http://rubymidwest.com/">Ruby Midwest</a> as a team. We learned about developments in Ruby like JRuby and Chef as well as some of the great gems under development. The Cerner Store continued to grow and we learned about maintaining a Rails web app over time.</p>
 
-<p>In early 2012, we were planning a massive undertaking to create a new platform for our Clients&#8217; healthcare data. It was to be called Millennium+ and it needed an architecture that could scale well to petabytes of data and dozens of engineers across many teams. We planned a <a href="https://engineering.cerner.com/2013/02/near-real-time-processing-over-hadoop-and-hbase/">service-oriented architecture</a> and chose Rails to serve as the server side of the application. Our Rails services call JVM services that retrieve data from HBase and serves the resulting data as JSON to the client-side applications, including our iOS app, PowerChart Touch Ambulatory. The high productivity we enjoyed on a small team scaled well to a large team of people who had never written Ruby before.</p>
+<p>In early 2012, we were planning a massive undertaking to create a new platform for our Clients&#8217; healthcare data. It was to be called Millennium+ and it needed an architecture that could scale well to petabytes of data and dozens of engineers across many teams. We planned a <a href="http://engineering.cerner.com/2013/02/near-real-time-processing-over-hadoop-and-hbase/">service-oriented architecture</a> and chose Rails to serve as the server side of the application. Our Rails services call JVM services that retrieve data from HBase and serves the resulting data as JSON to the client-side applications, including our iOS app, PowerChart Touch Ambulatory. The high productivity we enjoyed on a small team scaled well to a large team of people who had never written Ruby before.</p>
 
 <p>This was the start of Cerner&rsquo;s Ruby community. We developed reusable libraries and development processes that we continue to use today. The complexities of our architecture also led to the adoption of <a href="http://www.opscode.com/chef/">Chef</a> to automate operations and build a devops mindset. Chef is another integral use of Ruby that penetrates teams that did not use Ruby at all.</p>
 
