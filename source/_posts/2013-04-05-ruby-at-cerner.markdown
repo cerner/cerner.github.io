@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Ruby at Cerner
-author: cernereng
-author_url: cernereng
+author: Cerner Engineering
+author_url:
 date: 2013-04-05
 tags: [engineering]
 permalink: /2013/04/ruby-at-cerner/
