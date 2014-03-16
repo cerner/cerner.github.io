@@ -3,6 +3,10 @@ layout: page
 title: "Life as an Engineer"
 ---
 
-At Cerner, we solve complex problems with an innovative edge; we are the brains that focus on making you, your family, and friends healthy and happy.
+At Cerner, we use the latest technologies to transform healthcare. We are the engineers and designers that focus on making you, your family, and friends healthy and happy.
 
-We are a group of fun, creative, empowered, and collaborative engineers and interaction experts with a unique opportunity to develop tools, sites, and applications to improve the health of your community. We are a casual group that wear jeans, t-shirts, and flip flops while coding or designing. We host a multitude of internal engineering events such as Hacknights, Hackathons, and an annual Developer Conference to invest in and recognize our innovators. [Come join us!](http://www.cerner.com/careers)
+We love solving the hard problems that no one else wants to tackle. We embrace polyglot programming, distributed systems, and [open source]({% post_url 2014-01-16-cerner-and-open-source %}).
+
+We also know that it’s important to allow engineers to take a step back to learn and try new things. That’s why we host periodic hackathons, meetups, [tech talks]({% post_url 2013-11-12-cerner-tech-talks %}), and an [annual internal two-day developers conference]({% post_url 2013-08-26-devcon %}). We also love to attend, sponsor, and speak at conferences.
+
+If this sounds interesting to you, we’d love to work together. Get it touch with us [here](http://www.cerner.com/careers).
