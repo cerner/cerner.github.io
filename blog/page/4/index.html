@@ -113,6 +113,68 @@
       
   <header class="entry-header">
     
+      <h1 class="entry-title"><a href="/2013/04/learn-what-the-rules-dont-cover/">Learn What the Rules Don&#8217;t Cover</a></h1>
+    
+    
+      <div class="entry-meta meta">
+        
+  
+  
+
+<span class="byline author vcard">Written by <a href="/engineers/paul-conklin"><span class="fn">Paul Conklin</span></a></span>
+ | 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-19T00:00:00-05:00" pubdate data-updated="true">Apr 19<span>th</span>, 2013</time>
+        
+      </div>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Most technical problems are like games.  All of them have a way to win and all of them have rules; the easiest way to ensure you always win is to learn the rules inside and out, and more importantly what the rules don’t cover!  Paying attention to what the rules don’t cover is what leads to out of the box thinking.  What sets the great players apart from the rest is learning what the rules don’t cover which allows for creativity and, sometimes, shortcuts.</p>
+
+<p>Recently, I played a game similar to musical chairs. It was a game of diminishing resources (a management exercise) with about 12 of us and six large sheets of paper.  The only rules were: 1) Walk around while the music is playing and 2) Put your foot on a rectangle when the music stopped (he instructor pointed at one of the sheets as a visual queue).  When we first started, there was ample space for each of us to have a foot somewhere on one of the 2’ x 4’ paper.</p>
+
+<p>As the game continued, the instructor started cutting the sheets into smaller and smaller pieces until we got down to 3&#8221; x 5&#8221;.  Most of us were precariously trying to balance and keep a portion of a shoe touching the paper, a few just gave up, and two paid special attention to the rules and found an out.  One gentleman took at a business card and promptly stood on it.  Another just lifted his leg and put it up on the door.  We all were following the same rules but two found what the rules didn’t cover and won.</p>
+
+<p>Most people think that Printing is easy.  You hit a button or Ctrl + P and the paper comes out, right?  This seamless process appears so to users because of the hard work that goes in behind the scenes.  So when I started down this path, I knew a strong foundation would be important. I settled on <a href="http://www.cups.org">CUPS</a> as the basis for my brave new world of printing.  It is open source and has a pretty wide following.  It’s the basis for Apple printing, fairly hardened, and is the backbone of several educational systems printing making it enterprise ready.</p>
+
+<p>The more I worked with it, the more I saw its full potential.  CUPS had turned out to be the most useful &ldquo;Swiss Army Knife&rdquo; in my toolbox.  It is extremely robust and easy to integrate / stack with other solutions.  One great example of this is my &ldquo;Coffee CUPS&rdquo; demo.</p>
+
+<iframe width="560" height="315" class="aligncenter" frameborder="0" src="https://www.youtube-nocookie.com/embed/WzEhKs_CvJc?rel=0" allowfullscreen></iframe>
+
+
+<p>I picked CUPS as the underlying backbone for my new architecture for the same reason.  It had the maximum amount of possibilities with the least amount of rules.  With a minimum amount of rules, it allows for the maximum amount of creativity.  Sure, I could develop my own solution from the ground up where I get to make the rules and have unlimited creativity, and I have had to do that in the past.  In general, if you write your own software, you have the least amount of rules (constraints of the compiler).  OpenSource Software is a close second with few limitations.  Closed source 3rd party software usually has the most rules (ever read a EULA in your life?).  When selecting a solution to a problem, it’s also important to do a cost benefit analysis.  Is it really worth reinventing the wheel?  I’m often reminded of the below picture.  I’ve seen several variations of it over the years (Credit to the picture unknown, but it wasn’t me).</p>
+
+<p>CUPS handles a lot of the general architecture that doesn’t need to be re-invented on either end of the spectrum (managing print queues, accepting jobs, sending jobs to printers, etc) but allows for a lot of creativity in the middle (the middle being what is done to the print job in between getting it from the user and sending it to the printer).  A good example of this (filters) can be found <a href="http://en.wikipedia.org/wiki/File:Cups_simple.svg">here</a>.  CUPS gives you an overall framework of how it will call a filter, and what it expects as a return, but beyond that, it’s up to the programmer.  You can write in pretty much any language you want and alter the print job as much as you want.  I leveraged this to maximize the amount of devices I could talk to and input file types I could accept, while also being able to make business decisions based on the content of the print job.</p>
+
+<p><img class="center" src="/assets/2013-04-19-learn-what-the-rules-dont-cover/HPRW2.jpg" title="HPRW2" ></p>
+
+<p><em>Source: www.projectcartoon.com</em></p>
+
+<p>I think that picture aptly describes the disconnect in all of the processes that exist in problem solving.  So in addition to learning what the rules don’t cover, we need to be keenly aware of what you are trying to accomplish: what is the problem and the success criteria? How do we win the game?</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article class="entry">
+      
+  <header class="entry-header">
+    
       <h1 class="entry-title"><a href="/2013/04/ruby-at-cerner/">Ruby at Cerner</a></h1>
     
     
@@ -377,149 +439,6 @@
 
     </article>
   
-  
-    <article class="entry">
-      
-  <header class="entry-header">
-    
-      <h1 class="entry-title"><a href="/2013/02/near-real-time-processing-over-hadoop-and-hbase/">Near Real-time Processing Over Hadoop and HBase</a></h1>
-    
-    
-      <div class="entry-meta meta">
-        
-  
-  
-
-<span class="byline author vcard">Written by <a href="/engineers/ryan-brush"><span class="fn">Ryan Brush</span></a></span>
- | 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-02-27T00:00:00-06:00" pubdate data-updated="true">Feb 27<span>th</span>, 2013</time>
-        
-      </div>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>From MapReduce to realtime</h2>
-
-<p>This post covers much of the <a href="http://na.apachecon.com/schedule/presentation/161/">Near-Realtime Processing Over HBase</a> talk I’m giving at <a href="http://na.apachecon.com/">ApacheCon NA 2013</a> in blog form. It also draws from the <a href="http://strataconf.com/stratany2012/public/schedule/detail/25387">Hadoop, HBase, and Healthcare</a> talk from StrataConf/Hadoop World 2012.</p>
-
-<p>The first significant use of Hadoop at Cerner came in building search indexes for patient charts. While creation of simple search indexes is almost commoditized, we wanted a better experience based on clinical semantics. For instance, if a user searches for &ldquo;heart disease&rdquo; and a patient has &ldquo;myocardial infarction&rdquo; documented, that document should be highly ranked in the results.</p>
-
-<p>Analyzing and semantically annotating can be computationally expensive, especially when building indexes that could grow into the billions. Algorithms in this space may be discussed in a future blog post, but for now we focus on creation of an infrastructure up to the computational demands. For this, Hadoop is a great fit. A search index is logically a function of a set of input data, and MapReduce allows us to apply such functions in parallel across an arbitrarily large data set.</p>
-
-<p><img class="center" src="/assets/2013-02-27-near-real-time-processing-over-hadoop-and-hbase/chart-search-screen.png" title="Chart Search" ></p>
-
-<h4>A trend towards competing needs</h4>
-
-<p>The above pattern is powerful but creates a nice problem to have: people want the output of the processing &mdash; in this case, updates to search indexes &mdash; faster. Since we cannot run a MapReduce job over our entire data set every millisecond, we encounter competing needs; the need to <em>process all data holistically</em> conflicts with the need to <em>quickly apply incremental updates</em> to that processing.</p>
-
-<p>This difference may seem simple, but has deep implications.  For instance:</p>
-
-<ul>
-<li><p>With MapReduce we can move our computation to the data, but fast updates require moving data to computation.</p></li>
-<li><p>MapReduce jobs produce output as a pure function of the input; realtime processing needs to handle outdated state. For instance, we build a phone book and a name changes from Smith to Jones, realtime processing must remove the outdated entry, whereas MapReduce simply rebuilds the whole phone book.</p></li>
-<li><p>MapReduce jobs often assume a static set of complete data, whereas realtime processing may see partial data or new data introduce in an unexpected order.</p></li>
-</ul>
-
-
-<p>And despite these differences, our processing output must be the identical; we need to apply the same logic across very different processing models.</p>
-
-<h2>Realtime and batch layers</h2>
-
-<p>These significant differences mean different processing infrastructures. Nathan Marz described this well in his <a href="http://nathanmarz.com/blog/how-to-beat-the-cap-theorem.html">How to Beat the CAP Theorem</a> post. The result is a system that uses complementary technologies: stream-based processing with <a href="http://storm-project.net/" title="">Storm</a> and batch processing with Hadoop.</p>
-
-<p>Interestingly, <a href="http://hbase.apache.org/" title="">HBase</a> sits at a juncture between realtime and batch processing models. It offers aspects of batch processing; computation can be moved to the data via direct MapReduce support. It also supports realtime patterns with random access and fast</p>
-
-<p><img class="center" src="/assets/2013-02-27-near-real-time-processing-over-hadoop-and-hbase/realtime-layer-batch-layer.png" title="Realtime and Batch Layers" ></p>
-
-<p>reads and writes. So our realtime and batch layers can be viewed like this:</p>
-
-<ol>
-<li>Data entering the system is persisted in HBase.</li>
-<li>MapReduce jobs are used to create artifacts useful to consumers at scale.</li>
-<li>Incremental updates are handled in realtime by processing updates to HBase in a Storm cluster, and are applied to the artifacts produced by MapReduce jobs.</li>
-</ol>
-
-
-<h2>Processing HBase updates in realtime</h2>
-
-<p>So new data lands in HBase but how does Storm know to process it? There is precedent here. Google’s <a href="http://research.google.com/pubs/pub36726.html">Percolator paper</a> describes a technique for doing so over BigTable: it writes a notification entry to a column family whenever a row changes. Processing components scan for notifications and process them as they enter the system.</p>
-
-<p>This is the general approach we have taken to initiate processing in Storm. Google’s Percolator strategy does not translate directly to HBase. Differences in the way regions are managed versus BigTable tables made using a different column family impractical. So we use a separate &ldquo;notification&rdquo; table to track changes to the original.  Updates to HBase go through an API that writes notification entries as well as the data itself. We then wrote a specialized Storm spout that scans the notification table to initiate processing of updates.</p>
-
-<p>The result is processing infrastructure like this, with Storm Spouts and bolts complementing conventional MapReduce processing:</p>
-
-<p><img class="center" src="/assets/2013-02-27-near-real-time-processing-over-hadoop-and-hbase/processing-diagram.png" title="Processing Diagram" ></p>
-
-<p>The processed data model may be another set of HBase tables, a relational database, or some other data store. Its design should be centered on the needs of the applications and services, letting the processing infrastructure build data for those needs. It is important to note that MapReduce output should be done with a bulk load operation in order to avoid saturating the processed data store with individual updates.</p>
-
-<p>This basic model turns out to be robust. Volume spikes from source systems can be spread throughout the HBase cluster. There are a couple key steps for success here:</p>
-
-<ul>
-<li><p>Regular major compactions on the notification HBase tables are essential. Without major compactions, completed notifications will pile up and performance of the system will gradually degrade.</p></li>
-<li><p>The notification tables themselves may be small in size, but should be aggressively split across the cluster. This spreads load to handle volume spikes and improve concurrency.</p></li>
-</ul>
-
-
-<p>Also note that MapReduce is still an important part of the system. It’s simply a better tool for batch operations like bringing a new data set online or re-processing an existing data set with new logic.</p>
-
-<h2>Measure Everything</h2>
-
-<p>There are a number of moving parts in this system, and good measurements are the best way to ensure it’s working well. For example, in development we found our HBase Region Servers would encounter frequent but short-lived process queues during heavy load. This didn’t look like an issue in HBase, but when we measured the performance of the calling process there was a noticeable degradation. The point is, instrumentation built into Hadoop and HBase are great but not sufficient. Measuring the observed performance at all layers is important to create an optimal system.</p>
-
-<p>There are many good technologies for doing so. We generally use the <a href="https://github.com/codahale/metrics">Metrics API</a> by Coda Hale. Here is an example of HBase client throughput using an instrumented implementation of HTableInterface. The data is collected by the Metrics API and displayed with <a href="http://graphite.wikidot.com/">Graphite</a>:</p>
-
-<p><img class="center" src="/assets/2013-02-27-near-real-time-processing-over-hadoop-and-hbase/measure-everything.png" title="Measure Everything" ></p>
-
-<h2>Different models, same logic</h2>
-
-<p>The same logic needs to be applied to both batch and stream processing despite the necessary differences in infrastructure. This is a challenge since the models speak very different languages: InputFormats describe an immutable and complete set of data, whereas event streams expose incremental changes without context.</p>
-
-<p>It turns out the function is the only real commonality between them; simply taking a subset of input and returning useful output. So, our strategy is this:</p>
-
-<p><em>Build all logic as a set of simple functions, then compose and coordinate those functions with higher-level processing libraries.</em></p>
-
-<p>We use Storm to compose our realtime processing and Apache Crunch to compose our MapReduce jobs. Here are some lessons we have learned to apply this strategy effectively:</p>
-
-<h4>Minimize intermediate state</h4>
-
-<p>Persisting intermediate state can be expensive and creates complex relationships between moving parts. This is particularly true if a MapReduce job creates intermediate state used by realtime processing or vice versa. Instead, keep processing pipelines independent whenever possible and combine the results at the end.</p>
-
-<h4>Isolate processing models</h4>
-
-<p>Our MapReduce jobs are typically run on separate infrastructure than realtime processing to ensure expensive jobs do not saturate time-critical processing.</p>
-
-<h4>Be aware of the semantic differences in the processing models</h4>
-
-<p>A &ldquo;join&rdquo; in a MapReduce job sees all data, whereas a &ldquo;join&rdquo; in stream processing gets incremental subsets. If a function needs the full context to execute, that context must be externally loaded in the realtime processing system. In our case, external state is loaded from HBase and cached, but projects like <a href="http://engineering.twitter.com/2012/08/trident-high-level-abstraction-for.html">Trident</a> are now providing some aggregation facilities over storm as well.</p>
-
-<h2>The path forward</h2>
-
-<p>The patterns here have been successful but require significant scaffolding and infrastructure to bring together. Near-realtime processing demands over big data are bound to increase, which means there is an opportunity here; higher level abstractions should emerge. Similar to how tools like Crunch and Hive offer abstractions over MapReduce, it’s likely that similar primitives can express the patterns described here.</p>
-
-<p>How these higher abstractions emerge remains to be seen, but there is one thing I’m sure of: it’s going to be fun.</p>
-
-<h2>Acknowledgments</h2>
-
-<p>I’d like to acknowledge key contributors to building this and related systems: Jason Bray, Ben Brown, Robert Farr, Preston Koprivica, Swarnim Kulkarni, Kyle McGovern, Andrew Olson, Mike Richards, Micah Whitacre, Greg Whitsitt, and others.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="/blog/page/5/">&larr; Older posts</a></li>
@@ -537,6 +456,10 @@
   <ul id="recent_posts" class="nav nav-list">
     
       <li class="post">
+        <a href="/blog/migrating-from-eclipse-3.x-to-eclipse-4.x-the-iaware-story/">Migrating From Eclipse 3.X to Eclipse 4.X - the iAware Story</a>
+      </li>
+    
+      <li class="post">
         <a href="/2014/01/sponsoring-the-apache-software-foundation/">Sponsoring the Apache Software Foundation</a>
       </li>
     
@@ -550,10 +473,6 @@
     
       <li class="post">
         <a href="/2013/11/cerner-tech-talks/">Cerner Tech Talks</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2013/11/2013-software-intern-hackfest/">2013 Software Intern Hackfest</a>
       </li>
     
   </ul>
