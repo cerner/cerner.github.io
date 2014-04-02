@@ -1,7 +1,7 @@
 ---
 layout: engineer
 who: Charlie Huggard
-title: Sr. Software Engineer
+title: Software Architect
 team: Operations Infrastructure
 ---
 
@@ -14,17 +14,17 @@ I’ve been with Cerner since 2004 but full-time after getting my Masters from M
 {% engineer hardware %}
 
 - 2008 Nissan Sentra SE-R Spec V (Manual transmission)
-- Cerner Provided: 17” MacBook Pro, 2.2 GHz Intel i7 with 8GB RAM
+- Cerner Provided: 17” MacBook Pro, 2.2 GHz Intel i7 with 16GB RAM
 - Personal: 15” Retina MBP, 2.3 GHz Intel i7 with 16GB RAM
-- iPhone 4S
+- iPhone 5S
 - 3rd Generation iPad
 
 {% engineer software %}
 
-- gVim, Chrome, dig, Home Brew
+- Sublime Text, Chrome, dig, Homebrew
 - Eclipse, Maven, Tomcat, Git, Subversion
-- MAMP, SourceTree, Charles Proxy, and a whole lot more
+- Vagrant, SourceTree, Charles Proxy, and a whole lot more
 
 {% engineer dream %}
 
-My dream setup is at home, in my recliner, two laptops and all devices nearby, with Netflix on my TV, plenty of chocolate, Coke Zero, and other snacks within reach.
+My dream setup is at home, in my recliner, two laptops and all devices nearby, with Netflix on my TV, plenty of chocolate, Coke, and other snacks within reach.
