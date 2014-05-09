@@ -5,7 +5,6 @@ author: Micah Whitacre
 author_url: micah-whitacre
 date:   2014-05-09
 tags: [design, engineering, bigdata]
-permalink: /2014/05/scaling-people-with-apache-crunch/
 ---
 
 Starting the Big Data Journey
