@@ -91,12 +91,16 @@
         <lastmod>2014-03-18T13:35:19-05:00</lastmod>
     </url>
     <url>
+        <loc>http://engineering.cerner.com/blog/scaling-people-with-apache-crunch/</loc>
+        <lastmod>2014-05-09T11:04:50-05:00</lastmod>
+    </url>
+    <url>
         <loc>http://engineering.cerner.com/about/</loc>
         <lastmod>2014-03-16T06:52:57-05:00</lastmod>
     </url>
     <url>
         <loc>http://engineering.cerner.com/blog/archives/</loc>
-        <lastmod>2014-03-18T13:35:19-05:00</lastmod>
+        <lastmod>2014-05-09T11:04:50-05:00</lastmod>
     </url>
     <url>
         <loc>http://engineering.cerner.com/engineers/andy-gifford/</loc>
@@ -136,7 +140,7 @@
     </url>
     <url>
         <loc>http://engineering.cerner.com/engineers/</loc>
-        <lastmod>2014-03-18T13:35:19-05:00</lastmod>
+        <lastmod>2014-05-09T11:04:50-05:00</lastmod>
     </url>
     <url>
         <loc>http://engineering.cerner.com/engineers/jacob-williams/</loc>
@@ -167,6 +171,10 @@
         <lastmod>2014-03-17T22:32:01-05:00</lastmod>
     </url>
     <url>
+        <loc>http://engineering.cerner.com/engineers/micah-whitacre/</loc>
+        <lastmod>2014-05-09T11:02:57-05:00</lastmod>
+    </url>
+    <url>
         <loc>http://engineering.cerner.com/engineers/michelle-brush/</loc>
         <lastmod>2014-03-09T22:52:01-05:00</lastmod>
     </url>
@@ -192,7 +200,7 @@
     </url>
     <url>
         <loc>http://engineering.cerner.com/</loc>
-        <lastmod>2014-03-18T13:35:19-05:00</lastmod>
+        <lastmod>2014-05-09T11:04:50-05:00</lastmod>
     </url>
     <url>
         <loc>http://engineering.cerner.com/robots.txt</loc>

@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2014-05-01T10:54:22-05:00</updated>
+  <updated>2014-05-09T11:08:26-05:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,303 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Scaling People With Apache Crunch]]></title>
+    <link href="http://engineering.cerner.com/blog/scaling-people-with-apache-crunch/"/>
+    <updated>2014-05-09T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/blog/scaling-people-with-apache-crunch</id>
+    <content type="html"><![CDATA[<h2>Starting the Big Data Journey</h2>
+
+<p>When a company first starts to play with Big Data it typically involves a small team of engineers trying to solve a specific problem.  The team decides to experiment with scalable technologies either due to outside guidance or research which makes it applicable to their problem.  The team begins with the basics of Big Data spending time learning and prototyping.  They learn about <a href="http://hadoop.apache.org/">HDFS</a>, flirt with <a href="http://hbase.apache.org/">HBase</a> or other NoSQL, write the required WordCount example, and start to figure out how the technologies can fit their needs.  The group&rsquo;s immersion into Big Data deepens as they start to move beyond a prototype into a real product.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2014-05-09-scaling-people-with-apache-crunch/team_bigdata.png" title="Team using Big Data" ></p>
+
+<p>The company sees the success of using Big Data technologies and the possibilities to solve difficult problems, tackle new endeavors, and open new doors.  The company has now shifted its scalability problem out from the technical architecture into a people problem.  The small team of experts cannot satisfy the demand and transferring their accumulated knowledge to new teams is a significant investment.  Both new and experienced engineers face a steep learning curve to get up to speed.  Learning the API is not difficult but challenges typically oocur when applying the WordCount example to complex problems.   Making the mental jump from processing homogeneous data which produce a single output to a complex processing pipeline involving heterogeneous inputs, joins, and multiple outputs is difficult for even a skilled engineer.</p>
+
+<p>Cerner has developed a number of Big Data solutions each demonstrating the 3 V&rsquo;s of data (variety, velocity, and volume).  The complexity of the problems being solved, evolving functionality, and required integration across teams led Cerner to look beyond simple MapReduce.  Cerner began to focus on how to construct a processing infrastructure that naturally aligned with the way the processing is described.  Looking through the options available for processing pipelines including <a href="http://hive.apache.org/">Hive</a>, <a href="http://pig.apache.org/">Pig</a>, and <a href="http://www.cascading.org/">Cascading</a>, Cerner finally arrived at using <a href="http://crunch.apache.org/">Apache Crunch</a>.  Using Crunch&rsquo;s concepts, we found that we were easily able to translate how we described a problem into concepts we can code.  Additionally the API was well suited for our complicated data models and building integration contracts between teams.</p>
+
+<p>When we describe a problem we often talk about its flow through the various processing steps.  The processing flow is comprised of data from multiple sources, several transformations, various joins, and finally the persistence of the data.  Looking at an example problem of transforming raw data into a normalized object for downstream consumers we might encounter a problem similar to the diagram below.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2014-05-09-scaling-people-with-apache-crunch/example_processing_pipeline.png" title="Example Processing Problem" ></p>
+
+<p>If we apply this problem to the raw MapReduce framework we begin to see problems absent in the standard WordCount example.  The heterogeneous data and models, the custom join logic, and follow up grouping by key all could result in extra code or difficulty fitting this processing into a single MapReduce job.  When our problem expands to multiple MapReduce jobs we now have to write custom driver code or bring in another system like <a href="http://oozie.apache.org/">Oozie</a> to chain the workflow together.  Additionally while we could fit the steps neatly into 1-2 MapReduce jobs that careful orchestration and arrangement could become imbalanced as we introduce new processing needs into the workflow.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2014-05-09-scaling-people-with-apache-crunch/example_processing_pipeline_new_functionality.png" title="Example Processing Problem with more functionality" ></p>
+
+<p>This problem is common and fairly basic with respect to some of the processing needs we faced at Cerner.  For the experienced MapReduce developers this problem might cause a momentary pause to design it but that is due to your expertise.  For those less skilled imagine being able to break this problem down into the processing steps you understand and POJO like models of which you are already familiar.  Breaking this problem down using Apache Crunch we can see how we can articulate the problem and still take advantage of the processing efficiency of MapReduce.</p>
+
+<h2>Building a Processing Pipeline with Apache Crunch</h2>
+
+<p>Apache Crunch allows developers to construct complicated processing workflows into <a href="http://crunch.apache.org/user-guide.html#mrpipeline">pipelines</a>.  Pipelines are directed acyclic graphs (DAG) comprised of input data that is then transformed through functions and groupings to produce output data.  When a developer is done constructing the pipeline Apache Crunch will calculate the appropriate processing steps and submit the steps to the execution engine.  In this example we will talk about using Apache Crunch in the context of MapReduce but it also supports running on <a href="http://spark.apache.org/">Apache Spark</a>.  It should be noted that pipelines are lazily executed.  This means that no work will be done until the pipeline is executed.</p>
+
+<p>To begin processing we need a pipeline instance on which we will construct our DAG.  To create a MRPipeline we need the typical Hadoop <a href="https://hadoop.apache.org/docs/r2.2.0/api/org/apache/hadoop/conf/Configuration.html">Configuration</a> instance for the cluster and <a href="http://hadoop.apache.org/docs/r2.3.0/api/org/apache/hadoop/mapreduce/Job.html#setJarByClass(java.lang.Class">the driver class</a>) for the processing.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">Pipeline</span> <span class="n">pipeline</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MRPipeline</span><span class="o">(</span><span class="n">Driver</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">conf</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>With a pipeline instance available the next step is to describe the inputs to the processing using at least one Crunch <a href="http://crunch.apache.org/user-guide.html#rwdata">Source</a>.  A pipeline must contain at least one source but could read from multiple.  Apache Crunch provides implementations for the typical inputs such as Sequence Files, HFiles, Parquet, Avro, HBase, and Text.  As an example if we were to read data out of a text file we might write code like the following:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">PType</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ptype</span> <span class="o">=</span> <span class="n">Avros</span><span class="o">.</span><span class="na">strings</span><span class="o">();</span>
+</span><span class='line'><span class="n">PCollection</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">refDataStrings</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="k">new</span> <span class="n">TextFileSource</span><span class="o">(</span><span class="n">path</span><span class="o">,</span> <span class="n">ptype</span><span class="o">));</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This code utilizes the TextFileSource to generate a collection of Java Strings from files at a certain path.  The code also introduces two additional Apache Crunch concepts of <a href="http://crunch.apache.org/user-guide.html#datamodel">PCollections</a> and <a href="http://crunch.apache.org/user-guide.html#serde">PTypes</a>.  A PCollection represents potential data elements to process.  Since a pipeline is lazily executed it is not a physical representation of all of the elements.  A PCollection cannot be created but can be read or transformed.  Apache Crunch also has special forms of PCollections, PTable and PGroupedTable, which are useful in performing join operations on the data.  A PType is a concept that hides serialization and deserialization from pipeline developers.  In this example the developer is using native Java strings instead of dealing with wrapper classes like Writable&rsquo;s Text class.</p>
+
+<p>Processing based off of Java Strings is error prone so typically developers would transform the data into a model object that is easier to work with.  Transformation of a PCollection is done through a <a href="http://crunch.apache.org/user-guide.html#dataproc">DoFn</a>.  A DoFn processes a single element of the PCollection into zero or many alternate forms depending on its logic.  The bulk of a processing pipeline&rsquo;s logic resides in implementations of DoFn.  Custom implementations of a DoFn requires extending the DoFn class as well as defining the input and output types.  This allows Crunch to provide compile time checking as transformations are applied to collections.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">class</span> <span class="nc">ConvertReferenceDataFn</span> <span class="kd">extends</span> <span class="n">DoFn</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefData</span><span class="o">&gt;{</span>
+</span><span class='line'>     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">process</span> <span class="o">(</span><span class="n">String</span> <span class="n">input</span><span class="o">,</span> <span class="n">Emitter</span><span class="o">&lt;</span><span class="n">RefData</span><span class="o">&gt;</span> <span class="n">emitter</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>       <span class="n">RefData</span> <span class="n">data</span> <span class="o">=</span> <span class="c1">//processing logic;</span>
+</span><span class='line'>       <span class="n">emitter</span><span class="o">.</span><span class="na">emit</span><span class="o">(</span><span class="n">data</span><span class="o">);</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">...</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">PType</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ptype</span> <span class="o">=</span> <span class="n">Avros</span><span class="o">.</span><span class="na">strings</span><span class="o">();</span>
+</span><span class='line'><span class="n">PCollection</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">refDataStrings</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="k">new</span> <span class="n">TextFileSource</span><span class="o">(</span><span class="n">path</span><span class="o">,</span> <span class="n">ptype</span><span class="o">));</span>
+</span><span class='line'><span class="n">PCollection</span><span class="o">&lt;</span><span class="n">RefData</span><span class="o">&gt;</span> <span class="n">refData</span> <span class="o">=</span>
+</span><span class='line'>  <span class="n">refStrings</span><span class="o">.</span><span class="na">parallelDo</span><span class="o">(</span><span class="k">new</span> <span class="n">ConvertReferenceDataFn</span><span class="o">(),</span> <span class="n">Avros</span><span class="o">.</span><span class="na">records</span><span class="o">(</span><span class="n">RefData</span><span class="o">.</span><span class="na">class</span><span class="o">));</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Recalling the previous example processing problem we see that we need to perform join and grouping operations based on a key.  Instead of converting the strings into a RefData object it would actually be better to convert the string into a key/value pair (e.g. Pair&lt;String, RefData>).  Apache Crunch has a PTable&lt;K, V>, which is simply a special form of PCollection&lt;Pair&lt;K, V>>.  Adjusting the function we can instead produce the key/value pair.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">class</span> <span class="nc">ConvertReferenceDataFn</span> <span class="kd">extends</span> <span class="n">DoFn</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefData</span><span class="o">&gt;&gt;{</span>
+</span><span class='line'>     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">process</span> <span class="o">(</span><span class="n">String</span> <span class="n">input</span><span class="o">,</span> <span class="n">Emitter</span><span class="o">&lt;</span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefData</span><span class="o">&gt;&gt;</span> <span class="n">emitter</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>       <span class="n">RefData</span> <span class="n">data</span> <span class="o">=</span> <span class="c1">//processing logic;</span>
+</span><span class='line'>       <span class="n">String</span> <span class="n">id</span> <span class="o">=</span> <span class="c1">//extract id;</span>
+</span><span class='line'>       <span class="n">emitter</span><span class="o">.</span><span class="na">emit</span><span class="o">(</span><span class="k">new</span> <span class="n">Pair</span><span class="o">(</span><span class="n">id</span><span class="o">,</span> <span class="n">data</span><span class="o">));</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">...</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">PType</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ptype</span> <span class="o">=</span> <span class="n">Avros</span><span class="o">.</span><span class="na">strings</span><span class="o">();</span>
+</span><span class='line'><span class="n">PCollection</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">refDataStrings</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="k">new</span> <span class="n">TextFileSource</span><span class="o">(</span><span class="n">path</span><span class="o">,</span> <span class="n">ptype</span><span class="o">));</span>
+</span><span class='line'><span class="n">PTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefData</span><span class="o">&gt;</span> <span class="n">refData</span> <span class="o">=</span>
+</span><span class='line'>  <span class="n">refStrings</span><span class="o">.</span><span class="na">parallelDo</span><span class="o">(</span><span class="k">new</span> <span class="n">ConvertReferenceDataFn</span><span class="o">(),</span>
+</span><span class='line'>    <span class="n">Avros</span><span class="o">.</span><span class="na">tableOf</span><span class="o">(</span><span class="n">Avros</span><span class="o">.</span><span class="na">strings</span><span class="o">(),</span> <span class="n">Avros</span><span class="o">.</span><span class="na">records</span><span class="o">(</span><span class="n">RefData</span><span class="o">.</span><span class="na">class</span><span class="o">)));</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Utilizing the PTable&lt;String, RefData> collection we could then <a href="http://crunch.apache.org/user-guide.html#joins">join</a> that collection with another similarly keyed PTable using one of the many prebuilt implementations.  The built in join functionality helps to avoid developing custom implementations of a common data processing pattern.</p>
+
+<p>More functions are applied to the joined data to continue the processing workflow.  The processing of the data is distributed in separate tasks across the cluster.  In the example problem we need all of the data for a <a href="http://crunch.apache.org/user-guide.html#gbk">given key to be grouped</a> to a single task for processing.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">PTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Model</span><span class="o">&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="o">...;</span>
+</span><span class='line'><span class="n">PGroupedTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Model</span><span class="o">&gt;</span> <span class="n">groupedModels</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="na">groupByKey</span><span class="o">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>A pipeline requires at least one collection of data to be persisted to a <a href="http://crunch.apache.org/user-guide.html#targets">target</a>.  Crunch provides the standard targets for data but consumer can also easily create new custom inputs.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="c1">//persist Avro models</span>
+</span><span class='line'><span class="n">pipeline</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">models</span><span class="o">,</span> <span class="k">new</span> <span class="n">AvroFileTarget</span><span class="o">(</span><span class="n">path</span><span class="o">));</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>When constructing the processing pipline for the example problem we would end up with an executable program that looks like the following:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(){</span>
+</span><span class='line'>    <span class="n">Pipeline</span> <span class="n">pipeline</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MRPipeline</span><span class="o">(</span><span class="n">Driver</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">conf</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">//Read data from sources</span>
+</span><span class='line'>    <span class="n">PType</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ptype</span> <span class="o">=</span> <span class="n">Avros</span><span class="o">.</span><span class="na">strings</span><span class="o">();</span>
+</span><span class='line'>    <span class="n">PTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefData</span><span class="o">&gt;</span> <span class="n">refDataStrings</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="k">new</span> <span class="n">TextFileSource</span><span class="o">(</span><span class="n">path1</span><span class="o">,</span> <span class="n">ptype</span><span class="o">));</span>
+</span><span class='line'>    <span class="n">PTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefModel</span><span class="o">&gt;</span> <span class="n">refModelStrings</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="k">new</span> <span class="n">TextFileSource</span><span class="o">(</span><span class="n">path1</span><span class="o">,</span> <span class="n">ptype</span><span class="o">));</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">//Convert the Strings into models</span>
+</span><span class='line'>    <span class="n">PTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefData</span><span class="o">&gt;</span> <span class="n">refData</span> <span class="o">=</span>
+</span><span class='line'>      <span class="n">refStrings</span><span class="o">.</span><span class="na">parallelDo</span><span class="o">(</span><span class="k">new</span> <span class="n">ConvertReferenceDataFn</span><span class="o">(),</span>
+</span><span class='line'>        <span class="n">Avros</span><span class="o">.</span><span class="na">tableOf</span><span class="o">(</span><span class="n">Avros</span><span class="o">.</span><span class="na">strings</span><span class="o">(),</span> <span class="n">Avros</span><span class="o">.</span><span class="na">records</span><span class="o">(</span><span class="n">RefData</span><span class="o">.</span><span class="na">class</span><span class="o">)));</span>
+</span><span class='line'>    <span class="n">PTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefModel</span><span class="o">&gt;</span> <span class="n">refModel</span> <span class="o">=</span>
+</span><span class='line'>      <span class="n">refStrings</span><span class="o">.</span><span class="na">parallelDo</span><span class="o">(</span><span class="k">new</span> <span class="n">ConvertReferenceModelFn</span><span class="o">(),</span>
+</span><span class='line'>        <span class="n">Avros</span><span class="o">.</span><span class="na">tableOf</span><span class="o">(</span><span class="n">Avros</span><span class="o">.</span><span class="na">strings</span><span class="o">(),</span> <span class="n">Avros</span><span class="o">.</span><span class="na">records</span><span class="o">(</span><span class="n">RefModel</span><span class="o">.</span><span class="na">class</span><span class="o">)));</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">//Data separate input together.</span>
+</span><span class='line'>    <span class="n">PTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Pair</span><span class="o">&lt;</span><span class="n">RefData</span><span class="o">,</span> <span class="n">RefModel</span><span class="o">&gt;&gt;</span> <span class="n">joinedDataModel</span> <span class="o">=</span> <span class="n">refModel</span><span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="n">refData</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">//Apply a similar DoFn to convert the Pair&lt;RefData, RefModel&gt; into a single object</span>
+</span><span class='line'>    <span class="n">PTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Model</span><span class="o">&gt;</span> <span class="n">models</span> <span class="o">=</span> <span class="o">...;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">//Filter out data that is not useful</span>
+</span><span class='line'>    <span class="n">PTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Model</span><span class="o">&gt;</span> <span class="n">filteredModels</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="k">new</span> <span class="n">FilterModelFn</span><span class="o">());</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">//Group the data by key to have all model instances with the same key in a single location</span>
+</span><span class='line'>    <span class="n">PGroupedTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Model</span><span class="o">&gt;</span> <span class="n">groupedModels</span> <span class="o">=</span> <span class="n">filteredModels</span><span class="o">.</span><span class="na">groupByKey</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">//Convert the grouped Models into a single model object if they share the same key.</span>
+</span><span class='line'>    <span class="n">PCollection</span><span class="o">&lt;</span><span class="n">PersonModel</span><span class="o">&gt;</span> <span class="n">personModels</span> <span class="o">=</span>
+</span><span class='line'>      <span class="n">groupedModels</span><span class="o">.</span><span class="na">parallelDo</span><span class="o">(</span><span class="k">new</span> <span class="n">ConvertPersonModelFn</span><span class="o">(),</span> <span class="n">Avros</span><span class="o">.</span><span class="na">records</span><span class="o">(</span><span class="n">PersonModel</span><span class="o">.</span><span class="na">class</span><span class="o">));</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">//Write out the Person Model objects</span>
+</span><span class='line'>    <span class="n">pipeline</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">personModels</span><span class="o">,</span> <span class="k">new</span> <span class="n">AvroFileTarget</span><span class="o">(</span><span class="n">path</span><span class="o">));</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">//At this point the pipeline has been constructed but nothing executed.  </span>
+</span><span class='line'>    <span class="c1">//Therefore tell the pipeline to execute.</span>
+</span><span class='line'>    <span class="n">PipelineResult</span> <span class="n">result</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="na">done</span><span class="o">();</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">class</span> <span class="nc">ConvertReferenceDataFn</span> <span class="kd">extends</span> <span class="n">DoFn</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefData</span><span class="o">&gt;&gt;{</span>
+</span><span class='line'>     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">process</span> <span class="o">(</span><span class="n">String</span> <span class="n">input</span><span class="o">,</span> <span class="n">Emitter</span><span class="o">&lt;</span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefData</span><span class="o">&gt;&gt;</span> <span class="n">emitter</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>       <span class="n">RefData</span> <span class="n">data</span> <span class="o">=</span> <span class="c1">//processing logic;</span>
+</span><span class='line'>       <span class="n">String</span> <span class="n">id</span> <span class="o">=</span> <span class="c1">//extract id;</span>
+</span><span class='line'>       <span class="n">emitter</span><span class="o">.</span><span class="na">emit</span><span class="o">(</span><span class="k">new</span> <span class="n">Pair</span><span class="o">(</span><span class="n">id</span><span class="o">,</span> <span class="n">data</span><span class="o">));</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">class</span> <span class="nc">ConvertReferenceModelFn</span> <span class="kd">extends</span> <span class="n">DoFn</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefModel</span><span class="o">&gt;&gt;{</span>
+</span><span class='line'>     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">process</span> <span class="o">(</span><span class="n">String</span> <span class="n">input</span><span class="o">,</span> <span class="n">Emitter</span><span class="o">&lt;</span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefModel</span><span class="o">&gt;&gt;</span> <span class="n">emitter</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>       <span class="n">RefModel</span> <span class="n">model</span> <span class="o">=</span> <span class="c1">//processing logic;</span>
+</span><span class='line'>       <span class="n">String</span> <span class="n">id</span> <span class="o">=</span> <span class="c1">//extract id;</span>
+</span><span class='line'>       <span class="n">emitter</span><span class="o">.</span><span class="na">emit</span><span class="o">(</span><span class="k">new</span> <span class="n">Pair</span><span class="o">(</span><span class="n">id</span><span class="o">,</span> <span class="n">model</span><span class="o">));</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">class</span> <span class="nc">FilterModelFn</span> <span class="kd">extends</span> <span class="n">Filter</span><span class="o">&lt;</span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Model</span><span class="o">&gt;&gt;{</span>
+</span><span class='line'>     <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">filter</span> <span class="o">(</span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Model</span><span class="o">&gt;</span> <span class="n">model</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>       <span class="kt">boolean</span> <span class="n">include</span> <span class="o">=</span> <span class="c1">//logic to apply to the model</span>
+</span><span class='line'>       <span class="k">return</span> <span class="n">include</span><span class="o">;</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">class</span> <span class="nc">ConvertPersonModelFn</span> <span class="kd">extends</span> <span class="n">MapFn</span><span class="o">&lt;</span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">Model</span><span class="o">&gt;&gt;&gt;{</span>
+</span><span class='line'>     <span class="kd">public</span> <span class="n">PersonModel</span> <span class="nf">map</span> <span class="o">(</span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">Model</span><span class="o">&gt;&gt;</span> <span class="n">models</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>       <span class="n">PersonModel</span> <span class="n">model</span> <span class="o">=</span> <span class="c1">//apply grouping logic to generate model from many items.</span>
+</span><span class='line'>       <span class="k">return</span> <span class="n">model</span><span class="o">;</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It is very easy to see how the processing steps and flow of the original diagram can be mapped to Apache Crunch concepts.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2014-05-09-scaling-people-with-apache-crunch/example_processing_pipeline_crunch_concepts.png" title="Crunch Concepts Applied to Processing" ></p>
+
+<p>Executing the code as written above would cause Apache Crunch to calculate the execution graph to be spread over two MapReduce jobs.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2014-05-09-scaling-people-with-apache-crunch/pipeline_mr.png" title="Pipeline Execution" ></p>
+
+<p>In this case having a MapReduce job being reduce only is less than ideal but the team has been able to focus on correctness and functionality first.  Focus can now be shifted on performance tuning or adjusting algorithms as appropriate.  The solid foundation of functionality and the simplicity of the concepts allows developers to easily understand how the processing pipeline.  The ease of understanding helps to allow the team to refactor and iterate with confidence.</p>
+
+<p>This blog post is essentially my script for my <a href="http://apacheconnorthamerica2014.sched.org/event/37a39cc1b611e53ea5b6e348786337ad?iframe=no&amp;w=100&amp;sidebar=yes&amp;bg=no#.U1hyq-ZdVDw">North America ApacheCon 2014 presentation</a>.  Slides are available <a href="http://events.linuxfoundation.org/sites/events/files/slides/Simplifying%20Big%20Data%20with%20Apache%20Crunch.pdf">here</a>.</p>
+
+<h2>Links</h2>
+
+<ul>
+<li><a href="http://crunch.apache.org/user-guide.html">Crunch User Guide</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Migrating From Eclipse 3.X to Eclipse 4.X - the iAware Story]]></title>
@@ -986,88 +1283,6 @@ Using Node.js to flash lights on a Raspberry Pi when a health check from web ser
 <p>In a similar vein, by launching this Engineering Health site, we hope to provide transparency to our internal organizations, as well create another way to connect to the broader community involved in solving big problems with software and technology. You will see that in addition to being a leader in the healthcare industry, Cerner is also at the forefront of software technologies. With our <a href="http://engineering.cerner.com/2013/02/composable-mapreduce-with-hadoop-and-crunch/">inaugural blog post</a> from <a href="http://engineering.cerner.com/engineers/ryan-brush/">Ryan Brush</a>, you will get a taste for some cool ways we’re putting big data processing methods to work for some of our new initiatives. Future blog posts will get into other technologies used, lessons learned, and just fun things direct and unfiltered from our Engineering organization.</p>
 
 <p>I hope you enjoy this site, and feel free to connect with us on Twitter <a href="https://twitter.com/cernereng">@CernerEng</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Composable MapReduce With Hadoop and Crunch]]></title>
-    <link href="http://engineering.cerner.com/2013/02/composable-mapreduce-with-hadoop-and-crunch/"/>
-    <updated>2013-02-03T00:00:00-06:00</updated>
-    <id>http://engineering.cerner.com/2013/02/composable-mapreduce-with-hadoop-and-crunch</id>
-    <content type="html"><![CDATA[<p>Most developers know this pattern well: we design a set of schemas to represent our data, and then work with that data via a query language. This works great in most cases, but becomes a challenge as data sets grow to an arbitrary size and complexity. Data sets can become too large to query and update with conventional means.</p>
-
-<p>These challenges often arise with Hadoop, simply because Hadoop is a popular tool to tackle such data sets. It&rsquo;s tempting to apply our familiar patterns: design a data model in Hadoop and query it. Unfortunately, this breaks down for a couple of reasons:</p>
-
-<ol>
-<li>For a large and complex data set, no single data model can efficiently handle all queries against it.</li>
-<li>Even if such a model could be built, it would likely get bogged down in its own complexity and competing needs of different queries.</li>
-</ol>
-
-
-<p>So how do we approach this? Let&rsquo;s look to an aphorism familiar to long-term users of Hadoop:</p>
-
-<h2 align="center">
-<em>
-Start with the questions to be answered, then model the data to answer them.
-</em>
-</h2>
-
-
-<p>Related sets of applications and services tend to ask related questions. Applications doing interactive search queries against a medical record can use one data model, but detecting candidates for health management programs may need another. Both cases must have completely faithful representations of the original data.</p>
-
-<p>Another challenge is leveraging common processing logic between these representations: there may be initial steps of data normalization and cleaning that are common to all needs, and other steps that are useful for some cases. One strategy is for each shared piece of logic to write output to its own data store, which can then be picked up by another job. Oversimplifying, it may look like this:</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2013-02-03-composable-mapreduce-with-hadoop-and-crunch/diagram1.png" title="Diagram 1" ></p>
-
-<p>Such a model can be coordinated with Hadoop-based tools like <a href="http://oozie.apache.org/">Oozie</a>. But this model of persisting every processing stage and using them downstream has some drawbacks:</p>
-
-<ol>
-<li>The structure and location of each intermediate state must be externally defined, creating a barrier to easily leverage the output of one operation in another.</li>
-<li>Data is duplicated unnecessarily. If one of our processing steps requires intermediate data, we must persist it, even if it is used only by other processing steps. Ideally, we could just connect the processing steps without unnecessary persistence. (In some cases, Hadoop itself persists intermediate state for MapReduce jobs, but there are many useful jobs that don&rsquo;t need to do so.)</li>
-<li>Each step must be fully processed before the next step can run. Therefore, each processing step is only as fast as its slowest component.</li>
-<li>Each persistent state must use a data model that can be processed efficiently in bulk. This limits our options for the data store. We must choose something MapReduce friendly, rather than optimizing for the needs of application queries.</li>
-</ol>
-
-
-<p>So how do we solve this? Rather than making intermediate data stores as the point of reuse, let&rsquo;s reason about the system at a higher level: make abstract, distributed data collections our point of reuse for processing. A data collection is a set of data that can be persisted to an arbitrary store when it makes sense, or streamed between processing steps when no persistence is needed. One data collection can be converted to another by applying functions to it. So the above diagram may now look like this, where arrows are functions used to transform data collections:</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2013-02-03-composable-mapreduce-with-hadoop-and-crunch/diagram2.png" title="Diagram 2" ></p>
-
-<p>This has several advantages:</p>
-
-<ol>
-<li>Processing logic becomes reusable. By writing functions that consume and produce collections of data, we can efficiently share processing code as needed.</li>
-<li>Data no longer needs to be stored for processing purposes. We can choose to store it when there is some other benefit.</li>
-<li>The data models need not account for downstream processing; they can align to the needs of apps and services.</li>
-<li>Processing is significantly more efficient as it can stream from one collection to another.</li>
-</ol>
-
-
-<p>This model supports storing and launching processing from intermediate states, but it doesn&rsquo;t require it. Processing downstream items from a raw data set will probably be a regular occurrence, but that need not be the case for other collections.</p>
-
-<p>Perhaps the biggest advantage of this approach is that it makes MapReduce pipelines composable. Logic expressed as functions can be reused and chained together as necessary to solve a problem at hand. Any intermediate state can optionally be persisted, either as a cache of items expensive to process or an artifact useful to applications.</p>
-
-<h4>Implementation Strategy</h4>
-
-<p>So, how does this work?  Here are the key pieces:</p>
-
-<ul>
-<li>All processing input comes from a source. For Cerner, the source is typically data stored in Hadoop or HBase, but other implementations are possible.</li>
-<li>Each source is converted into a data collection, which is described above.</li>
-<li>One or more functions can be run against each data collection, converting it from one form to another. We&rsquo;ll discuss below how this be very efficient.</li>
-<li>Collections can be persisted at any point in the processing pipeline. The persisted collections could be used for external tooling, or simply as a means to cache the results of an expensive computation.</li>
-</ul>
-
-
-<p>Fortunately, a newer MapReduce framework supports this pattern well: <a href="http://incubator.apache.org/crunch/">Apache Crunch</a>, based on Google&rsquo;s <a href="http://dl.acm.org/citation.cfm?id=1806638">FlumeJava paper</a>, represents each data set as a sort of distributed collection, and allows them to be composed together with strongly-typed functions. The output of a Crunch pipeline may be a data model easily loaded into a RDBMs system, inverted index or queried via tools like Apache Hive.</p>
-
-<p>Crunch will also fuse steps in the processing pipeline whenever possible.  This means we can chain our functions together, and they&rsquo;ll automatically be run in the same process. This optimization is significant for many classes of jobs.  And although persisting intermediate state must be done by hand today, it will <a href="https://issues.apache.org/jira/browse/CRUNCH-145">likely be coming</a> in a future version of Crunch itself.</p>
-
-<h3>An end to direct MapReduce jobs</h3>
-
-<p>We may have reached the end of direct implementation of MapReduce jobs. Tools like Cascading and Apache Crunch offer excellent higher-level libraries, and Domain-Specific Languages like Hive and Pig allow the simple creation of queries or processing logic. Here at Cerner, we tend to use Crunch for pipeline processing and Hive for ad hoc queries of data in Hadoop.</p>
-
-<p>MapReduce is a powerful tool, but it may be best viewed as a building block. Composing functions across distributed collections that use MapReduce as its basis lets us reason and leverage our processing logic more effectively.</p>
 ]]></content>
   </entry>
   
