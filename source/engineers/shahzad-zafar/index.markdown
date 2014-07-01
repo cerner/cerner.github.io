@@ -11,7 +11,7 @@ I started at Cerner in 2005 after graduating from University of Michigan, Ann Ar
 
 {% engineer hardware %}
 
-I use a Lenovo T420 with Windows 7and an external monitor. At home, I have a MacBook Pro, Apple TV and an iPad, which makes it easier to project on to HD TV from the laptop or iPad for work or just to watch movies.
+I use a Lenovo T420 with Windows 7 and an external monitor. At home, I have a MacBook Pro, Apple TV and an iPad, which makes it easier to project on to HD TV from the laptop or iPad for work or just to watch movies.
 
 {% engineer software %}
 
