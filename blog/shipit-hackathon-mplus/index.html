@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Ruby at Cerner - Engineering Health</title>
+  <title>ShipIt - 24-hour Hackathon for Millennium+ Platform Dev - Engineering Health</title>
   <meta name="author" content="Cerner">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://engineering.cerner.com/2013/04/ruby-at-cerner">
+  <link rel="canonical" href="http://engineering.cerner.com/blog/shipit-hackathon-mplus">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -111,7 +111,7 @@
   
   <header class="entry-header">
     
-      <h1 class="entry-title">Ruby at Cerner</h1>
+      <h1 class="entry-title">ShipIt - 24-hour Hackathon for Millennium+ Platform Dev</h1>
     
     
       <div class="entry-meta meta">
@@ -119,7 +119,7 @@
   
   
 
-<span class="byline author vcard">Written by <a href="/engineers/"><span class="fn">Cerner Engineering</span></a></span>
+<span class="byline author vcard">Written by <a href="/engineers/shahzad-zafar"><span class="fn">Shahzad Zafar</span></a></span>
  | 
 
 
@@ -132,36 +132,38 @@
   
 
 
-<time datetime="2013-04-05T00:00:00-05:00" pubdate data-updated="true">Apr 5<span>th</span>, 2013</time>
+<time datetime="2014-07-01T00:00:00-05:00" pubdate data-updated="true">Jul 1<span>st</span>, 2014</time>
         
       </div>
     
   </header>
 
 
-<div class="entry-content"><p>Cerner&rsquo;s journey with Ruby started in the summer of 2009. We selected Ruby on Rails for rapid development of the <a href="https://store.cerner.com/">Cerner Store</a> to prepare for release at the Cerner Health Conference that year. In three months, with three engineers and a designer, we wrote and released the first version of an e-commerce web application. Two of those engineers, including me, had never worked with Ruby before but quickly realized the power and expressiveness of the language due to resources like <a href="http://mislav.uniqpath.com/poignant-guide/">Why&rsquo;s (Poignant) Guide to Ruby</a>.</p>
+<div class="entry-content"><p>At the end of March, some of our teams held their first 24-hour hackathon, titled ShipIt: Millennium+ Services FedEx Day. We had 41 participants, in 15 teams working on 15 unique projects. The idea was inspired by several teams spending a few hours every so often to work on different projects. After reading about <a href="https://www.atlassian.com/company/about/shipit">Atlassian’s</a> hack days, we decided to hold one.</p>
 
-<p><img class="center" src="/assets/2013-04-05-ruby-at-cerner/the.foxes-4c.png" title="Chunky bacon!" ></p>
+<p>The event was initially announced early in February, to give teams time to work this into their project plans. The schedule was to start at 10 am on a Thursday and wrap-up at 10 AM on Friday. Teams then presented their awesome projects and then were free to leave for the weekend (and catch-up on some sleep). Each team was free to choose the project they wanted to work on, with the limitation added that they should work on something which can be deployed somewhere in 24 hours (there were bonus points involved for deployed projects).  The winning prize not only included bragging rights, but also the ‘Golden Keyboard’, which will be a traveling trophy.</p>
 
-<p>Our experience with the Cerner Store taught us that Rails led to high productivity. Ruby is a very natural language to write code in and principles like <a href="http://en.wikipedia.org/wiki/Convention_over_configuration">convention over configuration</a> enabled us to solve our problems instead of spending time wrangling the framework. In addition, we valued the good practices of the Ruby community like easy-to-understand code and thorough unit testing with tools that aren&rsquo;t painful.</p>
+<p>Behold, the Golden Keyboard:</p>
 
-<p>In the summer of 2010, we attended the first <a href="http://rubymidwest.com/">Ruby Midwest</a> as a team. We learned about developments in Ruby like JRuby and Chef as well as some of the great gems under development. The Cerner Store continued to grow and we learned about maintaining a Rails web app over time.</p>
+<p><img class="center" src="/assets/2014-07-01-shipit-hackathon-mplus/golden-keyboard.jpg" title="Golden Keyboard" ></p>
 
-<p>In early 2012, we were planning a massive undertaking to create a new platform for our Clients&#8217; healthcare data. It was to be called Millennium+ and it needed an architecture that could scale well to petabytes of data and dozens of engineers across many teams. We planned a <a href="http://engineering.cerner.com/2013/02/near-real-time-processing-over-hadoop-and-hbase/">service-oriented architecture</a> and chose Rails to serve as the server side of the application. Our Rails services call JVM services that retrieve data from HBase and serves the resulting data as JSON to the client-side applications, including our iOS app, PowerChart Touch Ambulatory. The high productivity we enjoyed on a small team scaled well to a large team of people who had never written Ruby before.</p>
+<p>We had reserved a large room off campus to get everyone away from their daily routines. Teams immediately jumped into their projects as soon as the hack day started on March 27th. Plenty of food and snacks were on hand, with lunch and dinner delivered to keep everyone fed. A hackavision dashboard (Sinatra application which subscribed to a list of atom feeds) was created, to track all the github commits by the teams.</p>
 
-<p>This was the start of Cerner&rsquo;s Ruby community. We developed reusable libraries and development processes that we continue to use today. The complexities of our architecture also led to the adoption of <a href="http://www.opscode.com/chef/">Chef</a> to automate operations and build a devops mindset. Chef is another integral use of Ruby that penetrates teams that did not use Ruby at all.</p>
+<p><img class="center" src="/assets/2014-07-01-shipit-hackathon-mplus/hackavision.jpg" title="Hackavision" ></p>
 
-<p>When planning our newest platform, <a href="http://www.cerner.com/blog/population_health_management_collaboration_with_advocate_physician_partners/">Population Health</a>, we needed to determine which platform made the most sense for a large-scale development of web applications on a tight timeline. We decided on Rails due in large part to its prioritization of convention over configuration, as well as the existing Ruby community at Cerner. These attributes would enable us to develop applications at the planned pace and scale. This decision is now disseminated to dozens of engineers working on brand new web applications and REST services powering them.</p>
+<p>The projects had amazing breadth. These include <a href="http://www.neo4j.org/">Neo4j</a>, <a href="http://riemann.io/">Riemann</a>, <a href="http://capistranorb.com/">Capistrano</a> and languages such as Ruby and Clojure. Teams not only learned new languages and projects in the 24 hours, but also had most of them fully functional and deployed at the end of the hackathon.</p>
 
-<p>We&rsquo;ve bolstered our internal Ruby community with lots of documentation and guidelines. We make use of the <a href="http://ruby.railstutorial.org/ruby-on-rails-tutorial-book">Ruby on Rails Tutorial book</a> and Why&rsquo;s (Poignant) Guide to train engineers in Ruby. Bozhidar Batsov&rsquo;s <a href="https://github.com/bbatsov/ruby-style-guide">Ruby style guide</a> aligns closely with how we write our code, so we use <a href="https://github.com/bbatsov/rubocop">rubocop</a> to keep ourselves in line. Our development devices run on <a href="https://rvm.io/">RVM</a> and our servers run on <a href="https://www.phusionpassenger.com/">Phusion Passenger</a>.</p>
+<p>There were other activities as well, such as playing Xbox and watching the NCAA Basketball Tournament, which provided to be great breaks throughout the night. Motivational movies, like <a href="http://www.imdb.com/title/tt0107977/">Robin Hood: Men in Tights</a>, were also on tap through the night.</p>
 
-<p>Ruby has quickly become a very important part of Cerner&rsquo;s engineering culture, primarily as the language behind Rails and Chef. An internal Ruby meetup has begun and there have been presentations involving Ruby at our annual Developer Conference.</p>
+<p><img class="center" src="/assets/2014-07-01-shipit-hackathon-mplus/fifa.jpg" title="FIFA" ></p>
 
-<p><img class="center" src="/assets/2013-04-05-ruby-at-cerner/ruby-midwest-logo-2013.png" title="Ruby Midwest 2013 Logo" ></p>
+<p>By 10 am on Friday morning on March 28th, everyone was ready to present their projects. We had four judges representing different areas of expertise. The demos were awesome and judges had a tough time picking the top three projects. Third place went to the SplunkOverflow team, who worked on a Maven plugin that would build site documentation for Thrift RPC services. Second place went to the Short Circuit team, who improved the performance of hash calculations in our <a href="https://github.com/apache/incubator-storm">Storm</a> topologies. First place (and the Golden Keyboard) went to the Minions team, who created &ldquo;lando&rdquo;, a set of services that supported monitoring and management tasks on JVM-based Thrift RPC services.</p>
 
-<p>Additionally, we are sponsoring <a href="http://rubymidwest.com/">Ruby Midwest</a> because we want developers to know that Ruby is highly valued at Cerner. We&rsquo;re also sending a large number of our own associates there to learn.</p>
+<p>All in all, it was an exciting 24 hours where teams showed their innovative abilities. All the projects were demo’ed to a larger audience about a week later. Most of the projects started on during ShipIt are being enhanced further, by the teams during their team level hack time or scheduled projects.</p>
 
-<p>We look forward to bringing on more engineers to use Ruby and other technologies to engineer the future of healthcare.</p>
+<p><img class="center" src="/assets/2014-07-01-shipit-hackathon-mplus/winners.jpg" title="Winners" ></p>
+
+<p>This was our first hackathon, but it won’t be our last! We will have at least one more later this year and plan on a recurring event, with the Golden Keyboard traveling around with the winning team. It was amazing to see what people can do in a short amount of time and with the flexibility of choosing what you want to work on, the end result will always be something cool. We hope to continue the innovative thinking, not only by team level hack days, but having larger hack days.</p>
 </div>
 
 
@@ -171,7 +173,7 @@
   
   
 
-<span class="byline author vcard">Written by <a href="/engineers/"><span class="fn">Cerner Engineering</span></a></span>
+<span class="byline author vcard">Written by <a href="/engineers/shahzad-zafar"><span class="fn">Shahzad Zafar</span></a></span>
 
       
 
@@ -185,7 +187,7 @@
   
 
 
-<time datetime="2013-04-05T00:00:00-05:00" pubdate data-updated="true">Apr 5<span>th</span>, 2013</time>
+<time datetime="2014-07-01T00:00:00-05:00" pubdate data-updated="true">Jul 1<span>st</span>, 2014</time>
       
 
 
@@ -202,13 +204,10 @@
     <ul class="pager">
       
       <li class="previous"><a class="basic-alignment left"
-        href="/2013/03/modularity-in-medical-imaging/" title="Previous Post:
-        Modularity in Medical Imaging">&laquo; Previous Post</a></li>
+        href="/blog/scaling-people-with-apache-crunch/" title="Previous Post:
+        Scaling People with Apache Crunch">&laquo; Previous Post</a></li>
       
       <li><a href="/blog/archives">Blog Archives</a></li>
-      
-      <li class="next"><a class="basic-alignment right" href="/2013/04/learn-what-the-rules-dont-cover/"
-        title="Next Post: Learn what the rules don't cover">Next Post &raquo;</a></li>
       
     </ul>
   </footer>
