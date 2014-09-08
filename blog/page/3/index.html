@@ -113,6 +113,56 @@
       
   <header class="entry-header">
     
+      <h1 class="entry-title"><a href="/2013/11/cerner-tech-talks/">Cerner Tech Talks</a></h1>
+    
+    
+      <div class="entry-meta meta">
+        
+  
+  
+
+<span class="byline author vcard">Written by <a href="/engineers/kevin-shekleton"><span class="fn">Kevin Shekleton</span></a></span>
+ | 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-12T00:00:00-06:00" pubdate data-updated="true">Nov 12<span>th</span>, 2013</time>
+        
+      </div>
+    
+  </header>
+
+
+  <div class="entry-content"><p>We are always looking for ways to share knowledge and learn new things within engineering at Cerner. Whether that be through meetups, lunch &amp; learns, conferences, or <a href="http://engineering.cerner.com/2013/08/devcon/">DevCon</a>, we have a variety of outlets available to us.</p>
+
+<p>Today, we’re announcing a new program we recently launched: Cerner Tech Talks.</p>
+
+<p>Cerner Tech Talks brings in great speakers for talks that would be of interest to engineers at Cerner. These talks will be held periodically and will vary widely in their content. Each talk will be recorded and available for viewing via our <a href="http://www.youtube.com/user/CernerEng">Cerner Engineering YouTube channel</a>.</p>
+
+<p>Last week, we held our first tech talk, which you can view below. <a href="http://www.robertvbinder.com/">Robert Binder</a>, an accomplished software testing expert, presented on model-driven development.</p>
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/OSlm6F8YmKc" frameborder="0" allowfullscreen></iframe>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article class="entry">
+      
+  <header class="entry-header">
+    
       <h1 class="entry-title"><a href="/2013/11/2013-software-intern-hackfest/">2013 Software Intern Hackfest</a></h1>
     
     
@@ -403,103 +453,6 @@
 
     </article>
   
-  
-    <article class="entry">
-      
-  <header class="entry-header">
-    
-      <h1 class="entry-title"><a href="/2013/08/devacademy/">DevAcademy</a></h1>
-    
-    
-      <div class="entry-meta meta">
-        
-  
-  
-
-<span class="byline author vcard">Written by <a href="/engineers/michelle-brush"><span class="fn">Michelle Brush</span></a></span>
- | 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-14T00:00:00-05:00" pubdate data-updated="true">Aug 14<span>th</span>, 2013</time>
-        
-      </div>
-    
-  </header>
-
-
-  <div class="entry-content"><p>When I graduated from college, I thought I understood what it meant to develop software in the real world. It required process. It required troubleshooting. It required quality. However, to me, process meant waterfall. Troubleshooting meant trying a few things and then asking for help. Quality meant manual testing.</p>
-
-<p>Agile methods were not unheard of when I graduated in 2001. My professors noted that iterative development was better than waterfall; they just only taught waterfall. Debuggers had been around since the 50’s, but my classmates and I still debugged with what I call &ldquo;Hi Mom!&rdquo; techniques. (We peppered our code with print statements.) Kent Beck had written the JUnit framework 4 years before, but it wasn’t entrenched in the Java culture yet. So it’s not surprising that my education didn’t cover these topics.</p>
-
-<p>It took a few painful experiences in the real world to make me realize the way I programmed in college wasn’t the best way to engineer software. I needed to adopt some new practices.</p>
-
-<p>Not much has changed in terms of software education. Being a part of Cerner’s software engineer training program, I am able to ask every group of new engineers three questions:</p>
-
-<p>&ldquo;Do you use an agile process?&rdquo;</p>
-
-<p>&ldquo;Do you use a debugger when troubleshooting your code?&rdquo;</p>
-
-<p>&ldquo;Do you write automated unit tests?&rdquo;</p>
-
-<p>Cerner has had explosive growth in engineering, so I’ve asked those questions of hundreds of recent graduates. Almost no one says yes. This told me that while colleges are doing a great job of teaching computer science, many schools are not teaching best practices in software development.</p>
-
-<p>Until recently, Cerner wasn’t doing that great of a job of teaching them either. Our training program covered them, but we still saw the new engineers struggle to understand agile development, debug their code, and write their first unit test. One of Cerner’s core values is if you recognize something is broken, you are empowered to fix it. I knew our training program wasn’t working. It became my job to fix it.</p>
-
-<p>Before tackling the whole program, I tried a little experiment. I wanted to see what it would take to get engineers in training to write just one unit test. At the time, training included a class on JUnit. In spite of the class, only 5% of the engineers were writing unit tests for training assignments.</p>
-
-<p>To correct this, I started telling the engineers that I would take points off assignments that didn’t have a unit test. The idea was to create structural motivation. We immediately saw 40% of the engineers writing unit tests. A step forward, but it wasn’t enough.</p>
-
-<p>The biggest obstacle to broader use of unit tests in training was that they didn’t know how to include the testing framework in their Java projects. That, more than the effort of writing the test, was keeping them from doing something we expected of them.</p>
-
-<p>Something was wrong. We were teaching Maven in our training program. If you are not familiar with it, Maven helps you manage your project builds, and as a result, it helps you manage your dependencies. The engineers were already attending a class that taught them how to add dependencies to Java projects. They just weren’t able to associate what they had learned with the goal of bringing JUnit into their projects. They weren’t making the connection.</p>
-
-<p>This connection was missed because engineers were learning about Maven in the absence of a problem. They were being told it’s an important tool, but we hadn’t given them a reason to use it. Later, when they did encounter the problem &ndash; &ldquo;How do I add the JUnit jar to my project?&rdquo; – it was too late. They had forgotten about Maven.</p>
-
-<p>The key was to move the Maven training closer to when they needed the information. This is called &ldquo;Just in Time Teaching.&rdquo; It became the first requirement of the new program.</p>
-
-<p>Another interesting aspect of my experiment is that 40% would write the tests even given the delay between training and practice. It should be obvious to anyone that’s ever taken a college programming class that some programmers can get it from lectures alone. Others have to practice. Any one-size-fits-all approach to training is flawed. The second requirement for the new program was that it must flex to meet the skills and learning styles of the engineers.</p>
-
-<p>With these goals in mind, I started the redesign of Cerner’s training program. My first step was to interview a large sample of our software leaders. I asked them what they wanted engineers to learn. Time and time again, the top answers would be agile development, debugging, and automated unit tests. Surprisingly, it was not a list of technologies like iOS, Hadoop, JSON, or ReST.</p>
-
-<p>The resumes of our newly hired engineers are full of languages and technologies. However, when asked what they wanted of new engineers, our lead architects described practices. If Cerner could get engineers to improve in practices, we could take the great engineers we were hiring and immediately make them more productive.</p>
-
-<p>The scary thing is that sharing knowledge is easy, but changing people’s behavior is hard. Once I realized our problems were about software development behavior and not knowledge, I realized we would need to completely rebuild the way Cerner trains its new engineers. The result is DevAcademy.</p>
-
-<p><img class="center" src="/assets/2013-08-14-devacademy/DevAcademy.png" title="DevAcademy" ></p>
-
-<p>Imagine you are a new engineer starting at Cerner. In your first week at Cerner, you report to the DevAcademy. The first two weeks focus on in-class instruction and assessment. The goal here is to introduce core software development behaviors and then assess your skills.</p>
-
-<p>After completing the first two weeks of instruction, you join what we call the DevCenter and are assigned a real project. However, that project isn’t assigned by your team. You get to pick. The projects come from all over Cerner including web applications and services, tools to make engineers more productive, and even contributing to open source projects used by Cerner. In picking a project, you are telling Cerner the types of work you find interesting. This helps us determine the best place for you across our diverse range of solutions and technologies.</p>
-
-<p><img class="center" src="/assets/2013-08-14-devacademy/ManagersTalkingToEngineer1.jpg" title="Manager talking to engineer" ></p>
-
-<p>While working on that first project, you have a dedicated mentor. You are expected to make progress on the project while receiving feedback. You also get just-in-time training on user stories, source code management, unit testing, and scrum. You get to use Cerner’s software development ecosystem in an isolated, safe environment.</p>
-
-<p><img class="center" src="/assets/2013-08-14-devacademy/Mentoring.jpg" title="Mentoring" ></p>
-
-<p>Once you show readiness to join a team, you are allowed to demo your work to the teams that have open positions. Those teams can then pick the engineer that best fits their team. In this way, Cerner makes sure you are assigned to the right team for both Cerner and you.</p>
-
-<p>DevAcademy recognizes that you should never stop learning, so the program continues well into your first few months on your team. You are offered classes on different technologies and more advanced topics as part of an elective-based training plan. You work with your manager to decide which classes to take. It’s Cerner’s way of making sure all of our engineers continue to grow.</p>
-
-<p>We’ve had 150 engineers join DevAcademy since it was launched. I’ve had the privilege of seeing the new engineers struggle and then succeed on their projects. I’ve seen the light come on when they realize the usefulness good development practices and apply them effectively. I’ve seen them get excited about git and other powerful tools that they didn’t have the opportunity to learn during their formal educations. The best part of my job is that I’ve seen many very good engineers start down the career-long path towards becoming really great ones.</p>
-
-<p><img class="center" src="/assets/2013-08-14-devacademy/Staff.jpg" title="Staff" ></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="/blog/page/4/">&larr; Older posts</a></li>
@@ -517,6 +470,10 @@
   <ul id="recent_posts" class="nav nav-list">
     
       <li class="post">
+        <a href="/blog/intern-hackfest-2014/">Intern HackFest 2014</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/the-plain-text-is-a-lie/">The Plain Text Is a Lie</a>
       </li>
     
@@ -530,10 +487,6 @@
     
       <li class="post">
         <a href="/blog/migrating-from-eclipse-3.x-to-eclipse-4.x-the-iaware-story/">Migrating From Eclipse 3.X to Eclipse 4.X - the iAware Story</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2014/01/sponsoring-the-apache-software-foundation/">Sponsoring the Apache Software Foundation</a>
       </li>
     
   </ul>
