@@ -12,7 +12,7 @@ I have been asked many times what closures are and how they work. There are many
 
 I will supply code samples. `//>` denotes an output or return.
 
-Before discussing closures, it is important to review functions.
+Before discussing closures, it is important to review how functions work in JavaScript.
 
 ## Introduction to functions
 If a function does not have a return statement, it will implicitly return undefined, which brings us to the simplest functions.
@@ -40,7 +40,7 @@ identity({a: "dog"}); //> Object {a: "dog"}
 The important thing to note here is that the variable (value) passed in is bound to that function’s scope. This means that it is available to everything inside the function and is unavailable outside of it. There is an exception to this, being that objects are passed by reference which will prove useful with the use of closures and currying.
 
 ### Functions that evaluate to functions
-In JavaScript, functions are first class citizens which means that they are objects. Since they are objects, they can take functions as parameters, have methods bound to them,  and even return functions.
+Functions are first class citizens in Javascript, which means that they are objects. Since they are objects, they can take functions as parameters, have methods bound to them,  and even return functions.
 
 ```js
 function foo() {
@@ -56,17 +56,17 @@ This is a function that returns a function which returns true.
 
 {% img center /assets/2014-09-26-closures-and-currying-in-javascript/not_sure_if.jpg Not sure if my function or a function from inside my function %}
 
-So functions take arguments and those arguments can be values or reference types, such as functions. If you return a function, it is that function you are returning, not a new one (even though it might have just been made to return). Let’s see what we can do with that.
+Functions take arguments and those arguments can be values or reference types, such as functions. If you return a function, it is that function you are returning, not a new one (even though it might have just been made to return).
 
 ## Closures
-Since we had a brief review of functions, we’re ready to dive into closures. A closure is nothing more than accessing a variable outside of a function’s scope (using a variable that is neither bound on invocation or defined in the function body).
+Creating a closure is nothing more than accessing a variable outside of a function’s scope (using a variable that is neither bound on invocation or defined in the function body).
 
 To elaborate, the parent function’s variables are accessible to the inner function. If the inner function uses its parent’s (or parent’s parent’s and so on) variable(s) then they will persist in memory as long as the accessing functions(s) are still referenceable. In JavaScript, referenceable variables are not garbage collected.
 
 Let’s review the identity function:
 
 ```js
-function identity(_) { return _; }
+function identity(a) { return a; }
 ```
 
 The value, a, is bound inside of the function and is unavailable outside of it; there is no closure here.  For a closure to be present, there would need to be a function within this function that would access the variable a.
@@ -77,7 +77,7 @@ Why is this important?
 * They enable private variables in a global world.
 * Many patterns, including the fairly popular [module pattern](http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html), rely on closures to work correctly.
 
-Because of these reasons, and many more, closures are used everywhere. Many popular libraries utilize them internally.
+Due to these strengths, and many more, closures are used everywhere. Many popular libraries utilize them internally.
 
 {% img center /assets/2014-09-26-closures-and-currying-in-javascript/closures_everywhere.jpg Closures! Closures everywhere! %}
 
@@ -145,7 +145,7 @@ var bar = (function () {
 bar(); //> [0, 1, 2]
 ```
 
-By utilizing closure here, our big imaginary data set only has to be created once. Because of the way garbage collection (automatic memory freeing) works in JavaScript, the existence of the internal function (which is returned and set to the variable bar) keeps the private variable from being freed and thus available for subsequent calls. This is really advantageous when you consider large data sets that may be created via Ajax requests which have to go over the network.
+By utilizing closure here, our big imaginary data set only has to be created once. Given the way garbage collection (automatic memory freeing) works in JavaScript, the existence of the internal function (which is returned and set to the variable bar) keeps the private variable from being freed and thus available for subsequent calls. This is really advantageous when you consider large data sets that may be created via Ajax requests which have to go over the network.
 
 ## Currying
 {% img center /assets/2014-09-26-closures-and-currying-in-javascript/curry.jpg Mmmm Curry! %}
@@ -173,7 +173,7 @@ console.log(msg('Goodbye,', 'Sarah Connor')); // Goodbye, Sarah Connor.
 
 By currying the msg function so the first variable is cached as “Hello,”, we can call a simpler function, hello, that only requires one variable to be passed. Doesn’t this sound similar to what a closure might be used for?
 
-Often when I discuss functional programming concepts, I sense an air of frustration.
+In the discussion of functional programming concepts, there is often a sense of resistance.
 
 {% img center /assets/2014-09-26-closures-and-currying-in-javascript/not_going_to_happen.jpg Stop trying to make functional programming happen. It's not going to happen! %}
 
