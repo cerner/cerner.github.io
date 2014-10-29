@@ -113,6 +113,105 @@
       
   <header class="entry-header">
     
+      <h1 class="entry-title"><a href="/2013/07/thinking-in-mapreduce/">Thinking in MapReduce</a></h1>
+    
+    
+      <div class="entry-meta meta">
+        
+  
+  
+
+<span class="byline author vcard">Written by <a href="/engineers/ryan-brush"><span class="fn">Ryan Brush</span></a></span>
+ | 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-31T00:00:00-05:00" pubdate data-updated="true">Jul 31<span>st</span>, 2013</time>
+        
+      </div>
+    
+  </header>
+
+
+  <div class="entry-content"><p><em>This is the blog form of the Thinking in MapReduce talk at StampedeCon 2013. I’ve linked to existing resources for some items discussed in the talk, but the structure and major points are here.</em></p>
+
+<p>We programmers have had it pretty good over the years. In almost all cases, hardware scaled up faster than data size and complexity. Unfortunately, this is changing for many of us. Moore&rsquo;s Law has taken on a new direction; we gain power with parallel processing rather than faster clock cycles. More importantly, the volume of data we need to work with has grown exponentially.</p>
+
+<p>Tackling this problem is tremendously important in healthcare. At the most basic level, healthcare data is too often fragmented and incomplete: an individual’s medical data is spread across multiple systems for different venues of care. Such fragmentation means no one has the complete picture of a person’s health and that means decisions are made with incomplete information. One thing we’re doing at Cerner is securely bringing together this information to enable a number of improvements, ranging from better-informed decisions to understanding and improving the health of entire populations of people. This is only possible with data at huge scale.</p>
+
+<p>This is also opening new opportunities; Peter Norvig shows in the <a href="http://www.youtube.com/watch?v=yvDCzhbjYWs">Unreasonable Effectiveness of Data</a> how simple models over many data points can perform better than complex models with fewer points. Our challenge is to apply this to some of the most complicated and most important data sets that exist.</p>
+
+<h2>New problems and new solutions</h2>
+
+<p>Our first thought may be to tackle such problems using the proven, successful strategy of relational databases. This has lots of advantages, especially the <a href="http://en.wikipedia.org/wiki/ACID">ACID semantics</a> that are easy to reason about and make strong guarantees about correctness. The downside is such guarantees require strong coordination between machines involved and in many cases the cost of that coordination grows as the square of data size.  Such models should be used whenever they can, but to reason about huge data sets holistically means we have to consider different tradeoffs.</p>
+
+<p>So we need new approaches for these problems. Some are clear upfront: as data becomes too large to scale up on single machines, we must scale out across many. Going further, we reach a point where we have too much data to move across a network &mdash; so rather than moving data to our computation, we must move computation to data.</p>
+
+<p>In fact, these simple assertions form the foundation of MapReduce: we move computation to data by running map functions across individual records without moving them over the network and merge and combine, or reduce, the output of those functions into a meaningful result. <a href="http://wiki.apache.org/hadoop/WordCount">Word count</a> is the prototypical example of this pattern in action. MapReduce implementations as offered by Hadoop actually offer a bit more than this, with the following phases:</p>
+
+<ul>
+<li><p><em>Map</em> &mdash; transform or filter individual input records</p></li>
+<li><p><em>Combine</em> &mdash; optional partial merge of map outputs in the mapping process, usually for efficiency</p></li>
+<li><p><em>Shuffle and Sort</em> &mdash; Sort the output of map operations by an arbitrary key and partition map output across reducers</p></li>
+<li><p><em>Reduce</em> &mdash; Process the shuffled map output in the sorted order, emitting our final result.</p></li>
+</ul>
+
+
+<p><img class="center" src="/assets/2013-07-31-thinking-in-mapreduce/MapReduce1.png" title="MapReduce" ></p>
+
+<p>We have our building blocks: we can split data across many machines and apply simple functions against them. Hadoop and MapReduce support this pattern well.  Now we need to answer two questions: How do we use these building blocks effectively and how do we create higher-level value on top of them?</p>
+
+<p>The first step is to maximize parallelism. The most efficient MapReduce jobs shift as much work into the map phase as possible, even to the point where there is little or no data that needs to be sent across the network to the reducer. We can gauge the gains made by scaling out by applying <a href="http://en.wikipedia.org/wiki/Amdahl's_law">Amdahl’s Law</a> where the parallelism is the amount of work we can do in map tasks versus more serial reduce-side operations.</p>
+
+<p>The second step is to compose our <em>map, combine, shuffle, sort, and reduce</em> primitives into higher-level operations. For example:</p>
+
+<ul>
+<li><p><em>Join</em> &mdash; Send distinct inputs to map tasks, and combine them with a common key in the reducers.</p></li>
+<li><p><em>Map-Side Join</em> &mdash; When one data set is much smaller than another, it may be more efficient to simply load it in each map task, eliminating the reduce phase overhead outright.</p></li>
+<li><p><em>Aggregation</em> &mdash; Summarizes big data to be easily computed.</p></li>
+<li><p><em>Loading into external systems</em> &mdash; The output of the above operations can be exported to dedicated tools like R to do further analysis.</p></li>
+</ul>
+
+
+<p>Beyond that, the above operations can be composed into sophisticated process flows to take data from several complex sources, join it together, and distill it down into useful knowledge. The book <a href="http://shop.oreilly.com/product/0636920025122.do">MapReduce Design Patterns</a> discusses all of these patterns and more.</p>
+
+<h2>Higher-Level APIs</h2>
+
+<p>Understanding the above patterns is important but much like how higher-level languages have grown dominant, higher-level libraries have replaced direct MapReduce jobs. At Cerner, we make extensive use of <a href="http://crunch.apache.org">Apache Crunch</a> for our processing infrastructure and of <a href="http://hive.apache.org">Apache Hive</a> for querying data sitting in Hadoop.</p>
+
+<h2>Reasoning About the System</h2>
+
+<p>Most of development history has focused on variations on <a href="http://www.infoq.com/presentations/Value-Values">Place-Oriented Programming</a>, where we have data in objects or database rows and we apply change by updating our data in place.  Yet such a model doesn’t align with MapReduce; when dealing with mass processing of very large data sets, the complexity and inefficiency involved in individual updates becomes overwhelming. The system would become too complicated to perform or reason about. The result is a simple axiom for processing pipelines: <em>start with the questions you want to ask and then transform the data to answer them.</em> Re-processing huge data sets at any time is what Hadoop does best and we can leverage that to view the world as pure functions of our data, rather than trying to juggle in-place updates.</p>
+
+<p>In short, the MapReduce view of the world is a holistic function of your raw data. There are techniques for processing incremental change and persisting processing steps for efficiency but these are optimizations. Start by processing all data holistically and adjust from there.</p>
+
+<h2>Beyond MapReduce</h2>
+
+<p>The paper <a href="http://homes.cs.washington.edu/~alon/files/dataspacesDec05.pdf">From Databases to Dataspaces</a> discusses a new view of integrating and leveraging data. A similar idea has entered the lexicon under the label &ldquo;Data Lake&rdquo; but the principles align: securely bring structured and unstructured data together and apply massive computation to it at any time for any new need. Existing systems are good at efficiently executing known query paths but require a lot of up-front work, either by creating new data models or building out infrastructure for the immediate need. Conversely, Hadoop and MapReduce allow us to ask questions about our data in parallel at massive scale without prior build.</p>
+
+<p>This becomes more powerful as Hadoop becomes a more general fabric for computation. Projects like <a href="http://spark-project.org">Spark</a> can be layered on top of Hadoop to significantly improve processing time for many jobs. SQL- and search-based systems allow faster interrogation of data directly in Hadoop to a wider set of users and domain-specific data models can be quickly computed for new needs.</p>
+
+<p>Ultimately, the gap between the discovery of a novel question and our ability to answer it is shrinking dramatically. The rate of innovation is increasing.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article class="entry">
+      
+  <header class="entry-header">
+    
       <h1 class="entry-title"><a href="/2013/04/first-robotics-championship-competition-in-st-louis/">FIRST Robotics Championship Competition in St. Louis</a></h1>
     
     
@@ -324,91 +423,6 @@
 
     </article>
   
-  
-    <article class="entry">
-      
-  <header class="entry-header">
-    
-      <h1 class="entry-title"><a href="/2013/03/modularity-in-medical-imaging/">Modularity in Medical Imaging</a></h1>
-    
-    
-      <div class="entry-meta meta">
-        
-  
-  
-
-<span class="byline author vcard">Written by <a href="/engineers/"><span class="fn">Cerner Engineering</span></a></span>
- | 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-29T00:00:00-05:00" pubdate data-updated="true">Mar 29<span>th</span>, 2013</time>
-        
-      </div>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Developers often take for granted the level of flexibility and customization that is available within the software they use every day. Consumers of imaging software have traditionally been completely confined to interpret exams a specific way, and frequently in ways that are unintuitive. Every physician, specialist, technologist, med student, and others across the continuum of care has a preference as to not only how exams are laid out, but what information is displayed with the images and what transformations would be applied or processed automatically. As it turns out, the only workflow they have in common is that they all view exams differently and they all want the experience to be clear and understandable.</p>
-
-<p>We decided to take this to heart in the development of our viewing solution by allowing the application react to the user, opposed to the user reacting to the application and constraining their workflow. Working in the medical community can already be a high stress environment; introducing a piece of software intended to augment patient care that often times makes delivering care more difficult is not a viable solution. Finding the best way to address these issues starts with knowing the solution’s target audience. Before developers can help streamline a workflow, they first have to understand it. If you understand the user’s workflow and how they expect the solution to function, you can design for usability and they will want to use it, as opposed to feeling forced to use it. A key aspect of this is the reliability and simplicity of the application. If the user feels like the application is unstable or overly complex, they will immediately lose interest and view the whole experience as a chore, as opposed to something that can provide value.</p>
-
-<p><img class="center" src="/assets/2013-03-29-modularity-in-medical-imaging/Figure-1.png" title="Figure 1" ></p>
-
-<p>The interface is the first application element the user encounters. If it feels intimidating and complex, before they even perform any functions, you have set a negative tone for your application and adoption will be low. In the case of imaging, Radiologists often spend more than 60 hours a week reading over 16,000 procedures per year, all in front of the same application. Imagine working with an application that causes frustration throughout your day.  The first impression can propel an application in the marketplace or stifle it.</p>
-
-<p>With the advent of open source software coming to the forefront, there are a variety of options for developing rich applications backed by a large community of contributors. One of those happens to be the Eclipse Rich Client Platform (RCP) and the corresponding Standard Widget Toolkit (SWT). RCP and SWT both provide a way for developers to rapidly develop a professional looking and stable application but are somewhat limiting when viewed from an imaging standpoint. Radiologists typically read on workstations that have three or more monitors and in environments that are dimly lit. Using an application that is primarily grey and white can not only cause eye strain for the user but it can be distracting from what the user is trying to accomplish.</p>
-
-<p><img class="center" src="/assets/2013-03-29-modularity-in-medical-imaging/Figure-2.png" title="Figure 2" ></p>
-
-<p>Our team addressed this by starting out with the native components and then closely working with radiologists and visual designers to plan a user interface that was not only visually pleasing but also functional. The end result was a set of skinnable SWT widgets that are reusable within any SWT based application and can be specifically themed to match a desired color scheme for an environment.</p>
-
-<p><img class="center" src="/assets/2013-03-29-modularity-in-medical-imaging/Figure-3.png" title="Figure 3" >)</p>
-
-<p>Another aspect of imaging that we needed to plan for was the wide array of uses (diagnostic versus distribution). In a diagnostic scenario, radiologists will use the solution to perform diagnosis and will use the application within a multi-monitor high-resolution environment. For purposes of distribution imaging, clinicians will view images for reference and often times will view these on a much lower resolution single screen device (such as a laptop). While these two scenarios have vastly different hardware environments, users want the same experience across both and do not want to have to learn a new application depending on the workflow they are targeting at the time. As developers, we can address this by using service APIs instead of hard implementations and then create different assemblies that are easily accessible based on what the user is trying to accomplish. This not only helps address production concerns but allows developers to code against mock data sources and stores using the same API that they would within a fully scaled production environment.</p>
-
-<p>Once we had the basics covered, we rethought how we approached the workflow, and sought to intentionally design for usability and responsiveness within the application. Users previously were constrained to grids and a limited amount of information while reading. With modular components designed to perform specific tasks and provide specific information, the user can now decide how they want to consume and view exams.</p>
-
-<p><img class="center" src="/assets/2013-03-29-modularity-in-medical-imaging/Figure-4.png" title="Figure 4" ></p>
-
-<p><img class="center" src="/assets/2013-03-29-modularity-in-medical-imaging/Figure-5.png" title="Figure 5" ></p>
-
-<p><img class="center" src="/assets/2013-03-29-modularity-in-medical-imaging/Figure-6.png" title="Figure 6" ></p>
-
-<p>So now we have a solid application for use within diagnostic scenarios, but how do we give access to the enterprise without adding overhead? Following the path of reuse, we decided that we would use the main application that we already had. By starting with these components instead of rebuilding it for the browser or an entirely new framework, we could focus on how we could change the delivery of that application.</p>
-
-<p>We needed a way to deliver the same high power application without requiring the high power hardware. Traditional IT solutions would use Citrix, VMWare, or some other type of commercially available virtualization solution. While these are all great solutions for certain scenarios, the requirement of plugin installation on the client device accessing the application the heavy graphics processing within an imaging solution does not play nicely in these environments.  We can build on what these other solutions use (MS Remote Desktop Services) but choose to marshal the end result in an entirely different way.</p>
-
-<p>If we want to deliver an application via a web browser, we have a limited selection of tools that we can depend on being available. IE has its own quirks and implementations, Chrome has some fancy extras on top of the WebKit rendering engine, and while Safari/Firefox use the same engine they still behave differently. Developing and deploying an application that must be focused on performance for the end user and still usable within a variety of environments has to take all of these constraints and challenges into consideration.</p>
-
-<p>First, we needed a way to communicate between the client and server. The HTML5 WebSocket API is great for this, but only has minimal support and user adoption. Socket.IO has a great framework that allows for WebSocket emulation (or their native use if available) that provides great performance. We decided to use this for our real-time web app and it has proven to be invaluable throughout our development process.</p>
-
-<p><img class="center" src="/assets/2013-03-29-modularity-in-medical-imaging/Figure-7.png" title="Figure 7" ></p>
-
-<p>Now that we can communicate to the server what the user wants to do, we need a way to provide a representation of the images and UI that corresponds to the user input. The HTML5 Canvas API would seem like a good choice but continually redrawing canvas areas is process intensive and as this API isn’t supported within IE (the vast majority of our user base), it simply wasn’t an option. Instead, we decided to use a streaming mechanism, but couldn’t use the HTTP Streaming spec as this inherently introduces latency, which wouldn’t provide an acceptable user experience. All browsers support JPEG and PNG decompression and we can easily compress representations of the screen and shuttle these to the client. Even better, we can do this with a minimal amount of latency (we eliminate the need for key frames within an MPEG stream); we can choose which frames to drop and we can adjust the quality of each frame on the fly. This allows the client to adapt to the current network constraints and machine capabilities by tracking the effective FPS and adjusting the parameters on a sliding scale accordingly.</p>
-
-<p><img class="center" src="/assets/2013-03-29-modularity-in-medical-imaging/Figure-8.png" title="Figure 8" ></p>
-
-<p>With all of these tiers in place, we now have an application in the browser that looks identical to the desktop deployment with plugins or installation required.</p>
-
-<p><img class="center" src="/assets/2013-03-29-modularity-in-medical-imaging/Figure-9.png" title="Figure 9" ></p>
-
-<p>Beyond that, we have an SDK where third parties can build on top of our current deployment and provide even more specialized functionality within the imaging space, while still allowing users to customize their layout and how the data is delivered. We have now managed to deliver the same application to any device with a browser and our developers can develop from a single code line. This pleases our users and makes our developers’ lives easier. A true testament to how ease of development and a simple, yet powerful, user experience can exist in the same application.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="/blog/page/6/">&larr; Older posts</a></li>
@@ -426,6 +440,10 @@
   <ul id="recent_posts" class="nav nav-list">
     
       <li class="post">
+        <a href="/blog/cerner-and-the-apache-software-foundation/">Cerner and the Apache Software Foundation</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/closures-and-currying-in-javascript/">Closures & Currying in JavaScript</a>
       </li>
     
@@ -439,10 +457,6 @@
     
       <li class="post">
         <a href="/blog/shipit-hackathon-mplus/">ShipIt - 24-hour Hackathon for Millennium+ Platform Dev</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/scaling-people-with-apache-crunch/">Scaling People With Apache Crunch</a>
       </li>
     
   </ul>
