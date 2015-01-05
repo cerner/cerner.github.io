@@ -27,7 +27,7 @@
         <div id="search-form-wrapper">
           <form class="form-search" id="searchform" role="search" action="{{ site.simple_search }}" method="get" >
             <label class="hide" for="q">Search for:</label>
-            <input name="q" type="hidden" value="site:{{ site.url | shorthand_url }}" />
+            <input name="sitesearch" type="hidden" value="{{ site.url | shorthand_url }}" />
             <input class="search-query" id="q" name="q" type="text" results="0" placeholder="Search">
             <input class="btn" id="searchsubmit" type="submit" value="Search" >
           </form>      
