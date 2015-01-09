@@ -1,0 +1,136 @@
+#wrapper{              
+	width: 960px;
+	margin: 0 auto;
+	-webkit-user-select: none;	  			
+}
+
+#banner{
+	position: absolute;
+}
+
+.homeone{
+	background: center top no-repeat #6AAAD5;
+}
+
+.oneByOne1{
+	margin:auto;
+	width: 960px;
+	height: 420px;   
+/*	background: #EFEFEF url(../images/assets/paven.png) repeat;  */
+	position: relative;
+/*	overflow: hidden;  	*/
+}   
+
+#banner .oneByOne_item{
+	position: absolute;
+	width: 960px;
+	height: 420px;  
+	overflow: hidden;  
+	display: none;
+}         
+
+#exampleline{
+	position: relative;
+	margin: 5% 0 0 0;
+}
+
+.buttonArea .linealeft{ background:url(img/linealeft.png); width:211px; height:2px; right:66px; bottom:5px; position:absolute;}
+.buttonArea .linearight{ background:url(img/linearight.png); width:211px; height:2px; left:26px; bottom:5px; position:absolute;}
+
+/* change the width of the slider in your own responsive media query */
+@media only screen and (min-width: 960px) {
+	.oneByOne1, #banner .oneByOne_item, #wrapper, #exampleline img{
+		width: 960px;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 959px) {
+	.oneByOne1, #banner .oneByOne_item, #wrapper, #exampleline img{ width: 748px; }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+	.oneByOne1, #banner .oneByOne_item, #wrapper, #exampleline img{
+		width: 460px;
+	}	
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+	.oneByOne1, #banner .oneByOne_item, #wrapper, #exampleline img{
+		width: 300px;
+	}
+	
+}
+                      
+#banner .oneByOne_item span{
+	font-family: "Lucida Grande", "Lucida Sans Unicode", helvetica, verdana, arial, sans-serif;
+}                                                                                              
+
+#banner .oneByOne_item a{
+	text-decoration: none;
+	color: #B22222;
+}
+              
+
+
+#banner .oneByOne_item span.slide2Txt1{ 
+  	position: relative;
+	float: left;
+	margin: 10% 2% 0 20%;
+	color: #9ACD32;	
+	font-size: 24px;  
+	background: #FFFFFF;
+	padding: 8px;             
+}
+ 
+#banner .oneByOne_item span.slide2Txt2{ 
+  	position: relative;
+	clear: left;
+	float: left;
+	margin: 6px 2% 0 20%;
+	color: #666666;	
+	font-size: 14px;  
+	background: #FFFFFF;
+	padding: 8px;             
+}   
+
+#banner .oneByOne_item span.slide2Txt3{ 
+  	position: relative;
+	clear: left;
+	float: left;
+	margin: 6px 2% 0 20%;
+	color: #666666;	
+	font-size: 12px;  
+	background: #FFFFFF;
+	padding: 8px;             
+}     
+                    
+  
+
+#banner .oneByOne_item img.bigImage{ 
+	position: absolute;
+	top: 0; 
+	left: 0;
+	width: 100%;
+
+}
+
+#banner .oneByOne_item span.slide5Txt1{ 
+  	position: relative;
+	float: left;
+	margin: 10% 0 0 40%;
+	color: #9ACD32;	
+	font-size: 24px;  
+	background: #FFFFFF;
+	padding: 8px;             
+}
+ 
+#banner .oneByOne_item span.slide5Txt2{ 
+  	position: relative;
+	clear: left;
+	float: left;
+	margin: 12px 0 0 40%;
+	color: #666666;	
+	font-size: 12px;  
+	background: #FFFFFF;
+	padding: 8px;             
+}  
