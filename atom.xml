@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2015-01-29T09:00:58-06:00</updated>
+  <updated>2015-01-29T09:06:00-06:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Managing 30,000 Logging Events Per Day With Splunk]]></title>
-    <link href="http://engineering.cerner.com/blog/Managing-30000-Logging-Events-per-Day-with-Splunk/"/>
-    <updated>2015-02-02T00:00:00-06:00</updated>
-    <id>http://engineering.cerner.com/blog/Managing-30000-Logging-Events-per-Day-with-Splunk</id>
+    <link href="http://engineering.cerner.com/blog/managing-30000-logging-events-per-day-with-splunk/"/>
+    <updated>2015-01-29T00:00:00-06:00</updated>
+    <id>http://engineering.cerner.com/blog/managing-30000-logging-events-per-day-with-splunk</id>
     <content type="html"><![CDATA[<p>Our team works on a patient facing web application with a thousand live clients with 2,315,000+ users. On an average, the high traffic results into more than 40,000 visits and 300,000 page views daily generating about 30,000 logging events. A considerable portion of these events are of information and warning level in order to aid proactive monitoring or identify potential issues due to clients’ misconfiguration.</p>
 
 <h2>Before Splunk</h2>
@@ -26,7 +26,7 @@
 
 <p><strong>Below: Our old log aggregator used to identify the occurrences (2) of a log with the stack trace.</strong></p>
 
-<p><img class="center" src="http://engineering.cerner.com/assets/2015-02-02-managing-30000-logging-events-per-day/Log-Aggregator.png"></p>
+<p><img class="center" src="http://engineering.cerner.com/assets/2015-01-29-managing-30000-logging-events-per-day/Log-Aggregator.png"></p>
 
 <h2>Splunk Round 1</h2>
 
@@ -34,13 +34,13 @@
 
 <p><strong>Below: Once we extracted meaningful fields in our logs, we could identify impact. In this case, an issue is spread across 9 orgs and and 28 users.</strong></p>
 
-<p><img class="center" src="http://engineering.cerner.com/assets/2015-02-02-managing-30000-logging-events-per-day/Selected-Fields.png"></p>
+<p><img class="center" src="http://engineering.cerner.com/assets/2015-01-29-managing-30000-logging-events-per-day/Selected-Fields.png"></p>
 
 <p>Although we had crossed some of the hurdles which made log monitoring difficult shortly after moving to Splunk, monitoring logs for issues was still not an easy job. It was possible to overlook issues since there was no effective way of studying trends. Initially, we created dashboards which helped identify organizations having problems. This was slightly useful but failed to depict more important graphical representation of the different types of occurring issues for a particular client or for all clients at a given time.</p>
 
 <p><strong>Below: Reports like these weren&rsquo;t very helpful. Clients with more users tend to have more errors, so this trend doesn&rsquo;t necessarily indicate a client is experiencing a downtime.</strong></p>
 
-<p><img class="center" src="http://engineering.cerner.com/assets/2015-02-02-managing-30000-logging-events-per-day/Report-users.png"></p>
+<p><img class="center" src="http://engineering.cerner.com/assets/2015-01-29-managing-30000-logging-events-per-day/Report-users.png"></p>
 
 <h2>Splunk Round 2</h2>
 
@@ -57,17 +57,17 @@
 
 <p><strong>Below: Eventtypes give us the ability to see known problems that happen over time. We can even see known problems broken down by client.</strong></p>
 
-<p><img class="center" src="http://engineering.cerner.com/assets/2015-02-02-managing-30000-logging-events-per-day/Eventtype-1.png"></p>
+<p><img class="center" src="http://engineering.cerner.com/assets/2015-01-29-managing-30000-logging-events-per-day/Eventtype-1.png"></p>
 
-<p><img class="center" src="http://engineering.cerner.com/assets/2015-02-02-managing-30000-logging-events-per-day/Eventtype-2.png"></p>
+<p><img class="center" src="http://engineering.cerner.com/assets/2015-01-29-managing-30000-logging-events-per-day/Eventtype-2.png"></p>
 
 <p>Once we had our frequently occurring problems categorized, we were able to break it down even further. We could identify problems caused by configuration in our application layer, problems that required escalation or if client side contacts needed to be engaged.</p>
 
 <p><strong>Below: We now have the ability to track impact to users from clients not taking a service package [left], or from improper Service Configuration [right].</strong></p>
 
-<p><img class="center" src="http://engineering.cerner.com/assets/2015-02-02-managing-30000-logging-events-per-day/Impact-to-users-from-clients-1.png"></p>
+<p><img class="center" src="http://engineering.cerner.com/assets/2015-01-29-managing-30000-logging-events-per-day/Impact-to-users-from-clients-1.png"></p>
 
-<p><img class="center" src="http://engineering.cerner.com/assets/2015-02-02-managing-30000-logging-events-per-day/Impact-to-users-from-clients-2.png"></p>
+<p><img class="center" src="http://engineering.cerner.com/assets/2015-01-29-managing-30000-logging-events-per-day/Impact-to-users-from-clients-2.png"></p>
 
 <h3>Alerting</h3>
 
