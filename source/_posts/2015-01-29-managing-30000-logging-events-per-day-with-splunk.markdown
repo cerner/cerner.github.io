@@ -2,7 +2,7 @@
 layout: post
 title: "Managing 30,000 Logging Events per Day with Splunk"
 author: Mike Hemesath and Rima Poddar
-date: 2015-02-02
+date: 2015-01-29
 tags: [engineering]
 ---
 
@@ -15,7 +15,7 @@ To handle this large volume of logging, our team created a rotational support ro
 
 **Below: Our old log aggregator used to identify the occurrences (2) of a log with the stack trace.**
 
-{% img center /assets/2015-02-02-managing-30000-logging-events-per-day/Log-Aggregator.png %}
+{% img center /assets/2015-01-29-managing-30000-logging-events-per-day/Log-Aggregator.png %}
 
 Splunk Round 1
 ---------------
@@ -24,13 +24,13 @@ Once we migrated to Splunk we were very excited about the capabilities it offere
 
 **Below: Once we extracted meaningful fields in our logs, we could identify impact. In this case, an issue is spread across 9 orgs and and 28 users.**
 
-{% img center /assets/2015-02-02-managing-30000-logging-events-per-day/Selected-Fields.png %}
+{% img center /assets/2015-01-29-managing-30000-logging-events-per-day/Selected-Fields.png %}
 
 Although we had crossed some of the hurdles which made log monitoring difficult shortly after moving to Splunk, monitoring logs for issues was still not an easy job. It was possible to overlook issues since there was no effective way of studying trends. Initially, we created dashboards which helped identify organizations having problems. This was slightly useful but failed to depict more important graphical representation of the different types of occurring issues for a particular client or for all clients at a given time.
 
 **Below: Reports like these weren't very helpful. Clients with more users tend to have more errors, so this trend doesn't necessarily indicate a client is experiencing a downtime.**
 
-{% img center /assets/2015-02-02-managing-30000-logging-events-per-day/Report-users.png %}
+{% img center /assets/2015-01-29-managing-30000-logging-events-per-day/Report-users.png %}
 
 Splunk Round 2
 ---------------
@@ -45,17 +45,17 @@ Eventtypes are applied at search time and allow you to create events to tag sear
 
 **Below: Eventtypes give us the ability to see known problems that happen over time. We can even see known problems broken down by client.**
 
-{% img center /assets/2015-02-02-managing-30000-logging-events-per-day/Eventtype-1.png %}
+{% img center /assets/2015-01-29-managing-30000-logging-events-per-day/Eventtype-1.png %}
 
-{% img center /assets/2015-02-02-managing-30000-logging-events-per-day/Eventtype-2.png %}
+{% img center /assets/2015-01-29-managing-30000-logging-events-per-day/Eventtype-2.png %}
 
 Once we had our frequently occurring problems categorized, we were able to break it down even further. We could identify problems caused by configuration in our application layer, problems that required escalation or if client side contacts needed to be engaged.
  
 **Below: We now have the ability to track impact to users from clients not taking a service package [left], or from improper Service Configuration [right].**
 
-{% img center /assets/2015-02-02-managing-30000-logging-events-per-day/Impact-to-users-from-clients-1.png %}
+{% img center /assets/2015-01-29-managing-30000-logging-events-per-day/Impact-to-users-from-clients-1.png %}
 
-{% img center /assets/2015-02-02-managing-30000-logging-events-per-day/Impact-to-users-from-clients-2.png %}
+{% img center /assets/2015-01-29-managing-30000-logging-events-per-day/Impact-to-users-from-clients-2.png %}
 
 ###Alerting
 
