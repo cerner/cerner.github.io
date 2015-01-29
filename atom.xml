@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2015-01-28T22:36:52-06:00</updated>
+  <updated>2015-01-29T09:00:58-06:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,76 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Managing 30,000 Logging Events Per Day With Splunk]]></title>
+    <link href="http://engineering.cerner.com/blog/Managing-30000-Logging-Events-per-Day-with-Splunk/"/>
+    <updated>2015-02-02T00:00:00-06:00</updated>
+    <id>http://engineering.cerner.com/blog/Managing-30000-Logging-Events-per-Day-with-Splunk</id>
+    <content type="html"><![CDATA[<p>Our team works on a patient facing web application with a thousand live clients with 2,315,000+ users. On an average, the high traffic results into more than 40,000 visits and 300,000 page views daily generating about 30,000 logging events. A considerable portion of these events are of information and warning level in order to aid proactive monitoring or identify potential issues due to clients’ misconfiguration.</p>
+
+<h2>Before Splunk</h2>
+
+<p>To handle this large volume of logging, our team created a rotational support role to manually monitor the logs at regular intervals daily. We built a custom log viewer that would aggregate application logs and the engineer on the support role was expected to watch this tool manually to identify issues. Although we were able to identify problems such as bad client builds or service errors, it was not very efficient nor accurate in quickly determining end user impact stats. Since there was no way to tag previously identified and resolved issues, often times newer support engineers lacked knowledge to react to a problem. This led to unnecessary escalation and engagement of next tier support.</p>
+
+<p><strong>Below: Our old log aggregator used to identify the occurrences (2) of a log with the stack trace.</strong></p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2015-02-02-managing-30000-logging-events-per-day/Log-Aggregator.png"></p>
+
+<h2>Splunk Round 1</h2>
+
+<p>Once we migrated to Splunk we were very excited about the capabilities it offered, especially around searching and data visualization. In addition to searching logs more effectively, we were able to extract meaningful information from our logs unlike before. Splunk gave us the ability to identify client and end user impact down to the user id across all events in our logs [see image below]. This helped us gain more insight into our problems and trends in terms of impact to users. For a particular problem, we were able to quickly conclude whether all clients were affected, whether clients affected were over a virtual network only, and if the issue was isolated to a specific user. This information gave us the ability to determine the impact of issues coming into our logs, including the area of the site being impacted and frequency.</p>
+
+<p><strong>Below: Once we extracted meaningful fields in our logs, we could identify impact. In this case, an issue is spread across 9 orgs and and 28 users.</strong></p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2015-02-02-managing-30000-logging-events-per-day/Selected-Fields.png"></p>
+
+<p>Although we had crossed some of the hurdles which made log monitoring difficult shortly after moving to Splunk, monitoring logs for issues was still not an easy job. It was possible to overlook issues since there was no effective way of studying trends. Initially, we created dashboards which helped identify organizations having problems. This was slightly useful but failed to depict more important graphical representation of the different types of occurring issues for a particular client or for all clients at a given time.</p>
+
+<p><strong>Below: Reports like these weren&rsquo;t very helpful. Clients with more users tend to have more errors, so this trend doesn&rsquo;t necessarily indicate a client is experiencing a downtime.</strong></p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2015-02-02-managing-30000-logging-events-per-day/Report-users.png"></p>
+
+<h2>Splunk Round 2</h2>
+
+<p>It didn&rsquo;t take us long to realize that we had to get a better handle on our logs to stay on top of increasing traffic caused by a growing user base. Although we were able to identify frequently occurring errors, we still needed a more effective way to identify known issues, service issues, configuration issues and application issues. In order to do that, we needed something more meaningful than a stack trace to track issues.  We needed to tag events, and to do that, we turned to the eventtypes feature offered by Splunk.</p>
+
+<p>Eventtypes are applied at search time and allow you to create events to tag search results with. Because they are applied at search time, we were able to add new event types and have them applied historically throughout our logs. This also gave us the ability to tweak our event types to add more known issues as we continued identifying them. Once we successfully gauged a way to take advantage of eventtypes, we came up with a query that created a stacked timechart of eventtypes where eventtypes represented known issues. Once we reached the improved level of production monitoring, the following had to be done:</p>
+
+<ol>
+<li>Create an eventtype with least priority that catches all problems and label it &ldquo;Unknown Issue.&rdquo;</li>
+<li>Go through “Unknown Issues&#8221; and create prioritized eventtypes that describe the problem in english. Once an issue is logged in our bug tracking system, tag the eventtype with that id for easy tracking.</li>
+<li>Repeat daily.</li>
+</ol>
+
+
+<p><strong>Below: Eventtypes give us the ability to see known problems that happen over time. We can even see known problems broken down by client.</strong></p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2015-02-02-managing-30000-logging-events-per-day/Eventtype-1.png"></p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2015-02-02-managing-30000-logging-events-per-day/Eventtype-2.png"></p>
+
+<p>Once we had our frequently occurring problems categorized, we were able to break it down even further. We could identify problems caused by configuration in our application layer, problems that required escalation or if client side contacts needed to be engaged.</p>
+
+<p><strong>Below: We now have the ability to track impact to users from clients not taking a service package [left], or from improper Service Configuration [right].</strong></p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2015-02-02-managing-30000-logging-events-per-day/Impact-to-users-from-clients-1.png"></p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2015-02-02-managing-30000-logging-events-per-day/Impact-to-users-from-clients-2.png"></p>
+
+<h3>Alerting</h3>
+
+<p>We&rsquo;ve also started taking advantage of Splunk&rsquo;s alerting. With its powerful searching abilities, we have scheduled searches that trigger an alert when a particular condition is met. For example, when a client has misconfigured certain credentials that cause authentication errors all over the site, we can engage support immediately to get it resolved.</p>
+
+<h2>What&rsquo;s Next?</h2>
+
+<p>Although we have a better understanding of our logs now, it can get even better. We plan on continually categorizing our logs so that monitoring our system becomes really simple for everyone. Once all of our known issues are categorized, we wish to have a scheduled search that can identify anomalies in the logs. This would be highly beneficial to find out if a release introduces issues.</p>
+
+<p>Since our site is dependent on multiple services, most of the service problems are resolved by escalated support. We are currently working on identifying problems with known resolutions  along with  the people that need to be contacted to perform the resolution steps. Eventually we would like to send alerts/emails from Splunk to Cerner’s general support directly for these issues.</p>
+
+<p>We also plan on integrating Jira into splunk with the help of the Splunk Jira app. This will give us the ability to not only track issues in our logs, but also view their current status (investigation, assigned, fixed, resolved). This closes the loop on finding new issues, tracking their impact, and finally their resolution until the end. Splunk has been extremely exciting to work on and has been an invaluable asset to our team. We&rsquo;d love to continue the conversations on how we can improve our usage of Splunk and how others are using it as well.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Cerner and the Apache Software Foundation]]></title>
@@ -1738,37 +1808,6 @@ Using Node.js to flash lights on a Raspberry Pi when a health check from web ser
 <p><em>Source: www.projectcartoon.com</em></p>
 
 <p>I think that picture aptly describes the disconnect in all of the processes that exist in problem solving.  So in addition to learning what the rules don’t cover, we need to be keenly aware of what you are trying to accomplish: what is the problem and the success criteria? How do we win the game?</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Ruby at Cerner]]></title>
-    <link href="http://engineering.cerner.com/2013/04/ruby-at-cerner/"/>
-    <updated>2013-04-05T00:00:00-05:00</updated>
-    <id>http://engineering.cerner.com/2013/04/ruby-at-cerner</id>
-    <content type="html"><![CDATA[<p>Cerner&rsquo;s journey with Ruby started in the summer of 2009. We selected Ruby on Rails for rapid development of the <a href="https://store.cerner.com/">Cerner Store</a> to prepare for release at the Cerner Health Conference that year. In three months, with three engineers and a designer, we wrote and released the first version of an e-commerce web application. Two of those engineers, including me, had never worked with Ruby before but quickly realized the power and expressiveness of the language due to resources like <a href="http://mislav.uniqpath.com/poignant-guide/">Why&rsquo;s (Poignant) Guide to Ruby</a>.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2013-04-05-ruby-at-cerner/the.foxes-4c.png" title="Chunky bacon!" ></p>
-
-<p>Our experience with the Cerner Store taught us that Rails led to high productivity. Ruby is a very natural language to write code in and principles like <a href="http://en.wikipedia.org/wiki/Convention_over_configuration">convention over configuration</a> enabled us to solve our problems instead of spending time wrangling the framework. In addition, we valued the good practices of the Ruby community like easy-to-understand code and thorough unit testing with tools that aren&rsquo;t painful.</p>
-
-<p>In the summer of 2010, we attended the first <a href="http://rubymidwest.com/">Ruby Midwest</a> as a team. We learned about developments in Ruby like JRuby and Chef as well as some of the great gems under development. The Cerner Store continued to grow and we learned about maintaining a Rails web app over time.</p>
-
-<p>In early 2012, we were planning a massive undertaking to create a new platform for our Clients&#8217; healthcare data. It was to be called Millennium+ and it needed an architecture that could scale well to petabytes of data and dozens of engineers across many teams. We planned a <a href="http://engineering.cerner.com/2013/02/near-real-time-processing-over-hadoop-and-hbase/">service-oriented architecture</a> and chose Rails to serve as the server side of the application. Our Rails services call JVM services that retrieve data from HBase and serves the resulting data as JSON to the client-side applications, including our iOS app, PowerChart Touch Ambulatory. The high productivity we enjoyed on a small team scaled well to a large team of people who had never written Ruby before.</p>
-
-<p>This was the start of Cerner&rsquo;s Ruby community. We developed reusable libraries and development processes that we continue to use today. The complexities of our architecture also led to the adoption of <a href="http://www.opscode.com/chef/">Chef</a> to automate operations and build a devops mindset. Chef is another integral use of Ruby that penetrates teams that did not use Ruby at all.</p>
-
-<p>When planning our newest platform, <a href="http://www.cerner.com/blog/population_health_management_collaboration_with_advocate_physician_partners/">Population Health</a>, we needed to determine which platform made the most sense for a large-scale development of web applications on a tight timeline. We decided on Rails due in large part to its prioritization of convention over configuration, as well as the existing Ruby community at Cerner. These attributes would enable us to develop applications at the planned pace and scale. This decision is now disseminated to dozens of engineers working on brand new web applications and REST services powering them.</p>
-
-<p>We&rsquo;ve bolstered our internal Ruby community with lots of documentation and guidelines. We make use of the <a href="http://ruby.railstutorial.org/ruby-on-rails-tutorial-book">Ruby on Rails Tutorial book</a> and Why&rsquo;s (Poignant) Guide to train engineers in Ruby. Bozhidar Batsov&rsquo;s <a href="https://github.com/bbatsov/ruby-style-guide">Ruby style guide</a> aligns closely with how we write our code, so we use <a href="https://github.com/bbatsov/rubocop">rubocop</a> to keep ourselves in line. Our development devices run on <a href="https://rvm.io/">RVM</a> and our servers run on <a href="https://www.phusionpassenger.com/">Phusion Passenger</a>.</p>
-
-<p>Ruby has quickly become a very important part of Cerner&rsquo;s engineering culture, primarily as the language behind Rails and Chef. An internal Ruby meetup has begun and there have been presentations involving Ruby at our annual Developer Conference.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2013-04-05-ruby-at-cerner/ruby-midwest-logo-2013.png" title="Ruby Midwest 2013 Logo" ></p>
-
-<p>Additionally, we are sponsoring <a href="http://rubymidwest.com/">Ruby Midwest</a> because we want developers to know that Ruby is highly valued at Cerner. We&rsquo;re also sending a large number of our own associates there to learn.</p>
-
-<p>We look forward to bringing on more engineers to use Ruby and other technologies to engineer the future of healthcare.</p>
 ]]></content>
   </entry>
   

@@ -1,0 +1,340 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Managing 30,000 Logging Events Per Day With Splunk - Engineering Health</title>
+  <meta name="author" content="Cerner">
+
+  
+  <meta name="description" content="">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://engineering.cerner.com/blog/Managing-30000-Logging-Events-per-Day-with-Splunk">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/site/site.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <script src="/javascripts/libs/bootstrap.min.js"></script>
+
+  <link href="/atom.xml" rel="alternate" title="Engineering Health" type="application/atom+xml">
+  
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37701128-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body  class="top-navbar  ">
+  <header id="banner" class="navbar navbar-fixed-top" role="banner">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <a class="brand" href="/">
+        <img src="/images/logo2.png" title="Cerner Engineering Health">
+      </a>
+
+      <nav id="nav-main" class="nav-collapse" role="navigation">
+  <ul id="menu-top-menu" class="nav pull-right">
+    <li class="menu-life-as-an-engineer">
+      <a href="/about">Life as an Engineer</a>
+    </li>
+    <li class="menu-who-we-are">
+      <a href="/engineers">Who We Are</a>
+    </li>
+    <li>
+      <a href="/blog/archives">Archives</a>
+    </li>
+  </ul>      
+</nav>
+
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="span8 pull-left page-header">
+      <img class="site-header__img" src="/images/skyline2.png" alt="">    
+    </div>
+
+    
+      <div class="span4 pull-right"> 
+        <div id="search-form-wrapper">
+          <form class="form-search" id="searchform" role="search" action="https://google.com/search" method="get" >
+            <label class="hide" for="q">Search for:</label>
+            <input name="sitesearch" type="hidden" value="engineering.cerner.com" />
+            <input class="search-query" id="q" name="q" type="text" results="0" placeholder="Search">
+            <input class="btn" id="searchsubmit" type="submit" value="Search" >
+          </form>      
+        </div>
+      </div>
+    
+  </div>
+</div>
+
+  
+  <div class="container">
+    <div class="row-fluid">
+      
+<article id="main" class="hentry span8" role="article">
+
+  
+  <header class="entry-header">
+    
+      <h1 class="entry-title">Managing 30,000 Logging Events Per Day With Splunk</h1>
+    
+    
+      <div class="entry-meta meta">
+        
+  
+  
+
+
+  <span class="byline author vcard">Written by <span class="fn">Mike Hemesath and Rima Poddar</span></a></span>
+
+ | 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-02-02T00:00:00-06:00" pubdate data-updated="true">Feb 2<span>nd</span>, 2015</time>
+        
+      </div>
+    
+  </header>
+
+
+<div class="entry-content"><p>Our team works on a patient facing web application with a thousand live clients with 2,315,000+ users. On an average, the high traffic results into more than 40,000 visits and 300,000 page views daily generating about 30,000 logging events. A considerable portion of these events are of information and warning level in order to aid proactive monitoring or identify potential issues due to clients’ misconfiguration.</p>
+
+<h2>Before Splunk</h2>
+
+<p>To handle this large volume of logging, our team created a rotational support role to manually monitor the logs at regular intervals daily. We built a custom log viewer that would aggregate application logs and the engineer on the support role was expected to watch this tool manually to identify issues. Although we were able to identify problems such as bad client builds or service errors, it was not very efficient nor accurate in quickly determining end user impact stats. Since there was no way to tag previously identified and resolved issues, often times newer support engineers lacked knowledge to react to a problem. This led to unnecessary escalation and engagement of next tier support.</p>
+
+<p><strong>Below: Our old log aggregator used to identify the occurrences (2) of a log with the stack trace.</strong></p>
+
+<p><img class="center" src="/assets/2015-02-02-managing-30000-logging-events-per-day/Log-Aggregator.png"></p>
+
+<h2>Splunk Round 1</h2>
+
+<p>Once we migrated to Splunk we were very excited about the capabilities it offered, especially around searching and data visualization. In addition to searching logs more effectively, we were able to extract meaningful information from our logs unlike before. Splunk gave us the ability to identify client and end user impact down to the user id across all events in our logs [see image below]. This helped us gain more insight into our problems and trends in terms of impact to users. For a particular problem, we were able to quickly conclude whether all clients were affected, whether clients affected were over a virtual network only, and if the issue was isolated to a specific user. This information gave us the ability to determine the impact of issues coming into our logs, including the area of the site being impacted and frequency.</p>
+
+<p><strong>Below: Once we extracted meaningful fields in our logs, we could identify impact. In this case, an issue is spread across 9 orgs and and 28 users.</strong></p>
+
+<p><img class="center" src="/assets/2015-02-02-managing-30000-logging-events-per-day/Selected-Fields.png"></p>
+
+<p>Although we had crossed some of the hurdles which made log monitoring difficult shortly after moving to Splunk, monitoring logs for issues was still not an easy job. It was possible to overlook issues since there was no effective way of studying trends. Initially, we created dashboards which helped identify organizations having problems. This was slightly useful but failed to depict more important graphical representation of the different types of occurring issues for a particular client or for all clients at a given time.</p>
+
+<p><strong>Below: Reports like these weren&rsquo;t very helpful. Clients with more users tend to have more errors, so this trend doesn&rsquo;t necessarily indicate a client is experiencing a downtime.</strong></p>
+
+<p><img class="center" src="/assets/2015-02-02-managing-30000-logging-events-per-day/Report-users.png"></p>
+
+<h2>Splunk Round 2</h2>
+
+<p>It didn&rsquo;t take us long to realize that we had to get a better handle on our logs to stay on top of increasing traffic caused by a growing user base. Although we were able to identify frequently occurring errors, we still needed a more effective way to identify known issues, service issues, configuration issues and application issues. In order to do that, we needed something more meaningful than a stack trace to track issues.  We needed to tag events, and to do that, we turned to the eventtypes feature offered by Splunk.</p>
+
+<p>Eventtypes are applied at search time and allow you to create events to tag search results with. Because they are applied at search time, we were able to add new event types and have them applied historically throughout our logs. This also gave us the ability to tweak our event types to add more known issues as we continued identifying them. Once we successfully gauged a way to take advantage of eventtypes, we came up with a query that created a stacked timechart of eventtypes where eventtypes represented known issues. Once we reached the improved level of production monitoring, the following had to be done:</p>
+
+<ol>
+<li>Create an eventtype with least priority that catches all problems and label it &ldquo;Unknown Issue.&rdquo;</li>
+<li>Go through “Unknown Issues&#8221; and create prioritized eventtypes that describe the problem in english. Once an issue is logged in our bug tracking system, tag the eventtype with that id for easy tracking.</li>
+<li>Repeat daily.</li>
+</ol>
+
+
+<p><strong>Below: Eventtypes give us the ability to see known problems that happen over time. We can even see known problems broken down by client.</strong></p>
+
+<p><img class="center" src="/assets/2015-02-02-managing-30000-logging-events-per-day/Eventtype-1.png"></p>
+
+<p><img class="center" src="/assets/2015-02-02-managing-30000-logging-events-per-day/Eventtype-2.png"></p>
+
+<p>Once we had our frequently occurring problems categorized, we were able to break it down even further. We could identify problems caused by configuration in our application layer, problems that required escalation or if client side contacts needed to be engaged.</p>
+
+<p><strong>Below: We now have the ability to track impact to users from clients not taking a service package [left], or from improper Service Configuration [right].</strong></p>
+
+<p><img class="center" src="/assets/2015-02-02-managing-30000-logging-events-per-day/Impact-to-users-from-clients-1.png"></p>
+
+<p><img class="center" src="/assets/2015-02-02-managing-30000-logging-events-per-day/Impact-to-users-from-clients-2.png"></p>
+
+<h3>Alerting</h3>
+
+<p>We&rsquo;ve also started taking advantage of Splunk&rsquo;s alerting. With its powerful searching abilities, we have scheduled searches that trigger an alert when a particular condition is met. For example, when a client has misconfigured certain credentials that cause authentication errors all over the site, we can engage support immediately to get it resolved.</p>
+
+<h2>What&rsquo;s Next?</h2>
+
+<p>Although we have a better understanding of our logs now, it can get even better. We plan on continually categorizing our logs so that monitoring our system becomes really simple for everyone. Once all of our known issues are categorized, we wish to have a scheduled search that can identify anomalies in the logs. This would be highly beneficial to find out if a release introduces issues.</p>
+
+<p>Since our site is dependent on multiple services, most of the service problems are resolved by escalated support. We are currently working on identifying problems with known resolutions  along with  the people that need to be contacted to perform the resolution steps. Eventually we would like to send alerts/emails from Splunk to Cerner’s general support directly for these issues.</p>
+
+<p>We also plan on integrating Jira into splunk with the help of the Splunk Jira app. This will give us the ability to not only track issues in our logs, but also view their current status (investigation, assigned, fixed, resolved). This closes the loop on finding new issues, tracking their impact, and finally their resolution until the end. Splunk has been extremely exciting to work on and has been an invaluable asset to our team. We&rsquo;d love to continue the conversations on how we can improve our usage of Splunk and how others are using it as well.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+  
+
+
+  <span class="byline author vcard">Written by <span class="fn">Mike Hemesath and Rima Poddar</span></a></span>
+
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-02-02T00:00:00-06:00" pubdate data-updated="true">Feb 2<span>nd</span>, 2015</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    
+    <ul class="pager">
+      
+      <li class="previous"><a class="basic-alignment left"
+        href="/blog/cerner-and-the-apache-software-foundation/" title="Previous Post:
+        Cerner and the Apache Software Foundation">&laquo; Previous Post</a></li>
+      
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      
+    </ul>
+  </footer>
+</article>
+
+<aside class="sidebar-nav span4">
+  
+    <section class="well">
+  <h2>Recent Posts</h2>
+  <ul id="recent_posts" class="nav nav-list">
+    
+      <li class="post">
+        <a href="/blog/Managing-30000-Logging-Events-per-Day-with-Splunk/">Managing 30,000 Logging Events Per Day With Splunk</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/cerner-and-the-apache-software-foundation/">Cerner and the Apache Software Foundation</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/closures-and-currying-in-javascript/">Closures & Currying in JavaScript</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/intern-hackfest-2014/">Intern HackFest 2014</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/the-plain-text-is-a-lie/">The Plain Text Is a Lie</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section class="well">
+  <h2>GitHub Repos</h2>
+  <ul id="gh_repos" class="nav">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/cerner">@cerner</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'cerner',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo" class="page-footer">
+  <div class="container">
+    <p>&copy; 2015 Cerner</p>
+  </div>
+</footer>
+
+  
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
