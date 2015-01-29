@@ -8,4 +8,6 @@
   {% assign author = site.author %}
   {% assign author_url = site.author_url %}
 {% endif %}
-{% if author %}<span class="byline author vcard">Written by <a href="{{ root_url }}/engineers/{{ author_url }}"><span class="fn">{{ author }}</span></a></span>{% endif %}
+{% if author %}
+  <span class="byline author vcard">Written by {% if author_url %}<a href="{{ root_url }}/engineers/{{ author_url }}">{% endif %}<span class="fn">{{ author }}</span></a></span>
+{% endif %}
