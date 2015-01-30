@@ -1,3 +1,10 @@
 body {
-    background: #000000 url("../img/day5_c3po.jpg") no-repeat top center;
+    background: #000000;
+}
+
+img {
+    margin:0px auto;
+    display:block;
+    width:"1024px";
+    height:"768px";
 }
