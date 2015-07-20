@@ -14,7 +14,7 @@ I'm a developer that likes to make development easier. I like to create tools th
 
 {% engineer hardware %}
 
-Currently I use a 15 inch mac book pro for my day-to-day work. I also love to listen to music when I work. At home I use the [Sennheiser HD 598](http://en-us.sennheiser.com/audio-headphones-high-end-surround-sound-hd-598) headphones. To be kind to my coworkers I use the [Sennheiser Momentum Red](http://en-us.sennheiser.com/over-ear-headphone-momentum-stereo). These are pretty great if you love to listen to more accoustic style music. They are both less base heavy, which I prefer and wholeheartedly recommend.
+Currently I use a 15 inch mac book pro for my day-to-day work. I also love to listen to music when I work. At home I use the [Sennheiser HD 598](http://en-us.sennheiser.com/audio-headphones-high-end-surround-sound-hd-598) headphones. To be kind to my coworkers I use the [Sennheiser Momentum Red](http://en-us.sennheiser.com/over-ear-headphone-momentum-stereo). These are pretty great if you love to listen to more accoustic style music. They are both less bass heavy, which I prefer and wholeheartedly recommend.
 
 {% engineer software %}
 
