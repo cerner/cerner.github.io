@@ -2,6 +2,7 @@
 layout: post
 title: "JavaScript Logging: We can do better!"
 author: Garry Polley
+author_url: garry-polley
 date: 2015-07-20
 tags: [engineering]
 ---
