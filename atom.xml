@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2015-06-15T14:58:11-05:00</updated>
+  <updated>2015-07-21T08:00:10-05:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,548 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[JavaScript Logging: We Can Do Better!]]></title>
+    <link href="http://engineering.cerner.com/blog/javascript-logging-we-can-do-better/"/>
+    <updated>2015-07-20T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/blog/javascript-logging-we-can-do-better</id>
+    <content type="html"><![CDATA[<p>Currently in the world of JavaScript these options
+are what we most commonly use to generate logs:</p>
+
+<ul>
+<li><code>console.log</code></li>
+<li><code>console.info</code></li>
+<li><code>console.warn</code></li>
+<li><code>console.error</code></li>
+</ul>
+
+
+<p>These are actually pretty good in most modern browsers. Even
+if you go back to Internet Explorer 8 <code>console.log</code> and friends
+work as long as you have the developer tools open.</p>
+
+<p>Given that we have these logging utilities what is the problem
+with using them? When in local development these are just fine
+for helping debug and speed up development. They can be used to help
+you quickly catch errors or see where you&rsquo;re starting to go astray
+when using a library.</p>
+
+<p><code>console.log</code> and friends allow you to see
+what&rsquo;s going on and leave notes for other developers in the
+future. This is okay for local development. However, what do
+you do once you move into production? Almost everyone removes
+<code>console</code> commands before code is served in production.</p>
+
+<p>Without console commands in production how do you have the same
+level of logging you&rsquo;re used to with standard applications?
+When using a web server you get to see most every error that
+occurs. Each <code>500</code> is logged to an error log file for every
+error that occurs for every user. This is not something that
+really exist for JavaScript. By the nature of how web browsers
+work we do not get any errors that occur for the end user.</p>
+
+<p>Here are the issues with JavaScript logging today:</p>
+
+<ul>
+<li>Local development is the only way to see the errors.</li>
+<li>Logs are distributed across many clients.</li>
+<li>Errors usually lack local stack context.</li>
+<li>We do not know when a user sees an error.</li>
+</ul>
+
+
+<p>Given the problems listed above you may ask: &ldquo;Why should I care?&rdquo;
+We&rsquo;ve gotten along for years without getting JavaScript errors.
+Try not to follow this line of flawed reasoning. Despite spending years
+without tracking analytics about how people use our sites, we
+now view those tracking analytics as invaluable. Once you start
+seeing your JavaScript errors at the same rate and volume as your
+server side errors you will view those logs as invaluable. Most
+importantly developers will finally be empowered to provide proactive fixes
+for JavaScript errors the same way we can fix server side errors
+in a proactive fashion.</p>
+
+<p>Imagine this scenario, you have an advanced search feature in your
+application.  This search feature works two fold: it has an
+AJAX call to fill out the search results as well as a two-layer UI
+with a drop down that shows the results. When a result is clicked, it
+opens a more detailed modal of those results.</p>
+
+<p>In most cases this kind of interaction is JavaScript heavy. How
+do you know when the searches fail due to a scripting error, instead
+of a network drop on the client? What can you do to be proactive
+about issues occurring here?</p>
+
+<p>We&rsquo;ve released a logging framework, <a href="https://github.com/cerner/canadarm/">Canadarm</a>,
+to make identifying and handling these kinds of situations
+easy. Now each time a script error occurs you&rsquo;ll get to see it. As
+long as the client can connect to the Internet and execute JavaScript
+you&rsquo;ll get to see what went wrong. A common issue you may not realize
+in local testing is a Unicode search error. This logger will tell
+you what error occurred as well as the language and encoding used
+to read your page.</p>
+
+<p>Below are a some topics that are likely to cross you&rsquo;re mind.
+This post will cover each of them in detail.</p>
+
+<ul>
+<li>What does Canadarm do?</li>
+<li>How does Canadarm work?</li>
+<li>Who has used Canadarm?</li>
+<li>Has Canadarm helped solve any problems?</li>
+<li>When can I use it?</li>
+</ul>
+
+
+<p>This post will cover all of these questions in detail.</p>
+
+<h2>What does Canadarm do?</h2>
+
+<p>Canadarm makes it easy to send logs to a remote server.
+This alone is nothing novel and isn&rsquo;t all that impressive. It&rsquo;s fairly easy
+to setup a <code>try/catch</code> around your code and send that error to
+a server via a <code>GET</code> request. The real advantage to Canadarm comes in
+what it does to catch the errors.</p>
+
+<p>Canadarm has three ways to gather errors:</p>
+
+<ul>
+<li>Automatically catch all <code>window.onerror</code> events (least useful due to lack of context)</li>
+<li>Automatically catch all errors that occur when events fire (most useful because it &ldquo;just works&rdquo;)</li>
+<li>Manually <code>watch</code> or <code>attempt</code> individual function calls</li>
+</ul>
+
+
+<p>These modes allow you to write your code and not have to worry about
+logging or catching errors yourself. Any global errors will be caught
+and more specifically <em>all</em> errors bound to events will be caught.
+The ability to catch errors related to events is the most useful feature of Canadarm.</p>
+
+<p>Most errors that will occur on your web pages happen when a user performs
+some sort of action. Canadarm is able to provide you with context specific
+error messages by automatically hooking into and monitoring functions
+bound to events.</p>
+
+<p>With the <code>Canadarm.watch</code> and <code>Canadarm.attempt</code> functions, you have the power to individually
+monitor specific functions. Let&rsquo;s say you have a function that gets
+called without an event being fired. You can call <code>attempt</code> on that function which
+will immediately invoke the function. If an error occurs, the error will be logged.
+With <code>watch</code> you can watch a function once and every time it
+throws an error later during execution the error will be logged.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">fastMath</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">addedItems</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">i</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">addedItems</span> <span class="o">+=</span> <span class="nx">argument</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span> <span class="c1">// This typo will throw an error when called.</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">return</span> <span class="nx">addedItems</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Immediately attempt to execute fast math with the arguments 1,2,3</span>
+</span><span class='line'><span class="nx">Canadarm</span><span class="p">.</span><span class="nx">attempt</span><span class="p">(</span><span class="nx">fastMath</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Override fastMath with the watched version.</span>
+</span><span class='line'><span class="nx">fastMath</span> <span class="o">=</span> <span class="nx">Canadarm</span><span class="p">.</span><span class="nx">watch</span><span class="p">(</span><span class="nx">fastMath</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you don&rsquo;t want Canadarm to automatically log global errors
+and/or event based errors you can opt-out of this feature. With
+<code>watch</code> and <code>attempt</code> you can write your JavaScript how
+you want to and not worry about what is going on within Canadarm.</p>
+
+<p>Finally, you get out of Canadarm what you really wanted from <code>console</code> functions.
+You can log specific error messages at the point you want to via
+these logging commands:</p>
+
+<ul>
+<li><code>Canadarm.debug(msg, error)</code></li>
+<li><code>Canadarm.info(msg, error)</code></li>
+<li><code>Canadarm.warn(msg, error)</code></li>
+<li><code>Canadarm.error(msg, error)</code></li>
+<li><code>Canadarm.fatal(msg, error)</code></li>
+</ul>
+
+
+<p>Optionally, you can provide two more arguments after <code>msg</code> and <code>error</code>. <code>data</code>
+followed by <code>options</code>. You can see the usage of these arguments over in the
+<a href="https://github.com/cerner/canadarm/">Canadarm documentation</a>. Specifically, <code>data</code> is the most useful
+here. <code>data</code> allows you to pass an extra object that will get its values passed
+to the appenders. The default appender included in Canadarm will log all these
+values for you as key-value pairs.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">addPositives</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">value</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">try</span> <span class="p">{</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">addedItems</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">i</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="c1">// Add all values together.</span>
+</span><span class='line'>        <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="nx">value</span> <span class="o">=</span> <span class="nx">arguments</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'>            <span class="c1">// If the value is negative we throw an error.</span>
+</span><span class='line'>            <span class="k">if</span> <span class="p">(</span><span class="nx">value</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>                <span class="k">throw</span> <span class="nb">Error</span><span class="p">();</span>
+</span><span class='line'>            <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>            <span class="nx">addedItems</span> <span class="o">+=</span> <span class="nx">value</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">return</span> <span class="nx">addedItems</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="c1">// This gives a very specific error, likely relating to business logic of a</span>
+</span><span class='line'>        <span class="c1">// case that should not occur.</span>
+</span><span class='line'>        <span class="nx">Canadarm</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;A negative value &#39;</span> <span class="o">+</span> <span class="nx">value</span> <span class="o">+</span> <span class="s1">&#39; was given.&#39;</span><span class="p">,</span> <span class="nx">e</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">return</span> <span class="kc">undefined</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// In the console (if the console handler is enabled) you will see the error message.</span>
+</span><span class='line'><span class="nx">addPositives</span><span class="p">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>To find out more on how to configure and use Canadarm go and
+check out its <a href="https://github.com/cerner/canadarm/">documentation</a>. It&rsquo;s pretty easy though. You
+only need to include the Canadarm code and then configure the logger. As
+seen on the Canadarm readme, you can do the following to get a working
+local logger:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">Canadarm</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+</span><span class='line'>  <span class="nx">onError</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">wrapEvents</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">logLevel</span><span class="o">:</span> <span class="nx">Canadarm</span><span class="p">.</span><span class="nx">level</span><span class="p">.</span><span class="nx">DEBUG</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">appenders</span><span class="o">:</span> <span class="p">[</span>
+</span><span class='line'>    <span class="nx">Canadarm</span><span class="p">.</span><span class="nx">Appender</span><span class="p">.</span><span class="nx">standardLogAppender</span>
+</span><span class='line'>  <span class="p">],</span>
+</span><span class='line'>  <span class="nx">handlers</span><span class="o">:</span> <span class="p">[</span>
+</span><span class='line'>    <span class="nx">Canadarm</span><span class="p">.</span><span class="nx">Handler</span><span class="p">.</span><span class="nx">consoleLogHandler</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">Canadarm</span><span class="p">.</span><span class="nx">Handler</span><span class="p">.</span><span class="nx">beaconLogHandler</span><span class="p">(</span><span class="s1">&#39;http://example.com/beacon_url&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">]</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now you&rsquo;ll see all logged errors in your console with all the information the
+standardLogAppender provides. Obviously you want more than local logs. Next you&rsquo;ll
+see how our teams have used this logger.</p>
+
+<h2>How does this work?</h2>
+
+<p>Canadarm is fairly simple. The logger catches an error and then
+sends that error to a central server. Under the
+covers it uses Appenders and Handlers as the mechanisms to achieve
+this result.</p>
+
+<h3>Appenders</h3>
+
+<p>An appender works as a way to process an error or log event that occurs.
+The appender has this signature: <code>appender(level, exception, message, data)</code>.</p>
+
+<ul>
+<li><code>level</code> &ndash; Level of the log, one of <code>DEBUG</code>, <code>INFO</code>, <code>WARN</code>, <code>ERROR</code>, <code>FATAL</code></li>
+<li><code>exception</code> &ndash; An actual JavaScript <code>Error</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">object</a>.</li>
+<li><code>message</code> &ndash; Text message of the logged error.</li>
+<li><code>data</code> &ndash; Extra information to provide to the appender, usually this is not used.</li>
+</ul>
+
+
+<p>An appender must return an object. The object should contain simple data types.
+They are single key/value pairs, usually strings. The return value of
+an appender is then passed to a handler.</p>
+
+<h3>Handlers</h3>
+
+<p>Handlers take action on the objects produces by the appenders. A handler&rsquo;s
+job is to send the results of the appenders somewhere. By default
+there are two handlers that come out of the box with Canadarm:
+a <a href="https://github.com/cerner/canadarm/#console-log-handler">console handler</a> that logs all errors
+to the console and a <a href="https://github.com/cerner/canadarm/#beacon-log-handler">beacon handler</a> that sends
+all errors to a given URL end point.</p>
+
+<h3>Appenders &amp; Handlers</h3>
+
+<p>Appenders and handlers work together to create your logs.
+Here&rsquo;s the break down of what happens during an error or logging event:</p>
+
+<ol>
+<li>Error or log event happens</li>
+<li><em>Every</em> appender is iterated over in order (duplicate keys will be replaced with the value of a later appender)</li>
+<li>A final object is created from the output of all appenders</li>
+<li>The final object is passed to <em>every</em> handler</li>
+<li>Each handler usually sends this information somewhere (e.g. console or remote server)</li>
+</ol>
+
+
+<p>That&rsquo;s it for how the logger works on the client. The real power comes when
+you combine this log gathering with the <code><a href="https://github.com/cerner/canadarm/blob/master/lib/handler/beacon.js">BeaconHandler</a></code>.
+The logs gathered are then sent to a server. The server receiving these logs should
+be writing them out to a file that is then read into a logging system. We currently use a
+simple Apache server and treat its access logs as our JavaScript error logs. We then send
+the logs to a log aggregation tool, <a href="http://www.splunk.com/en_us/download.html">Splunk</a>.</p>
+
+<h2>Who has used it?</h2>
+
+<p>We have a few applications that have begun using Canadarm.</p>
+
+<ul>
+<li>HealtheLife &ndash; website for patients to manage their health</li>
+<li>Internal Sites &ndash; a few sites we use internally for a few things (e.g. code review, cheat sheets etc.)</li>
+</ul>
+
+
+<h3>HealtheLife</h3>
+
+<p>HealtheLife was the first client facing application to go into production
+using Canadarm. They have over 3 million users and at any given moment they
+usually have at least one thousand concurrent users. These metrics matter
+for two reasons: first, it shows us that Canadarm
+works at scale without causing issues to the application, second, we
+have been able to see trends in JavaScript errors occurring in this application.</p>
+
+<p>For those who thought &ldquo;why should I care?&rdquo; when it comes to JavaScript logs
+this go live was an interesting story. Within the first 20 minutes we
+noticed errors that occurred on every page load. Specifically this error
+was a reference to <code>$</code> (jQuery) before it was defined. Since this was in
+an analytics tracking snippet, and at the end of a script tag, it did not
+cause an end user impact, beyond eating processing time to handle an
+error on every page.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2015-07-20-javascript-logging-we-can-do-better/healthe_life_errors.png"></p>
+
+<p>However, it did mean that analytics were not getting tracked how
+the application intended. In fact, without this logger in place the
+application would have happily continued along with no indication certain actions
+where never taking place. Since the analytics tool did not report the
+expected user interactions, it appeared as if features of the application
+where not getting used, or worse, that the analytics were faulty.</p>
+
+<p>The actual messages in the errors for this application are interesting. Since
+HealtheLife is used in many countries with many different
+locales, they support various languages. Because of the various
+supported languages and users being able to use their browsers in any locale they want, we
+had a few interesting logs messages. Specifically we have had a few logs
+come across in English, Spanish, German and more. It was kind of eye opening to know that errors are actually
+translated within a browser.</p>
+
+<h3>Internal Sites</h3>
+
+<p>Currently a few internal sites are
+using Canadarm for local development and integration environments.
+Most interesting so far for has been looking at the logs and seeing
+who has been copy pasting code around.</p>
+
+<p>Interestingly enough I found some random logs on our Splunk dashboard in dev.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2015-07-20-javascript-logging-we-can-do-better/logs_for_cheat_sheet_app.png"></p>
+
+<p>Which lead me to github, specifically a github pages site.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2015-07-20-javascript-logging-we-can-do-better/cheet_sheets_app.png"></p>
+
+<p>Seeing the application and where the logs said the application lived I was able to find the source code.
+The code then lead me to the owner of the application. At that point I was able
+to contact the owner and get the issue fixed. Finding another application&rsquo;s errors and
+letting the owner know about is an interesting experience. The whole interaction was
+cool because it was not a use case we had considered when building Canadarm.</p>
+
+<h2>Has it helped solve any problems?</h2>
+
+<p>As mentioned before this has helped to point out two issues:
+one for HealtheLife and another for an internal application.
+Pointing out issues is not enough to fix them though. Also, Canadarm
+does not solve problems on its own. You get the most
+out of logging when you use a tool to aggregate those logs. We&rsquo;ve
+been using Splunk to aggregate our logs.</p>
+
+<p>Combined with the searching and reporting of Splunk we&rsquo;ve
+been able to leverage the logs generated by Canadarm to see
+a few common trends in our code. Canadarm has helped
+us to see a few common problems we have:</p>
+
+<ol>
+<li>Locally we produce a lot of JavaScript errors</li>
+<li>We often introduce new errors when we write visualizations</li>
+<li>Referencing variables before they exist</li>
+<li>New frameworks are hard to get a handle on</li>
+</ol>
+
+
+<p>Using Canadarm to generate logs doesn’t solve problems on it’s own.
+It&rsquo;s when we combine those logs with the
+reporting capabilities of Splunk that we can see trends and
+identify areas we need to improve upon in our development.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2015-07-20-javascript-logging-we-can-do-better/bar_errors.png"></p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2015-07-20-javascript-logging-we-can-do-better/bar_errors_hover.png"></p>
+
+<p>On our teams it has shown that we need to get better at defining
+our APis for data visualizations. I&rsquo;ve been able to see many errors
+from our developers when they first try to update or modify any of
+our visualizations. Without this logging in place it would not be
+so obvious that our current API is not working well for others.
+This gives us empirical data that developers are having issues
+using our software. Without this data, we&rsquo;d have to rely on complaints
+and hope people reported the issues they encountered when using our
+code.</p>
+
+<p>As a more concrete example, recently one of our teams has begun to try and use react. By analyzing
+the logs it&rsquo;s easy to see that we have had some issues getting a handle
+on how react works. Over the few weeks of react work we could clearly
+see a number of errors. This shows we need
+a lot more training on how to properly use react. Further it shows me
+that if we plan to adopt react as our frontend framework that we need
+to put together a &ldquo;gotcha&rdquo; or &ldquo;tips and tricks&rdquo; guide for getting
+started.</p>
+
+<p>While the logger is not directly &ldquo;solving&rdquo; problems it is helping
+to illuminate issues we are seeing in local development as well as
+in production. By shining a light on these issues we are able to
+move forward and solve these problems ourselves. Sometimes the
+problems may be solved by additional training or they may be
+solved by code changes. Most importantly Canadarm is opening our
+eyes to the kinds of issues we&rsquo;ve had for years with JavaScript. We
+can no longer ignore these issue because we have solid empirical evidence
+showing us our problems.</p>
+
+<h2>When can I use it?</h2>
+
+<p>After reading along this far hopefully you&rsquo;re thinking: &ldquo;This
+all sounds great! When and how can I get started?&rdquo;. It&rsquo;s pretty easy:</p>
+
+<ol>
+<li>Include <a href="https://github.com/cerner/canadarm/">Canadarm</a> in your JavaScript (as early as possible)</li>
+<li>Configure Canadarm</li>
+<li>Have a server to handle logs</li>
+<li>Have a reporting tool on top of your logs</li>
+</ol>
+
+
+<h3>Standalone applications</h3>
+
+<p>If you are a public facing Internet application or a small startup,
+Canadarm can still be a great investment. Ideally you do not need
+to worry about steps 3 and 4 above. Simple Log management solutions,
+such as <a href="http://loggly.com">Loggly</a> should be enough for your needs.</p>
+
+<p>Here&rsquo;s what I did to get a quick setup working:</p>
+
+<ol>
+<li>Setup a <a href="https://www.loggly.com/signup/">free account</a></li>
+<li>Fill out info in the pop up</li>
+<li>Go to <code>https://YOUR_SUB_DOMAIN_HERE.loggly.com/sources/setup/https</code></li>
+<li>See the &ldquo;step 2&rdquo; section you should have a URL to copy that looks something like:</li>
+</ol>
+
+
+<p>  <a href="http://logs-01.loggly.com/inputs/WWWWWWW-55555-5555555-55WW55-WWWWW55555/tag/http/">http://logs-01.loggly.com/inputs/WWWWWWW-55555-5555555-55WW55-WWWWW55555/tag/http/</a>
+5. Configure Canadarm with this end point to see the logs:</p>
+
+<pre><code>Canadarm.init({
+  onError: true,
+  wrapEvents: true,
+  appenders: [
+    Canadarm.Appender.standardLogAppender
+  ],
+  handlers: [
+    Canadarm.Handler.beaconLogHandler('http://logs-01.loggly.com/inputs/WWWWWWW-55555-5555555-55WW55-WWWWW55555/tag/http/'),
+    Canadarm.Handler.consoleLogHandler
+  ]
+});
+</code></pre>
+
+<p>After this setup it was pretty easy to get some graphs going. For example
+you can easily see what errors occurred by message in this pie chart:</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2015-07-20-javascript-logging-we-can-do-better/loggly_pie.png"></p>
+
+<p>Even easier is getting to view the raw output of a given event message:</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2015-07-20-javascript-logging-we-can-do-better/loggly_raw_msg.png"></p>
+
+<p>Loggly is a great tool to use for large and small projects. A big bonus for
+anyone starting to use Loggly for their JavaScript logs it that they can
+begin to use Loggly for their other logs (if they are not already).
+While Loggly may not be ideal for every situation when it comes to logging,
+it is really handy when you do not have the resources, money, or time to
+setup your own log aggregation tool.</p>
+
+<h2>Summary</h2>
+
+<p>From desktop, to mobile, to embedded devices, web browsers can be seen
+everywhere. With the help of <a href="https://github.com/cerner/canadarm/">Canadarm</a> we can now see
+what exactly is happening within our applications. An entire world of
+client side errors and issues can now be properly managed and acted
+upon. Combine these logs with an aggregation tool such as <a href="http://www.splunk.com/en_us/download.html">Splunk</a> or
+<a href="http://loggly.com">Loggly</a> and you have enabled operational intelligence.</p>
+
+<p>The next time a user logs an issue for a JavaScript error you can
+respond by telling them you&rsquo;ve seen the error and are already working
+to correct it. Gone are the days of reactive fixes. Now you can worry
+about proactive solutions.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Managing 30,000 Logging Events Per Day With Splunk]]></title>
@@ -1778,36 +2320,6 @@ Using Node.js to flash lights on a Raspberry Pi when a health check from web ser
 <li><a href="http://wpilib.screenstepslive.com/s/3120">http://wpilib.screenstepslive.com/s/3120</a></li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Learn What the Rules Don't Cover]]></title>
-    <link href="http://engineering.cerner.com/2013/04/learn-what-the-rules-dont-cover/"/>
-    <updated>2013-04-19T00:00:00-05:00</updated>
-    <id>http://engineering.cerner.com/2013/04/learn-what-the-rules-dont-cover</id>
-    <content type="html"><![CDATA[<p>Most technical problems are like games.  All of them have a way to win and all of them have rules; the easiest way to ensure you always win is to learn the rules inside and out, and more importantly what the rules don’t cover!  Paying attention to what the rules don’t cover is what leads to out of the box thinking.  What sets the great players apart from the rest is learning what the rules don’t cover which allows for creativity and, sometimes, shortcuts.</p>
-
-<p>Recently, I played a game similar to musical chairs. It was a game of diminishing resources (a management exercise) with about 12 of us and six large sheets of paper.  The only rules were: 1) Walk around while the music is playing and 2) Put your foot on a rectangle when the music stopped (he instructor pointed at one of the sheets as a visual queue).  When we first started, there was ample space for each of us to have a foot somewhere on one of the 2’ x 4’ paper.</p>
-
-<p>As the game continued, the instructor started cutting the sheets into smaller and smaller pieces until we got down to 3&#8221; x 5&#8221;.  Most of us were precariously trying to balance and keep a portion of a shoe touching the paper, a few just gave up, and two paid special attention to the rules and found an out.  One gentleman took at a business card and promptly stood on it.  Another just lifted his leg and put it up on the door.  We all were following the same rules but two found what the rules didn’t cover and won.</p>
-
-<p>Most people think that Printing is easy.  You hit a button or Ctrl + P and the paper comes out, right?  This seamless process appears so to users because of the hard work that goes in behind the scenes.  So when I started down this path, I knew a strong foundation would be important. I settled on <a href="http://www.cups.org">CUPS</a> as the basis for my brave new world of printing.  It is open source and has a pretty wide following.  It’s the basis for Apple printing, fairly hardened, and is the backbone of several educational systems printing making it enterprise ready.</p>
-
-<p>The more I worked with it, the more I saw its full potential.  CUPS had turned out to be the most useful &ldquo;Swiss Army Knife&rdquo; in my toolbox.  It is extremely robust and easy to integrate / stack with other solutions.  One great example of this is my &ldquo;Coffee CUPS&rdquo; demo.</p>
-
-<iframe width="560" height="315" class="aligncenter" frameborder="0" src="https://www.youtube-nocookie.com/embed/WzEhKs_CvJc?rel=0" allowfullscreen></iframe>
-
-
-<p>I picked CUPS as the underlying backbone for my new architecture for the same reason.  It had the maximum amount of possibilities with the least amount of rules.  With a minimum amount of rules, it allows for the maximum amount of creativity.  Sure, I could develop my own solution from the ground up where I get to make the rules and have unlimited creativity, and I have had to do that in the past.  In general, if you write your own software, you have the least amount of rules (constraints of the compiler).  OpenSource Software is a close second with few limitations.  Closed source 3rd party software usually has the most rules (ever read a EULA in your life?).  When selecting a solution to a problem, it’s also important to do a cost benefit analysis.  Is it really worth reinventing the wheel?  I’m often reminded of the below picture.  I’ve seen several variations of it over the years (Credit to the picture unknown, but it wasn’t me).</p>
-
-<p>CUPS handles a lot of the general architecture that doesn’t need to be re-invented on either end of the spectrum (managing print queues, accepting jobs, sending jobs to printers, etc) but allows for a lot of creativity in the middle (the middle being what is done to the print job in between getting it from the user and sending it to the printer).  A good example of this (filters) can be found <a href="http://en.wikipedia.org/wiki/File:Cups_simple.svg">here</a>.  CUPS gives you an overall framework of how it will call a filter, and what it expects as a return, but beyond that, it’s up to the programmer.  You can write in pretty much any language you want and alter the print job as much as you want.  I leveraged this to maximize the amount of devices I could talk to and input file types I could accept, while also being able to make business decisions based on the content of the print job.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2013-04-19-learn-what-the-rules-dont-cover/HPRW2.jpg" title="HPRW2" ></p>
-
-<p><em>Source: www.projectcartoon.com</em></p>
-
-<p>I think that picture aptly describes the disconnect in all of the processes that exist in problem solving.  So in addition to learning what the rules don’t cover, we need to be keenly aware of what you are trying to accomplish: what is the problem and the success criteria? How do we win the game?</p>
 ]]></content>
   </entry>
   
