@@ -69,7 +69,7 @@ do you know when the searches fail due to a scripting error, instead
 of a network drop on the client? What can you do to be proactive
 about issues occurring here?
 
-We've released a [logging framework][canadarm-url], Canadarm,
+We've released a logging framework, [Canadarm][canadarm-url],
 to make identifying and handling these kinds of situations
 easy. Now each time a script error occurs you'll get to see it. As
 long as the client can connect to the Internet and execute JavaScript
