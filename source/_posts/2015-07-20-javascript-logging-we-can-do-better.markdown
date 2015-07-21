@@ -78,7 +78,7 @@ in local testing is a Unicode search error. This logger will tell
 you what error occurred as well as the language and encoding used
 to read your page.
 
-Below are a some topics that are likely to cross you're mind.
+Below are a some topics that are likely to cross your mind.
 This post will cover each of them in detail.
 
 * What does Canadarm do?
@@ -350,7 +350,7 @@ us to see a few common problems we have:
 3. Referencing variables before they exist
 4. New frameworks are hard to get a handle on
 
-Using Canadarm to generate logs doesn’t solve problems on it’s own.
+Using Canadarm to generate logs doesn’t solve problems on its own.
 It's when we combine those logs with the
 reporting capabilities of Splunk that we can see trends and
 identify areas we need to improve upon in our development.
@@ -360,7 +360,7 @@ identify areas we need to improve upon in our development.
 {% img center /assets/2015-07-20-javascript-logging-we-can-do-better/bar_errors_hover.png %}
 
 On our teams it has shown that we need to get better at defining
-our APis for data visualizations. I've been able to see many errors
+our APIs for data visualizations. I've been able to see many errors
 from our developers when they first try to update or modify any of
 our visualizations. Without this logging in place it would not be
 so obvious that our current API is not working well for others.
