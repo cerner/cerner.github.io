@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Ruby at Cerner - Engineering Health</title>
+  <title>Identifying Network ACL Issues With Chef Locally - Engineering Health</title>
   <meta name="author" content="Cerner">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://engineering.cerner.com/2013/04/ruby-at-cerner">
+  <link rel="canonical" href="http://engineering.cerner.com/blog/identifying-network-acl-issues-with-chef-locally">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -111,7 +111,7 @@
   
   <header class="entry-header">
     
-      <h1 class="entry-title">Ruby at Cerner</h1>
+      <h1 class="entry-title">Identifying Network ACL Issues With Chef Locally</h1>
     
     
       <div class="entry-meta meta">
@@ -120,7 +120,7 @@
   
 
 
-  <span class="byline author vcard">Written by <span class="fn">Cerner Engineering</span></a></span>
+  <span class="byline author vcard">Written by <span class="fn">Aaron Blythe and David Crowder</span></a></span>
 
  | 
 
@@ -134,36 +134,36 @@
   
 
 
-<time datetime="2013-04-05T00:00:00-05:00" pubdate data-updated="true">Apr 5<span>th</span>, 2013</time>
+<time datetime="2015-11-17T00:00:00-06:00" pubdate data-updated="true">Nov 17<span>th</span>, 2015</time>
         
       </div>
     
   </header>
 
 
-<div class="entry-content"><p>Cerner&rsquo;s journey with Ruby started in the summer of 2009. We selected Ruby on Rails for rapid development of the <a href="https://store.cerner.com/">Cerner Store</a> to prepare for release at the Cerner Health Conference that year. In three months, with three engineers and a designer, we wrote and released the first version of an e-commerce web application. Two of those engineers, including me, had never worked with Ruby before but quickly realized the power and expressiveness of the language due to resources like <a href="http://mislav.uniqpath.com/poignant-guide/">Why&rsquo;s (Poignant) Guide to Ruby</a>.</p>
+<div class="entry-content"><p>At Cerner, we use <a href="https://www.chef.io/">Chef</a> to automate our deployments across a very large distributed system comprised of many thousands of nodes. While we employ <a href="http://serverspec.org/">ServerSpec</a> and <a href="http://kitchen.ci/">Test Kitchen</a> extensively to test our Chef recipes, this still doesn&rsquo;t identify all possible failure scenarios. In a large distributed system such as ours, we occasionally run into connectivity failures between machines due to network ACL issues. This could be due to a variety of reasons. The simplest being that you didn’t know what all you were connecting to. The second being that you didn’t ask for the ACLs to be opened early enough, or at all. And finally (and most frustrating), you asked and were granted an ACL change but there still exists an issue (like an unfollowed redirect). When we took a look at these issues, we saw an opportunity for improvement in our Chef testing.</p>
 
-<p><img class="center" src="/assets/2013-04-05-ruby-at-cerner/the.foxes-4c.png" title="Chunky bacon!" ></p>
+<p>This is why we created <a href="https://github.com/cerner/ops_tcpdump_handler">ops_tcpdump_handler</a>, an open source Chef cookbook that is helping us identify network connectivity issues during Chef test runs.</p>
 
-<p>Our experience with the Cerner Store taught us that Rails led to high productivity. Ruby is a very natural language to write code in and principles like <a href="http://en.wikipedia.org/wiki/Convention_over_configuration">convention over configuration</a> enabled us to solve our problems instead of spending time wrangling the framework. In addition, we valued the good practices of the Ruby community like easy-to-understand code and thorough unit testing with tools that aren&rsquo;t painful.</p>
+<p>As explained in the project README, when you add this cookbook into a Test Kitchen or <a href="https://www.vagrantup.com/">Vagrant</a> run list, you&rsquo;ll see an output similar to below that shows connection attempts between nodes. This will not only help you understand what nodes you&rsquo;re connecting to in a Chef run, but also diagnose any connectivity issues that arise.</p>
 
-<p>In the summer of 2010, we attended the first <a href="http://rubymidwest.com/">Ruby Midwest</a> as a team. We learned about developments in Ruby like JRuby and Chef as well as some of the great gems under development. The Cerner Store continued to grow and we learned about maintaining a Rails web app over time.</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>==&gt; node01: attempted to connect to: proxy06.fedoraproject.org using http
+</span><span class='line'>==&gt; node01: attempted to connect to: mirror.sfo12.us.leaseweb.net using http
+</span><span class='line'>==&gt; node01: attempted to connect to: li63-48.members.linode.com using https
+</span><span class='line'>==&gt; node01: attempted to connect to: 23.235.40.133 using https
+</span><span class='line'>==&gt; node01: attempted to connect to: github.com using https
+</span><span class='line'>==&gt; node01: attempted to connect to: codeload.github.com using https
+</span><span class='line'>==&gt; node01: attempted to connect to: s3-1.amazonaws.com using https</span></code></pre></td></tr></table></div></figure>
 
-<p>In early 2012, we were planning a massive undertaking to create a new platform for our Clients&#8217; healthcare data. It was to be called Millennium+ and it needed an architecture that could scale well to petabytes of data and dozens of engineers across many teams. We planned a <a href="http://engineering.cerner.com/2013/02/near-real-time-processing-over-hadoop-and-hbase/">service-oriented architecture</a> and chose Rails to serve as the server side of the application. Our Rails services call JVM services that retrieve data from HBase and serves the resulting data as JSON to the client-side applications, including our iOS app, PowerChart Touch Ambulatory. The high productivity we enjoyed on a small team scaled well to a large team of people who had never written Ruby before.</p>
 
-<p>This was the start of Cerner&rsquo;s Ruby community. We developed reusable libraries and development processes that we continue to use today. The complexities of our architecture also led to the adoption of <a href="http://www.opscode.com/chef/">Chef</a> to automate operations and build a devops mindset. Chef is another integral use of Ruby that penetrates teams that did not use Ruby at all.</p>
-
-<p>When planning our newest platform, <a href="http://www.cerner.com/blog/population_health_management_collaboration_with_advocate_physician_partners/">Population Health</a>, we needed to determine which platform made the most sense for a large-scale development of web applications on a tight timeline. We decided on Rails due in large part to its prioritization of convention over configuration, as well as the existing Ruby community at Cerner. These attributes would enable us to develop applications at the planned pace and scale. This decision is now disseminated to dozens of engineers working on brand new web applications and REST services powering them.</p>
-
-<p>We&rsquo;ve bolstered our internal Ruby community with lots of documentation and guidelines. We make use of the <a href="http://ruby.railstutorial.org/ruby-on-rails-tutorial-book">Ruby on Rails Tutorial book</a> and Why&rsquo;s (Poignant) Guide to train engineers in Ruby. Bozhidar Batsov&rsquo;s <a href="https://github.com/bbatsov/ruby-style-guide">Ruby style guide</a> aligns closely with how we write our code, so we use <a href="https://github.com/bbatsov/rubocop">rubocop</a> to keep ourselves in line. Our development devices run on <a href="https://rvm.io/">RVM</a> and our servers run on <a href="https://www.phusionpassenger.com/">Phusion Passenger</a>.</p>
-
-<p>Ruby has quickly become a very important part of Cerner&rsquo;s engineering culture, primarily as the language behind Rails and Chef. An internal Ruby meetup has begun and there have been presentations involving Ruby at our annual Developer Conference.</p>
-
-<p><img class="center" src="/assets/2013-04-05-ruby-at-cerner/ruby-midwest-logo-2013.png" title="Ruby Midwest 2013 Logo" ></p>
-
-<p>Additionally, we are sponsoring <a href="http://rubymidwest.com/">Ruby Midwest</a> because we want developers to know that Ruby is highly valued at Cerner. We&rsquo;re also sending a large number of our own associates there to learn.</p>
-
-<p>We look forward to bringing on more engineers to use Ruby and other technologies to engineer the future of healthcare.</p>
+<p>We&rsquo;re currently using this cookbook in our Chef test runs to identify and help troubleshoot connectivity issues between nodes. Next, we&rsquo;re going to incorporate this into our continuous delivery pipeline to verify connectivity first before proceeding with the deployment. We decided to open source this work to get feedback from the community and to hear your experience with these types of issues. We&rsquo;d love to hear your experience with incorporating this cookbook into your pipeline or other approaches you&rsquo;ve taken with these types of issues.</p>
 </div>
 
 
@@ -174,7 +174,7 @@
   
 
 
-  <span class="byline author vcard">Written by <span class="fn">Cerner Engineering</span></a></span>
+  <span class="byline author vcard">Written by <span class="fn">Aaron Blythe and David Crowder</span></a></span>
 
 
       
@@ -189,7 +189,7 @@
   
 
 
-<time datetime="2013-04-05T00:00:00-05:00" pubdate data-updated="true">Apr 5<span>th</span>, 2013</time>
+<time datetime="2015-11-17T00:00:00-06:00" pubdate data-updated="true">Nov 17<span>th</span>, 2015</time>
       
 
 
@@ -206,13 +206,10 @@
     <ul class="pager">
       
       <li class="previous"><a class="basic-alignment left"
-        href="/2013/03/modularity-in-medical-imaging/" title="Previous Post:
-        Modularity in Medical Imaging">&laquo; Previous Post</a></li>
+        href="/blog/javascript-logging-we-can-do-better/" title="Previous Post:
+        JavaScript Logging: We can do better!">&laquo; Previous Post</a></li>
       
       <li><a href="/blog/archives">Blog Archives</a></li>
-      
-      <li class="next"><a class="basic-alignment right" href="/2013/04/learn-what-the-rules-dont-cover/"
-        title="Next Post: Learn what the rules don't cover">Next Post &raquo;</a></li>
       
     </ul>
   </footer>

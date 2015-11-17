@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2015-07-21T15:08:38-05:00</updated>
+  <updated>2015-11-17T09:39:32-06:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,37 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Identifying Network ACL Issues With Chef Locally]]></title>
+    <link href="http://engineering.cerner.com/blog/identifying-network-acl-issues-with-chef-locally/"/>
+    <updated>2015-11-17T00:00:00-06:00</updated>
+    <id>http://engineering.cerner.com/blog/identifying-network-acl-issues-with-chef-locally</id>
+    <content type="html"><![CDATA[<p>At Cerner, we use <a href="https://www.chef.io/">Chef</a> to automate our deployments across a very large distributed system comprised of many thousands of nodes. While we employ <a href="http://serverspec.org/">ServerSpec</a> and <a href="http://kitchen.ci/">Test Kitchen</a> extensively to test our Chef recipes, this still doesn&rsquo;t identify all possible failure scenarios. In a large distributed system such as ours, we occasionally run into connectivity failures between machines due to network ACL issues. This could be due to a variety of reasons. The simplest being that you didn’t know what all you were connecting to. The second being that you didn’t ask for the ACLs to be opened early enough, or at all. And finally (and most frustrating), you asked and were granted an ACL change but there still exists an issue (like an unfollowed redirect). When we took a look at these issues, we saw an opportunity for improvement in our Chef testing.</p>
+
+<p>This is why we created <a href="https://github.com/cerner/ops_tcpdump_handler">ops_tcpdump_handler</a>, an open source Chef cookbook that is helping us identify network connectivity issues during Chef test runs.</p>
+
+<p>As explained in the project README, when you add this cookbook into a Test Kitchen or <a href="https://www.vagrantup.com/">Vagrant</a> run list, you&rsquo;ll see an output similar to below that shows connection attempts between nodes. This will not only help you understand what nodes you&rsquo;re connecting to in a Chef run, but also diagnose any connectivity issues that arise.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>==&gt; node01: attempted to connect to: proxy06.fedoraproject.org using http
+</span><span class='line'>==&gt; node01: attempted to connect to: mirror.sfo12.us.leaseweb.net using http
+</span><span class='line'>==&gt; node01: attempted to connect to: li63-48.members.linode.com using https
+</span><span class='line'>==&gt; node01: attempted to connect to: 23.235.40.133 using https
+</span><span class='line'>==&gt; node01: attempted to connect to: github.com using https
+</span><span class='line'>==&gt; node01: attempted to connect to: codeload.github.com using https
+</span><span class='line'>==&gt; node01: attempted to connect to: s3-1.amazonaws.com using https</span></code></pre></td></tr></table></div></figure>
+
+
+<p>We&rsquo;re currently using this cookbook in our Chef test runs to identify and help troubleshoot connectivity issues between nodes. Next, we&rsquo;re going to incorporate this into our continuous delivery pipeline to verify connectivity first before proceeding with the deployment. We decided to open source this work to get feedback from the community and to hear your experience with these types of issues. We&rsquo;d love to hear your experience with incorporating this cookbook into your pipeline or other approaches you&rsquo;ve taken with these types of issues.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[JavaScript Logging: We Can Do Better!]]></title>
@@ -2261,65 +2292,6 @@ Using Node.js to flash lights on a Raspberry Pi when a health check from web ser
 <p>This becomes more powerful as Hadoop becomes a more general fabric for computation. Projects like <a href="http://spark-project.org">Spark</a> can be layered on top of Hadoop to significantly improve processing time for many jobs. SQL- and search-based systems allow faster interrogation of data directly in Hadoop to a wider set of users and domain-specific data models can be quickly computed for new needs.</p>
 
 <p>Ultimately, the gap between the discovery of a novel question and our ability to answer it is shrinking dramatically. The rate of innovation is increasing.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[FIRST Robotics Championship Competition in St. Louis]]></title>
-    <link href="http://engineering.cerner.com/2013/04/first-robotics-championship-competition-in-st-louis/"/>
-    <updated>2013-04-23T00:00:00-05:00</updated>
-    <id>http://engineering.cerner.com/2013/04/first-robotics-championship-competition-in-st-louis</id>
-    <content type="html"><![CDATA[<p><img class="center" src="http://engineering.cerner.com/assets/2013-04-23-first-robotics-championship-competition-in-st-louis/Ultimate-Ascent.jpg" title="Ultimate Ascent" ></p>
-
-<p>Cerner places a high value on talent development programs offering students the experience to build practical and tangible skills for the modern work environment. As part of this focus, Cerner supports FIRST Robotics, a competition providing experience in software engineering, where students learn to deal with complexity, time constraints, quality, and technical communications. Sound familiar? I wish they had this program when I was a kid!</p>
-
-<p>High school students from Kansas City will be testing their minds, willpower, and teamwork in this global robotics championship competition April 24-27 in St Louis, Missouri. The secret game design was revealed in January, and with just six weeks to build, over 2,000 teams created completely unique robots. Design, engineering, metal fabrication, project management, marketing, and fundraising are all activities that students gain exposure to in this real-world project. Most importantly, they practice creative problem solving in complex team dynamics.</p>
-
-<p>The championship teams you may have seen in the Kansas City Regional are:</p>
-
-<ul>
-<li>Team 1710 &ndash; The Ravonics Revolution</li>
-<li>Team 1730 &ndash; Team Driven</li>
-<li>Team 1806 &ndash; S.W.A.T.</li>
-<li>Team 1939 &ndash; The Kuh-nig-its</li>
-<li>Team 1986 &ndash; Team Titanium</li>
-<li>Team 1987 &ndash; Broncobots</li>
-<li>Team 3528 &ndash; Up Next!</li>
-</ul>
-
-
-<p>Students are challenged with two software programming components: digital media marketing and robot controls. Students will use a wide range of web, mobile, and media development technologies to create their team&rsquo;s marketing strategy.</p>
-
-<p>Robot controls is broken down into two types: autonomous and teleoperated programs. In autonomous mode the robot responds exclusively to preprogrammed commands based on sensor feedback from a camera, accelerometer, gyro, encoders, and more. In teleoperated mode, the robot continues to use sensors but now can receive input from the drive team using game joysticks.</p>
-
-<p>Students can use three different programming languages for the robot control system:</p>
-
-<ol>
-<li>LabVIEW from National Instruments</li>
-<li>C++ with Wind River Workbench</li>
-<li>Java with Netbeans</li>
-</ol>
-
-
-<p>The most important tool for control system programmers is a white board. Students diagram and visualize all the inputs and outputs of each system: motors, actuators, sensors, and driver station. Mapping inputs to outputs is important not just during the construction of the program, but it also helps to train the drive team. Students use online resources, collaborate with other teams, and receive guidance from their technical mentors. Practicing resourcefulness prepares them for the complex professional engineering environment they will soon become a member of.</p>
-
-<p>Cerner is engaged in the Kansas City community at many levels. We are a sustaining partner in the KC STEM Alliance. Many Cerner associates mentor local teams, volunteer at local events, and are involved parents. These experiences exercise student minds in very real and practical ways. They are more prepared for technical and non-technical Cerner careers. Their passion and commitment is the fuel for delivering our future innovation.</p>
-
-<p>Here is this year’s gameplay video:</p>
-
-<iframe width="560" height="315" class="aligncenter" frameborder="0" src="https://www.youtube-nocookie.com/embed/wa5MGEZNrf0?rel=0" allowfullscreen></iframe>
-
-
-<p>For more information, check out the links below:</p>
-
-<ul>
-<li><a href="http://www.usfirst.org/roboticsprograms/first-championship">http://www.usfirst.org/roboticsprograms/first-championship</a></li>
-<li><a href="http://www.kcfirst.org/">http://www.kcfirst.org/</a></li>
-<li><a href="http://www.kcstem.org/">http://www.kcstem.org/</a></li>
-<li><a href="http://www.youtube.com/user/FRCTeamsGlobal">http://www.youtube.com/user/FRCTeamsGlobal</a></li>
-<li><a href="http://wpilib.screenstepslive.com/s/3120">http://wpilib.screenstepslive.com/s/3120</a></li>
-</ul>
-
 ]]></content>
   </entry>
   

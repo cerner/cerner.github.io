@@ -113,6 +113,71 @@
       
   <header class="entry-header">
     
+      <h1 class="entry-title"><a href="/blog/identifying-network-acl-issues-with-chef-locally/">Identifying Network ACL Issues With Chef Locally</a></h1>
+    
+    
+      <div class="entry-meta meta">
+        
+  
+  
+
+
+  <span class="byline author vcard">Written by <span class="fn">Aaron Blythe and David Crowder</span></a></span>
+
+ | 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-11-17T00:00:00-06:00" pubdate data-updated="true">Nov 17<span>th</span>, 2015</time>
+        
+      </div>
+    
+  </header>
+
+
+  <div class="entry-content"><p>At Cerner, we use <a href="https://www.chef.io/">Chef</a> to automate our deployments across a very large distributed system comprised of many thousands of nodes. While we employ <a href="http://serverspec.org/">ServerSpec</a> and <a href="http://kitchen.ci/">Test Kitchen</a> extensively to test our Chef recipes, this still doesn&rsquo;t identify all possible failure scenarios. In a large distributed system such as ours, we occasionally run into connectivity failures between machines due to network ACL issues. This could be due to a variety of reasons. The simplest being that you didn’t know what all you were connecting to. The second being that you didn’t ask for the ACLs to be opened early enough, or at all. And finally (and most frustrating), you asked and were granted an ACL change but there still exists an issue (like an unfollowed redirect). When we took a look at these issues, we saw an opportunity for improvement in our Chef testing.</p>
+
+<p>This is why we created <a href="https://github.com/cerner/ops_tcpdump_handler">ops_tcpdump_handler</a>, an open source Chef cookbook that is helping us identify network connectivity issues during Chef test runs.</p>
+
+<p>As explained in the project README, when you add this cookbook into a Test Kitchen or <a href="https://www.vagrantup.com/">Vagrant</a> run list, you&rsquo;ll see an output similar to below that shows connection attempts between nodes. This will not only help you understand what nodes you&rsquo;re connecting to in a Chef run, but also diagnose any connectivity issues that arise.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>==&gt; node01: attempted to connect to: proxy06.fedoraproject.org using http
+</span><span class='line'>==&gt; node01: attempted to connect to: mirror.sfo12.us.leaseweb.net using http
+</span><span class='line'>==&gt; node01: attempted to connect to: li63-48.members.linode.com using https
+</span><span class='line'>==&gt; node01: attempted to connect to: 23.235.40.133 using https
+</span><span class='line'>==&gt; node01: attempted to connect to: github.com using https
+</span><span class='line'>==&gt; node01: attempted to connect to: codeload.github.com using https
+</span><span class='line'>==&gt; node01: attempted to connect to: s3-1.amazonaws.com using https</span></code></pre></td></tr></table></div></figure>
+
+
+<p>We&rsquo;re currently using this cookbook in our Chef test runs to identify and help troubleshoot connectivity issues between nodes. Next, we&rsquo;re going to incorporate this into our continuous delivery pipeline to verify connectivity first before proceeding with the deployment. We decided to open source this work to get feedback from the community and to hear your experience with these types of issues. We&rsquo;d love to hear your experience with incorporating this cookbook into your pipeline or other approaches you&rsquo;ve taken with these types of issues.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article class="entry">
+      
+  <header class="entry-header">
+    
       <h1 class="entry-title"><a href="/blog/javascript-logging-we-can-do-better/">JavaScript Logging: We Can Do Better!</a></h1>
     
     
@@ -837,404 +902,6 @@ about proactive solutions.</p>
 
     </article>
   
-  
-    <article class="entry">
-      
-  <header class="entry-header">
-    
-      <h1 class="entry-title"><a href="/blog/closures-and-currying-in-javascript/">Closures & Currying in JavaScript</a></h1>
-    
-    
-      <div class="entry-meta meta">
-        
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/rory-hardy"><span class="fn">Rory Hardy</span></a></span>
-
- | 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-09-29T00:00:00-05:00" pubdate data-updated="true">Sep 29<span>th</span>, 2014</time>
-        
-      </div>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>Preface</h2>
-
-<p>I have been asked many times what closures are and how they work. There are many resources available to learn this concept, but they are not always clear to everyone. This has led me to put together my own approach to exchanging the information.</p>
-
-<p>I will supply code samples. <code>//&gt;</code> denotes an output or return.</p>
-
-<p>Before discussing closures, it is important to review how functions work in JavaScript.</p>
-
-<h2>Introduction to functions</h2>
-
-<p>If a function does not have a return statement, it will implicitly return undefined, which brings us to the simplest functions.</p>
-
-<h3>Noop</h3>
-
-<p>Noop typically stands for no operation; it takes any parameters, does nothing with them, and returns undefined.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">noop</span><span class="p">()</span> <span class="p">{};</span>
-</span><span class='line'><span class="nx">noop</span><span class="p">(</span><span class="s2">&quot;cat&quot;</span><span class="p">);</span> <span class="c1">//&gt; undefined</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Identity</h3>
-
-<p>The identity function takes in a value and returns it.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">identity</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">return</span> <span class="nx">value</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="nx">identity</span><span class="p">(</span><span class="s2">&quot;cat&quot;</span><span class="p">);</span> <span class="c1">//&gt; &quot;cat&quot;</span>
-</span><span class='line'><span class="nx">identity</span><span class="p">({</span><span class="nx">a</span><span class="o">:</span> <span class="s2">&quot;dog&quot;</span><span class="p">});</span> <span class="c1">//&gt; Object {a: &quot;dog&quot;}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The important thing to note here is that the variable (value) passed in is bound to that function’s scope. This means that it is available to everything inside the function and is unavailable outside of it. There is an exception to this, being that objects are passed by reference which will prove useful with the use of closures and currying.</p>
-
-<h3>Functions that evaluate to functions</h3>
-
-<p>Functions are first class citizens in Javascript, which means that they are objects. Since they are objects, they can take functions as parameters, have methods bound to them,  and even return functions.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">return</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="nx">foo</span><span class="p">()();</span> <span class="c1">//&gt; true</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This is a function that returns a function which returns true.</p>
-
-<p><img class="center" src="/assets/2014-09-29-closures-and-currying-in-javascript/not_sure_if.jpg" title="Not sure if my function or a function from inside my function" ></p>
-
-<p>Functions take arguments and those arguments can be values or reference types, such as functions. If you return a function, it is that function you are returning, not a new one (even though it might have just been made to return).</p>
-
-<h2>Closures</h2>
-
-<p>Creating a closure is nothing more than accessing a variable outside of a function’s scope (using a variable that is neither bound on invocation or defined in the function body).</p>
-
-<p>To elaborate, the parent function’s variables are accessible to the inner function. If the inner function uses its parent’s (or parent’s parent’s and so on) variable(s) then they will persist in memory as long as the accessing functions(s) are still referenceable. In JavaScript, referenceable variables are not garbage collected.</p>
-
-<p>Let’s review the identity function:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">identity</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">a</span><span class="p">;</span> <span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The value, a, is bound inside of the function and is unavailable outside of it; there is no closure here.  For a closure to be present, there would need to be a function within this function that would access the variable a.</p>
-
-<p>Why is this important?</p>
-
-<ul>
-<li>Closures provide a way to associate data with a method that operates on that data.</li>
-<li>They enable private variables in a global world.</li>
-<li>Many patterns, including the fairly popular <a href="http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html">module pattern</a>, rely on closures to work correctly.</li>
-</ul>
-
-
-<p>Due to these strengths, and many more, closures are used everywhere. Many popular libraries utilize them internally.</p>
-
-<p><img class="center" src="/assets/2014-09-29-closures-and-currying-in-javascript/closures_everywhere.jpg" title="Closures! Closures everywhere!" ></p>
-
-<p>Let’s take a look at an example of closure in action:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="kd">function</span> <span class="nx">bar</span><span class="p">(</span><span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">);</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="nx">bar</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="nx">foo</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="c1">// will log 4 to the console</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The outer function (foo) takes a variable (x), which, which is bound to that function when invoked. When the internal function (bar) is invoked, x (2) and y (2) are added together then logged to the console as 4. Bar is able to access foo&rsquo;s x-variable because bar is created within foo&rsquo;s scope.</p>
-
-<p>The takeaway here is that bar can access foo’s variables because it was created within foo’s scope. A function can access variables in its scope and up the chain to the global scope. It cannot access other function’s scopes that are declared within it or parallel to it.</p>
-
-<p><img class="center" src="/assets/2014-09-29-closures-and-currying-in-javascript/question.jpg" title="Question, does a function inside a function mean you have a closure?" ></p>
-
-<p>No, a function inside of a function doesn&rsquo;t have to reference variables outside of its scope. Recall the example function which returned a function which evaluated to true:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="c1">// does something with x or not</span>
-</span><span class='line'>  <span class="k">return</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>      <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="nx">foo</span><span class="p">(</span><span class="mi">7</span><span class="p">)();</span> <span class="c1">//&gt; true</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>No matter what is passed to foo, a function that evaluates to true is returned.  A closure only exists when a function accesses a variable(s) outside of its immediate scope.</p>
-
-<p>This leads into an important implication about closures, they enable you to define a dataset once. We’re talking about private variables here.</p>
-
-<p>Without closures, you recreate the data per function call if you want to keep it private.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>  <span class="kd">var</span> <span class="kr">private</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">];</span> <span class="c1">// Imaginary large data set - instantiated per invocation</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kr">private</span><span class="p">);</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="nx">foo</span><span class="p">();</span> <span class="c1">//&gt; [0, 1, 2]</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>We can do better! With a closure, we can save it to a variable that is private, but only instantiated once.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">bar</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>  <span class="kd">var</span> <span class="kr">private</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">];</span> <span class="c1">// Same large imaginary data set - only instantiated once</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c1">// As long as this function exists, it has a reference to the private variable</span>
-</span><span class='line'>  <span class="k">return</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kr">private</span><span class="p">);</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">}());</span>
-</span><span class='line'>
-</span><span class='line'><span class="nx">bar</span><span class="p">();</span> <span class="c1">//&gt; [0, 1, 2]</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>By utilizing closure here, our big imaginary data set only has to be created once. Given the way garbage collection (automatic memory freeing) works in JavaScript, the existence of the internal function (which is returned and set to the variable bar) keeps the private variable from being freed and thus available for subsequent calls. This is really advantageous when you consider large data sets that may be created via Ajax requests which have to go over the network.</p>
-
-<h2>Currying</h2>
-
-<p><img class="center" src="/assets/2014-09-29-closures-and-currying-in-javascript/curry.jpg" title="Mmmm Curry!" ></p>
-
-<p>Currying is the process of transforming a function with many arguments into the same function with less arguments.</p>
-
-<p>That sounds cool, but why would I care about that?</p>
-
-<ul>
-<li>Currying can help you make higher order factories.</li>
-<li>Currying can help you avoid continuously passing the same variables.</li>
-<li>Currying can memorize various things including state.</li>
-</ul>
-
-
-<p>Let’s pretend that we have a function (curry) defined and set onto the function prototype which turns a function into a curried version of itself. Please note, that this is not a built in feature of JavaScript.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">msg</span><span class="p">(</span><span class="nx">msg1</span><span class="p">,</span> <span class="nx">msg2</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">return</span> <span class="nx">msg1</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nx">msg2</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="kd">var</span> <span class="nx">hello</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">curry</span><span class="p">(</span><span class="s1">&#39;Hello,&#39;</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hello</span><span class="p">(</span><span class="s1">&#39;Sarah Connor&#39;</span><span class="p">));</span> <span class="c1">// Hello, Sarah Connor. </span>
-</span><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">msg</span><span class="p">(</span><span class="s1">&#39;Goodbye,&#39;</span><span class="p">,</span> <span class="s1">&#39;Sarah Connor&#39;</span><span class="p">));</span> <span class="c1">// Goodbye, Sarah Connor. </span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>By currying the msg function so the first variable is cached as “Hello,”, we can call a simpler function, hello, that only requires one variable to be passed. Doesn’t this sound similar to what a closure might be used for?</p>
-
-<p>In the discussion of functional programming concepts, there is often a sense of resistance.</p>
-
-<p><img class="center" src="/assets/2014-09-29-closures-and-currying-in-javascript/not_going_to_happen.jpg" title="Stop trying to make functional programming happen. It's not going to happen!" ></p>
-
-<p>The thing is, you’ve probably already been functionally programming all along. If you use jQuery, you certainly already do.</p>
-
-<p><img class="center" src="/assets/2014-09-29-closures-and-currying-in-javascript/what_if_functional.jpg" title="What if I told you, you are already doing some functional programming." ></p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;some-selector&quot;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>  <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">fadeOut</span><span class="p">();</span>
-</span><span class='line'>  <span class="c1">// other stuff to justify the each</span>
-</span><span class='line'><span class="p">});</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><img class="center" src="/assets/2014-09-29-closures-and-currying-in-javascript/hide_all_the_things.jpg" title="HIDE ALL THE THINGS" ></p>
-
-<p>Another place you may have seen this is utilizing the map function for arrays.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">myArray</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">];</span>
-</span><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myArray</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">return</span> <span class="nx">val</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
-</span><span class='line'><span class="p">}));</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">//&gt; [0, 2, 4]</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Conclusion</h2>
-
-<p>We’ve seen some examples of closures and how they can be useful. We’ve seen what currying is and more importantly that you’ve likely already been functionally programming even if you didn’t realize it. There is a lot more to learn with closures and currying as well as functional programming.</p>
-
-<p>I ask you to:</p>
-
-<ol>
-<li>Work with closures and get the hang of them.</li>
-<li>Give currying a shot.</li>
-<li>Embrace functional programming as an additional tool that you can utilize to enhance your programs and development workflow.</li>
-</ol>
-
-
-<h2>Additional readings and inspirations</h2>
-
-<ul>
-<li><a href="https://leanpub.com/javascript-allonge/read">JavaScript Allongé</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures">MDN Closures</a></li>
-<li><a href="http://learn.jquery.com/javascript-101/closures/">jQuery &ndash; JavaScript 101 Closures</a></li>
-<li><a href="http://javascriptissexy.com/understand-javascript-closures-with-ease/">Understand JavaScript Closures With Ease</a></li>
-<li><a href="http://ejohn.org/blog/partial-functions-in-javascript/">Partial Application in JavaScript</a></li>
-<li><a href="http://www.crockford.com/javascript/www_svendtofte_com/code/curried_javascript/index.html">Curried JavaScript Functions</a></li>
-</ul>
-
-
-<h3>Bonus</h3>
-
-<p>Check out how you can utilize closure and currying to manage state throughout a stateful function:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">setFoo</span><span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="nx">state</span> <span class="o">===</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Specific state</span>
-</span><span class='line'>      <span class="k">return</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;State a for the win!&quot;</span><span class="p">);</span>
-</span><span class='line'>      <span class="p">};</span>
-</span><span class='line'>  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Default state</span>
-</span><span class='line'>      <span class="k">return</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Default state&quot;</span><span class="p">);</span>
-</span><span class='line'>      <span class="p">};</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>  <span class="c1">// Empty function since no state is desired. This avoids invocation errors.</span>
-</span><span class='line'>  <span class="k">return</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{};</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="nx">setFoo</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">);</span> <span class="c1">// Set to the specific state (a)</span>
-</span><span class='line'><span class="nx">foo</span><span class="p">();</span> <span class="c1">//&gt; &quot;State a for the win!&quot;;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nx">foo</span> <span class="o">=</span> <span class="nx">setFoo</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span> <span class="c1">// Set foo to its default state</span>
-</span><span class='line'><span class="nx">foo</span><span class="p">();</span> <span class="c1">//&gt; &quot;Default state&quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nx">foo</span> <span class="o">=</span> <span class="nx">setFoo</span><span class="p">();</span> <span class="c1">// Set foo to not do anything</span>
-</span><span class='line'><span class="nx">foo</span><span class="p">();</span> <span class="c1">//&gt; undefined</span>
-</span><span class='line'><span class="c1">// etc</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Bonus 2</h3>
-
-<p>Checkout how closures and currying can be used to create higher order functions to create methods on the fly: <a href="http://jsfiddle.net/GneatGeek/A9WRb/">http://jsfiddle.net/GneatGeek/A9WRb/</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="/blog/page/2/">&larr; Older posts</a></li>
@@ -1250,6 +917,10 @@ about proactive solutions.</p>
   <ul id="recent_posts" class="nav nav-list">
     
       <li class="post">
+        <a href="/blog/identifying-network-acl-issues-with-chef-locally/">Identifying Network ACL Issues With Chef Locally</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/javascript-logging-we-can-do-better/">JavaScript Logging: We Can Do Better!</a>
       </li>
     
@@ -1263,10 +934,6 @@ about proactive solutions.</p>
     
       <li class="post">
         <a href="/blog/closures-and-currying-in-javascript/">Closures & Currying in JavaScript</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/intern-hackfest-2014/">Intern HackFest 2014</a>
       </li>
     
   </ul>
