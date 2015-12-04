@@ -7,7 +7,7 @@ layout: default
   {% for post in paginator.posts %}
   {% assign content = post.content %}
     <article class="entry">
-      {% include article.html %}
+      {% include excerpt_post.html %}
     </article>
   {% endfor %}
   <ul class="pager">
