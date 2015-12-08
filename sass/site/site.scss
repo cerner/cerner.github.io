@@ -39,7 +39,7 @@
 // Adds top spacing to <body> to account for space of fixed navbar
 body.top-navbar {
   padding-top: 105px;
-  
+
   // At this breakpoint, the navbar is not longer postion:fixed so the top spacing can be reset
   @media screen and (max-width: 980px) {
     padding-top: 0;
@@ -47,7 +47,7 @@ body.top-navbar {
 }
 
 .navbar {
-  .btn { 
+  .btn {
     // Aligns nav toggle button with brand logo
     @media screen and (max-width: 980px) {
       margin-top: 27.5px;
@@ -62,9 +62,9 @@ body.top-navbar {
 #banner {
 
   .brand {
-    margin: 0;
+    margin-left: 100px;
     padding: 30px 0 0;
-    
+
     @media (max-width: 979px) {
       margin-left: 20px;
     }
@@ -72,11 +72,16 @@ body.top-navbar {
     @media (max-width: 767px) {
       max-width: 65%;
     }
+
+    img {
+      width: 136px;
+      height: 35px;
+    }
   }
 
   .nav > li > a {
     padding: 39px 15px 30px;
-  } 
+  }
 }
 
 
@@ -103,11 +108,11 @@ body.top-navbar {
     max-width: inherit;
     position: relative;
     width: auto;
-    
+
     @media (max-width: 979px) {
       margin-left: -64%;
     }
-    
+
     // Hide page header image at this breakpoint
     @media (max-width: 767px) {
       display: none;
@@ -142,14 +147,14 @@ body.top-navbar {
 
 .page-footer {
   background-color: #222;
-  color: #999; 
+  color: #999;
   margin: 30px 0 0; // Pulls footer full width of browser window for small viewports
   padding: 10px 22px;
 
   @media (max-width: 767px) {
     margin-left: -20px;
     margin-right: -20px;
-  } 
+  }
 
   p {
     margin-bottom: 0;
@@ -181,6 +186,7 @@ h2 strong {
 
 header h2 { font-size: 40px; }
 
+body { background-color: #e9eae9; }
 
 // Site Search
 // --------------------------------------------------
@@ -242,8 +248,8 @@ header h2 { font-size: 40px; }
     border-bottom: none;
     padding-bottom: 0;
   }
-} 
- 
+}
+
 
 // Engineer Page
 // --------------------------------------------------
@@ -272,7 +278,7 @@ header h2 { font-size: 40px; }
   dd {
     line-height: 18px;
   }
-  
+
   dl,
   dd {
     margin: 0 0 10px 0;
@@ -362,4 +368,45 @@ header h2 { font-size: 40px; }
   .about-author-photo {
     max-height: 240px;
   }
+}
+
+// Divider
+// --------------------------------------------------
+
+.divider {
+  width: 100%;
+  margin-bottom: 20px;
+
+  svg {
+    max-height: 300px;
+
+    margin: 0 auto; /* poor attempt at centering */
+
+    height: auto !important; /* overrides inline */
+    width: auto !important; /* overrides inline */
+
+    max-width: 300px;
+    display: block;
+  }
+}
+
+// Culture page
+// --------------------------------------------------
+.culture2 {
+  position: relative;
+
+  h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+  }
+
+  background-image: url("/images/culture1.jpg");
+  background-size: cover;
+  width:100%;
+  height:500px;
 }
