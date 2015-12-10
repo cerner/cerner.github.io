@@ -430,4 +430,51 @@ body { background-color: #e9eae9; }
   background-size: cover;
   width:100%;
   height:500px;
+
+  div {
+    padding-bottom: 20px;
+  }
+}
+
+.culture3 {
+  h1 {
+    text-align: center;
+    color: #000;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  div img {
+   display:block;
+   margin:auto;
+  }
+
+  div {
+    padding-bottom: 20px;
+  }
+}
+
+.culture4 {
+  position: relative;
+
+  h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+  }
+
+  background-image: url("/images/culture2.jpg");
+  background-size: cover;
+  width:100%;
+  height:500px;
+
+  div {
+    padding-bottom: 20px;
+  }
 }
