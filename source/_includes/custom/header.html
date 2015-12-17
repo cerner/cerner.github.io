@@ -1,22 +1,13 @@
 <header id="banner" class="navbar navbar-fixed-top" role="banner">
-  <div class="brand">
+  <div>
     <a href="{{ root_url }}/">
       <img src="{{ root_url }}/images/logo-cerner.gif" title="Cerner Engineering Health">
     </a>
   </div>
-  <div class="navbar-inner">
-    <div class="container">
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-
-      {% include custom/navigation.html %}
-    </div>
-  </div>
+  {% include custom/navigation.html %}
 </header>
 
+<!--
 <div class="container">
   <div class="row">
     {% if site.simple_search %}
@@ -33,3 +24,4 @@
     {% endif %}
   </div>
 </div>
+-->

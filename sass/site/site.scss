@@ -67,8 +67,8 @@ body.top-navbar {
 #banner {
 
   .brand {
-    margin-left: 100px;
-    padding: 30px 0 0;
+    margin-left: 20px;
+    padding: 30px 20px 0;
 
     @media (max-width: 979px) {
       margin-left: 20px;
@@ -87,6 +87,8 @@ body.top-navbar {
   .nav > li > a {
     padding: 39px 15px 30px;
   }
+
+  width: 100%;
 }
 
 
@@ -144,8 +146,16 @@ body.top-navbar {
   @media (min-width: 1200px) {
     margin-top: -60px;
   }
+
+  padding-top: 115px;
 }
 
+// Sidebar
+// --------------------------------------------------
+
+.sidebar-nav {
+  padding-top: 55px;
+}
 
 // Page Footer
 // --------------------------------------------------
@@ -192,7 +202,9 @@ h2 strong {
 
 header h2 { font-size: 40px; }
 
-body { background-color: #e9eae9; }
+body {
+  background-color: #e9eae9;
+}
 
 // Site Search
 // --------------------------------------------------
@@ -226,9 +238,17 @@ body { background-color: #e9eae9; }
   border-bottom: 1px solid #eeeeee;
   margin-bottom: 1em;
   padding-bottom: 1em;
+  background-color: #ffffff;
+  border: 1px solid #e3e3e3;
+  padding: 19px;
 }
 
-.sharing, .meta, .pager {
+.entry-title {
+  margin: 0;
+  padding-bottom: 19px;
+}
+
+.sharing, .pager {
   margin: 20px 0px 20px 0px;
 }
 
