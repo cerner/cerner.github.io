@@ -26,6 +26,7 @@ $gray:                  #555 !default;
 $grayLight:             #999 !default;
 $grayLighter:           #eee !default;
 $white:                 #fff !default;
+$darkslategray:         #383d41 !default;
 
 
 // Accent colors
@@ -60,7 +61,7 @@ $monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace !defau
 
 $baseFontSize:          15px !default;
 $baseFontFamily:        $sansFontFamily !default;
-$baseLineHeight:        27px !default; 
+$baseLineHeight:        27px !default;
 $altFontFamily:         $serifFontFamily !default;
 
 $headingsFontFamily:    inherit !default; // empty to use BS default, $baseFontFamily
@@ -205,8 +206,8 @@ $navbarLinkBackgroundActive:      darken($navbarBackground, 5%) !default;
 $navbarBrandColor:                $navbarLinkColor !default;
 
 // Inverted navbar
-$navbarInverseBackground:                #111111 !default;
-$navbarInverseBackgroundHighlight:       #222222 !default;
+$navbarInverseBackground:                $darkslategray !default;
+$navbarInverseBackgroundHighlight:       $darkslategray !default;
 $navbarInverseBorder:                    #252525 !default;
 
 $navbarInverseText:                      $grayLight !default;

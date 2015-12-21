@@ -1,27 +1,13 @@
-<header id="banner" class="navbar navbar-fixed-top" role="banner">
-  <div>
-    <a href="{{ root_url }}/">
-      <img src="{{ root_url }}/images/logo-cerner.gif" title="Cerner Engineering Health">
-    </a>
+<header id="banner" role="banner" class="container-fluid">
+  {% if page.url == '/culture/index.html' %}
+     <div class="banner-image banner-india">
+   {% elsif page.url == '/blog/archives/index.html' %}
+     <div class="banner-image banner-hq">
+   {% else %}
+     <div class="banner-image banner-kc">
+   {% endif %}
+
+    <h2>Engineering Health: A Cerner Blog</h2>
   </div>
   {% include custom/navigation.html %}
 </header>
-
-<!--
-<div class="container">
-  <div class="row">
-    {% if site.simple_search %}
-      <div class="span4 pull-right">
-        <div id="search-form-wrapper">
-          <form class="form-search" id="searchform" role="search" action="{{ site.simple_search }}" method="get" >
-            <label class="hide" for="q">Search for:</label>
-            <input name="sitesearch" type="hidden" value="{{ site.url | shorthand_url }}" />
-            <input class="search-query" id="q" name="q" type="text" results="0" placeholder="Search">
-            <input class="btn" id="searchsubmit" type="submit" value="Search" >
-          </form>
-        </div>
-      </div>
-    {% endif %}
-  </div>
-</div>
--->

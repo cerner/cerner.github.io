@@ -12,14 +12,6 @@
   @include box-sizing(border-box);
 }
 
-
-
-.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
-  @media (min-width: 1200px) {
-    width: 1145px;
-  }
-}
-
 .container-fluid {
     padding: 0px;
 }
@@ -38,29 +30,6 @@
 // LAYOUT
 // --------------------------------------------------
 
-// Navbar
-// --------------------------------------------------
-
-// Adds top spacing to <body> to account for space of fixed navbar
-body.top-navbar {
-  padding-top: 105px;
-
-  // At this breakpoint, the navbar is not longer postion:fixed so the top spacing can be reset
-  @media screen and (max-width: 980px) {
-    padding-top: 0;
-  }
-}
-
-.navbar {
-  .btn {
-    // Aligns nav toggle button with brand logo
-    @media screen and (max-width: 980px) {
-      margin-top: 27.5px;
-    }
-  }
-}
-
-
 // Banner
 // --------------------------------------------------
 
@@ -68,29 +37,40 @@ body.top-navbar {
 
   .brand {
     margin-left: 20px;
-    padding: 30px 20px 0;
-
-    @media (max-width: 979px) {
-      margin-left: 20px;
-    }
-
-    @media (max-width: 767px) {
-      max-width: 65%;
-    }
-
-    img {
-      width: 136px;
-      height: 35px;
-    }
   }
 
-  .nav > li > a {
-    padding: 39px 15px 30px;
-  }
-
-  width: 100%;
+  background-color: $darkslategray
 }
 
+.banner-image {
+  position: relative;
+
+  h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+  }
+
+  background-size: cover;
+  width:100%;
+  height:400px;
+}
+
+.banner-kc {
+  background-image: url("/images/KC.jpg");
+}
+
+.banner-hq {
+  background-image: url("/images/HQ.jpg");
+}
+
+.banner-india {
+  background-image: url("/images/INDIA.jpg");
+}
 
 // Page Header
 // --------------------------------------------------
@@ -143,19 +123,23 @@ body.top-navbar {
 // --------------------------------------------------
 
 #main {
-  @media (min-width: 1200px) {
-    margin-top: -60px;
-  }
-
-  padding-top: 115px;
+  padding-top: 20px;
 }
 
 // Sidebar
 // --------------------------------------------------
 
 .sidebar-nav {
-  padding-top: 55px;
+  padding-top: 20px;
 }
+
+// Page Footer
+// --------------------------------------------------
+.navbar {
+  margin-bottom: 0px;
+  border-top: 3px solid $blueDark;
+}
+
 
 // Page Footer
 // --------------------------------------------------
@@ -273,126 +257,6 @@ body {
   &:last-of-type {
     border-bottom: none;
     padding-bottom: 0;
-  }
-}
-
-
-// Engineer Page
-// --------------------------------------------------
-
-.eng {
-  h2 {
-    color: $secondary-color;
-  }
-}
-
-.eng-img {
-  display: block;
-  margin: 0;
-}
-
-.eng-bio {
-  background: #7ac143;
-  color: #fff;
-  padding: 15px;
-
-  h2 {
-    color: #fff;
-  }
-
-  dt,
-  dd {
-    line-height: 18px;
-  }
-
-  dl,
-  dd {
-    margin: 0 0 10px 0;
-  }
-}
-
-
-// About Page
-// --------------------------------------------------
-
-.about-links {
-  margin: 10px 0;
-}
-
-
-.about-link {
-  background-color: #7ac143;
-  color: white;
-  display: inline-block;
-  font-size: 15px;
-  line-height: 1.25em;
-  overflow: hidden;
-  padding-bottom: .75em;
-}
-
-.about-link h4 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.about-link:hover {
-  color: white;
-}
-
-.about-author-photo {
-  display: block;
-  max-height: 200px;
-  overflow: hidden;
-}
-
-.about-author-photo img {
-  height: auto;
-  min-width: 100px;
-  width: 100%;
-}
-
-.about-info {
-  min-height: 80px;
-  padding: 0 10px;
-}
-
-@media (max-width: 767px) {
-  .about-link.about-link-small {
-    margin-bottom: 1em;
-    padding-bottom: 0;
-    width: 100%;
-  }
-
-  .about-author-photo {
-    float: left;
-    height: 100px;
-    margin: 0 1em 0 0;
-    width: 100px;
-  }
-
-  .about-author-photo img {
-    min-height: 100px;
-  }
-}
-
-@media (max-width: 979px) {
-  .about-author-photo {
-    max-height: 160px;
-  }
-
-  .about-info {
-    font-size: 13px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .authors {
-    margin-top: 87px;
-  }
-
-  .about-author-photo {
-    max-height: 240px;
   }
 }
 
