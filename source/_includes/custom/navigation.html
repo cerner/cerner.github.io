@@ -8,22 +8,23 @@
       </a>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li {% if page.url == '/index.html' %}class="active"{% endif %}>
+          <li {% if page.url == '/index.html' %}class="selected"{% endif %}>
             <a href="{{ root_url }}/">Blog</a>
           </li>
-          <li {% if page.url == '/culture/index.html' %}class="active"{% endif %}>
+          <li {% if page.url == '/culture/index.html' %}class="selected"{% endif %}>
             <a href="{{ root_url }}/culture">Culture</a>
           </li>
-          <li {% if page.url == '/tech_talks/index.html' %}class="active"{% endif %}>
+          <li {% if page.url == '/tech_talks/index.html' %}class="selected"{% endif %}>
             <a href="{{ root_url }}/tech_talks">Tech Talks</a>
           </li>
-          <li {% if page.url == '/blog/archives/index.html' %}class="active"{% endif %}>
+          <li {% if page.url == '/blog/archives/index.html' %}class="selected"{% endif %}>
             <a href="{{ root_url }}/blog/archives">Archives</a>
           </li>
         </ul>
         <div class="pull-right">
           <form class="navbar-search">
             <input type="text" class="search-query" placeholder="Search">
+            <img src="/images/MagnifyingGlass.png" alt="Search" width="16px" height="16px" />
           </form>
         </div>
       </div>

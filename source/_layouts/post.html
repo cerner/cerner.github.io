@@ -8,11 +8,11 @@ single: true
 {% else %}
 <article id="main" class="hentry span8" role="article">
 {% endif %}
-  {% include article.html %}
+  <section class="post">
+    {% include article.html %}
+  </section>
   <footer>
     <p class="meta">
-      {% include post/author.html %}
-      {% include post/date.html %}{% if updated %}{{ updated }}{% else %}{{ time }}{% endif %}
       {% include post/categories.html %}
     </p>
     {% unless page.sharing == false %}
