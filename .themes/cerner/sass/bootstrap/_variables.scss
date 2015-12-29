@@ -32,7 +32,7 @@ $white:                 #fff !default;
 // -------------------------
 $blue:                  #049cdb !default;
 $blueDark:              #0064cd !default;
-$green:                 #46a546 !default;
+$green:                 #79c144 !default;
 $red:                   #9d261d !default;
 $yellow:                #ffc40d !default;
 $orange:                #f89406 !default;
@@ -60,7 +60,7 @@ $monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace !defau
 
 $baseFontSize:          15px !default;
 $baseFontFamily:        $sansFontFamily !default;
-$baseLineHeight:        27px !default; 
+$baseLineHeight:        27px !default;
 $altFontFamily:         $serifFontFamily !default;
 
 $headingsFontFamily:    inherit !default; // empty to use BS default, $baseFontFamily
@@ -80,9 +80,9 @@ $paddingLarge:          11px 19px !default; // 44px
 $paddingSmall:          2px 10px !default;  // 26px
 $paddingMini:           0px 6px !default;   // 22px
 
-$baseBorderRadius:      4px !default;
-$borderRadiusLarge:     6px !default;
-$borderRadiusSmall:     3px !default;
+$baseBorderRadius:      0px !default;
+$borderRadiusLarge:     0px !default;
+$borderRadiusSmall:     0px !default;
 
 
 // Tables

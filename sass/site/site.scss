@@ -16,6 +16,10 @@
     padding: 0px;
 }
 
+// Colors
+// --------------------------------------------------
+$darkGreen:             darken($green, 15%);
+
 // Img Alignment
 // --------------------------------------------------
 
@@ -61,14 +65,22 @@
 .banner-image {
   position: relative;
 
-  h2 {
+  h1 {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 80%;
     transform: translate(-50%, -50%);
     color: white;
-    text-align: center;
+  }
+
+  h2 {
+    position: absolute;
+    top: 62%;
+    left: 70%;
+    width: 80%;
+    transform: translate(-50%, -50%);
+    color: white;
   }
 
   background-size: cover;
@@ -165,7 +177,7 @@
   color: #fff;
   margin: 30px 0 0; // Pulls footer full width of browser window for small viewports
   padding: 10px 22px;
-  border-bottom: 3px solid #79c144;
+  border-bottom: 3px solid $green;
 
   @media (max-width: 767px) {
     margin-left: -20px;
@@ -200,10 +212,25 @@ h2 strong {
   font-weight: normal;
 }
 
-header h2 { font-size: 40px; }
-
 body {
   background-color: #e9eae9;
+}
+
+* {
+  border-radius: 0 !important;
+}
+
+// Pager
+// --------------------------------------------------
+.pager li > a,
+.pager li > span {
+  background-color: $green;
+  color: white;
+  border: 1px solid #ddd;
+}
+
+.pager li > a:hover {
+  background-color: $darkGreen;
 }
 
 // Site Search
