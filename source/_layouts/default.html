@@ -1,12 +1,16 @@
 {% capture root_url %}{{ site.root | strip_slash }}{% endcapture %}
 {% include head.html %}
 <body {% if page.body_id %} id="{{ page.body_id }}" {% endif %} class="top-navbar {% if page.sidebar == false %}no-sidebar {% endif %} {% if page.sidebar == 'collapse' or site.sidebar == 'collapse' %}collapse-sidebar sidebar-footer {% endif %}">
-  {% include header.html %}  
+  {% include header.html %}
   <div class="container">
+    <div class="row-fluid">
+      {% include custom/search_results.html %}
+    </div>
     <div class="row-fluid">
       {{ content | expand_urls: root_url }}
     </div>
   </div>
+  {% include custom/search.html %}
   {% include footer.html %}
   {% include after_footer.html %}
 </body>

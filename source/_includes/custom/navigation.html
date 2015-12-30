@@ -21,9 +21,9 @@
             <a href="{{ root_url }}/blog/archives">Archives</a>
           </li>
         </ul>
-        <div class="pull-right">
-          <form class="navbar-search">
-            <input type="text" class="search-query" placeholder="Search">
+        <div id="search" class="pull-right">
+          <form action="/search" method="get" class="navbar-search">
+            <input type="text" id="search-query" name="q" class="search-query" placeholder="Search" autocomplete="off">
             <img src="/images/MagnifyingGlass.png" alt="Search" width="16px" height="16px" />
           </form>
         </div>
