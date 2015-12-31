@@ -1,11 +1,11 @@
 {% raw %}
 <script id="search-results-template" type="text/mustache">
   {{#entries}}
-    <article>
-      <h3>
-        {{#date}}<small><time datetime="{{pubdate}}" pubdate>{{displaydate}}</time></small>{{/date}}
+    <article class="search-result">
+        <div class="search-meta meta">
+        {{#date}}<time datetime="{{pubdate}}" pubdate>{{displaydate}}</time>{{/date}} | {{author}}
+        </div>
         <a href="{{url}}">{{title}}</a>
-      </h3>
     </article>
   {{/entries}}
 </script>

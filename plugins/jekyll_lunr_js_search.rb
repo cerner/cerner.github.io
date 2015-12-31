@@ -71,6 +71,7 @@ module Jekyll
             "title" => entry.title,
             "url" => entry.url,
             "date" => entry.date,
+            "author" => entry.author,
             "categories" => entry.categories,
             "body" => entry.body
           }
@@ -128,9 +129,8 @@ module Jekyll
         items = []
 
         # deep copy pages and documents (all collections, including posts)
-        site.pages.each {|page| items << page.dup }
+        # site.pages.each {|page| items << page.dup }
         site.posts.each {|post|
-          puts post
           items << post.dup
         }
         # site.documents.each {|document| items << document.dup }
@@ -199,10 +199,12 @@ module Jekyll
         case page_or_post
         when Jekyll::Page
           date = nil
+          author = nil
           categories = []
         else
           if defined?(Jekyll::Post) and page_or_post.is_a?(Jekyll::Post)
             date = page_or_post.date
+            author = page_or_post.data['author']
             categories = page_or_post.categories
           else
             raise 'Not supported'
@@ -211,7 +213,7 @@ module Jekyll
         title, url = extract_title_and_url(page_or_post)
         body = renderer.render(page_or_post)
 
-        SearchEntry.new(title, url, date, categories, body, renderer)
+        SearchEntry.new(title, url, date, author, categories, body, renderer)
       end
 
       def self.extract_title_and_url(item)
@@ -219,10 +221,10 @@ module Jekyll
         [ data['title'], data['url'] ]
       end
 
-      attr_reader :title, :url, :date, :categories, :body, :collection
+      attr_reader :title, :url, :date, :author, :categories, :body, :collection
 
-      def initialize(title, url, date, categories, body, collection)
-        @title, @url, @date, @categories, @body, @collection = title, url, date, categories, body, collection
+      def initialize(title, url, date, author, categories, body, collection)
+        @title, @url, @date, @author, @categories, @body, @collection = title, url, date, author, categories, body, collection
       end
 
       def strip_index_suffix_from_url!

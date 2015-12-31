@@ -4,11 +4,14 @@
   {% include header.html %}
   <div class="container-fluid">
     <div class="row-fluid">
+      {% include custom/search_results.html %}
+    </div>
+    <div class="row-fluid">
       {{ content | expand_urls: root_url }}
     </div>
   </div>
+  {% include custom/search.html %}
   {% include footer.html %}
   {% include after_footer.html %}
 </body>
-<script src="/javascripts/search.min.js" type="text/javascript" charset="utf-8"></script>
 </html>

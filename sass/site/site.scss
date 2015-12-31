@@ -264,6 +264,22 @@ body {
   width: 30%;
 }
 
+#search-results {
+  background-color: white;
+  border: 1px solid #e3e3e3;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.search-result {
+  border-bottom: 1px solid #e3e3e3;
+  padding: 10px;
+}
+
+.search-meta {
+  padding: 0px;
+}
+
 
 // PAGES
 // --------------------------------------------------
