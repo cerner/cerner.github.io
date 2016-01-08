@@ -18,7 +18,8 @@
 
 // Colors
 // --------------------------------------------------
-$darkGreen:             darken($green, 15%);
+$darkGreen:     darken($green, 15%);
+$lightGray:     #e3e3e3 !default;
 
 // Img Alignment
 // --------------------------------------------------
@@ -47,8 +48,9 @@ $darkGreen:             darken($green, 15%);
   height: 100%;
 }
 
-// LAYOUT
+// Component sizing
 // --------------------------------------------------
+$paddingNormal: 20px;
 
 // Banner
 // --------------------------------------------------
@@ -59,33 +61,34 @@ $darkGreen:             darken($green, 15%);
     margin-left: 20px;
   }
 
-  background-color: $darkslategray
+  background-color: $darkSlateGray
 }
 
 .banner-image {
   position: relative;
 
-  h1 {
+  div {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 80%;
-    transform: translate(-50%, -50%);
-    color: white;
+    top: 40%;
+    width: 400px;
+    color: $white;
+    text-align: right;
+  }
+
+  h1 {
+    color: $white;
+    font-size: 40px;
+    margin: 0px;
   }
 
   h2 {
-    position: absolute;
-    top: 62%;
-    left: 70%;
-    width: 80%;
-    transform: translate(-50%, -50%);
-    color: white;
+    color: $white;
+    margin: 0px;
   }
 
-  background-size: cover;
-  width:100%;
-  height:400px;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 400px;
 }
 
 .banner-kc {
@@ -151,14 +154,14 @@ $darkGreen:             darken($green, 15%);
 // --------------------------------------------------
 
 #main {
-  padding-top: 20px;
+  padding-top: $paddingNormal;
 }
 
 // Sidebar
 // --------------------------------------------------
 
 .sidebar-nav {
-  padding-top: 20px;
+  padding-top: $paddingNormal;
 }
 
 // Page Footer
@@ -209,7 +212,10 @@ $darkGreen:             darken($green, 15%);
 
 h1, h2, h3, h4, h5, h6 { font-weight: normal; }
 
-h1 { color: $primary-color; }
+h1 {
+  font-size: 30px;
+  color: $primary-color;
+}
 
 h2 {
   font-size: 25px;
@@ -220,7 +226,7 @@ h2 {
 
 h2 b,
 h2 strong {
-  font-weight: normal;
+  font-weight: bold;
 }
 
 body {
@@ -236,8 +242,8 @@ body {
 .pager li > a,
 .pager li > span {
   background-color: $green;
-  color: white;
-  border: 1px solid #ddd;
+  color: $white;
+  border: 1px solid $lightGray;
 }
 
 .pager li > a:hover {
@@ -265,14 +271,14 @@ body {
 }
 
 #search-results {
-  background-color: white;
-  border: 1px solid #e3e3e3;
-  padding: 20px;
+  background-color: $white;
+  border: 1px solid $lightGray;
+  padding: $paddingNormal;
   margin-top: 20px;
 }
 
 .search-result {
-  border-bottom: 1px solid #e3e3e3;
+  border-bottom: 1px solid $lightGray;
   padding: 10px;
 }
 
@@ -292,14 +298,14 @@ body {
   border-bottom: 1px solid #eeeeee;
   margin-bottom: 1em;
   padding-bottom: 1em;
-  background-color: white;
-  border: 1px solid #e3e3e3;
-  padding: 20px;
+  background-color: $white;
+  border: 1px solid $lightGray;
+  padding: $paddingNormal;
 }
 
 .entry-title {
   margin: 0;
-  padding-bottom: 20px;
+  padding-bottom: $paddingNormal;
 }
 
 .sharing, .pager {
@@ -316,9 +322,9 @@ body {
 }
 
 .post {
-  background-color: white;
-  border: 1px solid #e3e3e3;
-  padding: 20px;
+  background-color: $white;
+  border: 1px solid $lightGray;
+  padding: $paddingNormal;
 }
 
 
@@ -326,15 +332,15 @@ body {
 // --------------------------------------------------
 
 .archive-section {
-  background-color: white;
-  border: 1px solid #e3e3e3;
-  padding: 20px;
+  background-color: $white;
+  border: 1px solid $lightGray;
+  padding: $paddingNormal;
   margin-bottom: 20px;
 }
 
 .archive-title {
   margin: 0;
-  padding-bottom: 20px;
+  padding-bottom: $paddingNormal;
 }
 
 .archive-meta {
@@ -365,8 +371,8 @@ body {
 
 // Culture page
 // --------------------------------------------------
-.culture1 {
-  h1 {
+.culture-text {
+  h2 {
     text-align: center;
     color: #000;
   }
@@ -375,106 +381,54 @@ body {
     text-align: center;
   }
 
-  div {
-    padding-bottom: 20px;
+  div img {
+    display:block;
+    margin:auto;
   }
+
+  div {
+    padding-bottom: $paddingNormal;
+  }
+
+  padding-top: $paddingNormal * 3;
+  padding-bottom: $paddingNormal;
 }
 
-.culture2 {
+.culture-back-image {
   position: relative;
 
-  h2 {
+  h1 {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 80%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: $white;
     text-align: center;
   }
 
+  background-size: cover;
+  width:100%;
+  height:500px;
+}
+
+.culture-lego-builder {
   background-image: url("/images/culture1.jpg");
-  background-size: cover;
-  width:100%;
-  height:500px;
-
-  div {
-    padding-bottom: 20px;
-  }
 }
 
-.culture3 {
-  h1 {
-    text-align: center;
-    color: #000;
-  }
-
-  p {
-    text-align: center;
-  }
-
-  div img {
-   display:block;
-   margin:auto;
-  }
-
-  div {
-    padding-bottom: 20px;
-  }
-}
-
-.culture4 {
-  position: relative;
-
-  h2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 80%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-  }
-
+.culture-hackathon {
   background-image: url("/images/culture2.jpg");
-  background-size: cover;
-  width:100%;
-  height:500px;
-
-  div {
-    padding-bottom: 20px;
-  }
-}
-
-.culture5 {
-  h1 {
-    text-align: center;
-    color: #000;
-  }
-
-  p {
-    text-align: center;
-  }
-
-  div img {
-   display:block;
-   margin:auto;
-  }
-
-  div {
-    padding-bottom: 20px;
-  }
 }
 
 // Tech Talk page
 // --------------------------------------------------
 .tech-talk-featured {
-   background-color: white;
-   padding: 20px;
-   border: 1px solid #e3e3e3;
+   background-color: $white;
+   padding: $paddingNormal;
+   border: 1px solid $lightGray;
 }
 
 .tech-talks {
-  background-color: white;
-  border: 1px solid #e3e3e3;
+  background-color: $white;
+  border: 1px solid $lightGray;
 }
