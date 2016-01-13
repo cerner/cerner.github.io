@@ -69,7 +69,7 @@ $paddingNormal: 20px;
 
   div {
     position: absolute;
-    top: 40%;
+    top: 30%;
     width: 400px;
     color: $white;
     text-align: right;
@@ -89,6 +89,10 @@ $paddingNormal: 20px;
   background-size: 100% 100%;
   width: 100%;
   height: 400px;
+
+  @media (max-width: $navbarCollapseWidth) {
+    display: none;
+  }
 }
 
 .banner-kc {
@@ -173,6 +177,14 @@ $paddingNormal: 20px;
 
 .navbar-inner {
   border-bottom: 0px;
+
+  .brand {
+    display: none;
+
+    @media (max-width: $navbarCollapseWidth) {
+      display: block;
+    }
+  }
 }
 
 .selected {
