@@ -113,6 +113,77 @@
       
   <header class="entry-header">
     
+      <h1 class="entry-title"><a href="/2014/01/the-raft-protocol-a-better-paxos/">The Raft Protocol: A Better Paxos?</a></h1>
+    
+    
+      <div class="entry-meta meta">
+        
+  
+  
+
+
+  <span class="byline author vcard">Written by <a href="/engineers/david-edwards"><span class="fn">David Edwards</span></a></span>
+
+ | 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-24T00:00:00-06:00" pubdate data-updated="true">Jan 24<span>th</span>, 2014</time>
+        
+      </div>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Among the many compelling talks that attendees come to expect every year at the Strange Loop conference was a <a href="https://thestrangeloop.com/sessions/raft-the-understandable-distributed-protocol">session</a> given by Ben Johnson that provided an overview of a new distributed consensus protocol originating from research at Stanford University, named <a href="http://raftconsensus.github.io/">Raft</a>.</p>
+
+<h2>What is distributed consensus?</h2>
+
+<p>Distributed consensus can be described as the act of reaching agreement among a collection of machines cooperating to solve a problem. With the rise of open source distributed computing and storage platforms, consensus algorithms have become essential tools for replication, and thus, serve to enhance resiliency by eliminating single points of failure.</p>
+
+<p>Examples of distributed consensus in action can often be elusive because such protocols are ordinarily buried inside core systems, and consequently, are largely invisible to application developers. For example, a relational database in a clustered configuration would typically employ a consensus algorithm to coordinate commits with other replicas. And similarly, Apache ZooKeeper, a popular distributed synchronization service used in projects such as HBase and Solr, utilizes a consensus protocol to achieve fault-tolerance by replicating its configuration repository across many servers.</p>
+
+<h2>Raft is about understandability and practicality</h2>
+
+<p>The current Raft <a href="https://ramcloud.stanford.edu/wiki/download/attachments/11370504/raft.pdf">paper</a> argues that while <a href="http://en.wikipedia.org/wiki/Paxos_%28computer_science%29">Paxos</a> has historically dominated both academic and commercial discourse with respect to distributed consensus, the protocol itself is too complicated to reason about and that a more understandable algorithm was needed, not only for educational purposes, but also to serve as a foundation for building practical systems.</p>
+
+<p>An obvious question instinctively arises for the inquisitive reader: what makes Raft better than Paxos? Having personally implemented a replicated log using the Paxos algorithm, there was a natural curiosity in understanding how Raft approached the problem of solving consensus. It is worth noting, however, that comparing Raft and Paxos can be a bit misleading. Even though both address the fundamental problem of reaching consensus among a network of connected machines, Paxos is more academic in nature and primarily concerned with the mechanics of consensus, whereas Raft is oriented around the practical challenges of implementing a replicated log.</p>
+
+<h2>Paxos is about theory</h2>
+
+<p>The seminal work done by Leslie Lamport in 1989 with the design of the Paxos protocol was an important step forward in establishing a theoretical foundation for achieving consensus in asynchronous distributed systems. His contributions were largely academic and centered around reaching agreement on a single value, thus relying on software engineers to translate these ideas into practical solutions, such as replicated databases, which must decide on many values. However, the actual requirements necessary to build a real system, including areas such as leader election, failure detection, and log management, are not present in the Paxos specification, yet add a degree of complexity that almost always significantly alters the original protocol. This is precisely where the Raft designers correctly argue that the absence of specificity leads to great difficulty in applying Paxos to real world problems. A subsequent <a href="http://research.microsoft.com/en-us/um/people/lamport/pubs/paxos-simple.pdf">paper</a> by Lamport in 2001 does an excellent job of making the original protocol accessible to practitioners, and to some degree, proposes techniques for designing a replicated log, but it stops short of being prescriptive in the way that Raft does.</p>
+
+<h2>You say tomāto, I say tomäto</h2>
+
+<p>Raft is unique in many ways compared to typical Paxos implementations, but despite those differences, both are grounded in a similar set of core principles. For example, Raft requires leader election to occur strictly before any new values can be appended to the log, whereas a Paxos implementation would make the election process an implicit outcome of reaching agreement. The Raft designers claim that doing so has the consequence of simplifying log management, particularly with respect to edge cases in which a succession of leadership changes can result in log discrepancies, but the tradeoff is that leader election in Raft is more complicated than its counterpart in Paxos.</p>
+
+<p>What both protocols acknowledge, though, is that leader election is imperative if systems want to ensure progress. The notion of progress simply means that a system eventually does something useful. An important discovery in 1985, called the <a href="http://cs-www.cs.yale.edu/homes/arvind/cs425/doc/fischer.pdf">FLP Impossibility Result</a>, proved that consensus was impossible in asynchronous distributed systems with the presence of only one faulty process. The practical implication follows: a system that cannot reach consensus is a system that cannot make progress. To be clear, the finding did not state that consensus was unreachable, just that some executions cannot reach consensus in bounded time. As a consequence, leader election, combined with timeouts, is often used as a technique for eliminating a class of conditions under which reaching agreement could take an arbitrarily long period of time. Interestingly, the Paxos algorithm as originally described by Lamport, makes no guarantees about progress, so implementations are compelled to incorporate timeouts as a compensatory measure. Raft, on the other hand, is prescriptive about the use of timeouts.</p>
+
+<h2>Raft wins on accessibility</h2>
+
+<p>One especially interesting component of the Raft specification is the mechanism for coordinating changes to cluster membership. The protocol employs a novel approach in which joint consensus is reached using two overlapping majorities, i.e. quorums defined by both the old and new cluster configuration, thereby supporting dynamic elasticity without disruption to operations.</p>
+
+<p>The emergence of Raft has clearly seen a positive embrace by the software development community as evidenced by nearly 40 <a href="http://raftconsensus.github.io/#implementations">open source implementations</a> in a variety of different languages. Even though Paxos is beautifully elegant in describing the essence of distributed consensus, the absence of a comprehensive and prescriptive specification has rendered it inaccessible and notoriously difficult to implement in practical systems.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article class="entry">
+      
+  <header class="entry-header">
+    
       <h1 class="entry-title"><a href="/2014/01/cerner-and-open-source/">Cerner and Open Source</a></h1>
     
     
@@ -136,7 +207,7 @@
   
 
 
-<time datetime="2014-01-16T00:00:00-05:00" pubdate data-updated="true">Jan 16<span>th</span>, 2014</time>
+<time datetime="2014-01-16T00:00:00-06:00" pubdate data-updated="true">Jan 16<span>th</span>, 2014</time>
         
       </div>
     
@@ -195,7 +266,7 @@
   
 
 
-<time datetime="2013-11-12T00:00:00-05:00" pubdate data-updated="true">Nov 12<span>th</span>, 2013</time>
+<time datetime="2013-11-12T00:00:00-06:00" pubdate data-updated="true">Nov 12<span>th</span>, 2013</time>
         
       </div>
     
@@ -247,7 +318,7 @@
   
 
 
-<time datetime="2013-11-11T00:00:00-05:00" pubdate data-updated="true">Nov 11<span>th</span>, 2013</time>
+<time datetime="2013-11-11T00:00:00-06:00" pubdate data-updated="true">Nov 11<span>th</span>, 2013</time>
         
       </div>
     
@@ -360,95 +431,6 @@
 
     </article>
   
-  
-    <article class="entry">
-      
-  <header class="entry-header">
-    
-      <h1 class="entry-title"><a href="/2013/09/project-lead-the-way/">Project Lead the Way</a></h1>
-    
-    
-      <div class="entry-meta meta">
-        
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/chris-finn"><span class="fn">Chris Finn</span></a></span>
-
- | 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-11T00:00:00-04:00" pubdate data-updated="true">Sep 11<span>th</span>, 2013</time>
-        
-      </div>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Improving the state of healthcare through innovation requires investing in others to join you on the journey; not just for today, but for the decades to come.</p>
-
-<p><img class="center" src="/assets/2013-09-11-project-lead-the-way/PLTWlogo.jpeg" title="Project Lead the Way" ></p>
-
-<p>Project Lead the Way has established the Computer Science and Software Enginering course that teaches computational thinking to high school students, and it will pilot in 60 schools across the country this fall. Providing exposure to a wide variety of computational and computer science concepts, students can program a story or game in Scratch, write a mobile application for Android, and learn about knowledge discovery and data mining, computer simulation, cybersecurity, GUI programming, web development, version control, and agile software development.</p>
-
-<p>Recently, I had the privilege of working with experts across the country to define the curriculum for Project Lead the Way as well as the opportunity to sit in on the training sessions given to the pilot teachers, hosted at Cerner&rsquo;s Innovation Campus. Bennett Brown, Director of Curriculum and Instruction, led the class into the deep end to solve the hard problems their students would face throughout the course. Experts augmented the training sessions from organizations such as Cerner, Lawrence Livermore National Laboratory, Purdue University, Carnegie Mellon University, University of Virginia, and more.</p>
-
-<p>While the Computer Science and Software Engineering course (CSE) isn&rsquo;t focused specifically on programming, students will pick up introductory skills in a number of languages and environments including Python, MIT App Inventor, JavaScript, Logo, and Scratch among others. As software developers, we all have our origin stories with what sparked our interest in programming; there was a particular moment for each of us where we solved a problem and saw firsthand the power of what software can create. The CSE course seeks to generate those sparks through activities, projects, and problem-based learning.</p>
-
-<p>This course follows in the footsteps of other Project Lead the Way courses in engineering and biomedical science currently operating in over 4,700 schools with more than 10,000 trained teachers.</p>
-
-<h2><strong>What I Learned</strong></h2>
-
-<p>My role in the class was to teach one simple section and provide some practical answers from the industry trenches. I&rsquo;ll let you in on a secret: I&rsquo;m pretty sure I learned more about teaching and how to teach novices than I taught on any particular topic.</p>
-
-<p>Problems and projects in PLTW are designed to be approachable by all students; there is no ceiling for the advanced students who want to go beyond what is specifically covered. The teachers receiving training were given the same end-of-unit problems that their students will face during the year and had to work out solutions in a pair programming environment, often working in their dorms or in the Cerner training rooms until 10pm. The experience level of teachers ranged from those having engineering degrees and multiple years of industry experience before going into teaching to some who had never programmed in their lives before this class.</p>
-
-<p>What I learned was that even in this environment of mixed skill levels, the activity/project/problem-based approach surprisingly requires just a minimal introduction to a new concept. After simple activities which build quick wins, natural curiosity swells up within each of the students; skill and understanding start to form, not just learning a particular technology but how to problem solve using software.</p>
-
-<p>For example, during the App Inventor sections, teachers received step-by-step simple examples of putting together programming blocks to create a simple Android application before working on homework to through one Agile sprint with their partner that evening to come up with their own application from scratch. The next morning, pairs went through their demos in a rotating show-and-tell fashion, showing a variety of apps including a flash card game, as well as a &ldquo;one of these things is not like the other&rdquo; game using the accelerometer for randomization and featuring the appropriate Sesame Street music.</p>
-
-<p>One night during the course I pulled down the Codea app for my iPad and showed my own kids the relationship between a few behaviors in a physics app and the corresponding code in Lua. Three hours later, all of the iPads in the house were engaged in hacking.</p>
-
-<p>In addition to some great instruction over the course from Bennett Brown on a variety of problems in genetics, chaos theory, Tkinter and GUI programming, other highlights included:</p>
-
-<p><a href="https://www-eng.llnl.gov/bios/bios_castillo.html">Vic Castillo</a>, Group Leader in the Quantitative Risk Analysis at Lawrence Livermore National Laboratories with a PhD in computational physics gave a great three hour survey presentation on what he sees as the &ldquo;big three&rdquo; topics in the future of computing: computer simulation and modeling (a subject near and dear to my own origin stories in computing), 3-D printing and mobile robotics featuring almost a dozen demos of cases where modeling was used to learn something new about a real-world system or design. Using just the <a href="http://ccl.northwestern.edu/netlogo/">NetLogo</a> multi-agent programmable modeling environment developed at Northwestern University, Vic showed a variety of models that could be built with just a basic knowledge of the Logo programming language: for instance, modeling the heat absorption of a home design and how different designs and window configurations affect the internal temperature of the living space), &ldquo;solving&rdquo; the game Lunar Lander, or how a First Robotics team modeled the software algorithms incorporated into their <a href="http://turtlebot.com">TurtleBot</a> (think Roomba + netbook + Kinect sensor).</p>
-
-<p><img class="center" src="/assets/2013-09-11-project-lead-the-way/Netlogo.png" title="NetLogo" ></p>
-
-<p><a href="http://people.virginia.edu/~jlc6j/">Joanne Cohoon</a> talked about achieving diversity in STEM classrooms and the state of the job market&mdash;how 50% of the jobs available involve some need for computational thinking and the challenges and how teachers can create classroom environments that attract students who might otherwise rule themselves out from the start based on the stereotypes and environments commonly surrounding STEM in schools. With half the workforce needing some kind of computational skill, we can&rsquo;t drive anyone away.</p>
-
-<p>Peter Chapman, a PhD student at Carnegie Mellon University and Technical Leader of the <a href="https://picoctf.com">picoCTF</a> project joined us via Skype to describe the program. Set up along the storyline of an interactive adventure called Toaster Wars, picoCTF is a competition among high school students to solve as many of 57 challenges as they can using whatever means necessary&mdash;hacking, decrypting, reverse engineering, breaking or whatever. The challenges force students to get their hands dirty, learning on their own via documentation and their browser the role of cookies in web security, how to use grep and tar to find a secret key in a file, and other examples designed to give students the experience of tackling unknown problems using the resources available to them.</p>
-
-<p><img class="center" src="/assets/2013-09-11-project-lead-the-way/Toaster-War.png" title="Toaster War" ></p>
-
-<p>Cerner interns and former Lee&rsquo;s Summit High School Team Driven First Robotics team members Dakota Ewigman and Victoria Utter taught a condensed version of the <a href="http://kcpowersource.com/appcamp/">KC Power Source Android App Camp</a> using <a href="http://appinventor.mit.edu">MIT App Inventor</a> which set the stage for more advanced App Inventor instruction provided by Dave O&#8217;Larte around calling and integrating web services and open APIs. We had developed a simple ballot and question and answer database-backed web service that let students and teachers hack around independently. In the category of unintended learning, and no doubt inspired by their picoCTF hacking, some of the teachers quickly found out how to troll other schools&#8217; services by injecting funny questions and answers about the course material.</p>
-
-<h2><strong>Why It&rsquo;s Cool</strong></h2>
-
-<p>At one point during the week, Bennett Brown shared with me the growth potential for PLTW&rsquo;s CSE program. In the engineering and biomedical engineering pathways, the year-over-year growth has been tremendous which is paving the way for an even faster uptake of the computer science offering. Such an important and widespread channel offers a great opportunity to influence the future of our entire industry and communities. With around 20% of the total pilot schools in this curriculum, Kansas City is getting a head start on building this pool of talent. We can use little advantages such as these to increase the value of KC as a hub for computing and entrepreneurial activity.</p>
-
-<p>An instructor asked me at one point, &ldquo;What is Cerner looking for in high school students who take this course?&rdquo; I had the sense that the question sought an answer more about a specific technology or language. I don&rsquo;t really see that as the focus. Instead, I think what we want is defined more by sparking that interest in solving hard problems and coming away with the understanding that these problems exist in their community and that there are people in the community at companies like Cerner solving those problems every day.</p>
-
-<h2><strong>Why It Matters</strong></h2>
-
-<p>We have a lot to accomplish in &ldquo;engineering health,&rdquo; and K-12 outreach programs can feel like a long game that often take a back seat to immediate concerns around designing and shipping solutions. But seeing how even the less computing-savvy teachers started to get hooked on programming their Android devices or trying to get to the next level in picoCTF while beating their heads against man pages and HTTP dumps, it became clear to me that by getting involved in these programs we can accelerate not only the numbers of students comfortable with computational thinking, but also give them a network of relationships and experiences in their own communities to return to as their career and learning progresses. The long game may not be as long as we think.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="/blog/page/5/">&larr; Older posts</a></li>
@@ -466,6 +448,10 @@
   <ul id="recent_posts" class="nav nav-list">
     
       <li class="post">
+        <a href="/blog/girls-in-technology-movement-hour-of-code/">Girls in Technology Movement - Hour of Code</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/identifying-network-acl-issues-with-chef-locally/">Identifying Network ACL Issues With Chef Locally</a>
       </li>
     
@@ -479,10 +465,6 @@
     
       <li class="post">
         <a href="/blog/cerner-and-the-apache-software-foundation/">Cerner and the Apache Software Foundation</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/closures-and-currying-in-javascript/">Closures & Currying in JavaScript</a>
       </li>
     
   </ul>
