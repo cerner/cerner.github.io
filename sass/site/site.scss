@@ -417,6 +417,10 @@ body {
     transform: translate(-50%, -50%);
     color: $white;
     text-align: center;
+
+    @media (max-width: $navbarCollapseWidth) {
+      font-size: 20px;
+    }
   }
 
   background-size: cover;
@@ -438,9 +442,12 @@ body {
    background-color: $white;
    padding: $paddingNormal;
    border: 1px solid $lightGray;
+   margin-bottom: $paddingNormal;
 }
 
-.tech-talks {
+.tech-talk {
   background-color: $white;
+  padding: $paddingNormal;
   border: 1px solid $lightGray;
+  margin-bottom: $paddingNormal;
 }
