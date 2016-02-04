@@ -113,6 +113,389 @@
       
   <header class="entry-header">
     
+      <h1 class="entry-title"><a href="/blog/the-plain-text-is-a-lie/">The Plain Text Is a Lie</a></h1>
+    
+    
+      <div class="entry-meta meta">
+        
+  
+  
+
+
+  <span class="byline author vcard">Written by <a href="/engineers/elliott-hoffman"><span class="fn">Elliott Hoffman</span></a></span>
+
+ | 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-02T00:00:00-05:00" pubdate data-updated="true">Aug 2<span>nd</span>, 2014</time>
+        
+      </div>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>There is no such thing as plain text</h2>
+
+<p>&ldquo;But I see .txt files all the time&rdquo; you say. &ldquo;My source code is plain text&rdquo; you claim. &ldquo;What about web pages?!&rdquo; you frantically ask. True, each of those things is comprised of text. The <em>plain</em> part is the problem. Plain denotes default or normal. There is no such thing. Computers store and transmit data in a number of methods; each are anything but <em>plain</em>. If you write software, design websites or test systems where even a single character of text is accepted as input, displayed as output, transmitted to another system or stored for later &ndash; please read on to learn why the plain text is a lie!</p>
+
+<p>The topic of text handling applies to many disciplines:</p>
+
+<ul>
+<li><strong>UX/web designers</strong> &ndash; Your UX is the last mile of displaying text to users.</li>
+<li><strong>API developers</strong> &ndash; Your APIs should tell your consumers what languages, encodings and character sets your service supports.</li>
+<li><strong>DBAs</strong> &ndash; You should know what kinds of text your database can handle.</li>
+<li><strong>App developers</strong> &ndash; You apps should not crash when non-English characters are encountered.</li>
+</ul>
+
+
+<p>After reading this article you will …</p>
+
+<ul style="list-style-type: none;">
+  <li>… understand why text encodings are important.</li>
+  <li>… have some best practices for handling text in your tool belt.</li>
+  <li>… know a bit about how computers deal with text.</li>
+</ul>
+
+
+<p>This topic has been extensively written about already. I highly recommend reading Joel Spolsky&rsquo;s <a href="http://www.joelonsoftware.com/articles/Unicode.html">The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)</a>. You should also read up on how your system handles strings. Then, go read how the APIs you talk to send/receive strings. Pythonistas, check out Ned Batchelder&rsquo;s <a href="http://nedbatchelder.com/text/unipain.html">Pragmatic Unicode</a> presentation.</p>
+
+<p>OK, let&rsquo;s get started!</p>
+
+<h2>Part I &ndash; Gallery of FAIL or &ldquo;When text goes wrong, by audience&rdquo;</h2>
+
+<p>Let&rsquo;s start off by demonstrating how text handling can fail, and fail hard. The following screen shots and snippets show some of the ways text handling can fail and who should care about the type of failure.</p>
+
+<h3>UX and web people</h3>
+
+<p><img class="center" src="/assets/2014-08-02-the-plain-text-is-a-lie/resume.jpeg" title="Resumé Wikipedia article rendered in the wrong encoding" ></p>
+
+<p>The above image shows the English wikipedia article on <a href="http://en.wikipedia.org/wiki/R%C3%A9sum%C3%A9">Résumés</a> with garbled text. Garbled text can happen if your web pages don&rsquo;t specify an encoding or character set in your markup. Specifying the <em>wrong</em> encoding can also cause garbled text. XML and JavaScript need correct character sets too. It&rsquo;s important to note that <em>no error or exception was raised here</em>. The text looks wrong to the user, but the failure happens silently.</p>
+
+<p><img class="center" src="/assets/2014-08-02-the-plain-text-is-a-lie/tokyo.jpeg" title="Tokyo Wikipedia article Aramaic translation" ></p>
+
+<p>This <a href="http://arc.wikipedia.org/wiki/%DC%9B%DC%98%DC%A9%DC%9D%DC%98">article on Tokyo</a> above is displayed in a language (Aramaic) that my fonts don&rsquo;t support. Instead of a symbol, we see a box with a number identifying the un-showable character. If you think that example is too contrived, here is a more commonly used symbol: a <a href="http://www.fileformat.info/info/unicode/char/1d161/browsertest.htm">16th note from sheet music</a>. Many perfectly valid characters are not supported by widely used fonts. Specialized web fonts might not support the characters you need.</p>
+
+<p><img class="center" src="/assets/2014-08-02-the-plain-text-is-a-lie/music.jpeg" title="Music note character test page" ></p>
+
+<h3>API developers</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>//Fetch the Universal Declaration of Human Rights in Arabic
+</span><span class='line'>documentAPIClient.getTitle(docID=123)</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img class="center" src="/assets/2014-08-02-the-plain-text-is-a-lie/mojibake1.png" title="Mojibake example 1" ></p>
+
+<p>The result of this API call (<a href="http://en.wikipedia.org/wiki/Mojibake#Example">example source</a>) is similar to the last two examples: nonsense text. This can happen if the client and server use different text encodings. By the way, this situation happens so often that there&rsquo;s a term for it: <a href="https://en.wikipedia.org/wiki/Mojibake">Mojibake</a>.</p>
+
+<p>Here are some client/server scenarios resulting in Mojibake:</p>
+
+<ul>
+<li>The server didn&rsquo;t document their encoding and the client guessed the wrong encoding.</li>
+<li>The server or client inherit the encoding of their execution environment (virtual machine, OS, parent process, etc.), but the execution environment&rsquo;s settings changed from their original values.</li>
+</ul>
+
+
+<h3>DBAs</h3>
+
+<p><img class="center" src="/assets/2014-08-02-the-plain-text-is-a-lie/mojibake2.png" title="Mojibake example 2" ></p>
+
+<p>Database systems can be misconfigured such that characters sent to the database are not stored accurately. In this example, the offending characters are replaced with the imaginatively-named <em>Replacement Character</em> (&ldquo;�&rdquo;). The original characters are forever lost. Worse still, replacement characters will be returned by your queries and ultimately shown to your users. Sometimes, offending characters will be omitted from the stored value or replaced with a nearest match supported character. In both scenarios the database has mangled the original data.</p>
+
+<h3>App developers</h3>
+
+<p><img class="center" src="/assets/2014-08-02-the-plain-text-is-a-lie/stack-trace.png" title="Unicode encoding error traceback" ></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="n">org</span><span class="o">.</span><span class="n">scalatest</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="nc">TestFailedException</span><span class="k">:</span> <span class="err">&quot;</span><span class="kt">d</span><span class="o">[</span><span class="kt">Ã©</span><span class="o">]</span><span class="n">funt</span><span class="s">&quot; did not equal &quot;</span><span class="n">d</span><span class="o">[</span><span class="kt">é</span><span class="o">]</span><span class="n">funt</span><span class="err">&quot;</span>
+</span><span class='line'><span class="n">at</span> <span class="n">org</span><span class="o">.</span><span class="n">scalatest</span><span class="o">.</span><span class="nc">MatchersHelper</span><span class="n">$</span><span class="o">.</span><span class="n">newTestFailedException</span><span class="o">(</span><span class="nc">MatchersHelper</span><span class="o">.</span><span class="n">scala</span><span class="k">:</span><span class="err">160</span><span class="o">)</span>
+</span><span class='line'><span class="o">...</span>
+</span><span class='line'><span class="n">at</span> <span class="n">sun</span><span class="o">.</span><span class="n">reflect</span><span class="o">.</span><span class="nc">NativeMethodAccessorImpl</span><span class="o">.</span><span class="n">invoke</span><span class="o">(</span><span class="nc">NativeMethodAccessorImpl</span><span class="o">.</span><span class="n">java</span><span class="k">:</span><span class="err">39</span><span class="o">)</span>
+</span><span class='line'><span class="n">at</span> <span class="n">com</span><span class="o">.</span><span class="n">intellij</span><span class="o">.</span><span class="n">rt</span><span class="o">.</span><span class="n">execution</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="nc">AppMain</span><span class="o">.</span><span class="n">main</span><span class="o">(</span><span class="nc">AppMain</span><span class="o">.</span><span class="n">java</span><span class="k">:</span><span class="err">134</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The top image shows the 500 page of an app that crashed when improperly encoding. In the Scala error message (bottom), a property file was read in <a href="https://en.wikipedia.org/wiki/ISO/IEC_8859-1">ISO-8859-1</a> encoding but had UTF-8 encoded bytes in it. This caused the unit test to fail.</p>
+
+<p>Your source code, web pages, properties files, and any other text artifact you work with has an encoding. Every tool in your development tool chain (local server, terminal, editor, browser, CI system, etc.) is a potential failure point if these encodings are not honoroed.</p>
+
+<h2>Part II &ndash; Avoid text handling problems</h2>
+
+<h3>Ghost in the machine</h3>
+
+<p>You&rsquo;ve seen examples of failure and (hopefully) are wondering how such failures can be avoided. To avoid failure you must ask yourself one question: &ldquo;Can my system store and transmit a ghost?&rdquo;</p>
+
+<p><img class="center" src="/assets/2014-08-02-the-plain-text-is-a-lie/ghost.png" title="GHOST unicode character" ></p>
+
+<p><em>GHOST</em> (code point <a href="http://codepoints.net/U+1F47B">U+1F47B</a>) is a valid (albeit weird) part of the <a href="http://www.unicode.org/standard/WhatIsUnicode.html">Unicode</a> standard. Unicode is a system of storing and manipulating text that supports thousands of languages.  Using Unicode properly will go a long way to prevent text handling problems. Thus, if your system can store, transmit, read and write GHOST then you&rsquo;re doing it right. But how to handle this GHOST?</p>
+
+<h3>Some Terminology</h3>
+
+<p>You need to know some terms before the rest of this article will make any sense.</p>
+
+<dl>
+  <dt>Unicode object</dt>
+  <dd>A datatype that lets you operate on Unicode text.</dd>
+
+  <dt>Byte-string</dt>
+  <dd>A sequence of bytes (octets).</dd>
+
+  <dt>Encode</dt>
+  <dd>To turn a Unicode object into a byte-string, where the bytes follow an encoding.</dd>
+
+  <dt>Encoding (noun)</dt>
+  <dd>A standard about what a byte means, like: <em>When you see 01000001, it means &#8220;A&#8221;</em>.</dd>
+
+  <dt>Decode</dt>
+  <dd>The inverse operation of encode. To turn a byte-string of a certain encoding into a Unicode object.</dd>
+</dl>
+
+
+<p>Remembering the difference between <em>encode</em> and <em>decode</em> can be difficult. One trick to keep them straight is to think of Unicode objects as the ideal state of being (thanks, <a href="http://www.joelonsoftware.com/articles/Unicode.html">Joel Spolksy</a>) and byte-strings as strange, cryptic sequences. Encoding turns the ideal into a bunch of cryptic bytes, while decoding un-weirds a bunch of bytes back into the ideal state; something we can reason about. Some systems use different terms but the ideas still apply. For example: Java Strings are Unicode objects and you can encode/decode to/from byte-strings with them.</p>
+
+<p>Now that you&rsquo;ve got the necessary terminology under your belt, let&rsquo;s prevent text handling problems in our system by making a sandwich; a Unicode sandwich!</p>
+
+<h2>Make a Unicode sandwich</h2>
+
+<p><em>Analogy credit</em>: <a href="http://nedbatchelder.com/">Ned Batchelder</a> coined the Unicode sandwich analogy in his <a href="http://nedbatchelder.com/text/unipain.html">Pragmatic Unicode</a> presentation at PyCon 2012 (<a href="http://youtu.be/sgHbC6udIqc">video</a>). It&rsquo;s so clever that I can&rsquo;t resist re-using it in this article!</p>
+
+<p>  <img class="center" src="/assets/2014-08-02-the-plain-text-is-a-lie/unicode-sandwich.png" title="The unicode sandwich" >
+  <a href="http://www.flickr.com/photos/nofeel/4106942084/">Original image</a></p>
+
+<p>In this analogy the pieces of bread on the top and bottom are regions of your code where you deal with byte-strings. The meat in the middle is where your system deals in Unicode objects. The top bread is input into your system such as database query results, file reads or HTTP responses. The bottom bread is output from your system such as writing files or sending HTTP responses. The meat is your business logic.</p>
+
+<h3>Good sandwiches are meaty</h3>
+
+<p>Your goal is to keep the bread thin and the meat thick. You can achieve this by decoding from byte-strings to Unicode objects as early as you can; perhaps immediately after arrival from another system. Similarly, you should do your encoding from Unicode objects into byte-strings at the last possible moment, such as right before transmitting text to another system.</p>
+
+<p>Working with Unicode inside your system gives you a common ground of text handling that will largely avoid the errors we&rsquo;ve seen at the top of this article. If you don&rsquo;t deal in Unicode inside your system then you are limiting the languages you support at best and exposing yourself to text handling bugs at worst!</p>
+
+<h3>The best sandwich bread is UTF-8</h3>
+
+<p>Your system ultimately needs to send and receive byte-strings at some point, so you must choose an encoding for your byte-strings. Encodings are not created equal! Some encodings only support one language. Some support only similar languages (for example, German and French but not Arabic). Never assume your system will only encounter languages you speak or write! Ideally you will choose encodings that support a great many languages.</p>
+
+<p>UTF-8 is the best general purpose encoding for your byte-strings. You&rsquo;ll learn why UTF-8 is an excellent encoding choice later in this article in the <em>Unicode: One standard to rule them all</em> section. For now I recommend you:</p>
+
+<ul>
+<li>Choose UTF-8 for all byte-strings.</li>
+<li>Configure your system to use this encoding explicitly. Do not rely on the parent system (OS, VM, etc.) to provide an encoding since system settings might change over time.</li>
+<li>Document your encoding choice in both public facing and internal documentation.</li>
+</ul>
+
+
+<p>The UTF-8 encoding supports all the text you&rsquo;d ever want. Yet, in this imperfect world you might be forced to use a more limited encoding such as ISO-8859-1 or Windows-1252 when interfacing with other systems. Working with a limited encoding presents problems when decoding to and encoding from Unicode: not every encoding supports the full Unicode range of characters. You must test how your system converts between your byte-strings and Unicode objects. In other words, <em>test between the meat and the bread</em>.</p>
+
+<h3>Testing between the meat and the bread</h3>
+
+<p>The critical areas to test are where bytes strings are decoded to Unicode objects and where Unicode objects are encoded into byte-strings. If you&rsquo;ve followed the advice of this article thus far then the rest of your app logic should operate exclusively in Unicode objects. Here is a handy table of how to test regions of your system that encode and decode:</p>
+
+<table border="1" style="line-height:20px;">
+  <thead><tr><td><strong>Scenario</strong></td><td><strong>Test Strategy</strong></td></tr></thead>
+  <tbody>
+    <tr>
+      <td>My input encoding doesn&#8217;t support full Unicode.</td>
+      <td>Test that non-English<span style="font-size:10px; line-height:15px">†</span> characters are faithfully decoded to Unicode.</td>
+    </tr>
+    <tr>
+      <td>My output encoding doesn&#8217;t support full Unicode.</td>
+      <td>
+        <p>Test that supported non-English characters are faithfully encoded to byte-strings.</p>
+        <p>Test that your system behaves correctly<span style="font-size:10px; line-height:15px">‡</span> when asked to encode un-supported characters.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>My input(output) encoding supports full Unicode.</td>
+      <td>Test that non-English characters are faithfully decoded(decoded) to(from) Unicode.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+<p style="font-size:10px; line-height:15px">† English characters and Arabic numerals (0 - 9) are bad test cases because their byte values are identical across many encodings.</p>
+
+
+
+
+<p style="font-size:10px; line-height:15px">‡ <em>Correctly</em> is in the eye of the beholder. Some systems choose to raise an exception. Others choose to replace the offending character with a replacement character. Lastly, some systems simply omit the offending character. The choice is up to you, but they&#8217;re all terrible. Seriously, just use UTF-8.</p>
+
+
+<h3>Unicode sandwich applies to new projects and legacy systems</h3>
+
+<p>Using UTF-8 for I/O, Unicode inside and testing the in-between points will save you from pain and bugs. If you&rsquo;re building a new system then you have the opportunity to design it with Unicode in mind. If you have an existing system, it is worth your time to audit how your system handles text.</p>
+
+<p>With the practical stuff out of the way, let&rsquo;s dive deeper into computers and text!</p>
+
+<h2>Part III &ndash; Encodings, Unicode and how computers handle text</h2>
+
+<p>We&rsquo;ve talked about how you should use Unicode, encodings and byte-strings in your system to handle text. You may be wondering why text handling is so painful at times. Why are there so many encodings and why don&rsquo;t they all work together in harmony? I&rsquo;ll attempt to explain a bit of history behind text handling in computers. Understanding this history should shed some light on why text handling can be so painful.</p>
+
+<p>To make things interesting, let&rsquo;s pretend we are inventing how computers will handle text. Also assume we live in the United States and speak only English. That&rsquo;s a pretty ignorant assumption for real world software development, but it simplifies our process.</p>
+
+<h3>ASCII: Works great (if you want to ignore most of the world)</h3>
+
+<p>Our challenge is to invent how computers handle text. Morse code is an encoding that pre-dates digital computers but provides a model for our approach: Each character has a transmission sequence of dots and dashes to represent it. We&rsquo;ll need to make a few changes and additions though&hellip;</p>
+
+<p><img class="center" src="/assets/2014-08-02-the-plain-text-is-a-lie/morse-code.png" title="Morse code" >
+<a href="http://commons.wikimedia.org/wiki/File:International_Morse_Code.svg">Image source</a></p>
+
+<p>Rather than dots and dashes we can use 1&rsquo;s and 0&rsquo;s (<a href="http://en.wikipedia.org/wiki/Binary_number">binary</a>). Let&rsquo;s also use a consistent number of bits per character so that it&rsquo;s easy to know when one character ends and another begins. To support US English we need to map a binary sequence to each of the following:</p>
+
+<ul>
+<li>a-z</li>
+<li>A-Z</li>
+<li>0-9</li>
+<li>&ldquo; &rdquo;(space)</li>
+<li>!&ldquo;#$%&amp;&lsquo;()*+,&ndash;./:;&lt;=>?@[\]^_`{|}~</li>
+<li>Control characters like &ldquo;ring a bell&rdquo;, &ldquo;make a new line&rdquo;, etc.</li>
+</ul>
+
+
+<p>That&rsquo;s 96 printable characters and some control characters for a total of 128 characters. 128 is 2<sup>7</sup>, so we can send these characters in seven-bit sequences. Since computers use eight-bit bytes, let&rsquo;s decide to send eight bits per character but ignore the last bit. We have just invented the <a href="https://en.wikipedia.org/wiki/ASCII">ASCII encoding</a>!</p>
+
+<p>ASCII forms the root influence of many text encodings still used today. In fact, at one time ASCII was the law: U.S. President Lyndon B. Johnson <a href="http://www.presidency.ucsb.edu/ws/index.php?pid=28724">mandated</a> that all computers purchased by the United States federal government support ASCII in 1968.</p>
+
+<p><img class="center" src="/assets/2014-08-02-the-plain-text-is-a-lie/johnson.jpg" title="President Lyndon Johnson" >
+<a href="http://commons.wikimedia.org/wiki/File:37_Lyndon_Johnson_3x4.jpg">Image source</a></p>
+
+<h3>International and OEM standards: Supporting other languages</h3>
+
+<h4>Starting with similar languages to US English</h4>
+
+<p>We need more space to pack in more symbols if we want to support other languages and other symbols like currencies. It seems reasonable that people typically deal with a block of languages that are geographically or politically related, and when we&rsquo;re lucky those languages share many of the same symbols. Given that assumption we can create several standards; each one for a block of languages!</p>
+
+<p>For each block, we can keep the first 128 characters as-is from ASCII (identical bit sequences) so that the US English characters and Arabic numerals are still supported. We can then use the eighth bit for data instead of ignoring it. That would give us eight bits per character and a total of 256 characters to work with (double ASCII&rsquo;s paltry 128). Now let&rsquo;s apply that eight bit.</p>
+
+<p>A bunch of countries in Western Europe use the same latin alphabet plus special <a href="http://en.wikipedia.org/wiki/Diacritic">diacritics</a> (also known as <em>accent marks</em>) like ü or é or ß. In fact, we can pack enough extra characters in those last 128 slots to support 29 other languages like Afrikaans, German, Swahili and Icelandic. Our Western European language block encoding is ready! We call this type of encoding a single-byte encoding because every character is represented by exactly one byte.</p>
+
+<p><img class="center" src="/assets/2014-08-02-the-plain-text-is-a-lie/1252.png" title="Windows 1252 code page" >
+<a href="https://commons.wikimedia.org/wiki/File:Windows-1252.svg">Image source</a></p>
+
+<h4>Additional single byte encodings for other language blocks</h4>
+
+<p>We can repeat the same process we used to create our Western European language encoding to develop other single-byte encodings for other language blocks; each a 256 character set! To give one more example, let&rsquo;s build a single byte coding for Arabic.</p>
+
+<p>Again, we take the first 128 ASCII characters as-is, then fill up the last 128 with the <a href="http://www.omniglot.com/writing/arabic.htm">Arabic alphabet</a>  We&rsquo;ve got some space left over. Arabic has some diacritics as well, so let&rsquo;s use some of the leftover slots to hold diacritic marks that are only valid when combined with other letters.</p>
+
+<p>Some languages don&rsquo;t even fit in 256 characters. Chinese, Japanese and Korean for example. That&rsquo;s OK, we&rsquo;ll just use multiple bytes per character to get more room. As you may have guessed, these encodings are called <em>multibyte encodings</em>. Sometimes we choose to use the same number of bytes for every character (<em>fixed width</em> multibyte encodings) and sometimes we might choose to use different byte lengths (<em>variable width</em> multibyte encodings) to save space.</p>
+
+<h3>Ratifying our encodings to standards</h3>
+
+<p>After we&rsquo;ve built several of these encodings (Russian, Greek, Simplified Chinese, etc.) we can ratify them as international standards such as <a href="https://en.wikipedia.org/wiki/ISO_8859">ISO-8859</a> for single byte encodings. We previously built <a href="http://en.wikipedia.org/wiki/ISO/IEC_8859-1">ISO-8895-1 (Western European)</a> and <a href="http://en.wikipedia.org/wiki/ISO/IEC_8859-6">ISO-8859-6 (Latin/Arabic)</a>. International standards for multibyte encodings exist too. People who use the same standard can communicate without problems.</p>
+
+<p>The international standards like ISO-8895 are only part of the story. Companies like Microsoft and IBM created their own standards (so-called <em>OEM standards</em> or <em>code pages</em>). Some OEM standards map to international standards, some almost-but-not-quite map (see <a href="http://en.wikipedia.org/wiki/Windows-1252">Windows-1252</a>) and some are completely different.</p>
+
+<h3>Our standards have problems</h3>
+
+<p>Our standards and code pages are better than ASCII but there are a number of problems remaining:</p>
+
+<ul>
+<li>How do we intermix different languages in the same document?</li>
+<li>What if our standards run out of room for new symbols?</li>
+<li>There is no rosetta stone to allow communication between systems that use different encodings.</li>
+</ul>
+
+
+<p>Enter Unicode.</p>
+
+<h2>Unicode: One standard to rule them all</h2>
+
+<p><img class="center" src="/assets/2014-08-02-the-plain-text-is-a-lie/ring.png" title="The ring of power" >
+<a href="http://commons.wikimedia.org/wiki/File:Unico_Anello.png">Image source</a></p>
+
+<p>As mentioned earlier, Unicode is a single standard supporting thousands of languages. Unicode addresses the limitations of byte encodings by operating at a higher level than simple byte representations of characters. The foundation of Unicode is an über list of symbols chosen by a multinational committee.</p>
+
+<p>Unicode keeps a gigantic numbered list of all the symbols of all the supported languages. The items in this list are called <em>code points</em> and are not concerned with bytes, how computers represent them, or what they look like on screen. They&rsquo;re just numbered items, like:</p>
+
+<p><span style="font-size:24px;">a</span> <em>LATIN SMALL LETTER A</em> &ndash; U+0061</p>
+
+<p><span style="font-size:24px;">東</span> <em>Pinyin: dōng, Chaizi: shi,ba,ri</em> &ndash;  U+6771</p>
+
+<p><span style="font-size:24px;">☃</span> <a href="http://unicodesnowmanforyou.com/">SNOWMAN</a> &ndash; U+2603</p>
+
+<p>We have virtually unlimited space to work with. The Unicode standards supports a maximum of  1,114,112 items. That is more than enough to express the world&rsquo;s active written languages, some historical languages and miscellaneous symbols. Some of the slots are even undefined and left to the user to decide what they mean. These spaces have been used for wacky things like <a href="https://en.wikipedia.org/wiki/Klingon_alphabets#ConScript_Unicode_Registry">Klingon</a> and Elvish.</p>
+
+<p>Fun fact: Apple Inc. <a href="https://en.wikipedia.org/wiki/Private_Use_Areas#Vendor_use">uses</a> U+F8FF in the Private Use Area of Unicode for their logo symbol (<span style="font-size:24px;"></span>). If you don&rsquo;t see the Apple logo in parenthesis in the preceding sentence, then your system doesn&rsquo;t agree with Apple&rsquo;s use of U+F8FF.</p>
+
+<p>OK, we have our gigantic list of code points. All we need to do is devise an encoding scheme to encode unicode objects (which now we know are lists of code points) into byte-strings for transmission over the wire to other systems.</p>
+
+<h3>UTF-8</h3>
+
+<p>UTF-8 encodes every Unicode code point in between one and four byte sequences. Here are some cool features of UTF-8:</p>
+
+<ul>
+<li><em>Popularity</em> &ndash; It&rsquo;s the dominant encoding of the world wide web <a href="http://googleblog.blogspot.com/2010/01/unicode-nearing-50-of-web.html">since 2010</a>.</li>
+<li><em>Simplicity</em> &ndash; No need to <a href="http://en.wikipedia.org/wiki/Byte_order_mark">transmit byte order information</a> or worry about <a href="http://en.wikipedia.org/wiki/Endianness">endianness</a> in transmissions.</li>
+<li><em>Backwards compatibility</em> &ndash; The first 128 byte sequences are identical to ASCII.</li>
+</ul>
+
+
+<h3>UCS-2: Old and busted</h3>
+
+<p>UCS-2 is a fixed width, two-byte encoding. In the mid-nineties, Unicode added code points that cannot be expressed in the two-byte system. Thus, UCS-2 is deprecated in favor of UTF-16.</p>
+
+<ul>
+<li>UCS-2 was the original Java String class&rsquo;s internal representation</li>
+<li>C Python 2 and 3 use UCS-2 if compiled with default options</li>
+<li>Microsoft Windows OS API used UCS-2 prior to Windows 2000</li>
+</ul>
+
+
+<h3>UTF-16: UCS-2++</h3>
+
+<p>UTF-16 extends UCS-2 by adding support for the code points that can&rsquo;t be expressed in a two-byte system. You can find UTF-16 in:</p>
+
+<ul>
+<li>Windows 2000 and later&rsquo;s OS API</li>
+<li>The Java String class</li>
+<li>.NET environment</li>
+<li>OS X and iOS&rsquo;s NSString type</li>
+</ul>
+
+
+<h3>UTF-32: Large bytes, simple representation</h3>
+
+<p>UTF-32 is a simple 1:1 mapping of code points to four-byte values. C Python uses UTF-32 for internal representation of Unicode if compiled with a certain flag.</p>
+
+<h2>Conclusion</h2>
+
+<p>We&rsquo;ve seen how text handling can go wrong. We&rsquo;ve learned how to design and test our systems with Unicode in mind. Finally, we&rsquo;ve learned a bit of history of text encodings. There is a lot more to the topic of text, but for now I ask you do to the following:</p>
+
+<ol>
+<li>Examine your system to see if you&rsquo;re using Unicode inside</li>
+<li>Use UTF-8 when reading and writing data</li>
+<li>Know that the plain text is a lie!</li>
+</ol>
+
+
+<p>Thanks for reading!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article class="entry">
+      
+  <header class="entry-header">
+    
       <h1 class="entry-title"><a href="/blog/shipit-hackathon-mplus/">ShipIt - 24-hour Hackathon for Millennium+ Platform Dev</a></h1>
     
     
@@ -627,53 +1010,6 @@
 
     </article>
   
-  
-    <article class="entry">
-      
-  <header class="entry-header">
-    
-      <h1 class="entry-title"><a href="/2014/01/sponsoring-the-apache-software-foundation/">Sponsoring the Apache Software Foundation</a></h1>
-    
-    
-      <div class="entry-meta meta">
-        
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/kevin-shekleton"><span class="fn">Kevin Shekleton</span></a></span>
-
- | 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-01-28T00:00:00-06:00" pubdate data-updated="true">Jan 28<span>th</span>, 2014</time>
-        
-      </div>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Open source plays an integral role within engineering at Cerner. In addition to using open source software throughout our architecture, we <a href="/2014/01/cerner-and-open-source/">recently released a few projects</a> back to the community via our <a href="https://github.com/cerner">Github organization</a>.</p>
-
-<p>Today, we’re happy to announce that <a href="http://www.apache.org/foundation/thanks.html">Cerner is now a sponsor</a> of the non-profit <a href="http://www.apache.org/">Apache Software Foundation</a> (ASF). The ASF is home to several projects that are essential components in many of our systems. We’ve blogged previously about several of these projects: <a href="/2013/02/composable-mapreduce-with-hadoop-and-crunch/">Hadoop, HBase, Crunch</a>, <a href="/2013/03/cerner-and-tycho/">Maven</a>, and <a href="/2013/02/near-real-time-processing-over-hadoop-and-hbase/">Storm</a>. In addition to these projects, there are dozens of other ASF projects that we use and have contributed to via patches and enhancements.</p>
-
-<p>Sponsoring the ASF allows us to show support for their mission and to ensure the ASF can continue to provide infrastructure and resources for the open source projects they host.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="/blog/page/4/">&larr; Older posts</a></li>
@@ -691,6 +1027,10 @@
   <ul id="recent_posts" class="nav nav-list">
     
       <li class="post">
+        <a href="/blog/deploying-web-services-with-apache-tomcat-and-chef/">Deploying Web Services With Apache Tomcat and Chef</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/girls-in-technology-movement-hour-of-code/">Girls in Technology Movement - Hour of Code</a>
       </li>
     
@@ -704,10 +1044,6 @@
     
       <li class="post">
         <a href="/blog/managing-30000-logging-events-per-day-with-splunk/">Managing 30,000 Logging Events Per Day With Splunk</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/cerner-and-the-apache-software-foundation/">Cerner and the Apache Software Foundation</a>
       </li>
     
   </ul>

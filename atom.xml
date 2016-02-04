@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2016-02-01T11:01:38-06:00</updated>
+  <updated>2016-02-04T08:57:50-06:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Deploying Web Services With Apache Tomcat and Chef]]></title>
+    <link href="http://engineering.cerner.com/blog/deploying-web-services-with-apache-tomcat-and-chef/"/>
+    <updated>2016-02-04T00:00:00-06:00</updated>
+    <id>http://engineering.cerner.com/blog/deploying-web-services-with-apache-tomcat-and-chef</id>
+    <content type="html"><![CDATA[<p>Open source is an important part of our engineering culture and we love when we’re able to contribute back to the community. We recently open sourced our <a href="https://github.com/cerner/cerner_tomcat">Tomcat Chef Cookbook</a>, which we use to automate deploying many of our web services here at Cerner. The cookbook is meant to be simple, yet flexible enough to change most anything about <a href="http://tomcat.apache.org/">Apache Tomcat</a> to your liking. It supports installing any version of Tomcat, configuring any file within the Tomcat installation and deploying web applications.</p>
+
+<p>The cerner_tomcat cookbook is one of our oldest cookbooks which was originally written when we first started using <a href="https://www.chef.io/">Chef</a>. We created it as the other community Tomcat cookbooks didn’t include all the features we needed. As of today, the <a href="https://github.com/chef-cookbooks/tomcat">Tomcat cookbook provided by Chef</a> seems to be the predominant cookbook in the community; however, it still lacks the functionality and flexibility we need such as deploying the applications themselves.</p>
+
+<p>One of the biggest problems when using Chef to configure Tomcat is that Tomcat uses XML for configuration which does not map very well to Chef’s Ruby Hash-based attributes like JSON, YAML or properties files do. Our first implementation was very similar to the <a href="https://github.com/chef-cookbooks/tomcat/blob/v1.0.1/templates/default/server.xml.erb">Chef community cookbook</a> in which the cookbook provides a configuration template with a static set of properties. We quickly learned that this solution didn’t scale for us given the varying configuration needs of applications and the ever-changing configuration options across Tomcat versions. Our approach now is to allow applications to provide configuration templates themselves, allowing this cookbook to be leveraged by the various teams deploying Tomcat applications.</p>
+
+<p>Our cerner_tomcat cookbook is one of our most used cookbooks here at Cerner. We would love for you to try out our cookbook and let us know how we can improve it.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Girls in Technology Movement - Hour of Code]]></title>
@@ -2207,47 +2222,6 @@ about proactive solutions.</p>
 <p>We’ve had 150 engineers join DevAcademy since it was launched. I’ve had the privilege of seeing the new engineers struggle and then succeed on their projects. I’ve seen the light come on when they realize the usefulness good development practices and apply them effectively. I’ve seen them get excited about git and other powerful tools that they didn’t have the opportunity to learn during their formal educations. The best part of my job is that I’ve seen many very good engineers start down the career-long path towards becoming really great ones.</p>
 
 <p><img class="center" src="http://engineering.cerner.com/assets/2013-08-14-devacademy/Staff.jpg" title="Staff" ></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The 30 Days of Code Experiment]]></title>
-    <link href="http://engineering.cerner.com/2013/08/the-30-days-of-code-experiment/"/>
-    <updated>2013-08-06T00:00:00-05:00</updated>
-    <id>http://engineering.cerner.com/2013/08/the-30-days-of-code-experiment</id>
-    <content type="html"><![CDATA[<p>In software development, we solve problems. As we solve these problems, we build connections in our minds of how to look at a problem, relate it to previous problems and solutions, and re-apply past approaches and techniques.</p>
-
-<p>These behavior habits build dogmatic ways of thinking and limit design choices to selective technologies we’ve used in the past. As we all know, you have to continually learn new technologies and different ways of thinking to stay current in the ever-changing landscape of software development. Unfortunately, keeping up-to-date on technologies and approaches isn’t an easy behavior to maintain when you have many other priorities.</p>
-
-<p>This spring, a few engineers wanted to bring focus to this important behavior trait by giving a tech talk on &ldquo;Honing your Craft,&rdquo; which discussed how to continuously strengthen and refine skills. Not only did we want engineers that we work with on a daily basis to be part of the tech talk; we wanted engineers from other teams at Cerner to be involved too. Also, we didn’t just want to talk about it; we wanted to pose a challenge to put people into action and re-enforce these behaviors.</p>
-
-<p>At the end of the talk, we announced the challenge: 30 days of code. It was a challenge like many other &ldquo;30 day&rdquo; programs but was centered on learning new aspects of software development, languages, or just hacking up a tool that you find useful for your day-to-day development. The goal being that after 30 days, new habits and behaviors would be established to help promote continuous learning.</p>
-
-<p>To make this a social learning experience, we built a Ruby web application called &ldquo;mural&rdquo; using async_sinatra and eventmachine to consume our GitHub Enterprise instance and show gists, which contained a code comment of &ldquo;30_days_of_code&rdquo;. The result was really interesting. Similar to Twitter, where you follow a specific hashtag, we were following code snippets of fellow developers. Since most of them were gists, they were small enough so you could easily see what they were doing (without having to go through a mountain of code). With this dashboard, a score was calculated based on count of your posts and was displayed with your avatar. Having scores displayed in descending order added a little peer pressure to keep people active in challenge.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2013-08-06-the-30-days-of-code-experiment/30-Days-of-Code.png" width="30" title="Days of Code" ></p>
-
-<p>By the time I got back to my desk, I received questions of where the URL was to see the app, so they could verify their posts were showing. Soon, people wanted GitHub repos to show up with gists, so a pull request was requested for that. We then wanted anonymous gists to also get pulled in, which required developing our own crawler since these were exposed on the gist search. It was apparent that people wanted to share what they were doing, and people wanted to see it.</p>
-
-<p>At the end of the challenge, we returned to the auditorium to highlight some of the posts that came in over the past month. During the 30 days, we had 124 gists posted and 17 different contributions in repos. People were showing their skills over a wide range of technologies. Examples were:</p>
-
-<ul>
-<li><p>Building a plugin to invoke Jenkins commands over a phone (using Siri)</p></li>
-<li><p>Ruby scripts that interact with our Github Enterprise instance API that will send out emails when pull requests or branches are getting old (executed periodically through Jenkins)</p></li>
-<li><p>Clojure application that looks for pull requests based on Github organizations, which have two &ldquo;+1&rdquo; comments (alerting which pull request may be candidates to close out)</p></li>
-<li><p>Illustrating Crucible code interactions by extracting data with python and visualizing with D3
-Using Node.js to flash lights on a Raspberry Pi when a health check from web service is failing</p></li>
-<li><p>Presenting statistics from a storm cluster with Rickshaw</p></li>
-</ul>
-
-
-<p>Eleven people presented what they worked on and learned. It was amazing to see all of the different ideas people came up with in this time frame.</p>
-
-<p>Even more interesting was how quickly people learned from the ideas of others. Not only were developers sharing their code snippets, but they were also sharing the problem they were attempting to solve or the idea of what they wanted invent. For example, the Ruby script which alerted the last committer of a dead branch through email, spawned into other implementations that would send alerts based on different pieces of Github data (ex. old pull requests). Sharing these ideas in their early stages (through code snippets) really accelerates the rate that an idea can be seeded in other minds and helps inspire even more innovation and learning.</p>
-
-<p>This wasn&rsquo;t only a challenge of what we would build, but it was also an experiment of what can happen by taking a small portion of your day and doing something different. By structuring this exercise around a formal challenge that included a competitive aspect, there was additional motivation to get involved and stay involved to the end.</p>
-
-<p>In summary, find a way to take a little time out of your day to try something different; you will be amazed with the different perspectives that you gain.</p>
 ]]></content>
   </entry>
   
