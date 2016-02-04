@@ -2,7 +2,7 @@
 layout: post
 title: "Deploying Web Services with Apache Tomcat and Chef"
 author: Bryan Baugher
-date: 2016-02-08
+date: 2016-02-04
 tags: [engineering]
 ---
 
