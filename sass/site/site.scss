@@ -56,6 +56,7 @@ $paddingNormal: 20px;
 // --------------------------------------------------
 
 #banner {
+  text-align: center;
 
   .brand {
     margin-left: 20px;
@@ -79,6 +80,10 @@ $paddingNormal: 20px;
 
      @media (max-width: 767px) {
        display: none;
+     }
+
+     @media (min-width: 1200px) {
+       left: 15%;
      }
   }
 
@@ -320,6 +325,16 @@ body {
   padding: $paddingNormal;
 }
 
+.post-container {
+  margin-left: $paddingNormal;
+  margin-right: $paddingNormal;
+
+  @media (max-width: 767px) {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
 
 // Archives
 // --------------------------------------------------
@@ -328,7 +343,7 @@ body {
   background-color: $white;
   border: 1px solid $lightGray;
   padding: $paddingNormal;
-  margin-bottom: 20px;
+  margin-bottom: $paddingNormal;
 }
 
 .archive-title {
