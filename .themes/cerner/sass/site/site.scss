@@ -223,42 +223,6 @@ header h2 { font-size: 40px; }
   }
 }
 
-
-// Engineer Page
-// --------------------------------------------------
-
-.eng {
-  h2 {
-    color: $secondary-color;
-  }
-}
-
-.eng-img {
-  display: block;
-  margin: 0;
-}
-
-.eng-bio {
-  background: #7ac143;
-  color: #fff;
-  padding: 15px;
-
-  h2 {
-    color: #fff;
-  }
-
-  dt,
-  dd {
-    line-height: 18px;
-  }
-
-  dl,
-  dd {
-    margin: 0 0 10px 0;
-  }
-}
-
-
 // About Page
 // --------------------------------------------------
 

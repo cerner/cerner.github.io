@@ -29,14 +29,6 @@ The yyyy-mm-dd should be the day in which your blog post will go live. Copy one 
 
 If your blog post has images, place them in the /source/assets/{yyyy-mm-dd}-{name} folder (the name should match your blog post markdown file).
 
-### Speaker Bio
-
-Next, add a bio for yourself in /source/engineers/{firstname-lastname}
-
-This folder should contain two files:
-- index.markdown: Copy one of the existing bios to ensure you retain the proper format
-- {firstname-lastname}.jpg: A photo of yourself
-
 ## Submitting a Change
 
 1. Make your changes to the *source* branch

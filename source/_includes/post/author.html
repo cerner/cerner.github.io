@@ -1,13 +1,12 @@
 {% if post.author %}
   {% assign author = post.author %}
-  {% assign author_url = post.author_url %}
 {% elsif page.author %}
   {% assign author = page.author %}
-  {% assign author_url = page.author_url %}
 {% else %}
   {% assign author = site.author %}
-  {% assign author_url = site.author_url %}
 {% endif %}
 {% if author %}
-  <span class="byline author vcard">{% if author_url %}<a href="{{ root_url }}/engineers/{{ author_url }}">{% endif %}<span class="fn">{{ author }}</span></a></span>
+  <span class="byline author vcard">
+    <span class="fn">{{ author }}</span>
+  </span>
 {% endif %}
