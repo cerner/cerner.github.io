@@ -32,7 +32,7 @@
   <script src="/javascripts/libs/bootstrap.min.js"></script>
 
   <link href="/atom.xml" rel="alternate" title="Engineering Health" type="application/atom+xml">
-  
+  <script src="/javascripts/search.min.js" type="text/javascript" charset="utf-8"></script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -50,88 +50,75 @@
 </head>
 
 <body  class="top-navbar  ">
-  <header id="banner" class="navbar navbar-fixed-top" role="banner">
-  <div class="navbar-inner">
-    <div class="container">
+  <header id="banner" role="banner" class="container-fluid">
+
+  <div class="image">
+
+    
+      <img src="/images/HQ.jpg" alt="Cerner World Headquarters" />
+    
+
+    <div id="header1">Engineering Health<br/><span class="header2">A <b>Cerner</b> Blog</span></div>
+
+  </div>
+  <nav class="navbar navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Engineering Health</a>
       <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-
-      <a class="brand" href="/">
-        <img src="/images/logo2.png" title="Cerner Engineering Health">
-      </a>
-
-      <nav id="nav-main" class="nav-collapse" role="navigation">
-  <ul id="menu-top-menu" class="nav pull-right">
-    <li class="menu-life-as-an-engineer">
-      <a href="/about">Life as an Engineer</a>
-    </li>
-    <li class="menu-who-we-are">
-      <a href="/engineers">Who We Are</a>
-    </li>
-    <li>
-      <a href="/blog/archives">Archives</a>
-    </li>
-  </ul>      
-</nav>
-
-    </div>
-  </div>
-</header>
-
-<div class="container">
-  <div class="row">
-    <div class="span8 pull-left page-header">
-      <img class="site-header__img" src="/images/skyline2.png" alt="">    
-    </div>
-
-    
-      <div class="span4 pull-right"> 
-        <div id="search-form-wrapper">
-          <form class="form-search" id="searchform" role="search" action="https://google.com/search" method="get" >
-            <label class="hide" for="q">Search for:</label>
-            <input name="sitesearch" type="hidden" value="engineering.cerner.com" />
-            <input class="search-query" id="q" name="q" type="text" results="0" placeholder="Search">
-            <input class="btn" id="searchsubmit" type="submit" value="Search" >
-          </form>      
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li >
+            <a href="/">Blog</a>
+          </li>
+          <li >
+            <a href="/culture">Culture</a>
+          </li>
+          <li >
+            <a href="/tech_talks">Tech Talks</a>
+          </li>
+          <li class="selected">
+            <a href="/blog/archives">Archives</a>
+          </li>
+        </ul>
+        <div id="search" class="pull-right">
+          <form action="/search" method="get" class="navbar-search">
+            <input type="text" id="search-query" name="q" class="search-query" placeholder="Search" autocomplete="off">
+            <img src="/images/MagnifyingGlass.png" alt="Search" width="16" height="16" />
+          </form>
         </div>
       </div>
-    
+    </div>
   </div>
-</div>
+</nav>
+</header>
 
-  
-  <div class="container">
+
+  <div class="container-fluid post-container">
     <div class="row-fluid">
-      
-<article id="main" role="article" class="span8">
-
-  
-  <header class="page-title">
-    <h1 class="entry-title">Blog Archive</h1>
-    
-  </header>
-  
-  
+      <section class="span12" id="search-results" style="display: none;">
+  <h2>Search results</h2>
+  <div class="entries">
+  </div>
+</section>
+    </div>
+    <div class="row-fluid">
+      <div id="main" class="span8" role="main">
 
 
+
   
+  
+  <section class="archive-section">
   <h2>2016</h2>
 
 <article class="archive-listing">
   
-<h2><a href="/blog/deploying-web-services-with-apache-tomcat-and-chef/">Deploying Web Services With Apache Tomcat and Chef</a></h2>
-
-  
-  
-
-
-  <span class="byline author vcard">Written by <span class="fn">Bryan Baugher</span></a></span>
-
-
-
+<div class="archive-meta meta">
 
 
 
@@ -143,7 +130,16 @@
   
 
 
-<time datetime="2016-02-04T00:00:00-06:00" pubdate data-updated="true">Feb 4<span>th</span>, 2016</time>
+<time datetime="2016-02-04T00:00:00-06:00" pubdate data-updated="true">Feb 4<span>th</span>, 2016</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Bryan Baugher</span>
+  </span>
+
+</div>
+<h2 class="archive-title"><a href="/blog/deploying-web-services-with-apache-tomcat-and-chef/">Deploying Web Services With Apache Tomcat and Chef</a></h2>
 
 
 
@@ -153,16 +149,7 @@
 
 <article class="archive-listing">
   
-<h2><a href="/blog/girls-in-technology-movement-hour-of-code/">Girls in Technology Movement - Hour of Code</a></h2>
-
-  
-  
-
-
-  <span class="byline author vcard">Written by <span class="fn">Amanda Anderson</span></a></span>
-
-
-
+<div class="archive-meta meta">
 
 
 
@@ -174,7 +161,16 @@
   
 
 
-<time datetime="2016-01-20T00:00:00-06:00" pubdate data-updated="true">Jan 20<span>th</span>, 2016</time>
+<time datetime="2016-01-20T00:00:00-06:00" pubdate data-updated="true">Jan 20<span>th</span>, 2016</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Amanda Anderson</span>
+  </span>
+
+</div>
+<h2 class="archive-title"><a href="/blog/girls-in-technology-movement-hour-of-code/">Girls in Technology Movement - Hour of Code</a></h2>
 
 
 
@@ -183,20 +179,15 @@
 
 
   
+    </section>
+  
+  
+  <section class="archive-section">
   <h2>2015</h2>
 
 <article class="archive-listing">
   
-<h2><a href="/blog/identifying-network-acl-issues-with-chef-locally/">Identifying Network ACL Issues With Chef Locally</a></h2>
-
-  
-  
-
-
-  <span class="byline author vcard">Written by <span class="fn">Aaron Blythe and David Crowder</span></a></span>
-
-
-
+<div class="archive-meta meta">
 
 
 
@@ -208,7 +199,16 @@
   
 
 
-<time datetime="2015-11-17T00:00:00-06:00" pubdate data-updated="true">Nov 17<span>th</span>, 2015</time>
+<time datetime="2015-11-17T00:00:00-06:00" pubdate data-updated="true">Nov 17<span>th</span>, 2015</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Aaron Blythe and David Crowder</span>
+  </span>
+
+</div>
+<h2 class="archive-title"><a href="/blog/identifying-network-acl-issues-with-chef-locally/">Identifying Network ACL Issues With Chef Locally</a></h2>
 
 
 
@@ -218,16 +218,7 @@
 
 <article class="archive-listing">
   
-<h2><a href="/blog/javascript-logging-we-can-do-better/">JavaScript Logging: We Can Do Better!</a></h2>
-
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/garry-polley"><span class="fn">Garry Polley</span></a></span>
-
-
-
+<div class="archive-meta meta">
 
 
 
@@ -239,7 +230,16 @@
   
 
 
-<time datetime="2015-07-20T00:00:00-05:00" pubdate data-updated="true">Jul 20<span>th</span>, 2015</time>
+<time datetime="2015-07-20T00:00:00-05:00" pubdate data-updated="true">Jul 20<span>th</span>, 2015</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Garry Polley</span>
+  </span>
+
+</div>
+<h2 class="archive-title"><a href="/blog/javascript-logging-we-can-do-better/">JavaScript Logging: We Can Do Better!</a></h2>
 
 
 
@@ -249,16 +249,7 @@
 
 <article class="archive-listing">
   
-<h2><a href="/blog/managing-30000-logging-events-per-day-with-splunk/">Managing 30,000 Logging Events Per Day With Splunk</a></h2>
-
-  
-  
-
-
-  <span class="byline author vcard">Written by <span class="fn">Mike Hemesath and Rima Poddar</span></a></span>
-
-
-
+<div class="archive-meta meta">
 
 
 
@@ -270,7 +261,16 @@
   
 
 
-<time datetime="2015-01-29T00:00:00-06:00" pubdate data-updated="true">Jan 29<span>th</span>, 2015</time>
+<time datetime="2015-01-29T00:00:00-06:00" pubdate data-updated="true">Jan 29<span>th</span>, 2015</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Mike Hemesath and Rima Poddar</span>
+  </span>
+
+</div>
+<h2 class="archive-title"><a href="/blog/managing-30000-logging-events-per-day-with-splunk/">Managing 30,000 Logging Events Per Day With Splunk</a></h2>
 
 
 
@@ -279,20 +279,15 @@
 
 
   
+    </section>
+  
+  
+  <section class="archive-section">
   <h2>2014</h2>
 
 <article class="archive-listing">
   
-<h2><a href="/blog/cerner-and-the-apache-software-foundation/">Cerner and the Apache Software Foundation</a></h2>
-
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/kevin-shekleton"><span class="fn">Kevin Shekleton</span></a></span>
-
-
-
+<div class="archive-meta meta">
 
 
 
@@ -304,7 +299,16 @@
   
 
 
-<time datetime="2014-10-28T00:00:00-05:00" pubdate data-updated="true">Oct 28<span>th</span>, 2014</time>
+<time datetime="2014-10-28T00:00:00-05:00" pubdate data-updated="true">Oct 28<span>th</span>, 2014</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Kevin Shekleton</span>
+  </span>
+
+</div>
+<h2 class="archive-title"><a href="/blog/cerner-and-the-apache-software-foundation/">Cerner and the Apache Software Foundation</a></h2>
 
 
 
@@ -314,16 +318,7 @@
 
 <article class="archive-listing">
   
-<h2><a href="/blog/closures-and-currying-in-javascript/">Closures & Currying in JavaScript</a></h2>
-
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/rory-hardy"><span class="fn">Rory Hardy</span></a></span>
-
-
-
+<div class="archive-meta meta">
 
 
 
@@ -335,7 +330,16 @@
   
 
 
-<time datetime="2014-09-29T00:00:00-05:00" pubdate data-updated="true">Sep 29<span>th</span>, 2014</time>
+<time datetime="2014-09-29T00:00:00-05:00" pubdate data-updated="true">Sep 29<span>th</span>, 2014</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Rory Hardy</span>
+  </span>
+
+</div>
+<h2 class="archive-title"><a href="/blog/closures-and-currying-in-javascript/">Closures & Currying in JavaScript</a></h2>
 
 
 
@@ -345,16 +349,7 @@
 
 <article class="archive-listing">
   
-<h2><a href="/blog/intern-hackfest-2014/">Intern HackFest 2014</a></h2>
-
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/makenzie-kalb"><span class="fn">Makenzie Kalb</span></a></span>
-
-
-
+<div class="archive-meta meta">
 
 
 
@@ -366,7 +361,16 @@
   
 
 
-<time datetime="2014-09-08T00:00:00-05:00" pubdate data-updated="true">Sep 8<span>th</span>, 2014</time>
+<time datetime="2014-09-08T00:00:00-05:00" pubdate data-updated="true">Sep 8<span>th</span>, 2014</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Makenzie Kalb</span>
+  </span>
+
+</div>
+<h2 class="archive-title"><a href="/blog/intern-hackfest-2014/">Intern HackFest 2014</a></h2>
 
 
 
@@ -376,16 +380,7 @@
 
 <article class="archive-listing">
   
-<h2><a href="/blog/the-plain-text-is-a-lie/">The Plain Text Is a Lie</a></h2>
-
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/elliott-hoffman"><span class="fn">Elliott Hoffman</span></a></span>
-
-
-
+<div class="archive-meta meta">
 
 
 
@@ -397,7 +392,16 @@
   
 
 
-<time datetime="2014-08-02T00:00:00-05:00" pubdate data-updated="true">Aug 2<span>nd</span>, 2014</time>
+<time datetime="2014-08-02T00:00:00-05:00" pubdate data-updated="true">Aug 2<span>nd</span>, 2014</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Elliott Hoffman</span>
+  </span>
+
+</div>
+<h2 class="archive-title"><a href="/blog/the-plain-text-is-a-lie/">The Plain Text Is a Lie</a></h2>
 
 
 
@@ -407,16 +411,7 @@
 
 <article class="archive-listing">
   
-<h2><a href="/blog/shipit-hackathon-mplus/">ShipIt - 24-hour Hackathon for Millennium+ Platform Dev</a></h2>
-
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/shahzad-zafar"><span class="fn">Shahzad Zafar</span></a></span>
-
-
-
+<div class="archive-meta meta">
 
 
 
@@ -428,7 +423,16 @@
   
 
 
-<time datetime="2014-07-01T00:00:00-05:00" pubdate data-updated="true">Jul 1<span>st</span>, 2014</time>
+<time datetime="2014-07-01T00:00:00-05:00" pubdate data-updated="true">Jul 1<span>st</span>, 2014</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Shahzad Zafar</span>
+  </span>
+
+</div>
+<h2 class="archive-title"><a href="/blog/shipit-hackathon-mplus/">ShipIt - 24-hour Hackathon for Millennium+ Platform Dev</a></h2>
 
 
 
@@ -438,16 +442,7 @@
 
 <article class="archive-listing">
   
-<h2><a href="/blog/scaling-people-with-apache-crunch/">Scaling People With Apache Crunch</a></h2>
-
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/micah-whitacre"><span class="fn">Micah Whitacre</span></a></span>
-
-
-
+<div class="archive-meta meta">
 
 
 
@@ -459,7 +454,16 @@
   
 
 
-<time datetime="2014-05-09T00:00:00-05:00" pubdate data-updated="true">May 9<span>th</span>, 2014</time>
+<time datetime="2014-05-09T00:00:00-05:00" pubdate data-updated="true">May 9<span>th</span>, 2014</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Micah Whitacre</span>
+  </span>
+
+</div>
+<h2 class="archive-title"><a href="/blog/scaling-people-with-apache-crunch/">Scaling People With Apache Crunch</a></h2>
 
 
 
@@ -469,16 +473,7 @@
 
 <article class="archive-listing">
   
-<h2><a href="/blog/migrating-from-eclipse-3.x-to-eclipse-4.x-the-iaware-story/">Migrating From Eclipse 3.X to Eclipse 4.X - the iAware Story</a></h2>
-
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/andy-gifford"><span class="fn">Andy Gifford</span></a></span>
-
-
-
+<div class="archive-meta meta">
 
 
 
@@ -490,7 +485,16 @@
   
 
 
-<time datetime="2014-03-18T00:00:00-05:00" pubdate data-updated="true">Mar 18<span>th</span>, 2014</time>
+<time datetime="2014-03-18T00:00:00-05:00" pubdate data-updated="true">Mar 18<span>th</span>, 2014</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Andy Gifford</span>
+  </span>
+
+</div>
+<h2 class="archive-title"><a href="/blog/migrating-from-eclipse-3.x-to-eclipse-4.x-the-iaware-story/">Migrating From Eclipse 3.X to Eclipse 4.X - the iAware Story</a></h2>
 
 
 
@@ -500,16 +504,7 @@
 
 <article class="archive-listing">
   
-<h2><a href="/2014/01/sponsoring-the-apache-software-foundation/">Sponsoring the Apache Software Foundation</a></h2>
-
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/kevin-shekleton"><span class="fn">Kevin Shekleton</span></a></span>
-
-
-
+<div class="archive-meta meta">
 
 
 
@@ -521,7 +516,16 @@
   
 
 
-<time datetime="2014-01-28T00:00:00-06:00" pubdate data-updated="true">Jan 28<span>th</span>, 2014</time>
+<time datetime="2014-01-28T00:00:00-06:00" pubdate data-updated="true">Jan 28<span>th</span>, 2014</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Kevin Shekleton</span>
+  </span>
+
+</div>
+<h2 class="archive-title"><a href="/2014/01/sponsoring-the-apache-software-foundation/">Sponsoring the Apache Software Foundation</a></h2>
 
 
 
@@ -531,16 +535,7 @@
 
 <article class="archive-listing">
   
-<h2><a href="/2014/01/the-raft-protocol-a-better-paxos/">The Raft Protocol: A Better Paxos?</a></h2>
-
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/david-edwards"><span class="fn">David Edwards</span></a></span>
-
-
-
+<div class="archive-meta meta">
 
 
 
@@ -552,7 +547,16 @@
   
 
 
-<time datetime="2014-01-24T00:00:00-06:00" pubdate data-updated="true">Jan 24<span>th</span>, 2014</time>
+<time datetime="2014-01-24T00:00:00-06:00" pubdate data-updated="true">Jan 24<span>th</span>, 2014</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">David Edwards</span>
+  </span>
+
+</div>
+<h2 class="archive-title"><a href="/2014/01/the-raft-protocol-a-better-paxos/">The Raft Protocol: A Better Paxos?</a></h2>
 
 
 
@@ -562,16 +566,7 @@
 
 <article class="archive-listing">
   
-<h2><a href="/2014/01/cerner-and-open-source/">Cerner and Open Source</a></h2>
-
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/nathan-beyer"><span class="fn">Nathan Beyer</span></a></span>
-
-
-
+<div class="archive-meta meta">
 
 
 
@@ -583,7 +578,16 @@
   
 
 
-<time datetime="2014-01-16T00:00:00-06:00" pubdate data-updated="true">Jan 16<span>th</span>, 2014</time>
+<time datetime="2014-01-16T00:00:00-06:00" pubdate data-updated="true">Jan 16<span>th</span>, 2014</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Nathan Beyer</span>
+  </span>
+
+</div>
+<h2 class="archive-title"><a href="/2014/01/cerner-and-open-source/">Cerner and Open Source</a></h2>
 
 
 
@@ -592,20 +596,15 @@
 
 
   
+    </section>
+  
+  
+  <section class="archive-section">
   <h2>2013</h2>
 
 <article class="archive-listing">
   
-<h2><a href="/2013/11/cerner-tech-talks/">Cerner Tech Talks</a></h2>
-
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/kevin-shekleton"><span class="fn">Kevin Shekleton</span></a></span>
-
-
-
+<div class="archive-meta meta">
 
 
 
@@ -617,38 +616,16 @@
   
 
 
-<time datetime="2013-11-12T00:00:00-06:00" pubdate data-updated="true">Nov 12<span>th</span>, 2013</time>
-
-
-
-</article>
-
-
-
-<article class="archive-listing">
-  
-<h2><a href="/2013/11/2013-software-intern-hackfest/">2013 Software Intern Hackfest</a></h2>
-
-  
+<time datetime="2013-11-12T00:00:00-06:00" pubdate data-updated="true">Nov 12<span>th</span>, 2013</time> | 
   
 
 
-  <span class="byline author vcard">Written by <a href="/engineers/frank-rydzewski"><span class="fn">Frank Rydzewski</span></a></span>
+  <span class="byline author vcard">
+    <span class="fn">Kevin Shekleton</span>
+  </span>
 
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-11-11T00:00:00-06:00" pubdate data-updated="true">Nov 11<span>th</span>, 2013</time>
+</div>
+<h2 class="archive-title"><a href="/2013/11/cerner-tech-talks/">Cerner Tech Talks</a></h2>
 
 
 
@@ -658,16 +635,7 @@
 
 <article class="archive-listing">
   
-<h2><a href="/2013/09/project-lead-the-way/">Project Lead the Way</a></h2>
-
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/chris-finn"><span class="fn">Chris Finn</span></a></span>
-
-
-
+<div class="archive-meta meta">
 
 
 
@@ -679,7 +647,16 @@
   
 
 
-<time datetime="2013-09-11T00:00:00-05:00" pubdate data-updated="true">Sep 11<span>th</span>, 2013</time>
+<time datetime="2013-11-11T00:00:00-06:00" pubdate data-updated="true">Nov 11<span>th</span>, 2013</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Frank Rydzewski</span>
+  </span>
+
+</div>
+<h2 class="archive-title"><a href="/2013/11/2013-software-intern-hackfest/">2013 Software Intern Hackfest</a></h2>
 
 
 
@@ -689,16 +666,7 @@
 
 <article class="archive-listing">
   
-<h2><a href="/2013/08/devcon/">DevCon</a></h2>
-
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/kevin-shekleton"><span class="fn">Kevin Shekleton</span></a></span>
-
-
-
+<div class="archive-meta meta">
 
 
 
@@ -710,7 +678,16 @@
   
 
 
-<time datetime="2013-08-26T00:00:00-05:00" pubdate data-updated="true">Aug 26<span>th</span>, 2013</time>
+<time datetime="2013-09-11T00:00:00-05:00" pubdate data-updated="true">Sep 11<span>th</span>, 2013</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Chris Finn</span>
+  </span>
+
+</div>
+<h2 class="archive-title"><a href="/2013/09/project-lead-the-way/">Project Lead the Way</a></h2>
 
 
 
@@ -720,16 +697,7 @@
 
 <article class="archive-listing">
   
-<h2><a href="/2013/08/devacademy/">DevAcademy</a></h2>
-
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/michelle-brush"><span class="fn">Michelle Brush</span></a></span>
-
-
-
+<div class="archive-meta meta">
 
 
 
@@ -741,7 +709,16 @@
   
 
 
-<time datetime="2013-08-14T00:00:00-05:00" pubdate data-updated="true">Aug 14<span>th</span>, 2013</time>
+<time datetime="2013-08-26T00:00:00-05:00" pubdate data-updated="true">Aug 26<span>th</span>, 2013</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Kevin Shekleton and Frank Rydzewski</span>
+  </span>
+
+</div>
+<h2 class="archive-title"><a href="/2013/08/devcon/">DevCon</a></h2>
 
 
 
@@ -751,16 +728,7 @@
 
 <article class="archive-listing">
   
-<h2><a href="/2013/08/the-30-days-of-code-experiment/">The 30 Days of Code Experiment</a></h2>
-
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/carl-chesser"><span class="fn">Carl Chesser</span></a></span>
-
-
-
+<div class="archive-meta meta">
 
 
 
@@ -772,7 +740,16 @@
   
 
 
-<time datetime="2013-08-06T00:00:00-05:00" pubdate data-updated="true">Aug 6<span>th</span>, 2013</time>
+<time datetime="2013-08-14T00:00:00-05:00" pubdate data-updated="true">Aug 14<span>th</span>, 2013</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Michelle Brush</span>
+  </span>
+
+</div>
+<h2 class="archive-title"><a href="/2013/08/devacademy/">DevAcademy</a></h2>
 
 
 
@@ -782,16 +759,7 @@
 
 <article class="archive-listing">
   
-<h2><a href="/2013/07/thinking-in-mapreduce/">Thinking in MapReduce</a></h2>
-
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/ryan-brush"><span class="fn">Ryan Brush</span></a></span>
-
-
-
+<div class="archive-meta meta">
 
 
 
@@ -803,7 +771,16 @@
   
 
 
-<time datetime="2013-07-31T00:00:00-05:00" pubdate data-updated="true">Jul 31<span>st</span>, 2013</time>
+<time datetime="2013-08-06T00:00:00-05:00" pubdate data-updated="true">Aug 6<span>th</span>, 2013</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Carl Chesser</span>
+  </span>
+
+</div>
+<h2 class="archive-title"><a href="/2013/08/the-30-days-of-code-experiment/">The 30 Days of Code Experiment</a></h2>
 
 
 
@@ -813,16 +790,7 @@
 
 <article class="archive-listing">
   
-<h2><a href="/2013/04/first-robotics-championship-competition-in-st-louis/">FIRST Robotics Championship Competition in St. Louis</a></h2>
-
-  
-  
-
-
-  <span class="byline author vcard">Written by <span class="fn">Cerner Engineering</span></a></span>
-
-
-
+<div class="archive-meta meta">
 
 
 
@@ -834,7 +802,16 @@
   
 
 
-<time datetime="2013-04-23T00:00:00-05:00" pubdate data-updated="true">Apr 23<span>rd</span>, 2013</time>
+<time datetime="2013-07-31T00:00:00-05:00" pubdate data-updated="true">Jul 31<span>st</span>, 2013</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Ryan Brush</span>
+  </span>
+
+</div>
+<h2 class="archive-title"><a href="/2013/07/thinking-in-mapreduce/">Thinking in MapReduce</a></h2>
 
 
 
@@ -844,16 +821,7 @@
 
 <article class="archive-listing">
   
-<h2><a href="/2013/04/learn-what-the-rules-dont-cover/">Learn What the Rules Don&#8217;t Cover</a></h2>
-
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/paul-conklin"><span class="fn">Paul Conklin</span></a></span>
-
-
-
+<div class="archive-meta meta">
 
 
 
@@ -865,7 +833,16 @@
   
 
 
-<time datetime="2013-04-19T00:00:00-05:00" pubdate data-updated="true">Apr 19<span>th</span>, 2013</time>
+<time datetime="2013-04-23T00:00:00-05:00" pubdate data-updated="true">Apr 23<span>rd</span>, 2013</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Cerner Engineering</span>
+  </span>
+
+</div>
+<h2 class="archive-title"><a href="/2013/04/first-robotics-championship-competition-in-st-louis/">FIRST Robotics Championship Competition in St. Louis</a></h2>
 
 
 
@@ -875,16 +852,7 @@
 
 <article class="archive-listing">
   
-<h2><a href="/2013/04/ruby-at-cerner/">Ruby at Cerner</a></h2>
-
-  
-  
-
-
-  <span class="byline author vcard">Written by <span class="fn">Cerner Engineering</span></a></span>
-
-
-
+<div class="archive-meta meta">
 
 
 
@@ -896,7 +864,16 @@
   
 
 
-<time datetime="2013-04-05T00:00:00-05:00" pubdate data-updated="true">Apr 5<span>th</span>, 2013</time>
+<time datetime="2013-04-19T00:00:00-05:00" pubdate data-updated="true">Apr 19<span>th</span>, 2013</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Paul Conklin</span>
+  </span>
+
+</div>
+<h2 class="archive-title"><a href="/2013/04/learn-what-the-rules-dont-cover/">Learn What the Rules Don&#8217;t Cover</a></h2>
 
 
 
@@ -906,16 +883,7 @@
 
 <article class="archive-listing">
   
-<h2><a href="/2013/03/modularity-in-medical-imaging/">Modularity in Medical Imaging</a></h2>
-
-  
-  
-
-
-  <span class="byline author vcard">Written by <span class="fn">Cerner Engineering</span></a></span>
-
-
-
+<div class="archive-meta meta">
 
 
 
@@ -927,7 +895,16 @@
   
 
 
-<time datetime="2013-03-29T00:00:00-05:00" pubdate data-updated="true">Mar 29<span>th</span>, 2013</time>
+<time datetime="2013-04-05T00:00:00-05:00" pubdate data-updated="true">Apr 5<span>th</span>, 2013</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Cerner Engineering</span>
+  </span>
+
+</div>
+<h2 class="archive-title"><a href="/2013/04/ruby-at-cerner/">Ruby at Cerner</a></h2>
 
 
 
@@ -937,16 +914,7 @@
 
 <article class="archive-listing">
   
-<h2><a href="/2013/03/cerner-and-tycho/">Cerner and Tycho</a></h2>
-
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/jonny-wright"><span class="fn">Jonny Wright</span></a></span>
-
-
-
+<div class="archive-meta meta">
 
 
 
@@ -958,7 +926,16 @@
   
 
 
-<time datetime="2013-03-27T00:00:00-05:00" pubdate data-updated="true">Mar 27<span>th</span>, 2013</time>
+<time datetime="2013-03-29T00:00:00-05:00" pubdate data-updated="true">Mar 29<span>th</span>, 2013</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Cerner Engineering</span>
+  </span>
+
+</div>
+<h2 class="archive-title"><a href="/2013/03/modularity-in-medical-imaging/">Modularity in Medical Imaging</a></h2>
 
 
 
@@ -968,16 +945,7 @@
 
 <article class="archive-listing">
   
-<h2><a href="/2013/02/near-real-time-processing-over-hadoop-and-hbase/">Near Real-time Processing Over Hadoop and HBase</a></h2>
-
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/ryan-brush"><span class="fn">Ryan Brush</span></a></span>
-
-
-
+<div class="archive-meta meta">
 
 
 
@@ -989,7 +957,16 @@
   
 
 
-<time datetime="2013-02-27T00:00:00-06:00" pubdate data-updated="true">Feb 27<span>th</span>, 2013</time>
+<time datetime="2013-03-27T00:00:00-05:00" pubdate data-updated="true">Mar 27<span>th</span>, 2013</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Jonny Wright</span>
+  </span>
+
+</div>
+<h2 class="archive-title"><a href="/2013/03/cerner-and-tycho/">Cerner and Tycho</a></h2>
 
 
 
@@ -999,16 +976,7 @@
 
 <article class="archive-listing">
   
-<h2><a href="/2013/02/evangelizing-user-experience/">Evangelizing User Experience</a></h2>
-
-  
-  
-
-
-  <span class="byline author vcard">Written by <span class="fn">Cerner Engineering</span></a></span>
-
-
-
+<div class="archive-meta meta">
 
 
 
@@ -1020,7 +988,16 @@
   
 
 
-<time datetime="2013-02-12T00:00:00-06:00" pubdate data-updated="true">Feb 12<span>th</span>, 2013</time>
+<time datetime="2013-02-27T00:00:00-06:00" pubdate data-updated="true">Feb 27<span>th</span>, 2013</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Ryan Brush</span>
+  </span>
+
+</div>
+<h2 class="archive-title"><a href="/2013/02/near-real-time-processing-over-hadoop-and-hbase/">Near Real-time Processing Over Hadoop and HBase</a></h2>
 
 
 
@@ -1030,16 +1007,7 @@
 
 <article class="archive-listing">
   
-<h2><a href="/2013/02/why-engineering-health/">Why Engineering Health?</a></h2>
-
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/charlie-huggard"><span class="fn">Charlie Huggard</span></a></span>
-
-
-
+<div class="archive-meta meta">
 
 
 
@@ -1051,7 +1019,16 @@
   
 
 
-<time datetime="2013-02-04T00:00:00-06:00" pubdate data-updated="true">Feb 4<span>th</span>, 2013</time>
+<time datetime="2013-02-12T00:00:00-06:00" pubdate data-updated="true">Feb 12<span>th</span>, 2013</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Cerner Engineering</span>
+  </span>
+
+</div>
+<h2 class="archive-title"><a href="/2013/02/evangelizing-user-experience/">Evangelizing User Experience</a></h2>
 
 
 
@@ -1061,16 +1038,7 @@
 
 <article class="archive-listing">
   
-<h2><a href="/2013/02/composable-mapreduce-with-hadoop-and-crunch/">Composable MapReduce With Hadoop and Crunch</a></h2>
-
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/ryan-brush"><span class="fn">Ryan Brush</span></a></span>
-
-
-
+<div class="archive-meta meta">
 
 
 
@@ -1082,49 +1050,93 @@
   
 
 
-<time datetime="2013-02-03T00:00:00-06:00" pubdate data-updated="true">Feb 3<span>rd</span>, 2013</time>
+<time datetime="2013-02-04T00:00:00-06:00" pubdate data-updated="true">Feb 4<span>th</span>, 2013</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Charlie Huggard</span>
+  </span>
+
+</div>
+<h2 class="archive-title"><a href="/2013/02/why-engineering-health/">Why Engineering Health?</a></h2>
 
 
 
 </article>
 
 
+
+<article class="archive-listing">
   
+<div class="archive-meta meta">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-03T00:00:00-06:00" pubdate data-updated="true">Feb 3<span>rd</span>, 2013</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Ryan Brush</span>
+  </span>
+
+</div>
+<h2 class="archive-title"><a href="/2013/02/composable-mapreduce-with-hadoop-and-crunch/">Composable MapReduce With Hadoop and Crunch</a></h2>
+
+
+
 </article>
 
-<aside class="sidebar-nav span4">
+</div>
+<aside class="sidebar-nav span4" role="complementary">
   
     <section class="well">
   <h2>Recent Posts</h2>
   <ul id="recent_posts" class="nav nav-list">
     
-      <li class="post">
+      <li>
         <a href="/blog/deploying-web-services-with-apache-tomcat-and-chef/">Deploying Web Services With Apache Tomcat and Chef</a>
       </li>
     
-      <li class="post">
+      <li>
         <a href="/blog/girls-in-technology-movement-hour-of-code/">Girls in Technology Movement - Hour of Code</a>
       </li>
     
-      <li class="post">
+      <li>
         <a href="/blog/identifying-network-acl-issues-with-chef-locally/">Identifying Network ACL Issues With Chef Locally</a>
       </li>
     
-      <li class="post">
+      <li>
         <a href="/blog/javascript-logging-we-can-do-better/">JavaScript Logging: We Can Do Better!</a>
       </li>
     
-      <li class="post">
+      <li>
         <a href="/blog/managing-30000-logging-events-per-day-with-splunk/">Managing 30,000 Logging Events Per Day With Splunk</a>
       </li>
     
   </ul>
 </section>
-
+<section class="divider">
+  <svg width="70" height="10">
+   <rect width="10" height="10" x="0" y="0" style="fill:rgb(20,124,193)" />
+   <rect width="10" height="10" x="20" y="0" style="fill:rgb(121,193,68)" />
+   <rect width="10" height="10" x="40" y="0" style="fill:rgb(20,124,193)" />
+   <rect width="10" height="10" x="60" y="0" style="fill:rgb(121,193,68)" />
+</svg>
+</section>
 <section class="well">
   <h2>GitHub Repos</h2>
   <ul id="gh_repos" class="nav">
-    <li class="loading">Status updating...</li>
+    <li class="loading">Status updating&#8230;</li>
   </ul>
   
   <a href="https://github.com/cerner">@cerner</a> on GitHub
@@ -1154,12 +1166,40 @@
   
 </aside>
 
-
     </div>
   </div>
+  
+<script id="search-results-template" type="text/mustache">
+  {{#entries}}
+    <article class="search-result">
+        <div class="search-meta meta">
+        {{#date}}<time datetime="{{pubdate}}" pubdate>{{displaydate}}</time>{{/date}} | {{author}}
+        </div>
+        <a href="{{url}}">{{title}}</a>
+    </article>
+  {{/entries}}
+</script>
+
+<script type="text/javascript">
+  $(function() {
+    $('#search-query').lunrSearch({
+      indexUrl: '/javascripts/index.json',   // Url for the .json file containing search index data
+      results : '#search-results',  // selector for containing search results element
+      entries : '.entries',         // selector for search entries containing element (contained within results above)
+      template: '#search-results-template'  // selector for Mustache.js template
+    });
+  });
+</script>
   <footer role="contentinfo" class="page-footer">
-  <div class="container">
-    <p>&copy; 2016 Cerner</p>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="span2">
+          <img src="/images/cerner_small_logo_white.png" alt="Cerner Logo" />
+      </div>
+      <div class="span10 pull-left">
+          <p>&copy; 2016</p>
+      </div>
+    </div>
   </div>
 </footer>
 

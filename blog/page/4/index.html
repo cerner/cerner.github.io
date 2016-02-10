@@ -32,7 +32,7 @@
   <script src="/javascripts/libs/bootstrap.min.js"></script>
 
   <link href="/atom.xml" rel="alternate" title="Engineering Health" type="application/atom+xml">
-  
+  <script src="/javascripts/search.min.js" type="text/javascript" charset="utf-8"></script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -50,81 +50,72 @@
 </head>
 
 <body  class="top-navbar  ">
-  <header id="banner" class="navbar navbar-fixed-top" role="banner">
-  <div class="navbar-inner">
-    <div class="container">
+  <header id="banner" role="banner" class="container-fluid">
+
+  <div class="image">
+
+    
+      <img src="/images/KC.jpg" alt="Kansas City" />
+    
+
+    <div id="header1">Engineering Health<br/><span class="header2">A <b>Cerner</b> Blog</span></div>
+
+  </div>
+  <nav class="navbar navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Engineering Health</a>
       <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-
-      <a class="brand" href="/">
-        <img src="/images/logo2.png" title="Cerner Engineering Health">
-      </a>
-
-      <nav id="nav-main" class="nav-collapse" role="navigation">
-  <ul id="menu-top-menu" class="nav pull-right">
-    <li class="menu-life-as-an-engineer">
-      <a href="/about">Life as an Engineer</a>
-    </li>
-    <li class="menu-who-we-are">
-      <a href="/engineers">Who We Are</a>
-    </li>
-    <li>
-      <a href="/blog/archives">Archives</a>
-    </li>
-  </ul>      
-</nav>
-
-    </div>
-  </div>
-</header>
-
-<div class="container">
-  <div class="row">
-    <div class="span8 pull-left page-header">
-      <img class="site-header__img" src="/images/skyline2.png" alt="">    
-    </div>
-
-    
-      <div class="span4 pull-right"> 
-        <div id="search-form-wrapper">
-          <form class="form-search" id="searchform" role="search" action="https://google.com/search" method="get" >
-            <label class="hide" for="q">Search for:</label>
-            <input name="sitesearch" type="hidden" value="engineering.cerner.com" />
-            <input class="search-query" id="q" name="q" type="text" results="0" placeholder="Search">
-            <input class="btn" id="searchsubmit" type="submit" value="Search" >
-          </form>      
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li >
+            <a href="/">Blog</a>
+          </li>
+          <li >
+            <a href="/culture">Culture</a>
+          </li>
+          <li >
+            <a href="/tech_talks">Tech Talks</a>
+          </li>
+          <li >
+            <a href="/blog/archives">Archives</a>
+          </li>
+        </ul>
+        <div id="search" class="pull-right">
+          <form action="/search" method="get" class="navbar-search">
+            <input type="text" id="search-query" name="q" class="search-query" placeholder="Search" autocomplete="off">
+            <img src="/images/MagnifyingGlass.png" alt="Search" width="16" height="16" />
+          </form>
         </div>
       </div>
-    
+    </div>
   </div>
-</div>
+</nav>
+</header>
 
-  
-  <div class="container">
+
+  <div class="container-fluid post-container">
+    <div class="row-fluid">
+      <section class="span12" id="search-results" style="display: none;">
+  <h2>Search results</h2>
+  <div class="entries">
+  </div>
+</section>
+    </div>
     <div class="row-fluid">
       <div id="main" class="span8" role="main">
   
   
   
     <article class="entry">
-      
-  <header class="entry-header">
-    
-      <h1 class="entry-title"><a href="/2014/01/sponsoring-the-apache-software-foundation/">Sponsoring the Apache Software Foundation</a></h1>
-    
+        <header class="entry-header">
     
       <div class="entry-meta meta">
         
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/kevin-shekleton"><span class="fn">Kevin Shekleton</span></a></span>
-
- | 
 
 
 
@@ -136,42 +127,34 @@
   
 
 
-<time datetime="2014-01-28T00:00:00-06:00" pubdate data-updated="true">Jan 28<span>th</span>, 2014</time>
+<time datetime="2014-01-28T00:00:00-06:00" pubdate data-updated="true">Jan 28<span>th</span>, 2014</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Kevin Shekleton</span>
+  </span>
+
+
         
       </div>
     
+    <h1 class="entry-title"><a href="/2014/01/sponsoring-the-apache-software-foundation/">Sponsoring the Apache Software Foundation</a></h1>
   </header>
-
-
-  <div class="entry-content"><p>Open source plays an integral role within engineering at Cerner. In addition to using open source software throughout our architecture, we <a href="/2014/01/cerner-and-open-source/">recently released a few projects</a> back to the community via our <a href="https://github.com/cerner">Github organization</a>.</p>
-
-<p>Today, we’re happy to announce that <a href="http://www.apache.org/foundation/thanks.html">Cerner is now a sponsor</a> of the non-profit <a href="http://www.apache.org/">Apache Software Foundation</a> (ASF). The ASF is home to several projects that are essential components in many of our systems. We’ve blogged previously about several of these projects: <a href="/2013/02/composable-mapreduce-with-hadoop-and-crunch/">Hadoop, HBase, Crunch</a>, <a href="/2013/03/cerner-and-tycho/">Maven</a>, and <a href="/2013/02/near-real-time-processing-over-hadoop-and-hbase/">Storm</a>. In addition to these projects, there are dozens of other ASF projects that we use and have contributed to via patches and enhancements.</p>
-
-<p>Sponsoring the ASF allows us to show support for their mission and to ensure the ASF can continue to provide infrastructure and resources for the open source projects they host.</p>
-</div>
-  
-  
-
-
+  <div class="entry-content">
+    Open source plays an integral role within engineering at Cerner. In addition to using open source software throughout our architecture, we recently released a few projects back to the community via our Github organization. Today, we’re happy to announce that Cerner is now a sponsor of the non-profit Apache Software &hellip;
+    <footer>
+      <a rel="full-article" href="/2014/01/sponsoring-the-apache-software-foundation/">Read More</a>
+    </footer>
+  </div>
     </article>
   
   
     <article class="entry">
-      
-  <header class="entry-header">
-    
-      <h1 class="entry-title"><a href="/2014/01/the-raft-protocol-a-better-paxos/">The Raft Protocol: A Better Paxos?</a></h1>
-    
+        <header class="entry-header">
     
       <div class="entry-meta meta">
         
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/david-edwards"><span class="fn">David Edwards</span></a></span>
-
- | 
 
 
 
@@ -183,66 +166,34 @@
   
 
 
-<time datetime="2014-01-24T00:00:00-06:00" pubdate data-updated="true">Jan 24<span>th</span>, 2014</time>
+<time datetime="2014-01-24T00:00:00-06:00" pubdate data-updated="true">Jan 24<span>th</span>, 2014</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">David Edwards</span>
+  </span>
+
+
         
       </div>
     
+    <h1 class="entry-title"><a href="/2014/01/the-raft-protocol-a-better-paxos/">The Raft Protocol: A Better Paxos?</a></h1>
   </header>
-
-
-  <div class="entry-content"><p>Among the many compelling talks that attendees come to expect every year at the Strange Loop conference was a <a href="https://thestrangeloop.com/sessions/raft-the-understandable-distributed-protocol">session</a> given by Ben Johnson that provided an overview of a new distributed consensus protocol originating from research at Stanford University, named <a href="http://raftconsensus.github.io/">Raft</a>.</p>
-
-<h2>What is distributed consensus?</h2>
-
-<p>Distributed consensus can be described as the act of reaching agreement among a collection of machines cooperating to solve a problem. With the rise of open source distributed computing and storage platforms, consensus algorithms have become essential tools for replication, and thus, serve to enhance resiliency by eliminating single points of failure.</p>
-
-<p>Examples of distributed consensus in action can often be elusive because such protocols are ordinarily buried inside core systems, and consequently, are largely invisible to application developers. For example, a relational database in a clustered configuration would typically employ a consensus algorithm to coordinate commits with other replicas. And similarly, Apache ZooKeeper, a popular distributed synchronization service used in projects such as HBase and Solr, utilizes a consensus protocol to achieve fault-tolerance by replicating its configuration repository across many servers.</p>
-
-<h2>Raft is about understandability and practicality</h2>
-
-<p>The current Raft <a href="https://ramcloud.stanford.edu/wiki/download/attachments/11370504/raft.pdf">paper</a> argues that while <a href="http://en.wikipedia.org/wiki/Paxos_%28computer_science%29">Paxos</a> has historically dominated both academic and commercial discourse with respect to distributed consensus, the protocol itself is too complicated to reason about and that a more understandable algorithm was needed, not only for educational purposes, but also to serve as a foundation for building practical systems.</p>
-
-<p>An obvious question instinctively arises for the inquisitive reader: what makes Raft better than Paxos? Having personally implemented a replicated log using the Paxos algorithm, there was a natural curiosity in understanding how Raft approached the problem of solving consensus. It is worth noting, however, that comparing Raft and Paxos can be a bit misleading. Even though both address the fundamental problem of reaching consensus among a network of connected machines, Paxos is more academic in nature and primarily concerned with the mechanics of consensus, whereas Raft is oriented around the practical challenges of implementing a replicated log.</p>
-
-<h2>Paxos is about theory</h2>
-
-<p>The seminal work done by Leslie Lamport in 1989 with the design of the Paxos protocol was an important step forward in establishing a theoretical foundation for achieving consensus in asynchronous distributed systems. His contributions were largely academic and centered around reaching agreement on a single value, thus relying on software engineers to translate these ideas into practical solutions, such as replicated databases, which must decide on many values. However, the actual requirements necessary to build a real system, including areas such as leader election, failure detection, and log management, are not present in the Paxos specification, yet add a degree of complexity that almost always significantly alters the original protocol. This is precisely where the Raft designers correctly argue that the absence of specificity leads to great difficulty in applying Paxos to real world problems. A subsequent <a href="http://research.microsoft.com/en-us/um/people/lamport/pubs/paxos-simple.pdf">paper</a> by Lamport in 2001 does an excellent job of making the original protocol accessible to practitioners, and to some degree, proposes techniques for designing a replicated log, but it stops short of being prescriptive in the way that Raft does.</p>
-
-<h2>You say tomāto, I say tomäto</h2>
-
-<p>Raft is unique in many ways compared to typical Paxos implementations, but despite those differences, both are grounded in a similar set of core principles. For example, Raft requires leader election to occur strictly before any new values can be appended to the log, whereas a Paxos implementation would make the election process an implicit outcome of reaching agreement. The Raft designers claim that doing so has the consequence of simplifying log management, particularly with respect to edge cases in which a succession of leadership changes can result in log discrepancies, but the tradeoff is that leader election in Raft is more complicated than its counterpart in Paxos.</p>
-
-<p>What both protocols acknowledge, though, is that leader election is imperative if systems want to ensure progress. The notion of progress simply means that a system eventually does something useful. An important discovery in 1985, called the <a href="http://cs-www.cs.yale.edu/homes/arvind/cs425/doc/fischer.pdf">FLP Impossibility Result</a>, proved that consensus was impossible in asynchronous distributed systems with the presence of only one faulty process. The practical implication follows: a system that cannot reach consensus is a system that cannot make progress. To be clear, the finding did not state that consensus was unreachable, just that some executions cannot reach consensus in bounded time. As a consequence, leader election, combined with timeouts, is often used as a technique for eliminating a class of conditions under which reaching agreement could take an arbitrarily long period of time. Interestingly, the Paxos algorithm as originally described by Lamport, makes no guarantees about progress, so implementations are compelled to incorporate timeouts as a compensatory measure. Raft, on the other hand, is prescriptive about the use of timeouts.</p>
-
-<h2>Raft wins on accessibility</h2>
-
-<p>One especially interesting component of the Raft specification is the mechanism for coordinating changes to cluster membership. The protocol employs a novel approach in which joint consensus is reached using two overlapping majorities, i.e. quorums defined by both the old and new cluster configuration, thereby supporting dynamic elasticity without disruption to operations.</p>
-
-<p>The emergence of Raft has clearly seen a positive embrace by the software development community as evidenced by nearly 40 <a href="http://raftconsensus.github.io/#implementations">open source implementations</a> in a variety of different languages. Even though Paxos is beautifully elegant in describing the essence of distributed consensus, the absence of a comprehensive and prescriptive specification has rendered it inaccessible and notoriously difficult to implement in practical systems.</p>
-</div>
-  
-  
-
-
+  <div class="entry-content">
+    Among the many compelling talks that attendees come to expect every year at the Strange Loop conference was a session given by Ben Johnson that provided an overview of a new distributed consensus protocol originating from research at Stanford University, named Raft. What is distributed consensus? Distributed consensus can be &hellip;
+    <footer>
+      <a rel="full-article" href="/2014/01/the-raft-protocol-a-better-paxos/">Read More</a>
+    </footer>
+  </div>
     </article>
   
   
     <article class="entry">
-      
-  <header class="entry-header">
-    
-      <h1 class="entry-title"><a href="/2014/01/cerner-and-open-source/">Cerner and Open Source</a></h1>
-    
+        <header class="entry-header">
     
       <div class="entry-meta meta">
         
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/nathan-beyer"><span class="fn">Nathan Beyer</span></a></span>
-
- | 
 
 
 
@@ -254,54 +205,34 @@
   
 
 
-<time datetime="2014-01-16T00:00:00-06:00" pubdate data-updated="true">Jan 16<span>th</span>, 2014</time>
+<time datetime="2014-01-16T00:00:00-06:00" pubdate data-updated="true">Jan 16<span>th</span>, 2014</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Nathan Beyer</span>
+  </span>
+
+
         
       </div>
     
+    <h1 class="entry-title"><a href="/2014/01/cerner-and-open-source/">Cerner and Open Source</a></h1>
   </header>
-
-
-  <div class="entry-content"><p>(This post was written by Nathan Beyer, Bryan Baugher and Jacob Williams.)</p>
-
-<p>The use of open source software has become nearly ubiquitous in contemporary software development and it is no different for us, here at Cerner. We have been using open source software, directly and indirectly, for decades. Over the past decade, we’ve grown in maturity both in our use of open source software as well as our participation in open source communities. Our associates have long been contributors to open source communities, including helping users, logging bugs and enhancements, and submitting patches. Cerner associates also spearheaded the development of the <a href="http://wiki.directproject.org/Java+Reference+Implementation">Java Reference Implementation of the Direct Project</a>.</p>
-
-<p>Recently, we’ve decided to take another step in the open source journey by releasing complete projects on our <a href="https://github.com/cerner">Github organization</a>. Although these projects seem small, they are a big step for us and just the beginning of what we hope to open up and share in the future. We hope you’ll check out these projects and participate in their development.</p>
-
-<h2>Project: knife-tar</h2>
-
-<p>Source: [<a href="https://github.com/cerner/knife-tar">https://github.com/cerner/knife-tar</a>]</p>
-
-<p>Knife-tar is a <a href="http://www.getchef.com/chef/">Chef</a> tool for uploading and downloading Chef components from a tar file. It can be used for creating backups of your chef-server or for uploading released Chef artifacts from a repository.</p>
-
-<h2>Project: scrimp</h2>
-
-<p>Source: [<a href="https://github.com/cerner/scrimp">https://github.com/cerner/scrimp</a>]</p>
-
-<p>Scrimp is a tool for interactively testing <a href="http://thrift.apache.org/">Thrift</a> services in a web browser. It’s meant to fill the same role that browser-based REST clients fill for web services. Given the IDL files for the services, it provides a UI to help construct requests, invoke services, and display formatted responses.</p>
-</div>
-  
-  
-
-
+  <div class="entry-content">
+    (This post was written by Nathan Beyer, Bryan Baugher and Jacob Williams.) The use of open source software has become nearly ubiquitous in contemporary software development and it is no different for us, here at Cerner. We have been using open source software, directly and indirectly, for decades. Over the &hellip;
+    <footer>
+      <a rel="full-article" href="/2014/01/cerner-and-open-source/">Read More</a>
+    </footer>
+  </div>
     </article>
   
   
     <article class="entry">
-      
-  <header class="entry-header">
-    
-      <h1 class="entry-title"><a href="/2013/11/cerner-tech-talks/">Cerner Tech Talks</a></h1>
-    
+        <header class="entry-header">
     
       <div class="entry-meta meta">
         
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/kevin-shekleton"><span class="fn">Kevin Shekleton</span></a></span>
-
- | 
 
 
 
@@ -313,37 +244,31 @@
   
 
 
-<time datetime="2013-11-12T00:00:00-06:00" pubdate data-updated="true">Nov 12<span>th</span>, 2013</time>
+<time datetime="2013-11-12T00:00:00-06:00" pubdate data-updated="true">Nov 12<span>th</span>, 2013</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Kevin Shekleton</span>
+  </span>
+
+
         
       </div>
     
+    <h1 class="entry-title"><a href="/2013/11/cerner-tech-talks/">Cerner Tech Talks</a></h1>
   </header>
-
-
-  <div class="entry-content"><p>We are always looking for ways to share knowledge and learn new things within engineering at Cerner. Whether that be through meetups, lunch &amp; learns, conferences, or <a href="http://engineering.cerner.com/2013/08/devcon/">DevCon</a>, we have a variety of outlets available to us.</p>
-
-<p>Today, we’re announcing a new program we recently launched: Cerner Tech Talks.</p>
-
-<p>Cerner Tech Talks brings in great speakers for talks that would be of interest to engineers at Cerner. These talks will be held periodically and will vary widely in their content. Each talk will be recorded and available for viewing via our <a href="http://www.youtube.com/user/CernerEng">Cerner Engineering YouTube channel</a>.</p>
-
-<p>Last week, we held our first tech talk, which you can view below. <a href="http://www.robertvbinder.com/">Robert Binder</a>, an accomplished software testing expert, presented on model-driven development.</p>
-
-<iframe width="560" height="315" src="//www.youtube.com/embed/OSlm6F8YmKc" frameborder="0" allowfullscreen></iframe>
-
-</div>
-  
-  
-
-
+  <div class="entry-content">
+    We are always looking for ways to share knowledge and learn new things within engineering at Cerner. Whether that be through meetups, lunch &amp; learns, conferences, or DevCon, we have a variety of outlets available to us. Today, we’re announcing a new program we recently launched: Cerner Tech Talks. Cerner &hellip;
+    <footer>
+      <a rel="full-article" href="/2013/11/cerner-tech-talks/">Read More</a>
+    </footer>
+  </div>
     </article>
   
   <ul class="pager">
     
-    <li class="previous"><a href="/blog/page/5/">&larr; Older posts</a></li>
-    
-    <li><a href="/blog/archives">Blog Archives</a></li>
-    
-    <li class="next"><a href="/blog/page/3/">Newer posts &rarr;</a></li>
+    <li><a href="/blog/page/5/">Load More</a></li>
     
   </ul>
 </div>
@@ -353,29 +278,36 @@
   <h2>Recent Posts</h2>
   <ul id="recent_posts" class="nav nav-list">
     
-      <li class="post">
+      <li>
         <a href="/blog/deploying-web-services-with-apache-tomcat-and-chef/">Deploying Web Services With Apache Tomcat and Chef</a>
       </li>
     
-      <li class="post">
+      <li>
         <a href="/blog/girls-in-technology-movement-hour-of-code/">Girls in Technology Movement - Hour of Code</a>
       </li>
     
-      <li class="post">
+      <li>
         <a href="/blog/identifying-network-acl-issues-with-chef-locally/">Identifying Network ACL Issues With Chef Locally</a>
       </li>
     
-      <li class="post">
+      <li>
         <a href="/blog/javascript-logging-we-can-do-better/">JavaScript Logging: We Can Do Better!</a>
       </li>
     
-      <li class="post">
+      <li>
         <a href="/blog/managing-30000-logging-events-per-day-with-splunk/">Managing 30,000 Logging Events Per Day With Splunk</a>
       </li>
     
   </ul>
 </section>
-
+<section class="divider">
+  <svg width="70" height="10">
+   <rect width="10" height="10" x="0" y="0" style="fill:rgb(20,124,193)" />
+   <rect width="10" height="10" x="20" y="0" style="fill:rgb(121,193,68)" />
+   <rect width="10" height="10" x="40" y="0" style="fill:rgb(20,124,193)" />
+   <rect width="10" height="10" x="60" y="0" style="fill:rgb(121,193,68)" />
+</svg>
+</section>
 <section class="well">
   <h2>GitHub Repos</h2>
   <ul id="gh_repos" class="nav">
@@ -411,9 +343,38 @@
 
     </div>
   </div>
+  
+<script id="search-results-template" type="text/mustache">
+  {{#entries}}
+    <article class="search-result">
+        <div class="search-meta meta">
+        {{#date}}<time datetime="{{pubdate}}" pubdate>{{displaydate}}</time>{{/date}} | {{author}}
+        </div>
+        <a href="{{url}}">{{title}}</a>
+    </article>
+  {{/entries}}
+</script>
+
+<script type="text/javascript">
+  $(function() {
+    $('#search-query').lunrSearch({
+      indexUrl: '/javascripts/index.json',   // Url for the .json file containing search index data
+      results : '#search-results',  // selector for containing search results element
+      entries : '.entries',         // selector for search entries containing element (contained within results above)
+      template: '#search-results-template'  // selector for Mustache.js template
+    });
+  });
+</script>
   <footer role="contentinfo" class="page-footer">
-  <div class="container">
-    <p>&copy; 2016 Cerner</p>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="span2">
+          <img src="/images/cerner_small_logo_white.png" alt="Cerner Logo" />
+      </div>
+      <div class="span10 pull-left">
+          <p>&copy; 2016</p>
+      </div>
+    </div>
   </div>
 </footer>
 

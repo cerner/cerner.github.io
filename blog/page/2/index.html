@@ -32,7 +32,7 @@
   <script src="/javascripts/libs/bootstrap.min.js"></script>
 
   <link href="/atom.xml" rel="alternate" title="Engineering Health" type="application/atom+xml">
-  
+  <script src="/javascripts/search.min.js" type="text/javascript" charset="utf-8"></script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -50,81 +50,72 @@
 </head>
 
 <body  class="top-navbar  ">
-  <header id="banner" class="navbar navbar-fixed-top" role="banner">
-  <div class="navbar-inner">
-    <div class="container">
+  <header id="banner" role="banner" class="container-fluid">
+
+  <div class="image">
+
+    
+      <img src="/images/KC.jpg" alt="Kansas City" />
+    
+
+    <div id="header1">Engineering Health<br/><span class="header2">A <b>Cerner</b> Blog</span></div>
+
+  </div>
+  <nav class="navbar navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Engineering Health</a>
       <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-
-      <a class="brand" href="/">
-        <img src="/images/logo2.png" title="Cerner Engineering Health">
-      </a>
-
-      <nav id="nav-main" class="nav-collapse" role="navigation">
-  <ul id="menu-top-menu" class="nav pull-right">
-    <li class="menu-life-as-an-engineer">
-      <a href="/about">Life as an Engineer</a>
-    </li>
-    <li class="menu-who-we-are">
-      <a href="/engineers">Who We Are</a>
-    </li>
-    <li>
-      <a href="/blog/archives">Archives</a>
-    </li>
-  </ul>      
-</nav>
-
-    </div>
-  </div>
-</header>
-
-<div class="container">
-  <div class="row">
-    <div class="span8 pull-left page-header">
-      <img class="site-header__img" src="/images/skyline2.png" alt="">    
-    </div>
-
-    
-      <div class="span4 pull-right"> 
-        <div id="search-form-wrapper">
-          <form class="form-search" id="searchform" role="search" action="https://google.com/search" method="get" >
-            <label class="hide" for="q">Search for:</label>
-            <input name="sitesearch" type="hidden" value="engineering.cerner.com" />
-            <input class="search-query" id="q" name="q" type="text" results="0" placeholder="Search">
-            <input class="btn" id="searchsubmit" type="submit" value="Search" >
-          </form>      
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li >
+            <a href="/">Blog</a>
+          </li>
+          <li >
+            <a href="/culture">Culture</a>
+          </li>
+          <li >
+            <a href="/tech_talks">Tech Talks</a>
+          </li>
+          <li >
+            <a href="/blog/archives">Archives</a>
+          </li>
+        </ul>
+        <div id="search" class="pull-right">
+          <form action="/search" method="get" class="navbar-search">
+            <input type="text" id="search-query" name="q" class="search-query" placeholder="Search" autocomplete="off">
+            <img src="/images/MagnifyingGlass.png" alt="Search" width="16" height="16" />
+          </form>
         </div>
       </div>
-    
+    </div>
   </div>
-</div>
+</nav>
+</header>
 
-  
-  <div class="container">
+
+  <div class="container-fluid post-container">
+    <div class="row-fluid">
+      <section class="span12" id="search-results" style="display: none;">
+  <h2>Search results</h2>
+  <div class="entries">
+  </div>
+</section>
+    </div>
     <div class="row-fluid">
       <div id="main" class="span8" role="main">
   
   
   
     <article class="entry">
-      
-  <header class="entry-header">
-    
-      <h1 class="entry-title"><a href="/blog/managing-30000-logging-events-per-day-with-splunk/">Managing 30,000 Logging Events Per Day With Splunk</a></h1>
-    
+        <header class="entry-header">
     
       <div class="entry-meta meta">
         
-  
-  
-
-
-  <span class="byline author vcard">Written by <span class="fn">Mike Hemesath and Rima Poddar</span></a></span>
-
- | 
 
 
 
@@ -136,99 +127,34 @@
   
 
 
-<time datetime="2015-01-29T00:00:00-06:00" pubdate data-updated="true">Jan 29<span>th</span>, 2015</time>
+<time datetime="2015-01-29T00:00:00-06:00" pubdate data-updated="true">Jan 29<span>th</span>, 2015</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Mike Hemesath and Rima Poddar</span>
+  </span>
+
+
         
       </div>
     
+    <h1 class="entry-title"><a href="/blog/managing-30000-logging-events-per-day-with-splunk/">Managing 30,000 Logging Events Per Day With Splunk</a></h1>
   </header>
-
-
-  <div class="entry-content"><p>Our team works on a patient facing web application with a thousand live clients with 2,315,000+ users. On an average, the high traffic results into more than 40,000 visits and 300,000 page views daily generating about 30,000 logging events. A considerable portion of these events are of information and warning level in order to aid proactive monitoring or identify potential issues due to clients’ misconfiguration.</p>
-
-<h2>Before Splunk</h2>
-
-<p>To handle this large volume of logging, our team created a rotational support role to manually monitor the logs at regular intervals daily. We built a custom log viewer that would aggregate application logs and the engineer on the support role was expected to watch this tool manually to identify issues. Although we were able to identify problems such as bad client builds or service errors, it was not very efficient nor accurate in quickly determining end user impact stats. Since there was no way to tag previously identified and resolved issues, often times newer support engineers lacked knowledge to react to a problem. This led to unnecessary escalation and engagement of next tier support.</p>
-
-<p><strong>Below: Our old log aggregator used to identify the occurrences (2) of a log with the stack trace.</strong></p>
-
-<p><img class="center" src="/assets/2015-01-29-managing-30000-logging-events-per-day/Log-Aggregator.png"></p>
-
-<h2>Splunk Round 1</h2>
-
-<p>Once we migrated to Splunk we were very excited about the capabilities it offered, especially around searching and data visualization. In addition to searching logs more effectively, we were able to extract meaningful information from our logs unlike before. Splunk gave us the ability to identify client and end user impact down to the user id across all events in our logs [see image below]. This helped us gain more insight into our problems and trends in terms of impact to users. For a particular problem, we were able to quickly conclude whether all clients were affected, whether clients affected were over a virtual network only, and if the issue was isolated to a specific user. This information gave us the ability to determine the impact of issues coming into our logs, including the area of the site being impacted and frequency.</p>
-
-<p><strong>Below: Once we extracted meaningful fields in our logs, we could identify impact. In this case, an issue is spread across 9 orgs and and 28 users.</strong></p>
-
-<p><img class="center" src="/assets/2015-01-29-managing-30000-logging-events-per-day/Selected-Fields.png"></p>
-
-<p>Although we had crossed some of the hurdles which made log monitoring difficult shortly after moving to Splunk, monitoring logs for issues was still not an easy job. It was possible to overlook issues since there was no effective way of studying trends. Initially, we created dashboards which helped identify organizations having problems. This was slightly useful but failed to depict more important graphical representation of the different types of occurring issues for a particular client or for all clients at a given time.</p>
-
-<p><strong>Below: Reports like these weren&rsquo;t very helpful. Clients with more users tend to have more errors, so this trend doesn&rsquo;t necessarily indicate a client is experiencing a downtime.</strong></p>
-
-<p><img class="center" src="/assets/2015-01-29-managing-30000-logging-events-per-day/Report-users.png"></p>
-
-<h2>Splunk Round 2</h2>
-
-<p>It didn&rsquo;t take us long to realize that we had to get a better handle on our logs to stay on top of increasing traffic caused by a growing user base. Although we were able to identify frequently occurring errors, we still needed a more effective way to identify known issues, service issues, configuration issues and application issues. In order to do that, we needed something more meaningful than a stack trace to track issues.  We needed to tag events, and to do that, we turned to the eventtypes feature offered by Splunk.</p>
-
-<p>Eventtypes are applied at search time and allow you to create events to tag search results with. Because they are applied at search time, we were able to add new event types and have them applied historically throughout our logs. This also gave us the ability to tweak our event types to add more known issues as we continued identifying them. Once we successfully gauged a way to take advantage of eventtypes, we came up with a query that created a stacked timechart of eventtypes where eventtypes represented known issues. Once we reached the improved level of production monitoring, the following had to be done:</p>
-
-<ol>
-<li>Create an eventtype with least priority that catches all problems and label it &ldquo;Unknown Issue.&rdquo;</li>
-<li>Go through “Unknown Issues&#8221; and create prioritized eventtypes that describe the problem in english. Once an issue is logged in our bug tracking system, tag the eventtype with that id for easy tracking.</li>
-<li>Repeat daily.</li>
-</ol>
-
-
-<p><strong>Below: Eventtypes give us the ability to see known problems that happen over time. We can even see known problems broken down by client.</strong></p>
-
-<p><img class="center" src="/assets/2015-01-29-managing-30000-logging-events-per-day/Eventtype-1.png"></p>
-
-<p><img class="center" src="/assets/2015-01-29-managing-30000-logging-events-per-day/Eventtype-2.png"></p>
-
-<p>Once we had our frequently occurring problems categorized, we were able to break it down even further. We could identify problems caused by configuration in our application layer, problems that required escalation or if client side contacts needed to be engaged.</p>
-
-<p><strong>Below: We now have the ability to track impact to users from clients not taking a service package [left], or from improper Service Configuration [right].</strong></p>
-
-<p><img class="center" src="/assets/2015-01-29-managing-30000-logging-events-per-day/Impact-to-users-from-clients-1.png"></p>
-
-<p><img class="center" src="/assets/2015-01-29-managing-30000-logging-events-per-day/Impact-to-users-from-clients-2.png"></p>
-
-<h3>Alerting</h3>
-
-<p>We&rsquo;ve also started taking advantage of Splunk&rsquo;s alerting. With its powerful searching abilities, we have scheduled searches that trigger an alert when a particular condition is met. For example, when a client has misconfigured certain credentials that cause authentication errors all over the site, we can engage support immediately to get it resolved.</p>
-
-<h2>What&rsquo;s Next?</h2>
-
-<p>Although we have a better understanding of our logs now, it can get even better. We plan on continually categorizing our logs so that monitoring our system becomes really simple for everyone. Once all of our known issues are categorized, we wish to have a scheduled search that can identify anomalies in the logs. This would be highly beneficial to find out if a release introduces issues.</p>
-
-<p>Since our site is dependent on multiple services, most of the service problems are resolved by escalated support. We are currently working on identifying problems with known resolutions  along with  the people that need to be contacted to perform the resolution steps. Eventually we would like to send alerts/emails from Splunk to Cerner’s general support directly for these issues.</p>
-
-<p>We also plan on integrating Jira into splunk with the help of the Splunk Jira app. This will give us the ability to not only track issues in our logs, but also view their current status (investigation, assigned, fixed, resolved). This closes the loop on finding new issues, tracking their impact, and finally their resolution until the end. Splunk has been extremely exciting to work on and has been an invaluable asset to our team. We&rsquo;d love to continue the conversations on how we can improve our usage of Splunk and how others are using it as well.</p>
-</div>
-  
-  
-
-
+  <div class="entry-content">
+    Our team works on a patient facing web application with a thousand live clients with 2,315,000+ users. On an average, the high traffic results into more than 40,000 visits and 300,000 page views daily generating about 30,000 logging events. A considerable portion of these events are of information and warning &hellip;
+    <footer>
+      <a rel="full-article" href="/blog/managing-30000-logging-events-per-day-with-splunk/">Read More</a>
+    </footer>
+  </div>
     </article>
   
   
     <article class="entry">
-      
-  <header class="entry-header">
-    
-      <h1 class="entry-title"><a href="/blog/cerner-and-the-apache-software-foundation/">Cerner and the Apache Software Foundation</a></h1>
-    
+        <header class="entry-header">
     
       <div class="entry-meta meta">
         
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/kevin-shekleton"><span class="fn">Kevin Shekleton</span></a></span>
-
- | 
 
 
 
@@ -240,44 +166,34 @@
   
 
 
-<time datetime="2014-10-28T00:00:00-05:00" pubdate data-updated="true">Oct 28<span>th</span>, 2014</time>
+<time datetime="2014-10-28T00:00:00-05:00" pubdate data-updated="true">Oct 28<span>th</span>, 2014</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Kevin Shekleton</span>
+  </span>
+
+
         
       </div>
     
+    <h1 class="entry-title"><a href="/blog/cerner-and-the-apache-software-foundation/">Cerner and the Apache Software Foundation</a></h1>
   </header>
-
-
-  <div class="entry-content"><p>At the beginning of this year, <a href="/2014/01/sponsoring-the-apache-software-foundation/">we announced that Cerner became a bronze-level sponsor</a> of the non-profit <a href="http://www.apache.org/">Apache Software Foundation</a> (ASF). Many of the open source projects we use and contribute to are under the ASF umbrella, so supporting the mission and work of the ASF is important to us.</p>
-
-<p>We&rsquo;re happy to announce that <a href="http://www.apache.org/foundation/thanks.html">Cerner has now increased our sponsorship of the ASF to become a silver-level sponsor</a>. Open source continues to play an integral role in both our architecture and engineering culture. We&rsquo;ve blogged and spoken at conferences about how several ASF projects are core foundational components in our architecture and several of our <a href="http://www.youtube.com/playlist?list=PLSti19ysyJtDYa2JdSjVYWaKhuul1jPUP">tech talks</a> have focused on ASF projects.</p>
-
-<p>Further increasing our sponsorship of the ASF reaffirms our continued support for an organization that provides homes for numerous open source projects that are important not only to us, but the larger development community.</p>
-
-<p><a href="http://sponsor.apache.org/"><img class="center" src="/assets/2014-10-28-cerner-and-the-apache-software-foundation/asf-sponsorship-silver-logo.jpg" title="ASF Silver Sponsorship" ></a></p>
-</div>
-  
-  
-
-
+  <div class="entry-content">
+    At the beginning of this year, we announced that Cerner became a bronze-level sponsor of the non-profit Apache Software Foundation (ASF). Many of the open source projects we use and contribute to are under the ASF umbrella, so supporting the mission and work of the ASF is important to us. &hellip;
+    <footer>
+      <a rel="full-article" href="/blog/cerner-and-the-apache-software-foundation/">Read More</a>
+    </footer>
+  </div>
     </article>
   
   
     <article class="entry">
-      
-  <header class="entry-header">
-    
-      <h1 class="entry-title"><a href="/blog/closures-and-currying-in-javascript/">Closures & Currying in JavaScript</a></h1>
-    
+        <header class="entry-header">
     
       <div class="entry-meta meta">
         
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/rory-hardy"><span class="fn">Rory Hardy</span></a></span>
-
- | 
 
 
 
@@ -289,393 +205,34 @@
   
 
 
-<time datetime="2014-09-29T00:00:00-05:00" pubdate data-updated="true">Sep 29<span>th</span>, 2014</time>
+<time datetime="2014-09-29T00:00:00-05:00" pubdate data-updated="true">Sep 29<span>th</span>, 2014</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Rory Hardy</span>
+  </span>
+
+
         
       </div>
     
+    <h1 class="entry-title"><a href="/blog/closures-and-currying-in-javascript/">Closures & Currying in JavaScript</a></h1>
   </header>
-
-
-  <div class="entry-content"><h2>Preface</h2>
-
-<p>I have been asked many times what closures are and how they work. There are many resources available to learn this concept, but they are not always clear to everyone. This has led me to put together my own approach to exchanging the information.</p>
-
-<p>I will supply code samples. <code>//&gt;</code> denotes an output or return.</p>
-
-<p>Before discussing closures, it is important to review how functions work in JavaScript.</p>
-
-<h2>Introduction to functions</h2>
-
-<p>If a function does not have a return statement, it will implicitly return undefined, which brings us to the simplest functions.</p>
-
-<h3>Noop</h3>
-
-<p>Noop typically stands for no operation; it takes any parameters, does nothing with them, and returns undefined.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">noop</span><span class="p">()</span> <span class="p">{};</span>
-</span><span class='line'><span class="nx">noop</span><span class="p">(</span><span class="s2">&quot;cat&quot;</span><span class="p">);</span> <span class="c1">//&gt; undefined</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Identity</h3>
-
-<p>The identity function takes in a value and returns it.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">identity</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">return</span> <span class="nx">value</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="nx">identity</span><span class="p">(</span><span class="s2">&quot;cat&quot;</span><span class="p">);</span> <span class="c1">//&gt; &quot;cat&quot;</span>
-</span><span class='line'><span class="nx">identity</span><span class="p">({</span><span class="nx">a</span><span class="o">:</span> <span class="s2">&quot;dog&quot;</span><span class="p">});</span> <span class="c1">//&gt; Object {a: &quot;dog&quot;}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The important thing to note here is that the variable (value) passed in is bound to that function’s scope. This means that it is available to everything inside the function and is unavailable outside of it. There is an exception to this, being that objects are passed by reference which will prove useful with the use of closures and currying.</p>
-
-<h3>Functions that evaluate to functions</h3>
-
-<p>Functions are first class citizens in Javascript, which means that they are objects. Since they are objects, they can take functions as parameters, have methods bound to them,  and even return functions.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">return</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="nx">foo</span><span class="p">()();</span> <span class="c1">//&gt; true</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This is a function that returns a function which returns true.</p>
-
-<p><img class="center" src="/assets/2014-09-29-closures-and-currying-in-javascript/not_sure_if.jpg" title="Not sure if my function or a function from inside my function" ></p>
-
-<p>Functions take arguments and those arguments can be values or reference types, such as functions. If you return a function, it is that function you are returning, not a new one (even though it might have just been made to return).</p>
-
-<h2>Closures</h2>
-
-<p>Creating a closure is nothing more than accessing a variable outside of a function’s scope (using a variable that is neither bound on invocation or defined in the function body).</p>
-
-<p>To elaborate, the parent function’s variables are accessible to the inner function. If the inner function uses its parent’s (or parent’s parent’s and so on) variable(s) then they will persist in memory as long as the accessing functions(s) are still referenceable. In JavaScript, referenceable variables are not garbage collected.</p>
-
-<p>Let’s review the identity function:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">identity</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">a</span><span class="p">;</span> <span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The value, a, is bound inside of the function and is unavailable outside of it; there is no closure here.  For a closure to be present, there would need to be a function within this function that would access the variable a.</p>
-
-<p>Why is this important?</p>
-
-<ul>
-<li>Closures provide a way to associate data with a method that operates on that data.</li>
-<li>They enable private variables in a global world.</li>
-<li>Many patterns, including the fairly popular <a href="http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html">module pattern</a>, rely on closures to work correctly.</li>
-</ul>
-
-
-<p>Due to these strengths, and many more, closures are used everywhere. Many popular libraries utilize them internally.</p>
-
-<p><img class="center" src="/assets/2014-09-29-closures-and-currying-in-javascript/closures_everywhere.jpg" title="Closures! Closures everywhere!" ></p>
-
-<p>Let’s take a look at an example of closure in action:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="kd">function</span> <span class="nx">bar</span><span class="p">(</span><span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">);</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="nx">bar</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="nx">foo</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="c1">// will log 4 to the console</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The outer function (foo) takes a variable (x), which, which is bound to that function when invoked. When the internal function (bar) is invoked, x (2) and y (2) are added together then logged to the console as 4. Bar is able to access foo&rsquo;s x-variable because bar is created within foo&rsquo;s scope.</p>
-
-<p>The takeaway here is that bar can access foo’s variables because it was created within foo’s scope. A function can access variables in its scope and up the chain to the global scope. It cannot access other function’s scopes that are declared within it or parallel to it.</p>
-
-<p><img class="center" src="/assets/2014-09-29-closures-and-currying-in-javascript/question.jpg" title="Question, does a function inside a function mean you have a closure?" ></p>
-
-<p>No, a function inside of a function doesn&rsquo;t have to reference variables outside of its scope. Recall the example function which returned a function which evaluated to true:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="c1">// does something with x or not</span>
-</span><span class='line'>  <span class="k">return</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>      <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="nx">foo</span><span class="p">(</span><span class="mi">7</span><span class="p">)();</span> <span class="c1">//&gt; true</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>No matter what is passed to foo, a function that evaluates to true is returned.  A closure only exists when a function accesses a variable(s) outside of its immediate scope.</p>
-
-<p>This leads into an important implication about closures, they enable you to define a dataset once. We’re talking about private variables here.</p>
-
-<p>Without closures, you recreate the data per function call if you want to keep it private.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>  <span class="kd">var</span> <span class="kr">private</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">];</span> <span class="c1">// Imaginary large data set - instantiated per invocation</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kr">private</span><span class="p">);</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="nx">foo</span><span class="p">();</span> <span class="c1">//&gt; [0, 1, 2]</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>We can do better! With a closure, we can save it to a variable that is private, but only instantiated once.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">bar</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>  <span class="kd">var</span> <span class="kr">private</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">];</span> <span class="c1">// Same large imaginary data set - only instantiated once</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c1">// As long as this function exists, it has a reference to the private variable</span>
-</span><span class='line'>  <span class="k">return</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kr">private</span><span class="p">);</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">}());</span>
-</span><span class='line'>
-</span><span class='line'><span class="nx">bar</span><span class="p">();</span> <span class="c1">//&gt; [0, 1, 2]</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>By utilizing closure here, our big imaginary data set only has to be created once. Given the way garbage collection (automatic memory freeing) works in JavaScript, the existence of the internal function (which is returned and set to the variable bar) keeps the private variable from being freed and thus available for subsequent calls. This is really advantageous when you consider large data sets that may be created via Ajax requests which have to go over the network.</p>
-
-<h2>Currying</h2>
-
-<p><img class="center" src="/assets/2014-09-29-closures-and-currying-in-javascript/curry.jpg" title="Mmmm Curry!" ></p>
-
-<p>Currying is the process of transforming a function with many arguments into the same function with less arguments.</p>
-
-<p>That sounds cool, but why would I care about that?</p>
-
-<ul>
-<li>Currying can help you make higher order factories.</li>
-<li>Currying can help you avoid continuously passing the same variables.</li>
-<li>Currying can memorize various things including state.</li>
-</ul>
-
-
-<p>Let’s pretend that we have a function (curry) defined and set onto the function prototype which turns a function into a curried version of itself. Please note, that this is not a built in feature of JavaScript.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">msg</span><span class="p">(</span><span class="nx">msg1</span><span class="p">,</span> <span class="nx">msg2</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">return</span> <span class="nx">msg1</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nx">msg2</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="kd">var</span> <span class="nx">hello</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">curry</span><span class="p">(</span><span class="s1">&#39;Hello,&#39;</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hello</span><span class="p">(</span><span class="s1">&#39;Sarah Connor&#39;</span><span class="p">));</span> <span class="c1">// Hello, Sarah Connor. </span>
-</span><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">msg</span><span class="p">(</span><span class="s1">&#39;Goodbye,&#39;</span><span class="p">,</span> <span class="s1">&#39;Sarah Connor&#39;</span><span class="p">));</span> <span class="c1">// Goodbye, Sarah Connor. </span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>By currying the msg function so the first variable is cached as “Hello,”, we can call a simpler function, hello, that only requires one variable to be passed. Doesn’t this sound similar to what a closure might be used for?</p>
-
-<p>In the discussion of functional programming concepts, there is often a sense of resistance.</p>
-
-<p><img class="center" src="/assets/2014-09-29-closures-and-currying-in-javascript/not_going_to_happen.jpg" title="Stop trying to make functional programming happen. It's not going to happen!" ></p>
-
-<p>The thing is, you’ve probably already been functionally programming all along. If you use jQuery, you certainly already do.</p>
-
-<p><img class="center" src="/assets/2014-09-29-closures-and-currying-in-javascript/what_if_functional.jpg" title="What if I told you, you are already doing some functional programming." ></p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;some-selector&quot;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>  <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">fadeOut</span><span class="p">();</span>
-</span><span class='line'>  <span class="c1">// other stuff to justify the each</span>
-</span><span class='line'><span class="p">});</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><img class="center" src="/assets/2014-09-29-closures-and-currying-in-javascript/hide_all_the_things.jpg" title="HIDE ALL THE THINGS" ></p>
-
-<p>Another place you may have seen this is utilizing the map function for arrays.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">myArray</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">];</span>
-</span><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myArray</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">return</span> <span class="nx">val</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
-</span><span class='line'><span class="p">}));</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">//&gt; [0, 2, 4]</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Conclusion</h2>
-
-<p>We’ve seen some examples of closures and how they can be useful. We’ve seen what currying is and more importantly that you’ve likely already been functionally programming even if you didn’t realize it. There is a lot more to learn with closures and currying as well as functional programming.</p>
-
-<p>I ask you to:</p>
-
-<ol>
-<li>Work with closures and get the hang of them.</li>
-<li>Give currying a shot.</li>
-<li>Embrace functional programming as an additional tool that you can utilize to enhance your programs and development workflow.</li>
-</ol>
-
-
-<h2>Additional readings and inspirations</h2>
-
-<ul>
-<li><a href="https://leanpub.com/javascript-allonge/read">JavaScript Allongé</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures">MDN Closures</a></li>
-<li><a href="http://learn.jquery.com/javascript-101/closures/">jQuery &ndash; JavaScript 101 Closures</a></li>
-<li><a href="http://javascriptissexy.com/understand-javascript-closures-with-ease/">Understand JavaScript Closures With Ease</a></li>
-<li><a href="http://ejohn.org/blog/partial-functions-in-javascript/">Partial Application in JavaScript</a></li>
-<li><a href="http://www.crockford.com/javascript/www_svendtofte_com/code/curried_javascript/index.html">Curried JavaScript Functions</a></li>
-</ul>
-
-
-<h3>Bonus</h3>
-
-<p>Check out how you can utilize closure and currying to manage state throughout a stateful function:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">setFoo</span><span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="nx">state</span> <span class="o">===</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Specific state</span>
-</span><span class='line'>      <span class="k">return</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;State a for the win!&quot;</span><span class="p">);</span>
-</span><span class='line'>      <span class="p">};</span>
-</span><span class='line'>  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Default state</span>
-</span><span class='line'>      <span class="k">return</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Default state&quot;</span><span class="p">);</span>
-</span><span class='line'>      <span class="p">};</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>  <span class="c1">// Empty function since no state is desired. This avoids invocation errors.</span>
-</span><span class='line'>  <span class="k">return</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{};</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="nx">setFoo</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">);</span> <span class="c1">// Set to the specific state (a)</span>
-</span><span class='line'><span class="nx">foo</span><span class="p">();</span> <span class="c1">//&gt; &quot;State a for the win!&quot;;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nx">foo</span> <span class="o">=</span> <span class="nx">setFoo</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span> <span class="c1">// Set foo to its default state</span>
-</span><span class='line'><span class="nx">foo</span><span class="p">();</span> <span class="c1">//&gt; &quot;Default state&quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nx">foo</span> <span class="o">=</span> <span class="nx">setFoo</span><span class="p">();</span> <span class="c1">// Set foo to not do anything</span>
-</span><span class='line'><span class="nx">foo</span><span class="p">();</span> <span class="c1">//&gt; undefined</span>
-</span><span class='line'><span class="c1">// etc</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Bonus 2</h3>
-
-<p>Checkout how closures and currying can be used to create higher order functions to create methods on the fly: <a href="http://jsfiddle.net/GneatGeek/A9WRb/">http://jsfiddle.net/GneatGeek/A9WRb/</a></p>
-</div>
-  
-  
-
-
+  <div class="entry-content">
+    Preface I have been asked many times what closures are and how they work. There are many resources available to learn this concept, but they are not always clear to everyone. This has led me to put together my own approach to exchanging the information. I will supply code samples. &hellip;
+    <footer>
+      <a rel="full-article" href="/blog/closures-and-currying-in-javascript/">Read More</a>
+    </footer>
+  </div>
     </article>
   
   
     <article class="entry">
-      
-  <header class="entry-header">
-    
-      <h1 class="entry-title"><a href="/blog/intern-hackfest-2014/">Intern HackFest 2014</a></h1>
-    
+        <header class="entry-header">
     
       <div class="entry-meta meta">
         
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/makenzie-kalb"><span class="fn">Makenzie Kalb</span></a></span>
-
- | 
 
 
 
@@ -687,48 +244,31 @@
   
 
 
-<time datetime="2014-09-08T00:00:00-05:00" pubdate data-updated="true">Sep 8<span>th</span>, 2014</time>
+<time datetime="2014-09-08T00:00:00-05:00" pubdate data-updated="true">Sep 8<span>th</span>, 2014</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Makenzie Kalb</span>
+  </span>
+
+
         
       </div>
     
+    <h1 class="entry-title"><a href="/blog/intern-hackfest-2014/">Intern HackFest 2014</a></h1>
   </header>
-
-
-  <div class="entry-content"><p>Ten teams of two to four Cerner interns competed in a week-long HackFest this summer, working to solve any problem they put their minds to. This competition cumulated in a presentation and judging of projects, with prizes of Raspberry Pi Kits for each member of the second place team and Leap Motions for each member of the winning team. From mobile apps, to machine learning algorithms, to drones…this year’s Summer Intern HackFest has been one for the books.</p>
-
-<p><img class="center" src="/assets/2014-09-08-intern-hackfest-2014/Leap.png"></p>
-
-<p>We called ourselves Team Rubber Duck Dynasty, and it was made up of Umer Khan (University of Notre Dame), Ryan Boccabella (University of Notre Dame), MaKenzie Kalb (Vanderbilt University), and Jake Gould (University of Kansas).</p>
-
-<p>We were excited to get to work the first night when the week-long competition had commenced. Since the beginning of the summer, all of us had been impressed with the caliber of talent Cerner brought into the Software Engineer Internship program. All of the nine teams we were up against were made up of remarkably smart, driven college students from all over the country. One of the most difficult parts of the HackFest was deciding on an interesting and competitive project that could be feasibly completed in only a week (without too many sleepless nights). One of our four team members was a member of the iOS team, and convinced us that an iOS game was the way to go. We wanted to make a game that we would be excited to show our friends as well as the judges.</p>
-
-<p>We ended up building an app called Encore. It is a musical turn-based game revolving around the creation and mirroring of three second tunes between users. Tunes are created using four arpeggio based tones from real piano, guitar, or tenor trombone recordings. The initiating iOS device and sends the data to the Parse server using the Parse API for iOS. Parse stores this data on the server and sends a push notification to the receiving iOS device. Each time a new game is created, an activity is logged on the server to keep track of the game data.  When the receiving user selects the game, it downloads the game data from the server and starts the game. Once the app downloads the game data, it is programmed to decode an array of dictionaries of instrument key and time and convert the array into an audio playback; this allowed for faster upload and download times, as well as significantly smaller game data files. The receiving user hears and immediately attempts to replay the tune. Scoring is accomplished using a Needleman-Wunsch algorithm for sequence alignment. The receiving user now has their chance to create a tune, and the melodious competition continues.</p>
-
-<p>Over the week, we began to get to know our teammates even more than we probably wanted. Passion is the main word that comes to mind when we reminisce on this highlighting week of our summer. From the uncertainty when overhearing other groups huddled in a room talking excitedly about cutting-edge technologies, to the shrieks of excitement when a test finally passed that perhaps woke many a consulting intern roommate, this HackFest was filled with memories all around. As we went for a celebratory completion dinner the night before the presentations Monday morning, the satisfaction of completion was sweet in the air. Sitting there, playing our noisy pride and joy on our phones at the table, we agreed that the week was an excellent experience already…and we hadn’t even started the real judging yet.</p>
-
-<p><img class="center" src="/assets/2014-09-08-intern-hackfest-2014/Auditorium.png"></p>
-
-<p>Sound checks were full of nerves and excitement the morning we presented our project. The knowledge that each team had a mere five minutes to “sell” what had been more time consuming than sleep over the past week was a challenge everyone was hoping to ace. Later on that afternoon, when the esteemed judges Chris Finn, Michelle Brush, and Jenni Syed were announced as the event began, the caliber of the resources Cerner provides for their many interns was standing right in front of us. We heard from many enthusiastic, impressive groups that afternoon. The presentations showcased many feats of great teamwork and skill: a recommendation engine, dashboard for developers, chatting website, facial recognition android app, iOS game, machine learning algorithm, twitter-controlled drone, and music website.</p>
-
-<p>After a delicious ice cream break while scores were deliberated and after judges provided valuable feedback for each team, the moment of anticipation was upon us. All teams certainly completed the day with the ultimate reward of new skills learned, friends made, and a fantastic project that some are undoubtedly still building off of. As the first and second place teams were called to the stage, Team Rubber Duck Dynasty was surprised and thrilled to be among them. And as the runner up, Team Marky Mark and the Funky Bunch, received their Raspberry Pi Kits, we were amazed to find out each of us was taking home our very own Leap Motion.</p>
-
-<p><img class="center" src="/assets/2014-09-08-intern-hackfest-2014/group-photo.png"></p>
-
-<p>We returned to our actual teams late that afternoon, proud of our accomplishments and brand new owners of a cutting-edge technology. We received the congratulations of our superiors and mentors, many of whom were our biggest encouragers to participate and supporters throughout the week. The numerous empowered associates that have guided us through this summer have been an unbelievable community &ndash; a community that all of us are incredibly grateful to have been a part of.</p>
-</div>
-  
-  
-
-
+  <div class="entry-content">
+    Ten teams of two to four Cerner interns competed in a week-long HackFest this summer, working to solve any problem they put their minds to. This competition cumulated in a presentation and judging of projects, with prizes of Raspberry Pi Kits for each member of the second place team and &hellip;
+    <footer>
+      <a rel="full-article" href="/blog/intern-hackfest-2014/">Read More</a>
+    </footer>
+  </div>
     </article>
   
   <ul class="pager">
     
-    <li class="previous"><a href="/blog/page/3/">&larr; Older posts</a></li>
-    
-    <li><a href="/blog/archives">Blog Archives</a></li>
-    
-    <li class="next"><a href="/">Newer posts &rarr;</a></li>
+    <li><a href="/blog/page/3/">Load More</a></li>
     
   </ul>
 </div>
@@ -738,29 +278,36 @@
   <h2>Recent Posts</h2>
   <ul id="recent_posts" class="nav nav-list">
     
-      <li class="post">
+      <li>
         <a href="/blog/deploying-web-services-with-apache-tomcat-and-chef/">Deploying Web Services With Apache Tomcat and Chef</a>
       </li>
     
-      <li class="post">
+      <li>
         <a href="/blog/girls-in-technology-movement-hour-of-code/">Girls in Technology Movement - Hour of Code</a>
       </li>
     
-      <li class="post">
+      <li>
         <a href="/blog/identifying-network-acl-issues-with-chef-locally/">Identifying Network ACL Issues With Chef Locally</a>
       </li>
     
-      <li class="post">
+      <li>
         <a href="/blog/javascript-logging-we-can-do-better/">JavaScript Logging: We Can Do Better!</a>
       </li>
     
-      <li class="post">
+      <li>
         <a href="/blog/managing-30000-logging-events-per-day-with-splunk/">Managing 30,000 Logging Events Per Day With Splunk</a>
       </li>
     
   </ul>
 </section>
-
+<section class="divider">
+  <svg width="70" height="10">
+   <rect width="10" height="10" x="0" y="0" style="fill:rgb(20,124,193)" />
+   <rect width="10" height="10" x="20" y="0" style="fill:rgb(121,193,68)" />
+   <rect width="10" height="10" x="40" y="0" style="fill:rgb(20,124,193)" />
+   <rect width="10" height="10" x="60" y="0" style="fill:rgb(121,193,68)" />
+</svg>
+</section>
 <section class="well">
   <h2>GitHub Repos</h2>
   <ul id="gh_repos" class="nav">
@@ -796,9 +343,38 @@
 
     </div>
   </div>
+  
+<script id="search-results-template" type="text/mustache">
+  {{#entries}}
+    <article class="search-result">
+        <div class="search-meta meta">
+        {{#date}}<time datetime="{{pubdate}}" pubdate>{{displaydate}}</time>{{/date}} | {{author}}
+        </div>
+        <a href="{{url}}">{{title}}</a>
+    </article>
+  {{/entries}}
+</script>
+
+<script type="text/javascript">
+  $(function() {
+    $('#search-query').lunrSearch({
+      indexUrl: '/javascripts/index.json',   // Url for the .json file containing search index data
+      results : '#search-results',  // selector for containing search results element
+      entries : '.entries',         // selector for search entries containing element (contained within results above)
+      template: '#search-results-template'  // selector for Mustache.js template
+    });
+  });
+</script>
   <footer role="contentinfo" class="page-footer">
-  <div class="container">
-    <p>&copy; 2016 Cerner</p>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="span2">
+          <img src="/images/cerner_small_logo_white.png" alt="Cerner Logo" />
+      </div>
+      <div class="span10 pull-left">
+          <p>&copy; 2016</p>
+      </div>
+    </div>
   </div>
 </footer>
 

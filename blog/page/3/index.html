@@ -32,7 +32,7 @@
   <script src="/javascripts/libs/bootstrap.min.js"></script>
 
   <link href="/atom.xml" rel="alternate" title="Engineering Health" type="application/atom+xml">
-  
+  <script src="/javascripts/search.min.js" type="text/javascript" charset="utf-8"></script>
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -50,81 +50,72 @@
 </head>
 
 <body  class="top-navbar  ">
-  <header id="banner" class="navbar navbar-fixed-top" role="banner">
-  <div class="navbar-inner">
-    <div class="container">
+  <header id="banner" role="banner" class="container-fluid">
+
+  <div class="image">
+
+    
+      <img src="/images/KC.jpg" alt="Kansas City" />
+    
+
+    <div id="header1">Engineering Health<br/><span class="header2">A <b>Cerner</b> Blog</span></div>
+
+  </div>
+  <nav class="navbar navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Engineering Health</a>
       <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-
-      <a class="brand" href="/">
-        <img src="/images/logo2.png" title="Cerner Engineering Health">
-      </a>
-
-      <nav id="nav-main" class="nav-collapse" role="navigation">
-  <ul id="menu-top-menu" class="nav pull-right">
-    <li class="menu-life-as-an-engineer">
-      <a href="/about">Life as an Engineer</a>
-    </li>
-    <li class="menu-who-we-are">
-      <a href="/engineers">Who We Are</a>
-    </li>
-    <li>
-      <a href="/blog/archives">Archives</a>
-    </li>
-  </ul>      
-</nav>
-
-    </div>
-  </div>
-</header>
-
-<div class="container">
-  <div class="row">
-    <div class="span8 pull-left page-header">
-      <img class="site-header__img" src="/images/skyline2.png" alt="">    
-    </div>
-
-    
-      <div class="span4 pull-right"> 
-        <div id="search-form-wrapper">
-          <form class="form-search" id="searchform" role="search" action="https://google.com/search" method="get" >
-            <label class="hide" for="q">Search for:</label>
-            <input name="sitesearch" type="hidden" value="engineering.cerner.com" />
-            <input class="search-query" id="q" name="q" type="text" results="0" placeholder="Search">
-            <input class="btn" id="searchsubmit" type="submit" value="Search" >
-          </form>      
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li >
+            <a href="/">Blog</a>
+          </li>
+          <li >
+            <a href="/culture">Culture</a>
+          </li>
+          <li >
+            <a href="/tech_talks">Tech Talks</a>
+          </li>
+          <li >
+            <a href="/blog/archives">Archives</a>
+          </li>
+        </ul>
+        <div id="search" class="pull-right">
+          <form action="/search" method="get" class="navbar-search">
+            <input type="text" id="search-query" name="q" class="search-query" placeholder="Search" autocomplete="off">
+            <img src="/images/MagnifyingGlass.png" alt="Search" width="16" height="16" />
+          </form>
         </div>
       </div>
-    
+    </div>
   </div>
-</div>
+</nav>
+</header>
 
-  
-  <div class="container">
+
+  <div class="container-fluid post-container">
+    <div class="row-fluid">
+      <section class="span12" id="search-results" style="display: none;">
+  <h2>Search results</h2>
+  <div class="entries">
+  </div>
+</section>
+    </div>
     <div class="row-fluid">
       <div id="main" class="span8" role="main">
   
   
   
     <article class="entry">
-      
-  <header class="entry-header">
-    
-      <h1 class="entry-title"><a href="/blog/the-plain-text-is-a-lie/">The Plain Text Is a Lie</a></h1>
-    
+        <header class="entry-header">
     
       <div class="entry-meta meta">
         
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/elliott-hoffman"><span class="fn">Elliott Hoffman</span></a></span>
-
- | 
 
 
 
@@ -136,378 +127,34 @@
   
 
 
-<time datetime="2014-08-02T00:00:00-05:00" pubdate data-updated="true">Aug 2<span>nd</span>, 2014</time>
+<time datetime="2014-08-02T00:00:00-05:00" pubdate data-updated="true">Aug 2<span>nd</span>, 2014</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Elliott Hoffman</span>
+  </span>
+
+
         
       </div>
     
+    <h1 class="entry-title"><a href="/blog/the-plain-text-is-a-lie/">The Plain Text Is a Lie</a></h1>
   </header>
-
-
-  <div class="entry-content"><h2>There is no such thing as plain text</h2>
-
-<p>&ldquo;But I see .txt files all the time&rdquo; you say. &ldquo;My source code is plain text&rdquo; you claim. &ldquo;What about web pages?!&rdquo; you frantically ask. True, each of those things is comprised of text. The <em>plain</em> part is the problem. Plain denotes default or normal. There is no such thing. Computers store and transmit data in a number of methods; each are anything but <em>plain</em>. If you write software, design websites or test systems where even a single character of text is accepted as input, displayed as output, transmitted to another system or stored for later &ndash; please read on to learn why the plain text is a lie!</p>
-
-<p>The topic of text handling applies to many disciplines:</p>
-
-<ul>
-<li><strong>UX/web designers</strong> &ndash; Your UX is the last mile of displaying text to users.</li>
-<li><strong>API developers</strong> &ndash; Your APIs should tell your consumers what languages, encodings and character sets your service supports.</li>
-<li><strong>DBAs</strong> &ndash; You should know what kinds of text your database can handle.</li>
-<li><strong>App developers</strong> &ndash; You apps should not crash when non-English characters are encountered.</li>
-</ul>
-
-
-<p>After reading this article you will …</p>
-
-<ul style="list-style-type: none;">
-  <li>… understand why text encodings are important.</li>
-  <li>… have some best practices for handling text in your tool belt.</li>
-  <li>… know a bit about how computers deal with text.</li>
-</ul>
-
-
-<p>This topic has been extensively written about already. I highly recommend reading Joel Spolsky&rsquo;s <a href="http://www.joelonsoftware.com/articles/Unicode.html">The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)</a>. You should also read up on how your system handles strings. Then, go read how the APIs you talk to send/receive strings. Pythonistas, check out Ned Batchelder&rsquo;s <a href="http://nedbatchelder.com/text/unipain.html">Pragmatic Unicode</a> presentation.</p>
-
-<p>OK, let&rsquo;s get started!</p>
-
-<h2>Part I &ndash; Gallery of FAIL or &ldquo;When text goes wrong, by audience&rdquo;</h2>
-
-<p>Let&rsquo;s start off by demonstrating how text handling can fail, and fail hard. The following screen shots and snippets show some of the ways text handling can fail and who should care about the type of failure.</p>
-
-<h3>UX and web people</h3>
-
-<p><img class="center" src="/assets/2014-08-02-the-plain-text-is-a-lie/resume.jpeg" title="Resumé Wikipedia article rendered in the wrong encoding" ></p>
-
-<p>The above image shows the English wikipedia article on <a href="http://en.wikipedia.org/wiki/R%C3%A9sum%C3%A9">Résumés</a> with garbled text. Garbled text can happen if your web pages don&rsquo;t specify an encoding or character set in your markup. Specifying the <em>wrong</em> encoding can also cause garbled text. XML and JavaScript need correct character sets too. It&rsquo;s important to note that <em>no error or exception was raised here</em>. The text looks wrong to the user, but the failure happens silently.</p>
-
-<p><img class="center" src="/assets/2014-08-02-the-plain-text-is-a-lie/tokyo.jpeg" title="Tokyo Wikipedia article Aramaic translation" ></p>
-
-<p>This <a href="http://arc.wikipedia.org/wiki/%DC%9B%DC%98%DC%A9%DC%9D%DC%98">article on Tokyo</a> above is displayed in a language (Aramaic) that my fonts don&rsquo;t support. Instead of a symbol, we see a box with a number identifying the un-showable character. If you think that example is too contrived, here is a more commonly used symbol: a <a href="http://www.fileformat.info/info/unicode/char/1d161/browsertest.htm">16th note from sheet music</a>. Many perfectly valid characters are not supported by widely used fonts. Specialized web fonts might not support the characters you need.</p>
-
-<p><img class="center" src="/assets/2014-08-02-the-plain-text-is-a-lie/music.jpeg" title="Music note character test page" ></p>
-
-<h3>API developers</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>//Fetch the Universal Declaration of Human Rights in Arabic
-</span><span class='line'>documentAPIClient.getTitle(docID=123)</span></code></pre></td></tr></table></div></figure>
-
-
-<p><img class="center" src="/assets/2014-08-02-the-plain-text-is-a-lie/mojibake1.png" title="Mojibake example 1" ></p>
-
-<p>The result of this API call (<a href="http://en.wikipedia.org/wiki/Mojibake#Example">example source</a>) is similar to the last two examples: nonsense text. This can happen if the client and server use different text encodings. By the way, this situation happens so often that there&rsquo;s a term for it: <a href="https://en.wikipedia.org/wiki/Mojibake">Mojibake</a>.</p>
-
-<p>Here are some client/server scenarios resulting in Mojibake:</p>
-
-<ul>
-<li>The server didn&rsquo;t document their encoding and the client guessed the wrong encoding.</li>
-<li>The server or client inherit the encoding of their execution environment (virtual machine, OS, parent process, etc.), but the execution environment&rsquo;s settings changed from their original values.</li>
-</ul>
-
-
-<h3>DBAs</h3>
-
-<p><img class="center" src="/assets/2014-08-02-the-plain-text-is-a-lie/mojibake2.png" title="Mojibake example 2" ></p>
-
-<p>Database systems can be misconfigured such that characters sent to the database are not stored accurately. In this example, the offending characters are replaced with the imaginatively-named <em>Replacement Character</em> (&ldquo;�&rdquo;). The original characters are forever lost. Worse still, replacement characters will be returned by your queries and ultimately shown to your users. Sometimes, offending characters will be omitted from the stored value or replaced with a nearest match supported character. In both scenarios the database has mangled the original data.</p>
-
-<h3>App developers</h3>
-
-<p><img class="center" src="/assets/2014-08-02-the-plain-text-is-a-lie/stack-trace.png" title="Unicode encoding error traceback" ></p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="n">org</span><span class="o">.</span><span class="n">scalatest</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="nc">TestFailedException</span><span class="k">:</span> <span class="err">&quot;</span><span class="kt">d</span><span class="o">[</span><span class="kt">Ã©</span><span class="o">]</span><span class="n">funt</span><span class="s">&quot; did not equal &quot;</span><span class="n">d</span><span class="o">[</span><span class="kt">é</span><span class="o">]</span><span class="n">funt</span><span class="err">&quot;</span>
-</span><span class='line'><span class="n">at</span> <span class="n">org</span><span class="o">.</span><span class="n">scalatest</span><span class="o">.</span><span class="nc">MatchersHelper</span><span class="n">$</span><span class="o">.</span><span class="n">newTestFailedException</span><span class="o">(</span><span class="nc">MatchersHelper</span><span class="o">.</span><span class="n">scala</span><span class="k">:</span><span class="err">160</span><span class="o">)</span>
-</span><span class='line'><span class="o">...</span>
-</span><span class='line'><span class="n">at</span> <span class="n">sun</span><span class="o">.</span><span class="n">reflect</span><span class="o">.</span><span class="nc">NativeMethodAccessorImpl</span><span class="o">.</span><span class="n">invoke</span><span class="o">(</span><span class="nc">NativeMethodAccessorImpl</span><span class="o">.</span><span class="n">java</span><span class="k">:</span><span class="err">39</span><span class="o">)</span>
-</span><span class='line'><span class="n">at</span> <span class="n">com</span><span class="o">.</span><span class="n">intellij</span><span class="o">.</span><span class="n">rt</span><span class="o">.</span><span class="n">execution</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="nc">AppMain</span><span class="o">.</span><span class="n">main</span><span class="o">(</span><span class="nc">AppMain</span><span class="o">.</span><span class="n">java</span><span class="k">:</span><span class="err">134</span><span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The top image shows the 500 page of an app that crashed when improperly encoding. In the Scala error message (bottom), a property file was read in <a href="https://en.wikipedia.org/wiki/ISO/IEC_8859-1">ISO-8859-1</a> encoding but had UTF-8 encoded bytes in it. This caused the unit test to fail.</p>
-
-<p>Your source code, web pages, properties files, and any other text artifact you work with has an encoding. Every tool in your development tool chain (local server, terminal, editor, browser, CI system, etc.) is a potential failure point if these encodings are not honoroed.</p>
-
-<h2>Part II &ndash; Avoid text handling problems</h2>
-
-<h3>Ghost in the machine</h3>
-
-<p>You&rsquo;ve seen examples of failure and (hopefully) are wondering how such failures can be avoided. To avoid failure you must ask yourself one question: &ldquo;Can my system store and transmit a ghost?&rdquo;</p>
-
-<p><img class="center" src="/assets/2014-08-02-the-plain-text-is-a-lie/ghost.png" title="GHOST unicode character" ></p>
-
-<p><em>GHOST</em> (code point <a href="http://codepoints.net/U+1F47B">U+1F47B</a>) is a valid (albeit weird) part of the <a href="http://www.unicode.org/standard/WhatIsUnicode.html">Unicode</a> standard. Unicode is a system of storing and manipulating text that supports thousands of languages.  Using Unicode properly will go a long way to prevent text handling problems. Thus, if your system can store, transmit, read and write GHOST then you&rsquo;re doing it right. But how to handle this GHOST?</p>
-
-<h3>Some Terminology</h3>
-
-<p>You need to know some terms before the rest of this article will make any sense.</p>
-
-<dl>
-  <dt>Unicode object</dt>
-  <dd>A datatype that lets you operate on Unicode text.</dd>
-
-  <dt>Byte-string</dt>
-  <dd>A sequence of bytes (octets).</dd>
-
-  <dt>Encode</dt>
-  <dd>To turn a Unicode object into a byte-string, where the bytes follow an encoding.</dd>
-
-  <dt>Encoding (noun)</dt>
-  <dd>A standard about what a byte means, like: <em>When you see 01000001, it means &#8220;A&#8221;</em>.</dd>
-
-  <dt>Decode</dt>
-  <dd>The inverse operation of encode. To turn a byte-string of a certain encoding into a Unicode object.</dd>
-</dl>
-
-
-<p>Remembering the difference between <em>encode</em> and <em>decode</em> can be difficult. One trick to keep them straight is to think of Unicode objects as the ideal state of being (thanks, <a href="http://www.joelonsoftware.com/articles/Unicode.html">Joel Spolksy</a>) and byte-strings as strange, cryptic sequences. Encoding turns the ideal into a bunch of cryptic bytes, while decoding un-weirds a bunch of bytes back into the ideal state; something we can reason about. Some systems use different terms but the ideas still apply. For example: Java Strings are Unicode objects and you can encode/decode to/from byte-strings with them.</p>
-
-<p>Now that you&rsquo;ve got the necessary terminology under your belt, let&rsquo;s prevent text handling problems in our system by making a sandwich; a Unicode sandwich!</p>
-
-<h2>Make a Unicode sandwich</h2>
-
-<p><em>Analogy credit</em>: <a href="http://nedbatchelder.com/">Ned Batchelder</a> coined the Unicode sandwich analogy in his <a href="http://nedbatchelder.com/text/unipain.html">Pragmatic Unicode</a> presentation at PyCon 2012 (<a href="http://youtu.be/sgHbC6udIqc">video</a>). It&rsquo;s so clever that I can&rsquo;t resist re-using it in this article!</p>
-
-<p>  <img class="center" src="/assets/2014-08-02-the-plain-text-is-a-lie/unicode-sandwich.png" title="The unicode sandwich" >
-  <a href="http://www.flickr.com/photos/nofeel/4106942084/">Original image</a></p>
-
-<p>In this analogy the pieces of bread on the top and bottom are regions of your code where you deal with byte-strings. The meat in the middle is where your system deals in Unicode objects. The top bread is input into your system such as database query results, file reads or HTTP responses. The bottom bread is output from your system such as writing files or sending HTTP responses. The meat is your business logic.</p>
-
-<h3>Good sandwiches are meaty</h3>
-
-<p>Your goal is to keep the bread thin and the meat thick. You can achieve this by decoding from byte-strings to Unicode objects as early as you can; perhaps immediately after arrival from another system. Similarly, you should do your encoding from Unicode objects into byte-strings at the last possible moment, such as right before transmitting text to another system.</p>
-
-<p>Working with Unicode inside your system gives you a common ground of text handling that will largely avoid the errors we&rsquo;ve seen at the top of this article. If you don&rsquo;t deal in Unicode inside your system then you are limiting the languages you support at best and exposing yourself to text handling bugs at worst!</p>
-
-<h3>The best sandwich bread is UTF-8</h3>
-
-<p>Your system ultimately needs to send and receive byte-strings at some point, so you must choose an encoding for your byte-strings. Encodings are not created equal! Some encodings only support one language. Some support only similar languages (for example, German and French but not Arabic). Never assume your system will only encounter languages you speak or write! Ideally you will choose encodings that support a great many languages.</p>
-
-<p>UTF-8 is the best general purpose encoding for your byte-strings. You&rsquo;ll learn why UTF-8 is an excellent encoding choice later in this article in the <em>Unicode: One standard to rule them all</em> section. For now I recommend you:</p>
-
-<ul>
-<li>Choose UTF-8 for all byte-strings.</li>
-<li>Configure your system to use this encoding explicitly. Do not rely on the parent system (OS, VM, etc.) to provide an encoding since system settings might change over time.</li>
-<li>Document your encoding choice in both public facing and internal documentation.</li>
-</ul>
-
-
-<p>The UTF-8 encoding supports all the text you&rsquo;d ever want. Yet, in this imperfect world you might be forced to use a more limited encoding such as ISO-8859-1 or Windows-1252 when interfacing with other systems. Working with a limited encoding presents problems when decoding to and encoding from Unicode: not every encoding supports the full Unicode range of characters. You must test how your system converts between your byte-strings and Unicode objects. In other words, <em>test between the meat and the bread</em>.</p>
-
-<h3>Testing between the meat and the bread</h3>
-
-<p>The critical areas to test are where bytes strings are decoded to Unicode objects and where Unicode objects are encoded into byte-strings. If you&rsquo;ve followed the advice of this article thus far then the rest of your app logic should operate exclusively in Unicode objects. Here is a handy table of how to test regions of your system that encode and decode:</p>
-
-<table border="1" style="line-height:20px;">
-  <thead><tr><td><strong>Scenario</strong></td><td><strong>Test Strategy</strong></td></tr></thead>
-  <tbody>
-    <tr>
-      <td>My input encoding doesn&#8217;t support full Unicode.</td>
-      <td>Test that non-English<span style="font-size:10px; line-height:15px">†</span> characters are faithfully decoded to Unicode.</td>
-    </tr>
-    <tr>
-      <td>My output encoding doesn&#8217;t support full Unicode.</td>
-      <td>
-        <p>Test that supported non-English characters are faithfully encoded to byte-strings.</p>
-        <p>Test that your system behaves correctly<span style="font-size:10px; line-height:15px">‡</span> when asked to encode un-supported characters.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>My input(output) encoding supports full Unicode.</td>
-      <td>Test that non-English characters are faithfully decoded(decoded) to(from) Unicode.</td>
-    </tr>
-  </tbody>
-</table>
-
-
-
-
-<p style="font-size:10px; line-height:15px">† English characters and Arabic numerals (0 - 9) are bad test cases because their byte values are identical across many encodings.</p>
-
-
-
-
-<p style="font-size:10px; line-height:15px">‡ <em>Correctly</em> is in the eye of the beholder. Some systems choose to raise an exception. Others choose to replace the offending character with a replacement character. Lastly, some systems simply omit the offending character. The choice is up to you, but they&#8217;re all terrible. Seriously, just use UTF-8.</p>
-
-
-<h3>Unicode sandwich applies to new projects and legacy systems</h3>
-
-<p>Using UTF-8 for I/O, Unicode inside and testing the in-between points will save you from pain and bugs. If you&rsquo;re building a new system then you have the opportunity to design it with Unicode in mind. If you have an existing system, it is worth your time to audit how your system handles text.</p>
-
-<p>With the practical stuff out of the way, let&rsquo;s dive deeper into computers and text!</p>
-
-<h2>Part III &ndash; Encodings, Unicode and how computers handle text</h2>
-
-<p>We&rsquo;ve talked about how you should use Unicode, encodings and byte-strings in your system to handle text. You may be wondering why text handling is so painful at times. Why are there so many encodings and why don&rsquo;t they all work together in harmony? I&rsquo;ll attempt to explain a bit of history behind text handling in computers. Understanding this history should shed some light on why text handling can be so painful.</p>
-
-<p>To make things interesting, let&rsquo;s pretend we are inventing how computers will handle text. Also assume we live in the United States and speak only English. That&rsquo;s a pretty ignorant assumption for real world software development, but it simplifies our process.</p>
-
-<h3>ASCII: Works great (if you want to ignore most of the world)</h3>
-
-<p>Our challenge is to invent how computers handle text. Morse code is an encoding that pre-dates digital computers but provides a model for our approach: Each character has a transmission sequence of dots and dashes to represent it. We&rsquo;ll need to make a few changes and additions though&hellip;</p>
-
-<p><img class="center" src="/assets/2014-08-02-the-plain-text-is-a-lie/morse-code.png" title="Morse code" >
-<a href="http://commons.wikimedia.org/wiki/File:International_Morse_Code.svg">Image source</a></p>
-
-<p>Rather than dots and dashes we can use 1&rsquo;s and 0&rsquo;s (<a href="http://en.wikipedia.org/wiki/Binary_number">binary</a>). Let&rsquo;s also use a consistent number of bits per character so that it&rsquo;s easy to know when one character ends and another begins. To support US English we need to map a binary sequence to each of the following:</p>
-
-<ul>
-<li>a-z</li>
-<li>A-Z</li>
-<li>0-9</li>
-<li>&ldquo; &rdquo;(space)</li>
-<li>!&ldquo;#$%&amp;&lsquo;()*+,&ndash;./:;&lt;=>?@[\]^_`{|}~</li>
-<li>Control characters like &ldquo;ring a bell&rdquo;, &ldquo;make a new line&rdquo;, etc.</li>
-</ul>
-
-
-<p>That&rsquo;s 96 printable characters and some control characters for a total of 128 characters. 128 is 2<sup>7</sup>, so we can send these characters in seven-bit sequences. Since computers use eight-bit bytes, let&rsquo;s decide to send eight bits per character but ignore the last bit. We have just invented the <a href="https://en.wikipedia.org/wiki/ASCII">ASCII encoding</a>!</p>
-
-<p>ASCII forms the root influence of many text encodings still used today. In fact, at one time ASCII was the law: U.S. President Lyndon B. Johnson <a href="http://www.presidency.ucsb.edu/ws/index.php?pid=28724">mandated</a> that all computers purchased by the United States federal government support ASCII in 1968.</p>
-
-<p><img class="center" src="/assets/2014-08-02-the-plain-text-is-a-lie/johnson.jpg" title="President Lyndon Johnson" >
-<a href="http://commons.wikimedia.org/wiki/File:37_Lyndon_Johnson_3x4.jpg">Image source</a></p>
-
-<h3>International and OEM standards: Supporting other languages</h3>
-
-<h4>Starting with similar languages to US English</h4>
-
-<p>We need more space to pack in more symbols if we want to support other languages and other symbols like currencies. It seems reasonable that people typically deal with a block of languages that are geographically or politically related, and when we&rsquo;re lucky those languages share many of the same symbols. Given that assumption we can create several standards; each one for a block of languages!</p>
-
-<p>For each block, we can keep the first 128 characters as-is from ASCII (identical bit sequences) so that the US English characters and Arabic numerals are still supported. We can then use the eighth bit for data instead of ignoring it. That would give us eight bits per character and a total of 256 characters to work with (double ASCII&rsquo;s paltry 128). Now let&rsquo;s apply that eight bit.</p>
-
-<p>A bunch of countries in Western Europe use the same latin alphabet plus special <a href="http://en.wikipedia.org/wiki/Diacritic">diacritics</a> (also known as <em>accent marks</em>) like ü or é or ß. In fact, we can pack enough extra characters in those last 128 slots to support 29 other languages like Afrikaans, German, Swahili and Icelandic. Our Western European language block encoding is ready! We call this type of encoding a single-byte encoding because every character is represented by exactly one byte.</p>
-
-<p><img class="center" src="/assets/2014-08-02-the-plain-text-is-a-lie/1252.png" title="Windows 1252 code page" >
-<a href="https://commons.wikimedia.org/wiki/File:Windows-1252.svg">Image source</a></p>
-
-<h4>Additional single byte encodings for other language blocks</h4>
-
-<p>We can repeat the same process we used to create our Western European language encoding to develop other single-byte encodings for other language blocks; each a 256 character set! To give one more example, let&rsquo;s build a single byte coding for Arabic.</p>
-
-<p>Again, we take the first 128 ASCII characters as-is, then fill up the last 128 with the <a href="http://www.omniglot.com/writing/arabic.htm">Arabic alphabet</a>  We&rsquo;ve got some space left over. Arabic has some diacritics as well, so let&rsquo;s use some of the leftover slots to hold diacritic marks that are only valid when combined with other letters.</p>
-
-<p>Some languages don&rsquo;t even fit in 256 characters. Chinese, Japanese and Korean for example. That&rsquo;s OK, we&rsquo;ll just use multiple bytes per character to get more room. As you may have guessed, these encodings are called <em>multibyte encodings</em>. Sometimes we choose to use the same number of bytes for every character (<em>fixed width</em> multibyte encodings) and sometimes we might choose to use different byte lengths (<em>variable width</em> multibyte encodings) to save space.</p>
-
-<h3>Ratifying our encodings to standards</h3>
-
-<p>After we&rsquo;ve built several of these encodings (Russian, Greek, Simplified Chinese, etc.) we can ratify them as international standards such as <a href="https://en.wikipedia.org/wiki/ISO_8859">ISO-8859</a> for single byte encodings. We previously built <a href="http://en.wikipedia.org/wiki/ISO/IEC_8859-1">ISO-8895-1 (Western European)</a> and <a href="http://en.wikipedia.org/wiki/ISO/IEC_8859-6">ISO-8859-6 (Latin/Arabic)</a>. International standards for multibyte encodings exist too. People who use the same standard can communicate without problems.</p>
-
-<p>The international standards like ISO-8895 are only part of the story. Companies like Microsoft and IBM created their own standards (so-called <em>OEM standards</em> or <em>code pages</em>). Some OEM standards map to international standards, some almost-but-not-quite map (see <a href="http://en.wikipedia.org/wiki/Windows-1252">Windows-1252</a>) and some are completely different.</p>
-
-<h3>Our standards have problems</h3>
-
-<p>Our standards and code pages are better than ASCII but there are a number of problems remaining:</p>
-
-<ul>
-<li>How do we intermix different languages in the same document?</li>
-<li>What if our standards run out of room for new symbols?</li>
-<li>There is no rosetta stone to allow communication between systems that use different encodings.</li>
-</ul>
-
-
-<p>Enter Unicode.</p>
-
-<h2>Unicode: One standard to rule them all</h2>
-
-<p><img class="center" src="/assets/2014-08-02-the-plain-text-is-a-lie/ring.png" title="The ring of power" >
-<a href="http://commons.wikimedia.org/wiki/File:Unico_Anello.png">Image source</a></p>
-
-<p>As mentioned earlier, Unicode is a single standard supporting thousands of languages. Unicode addresses the limitations of byte encodings by operating at a higher level than simple byte representations of characters. The foundation of Unicode is an über list of symbols chosen by a multinational committee.</p>
-
-<p>Unicode keeps a gigantic numbered list of all the symbols of all the supported languages. The items in this list are called <em>code points</em> and are not concerned with bytes, how computers represent them, or what they look like on screen. They&rsquo;re just numbered items, like:</p>
-
-<p><span style="font-size:24px;">a</span> <em>LATIN SMALL LETTER A</em> &ndash; U+0061</p>
-
-<p><span style="font-size:24px;">東</span> <em>Pinyin: dōng, Chaizi: shi,ba,ri</em> &ndash;  U+6771</p>
-
-<p><span style="font-size:24px;">☃</span> <a href="http://unicodesnowmanforyou.com/">SNOWMAN</a> &ndash; U+2603</p>
-
-<p>We have virtually unlimited space to work with. The Unicode standards supports a maximum of  1,114,112 items. That is more than enough to express the world&rsquo;s active written languages, some historical languages and miscellaneous symbols. Some of the slots are even undefined and left to the user to decide what they mean. These spaces have been used for wacky things like <a href="https://en.wikipedia.org/wiki/Klingon_alphabets#ConScript_Unicode_Registry">Klingon</a> and Elvish.</p>
-
-<p>Fun fact: Apple Inc. <a href="https://en.wikipedia.org/wiki/Private_Use_Areas#Vendor_use">uses</a> U+F8FF in the Private Use Area of Unicode for their logo symbol (<span style="font-size:24px;"></span>). If you don&rsquo;t see the Apple logo in parenthesis in the preceding sentence, then your system doesn&rsquo;t agree with Apple&rsquo;s use of U+F8FF.</p>
-
-<p>OK, we have our gigantic list of code points. All we need to do is devise an encoding scheme to encode unicode objects (which now we know are lists of code points) into byte-strings for transmission over the wire to other systems.</p>
-
-<h3>UTF-8</h3>
-
-<p>UTF-8 encodes every Unicode code point in between one and four byte sequences. Here are some cool features of UTF-8:</p>
-
-<ul>
-<li><em>Popularity</em> &ndash; It&rsquo;s the dominant encoding of the world wide web <a href="http://googleblog.blogspot.com/2010/01/unicode-nearing-50-of-web.html">since 2010</a>.</li>
-<li><em>Simplicity</em> &ndash; No need to <a href="http://en.wikipedia.org/wiki/Byte_order_mark">transmit byte order information</a> or worry about <a href="http://en.wikipedia.org/wiki/Endianness">endianness</a> in transmissions.</li>
-<li><em>Backwards compatibility</em> &ndash; The first 128 byte sequences are identical to ASCII.</li>
-</ul>
-
-
-<h3>UCS-2: Old and busted</h3>
-
-<p>UCS-2 is a fixed width, two-byte encoding. In the mid-nineties, Unicode added code points that cannot be expressed in the two-byte system. Thus, UCS-2 is deprecated in favor of UTF-16.</p>
-
-<ul>
-<li>UCS-2 was the original Java String class&rsquo;s internal representation</li>
-<li>C Python 2 and 3 use UCS-2 if compiled with default options</li>
-<li>Microsoft Windows OS API used UCS-2 prior to Windows 2000</li>
-</ul>
-
-
-<h3>UTF-16: UCS-2++</h3>
-
-<p>UTF-16 extends UCS-2 by adding support for the code points that can&rsquo;t be expressed in a two-byte system. You can find UTF-16 in:</p>
-
-<ul>
-<li>Windows 2000 and later&rsquo;s OS API</li>
-<li>The Java String class</li>
-<li>.NET environment</li>
-<li>OS X and iOS&rsquo;s NSString type</li>
-</ul>
-
-
-<h3>UTF-32: Large bytes, simple representation</h3>
-
-<p>UTF-32 is a simple 1:1 mapping of code points to four-byte values. C Python uses UTF-32 for internal representation of Unicode if compiled with a certain flag.</p>
-
-<h2>Conclusion</h2>
-
-<p>We&rsquo;ve seen how text handling can go wrong. We&rsquo;ve learned how to design and test our systems with Unicode in mind. Finally, we&rsquo;ve learned a bit of history of text encodings. There is a lot more to the topic of text, but for now I ask you do to the following:</p>
-
-<ol>
-<li>Examine your system to see if you&rsquo;re using Unicode inside</li>
-<li>Use UTF-8 when reading and writing data</li>
-<li>Know that the plain text is a lie!</li>
-</ol>
-
-
-<p>Thanks for reading!</p>
-</div>
-  
-  
-
-
+  <div class="entry-content">
+    There is no such thing as plain text &ldquo;But I see .txt files all the time&rdquo; you say. &ldquo;My source code is plain text&rdquo; you claim. &ldquo;What about web pages?!&rdquo; you frantically ask. True, each of those things is comprised of text. The plain part is the problem. Plain denotes &hellip;
+    <footer>
+      <a rel="full-article" href="/blog/the-plain-text-is-a-lie/">Read More</a>
+    </footer>
+  </div>
     </article>
   
   
     <article class="entry">
-      
-  <header class="entry-header">
-    
-      <h1 class="entry-title"><a href="/blog/shipit-hackathon-mplus/">ShipIt - 24-hour Hackathon for Millennium+ Platform Dev</a></h1>
-    
+        <header class="entry-header">
     
       <div class="entry-meta meta">
         
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/shahzad-zafar"><span class="fn">Shahzad Zafar</span></a></span>
-
- | 
 
 
 
@@ -519,62 +166,34 @@
   
 
 
-<time datetime="2014-07-01T00:00:00-05:00" pubdate data-updated="true">Jul 1<span>st</span>, 2014</time>
+<time datetime="2014-07-01T00:00:00-05:00" pubdate data-updated="true">Jul 1<span>st</span>, 2014</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Shahzad Zafar</span>
+  </span>
+
+
         
       </div>
     
+    <h1 class="entry-title"><a href="/blog/shipit-hackathon-mplus/">ShipIt - 24-hour Hackathon for Millennium+ Platform Dev</a></h1>
   </header>
-
-
-  <div class="entry-content"><p>At the end of March, some of our teams held their first 24-hour hackathon, titled ShipIt: Millennium+ Services FedEx Day. We had 41 participants, in 15 teams working on 15 unique projects. The idea was inspired by several teams spending a few hours every so often to work on different projects. After reading about <a href="https://www.atlassian.com/company/about/shipit">Atlassian’s</a> hack days, we decided to hold one.</p>
-
-<p>The event was initially announced early in February, to give teams time to work this into their project plans. The schedule was to start at 10 am on a Thursday and wrap-up at 10 AM on Friday. Teams then presented their awesome projects and then were free to leave for the weekend (and catch-up on some sleep). Each team was free to choose the project they wanted to work on, with the limitation added that they should work on something which can be deployed somewhere in 24 hours (there were bonus points involved for deployed projects).  The winning prize not only included bragging rights, but also the ‘Golden Keyboard’, which will be a traveling trophy.</p>
-
-<p>Behold, the Golden Keyboard:</p>
-
-<p><img class="center" src="/assets/2014-07-01-shipit-hackathon-mplus/golden-keyboard.jpg" title="Golden Keyboard" ></p>
-
-<p>We had reserved a large room off campus to get everyone away from their daily routines. Teams immediately jumped into their projects as soon as the hack day started on March 27th. Plenty of food and snacks were on hand, with lunch and dinner delivered to keep everyone fed. A hackavision dashboard (Sinatra application which subscribed to a list of atom feeds) was created, to track all the github commits by the teams.</p>
-
-<p><img class="center" src="/assets/2014-07-01-shipit-hackathon-mplus/hackavision.jpg" title="Hackavision" ></p>
-
-<p>The projects had amazing breadth. These include <a href="http://www.neo4j.org/">Neo4j</a>, <a href="http://riemann.io/">Riemann</a>, <a href="http://capistranorb.com/">Capistrano</a> and languages such as Ruby and Clojure. Teams not only learned new languages and projects in the 24 hours, but also had most of them fully functional and deployed at the end of the hackathon.</p>
-
-<p>There were other activities as well, such as playing Xbox and watching the NCAA Basketball Tournament, which provided to be great breaks throughout the night. Motivational movies, like <a href="http://www.imdb.com/title/tt0107977/">Robin Hood: Men in Tights</a>, were also on tap through the night.</p>
-
-<p><img class="center" src="/assets/2014-07-01-shipit-hackathon-mplus/fifa.jpg" title="FIFA" ></p>
-
-<p>By 10 am on Friday morning on March 28th, everyone was ready to present their projects. We had four judges representing different areas of expertise. The demos were awesome and judges had a tough time picking the top three projects. Third place went to the SplunkOverflow team, who worked on a Maven plugin that would build site documentation for Thrift RPC services. Second place went to the Short Circuit team, who improved the performance of hash calculations in our <a href="https://github.com/apache/incubator-storm">Storm</a> topologies. First place (and the Golden Keyboard) went to the Minions team, who created &ldquo;lando&rdquo;, a set of services that supported monitoring and management tasks on JVM-based Thrift RPC services.</p>
-
-<p>All in all, it was an exciting 24 hours where teams showed their innovative abilities. All the projects were demo’ed to a larger audience about a week later. Most of the projects started on during ShipIt are being enhanced further, by the teams during their team level hack time or scheduled projects.</p>
-
-<p><img class="center" src="/assets/2014-07-01-shipit-hackathon-mplus/winners.jpg" title="Winners" ></p>
-
-<p>This was our first hackathon, but it won’t be our last! We will have at least one more later this year and plan on a recurring event, with the Golden Keyboard traveling around with the winning team. It was amazing to see what people can do in a short amount of time and with the flexibility of choosing what you want to work on, the end result will always be something cool. We hope to continue the innovative thinking, not only by team level hack days, but having larger hack days.</p>
-</div>
-  
-  
-
-
+  <div class="entry-content">
+    At the end of March, some of our teams held their first 24-hour hackathon, titled ShipIt: Millennium+ Services FedEx Day. We had 41 participants, in 15 teams working on 15 unique projects. The idea was inspired by several teams spending a few hours every so often to work on different &hellip;
+    <footer>
+      <a rel="full-article" href="/blog/shipit-hackathon-mplus/">Read More</a>
+    </footer>
+  </div>
     </article>
   
   
     <article class="entry">
-      
-  <header class="entry-header">
-    
-      <h1 class="entry-title"><a href="/blog/scaling-people-with-apache-crunch/">Scaling People With Apache Crunch</a></h1>
-    
+        <header class="entry-header">
     
       <div class="entry-meta meta">
         
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/micah-whitacre"><span class="fn">Micah Whitacre</span></a></span>
-
- | 
 
 
 
@@ -586,326 +205,34 @@
   
 
 
-<time datetime="2014-05-09T00:00:00-05:00" pubdate data-updated="true">May 9<span>th</span>, 2014</time>
+<time datetime="2014-05-09T00:00:00-05:00" pubdate data-updated="true">May 9<span>th</span>, 2014</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Micah Whitacre</span>
+  </span>
+
+
         
       </div>
     
+    <h1 class="entry-title"><a href="/blog/scaling-people-with-apache-crunch/">Scaling People With Apache Crunch</a></h1>
   </header>
-
-
-  <div class="entry-content"><h2>Starting the Big Data Journey</h2>
-
-<p>When a company first starts to play with Big Data it typically involves a small team of engineers trying to solve a specific problem.  The team decides to experiment with scalable technologies either due to outside guidance or research which makes it applicable to their problem.  The team begins with the basics of Big Data spending time learning and prototyping.  They learn about <a href="http://hadoop.apache.org/">HDFS</a>, flirt with <a href="http://hbase.apache.org/">HBase</a> or other NoSQL, write the required WordCount example, and start to figure out how the technologies can fit their needs.  The group&rsquo;s immersion into Big Data deepens as they start to move beyond a prototype into a real product.</p>
-
-<p><img class="center" src="/assets/2014-05-09-scaling-people-with-apache-crunch/team_bigdata.png" title="Team using Big Data" ></p>
-
-<p>The company sees the success of using Big Data technologies and the possibilities to solve difficult problems, tackle new endeavors, and open new doors.  The company has now shifted its scalability problem out from the technical architecture into a people problem.  The small team of experts cannot satisfy the demand and transferring their accumulated knowledge to new teams is a significant investment.  Both new and experienced engineers face a steep learning curve to get up to speed.  Learning the API is not difficult but challenges typically oocur when applying the WordCount example to complex problems.   Making the mental jump from processing homogeneous data which produce a single output to a complex processing pipeline involving heterogeneous inputs, joins, and multiple outputs is difficult for even a skilled engineer.</p>
-
-<p>Cerner has developed a number of Big Data solutions each demonstrating the 3 V&rsquo;s of data (variety, velocity, and volume).  The complexity of the problems being solved, evolving functionality, and required integration across teams led Cerner to look beyond simple MapReduce.  Cerner began to focus on how to construct a processing infrastructure that naturally aligned with the way the processing is described.  Looking through the options available for processing pipelines including <a href="http://hive.apache.org/">Hive</a>, <a href="http://pig.apache.org/">Pig</a>, and <a href="http://www.cascading.org/">Cascading</a>, Cerner finally arrived at using <a href="http://crunch.apache.org/">Apache Crunch</a>.  Using Crunch&rsquo;s concepts, we found that we were easily able to translate how we described a problem into concepts we can code.  Additionally the API was well suited for our complicated data models and building integration contracts between teams.</p>
-
-<p>When we describe a problem we often talk about its flow through the various processing steps.  The processing flow is comprised of data from multiple sources, several transformations, various joins, and finally the persistence of the data.  Looking at an example problem of transforming raw data into a normalized object for downstream consumers we might encounter a problem similar to the diagram below.</p>
-
-<p><img class="center" src="/assets/2014-05-09-scaling-people-with-apache-crunch/example_processing_pipeline.png" title="Example Processing Problem" ></p>
-
-<p>If we apply this problem to the raw MapReduce framework we begin to see problems absent in the standard WordCount example.  The heterogeneous data and models, the custom join logic, and follow up grouping by key all could result in extra code or difficulty fitting this processing into a single MapReduce job.  When our problem expands to multiple MapReduce jobs we now have to write custom driver code or bring in another system like <a href="http://oozie.apache.org/">Oozie</a> to chain the workflow together.  Additionally while we could fit the steps neatly into 1-2 MapReduce jobs that careful orchestration and arrangement could become imbalanced as we introduce new processing needs into the workflow.</p>
-
-<p><img class="center" src="/assets/2014-05-09-scaling-people-with-apache-crunch/example_processing_pipeline_new_functionality.png" title="Example Processing Problem with more functionality" ></p>
-
-<p>This problem is common and fairly basic with respect to some of the processing needs we faced at Cerner.  For the experienced MapReduce developers this problem might cause a momentary pause to design it but that is due to your expertise.  For those less skilled imagine being able to break this problem down into the processing steps you understand and POJO like models of which you are already familiar.  Breaking this problem down using Apache Crunch we can see how we can articulate the problem and still take advantage of the processing efficiency of MapReduce.</p>
-
-<h2>Building a Processing Pipeline with Apache Crunch</h2>
-
-<p>Apache Crunch allows developers to construct complicated processing workflows into <a href="http://crunch.apache.org/user-guide.html#mrpipeline">pipelines</a>.  Pipelines are directed acyclic graphs (DAG) comprised of input data that is then transformed through functions and groupings to produce output data.  When a developer is done constructing the pipeline Apache Crunch will calculate the appropriate processing steps and submit the steps to the execution engine.  In this example we will talk about using Apache Crunch in the context of MapReduce but it also supports running on <a href="http://spark.apache.org/">Apache Spark</a>.  It should be noted that pipelines are lazily executed.  This means that no work will be done until the pipeline is executed.</p>
-
-<p>To begin processing we need a pipeline instance on which we will construct our DAG.  To create a MRPipeline we need the typical Hadoop <a href="https://hadoop.apache.org/docs/r2.2.0/api/org/apache/hadoop/conf/Configuration.html">Configuration</a> instance for the cluster and <a href="http://hadoop.apache.org/docs/r2.3.0/api/org/apache/hadoop/mapreduce/Job.html#setJarByClass(java.lang.Class">the driver class</a>) for the processing.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">Pipeline</span> <span class="n">pipeline</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MRPipeline</span><span class="o">(</span><span class="n">Driver</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">conf</span><span class="o">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>With a pipeline instance available the next step is to describe the inputs to the processing using at least one Crunch <a href="http://crunch.apache.org/user-guide.html#rwdata">Source</a>.  A pipeline must contain at least one source but could read from multiple.  Apache Crunch provides implementations for the typical inputs such as Sequence Files, HFiles, Parquet, Avro, HBase, and Text.  As an example if we were to read data out of a text file we might write code like the following:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">PType</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ptype</span> <span class="o">=</span> <span class="n">Avros</span><span class="o">.</span><span class="na">strings</span><span class="o">();</span>
-</span><span class='line'><span class="n">PCollection</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">refDataStrings</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="k">new</span> <span class="n">TextFileSource</span><span class="o">(</span><span class="n">path</span><span class="o">,</span> <span class="n">ptype</span><span class="o">));</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This code utilizes the TextFileSource to generate a collection of Java Strings from files at a certain path.  The code also introduces two additional Apache Crunch concepts of <a href="http://crunch.apache.org/user-guide.html#datamodel">PCollections</a> and <a href="http://crunch.apache.org/user-guide.html#serde">PTypes</a>.  A PCollection represents potential data elements to process.  Since a pipeline is lazily executed it is not a physical representation of all of the elements.  A PCollection cannot be created but can be read or transformed.  Apache Crunch also has special forms of PCollections, PTable and PGroupedTable, which are useful in performing join operations on the data.  A PType is a concept that hides serialization and deserialization from pipeline developers.  In this example the developer is using native Java strings instead of dealing with wrapper classes like Writable&rsquo;s Text class.</p>
-
-<p>Processing based off of Java Strings is error prone so typically developers would transform the data into a model object that is easier to work with.  Transformation of a PCollection is done through a <a href="http://crunch.apache.org/user-guide.html#dataproc">DoFn</a>.  A DoFn processes a single element of the PCollection into zero or many alternate forms depending on its logic.  The bulk of a processing pipeline&rsquo;s logic resides in implementations of DoFn.  Custom implementations of a DoFn requires extending the DoFn class as well as defining the input and output types.  This allows Crunch to provide compile time checking as transformations are applied to collections.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">class</span> <span class="nc">ConvertReferenceDataFn</span> <span class="kd">extends</span> <span class="n">DoFn</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefData</span><span class="o">&gt;{</span>
-</span><span class='line'>     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">process</span> <span class="o">(</span><span class="n">String</span> <span class="n">input</span><span class="o">,</span> <span class="n">Emitter</span><span class="o">&lt;</span><span class="n">RefData</span><span class="o">&gt;</span> <span class="n">emitter</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>       <span class="n">RefData</span> <span class="n">data</span> <span class="o">=</span> <span class="c1">//processing logic;</span>
-</span><span class='line'>       <span class="n">emitter</span><span class="o">.</span><span class="na">emit</span><span class="o">(</span><span class="n">data</span><span class="o">);</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">...</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">PType</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ptype</span> <span class="o">=</span> <span class="n">Avros</span><span class="o">.</span><span class="na">strings</span><span class="o">();</span>
-</span><span class='line'><span class="n">PCollection</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">refDataStrings</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="k">new</span> <span class="n">TextFileSource</span><span class="o">(</span><span class="n">path</span><span class="o">,</span> <span class="n">ptype</span><span class="o">));</span>
-</span><span class='line'><span class="n">PCollection</span><span class="o">&lt;</span><span class="n">RefData</span><span class="o">&gt;</span> <span class="n">refData</span> <span class="o">=</span>
-</span><span class='line'>  <span class="n">refStrings</span><span class="o">.</span><span class="na">parallelDo</span><span class="o">(</span><span class="k">new</span> <span class="n">ConvertReferenceDataFn</span><span class="o">(),</span> <span class="n">Avros</span><span class="o">.</span><span class="na">records</span><span class="o">(</span><span class="n">RefData</span><span class="o">.</span><span class="na">class</span><span class="o">));</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Recalling the previous example processing problem we see that we need to perform join and grouping operations based on a key.  Instead of converting the strings into a RefData object it would actually be better to convert the string into a key/value pair (e.g. Pair&lt;String, RefData>).  Apache Crunch has a PTable&lt;K, V>, which is simply a special form of PCollection&lt;Pair&lt;K, V>>.  Adjusting the function we can instead produce the key/value pair.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">class</span> <span class="nc">ConvertReferenceDataFn</span> <span class="kd">extends</span> <span class="n">DoFn</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefData</span><span class="o">&gt;&gt;{</span>
-</span><span class='line'>     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">process</span> <span class="o">(</span><span class="n">String</span> <span class="n">input</span><span class="o">,</span> <span class="n">Emitter</span><span class="o">&lt;</span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefData</span><span class="o">&gt;&gt;</span> <span class="n">emitter</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>       <span class="n">RefData</span> <span class="n">data</span> <span class="o">=</span> <span class="c1">//processing logic;</span>
-</span><span class='line'>       <span class="n">String</span> <span class="n">id</span> <span class="o">=</span> <span class="c1">//extract id;</span>
-</span><span class='line'>       <span class="n">emitter</span><span class="o">.</span><span class="na">emit</span><span class="o">(</span><span class="k">new</span> <span class="n">Pair</span><span class="o">(</span><span class="n">id</span><span class="o">,</span> <span class="n">data</span><span class="o">));</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">...</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">PType</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ptype</span> <span class="o">=</span> <span class="n">Avros</span><span class="o">.</span><span class="na">strings</span><span class="o">();</span>
-</span><span class='line'><span class="n">PCollection</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">refDataStrings</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="k">new</span> <span class="n">TextFileSource</span><span class="o">(</span><span class="n">path</span><span class="o">,</span> <span class="n">ptype</span><span class="o">));</span>
-</span><span class='line'><span class="n">PTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefData</span><span class="o">&gt;</span> <span class="n">refData</span> <span class="o">=</span>
-</span><span class='line'>  <span class="n">refStrings</span><span class="o">.</span><span class="na">parallelDo</span><span class="o">(</span><span class="k">new</span> <span class="n">ConvertReferenceDataFn</span><span class="o">(),</span>
-</span><span class='line'>    <span class="n">Avros</span><span class="o">.</span><span class="na">tableOf</span><span class="o">(</span><span class="n">Avros</span><span class="o">.</span><span class="na">strings</span><span class="o">(),</span> <span class="n">Avros</span><span class="o">.</span><span class="na">records</span><span class="o">(</span><span class="n">RefData</span><span class="o">.</span><span class="na">class</span><span class="o">)));</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Utilizing the PTable&lt;String, RefData> collection we could then <a href="http://crunch.apache.org/user-guide.html#joins">join</a> that collection with another similarly keyed PTable using one of the many prebuilt implementations.  The built in join functionality helps to avoid developing custom implementations of a common data processing pattern.</p>
-
-<p>More functions are applied to the joined data to continue the processing workflow.  The processing of the data is distributed in separate tasks across the cluster.  In the example problem we need all of the data for a <a href="http://crunch.apache.org/user-guide.html#gbk">given key to be grouped</a> to a single task for processing.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">PTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Model</span><span class="o">&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="o">...;</span>
-</span><span class='line'><span class="n">PGroupedTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Model</span><span class="o">&gt;</span> <span class="n">groupedModels</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="na">groupByKey</span><span class="o">();</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>A pipeline requires at least one collection of data to be persisted to a <a href="http://crunch.apache.org/user-guide.html#targets">target</a>.  Crunch provides the standard targets for data but consumer can also easily create new custom inputs.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="c1">//persist Avro models</span>
-</span><span class='line'><span class="n">pipeline</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">models</span><span class="o">,</span> <span class="k">new</span> <span class="n">AvroFileTarget</span><span class="o">(</span><span class="n">path</span><span class="o">));</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>When constructing the processing pipline for the example problem we would end up with an executable program that looks like the following:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(){</span>
-</span><span class='line'>    <span class="n">Pipeline</span> <span class="n">pipeline</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MRPipeline</span><span class="o">(</span><span class="n">Driver</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">conf</span><span class="o">);</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">//Read data from sources</span>
-</span><span class='line'>    <span class="n">PType</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ptype</span> <span class="o">=</span> <span class="n">Avros</span><span class="o">.</span><span class="na">strings</span><span class="o">();</span>
-</span><span class='line'>    <span class="n">PTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefData</span><span class="o">&gt;</span> <span class="n">refDataStrings</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="k">new</span> <span class="n">TextFileSource</span><span class="o">(</span><span class="n">path1</span><span class="o">,</span> <span class="n">ptype</span><span class="o">));</span>
-</span><span class='line'>    <span class="n">PTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefModel</span><span class="o">&gt;</span> <span class="n">refModelStrings</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="k">new</span> <span class="n">TextFileSource</span><span class="o">(</span><span class="n">path1</span><span class="o">,</span> <span class="n">ptype</span><span class="o">));</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">//Convert the Strings into models</span>
-</span><span class='line'>    <span class="n">PTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefData</span><span class="o">&gt;</span> <span class="n">refData</span> <span class="o">=</span>
-</span><span class='line'>      <span class="n">refStrings</span><span class="o">.</span><span class="na">parallelDo</span><span class="o">(</span><span class="k">new</span> <span class="n">ConvertReferenceDataFn</span><span class="o">(),</span>
-</span><span class='line'>        <span class="n">Avros</span><span class="o">.</span><span class="na">tableOf</span><span class="o">(</span><span class="n">Avros</span><span class="o">.</span><span class="na">strings</span><span class="o">(),</span> <span class="n">Avros</span><span class="o">.</span><span class="na">records</span><span class="o">(</span><span class="n">RefData</span><span class="o">.</span><span class="na">class</span><span class="o">)));</span>
-</span><span class='line'>    <span class="n">PTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefModel</span><span class="o">&gt;</span> <span class="n">refModel</span> <span class="o">=</span>
-</span><span class='line'>      <span class="n">refStrings</span><span class="o">.</span><span class="na">parallelDo</span><span class="o">(</span><span class="k">new</span> <span class="n">ConvertReferenceModelFn</span><span class="o">(),</span>
-</span><span class='line'>        <span class="n">Avros</span><span class="o">.</span><span class="na">tableOf</span><span class="o">(</span><span class="n">Avros</span><span class="o">.</span><span class="na">strings</span><span class="o">(),</span> <span class="n">Avros</span><span class="o">.</span><span class="na">records</span><span class="o">(</span><span class="n">RefModel</span><span class="o">.</span><span class="na">class</span><span class="o">)));</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">//Data separate input together.</span>
-</span><span class='line'>    <span class="n">PTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Pair</span><span class="o">&lt;</span><span class="n">RefData</span><span class="o">,</span> <span class="n">RefModel</span><span class="o">&gt;&gt;</span> <span class="n">joinedDataModel</span> <span class="o">=</span> <span class="n">refModel</span><span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="n">refData</span><span class="o">);</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">//Apply a similar DoFn to convert the Pair&lt;RefData, RefModel&gt; into a single object</span>
-</span><span class='line'>    <span class="n">PTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Model</span><span class="o">&gt;</span> <span class="n">models</span> <span class="o">=</span> <span class="o">...;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">//Filter out data that is not useful</span>
-</span><span class='line'>    <span class="n">PTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Model</span><span class="o">&gt;</span> <span class="n">filteredModels</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="k">new</span> <span class="n">FilterModelFn</span><span class="o">());</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">//Group the data by key to have all model instances with the same key in a single location</span>
-</span><span class='line'>    <span class="n">PGroupedTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Model</span><span class="o">&gt;</span> <span class="n">groupedModels</span> <span class="o">=</span> <span class="n">filteredModels</span><span class="o">.</span><span class="na">groupByKey</span><span class="o">();</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">//Convert the grouped Models into a single model object if they share the same key.</span>
-</span><span class='line'>    <span class="n">PCollection</span><span class="o">&lt;</span><span class="n">PersonModel</span><span class="o">&gt;</span> <span class="n">personModels</span> <span class="o">=</span>
-</span><span class='line'>      <span class="n">groupedModels</span><span class="o">.</span><span class="na">parallelDo</span><span class="o">(</span><span class="k">new</span> <span class="n">ConvertPersonModelFn</span><span class="o">(),</span> <span class="n">Avros</span><span class="o">.</span><span class="na">records</span><span class="o">(</span><span class="n">PersonModel</span><span class="o">.</span><span class="na">class</span><span class="o">));</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">//Write out the Person Model objects</span>
-</span><span class='line'>    <span class="n">pipeline</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">personModels</span><span class="o">,</span> <span class="k">new</span> <span class="n">AvroFileTarget</span><span class="o">(</span><span class="n">path</span><span class="o">));</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">//At this point the pipeline has been constructed but nothing executed.  </span>
-</span><span class='line'>    <span class="c1">//Therefore tell the pipeline to execute.</span>
-</span><span class='line'>    <span class="n">PipelineResult</span> <span class="n">result</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="na">done</span><span class="o">();</span>
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="kd">class</span> <span class="nc">ConvertReferenceDataFn</span> <span class="kd">extends</span> <span class="n">DoFn</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefData</span><span class="o">&gt;&gt;{</span>
-</span><span class='line'>     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">process</span> <span class="o">(</span><span class="n">String</span> <span class="n">input</span><span class="o">,</span> <span class="n">Emitter</span><span class="o">&lt;</span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefData</span><span class="o">&gt;&gt;</span> <span class="n">emitter</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>       <span class="n">RefData</span> <span class="n">data</span> <span class="o">=</span> <span class="c1">//processing logic;</span>
-</span><span class='line'>       <span class="n">String</span> <span class="n">id</span> <span class="o">=</span> <span class="c1">//extract id;</span>
-</span><span class='line'>       <span class="n">emitter</span><span class="o">.</span><span class="na">emit</span><span class="o">(</span><span class="k">new</span> <span class="n">Pair</span><span class="o">(</span><span class="n">id</span><span class="o">,</span> <span class="n">data</span><span class="o">));</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="kd">class</span> <span class="nc">ConvertReferenceModelFn</span> <span class="kd">extends</span> <span class="n">DoFn</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefModel</span><span class="o">&gt;&gt;{</span>
-</span><span class='line'>     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">process</span> <span class="o">(</span><span class="n">String</span> <span class="n">input</span><span class="o">,</span> <span class="n">Emitter</span><span class="o">&lt;</span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefModel</span><span class="o">&gt;&gt;</span> <span class="n">emitter</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>       <span class="n">RefModel</span> <span class="n">model</span> <span class="o">=</span> <span class="c1">//processing logic;</span>
-</span><span class='line'>       <span class="n">String</span> <span class="n">id</span> <span class="o">=</span> <span class="c1">//extract id;</span>
-</span><span class='line'>       <span class="n">emitter</span><span class="o">.</span><span class="na">emit</span><span class="o">(</span><span class="k">new</span> <span class="n">Pair</span><span class="o">(</span><span class="n">id</span><span class="o">,</span> <span class="n">model</span><span class="o">));</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="kd">class</span> <span class="nc">FilterModelFn</span> <span class="kd">extends</span> <span class="n">Filter</span><span class="o">&lt;</span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Model</span><span class="o">&gt;&gt;{</span>
-</span><span class='line'>     <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">filter</span> <span class="o">(</span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Model</span><span class="o">&gt;</span> <span class="n">model</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>       <span class="kt">boolean</span> <span class="n">include</span> <span class="o">=</span> <span class="c1">//logic to apply to the model</span>
-</span><span class='line'>       <span class="k">return</span> <span class="n">include</span><span class="o">;</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="kd">class</span> <span class="nc">ConvertPersonModelFn</span> <span class="kd">extends</span> <span class="n">MapFn</span><span class="o">&lt;</span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">Model</span><span class="o">&gt;&gt;&gt;{</span>
-</span><span class='line'>     <span class="kd">public</span> <span class="n">PersonModel</span> <span class="nf">map</span> <span class="o">(</span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">Model</span><span class="o">&gt;&gt;</span> <span class="n">models</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>       <span class="n">PersonModel</span> <span class="n">model</span> <span class="o">=</span> <span class="c1">//apply grouping logic to generate model from many items.</span>
-</span><span class='line'>       <span class="k">return</span> <span class="n">model</span><span class="o">;</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>It is very easy to see how the processing steps and flow of the original diagram can be mapped to Apache Crunch concepts.</p>
-
-<p><img class="center" src="/assets/2014-05-09-scaling-people-with-apache-crunch/example_processing_pipeline_crunch_concepts.png" title="Crunch Concepts Applied to Processing" ></p>
-
-<p>Executing the code as written above would cause Apache Crunch to calculate the execution graph to be spread over two MapReduce jobs.</p>
-
-<p><img class="center" src="/assets/2014-05-09-scaling-people-with-apache-crunch/pipeline_mr.png" title="Pipeline Execution" ></p>
-
-<p>In this case having a MapReduce job being reduce only is less than ideal but the team has been able to focus on correctness and functionality first.  Focus can now be shifted on performance tuning or adjusting algorithms as appropriate.  The solid foundation of functionality and the simplicity of the concepts allows developers to easily understand how the processing pipeline.  The ease of understanding helps to allow the team to refactor and iterate with confidence.</p>
-
-<p>This blog post is essentially my script for my <a href="http://apacheconnorthamerica2014.sched.org/event/37a39cc1b611e53ea5b6e348786337ad?iframe=no&amp;w=100&amp;sidebar=yes&amp;bg=no#.U1hyq-ZdVDw">North America ApacheCon 2014 presentation</a>.  Slides are available <a href="http://events.linuxfoundation.org/sites/events/files/slides/Simplifying%20Big%20Data%20with%20Apache%20Crunch.pdf">here</a>.</p>
-
-<h2>Links</h2>
-
-<ul>
-<li><a href="http://crunch.apache.org/user-guide.html">Crunch User Guide</a></li>
-</ul>
-
-</div>
-  
-  
-
-
+  <div class="entry-content">
+    Starting the Big Data Journey When a company first starts to play with Big Data it typically involves a small team of engineers trying to solve a specific problem. The team decides to experiment with scalable technologies either due to outside guidance or research which makes it applicable to their &hellip;
+    <footer>
+      <a rel="full-article" href="/blog/scaling-people-with-apache-crunch/">Read More</a>
+    </footer>
+  </div>
     </article>
   
   
     <article class="entry">
-      
-  <header class="entry-header">
-    
-      <h1 class="entry-title"><a href="/blog/migrating-from-eclipse-3.x-to-eclipse-4.x-the-iaware-story/">Migrating From Eclipse 3.X to Eclipse 4.X - the iAware Story</a></h1>
-    
+        <header class="entry-header">
     
       <div class="entry-meta meta">
         
-  
-  
-
-
-  <span class="byline author vcard">Written by <a href="/engineers/andy-gifford"><span class="fn">Andy Gifford</span></a></span>
-
- | 
 
 
 
@@ -917,106 +244,31 @@
   
 
 
-<time datetime="2014-03-18T00:00:00-05:00" pubdate data-updated="true">Mar 18<span>th</span>, 2014</time>
+<time datetime="2014-03-18T00:00:00-05:00" pubdate data-updated="true">Mar 18<span>th</span>, 2014</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Andy Gifford</span>
+  </span>
+
+
         
       </div>
     
+    <h1 class="entry-title"><a href="/blog/migrating-from-eclipse-3.x-to-eclipse-4.x-the-iaware-story/">Migrating From Eclipse 3.X to Eclipse 4.X - the iAware Story</a></h1>
   </header>
-
-
-  <div class="entry-content"><p><em>This is the blog form of the talk Migrating from Eclipse 3.X to Eclipse 4.X &ndash; The iAware Story at <a href="https://www.eclipsecon.org/">EclipseCon 2014</a>.</em></p>
-
-<p>The iAware development team was formed in late 2007 and in a little under six months we developed our first solution, CareAware CriticalCare, a dashboard application written using the Eclipse RCP targeted for use in ICU settings. The goal of this application was to provide clinicians with a complete picture of the patient’s status and to do it in a manner that was contextually relevant; meaning that related information was presented together. Doing so allows them to make rapid and timely clinical decisions.</p>
-
-<p>It was from this first solution that we began the process of building the software development platform. We&rsquo;ve created a number of reusable and consumable assets that can simplify and speed up development; chief among them is our Application, Platform and Gadget frameworks. Our application framework manages the startup and initialization of applications built on the platform and allows those building solutions to define the layout (navigation bar and perspectives) of their running application. The platform framework provides management of the active application, contexts and navigation and is the connection point for gadgets to communicate with one another. The gadget framework is a wrapper for Eclipse views and provides a common set of operations and UI elements that provide a consistent look and feel across gadgets. It also handles context changes and user authorization for solutions.</p>
-
-<p>We provide two different application types: Dashboard and Personalized. The dashboard application type is intended to be shown on large form factor displays, typically in patient rooms in an always-on operation mode. This type lacks personalization options, such as moving views around or adding or removing them as multiple users will be using the application and a consistent look needs to be maintained. The personalized application type is intended for multiple form factors, but it&rsquo;s primary use case is for laptops and mobile workstations with each user signing into the application with their own credentials. Because of this, we allow users to customize their perspectives by moving, adding or removing views. They can also add and remove perspectives and set preferences such as refresh time.</p>
-
-<p><img class="center" src="/assets/2014-03-18-migrating-from-eclipse-3.x-to-eclipse-4.x-the-iaware-story/careaware-critical-care-dashboard.png" title="Careaware Critical Care Dashboard" ></p>
-
-<p><img class="center" src="/assets/2014-03-18-migrating-from-eclipse-3.x-to-eclipse-4.x-the-iaware-story/careaware-critical-care-personalized.png" title="Careaware Critical Care Personalized" ></p>
-
-<p>At our core, we develop a reusable application platform built on top of the Eclipse Rich Client Platform to provide the ability to create targeted healthcare workflow applications with the goal of allowing other development teams to focus on solution specific development without worrying about the infrastructure. This means that our team can take on the responsibility and work effort of updating to new Eclipse versions as they become available without having to pass that cost down to those teams that build solutions on our platform.</p>
-
-<p>For the first four years or so, we did all of this platform development on top of the 3.x framework. A little over two years ago, we began the uplift process to 4.x, starting first with a feasibility study using 4.1.1 while taking advantage of the compatibility layer. While we wanted to dive in and have a straight e4 application, we had invested time and energy on platform projects based on 3.x that we couldn&rsquo;t afford to scrap, so we took it one step at a time. Additionally, our team and other teams at Cerner had solutions that Clients were using that expect them to continue to function as they had previously regardless of what we did under the hood.</p>
-
-<p>During this feasibility study, we found around 50 items that we needed to address. Some issues were things that we were doing that happened to work in 3.x but no longer did in 4.x. Some were bugs that we either found already logged or we logged to Eclipse. A sampling of things found includes:</p>
-
-<ul>
-<li><p>One of the first things we found was that all views had a view menu whether there were items in it or not. After some checking, we found that there was a bug (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=319621">https://bugs.eclipse.org/bugs/show_bug.cgi?id=319621</a>) logged for this, and we worked with other contributors to come up with a solution. After it was determined that the correction wouldn&rsquo;t make it to 4.1.1, we modified the renderer (org.eclipse.e4.ui.workbench.renderers.swt) to never show the view menu for our views since we didn&rsquo;t use that functionality anyway.</p></li>
-<li><p>Given the ability to save perspective layouts of our personalized applications, we quickly found that perspective saving was broken and identified a number of Eclipse bugs related to the problem. Again, because the issue wasn&rsquo;t due to be fixed until 4.2, we did our own serialization of the perspective layout and saved that data off into our preference store. After uplifting to 4.2, we removed most of that code and instead use the perspective XML.</p></li>
-<li><p>We also came across another issue that was already logged (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=356252">https://bugs.eclipse.org/bugs/show_bug.cgi?id=356252</a>) where a perspective will be closed when all of its parts are closed. To resolve this, we added the Cleanup add-on and implemented a patch that was posted to the logged bug.</p></li>
-<li><p>Another issue we ran into was with menu ordering. We had two different plug-ins contributing menu items to the main application menu and both of them declared that they were to be shown after the file menu item; however, we wanted one, Personalization, to show before the other, Help. Once we realized this, it was an easy fix to switch the declaration of the Personalization item to say that it should be before the Help item. While this was an issue with our code, it highlights the passivity problems that we had to be concerned about.</p></li>
-<li><p>Another menu related issue was a dynamic menu that we were building that lists all of the available views for a particular perspective only listed one element. After some investigating, we found that our contribution class was extending ContributionItem instead of CompoundContributionItem as suggested by the Eclipse wiki. We switched the class our contribution was extending and our menu was once again working as expected. Nonetheless we logged a bug (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=354190">https://bugs.eclipse.org/bugs/show_bug.cgi?id=354190</a>) with respect to the ContributionItem since it was working in 3.7.</p></li>
-<li><p>A handful of issues that we encountered centered on the icons for our various views and how they weren&rsquo;t being found. It was determined that the slash direction in the icon path was incorrect.</p></li>
-<li><p>Another set of issues that we encountered centered on having new functionality that wasn&rsquo;t desired, such as extra preference pages in our preferences dialog and extra menu items in our help menu. An evaluation of the dependencies that were added corrected these issues.</p></li>
-<li><p>For a variety of reasons, detached views is a feature that we needed to remove from applications. In 3.x we used the IWorkbenchPreferenceConstants.ENABLE_DETACHED_VIEWS preference. However, this property isn&rsquo;t supported in 4.x. Our workaround to this is to provide a custom implementation of the DnDAddon which takes away detached views altogether. We logged a bug for this situation: <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=357289">https://bugs.eclipse.org/bugs/show_bug.cgi?id=357289</a></p></li>
-<li><p>We also found after uplifting that we had a number of jobs that started to fail sporadically due to authentication checks we had in place not having the necessary information. After investigating further, we found that some jobs that previously were executed after our users logged in were occurring before and as such threads in the job pool were being created without the correct subject in place and subsequent jobs would reuse these threads. We employed a two pronged approach to resolve this issue. We updated existing jobs to obtain the current subject on construction (from the access controller) of the job and then use the Subject.doAs call in the jobs run method. At the same time, we created an extension of the Job class that would do this for consumers.</p></li>
-</ul>
-
-
-<p>After demonstrating that we could move to 4.x, we began the process of making use of the new functionality that was available and to remove as much of our dependency on the compatibility layer as possible. To do that we added and customized the application model, defined a custom renderer to represent our UI and began removing extension points and implementations of 3.x interfaces in favor of dependency injection and behavioral annotations.</p>
-
-<p>We utilize the application model both statically and dynamically within our solutions. In the static file we define commands and handlers for Exit and Show View, define the add-ons we&rsquo;re including and specify the top level UI elements and corresponding renderer. The add-ons that we consume include:</p>
-
-<ul>
-<li>CommandServiceAddon</li>
-<li>ContextServiceAddon</li>
-<li>BindingServiceAddon</li>
-<li>CommandProcessingAddon</li>
-<li>ContextProcessingAddon</li>
-<li>BindingProcessingAddon</li>
-<li>Customized version of CleanupAddon &ndash; keep perspectives open when all parts have been closed</li>
-<li>Customized version of DnDAddon &ndash; disables detached views and forces the drop target to be a perspective</li>
-<li>Customized version of MinMaxAddon &ndash; removed the minimize button from views</li>
-</ul>
-
-
-<p><img class="center" src="/assets/2014-03-18-migrating-from-eclipse-3.x-to-eclipse-4.x-the-iaware-story/iaware-e4xmi.png" title="iAware e4xmi" ></p>
-
-<p>The remaining UI elements, perspectives and parts, are contributed to the model dynamically through our application and gadget frameworks.</p>
-
-<p>Within our application we have a couple of shared UI areas that reside outside of the perspective area and as such we needed to define a custom renderer factory for our container to achieve the same functionality that was found using IWorkbenchWindowConfigurer#createPageComposite(org.eclipse.swt.widgets.Composite) in 3.x.</p>
-
-<p>Our renderer factory also removes the QuickAccess search field, a piece of functionality we don&rsquo;t want to include in our applications</p>
-
-<p>The following diagram represents our UI model:</p>
-
-<p><img class="center" src="/assets/2014-03-18-migrating-from-eclipse-3.x-to-eclipse-4.x-the-iaware-story/iaware-ui-model.png" title="iAware UI Model" ></p>
-
-<p>The top pane, generally holds our navigation bar and toolbar contributions including lock and refresh. The bottom pane, generally holds our notification tray and status line UI elements. The iAware teams solutions don&rsquo;t currently make use of the left or right pane in any of our solutions but leave those options open to others building their own solutions.</p>
-
-<p>The final piece of the uplift was to go through our various platform projects that were either implementing 3.x interfaces or were relying on singletons or static access to PlatformUI and use injection and behavioral annoations. This included changing our part implementation to no longer be an IViewPart and instead have it use the behavioral annotations @PostConstruct and @Focus.</p>
-
-<p>We also wired in a lifecycle hander to make use of @PostContextCreate and @ProcessAdditions across our registries (namely our perspective, gadget) instead of being tied to the calls from the WorkbenchAdvisor and WorkbenchWindowAdvisor.</p>
-
-<p>We also began use of the @Execute and @CanExecute annotations with a feature that we added to our gadget framework that allows solutions to contribute toolbar buttons for their gadgets.</p>
-
-<p>One annotation that we don&rsquo;t make use of is the @Persist annotation as persistence is a feature that we avoid because we require users to start with a clean state each time they run the application.</p>
-
-<p>That brings me to that last topic, where do we go from here. We&rsquo;ve begun the evaluation of 4.3 and have the evaluation of 4.4 on our roadmap when it becomes available.</p>
-
-<p>Specifically we&rsquo;re working to bring in 4.3 before June in response to some changes to the rendering of menus that occurred between 4.1 and 4.2. We still define our menu items through extension points in a plugin.xml file and we&rsquo;d created an abstract class that allows other solutions to change the default menu text that we provided (most wanted to change &lsquo;iAware&rsquo; to &lsquo;File&rsquo;). Our application class then used this abstract class and the setText method on the menu item to change the text; however, we found in 4.2 that menu items that come from plugin.xml couldn&rsquo;t be changed in this manner. So, when we make the move to 4.3, we&rsquo;ll also change our menu contributions to come from the application model instead of extension points.</p>
-
-<p>We will also re-evaluate workarounds that we&rsquo;ve added for earlier versions that are now fixed in the main line.</p>
-
-<p>The final item is something we&rsquo;ve already been working on for a little while know but are really going after hard this year is moving to P2. We released our last version using features and products and we&rsquo;re continuing to play with how we can best leverage them to deliver our solutions to clients.</p>
-
-<p>The introduction of Eclipse 4.x represented somewhat of a turning point for our team. While the process of uplifting was challenging at times, it was a great learning experience and it provided us the ability to enhance the functionality of the iAware platform, which was a huge benefit to our teams developing solutions. Integral to our ability to enhance the iAware platform was the fact that with 4.x we’re able to use native API where previously we wouldn’t have been able to accomplish it or it required us to use a workaround, usually entailing use of internal classes.  The work also lead to more involvement and participation in the Eclipse community by our team. We were involved in discussions in the forums, logged bugs and provided patches, which is a positive for all involved.</p>
-</div>
-  
-  
-
-
+  <div class="entry-content">
+    This is the blog form of the talk Migrating from Eclipse 3.X to Eclipse 4.X &ndash; The iAware Story at EclipseCon 2014. The iAware development team was formed in late 2007 and in a little under six months we developed our first solution, CareAware CriticalCare, a dashboard application written using &hellip;
+    <footer>
+      <a rel="full-article" href="/blog/migrating-from-eclipse-3.x-to-eclipse-4.x-the-iaware-story/">Read More</a>
+    </footer>
+  </div>
     </article>
   
   <ul class="pager">
     
-    <li class="previous"><a href="/blog/page/4/">&larr; Older posts</a></li>
-    
-    <li><a href="/blog/archives">Blog Archives</a></li>
-    
-    <li class="next"><a href="/blog/page/2/">Newer posts &rarr;</a></li>
+    <li><a href="/blog/page/4/">Load More</a></li>
     
   </ul>
 </div>
@@ -1026,29 +278,36 @@
   <h2>Recent Posts</h2>
   <ul id="recent_posts" class="nav nav-list">
     
-      <li class="post">
+      <li>
         <a href="/blog/deploying-web-services-with-apache-tomcat-and-chef/">Deploying Web Services With Apache Tomcat and Chef</a>
       </li>
     
-      <li class="post">
+      <li>
         <a href="/blog/girls-in-technology-movement-hour-of-code/">Girls in Technology Movement - Hour of Code</a>
       </li>
     
-      <li class="post">
+      <li>
         <a href="/blog/identifying-network-acl-issues-with-chef-locally/">Identifying Network ACL Issues With Chef Locally</a>
       </li>
     
-      <li class="post">
+      <li>
         <a href="/blog/javascript-logging-we-can-do-better/">JavaScript Logging: We Can Do Better!</a>
       </li>
     
-      <li class="post">
+      <li>
         <a href="/blog/managing-30000-logging-events-per-day-with-splunk/">Managing 30,000 Logging Events Per Day With Splunk</a>
       </li>
     
   </ul>
 </section>
-
+<section class="divider">
+  <svg width="70" height="10">
+   <rect width="10" height="10" x="0" y="0" style="fill:rgb(20,124,193)" />
+   <rect width="10" height="10" x="20" y="0" style="fill:rgb(121,193,68)" />
+   <rect width="10" height="10" x="40" y="0" style="fill:rgb(20,124,193)" />
+   <rect width="10" height="10" x="60" y="0" style="fill:rgb(121,193,68)" />
+</svg>
+</section>
 <section class="well">
   <h2>GitHub Repos</h2>
   <ul id="gh_repos" class="nav">
@@ -1084,9 +343,38 @@
 
     </div>
   </div>
+  
+<script id="search-results-template" type="text/mustache">
+  {{#entries}}
+    <article class="search-result">
+        <div class="search-meta meta">
+        {{#date}}<time datetime="{{pubdate}}" pubdate>{{displaydate}}</time>{{/date}} | {{author}}
+        </div>
+        <a href="{{url}}">{{title}}</a>
+    </article>
+  {{/entries}}
+</script>
+
+<script type="text/javascript">
+  $(function() {
+    $('#search-query').lunrSearch({
+      indexUrl: '/javascripts/index.json',   // Url for the .json file containing search index data
+      results : '#search-results',  // selector for containing search results element
+      entries : '.entries',         // selector for search entries containing element (contained within results above)
+      template: '#search-results-template'  // selector for Mustache.js template
+    });
+  });
+</script>
   <footer role="contentinfo" class="page-footer">
-  <div class="container">
-    <p>&copy; 2016 Cerner</p>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="span2">
+          <img src="/images/cerner_small_logo_white.png" alt="Cerner Logo" />
+      </div>
+      <div class="span10 pull-left">
+          <p>&copy; 2016</p>
+      </div>
+    </div>
   </div>
 </footer>
 
