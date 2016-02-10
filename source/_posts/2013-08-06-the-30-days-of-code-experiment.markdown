@@ -2,7 +2,6 @@
 layout: post
 title: The 30 Days of Code Experiment
 author: Carl Chesser
-author_url: carl-chesser
 date: 2013-08-06
 tags: [culture, engineering]
 permalink: /2013/08/the-30-days-of-code-experiment/

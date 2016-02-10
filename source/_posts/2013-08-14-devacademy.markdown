@@ -2,7 +2,6 @@
 layout: post
 title: DevAcademy
 author: Michelle Brush
-author_url: michelle-brush
 date: 2013-08-14
 tags: [culture, engineering]
 permalink: /2013/08/devacademy/

@@ -2,7 +2,6 @@
 layout: post
 title: Why Engineering Health?
 author: Charlie Huggard
-author_url: charlie-huggard
 date: 2013-02-04
 tags: [culture]
 permalink: /2013/02/why-engineering-health/

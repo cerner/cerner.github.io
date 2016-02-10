@@ -2,7 +2,6 @@
 layout: post
 title: Evangelizing User Experience
 author: Cerner Engineering
-author_url:
 date: 2013-02-12
 tags: [design]
 permalink: /2013/02/evangelizing-user-experience/

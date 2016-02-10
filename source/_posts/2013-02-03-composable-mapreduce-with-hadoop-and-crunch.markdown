@@ -2,7 +2,6 @@
 layout: post
 title:  "Composable MapReduce with Hadoop and Crunch"
 author: Ryan Brush
-author_url: ryan-brush
 date:   2013-02-03
 tags: [design, engineering]
 permalink: /2013/02/composable-mapreduce-with-hadoop-and-crunch/

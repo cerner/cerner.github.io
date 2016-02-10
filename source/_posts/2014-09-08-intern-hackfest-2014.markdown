@@ -2,7 +2,6 @@
 layout: post
 title: "Intern HackFest 2014"
 author: Makenzie Kalb
-author_url: makenzie-kalb
 date: 2014-09-08
 tags: [engineering]
 ---

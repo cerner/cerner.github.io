@@ -2,7 +2,6 @@
 layout: post
 title: Cerner Tech Talks
 author: Kevin Shekleton
-author_url: kevin-shekleton
 date: 2013-11-12
 tags: [culture, engineering, tech talks]
 permalink: /2013/11/cerner-tech-talks/

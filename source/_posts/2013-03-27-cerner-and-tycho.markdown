@@ -2,7 +2,6 @@
 layout: post
 title: Cerner and Tycho
 author: Jonny Wright
-author_url: jonny-wright
 date: 2013-03-27
 tags: [engineering, operations]
 permalink: /2013/03/cerner-and-tycho/

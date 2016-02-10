@@ -2,7 +2,6 @@
 layout: post
 title: Migrating from Eclipse 3.X to Eclipse 4.X - The iAware Story
 author: Andy Gifford
-author_url: andy-gifford
 date: 2014-03-18
 tags: [engineering]
 ---

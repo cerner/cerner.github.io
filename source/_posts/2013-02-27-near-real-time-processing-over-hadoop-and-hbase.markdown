@@ -2,7 +2,6 @@
 layout: post
 title: Near Real-time Processing Over Hadoop and HBase
 author: Ryan Brush
-author_url: ryan-brush
 date: 2013-02-27
 tags: [design, engineering]
 permalink: /2013/02/near-real-time-processing-over-hadoop-and-hbase/

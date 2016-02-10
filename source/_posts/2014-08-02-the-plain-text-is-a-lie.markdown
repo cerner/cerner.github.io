@@ -2,7 +2,6 @@
 layout: post
 title:  "The Plain Text is a Lie"
 author: Elliott Hoffman
-author_url: elliott-hoffman
 date:   2014-08-02
 tags: [design, engineering, i18n, Unicode, text]
 ---

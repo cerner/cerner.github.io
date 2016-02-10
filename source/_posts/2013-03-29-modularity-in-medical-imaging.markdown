@@ -2,7 +2,6 @@
 layout: post
 title: Modularity in Medical Imaging
 author: Cerner Engineering
-author_url:
 date: 2013-03-29
 tags: [operations]
 permalink: /2013/03/modularity-in-medical-imaging/

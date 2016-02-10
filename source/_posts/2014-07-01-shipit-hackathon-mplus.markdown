@@ -2,7 +2,6 @@
 layout: post
 title: ShipIt - 24-hour hackathon for Millennium+ Platform Dev
 author: Shahzad Zafar
-author_url: shahzad-zafar
 date: 2014-07-01
 tags: [culture, engineering]
 ---

@@ -2,7 +2,6 @@
 layout: post
 title: 2013 Software Intern Hackfest
 author: Frank Rydzewski
-author_url: frank-rydzewski
 date: 2013-11-11
 tags: [culture, engineering]
 permalink: /2013/11/2013-software-intern-hackfest/
@@ -25,7 +24,7 @@ One of the most fun events this past summer was the **Software Intern Hackfest**
 
 The teams were given a week to build anything they wanted and presented the end result to a panel of Cerner software developers for prizes and glory. We took some time to sit down with two of the winning teams to get their thoughts on the Hackfest and their overall experience with the internship program.
 
-## Grand Prize winners: [Team Golf](http://engineering.cerner.com/engineers/team-golf/)
+## Grand Prize winners: Team Golf
 
 **Addison Shaw, Richard Habeeb**
 
@@ -57,7 +56,7 @@ We knew it had to be 2-d. We built the framework with a grid structure. We made 
 
 **Richard:** I do robotics a lot during the school year and I was thinking of working with it at our club.
 
-## Crowd Favorite: [Mad Scientists](http://engineering.cerner.com/engineers/team-mad-scientists/)
+## Crowd Favorite: Mad Scientists
 
 **Alex Valentine, George Li, Jack Miles**
 

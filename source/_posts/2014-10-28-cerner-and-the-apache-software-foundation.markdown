@@ -2,7 +2,6 @@
 layout: post
 title: Cerner and the Apache Software Foundation
 author: Kevin Shekleton
-author_url: kevin-shekleton
 date: 2014-10-28
 tags: [culture, engineering]
 ---
