@@ -1,13 +1,34 @@
-<nav id="nav-main" class="nav-collapse" role="navigation">
-  <ul id="menu-top-menu" class="nav pull-right">
-    <li class="menu-life-as-an-engineer">
-      <a href="{{ root_url }}/about">Life as an Engineer</a>
-    </li>
-    <li class="menu-who-we-are">
-      <a href="{{ root_url }}/engineers">Who We Are</a>
-    </li>
-    <li>
-      <a href="{{ root_url }}/blog/archives">Archives</a>
-    </li>
-  </ul>      
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Engineering Health</a>
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li {% if page.url == '/index.html' %}class="selected"{% endif %}>
+            <a href="{{ root_url }}/">Blog</a>
+          </li>
+          <li {% if page.url == '/culture/index.html' %}class="selected"{% endif %}>
+            <a href="{{ root_url }}/culture">Culture</a>
+          </li>
+          <li {% if page.url == '/tech_talks/index.html' %}class="selected"{% endif %}>
+            <a href="{{ root_url }}/tech_talks">Tech Talks</a>
+          </li>
+          <li {% if page.url == '/blog/archives/index.html' %}class="selected"{% endif %}>
+            <a href="{{ root_url }}/blog/archives">Archives</a>
+          </li>
+        </ul>
+        <div id="search" class="pull-right">
+          <form action="/search" method="get" class="navbar-search">
+            <input type="text" id="search-query" name="q" class="search-query" placeholder="Search" autocomplete="off">
+            <img src="/images/MagnifyingGlass.png" alt="Search" width="16px" height="16px" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </nav>

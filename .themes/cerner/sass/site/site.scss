@@ -39,7 +39,7 @@
 // Adds top spacing to <body> to account for space of fixed navbar
 body.top-navbar {
   padding-top: 105px;
-  
+
   // At this breakpoint, the navbar is not longer postion:fixed so the top spacing can be reset
   @media screen and (max-width: 980px) {
     padding-top: 0;
@@ -47,7 +47,7 @@ body.top-navbar {
 }
 
 .navbar {
-  .btn { 
+  .btn {
     // Aligns nav toggle button with brand logo
     @media screen and (max-width: 980px) {
       margin-top: 27.5px;
@@ -64,7 +64,7 @@ body.top-navbar {
   .brand {
     margin: 0;
     padding: 30px 0 0;
-    
+
     @media (max-width: 979px) {
       margin-left: 20px;
     }
@@ -76,7 +76,7 @@ body.top-navbar {
 
   .nav > li > a {
     padding: 39px 15px 30px;
-  } 
+  }
 }
 
 
@@ -103,11 +103,11 @@ body.top-navbar {
     max-width: inherit;
     position: relative;
     width: auto;
-    
+
     @media (max-width: 979px) {
       margin-left: -64%;
     }
-    
+
     // Hide page header image at this breakpoint
     @media (max-width: 767px) {
       display: none;
@@ -142,14 +142,14 @@ body.top-navbar {
 
 .page-footer {
   background-color: #222;
-  color: #999; 
+  color: #999;
   margin: 30px 0 0; // Pulls footer full width of browser window for small viewports
   padding: 10px 22px;
 
   @media (max-width: 767px) {
     margin-left: -20px;
     margin-right: -20px;
-  } 
+  }
 
   p {
     margin-bottom: 0;
@@ -180,27 +180,6 @@ h2 strong {
 }
 
 header h2 { font-size: 40px; }
-
-
-// Site Search
-// --------------------------------------------------
-
-#search-form-wrapper{
-  input {
-    font-size: 85%;
-  }
-
-  #q {
-    height: auto;
-    width: 75%;
-  }
-}
-
-#searchsubmit {
-  @include border-radius(15px);
-  margin-left: -10%;
-  width: 30%;
-}
 
 
 // PAGES
@@ -242,8 +221,8 @@ header h2 { font-size: 40px; }
     border-bottom: none;
     padding-bottom: 0;
   }
-} 
- 
+}
+
 
 // Engineer Page
 // --------------------------------------------------
@@ -272,7 +251,7 @@ header h2 { font-size: 40px; }
   dd {
     line-height: 18px;
   }
-  
+
   dl,
   dd {
     margin: 0 0 10px 0;
