@@ -12,13 +12,14 @@
   @include box-sizing(border-box);
 }
 
-
-
-.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
-  @media (min-width: 1200px) {
-    width: 1145px;
-  }
+.container-fluid {
+    padding: 0px;
 }
+
+// Colors
+// --------------------------------------------------
+$darkGreen:     darken($green, 15%);
+$lightGray:     #e3e3e3 !default;
 
 // Img Alignment
 // --------------------------------------------------
@@ -28,55 +29,67 @@
 .center {
   display: block;
   margin: 0 auto;
+  float: none;
 }
 
-// LAYOUT
+// Video Helper Styles
 // --------------------------------------------------
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
-// Navbar
+// Component sizing
 // --------------------------------------------------
-
-// Adds top spacing to <body> to account for space of fixed navbar
-body.top-navbar {
-  padding-top: 105px;
-  
-  // At this breakpoint, the navbar is not longer postion:fixed so the top spacing can be reset
-  @media screen and (max-width: 980px) {
-    padding-top: 0;
-  }
-}
-
-.navbar {
-  .btn { 
-    // Aligns nav toggle button with brand logo
-    @media screen and (max-width: 980px) {
-      margin-top: 27.5px;
-    }
-  }
-}
-
+$paddingNormal: 20px;
 
 // Banner
 // --------------------------------------------------
 
 #banner {
+  text-align: center;
 
   .brand {
-    margin: 0;
-    padding: 30px 0 0;
-    
-    @media (max-width: 979px) {
-      margin-left: 20px;
-    }
-
-    @media (max-width: 767px) {
-      max-width: 65%;
-    }
+    margin-left: 20px;
   }
 
-  .nav > li > a {
-    padding: 39px 15px 30px;
-  } 
+  background-color: $darkSlateGray;
+
+  .image {
+   position: relative;
+   width: 100%; /* for IE 6 */
+  }
+
+  #header1 {
+     position: absolute;
+     top: 30%;
+     left: 5%;
+     color: $white;
+     font-size: 40px;
+     line-height: 35px;
+     text-align: right;
+
+     @media (max-width: 767px) {
+       display: none;
+     }
+
+     @media (min-width: 1200px) {
+       left: 15%;
+     }
+  }
+
+  .header2 {
+    font-size: 25px;
+  }
 }
 
 
@@ -103,11 +116,11 @@ body.top-navbar {
     max-width: inherit;
     position: relative;
     width: auto;
-    
+
     @media (max-width: 979px) {
       margin-left: -64%;
     }
-    
+
     // Hide page header image at this breakpoint
     @media (max-width: 767px) {
       display: none;
@@ -131,9 +144,40 @@ body.top-navbar {
 // --------------------------------------------------
 
 #main {
-  @media (min-width: 1200px) {
-    margin-top: -60px;
+  padding-top: $paddingNormal;
+}
+
+// Sidebar
+// --------------------------------------------------
+
+.sidebar-nav {
+  padding-top: $paddingNormal;
+}
+
+// Page Footer
+// --------------------------------------------------
+.navbar {
+  margin-bottom: 0px;
+  border-top: 3px solid $blueDark;
+}
+
+.navbar-inner {
+  border-bottom: 0px;
+
+  .brand {
+    display: none;
+
+    @media (max-width: $navbarCollapseWidth) {
+      display: block;
+    }
   }
+}
+
+.selected {
+  background-image: url("/images/Triangle.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: auto 10px;
 }
 
 
@@ -141,15 +185,16 @@ body.top-navbar {
 // --------------------------------------------------
 
 .page-footer {
-  background-color: #222;
-  color: #999; 
+  background-color: #6b737b;
+  color: #fff;
   margin: 30px 0 0; // Pulls footer full width of browser window for small viewports
   padding: 10px 22px;
+  border-bottom: 3px solid $green;
 
   @media (max-width: 767px) {
     margin-left: -20px;
     margin-right: -20px;
-  } 
+  }
 
   p {
     margin-bottom: 0;
@@ -165,7 +210,10 @@ body.top-navbar {
 
 h1, h2, h3, h4, h5, h6 { font-weight: normal; }
 
-h1 { color: $primary-color; }
+h1 {
+  font-size: 30px;
+  color: $primary-color;
+}
 
 h2 {
   font-size: 25px;
@@ -176,11 +224,29 @@ h2 {
 
 h2 b,
 h2 strong {
-  font-weight: normal;
+  font-weight: bold;
 }
 
-header h2 { font-size: 40px; }
+body {
+  background-color: #e9eae9;
+}
 
+* {
+  border-radius: 0 !important;
+}
+
+// Pager
+// --------------------------------------------------
+.pager li > a,
+.pager li > span {
+  background-color: $green;
+  color: $white;
+  border: 1px solid $lightGray;
+}
+
+.pager li > a:hover {
+  background-color: $darkGreen;
+}
 
 // Site Search
 // --------------------------------------------------
@@ -202,6 +268,22 @@ header h2 { font-size: 40px; }
   width: 30%;
 }
 
+#search-results {
+  background-color: $white;
+  border: 1px solid $lightGray;
+  padding: $paddingNormal;
+  margin-top: 20px;
+}
+
+.search-result {
+  border-bottom: 1px solid $lightGray;
+  padding: 10px;
+}
+
+.search-meta {
+  padding: 0px;
+}
+
 
 // PAGES
 // --------------------------------------------------
@@ -214,9 +296,17 @@ header h2 { font-size: 40px; }
   border-bottom: 1px solid #eeeeee;
   margin-bottom: 1em;
   padding-bottom: 1em;
+  background-color: $white;
+  border: 1px solid $lightGray;
+  padding: $paddingNormal;
 }
 
-.sharing, .meta, .pager {
+.entry-title {
+  margin: 0;
+  padding-bottom: $paddingNormal;
+}
+
+.sharing, .pager {
   margin: 20px 0px 20px 0px;
 }
 
@@ -229,137 +319,131 @@ header h2 { font-size: 40px; }
   margin-top: 0;
 }
 
+.post {
+  background-color: $white;
+  border: 1px solid $lightGray;
+  padding: $paddingNormal;
+}
 
-// Archive Listing
-// --------------------------------------------------
+.post-container {
+  margin-left: $paddingNormal;
+  margin-right: $paddingNormal;
 
-.archive-listing {
-  border-bottom: 1px solid #eeeeee;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-
-  &:last-of-type {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-} 
- 
-
-// Engineer Page
-// --------------------------------------------------
-
-.eng {
-  h2 {
-    color: $secondary-color;
+  @media (max-width: 767px) {
+    margin-left: 0px;
+    margin-right: 0px;
   }
 }
 
-.eng-img {
-  display: block;
+
+// Archives
+// --------------------------------------------------
+
+.archive-section {
+  background-color: $white;
+  border: 1px solid $lightGray;
+  padding: $paddingNormal;
+  margin-bottom: $paddingNormal;
+}
+
+.archive-title {
   margin: 0;
+  padding-bottom: $paddingNormal;
 }
 
-.eng-bio {
-  background: #7ac143;
-  color: #fff;
-  padding: 15px;
-
-  h2 {
-    color: #fff;
-  }
-
-  dt,
-  dd {
-    line-height: 18px;
-  }
-  
-  dl,
-  dd {
-    margin: 0 0 10px 0;
-  }
+.archive-meta {
+  margin-top: 0;
 }
 
 
-// About Page
+// Divider
 // --------------------------------------------------
 
-.about-links {
-  margin: 10px 0;
-}
-
-
-.about-link {
-  background-color: #7ac143;
-  color: white;
-  display: inline-block;
-  font-size: 15px;
-  line-height: 1.25em;
-  overflow: hidden;
-  padding-bottom: .75em;
-}
-
-.about-link h4 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.about-link:hover {
-  color: white;
-}
-
-.about-author-photo {
-  display: block;
-  max-height: 200px;
-  overflow: hidden;
-}
-
-.about-author-photo img {
-  height: auto;
-  min-width: 100px;
+.divider {
   width: 100%;
-}
+  margin-bottom: 20px;
+  margin-top: 20px;
 
-.about-info {
-  min-height: 80px;
-  padding: 0 10px;
-}
+  svg {
+    max-height: 300px;
 
-@media (max-width: 767px) {
-  .about-link.about-link-small {
-    margin-bottom: 1em;
-    padding-bottom: 0;
-    width: 100%;
-  }
+    margin: 0 auto; /* poor attempt at centering */
 
-  .about-author-photo {
-    float: left;
-    height: 100px;
-    margin: 0 1em 0 0;
-    width: 100px;
-  }
+    height: auto !important; /* overrides inline */
+    width: auto !important; /* overrides inline */
 
-  .about-author-photo img {
-    min-height: 100px;
+    max-width: 300px;
+    display: block;
   }
 }
 
-@media (max-width: 979px) {
-  .about-author-photo {
-    max-height: 160px;
+// Culture page
+// --------------------------------------------------
+.culture-text {
+  h2 {
+    text-align: center;
+    color: #000;
   }
 
-  .about-info {
-    font-size: 13px;
+  p {
+    text-align: center;
   }
+
+  div img {
+    display:block;
+    margin:auto;
+  }
+
+  div {
+    padding-bottom: $paddingNormal;
+  }
+
+  padding-top: $paddingNormal * 3;
+  padding-bottom: $paddingNormal;
 }
 
-@media (min-width: 1200px) {
-  .authors {
-    margin-top: 87px;
+.culture-back-image {
+  position: relative;
+
+  h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    transform: translate(-50%, -50%);
+    color: $white;
+    text-align: center;
+
+    @media (max-width: $navbarCollapseWidth) {
+      font-size: 20px;
+    }
   }
 
-  .about-author-photo {
-    max-height: 240px;
-  }
+  background-size: cover;
+  width:100%;
+  height:500px;
+}
+
+.culture-lego-builder {
+  background-image: url("/images/culture1.jpg");
+}
+
+.culture-hackathon {
+  background-image: url("/images/culture2.jpg");
+}
+
+// Tech Talk page
+// --------------------------------------------------
+.tech-talk-featured {
+   background-color: $white;
+   padding: $paddingNormal;
+   border: 1px solid $lightGray;
+   margin-bottom: $paddingNormal;
+}
+
+.tech-talk {
+  background-color: $white;
+  padding: $paddingNormal;
+  border: 1px solid $lightGray;
+  margin-bottom: $paddingNormal;
 }
