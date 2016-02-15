@@ -9,7 +9,7 @@
       </a>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li {% if page.url == '/index.html' %}class="selected"{% endif %}>
+          <li {% if page.url == '/index.html' or page.url contains '/blog/'%}class="selected"{% endif %}>
             <a href="{{ root_url }}/">Blog</a>
           </li>
           <li {% if page.url == '/culture/index.html' %}class="selected"{% endif %}>

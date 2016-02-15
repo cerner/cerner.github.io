@@ -217,7 +217,7 @@ h1 {
 
 h2 {
   font-size: 25px;
-  font-weight: normal;
+  font-weight: bold;
   line-height: 42px;
   margin: .125em 0;
 }
@@ -304,6 +304,10 @@ body {
 .entry-title {
   margin: 0;
   padding-bottom: $paddingNormal;
+}
+
+.entry-title a {
+  color: black;
 }
 
 .sharing, .pager {
