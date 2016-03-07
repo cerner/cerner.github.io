@@ -9,6 +9,12 @@
 	line-height: 20px;
 }
 
+span.highlight {
+	background-color: yellow;
+	font-weight: 800;
+	text-decoration: underline;
+}
+
 p {
 	margin-top: 10px;
 }
@@ -153,5 +159,4 @@ div p span.prepunctuation {
 }
 
 }
-
 
