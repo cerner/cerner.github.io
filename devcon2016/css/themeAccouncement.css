@@ -73,22 +73,12 @@ ul li.active:nth-child(5) {
 	background-color: #4cb3e9;
 }
 
-ul li.inactive:nth-child(2) {
-	background-color: #ceeddb;
-	color: #a6d885;
+ul li.inactive {
+	background-color: #c9cbcc;
+	color: #868989;
+	border-right: 1px solid #fff;
 }
-ul li.inactive:nth-child(3) {
-	background-color: #fde9b9;
-	color: #feca5b;
-}
-ul li.inactive:nth-child(4) {
-	background-color: #d8d8e9;
-	color: #daade7;
-}
-ul li.inactive:nth-child(5) {
-	background-color: #c8e9f8;
-	color: #a7daf5;
-}
+
 
 section.body {
 	max-width: 700px;
