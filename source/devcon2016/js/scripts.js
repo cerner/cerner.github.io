@@ -30,7 +30,6 @@
 		resizeImage();
 		$( "#nav li" ).removeClass("selected");
 		$(e).addClass("selected");
-		history.pushState(null, null, currentDay + ".html");
 	};
 
 	var resizeImage = function() {
