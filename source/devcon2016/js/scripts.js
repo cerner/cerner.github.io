@@ -29,6 +29,7 @@
 		$("[data-day='" + currentDay +"']").show();
 		resizeImage();
 		$( "#nav li" ).removeClass("selected");
+		$( "span" ).removeClass("selected");
 		$(e).addClass("selected");
 	};
 
@@ -46,6 +47,7 @@
 		currentDay = null;
 
 		$( "#nav li" ).removeClass("selected");
+		$( "header span" ).addClass("selected");
 		$("section.image").hide();
 		$("section.body").hide();
 		$("section.instructions").show();

@@ -45,7 +45,7 @@ ul li {
 	color: #fff;
 }
 
-ul li.selected {
+.selected {
 	text-decoration: underline;
 }
 
@@ -77,6 +77,15 @@ ul li.inactive {
 	background-color: #c9cbcc;
 	color: #868989;
 	border-right: 1px solid #fff;
+}
+
+span.headerInstructions {
+	float: right;
+    margin-right: 1.25em;
+    margin-top: 1em;
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 1.35em;
+    color: #fff;
 }
 
 section.body {
@@ -144,9 +153,11 @@ div p span.prepunctuation {
 		margin: 15px 14px 30px 15px;
 	}	
 	div p span.prepunctuation {
-	margin-right: -10px;
-}
+		margin-right: -10px;
+	}
+	span.headerInstructions {
+	    margin-right: .65em;
+	}
 
 }
-
 
