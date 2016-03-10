@@ -147,7 +147,7 @@ div p span.prepunctuation {
   and (max-device-width: 736px)
   and (-webkit-min-device-pixel-ratio: 2) {
   	section.solver p span { 
-  		margin-right: 0px
+  		margin-right: 3px
   	}
   	section.body {
 		margin: 15px 14px 30px 15px;
