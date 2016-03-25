@@ -447,3 +447,30 @@ body {
   border: 1px solid $lightGray;
   margin-bottom: $paddingNormal;
 }
+
+// Open source
+// --------------------------------------------------
+.open-source-text {
+  h2 {
+    text-align: center;
+    color: #000;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  div img {
+    display:block;
+    margin:auto;
+    padding-top: $paddingNormal;
+    padding-bottom: $paddingNormal;
+  }
+
+  div {
+    padding-bottom: $paddingNormal;
+  }
+
+  padding-left: $paddingNormal;
+  padding-right: $paddingNormal;
+}
