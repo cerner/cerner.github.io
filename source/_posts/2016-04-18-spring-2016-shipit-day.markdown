@@ -61,7 +61,7 @@ FQDN/IP address of all nodes with a [Chef](https://www.chef.io/) node name conta
 Really Tardy Measurement mechanicS (Jeff Compton, Himanshi Gulati, Adam Splitter, Timothy Waszac, Sriram
 Vimaraju)
 
-> The RTMS framework, which our team owns, is dependent on many moving parts, such as: [Olympus](http://www.cerner.com/about_cerner/partnerships/operational_system_management/), [Hadoop](http://hadoop.apache.org/) and [Jenkins](https://jenkins.io/index.html)
+> The _Response Time Measurement System (RTMS)_ framework, which our team owns, is dependent on many moving parts, such as: [Olympus](http://www.cerner.com/about_cerner/partnerships/operational_system_management/), [Hadoop](http://hadoop.apache.org/) and [Jenkins](https://jenkins.io/index.html)
 in order to produce a timer. In addition, using [Vertica](http://www8.hp.com/us/en/software-solutions/advanced-sql-big-data-analytics/index.html), [Tableau](http://www.tableau.com/), [LightsOn Network](https://lightson.cerner.com/), and the Olympus portal for reporting
 timer data.  This framework has been consolidated into a single application which can be used for development or
 troubleshooting of timers.  Currently the application supports [Splunk](http://www.splunk.com/) (for [Millennium+](http://www.cerner.com/newsroom.aspx?id=17179872330)), [Millennium](http://www.cerner.com/solutions/hospitals_and_health_systems/) application-produced
