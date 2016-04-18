@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2016-04-18T09:53:14-05:00</updated>
+  <updated>2016-04-18T09:54:30-05:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,102 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Spring 2016 ShipIt Day]]></title>
+    <link href="http://engineering.cerner.com/blog/spring-2016-shipit-day/"/>
+    <updated>2016-04-18T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/blog/spring-2016-shipit-day</id>
+    <content type="html"><![CDATA[<p>ShipIt Day is an all day, all night hackathon with the goal of building something awesome, usable, and value-adding
+within the given 24 hours. This Spring marked our fifth ShipIt Day, with participation and reach growing with each
+event.</p>
+
+<p>We kicked off the event at 10 AM on Thursday, when teams broke out and got to work and stopped only for food and
+caffeine. Many stayed until a few hours after dinner arrived, several stayed all night and took naps in their workspace,
+and a few worked through the whole night. The event was initially announced early in February, to give teams time to
+work this into their project plans. The schedule was to start at 10 am on a Thursday and wrap-up at 10 AM on Friday.
+Teams then presented their awesome projects and then were free to leave for the weekend (and catch-up on some sleep).
+Each team was free to choose the project they wanted to work on, with the limitation added that they should work on
+something which can be deployed somewhere in 24 hours (there were bonus points involved for deployed projects).  The
+winning prize not only included bragging rights, but also the <em>Golden Keyboard</em>, which will be a traveling trophy.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-04-18-spring-2016-shipit-day/shipit-start.png" title="Kickoff" ></p>
+
+<p>The event wrapped up on April 1st at Continuous Campus. We had over 50 participants from nine different organizations
+split into teams. They survived several April Fools pranks, two cases of <a href="https://www.monsterenergy.com/">Monster</a>, and 18 extra large pizzas before
+presenting their projects to a room full of other participants, judges, and over 50 people watching the live broadcast
+online.</p>
+
+<p>By the time 10 AM on Friday rolled around, the group was looking sleepy but excited for presentations. We moved over to
+a bigger room where a live streaming service was set up for associates at other campuses to watch presentations. A
+voting form was sent out to the entire audience, and a scoresheet was given to the judges. All 12 teams got through
+their presentations despite their lack of sleep, and the judges were thoroughly impressed. One judge, K.K. Kailasam made
+the remark,</p>
+
+<blockquote><p>You guys made it very difficult for us. It was extremely exciting to see the passion and excitement in each of you guys coming up and doing something outside of normal work. I’m totally humbled and very impressed.</p></blockquote>
+
+<p>The people’s choice votes were tallied and judges decided on the top three winners.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-04-18-spring-2016-shipit-day/shipit-judging.png" title="Judging" ></p>
+
+<h1>Winning Projects</h1>
+
+<h3>People’s Choice</h3>
+
+<p>Team Mantri (Dinesh Rauniyar, Raji Karki, Dinesh Bajracharya, Mahesh Acharya, Prannav Shrestha)</p>
+
+<p>Spoor is a <a href="https://www.google.com/chrome/">Chrome</a> extension that scans through tools like <a href="https://github.com/">GitHub</a>, <a href="https://www.atlassian.com/software/jira">JIRA</a>, <a href="https://www.atlassian.com/software/crucible">Crucible</a> and <a href="https://jenkins.io/index.html">Jenkins</a> and presents relevant
+information to us. Just with a single click, you can view all of the notifications from these tools and drill down to
+the detailed and hyperlinked description of each one of them.</p>
+
+<h3>Third Place</h3>
+
+<p>Suicide Cupcakes (Travis Collins, Daniel Lloyd, Andy Quangvan, Gared Seats)</p>
+
+<blockquote><p>The ETS_SHIV Ship IT project came about due to the frustration of being locked into a chroot jail on an ssh jump box
+without any ability to lookup the necessary connection info (fully qualified domain name / IP Address) necessary to
+connect to a node. Shiv is a tool that will query a read-only file system with all the node objects represented as
+directories and text files.  The script writes out the files and directories to a file system that is bind mounted read-
+only inside chroot.  Now users inside the chroot jail can run simple a command like; shiv cloud.  This would return the
+FQDN/IP address of all nodes with a <a href="https://www.chef.io/">Chef</a> node name containing the the string “cloud”.</p></blockquote>
+
+<h3>Second Place</h3>
+
+<p>Really Tardy Measurement mechanicS (Jeff Compton, Himanshi Gulati, Adam Splitter, Timothy Waszac, Sriram
+Vimaraju)</p>
+
+<blockquote><p>The <em>Response Time Measurement System (RTMS)</em> framework, which our team owns, is dependent on many moving parts, such as: <a href="http://www.cerner.com/about_cerner/partnerships/operational_system_management/">Olympus</a>, <a href="http://hadoop.apache.org/">Hadoop</a> and <a href="https://jenkins.io/index.html">Jenkins</a>
+in order to produce a timer. In addition, using <a href="http://www8.hp.com/us/en/software-solutions/advanced-sql-big-data-analytics/index.html">Vertica</a>, <a href="http://www.tableau.com/">Tableau</a>, <a href="https://lightson.cerner.com/">LightsOn Network</a>, and the Olympus portal for reporting
+timer data.  This framework has been consolidated into a single application which can be used for development or
+troubleshooting of timers.  Currently the application supports <a href="http://www.splunk.com/">Splunk</a> (for <a href="http://www.cerner.com/newsroom.aspx?id=17179872330">Millennium+</a>), <a href="http://www.cerner.com/solutions/hospitals_and_health_systems/">Millennium</a> application-produced
+checkpoint CSV files, or produce timers real-time as a Millennium application sends checkpoint data to it.  After timers
+have been produced, the user can inspect the composition of the timer by exposing checkpoints, incomplete timers, and
+chronological representation of a timer and other timers which may have affected it in a Gantt chart.</p></blockquote>
+
+<p>This application will improve the accuracy of timer definitions developed, improve speed of development on engineering,
+and empower engineers to develop and troubleshoot their timers without depending on the entire RTMS framework.</p>
+
+<h3>First Place</h3>
+
+<p>Wolfe Packe (Bryan Baugher, Micah Whitacre, Christian Duranleau, Michael Barker, Alex Hostetler)</p>
+
+<blockquote><p>Kafkaesque is a Web UI to help manage and operate <a href="http://kafka.apache.org/">Apache Kafka</a>. It provides insightful statistics about topics,
+partitions and brokers and is able to balance and re-assign partitions to different brokers.</p></blockquote>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-04-18-spring-2016-shipit-day/shipit-awards.png" width="550" title="Awards" ></p>
+
+<p>ShipIt Day has become an incredibly valuable experience for participants, giving them a chance to not only focus on
+projects that they wouldn’t normally have time for, but allowing them to meet people from other teams (in different
+organizations) and learn from those they normally wouldn’t work with. To quote a participant, Daniel Lloyd:</p>
+
+<blockquote><p>ShipIt day was a blast.  It was fun, it was serious, it was fun again… We got to make some new friends in IP and
+participate in an event that spanned both teams and organizations.  That in itself is enough to recommend ShipIt day to
+anyone.  It provides so much perspective into how the other teams operate and the cool things other teams and
+organizations are doing.</p></blockquote>
+
+<p>Thanks to all that participated, and we’ll see you again in the summer!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Deploying Web Services With Apache Tomcat and Chef]]></title>
@@ -2155,71 +2251,6 @@ about proactive solutions.</p>
 
 <iframe width="560" height="315" frameborder="0" src="//www.youtube.com/embed/EfXl7X-0wRI?rel=0" allowfullscreen></iframe>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[DevAcademy]]></title>
-    <link href="http://engineering.cerner.com/2013/08/devacademy/"/>
-    <updated>2013-08-14T00:00:00-05:00</updated>
-    <id>http://engineering.cerner.com/2013/08/devacademy</id>
-    <content type="html"><![CDATA[<p>When I graduated from college, I thought I understood what it meant to develop software in the real world. It required process. It required troubleshooting. It required quality. However, to me, process meant waterfall. Troubleshooting meant trying a few things and then asking for help. Quality meant manual testing.</p>
-
-<p>Agile methods were not unheard of when I graduated in 2001. My professors noted that iterative development was better than waterfall; they just only taught waterfall. Debuggers had been around since the 50’s, but my classmates and I still debugged with what I call &ldquo;Hi Mom!&rdquo; techniques. (We peppered our code with print statements.) Kent Beck had written the JUnit framework 4 years before, but it wasn’t entrenched in the Java culture yet. So it’s not surprising that my education didn’t cover these topics.</p>
-
-<p>It took a few painful experiences in the real world to make me realize the way I programmed in college wasn’t the best way to engineer software. I needed to adopt some new practices.</p>
-
-<p>Not much has changed in terms of software education. Being a part of Cerner’s software engineer training program, I am able to ask every group of new engineers three questions:</p>
-
-<p>&ldquo;Do you use an agile process?&rdquo;</p>
-
-<p>&ldquo;Do you use a debugger when troubleshooting your code?&rdquo;</p>
-
-<p>&ldquo;Do you write automated unit tests?&rdquo;</p>
-
-<p>Cerner has had explosive growth in engineering, so I’ve asked those questions of hundreds of recent graduates. Almost no one says yes. This told me that while colleges are doing a great job of teaching computer science, many schools are not teaching best practices in software development.</p>
-
-<p>Until recently, Cerner wasn’t doing that great of a job of teaching them either. Our training program covered them, but we still saw the new engineers struggle to understand agile development, debug their code, and write their first unit test. One of Cerner’s core values is if you recognize something is broken, you are empowered to fix it. I knew our training program wasn’t working. It became my job to fix it.</p>
-
-<p>Before tackling the whole program, I tried a little experiment. I wanted to see what it would take to get engineers in training to write just one unit test. At the time, training included a class on JUnit. In spite of the class, only 5% of the engineers were writing unit tests for training assignments.</p>
-
-<p>To correct this, I started telling the engineers that I would take points off assignments that didn’t have a unit test. The idea was to create structural motivation. We immediately saw 40% of the engineers writing unit tests. A step forward, but it wasn’t enough.</p>
-
-<p>The biggest obstacle to broader use of unit tests in training was that they didn’t know how to include the testing framework in their Java projects. That, more than the effort of writing the test, was keeping them from doing something we expected of them.</p>
-
-<p>Something was wrong. We were teaching Maven in our training program. If you are not familiar with it, Maven helps you manage your project builds, and as a result, it helps you manage your dependencies. The engineers were already attending a class that taught them how to add dependencies to Java projects. They just weren’t able to associate what they had learned with the goal of bringing JUnit into their projects. They weren’t making the connection.</p>
-
-<p>This connection was missed because engineers were learning about Maven in the absence of a problem. They were being told it’s an important tool, but we hadn’t given them a reason to use it. Later, when they did encounter the problem &ndash; &ldquo;How do I add the JUnit jar to my project?&rdquo; – it was too late. They had forgotten about Maven.</p>
-
-<p>The key was to move the Maven training closer to when they needed the information. This is called &ldquo;Just in Time Teaching.&rdquo; It became the first requirement of the new program.</p>
-
-<p>Another interesting aspect of my experiment is that 40% would write the tests even given the delay between training and practice. It should be obvious to anyone that’s ever taken a college programming class that some programmers can get it from lectures alone. Others have to practice. Any one-size-fits-all approach to training is flawed. The second requirement for the new program was that it must flex to meet the skills and learning styles of the engineers.</p>
-
-<p>With these goals in mind, I started the redesign of Cerner’s training program. My first step was to interview a large sample of our software leaders. I asked them what they wanted engineers to learn. Time and time again, the top answers would be agile development, debugging, and automated unit tests. Surprisingly, it was not a list of technologies like iOS, Hadoop, JSON, or ReST.</p>
-
-<p>The resumes of our newly hired engineers are full of languages and technologies. However, when asked what they wanted of new engineers, our lead architects described practices. If Cerner could get engineers to improve in practices, we could take the great engineers we were hiring and immediately make them more productive.</p>
-
-<p>The scary thing is that sharing knowledge is easy, but changing people’s behavior is hard. Once I realized our problems were about software development behavior and not knowledge, I realized we would need to completely rebuild the way Cerner trains its new engineers. The result is DevAcademy.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2013-08-14-devacademy/DevAcademy.png" title="DevAcademy" ></p>
-
-<p>Imagine you are a new engineer starting at Cerner. In your first week at Cerner, you report to the DevAcademy. The first two weeks focus on in-class instruction and assessment. The goal here is to introduce core software development behaviors and then assess your skills.</p>
-
-<p>After completing the first two weeks of instruction, you join what we call the DevCenter and are assigned a real project. However, that project isn’t assigned by your team. You get to pick. The projects come from all over Cerner including web applications and services, tools to make engineers more productive, and even contributing to open source projects used by Cerner. In picking a project, you are telling Cerner the types of work you find interesting. This helps us determine the best place for you across our diverse range of solutions and technologies.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2013-08-14-devacademy/ManagersTalkingToEngineer1.jpg" title="Manager talking to engineer" ></p>
-
-<p>While working on that first project, you have a dedicated mentor. You are expected to make progress on the project while receiving feedback. You also get just-in-time training on user stories, source code management, unit testing, and scrum. You get to use Cerner’s software development ecosystem in an isolated, safe environment.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2013-08-14-devacademy/Mentoring.jpg" title="Mentoring" ></p>
-
-<p>Once you show readiness to join a team, you are allowed to demo your work to the teams that have open positions. Those teams can then pick the engineer that best fits their team. In this way, Cerner makes sure you are assigned to the right team for both Cerner and you.</p>
-
-<p>DevAcademy recognizes that you should never stop learning, so the program continues well into your first few months on your team. You are offered classes on different technologies and more advanced topics as part of an elective-based training plan. You work with your manager to decide which classes to take. It’s Cerner’s way of making sure all of our engineers continue to grow.</p>
-
-<p>We’ve had 150 engineers join DevAcademy since it was launched. I’ve had the privilege of seeing the new engineers struggle and then succeed on their projects. I’ve seen the light come on when they realize the usefulness good development practices and apply them effectively. I’ve seen them get excited about git and other powerful tools that they didn’t have the opportunity to learn during their formal educations. The best part of my job is that I’ve seen many very good engineers start down the career-long path towards becoming really great ones.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2013-08-14-devacademy/Staff.jpg" title="Staff" ></p>
 ]]></content>
   </entry>
   
