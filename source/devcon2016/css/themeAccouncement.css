@@ -1,0 +1,163 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20px;
+}
+
+span.highlight {
+	background-color: yellow;
+	font-weight: 800;
+	text-decoration: underline;
+}
+
+p {
+	margin-top: 10px;
+}
+
+section.header header {
+	background-color: #0066a3;
+	height: 55px;
+	width: 100%;
+}
+
+.header h1 {
+    background: #0066a3 url("../img/BasicLogo.svg") no-repeat 0px 7px;
+    height: 3.25em;
+	margin-left: .75em;
+}
+
+nav ul {
+	display: flex;
+	flex-direction: row;
+}
+
+ul li {
+	height: 90px;
+	flex-grow: 1;
+	list-style: none;
+	line-height: 120px;
+	text-align: center;
+	color: #fff;
+}
+
+.selected {
+	text-decoration: underline;
+}
+
+li span {
+	font-family: 'Arial Bold', sans-serif;
+	font-size: 4.5em;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 800;
+}
+
+ul li.active:nth-child(1) {
+	background-color: #e3482c;
+}
+ul li.active:nth-child(2) {
+	background-color: #5fc18b;
+}
+ul li.active:nth-child(3) {
+	background-color: #fdb61b;
+}
+ul li.active:nth-child(4) {
+	background-color: #7c7fba;
+}
+ul li.active:nth-child(5) {
+	background-color: #4cb3e9;
+}
+
+ul li.inactive {
+	background-color: #c9cbcc;
+	color: #868989;
+	border-right: 1px solid #fff;
+}
+
+span.headerInstructions {
+	float: right;
+    margin-right: 1.25em;
+    margin-top: 1em;
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 1.35em;
+    color: #fff;
+}
+
+section.body {
+	max-width: 700px;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+section.body h1 {
+	font-weight: bold;
+	padding-top: 15px;
+}
+
+section.image {
+	display: none;
+}
+section.image img {
+	display: block;
+	margin: 0 auto;
+}
+section.clue {
+	display: none;
+}
+
+section.clue p {
+	text-align: center;
+}
+
+section.solver {
+	margin-top: 20px;
+}
+
+section.solver p {
+	text-align: center;
+	margin-top: 15px;
+}
+
+section.solver p span {
+	border-bottom: 1px solid #868989;
+	margin-right: 15px;
+	padding-left: 5px;
+	padding-right: 5px;
+	color: #c9cbcc;
+	font-weight: bold;
+}
+
+div p span.punctuation {
+	border-bottom: none;
+}
+
+div p span.prepunctuation {
+	margin-right: -10px;
+}
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  	section.solver p span { 
+  		margin-right: 3px
+  	}
+  	section.body {
+		margin: 15px 14px 30px 15px;
+	}	
+	div p span.prepunctuation {
+		margin-right: -10px;
+	}
+	span.headerInstructions {
+	    margin-right: .65em;
+	}
+
+}
+
