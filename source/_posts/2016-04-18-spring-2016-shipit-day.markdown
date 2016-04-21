@@ -41,7 +41,7 @@ The people’s choice votes were tallied and judges decided on the top three win
 # Winning Projects
 
 ### People’s Choice
-Team Mantri (Dinesh Rauniyar, Raji Karki, Dinesh Bajracharya, Mahesh Acharya, Prannav Shrestha)
+Team Mantri (Dinesh Rauniyar, Raju Karki, Dinesh Bajracharya, Mahesh Acharya, Prannav Shrestha)
 
 Spoor is a [Chrome](https://www.google.com/chrome/) extension that scans through tools like [GitHub](https://github.com/), [JIRA](https://www.atlassian.com/software/jira), [Crucible](https://www.atlassian.com/software/crucible) and [Jenkins](https://jenkins.io/index.html) and presents relevant
 information to us. Just with a single click, you can view all of the notifications from these tools and drill down to
