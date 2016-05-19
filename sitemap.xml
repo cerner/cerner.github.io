@@ -145,20 +145,24 @@
         <lastmod>2016-04-21T03:48:43-05:00</lastmod>
     </url>
     <url>
+        <loc>http://engineering.cerner.com/blog/railsconf-2016-recap/</loc>
+        <lastmod>2016-05-19T06:08:50-05:00</lastmod>
+    </url>
+    <url>
         <loc>http://engineering.cerner.com/about/</loc>
         <lastmod>2016-02-10T00:18:54-06:00</lastmod>
     </url>
     <url>
         <loc>http://engineering.cerner.com/blog/archives/</loc>
-        <lastmod>2016-04-21T03:48:43-05:00</lastmod>
+        <lastmod>2016-05-19T06:08:50-05:00</lastmod>
     </url>
     <url>
         <loc>http://engineering.cerner.com/culture/</loc>
-        <lastmod>2016-04-21T03:48:43-05:00</lastmod>
+        <lastmod>2016-05-19T06:08:50-05:00</lastmod>
     </url>
     <url>
         <loc>http://engineering.cerner.com/</loc>
-        <lastmod>2016-04-21T03:48:43-05:00</lastmod>
+        <lastmod>2016-05-19T06:08:50-05:00</lastmod>
     </url>
     <url>
         <loc>http://engineering.cerner.com/robots.txt</loc>
@@ -166,6 +170,6 @@
     </url>
     <url>
         <loc>http://engineering.cerner.com/tech_talks/</loc>
-        <lastmod>2016-04-21T03:48:43-05:00</lastmod>
+        <lastmod>2016-05-19T06:08:50-05:00</lastmod>
     </url>
 </urlset>

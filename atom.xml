@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2016-04-21T03:49:43-05:00</updated>
+  <updated>2016-05-19T06:09:32-05:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,51 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[RailsConf 2016 Recap]]></title>
+    <link href="http://engineering.cerner.com/blog/railsconf-2016-recap/"/>
+    <updated>2016-05-17T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/blog/railsconf-2016-recap</id>
+    <content type="html"><![CDATA[<p>At Cerner, we love Ruby and Rails and use it prominently in our cloud based solutions. When we found out RailsConf 2016 was going to be held in the hometown of Cerner&rsquo;s headquarters in Kansas City, Missouri, we were excited for the opportunity to support the conference by attending as well as being a sponsor and hosting one of the official after parties.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-17-railsconf-2016-recap/welcome.jpg" title="'Welcome To RailsConf'" ></p>
+
+<p>RailsConf 2016 took place in the heart of downtown Kansas City. From day one, the atmosphere was buzzing. We usually send a few engineers to RailsConf every year, but since it was in Kansas City, we were lucky enough to send 50+ engineers to soak up all of the knowledge and news that was being shared across three session-filled days.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-17-railsconf-2016-recap/cerner-engineers.jpg" title="'Cerner engineers" ></p>
+
+<p>We were a silver sponsor this year, which provided us with a booth space where we could share Cerner&rsquo;s story with Rails developers from across the world.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-17-railsconf-2016-recap/cerner-booth.jpg" title="'Cerner booth'" ></p>
+
+<p>In addition to meeting all of the wonderful Rails developers and getting the chance to tell them about Cerner and how we are huge into Rails, we also had some fun at our booth with some multiplayer gaming action&hellip;</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-17-railsconf-2016-recap/cerner-booth-multiplayer.jpg" title="'Multiplayer gaming'" ></p>
+
+<p>&hellip;and our daily raffles. We gave away some some awesome BBQ from Joe&rsquo;s KC and a Phantom 3 Professional drone. Congratulations to both winners.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-17-railsconf-2016-recap/joes-bbq-winner.jpg" title="&#34;Joe's BBQ Winner&#34;" alt="&#34;Joe's BBQ Winner&#34;"></p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-17-railsconf-2016-recap/drone-winner.jpg" title="'Phantom 3 Drone Winner'" ></p>
+
+<p>And for even more fun, we hosted one of the official after parties after the closing Day 1 keynote at No Other Pub. During the party, RailsConf attendees got a chance to mingle and talk to our developers and architects in a casual setting…and the free food and drinks certainly made for a great time.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-17-railsconf-2016-recap/cerner-after-party.jpg" title="'Cerner after party'" ></p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-17-railsconf-2016-recap/cerner-after-party-crowd.jpg" title="'Cerner after party crowd'" ></p>
+
+<p>In addition to all of the fun, one of our distinguished engineers, Nathan Beyer, gave a talk about lessons we&rsquo;ve learned using Rails at Cerner.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-17-railsconf-2016-recap/nathan-beyer-talk.jpg" title="'Pragmatic Lessons of Rails & Ruby in the Enterprise'" ></p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-17-railsconf-2016-recap/nathan-beyer-talk2.jpg" title="'Nathan Beyer presenting'" ></p>
+
+<p>RailsConf 2016 was a great event, and the fact that it was in our backyard, was icing on the cake. We wish it would be held in Kansas City every year, but we are already looking forward to <a href="https://twitter.com/railsconf/status/728712538897027072">RailsConf 2017 in sunny Phoenix, AZ</a>.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-17-railsconf-2016-recap/railsconf.jpg" title="'RailsConf'" ></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Spring 2016 ShipIt Day]]></title>
@@ -2216,41 +2261,6 @@ about proactive solutions.</p>
 <h2><strong>Why It Matters</strong></h2>
 
 <p>We have a lot to accomplish in &ldquo;engineering health,&rdquo; and K-12 outreach programs can feel like a long game that often take a back seat to immediate concerns around designing and shipping solutions. But seeing how even the less computing-savvy teachers started to get hooked on programming their Android devices or trying to get to the next level in picoCTF while beating their heads against man pages and HTTP dumps, it became clear to me that by getting involved in these programs we can accelerate not only the numbers of students comfortable with computational thinking, but also give them a network of relationships and experiences in their own communities to return to as their career and learning progresses. The long game may not be as long as we think.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[DevCon]]></title>
-    <link href="http://engineering.cerner.com/2013/08/devcon/"/>
-    <updated>2013-08-26T00:00:00-05:00</updated>
-    <id>http://engineering.cerner.com/2013/08/devcon</id>
-    <content type="html"><![CDATA[<p>This past June, 2,500 associates from across Cerner came together for <a href="http://www.youtube.com/watch?v=cE0YoFg-hkE">DevCon</a>, our internal developers conference. Now in its 3rd year, DevCon is a two-day, engineering-led conference that was created to bring together Cerner associates involved in all aspects of development and technology. DevCon is organized and run like many other developer conferences, complete with a call for papers and a talk selection committee. This year, we had 80 talks covering a wide array of topics such as big data, user experience and design, DevOps, and mobile development.</p>
-
-<p>A keynote presentation kicks off each day followed by talks across multiple tracks. <a href="https://twitter.com/skeptomai">Chris Brown</a>, CTO of <a href="http://www.opscode.com/">Opscode</a>, the creators of the open-source <a href="http://wiki.opscode.com/display/chef/Home">Chef Platform</a>, kicked off DevCon this year with a talk on the emergence and importance of DevOps. Within engineering at Cerner, embracing DevOps has had a big cultural impact on how we approach the software and systems we write and operate.</p>
-
-<iframe width="560" height="315" frameborder="0" src="//www.youtube.com/embed/D2hK5WpYaWc?rel=0" allowfullscreen></iframe>
-
-
-<p><a href="http://davehogue.com/">David Hogue</a>, a leading Interaction Designer and instructor at San Francisco State University, kicked off the second day talking about the importance of interaction design in business and software. Hogue&rsquo;s keynote was especially relevant to us as interaction designers play a prominent role in the creation and maintenance of our software.</p>
-
-<iframe width="560" height="315" frameborder="0" src="//www.youtube.com/embed/zaeGuPT1m2o?rel=0" allowfullscreen></iframe>
-
-
-<p>As you can see from the two keynote videos, the visual theme for DevCon this year was 8-bit gaming. Two 1980’s living room setups, packed with vintage NES consoles, CRT televisions, and piles of classic games, provided entertainment and nostalgia during the breaks in the conference schedule. At night, 20 teams competed for bragging rights and <a href="http://en.wikipedia.org/wiki/Retro_Duo">awesome</a> <a href="http://www.makeymakey.com/">prizes</a> at Geek Trivia Night, answering questions ranging from <em>name the sci-fi spaceships</em> to <em>identify the programming language from a snippet of code</em>.</p>
-
-<p>As in previous years, DevCon ends with lightning talks in which anyone can present on a topic of their choosing provided it lasts for no more than 5 minutes. Lightning talks at DevCon can cover the gamut. Past lightning talks have covered Monads in Scala, a visual tour of Comic-Con, and world record strategies in Donkey Kong.</p>
-
-<p>We&rsquo;ve also made available the DevCon 2012 keynote presentations, both from <a href="http://drjeffnorris.com/">Dr. Jeff Norris</a>, a scientist at NASA JPL responsible for the robotic spacecraft in the solar system. Norris talked on remaining agile while working on mission critical systems as well as the importance of specialization in the advancement of fields &mdash; both of these talks are well worth watching.</p>
-
-<p>DevCon allows engineers across organizations to come together to learn and present on a variety of topics, fostering a culture of innovation. It is no wonder then that many engineers at Cerner cite DevCon as their favorite and most anticipated event within Cerner.</p>
-
-<iframe width="560" height="315" frameborder="0" src="//www.youtube.com/embed/QFfmTLmn3Ow?rel=0" allowfullscreen></iframe>
-
-
-
-
-<iframe width="560" height="315" frameborder="0" src="//www.youtube.com/embed/EfXl7X-0wRI?rel=0" allowfullscreen></iframe>
-
 ]]></content>
   </entry>
   
