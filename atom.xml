@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2016-05-19T06:09:32-05:00</updated>
+  <updated>2016-05-19T06:11:56-05:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -16,45 +16,45 @@
   <entry>
     <title type="html"><![CDATA[RailsConf 2016 Recap]]></title>
     <link href="http://engineering.cerner.com/blog/railsconf-2016-recap/"/>
-    <updated>2016-05-17T00:00:00-05:00</updated>
+    <updated>2016-05-19T00:00:00-05:00</updated>
     <id>http://engineering.cerner.com/blog/railsconf-2016-recap</id>
     <content type="html"><![CDATA[<p>At Cerner, we love Ruby and Rails and use it prominently in our cloud based solutions. When we found out RailsConf 2016 was going to be held in the hometown of Cerner&rsquo;s headquarters in Kansas City, Missouri, we were excited for the opportunity to support the conference by attending as well as being a sponsor and hosting one of the official after parties.</p>
 
-<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-17-railsconf-2016-recap/welcome.jpg" title="'Welcome To RailsConf'" ></p>
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-19-railsconf-2016-recap/welcome.jpg" title="'Welcome To RailsConf'" ></p>
 
 <p>RailsConf 2016 took place in the heart of downtown Kansas City. From day one, the atmosphere was buzzing. We usually send a few engineers to RailsConf every year, but since it was in Kansas City, we were lucky enough to send 50+ engineers to soak up all of the knowledge and news that was being shared across three session-filled days.</p>
 
-<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-17-railsconf-2016-recap/cerner-engineers.jpg" title="'Cerner engineers" ></p>
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-19-railsconf-2016-recap/cerner-engineers.jpg" title="'Cerner engineers" ></p>
 
 <p>We were a silver sponsor this year, which provided us with a booth space where we could share Cerner&rsquo;s story with Rails developers from across the world.</p>
 
-<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-17-railsconf-2016-recap/cerner-booth.jpg" title="'Cerner booth'" ></p>
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-19-railsconf-2016-recap/cerner-booth.jpg" title="'Cerner booth'" ></p>
 
 <p>In addition to meeting all of the wonderful Rails developers and getting the chance to tell them about Cerner and how we are huge into Rails, we also had some fun at our booth with some multiplayer gaming action&hellip;</p>
 
-<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-17-railsconf-2016-recap/cerner-booth-multiplayer.jpg" title="'Multiplayer gaming'" ></p>
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-19-railsconf-2016-recap/cerner-booth-multiplayer.jpg" title="'Multiplayer gaming'" ></p>
 
 <p>&hellip;and our daily raffles. We gave away some some awesome BBQ from Joe&rsquo;s KC and a Phantom 3 Professional drone. Congratulations to both winners.</p>
 
-<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-17-railsconf-2016-recap/joes-bbq-winner.jpg" title="&#34;Joe's BBQ Winner&#34;" alt="&#34;Joe's BBQ Winner&#34;"></p>
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-19-railsconf-2016-recap/joes-bbq-winner.jpg" title="&#34;Joe's BBQ Winner&#34;" alt="&#34;Joe's BBQ Winner&#34;"></p>
 
-<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-17-railsconf-2016-recap/drone-winner.jpg" title="'Phantom 3 Drone Winner'" ></p>
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-19-railsconf-2016-recap/drone-winner.jpg" title="'Phantom 3 Drone Winner'" ></p>
 
 <p>And for even more fun, we hosted one of the official after parties after the closing Day 1 keynote at No Other Pub. During the party, RailsConf attendees got a chance to mingle and talk to our developers and architects in a casual setting…and the free food and drinks certainly made for a great time.</p>
 
-<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-17-railsconf-2016-recap/cerner-after-party.jpg" title="'Cerner after party'" ></p>
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-19-railsconf-2016-recap/cerner-after-party.jpg" title="'Cerner after party'" ></p>
 
-<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-17-railsconf-2016-recap/cerner-after-party-crowd.jpg" title="'Cerner after party crowd'" ></p>
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-19-railsconf-2016-recap/cerner-after-party-crowd.jpg" title="'Cerner after party crowd'" ></p>
 
 <p>In addition to all of the fun, one of our distinguished engineers, Nathan Beyer, gave a talk about lessons we&rsquo;ve learned using Rails at Cerner.</p>
 
-<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-17-railsconf-2016-recap/nathan-beyer-talk.jpg" title="'Pragmatic Lessons of Rails & Ruby in the Enterprise'" ></p>
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-19-railsconf-2016-recap/nathan-beyer-talk.jpg" title="'Pragmatic Lessons of Rails & Ruby in the Enterprise'" ></p>
 
-<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-17-railsconf-2016-recap/nathan-beyer-talk2.jpg" title="'Nathan Beyer presenting'" ></p>
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-19-railsconf-2016-recap/nathan-beyer-talk2.jpg" title="'Nathan Beyer presenting'" ></p>
 
 <p>RailsConf 2016 was a great event, and the fact that it was in our backyard, was icing on the cake. We wish it would be held in Kansas City every year, but we are already looking forward to <a href="https://twitter.com/railsconf/status/728712538897027072">RailsConf 2017 in sunny Phoenix, AZ</a>.</p>
 
-<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-17-railsconf-2016-recap/railsconf.jpg" title="'RailsConf'" ></p>
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-05-19-railsconf-2016-recap/railsconf.jpg" title="'RailsConf'" ></p>
 ]]></content>
   </entry>
   
