@@ -78,6 +78,3 @@ DEPENDENCIES
   sinatra (~> 1.4.2)
   stringex (~> 1.4.0)
   therubyracer (~> 0.12)
-
-BUNDLED WITH
-   1.10.6
