@@ -1,28 +1,10 @@
-
 body {
-  font-size: 100%;
-  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-  margin: 0px;
-  padding: 0px;
-}
-header {
-    background: #332685 url("../img/BasicLogo.svg") no-repeat top left;
-    height: 3.25em;
-}
-div {
-  text-align: center;
+  background: #000000;
 }
 
-h1 {
-  font-size: 4.5em;
-  font-weight: bold;
-}
-
-h2 {
-  font-size: 1.13em;
-  font-weight: bold;
-}
-
-p {
-  font-size: 0.889em;
+img {
+  margin:0px auto;
+  display:block;
+  width:25%;
+  height:auto;
 }
