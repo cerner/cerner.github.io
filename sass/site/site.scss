@@ -481,6 +481,20 @@ body {
     text-align: center;
   }
 
+  padding-left: $paddingNormal;
+  padding-right: $paddingNormal;
+}
+
+.open-source-text-projects {
+  h2 {
+    text-align: center;
+    color: #000;
+  }
+
+  p {
+    text-align: center;
+  }
+
   div img {
     display:block;
     margin:auto;
@@ -490,4 +504,8 @@ body {
 
   padding-left: $paddingNormal;
   padding-right: $paddingNormal;
+}
+
+.heart-img {
+  display: inline;
 }
