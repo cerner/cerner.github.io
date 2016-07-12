@@ -1,12 +1,30 @@
-<header id="banner" role="banner" class="container-fluid">
+{% assign site_location = "KC" %}
+{% assign site_background_style = "container-fluid banner-kc-background" %}
+{% if page.url == '/culture/index.html' %}
+  {% assign site_location = "INDIA" %}
+  {% assign site_background_style = "container-fluid banner-india-background" %}
+{% elsif page.url == '/open_source/index.html' %}
+  {% assign site_location = "CC" %}
+  {% assign site_background_style = "container-fluid banner-cc-background" %}
+{% elsif page.url == '/tech_talks/index.html' %}
+  {% assign site_location = "PHILLY" %}
+  {% assign site_background_style = "container-fluid banner-philly-background" %}
+{% elsif page.url == '/blog/archives/index.html' %}
+  {% assign site_location = "HQ" %}
+  {% assign site_background_style = "container-fluid banner-hq-background" %}
+{% endif %}
+
+<header id="banner" role="banner" class="{{ site_background_style }}">
 
   <div class="image">
 
-    {% if page.url == '/culture/index.html' %}
+    {% if site_location == "INDIA" %}
       <img src="/images/INDIA.jpg" alt="Bangalore" />
-    {% elsif page.url == '/tech_talks/index.html' %}
+    {% elsif site_location == "CC" %}
+      <img src="/images/continuous-campus.jpg" alt="Cerner Continuous Campus" />
+    {% elsif site_location == "PHILLY" %}
       <img src="/images/PHILLY.jpg" alt="Philadelphia" />
-    {% elsif page.url == '/blog/archives/index.html' %}
+    {% elsif site_location == "HQ" %}
       <img src="/images/HQ.jpg" alt="Cerner World Headquarters" />
     {% else %}
       <img src="/images/KC.jpg" alt="Kansas City" />

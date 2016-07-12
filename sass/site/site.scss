@@ -62,8 +62,6 @@ $paddingNormal: 20px;
     margin-left: 20px;
   }
 
-  background-color: $darkSlateGray;
-
   .image {
    position: relative;
    width: 100%; /* for IE 6 */
@@ -85,6 +83,10 @@ $paddingNormal: 20px;
      @media (min-width: 1200px) {
        left: 15%;
      }
+
+     @media (min-width: 1600px) {
+       left: 25%;
+     }
   }
 
   .header2 {
@@ -92,6 +94,25 @@ $paddingNormal: 20px;
   }
 }
 
+.banner-kc-background {
+  background-color: #67a1b5;
+}
+
+.banner-india-background {
+  background-color: #3892b4;
+}
+
+.banner-philly-background {
+  background-color: #a85488;
+}
+
+.banner-cc-background {
+  background-color: #90b6bf;
+}
+
+.banner-hq-background {
+  background-color: #bb7834;
+}
 
 // Page Header
 // --------------------------------------------------
@@ -139,6 +160,25 @@ $paddingNormal: 20px;
   }
 }
 
+.banner-kc-background {
+  background-color: #67a1b5;
+}
+
+.banner-india-background {
+  background-color: #3892b4;
+}
+
+.banner-philly-background {
+  background-color: #a85488;
+}
+
+.banner-cc-background {
+  background-color: #90b6bf;
+}
+
+.banner-hq-background {
+  background-color: #bb7834;
+}
 
 // Main
 // --------------------------------------------------
@@ -450,4 +490,45 @@ h1.entry-title {
   padding: $paddingNormal;
   border: 1px solid $lightGray;
   margin-bottom: $paddingNormal;
+}
+
+// Open source
+// --------------------------------------------------
+.open-source-text {
+  h2 {
+    text-align: center;
+    color: #000;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  padding-left: $paddingNormal;
+  padding-right: $paddingNormal;
+}
+
+.open-source-text-projects {
+  h2 {
+    text-align: center;
+    color: #000;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  div img {
+    display:block;
+    margin:auto;
+    padding-top: $paddingNormal;
+    padding-bottom: $paddingNormal;
+  }
+
+  padding-left: $paddingNormal;
+  padding-right: $paddingNormal;
+}
+
+.heart-img {
+  display: inline;
 }
