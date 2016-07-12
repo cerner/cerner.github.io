@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Cerner Tech Talks - Engineering Health</title>
+  <title>Engineering Health</title>
   <meta name="author" content="Cerner">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://engineering.cerner.com/2013/11/cerner-tech-talks">
+  <link rel="canonical" href="http://engineering.cerner.com/open_source">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -53,13 +53,16 @@
   
 
 
+  
+  
 
-<header id="banner" role="banner" class="container-fluid banner-kc-background">
+
+<header id="banner" role="banner" class="container-fluid banner-cc-background">
 
   <div class="image">
 
     
-      <img src="/images/KC.jpg" alt="Kansas City" />
+      <img src="/images/continuous-campus.jpg" alt="Cerner Continuous Campus" />
     
 
     <div id="header1">Engineering Health<br/><span class="header2">A <b>Cerner</b> Blog</span></div>
@@ -85,7 +88,7 @@
           <li >
             <a href="/tech_talks">Tech Talks</a>
           </li>
-          <li >
+          <li class="selected">
             <a href="/open_source">Open Source</a>
           </li>
           <li >
@@ -106,7 +109,7 @@
 </header>
 
 
-  <div class="container-fluid post-container">
+  <div class="container-fluid">
     <div class="row-fluid">
       <section class="span12" id="search-results" style="display: none;">
   <h2>Search results</h2>
@@ -115,157 +118,55 @@
 </section>
     </div>
     <div class="row-fluid">
-      
-<article id="main" class="hentry span8" role="article">
-
-  <section class="post">
-    
-  <header class="entry-header">
-    
-      <h1 class="entry-title">Cerner Tech Talks</h1>
-    
-    
-      <div class="entry-meta meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-11-12T00:00:00-06:00" pubdate data-updated="true">Nov 12<span>th</span>, 2013</time> | 
-  
-
-
-  <span class="byline author vcard">
-    <span class="fn">Kevin Shekleton</span>
-  </span>
-
-
-        
+      <div id="main" class="span12" role="main">
+  <section class="row-fluid open-source-text">
+    <div class="span10 offset1">
+      <div class="row-fluid">
+        <div class="span12">
+          <h2>Cerner Open Source</h2>
+        </div>
+        <div class="span12">
+          <p>
+            At Cerner, we <img src="/images/heart-8bit.png" height="15" width="15" class="heart-img" /> open source. Open source software is an integral part of our software and is crucial to running and operating our applications and services globally. Our engineers contribute to open source projects and <a href="http://engineering.cerner.com/blog/cerner-and-the-apache-software-foundation/">Cerner is proud to provide financial support to organizations like the Apache Software Foundation</a>. Here are some of our own projects that we’ve released as open source.
+          </p>
+        </div>
       </div>
-    
-  </header>
-
-
-<div class="entry-content"><p>We are always looking for ways to share knowledge and learn new things within engineering at Cerner. Whether that be through meetups, lunch &amp; learns, conferences, or <a href="http://engineering.cerner.com/2013/08/devcon/">DevCon</a>, we have a variety of outlets available to us.</p>
-
-<p>Today, we’re announcing a new program we recently launched: Cerner Tech Talks.</p>
-
-<p>Cerner Tech Talks brings in great speakers for talks that would be of interest to engineers at Cerner. These talks will be held periodically and will vary widely in their content. Each talk will be recorded and available for viewing via our <a href="http://www.youtube.com/user/CernerEng">Cerner Engineering YouTube channel</a>.</p>
-
-<p>Last week, we held our first tech talk, which you can view below. <a href="http://www.robertvbinder.com/">Robert Binder</a>, an accomplished software testing expert, presented on model-driven development.</p>
-
-<iframe width="560" height="315" src="//www.youtube.com/embed/OSlm6F8YmKc" frameborder="0" allowfullscreen></iframe>
-
-</div>
-
-
+    </div>
   </section>
-  <footer>
-    <p class="meta">
-      
 
-
+<div class="row-fluid open-source-text-projects">
+  <div class="span10 offset1">
+      <div class="row-fluid">
+  <div class="span4">
+    <h2>Scrimp</h2>
+    <img src="/open_source/scrimp.png" alt="Scrimp" />
+    <p>
+    This is a tool for testing Thrift services via a web browser (analogous to how you might test web services using a browser-based REST client). Given the IDL files for the services, it provides a UI to help construct requests, invoke services, and display formatted responses.
+          <a href="https://github.com/cerner/scrimp">Learn More&#8230;</a>
     </p>
-    
-      <div class="sharing">
-  
-  
-  
+  </div>
+  <div class="span4">
+    <h2>GC Stats</h2>
+    <img src="/open_source/gc-stats.png" alt="GC Stats" />
+    <p>gc_stats is a Ruby gem for Rails applications that collects and logs garbage collection statistics during each request. GC statistics are only logged if a GC event is detected. This allows you to track and analyze the GC characteristics of your Rails application.
+    <a href="https://github.com/cerner/gc_stats">Learn More&#8230;</a>
+    </p>
+  </div>
+  <div class="span4">
+    <h2>Canadarm</h2>
+    <img src="/open_source/canadarm.png" alt="Canadarm" />
+    <p>
+    Canadarm makes JavaScript logging easy and seamless, helping you figure out what went wrong with your scripts. Named for the <a href="https://en.wikipedia.org/wiki/Canadarm">Canadarm</a> we hope this too helps you piece together log information to figure out what went wrong with your scripts.
+    <a href="https://github.com/cerner/canadarm">Learn More&#8230;</a>
+    </p>
+  </div>
+  </div>
+  </div>
 </div>
 
-    
-    
-    <ul class="pager">
-      
-      <li class="previous"><a class="basic-alignment left"
-        href="/2013/11/2013-software-intern-hackfest/" title="Previous Post:
-        2013 Software Intern Hackfest">&laquo; Previous Post</a></li>
-      
-      <li><a href="/blog/archives">Blog Archives</a></li>
-      
-      <li class="next"><a class="basic-alignment right" href="/2014/01/cerner-and-open-source/"
-        title="Next Post: Cerner and Open Source">Next Post &raquo;</a></li>
-      
-    </ul>
-  </footer>
-</article>
-
-<aside class="sidebar-nav span4">
-  
-    <section class="well">
-  <h2>Recent Posts</h2>
-  <ul id="recent_posts" class="nav nav-list">
-    
-      <li>
-        <a href="/blog/advanced-debugging/">Advanced Debugging: Learning From Utter Nonsense</a>
-      </li>
-    
-      <li>
-        <a href="/blog/railsconf-2016-recap/">RailsConf 2016 Recap</a>
-      </li>
-    
-      <li>
-        <a href="/blog/spring-2016-shipit-day/">Spring 2016 ShipIt Day</a>
-      </li>
-    
-      <li>
-        <a href="/blog/deploying-web-services-with-apache-tomcat-and-chef/">Deploying Web Services With Apache Tomcat and Chef</a>
-      </li>
-    
-      <li>
-        <a href="/blog/girls-in-technology-movement-hour-of-code/">Girls in Technology Movement - Hour of Code</a>
-      </li>
-    
-  </ul>
-</section>
-<section class="divider">
-  <svg width="70" height="10">
-   <rect width="10" height="10" x="0" y="0" style="fill:rgb(20,124,193)" />
-   <rect width="10" height="10" x="20" y="0" style="fill:rgb(121,193,68)" />
-   <rect width="10" height="10" x="40" y="0" style="fill:rgb(20,124,193)" />
-   <rect width="10" height="10" x="60" y="0" style="fill:rgb(121,193,68)" />
-</svg>
-</section>
-<section class="well">
-  <h2>GitHub Repos</h2>
-  <ul id="gh_repos" class="nav">
-    <li class="loading">Status updating...</li>
-  </ul>
-  
-  <a href="https://github.com/cerner">@cerner</a> on GitHub
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'cerner',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
 
 
-  
-</aside>
-
+</div>
 
     </div>
   </div>

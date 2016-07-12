@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2016-07-11T10:36:14-05:00</updated>
+  <updated>2016-07-12T15:46:32-05:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,267 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Advanced Debugging: Learning From Utter Nonsense]]></title>
+    <link href="http://engineering.cerner.com/blog/advanced-debugging/"/>
+    <updated>2016-07-13T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/blog/advanced-debugging</id>
+    <content type="html"><![CDATA[<h2>Preface</h2>
+
+<p>As software engineers we invest time into thinking about the problems we are trying to solve every day. Sometimes the problems we face are small or simple. Other times they are large and complex. Either way, we can usually draw from our experience to find a path forward.</p>
+
+<p>While coding, we run into a lot of different bugs. Often, they are simple typos or a misuse of an API. These problems do not bog us down very much, and they are quick and easy to fix. Even complex bugs, while requiring investigation, often follow familiar pattern(s) that help us identify a path to a solution.</p>
+
+<p>Given this experience, it’s easy for us to think that we are good at debugging.</p>
+
+<p>We are not. We are good at pattern recognition and recognizing similarities to problems we’ve faced in the past. Because we recognize the pattern, we can quickly debug most of the bugs we come across in our day-to-day work.</p>
+
+<p>Which is great. But today, we will be exploring the types of bugs that do not come up in our day-to-day work.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-07-13-advanced-debugging/99-bugs-in-the-code.jpg" title="'Grumpy Cat meme: fixed one bug added 28'" ></p>
+
+<p align="center">
+  Image source:
+  <a href="http://weknowmemes.com/2014/04/99-bugs-in-the-code/">weknowmemes.com</a>
+</p>
+
+
+<h2>How Bugs Can Mislead Investigative Efforts</h2>
+
+<p>When a bug is brand new to us, we haven’t had the opportunity to derive a pattern from it yet because we have no experience to draw upon to create that pattern(s). Thus, we must investigate using a limited set of tools:</p>
+
+<ul>
+<li>Error messages</li>
+<li>Stack traces</li>
+<li>Guessing and check debugging</li>
+<li>Colleagues</li>
+<li>Google</li>
+</ul>
+
+
+<p>Often enough, that set of tools will guide you to a solution within a reasonable amount of time. Be warned, sometimes the solutions online solve a similar problem, but not your root problem. Testing is always in order with new bugs (or any bug more complex than a typo).</p>
+
+<p>Debugging gets even trickier and more time consuming when we encounter a bug that resembles a pattern that we’ve seen before. Once, I came across a bug which looked like two other things, but turned out to be a third unexpected thing.</p>
+
+<h3>Treemaps and IE8, and Fonts, Oh My</h3>
+
+<p>One of our teams created an interactive DOM based treemap which worked in Internet Explorer 8 (IE8) and above. It wasn’t lightning fast in IE8, but it worked sufficiently well with a reasonably complex dataset. That is until the browser started crashing intermittently for some of our users.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-07-13-advanced-debugging/treemap.png" title="'Example treemap'" ></p>
+
+<p align="center">Example treemap with dummy data</p>
+
+
+<p>There were a few things that we (four engineers) noticed right away:</p>
+
+<ul>
+<li>It only crashed in IE8</li>
+<li>The presence of a treemap seemed to be a driving factor</li>
+<li>Crashing was intermittent</li>
+</ul>
+
+
+<p>Our initial investigation was good. We isolated the problem browser and determined that there was something wrong with the treemap, which was causing the issues, we were on our way to solving this problem &ndash; or so we thought.</p>
+
+<p>Given the intermittent nature of the problem, our experiences in the past, and the patterns we had observed, we assumed we had a memory leak, a race condition, or both. In an attempt to rule one of those options out, we tested with small and large datasets for the treemap.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-07-13-advanced-debugging/15k_treemap.png" title="'Treemap with 15,000 cells'" ></p>
+
+<p align="center">Treemap with 15,000 cells in it rendered by Chrome</p>
+
+
+<p>The above image serves as proof that modern browsers were unaffected by the bug we were experiencing.</p>
+
+<p>Convinced that the treemap was the issue and that it had to be a memory leak or a race condition, we created automated tooling using sIEve, virtual machines, and AutoIt scripts. The automation enabled us to test dozens of scenarios hundreds of times easily to gain metrics which might help illuminate where, in the code, we should look next.</p>
+
+<p>We chose different sized datasets thinking that smaller datasets would not trigger a memory leak while a large one would. Unfortunately, it crashed either way and we were no closer to figuring out what was wrong.</p>
+
+<p>After several more days of investigation we were just as perplexed as the day we started. We had a plethora of information which told us nothing. At this point our capacity had to be reduced down to just one developer &ndash; me. Frustrated with the resultless weeks spent investigating the issue, I decided step back and take a completely different approach.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-07-13-advanced-debugging/500_treemap.png" title="'Treemap with 500 cells'" ></p>
+
+<p align="center">IE8 managed to render a 500 cell treemap without crashing</p>
+
+
+<p>To re-evaluate everything we did, I removed all of the assets from our application to minimize moving parts; regardless of how unlikely a variable was, I wanted to remove it. I ran our test scripts against the application to find that, unsurprisingly, the browser did not crash. I then added JS and CSS assets separately to find that neither alone caused the browser to crash. As a sanity check, I added both back to the application and it would reliably crash. This implied that there was some interplay between CSS and JS which was causing the browser to crash.</p>
+
+<p>In our application, it was easier to add CSS file by file than it was for JS so I went that route. Along the way, I noticed that we were sending the wrong X-UA meta tag so I got sidetracked and fixed that to no avail. Eventually, I added back our Font Awesome CSS which caused the browser to crash. Thinking there was no way that a font could be the issue, I added and removed various pieces of our CSS to determine if it was the cause of the problem. I tried changing selectors, changing the load order, and everything else I could think of to no avail. After a while, frustrated, I commented out every line referencing Font Awesome and the browser stopped crashing. At this point, I just started adding code back line by line until the browser started crashing. What I found made no sense:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&:before {
+</span><span class='line'>  font-family: 'FontAwesome';
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I looked over this for a while and eventually noticed that I was using single quotes while the font declaration</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>@font-face {
+</span><span class='line'>  font-family: "FontAwesome";
+</span><span class='line'>  src: url(@fontAwesomeEotPath);
+</span><span class='line'>  font-weight: normal;
+</span><span class='line'>  font-style: normal;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>was using double quotes.</p>
+
+<p>Having exhausted most other options already, I tried making the quotes match to see if the browser would crash and, to my surprise, it wouldn’t. It didn’t matter whether I used double or single quotes as long as they matched. I added back all of the remaining assets and tested this again; sure enough, the app did not crash even after 200 tests.</p>
+
+<p><strong>Yes, it’s true. It wasn’t a race condition or a memory leak within the treemap, or anything else we thought it might be. It was mismatched quotes.</strong> I would never have guessed this in a million years.</p>
+
+<p>I did not stop here! Although I solved the problem, I needed to understand what was going on. I was also very curious which part of the JS was causing issues with Font Awesome. I reintroduced the old CSS and started testing the JavaScript. The application broke as soon as I re-introduced Modernizr. The treemap was, at this point, seemingly faultless as I was able to reproduce the crashes without it.</p>
+
+<p>I researched mismatched quotes and Modernizr online to try and get a better understanding of what was going on. I found several articles that detailed similar issues, but did not identify the root cause. Eventually I found a post on StackOverflow that enabled me to connect the dots.</p>
+
+<p>Browsers do a lot for developers under the hood and IE8 treats different types of quotes differently and kicks off an error handling subroutine to smooth it over. If that error handling subroutine occurs while Modernizr is attempting to shim the browser for HTML5 compatibility, the browser will crash.</p>
+
+<p>We weren’t wrong in that we were facing a race condition, but we were very wrong about our presumption about the treemap. The only interplay the treemap had was that it caused Modernizr to take longer to apply the shim thus widening the window of opportunity for the race condition to apply.</p>
+
+<p>We worked on this from December 20th to January 9th, a total of twenty days!</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-07-13-advanced-debugging/sad_panda.png" title="'Meme: 20 days of debugging makes me a sad panda'" ></p>
+
+<p align="center">
+  Image Source:
+  <a href="https://www.linkedin.com/in/jessicazehring">Jessica Zehring</a>
+</p>
+
+
+<h2>How To Tackle Perplexing Bugs</h2>
+
+<p>Oftentimes, our ability to recognize coding patterns enables us to identify and solve bugs in a timely manner. As the example bug shows, however, following them can lead you down a rabbit hole. At face value, twenty days were spent working on that bug, but when you consider that there were up to four developers involved at a time, the lost time actually equates to one to three months. Once you factor in opportunity cost on top of that, you look at two to six months of time lost to debugging this issue.</p>
+
+<p>That is a disturbingly significant amount of time to have lost on a bug. It was a difficult bug to solve, but it could have been solved faster had we recognized that our past experience was insufficient to solve this problem. There are some key points to take away from debugging something perplexing like the example bug we looked at:</p>
+
+<ol>
+<li>Isolate the problem. Find a single way that the bug can be consistently replicated and remove any variance that can trip you up.</li>
+<li>Automate as much as you can. There are likely to be many tests; let the computer handle that work for you. While working on the example bug, we ran thousands of tests over those twenty days.</li>
+<li>Remove as many variables as possible and keep a list of what’s remaining.</li>
+<li>Change one variable at a time. If you change many things simultaneously, you won’t know what yielded which results.</li>
+<li>Test, document, and repeat. When you change a single variable, record all of your findings. How did the results change? Eventually new patterns will present themselves.</li>
+<li>Narrow the scope. As your testing reveals patterns, narrow down to a smaller area. In the example bug, we went from “somewhere in our static assets” to “something in our CSS and JS” to “something in this particular file” to “it’s this particular line”.</li>
+<li>Repeat and keep repeating. Be meticulous in recording your findings. Even if you don’t see a pattern, someone else studying your results might.</li>
+</ol>
+
+
+<p>When you find that past experience is not yielding results in a timely manner (you’ll have to define what that means for yourself), take a step back and follow the steps above. Doing this allows your past experience to help you when it applies and gets it out of the way when it doesn’t. Don’t see how far the rabbit hole goes when you can scientifically figure it out.</p>
+
+<p>Additionally, do not blindly trust answers found online. When working on the example bug, we found several examples of people correctly identifying a similar problems to ours, none of which correctly identified the underlying cause. Treat online resources as what they are &ndash; resources. Sometimes they have the answer you seek while other times they are the dots you must connect yourself.</p>
+
+<h2>Tools and Techniques Which Will Help With Day-to-Day Developing and Debugging</h2>
+
+<h3>Linters</h3>
+
+<p>Static analysis, or linting, is a technique to catch common coding mistakes quickly. A linter will evaluate raw source code and give back a report detailing what needs to be fixed. Most languages have some form of linting software available for them. Since this post is front-end oriented, below are a few linters available for JS:</p>
+
+<ul>
+<li><a href="http://eslint.org/">ESLint</a></li>
+<li><a href="http://jshint.com/">JSHint</a></li>
+<li><a href="http://jscs.info/">JSCS</a></li>
+</ul>
+
+
+<p>All of these tools will notify you when you make typos, aren’t using variables, fail to follow a predefined set of coding styles, and more. They are very fast and are your first line of defense against day-to-day bugs. Linters will catch mistakes much faster than a human.</p>
+
+<h4>Example</h4>
+
+<p>I have a friend who is a very talented software engineer and mathematician. One day he called me to see if I could help him debug an issue he had been struggling with for about 19 hours. His Angular application kept spin locking (freezing up) and he couldn’t figure out why.  We scrolled through the code and luckily for him, a piece of it caught my eye:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+</span><span class='line'>    <span class="c1">// logic</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>He had been working on C++ code prior to this project which features block scoping while JavaScript (ES5) only features function scoping. A linter would have immediately caught this mistake and informed him of it, saving 19 hours of debugging.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-07-13-advanced-debugging/semi-colon.jpg" title="'Meme: Semi-colons are the hide and seek champion since 1958'" ></p>
+
+<p align="center">
+  Image source:
+  <a href="https://www.reddit.com/r/ProgrammerHumor/comments/3dqj35/several_hours_of_debugging_later/">reddit.com</a>
+  by Wilsam239
+</p>
+
+
+<h3>Automated Testing Frameworks</h3>
+
+<p>While static analysis is your first line of defense, tests for your code are your second line of defense. Tests should depict the behavior of your codebase and should fail if you deviate from that contract. Just like linters, most languages support automated testing. There are several frameworks that you can leverage for testing JS, a few are:</p>
+
+<ul>
+<li><a href="https://mochajs.org/">Mocha</a></li>
+<li><a href="http://jasmine.github.io/">Jasmine</a></li>
+<li><a href="https://qunitjs.com/">QUnit</a></li>
+</ul>
+
+
+<p>Defining a set of behaviors for your code helps to protect you from unintentional changes and side effects. Tests will take longer to run than a linter, but are still frequently quicker at catching mistakes than a human. Since automated unit tests are like a contract for behavior, they can also help keep developers unfamiliar with the behavioral contract from making mistakes.</p>
+
+<h3>Debugging Tools</h3>
+
+<p>When automated approaches are insufficient, it’s time to start the manual debugging process. Every programming language has a debugging toolset that can be used to work through code with bugs. Since this post is front-end oriented, we’ll look at browser tools.</p>
+
+<p>You could use JS to alert variables at different times, but this is radically inefficient. Today’s modern browsers have a plethora of tools available to you starting with the debugger keyword for JS code. When the browser’s console is open, the debugger statement acts as a breakpoint; it does nothing otherwise. Although simple, it’s very powerful as it gives easy control of adding/removing breakpoints to step through the code.</p>
+
+<p>Atop the debugger keyword lay all of the browser tools. These enable you to step through code, inspect code, profile code runtimes, inject assertions, and even monitor the network traffic relating to the current page. Different browsers have different tools; below are some guides for debugging in different browsers:</p>
+
+<ul>
+<li><a href="https://developer.chrome.com/devtools">Chrome</a></li>
+<li><a href="https://developer.apple.com/safari/tools/">Safari</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Tools">Firefox</a></li>
+<li><a href="https://developer.microsoft.com/en-us/microsoft-edge/platform/documentation/f12-devtools-guide/">Edge</a></li>
+</ul>
+
+
+<h4>Automated Robustness Testing</h4>
+
+<p>When you are in the process of manually debugging code, it is useful to automate what you can. For example, when testing the IE8 crashes, we used virtual machines and an AutoIt script to recreate and test the scenario as well as to keep logs of what happened for future reference.</p>
+
+<p>Whenever possible, always automate recreating the scenario(s) for testing purposes as it:</p>
+
+<ul>
+<li>Speeds up the process</li>
+<li>Removes human error</li>
+<li>Ensures consistently gathered metrics</li>
+</ul>
+
+
+<h2>Conclusion</h2>
+
+<p>Many bugs will follow the pattern(s) of another bug and this can help you debug them quickly. However, this is not always the case; tools and automated tests will help you speed up your debugging time, but cannot keep you from chasing ghosts.</p>
+
+<p>Remember, the following steps are the key to solving difficult bugs without losing a lot of time and effort:</p>
+
+<ol>
+<li>Isolate the problem</li>
+<li>Automate</li>
+<li>Remove as many variables as possible</li>
+<li>Change one variable at a time</li>
+<li>Test, document, and repeat</li>
+<li>Narrow the scope</li>
+<li>Repeat</li>
+</ol>
+
+
+<p>When faced with a challenging bug watch how much time and effort you give to it. When it’s time to step back and re-evaluate your approach, do so and success will follow.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[RailsConf 2016 Recap]]></title>
@@ -2206,61 +2467,6 @@ about proactive solutions.</p>
 <h3>Learn More</h3>
 
 <p>For more information about the Cerner Summer Intern Program, visit <a href="http://www.cerner.com/About_Cerner/Careers/Student_Development/College_Students/">Cerner Careers Opportunities for College Students</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Project Lead the Way]]></title>
-    <link href="http://engineering.cerner.com/2013/09/project-lead-the-way/"/>
-    <updated>2013-09-11T00:00:00-05:00</updated>
-    <id>http://engineering.cerner.com/2013/09/project-lead-the-way</id>
-    <content type="html"><![CDATA[<p>Improving the state of healthcare through innovation requires investing in others to join you on the journey; not just for today, but for the decades to come.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2013-09-11-project-lead-the-way/PLTWlogo.jpeg" title="Project Lead the Way" ></p>
-
-<p>Project Lead the Way has established the Computer Science and Software Enginering course that teaches computational thinking to high school students, and it will pilot in 60 schools across the country this fall. Providing exposure to a wide variety of computational and computer science concepts, students can program a story or game in Scratch, write a mobile application for Android, and learn about knowledge discovery and data mining, computer simulation, cybersecurity, GUI programming, web development, version control, and agile software development.</p>
-
-<p>Recently, I had the privilege of working with experts across the country to define the curriculum for Project Lead the Way as well as the opportunity to sit in on the training sessions given to the pilot teachers, hosted at Cerner&rsquo;s Innovation Campus. Bennett Brown, Director of Curriculum and Instruction, led the class into the deep end to solve the hard problems their students would face throughout the course. Experts augmented the training sessions from organizations such as Cerner, Lawrence Livermore National Laboratory, Purdue University, Carnegie Mellon University, University of Virginia, and more.</p>
-
-<p>While the Computer Science and Software Engineering course (CSE) isn&rsquo;t focused specifically on programming, students will pick up introductory skills in a number of languages and environments including Python, MIT App Inventor, JavaScript, Logo, and Scratch among others. As software developers, we all have our origin stories with what sparked our interest in programming; there was a particular moment for each of us where we solved a problem and saw firsthand the power of what software can create. The CSE course seeks to generate those sparks through activities, projects, and problem-based learning.</p>
-
-<p>This course follows in the footsteps of other Project Lead the Way courses in engineering and biomedical science currently operating in over 4,700 schools with more than 10,000 trained teachers.</p>
-
-<h2><strong>What I Learned</strong></h2>
-
-<p>My role in the class was to teach one simple section and provide some practical answers from the industry trenches. I&rsquo;ll let you in on a secret: I&rsquo;m pretty sure I learned more about teaching and how to teach novices than I taught on any particular topic.</p>
-
-<p>Problems and projects in PLTW are designed to be approachable by all students; there is no ceiling for the advanced students who want to go beyond what is specifically covered. The teachers receiving training were given the same end-of-unit problems that their students will face during the year and had to work out solutions in a pair programming environment, often working in their dorms or in the Cerner training rooms until 10pm. The experience level of teachers ranged from those having engineering degrees and multiple years of industry experience before going into teaching to some who had never programmed in their lives before this class.</p>
-
-<p>What I learned was that even in this environment of mixed skill levels, the activity/project/problem-based approach surprisingly requires just a minimal introduction to a new concept. After simple activities which build quick wins, natural curiosity swells up within each of the students; skill and understanding start to form, not just learning a particular technology but how to problem solve using software.</p>
-
-<p>For example, during the App Inventor sections, teachers received step-by-step simple examples of putting together programming blocks to create a simple Android application before working on homework to through one Agile sprint with their partner that evening to come up with their own application from scratch. The next morning, pairs went through their demos in a rotating show-and-tell fashion, showing a variety of apps including a flash card game, as well as a &ldquo;one of these things is not like the other&rdquo; game using the accelerometer for randomization and featuring the appropriate Sesame Street music.</p>
-
-<p>One night during the course I pulled down the Codea app for my iPad and showed my own kids the relationship between a few behaviors in a physics app and the corresponding code in Lua. Three hours later, all of the iPads in the house were engaged in hacking.</p>
-
-<p>In addition to some great instruction over the course from Bennett Brown on a variety of problems in genetics, chaos theory, Tkinter and GUI programming, other highlights included:</p>
-
-<p><a href="https://www-eng.llnl.gov/bios/bios_castillo.html">Vic Castillo</a>, Group Leader in the Quantitative Risk Analysis at Lawrence Livermore National Laboratories with a PhD in computational physics gave a great three hour survey presentation on what he sees as the &ldquo;big three&rdquo; topics in the future of computing: computer simulation and modeling (a subject near and dear to my own origin stories in computing), 3-D printing and mobile robotics featuring almost a dozen demos of cases where modeling was used to learn something new about a real-world system or design. Using just the <a href="http://ccl.northwestern.edu/netlogo/">NetLogo</a> multi-agent programmable modeling environment developed at Northwestern University, Vic showed a variety of models that could be built with just a basic knowledge of the Logo programming language: for instance, modeling the heat absorption of a home design and how different designs and window configurations affect the internal temperature of the living space), &ldquo;solving&rdquo; the game Lunar Lander, or how a First Robotics team modeled the software algorithms incorporated into their <a href="http://turtlebot.com">TurtleBot</a> (think Roomba + netbook + Kinect sensor).</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2013-09-11-project-lead-the-way/Netlogo.png" title="NetLogo" ></p>
-
-<p><a href="http://people.virginia.edu/~jlc6j/">Joanne Cohoon</a> talked about achieving diversity in STEM classrooms and the state of the job market&mdash;how 50% of the jobs available involve some need for computational thinking and the challenges and how teachers can create classroom environments that attract students who might otherwise rule themselves out from the start based on the stereotypes and environments commonly surrounding STEM in schools. With half the workforce needing some kind of computational skill, we can&rsquo;t drive anyone away.</p>
-
-<p>Peter Chapman, a PhD student at Carnegie Mellon University and Technical Leader of the <a href="https://picoctf.com">picoCTF</a> project joined us via Skype to describe the program. Set up along the storyline of an interactive adventure called Toaster Wars, picoCTF is a competition among high school students to solve as many of 57 challenges as they can using whatever means necessary&mdash;hacking, decrypting, reverse engineering, breaking or whatever. The challenges force students to get their hands dirty, learning on their own via documentation and their browser the role of cookies in web security, how to use grep and tar to find a secret key in a file, and other examples designed to give students the experience of tackling unknown problems using the resources available to them.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2013-09-11-project-lead-the-way/Toaster-War.png" title="Toaster War" ></p>
-
-<p>Cerner interns and former Lee&rsquo;s Summit High School Team Driven First Robotics team members Dakota Ewigman and Victoria Utter taught a condensed version of the <a href="http://kcpowersource.com/appcamp/">KC Power Source Android App Camp</a> using <a href="http://appinventor.mit.edu">MIT App Inventor</a> which set the stage for more advanced App Inventor instruction provided by Dave O&#8217;Larte around calling and integrating web services and open APIs. We had developed a simple ballot and question and answer database-backed web service that let students and teachers hack around independently. In the category of unintended learning, and no doubt inspired by their picoCTF hacking, some of the teachers quickly found out how to troll other schools&#8217; services by injecting funny questions and answers about the course material.</p>
-
-<h2><strong>Why It&rsquo;s Cool</strong></h2>
-
-<p>At one point during the week, Bennett Brown shared with me the growth potential for PLTW&rsquo;s CSE program. In the engineering and biomedical engineering pathways, the year-over-year growth has been tremendous which is paving the way for an even faster uptake of the computer science offering. Such an important and widespread channel offers a great opportunity to influence the future of our entire industry and communities. With around 20% of the total pilot schools in this curriculum, Kansas City is getting a head start on building this pool of talent. We can use little advantages such as these to increase the value of KC as a hub for computing and entrepreneurial activity.</p>
-
-<p>An instructor asked me at one point, &ldquo;What is Cerner looking for in high school students who take this course?&rdquo; I had the sense that the question sought an answer more about a specific technology or language. I don&rsquo;t really see that as the focus. Instead, I think what we want is defined more by sparking that interest in solving hard problems and coming away with the understanding that these problems exist in their community and that there are people in the community at companies like Cerner solving those problems every day.</p>
-
-<h2><strong>Why It Matters</strong></h2>
-
-<p>We have a lot to accomplish in &ldquo;engineering health,&rdquo; and K-12 outreach programs can feel like a long game that often take a back seat to immediate concerns around designing and shipping solutions. But seeing how even the less computing-savvy teachers started to get hooked on programming their Android devices or trying to get to the next level in picoCTF while beating their heads against man pages and HTTP dumps, it became clear to me that by getting involved in these programs we can accelerate not only the numbers of students comfortable with computational thinking, but also give them a network of relationships and experiences in their own communities to return to as their career and learning progresses. The long game may not be as long as we think.</p>
 ]]></content>
   </entry>
   
