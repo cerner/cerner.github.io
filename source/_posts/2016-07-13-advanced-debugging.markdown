@@ -83,7 +83,7 @@ In our application, it was easier to add CSS file by file than it was for JS so 
 }
 ```
 
-I looked over this for a while and eventually noticed that I was using single quotes while the font declaration
+I looked over this for a while and eventually noticed that we were using single quotes when we referenced the font while the font declaration
 
 ```
 @font-face {
