@@ -10,7 +10,7 @@ tags: [debugging, development, programming, javascript, css, IE8]
 
 As software engineers we invest time into thinking about the problems we are trying to solve every day. Sometimes the problems we face are small or simple. Other times they are large and complex. Either way, we can usually draw from our experience to find a path forward.
 
-While coding, we run into a lot of different bugs. Often, they are simple typos or a misuse of an API. These problems do not bog us down very much, and they are quick and easy to fix. Even complex bugs, while requiring investigation, often follow familiar pattern(s) that help us identify a path to a solution.
+While coding, we run into a lot of different bugs. Often, they are simple typos or a misuse of an API. These problems do not bog us down very much, and they are quick and easy to fix. Even complex bugs, while requiring investigation, often follow a familiar pattern(s) that help us identify a path to a solution.
 
 Given this experience, it’s easy for us to think that we are good at debugging.
 
