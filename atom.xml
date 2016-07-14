@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2016-07-12T15:46:32-05:00</updated>
+  <updated>2016-07-14T04:41:55-05:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -22,7 +22,7 @@
 
 <p>As software engineers we invest time into thinking about the problems we are trying to solve every day. Sometimes the problems we face are small or simple. Other times they are large and complex. Either way, we can usually draw from our experience to find a path forward.</p>
 
-<p>While coding, we run into a lot of different bugs. Often, they are simple typos or a misuse of an API. These problems do not bog us down very much, and they are quick and easy to fix. Even complex bugs, while requiring investigation, often follow familiar pattern(s) that help us identify a path to a solution.</p>
+<p>While coding, we run into a lot of different bugs. Often, they are simple typos or a misuse of an API. These problems do not bog us down very much, and they are quick and easy to fix. Even complex bugs, while requiring investigation, often follow a familiar pattern(s) that help us identify a path to a solution.</p>
 
 <p>Given this experience, it’s easy for us to think that we are good at debugging.</p>
 
@@ -107,7 +107,7 @@
 </span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
 
 
-<p>I looked over this for a while and eventually noticed that I was using single quotes while the font declaration</p>
+<p>I looked over this for a while and eventually noticed that we were using single quotes when we referenced the font while the font declaration</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
