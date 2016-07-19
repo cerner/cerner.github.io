@@ -153,7 +153,7 @@ I have a friend who is a very talented software engineer and mathematician. One 
 
 ```js
 for (var i = 0; i < 10; i++) {
-  for (var i = 0; i < 5; i++ {
+  for (var i = 0; i < 5; i++) {
     // logic
   }
 }
