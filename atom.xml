@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2016-09-28T08:28:52-05:00</updated>
+  <updated>2016-09-28T08:30:20-05:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Difficult Debugging: Learning From Utter Nonsense]]></title>
-    <link href="http://engineering.cerner.com/advanced-debugging/"/>
+    <link href="http://engineering.cerner.com/blog/advanced-debugging/"/>
     <updated>2016-07-13T00:00:00-05:00</updated>
-    <id>http://engineering.cerner.com/difficult-debugging</id>
+    <id>http://engineering.cerner.com/blog/difficult-debugging</id>
     <content type="html"><![CDATA[<h2>Preface</h2>
 
 <p>As software engineers we invest time into thinking about the problems we are trying to solve every day. Sometimes the problems we face are small or simple. Other times they are large and complex. Either way, we can usually draw from our experience to find a path forward.</p>
