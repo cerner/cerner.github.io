@@ -4,7 +4,7 @@ title: "Difficult Debugging: Learning From Utter Nonsense"
 author: Rory Hardy
 date: 2016-07-13
 tags: [debugging, development, programming, javascript, css, IE8]
-permalink: /advanced-debugging/
+permalink: /blog/advanced-debugging/
 ---
 
 ## Preface
