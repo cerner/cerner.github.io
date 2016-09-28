@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Advanced Debugging: Learning From Utter Nonsense - Engineering Health</title>
+  <title>Difficult Debugging: Learning From Utter Nonsense - Engineering Health</title>
   <meta name="author" content="Cerner">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://engineering.cerner.com/blog/advanced-debugging">
+  <link rel="canonical" href="http://engineering.cerner.com/advanced-debugging">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -76,7 +76,7 @@
       </a>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li class="selected">
+          <li >
             <a href="/">Blog</a>
           </li>
           <li >
@@ -122,7 +122,7 @@
     
   <header class="entry-header">
     
-      <h1 class="entry-title">Advanced Debugging: Learning From Utter Nonsense</h1>
+      <h1 class="entry-title">Difficult Debugging: Learning From Utter Nonsense</h1>
     
     
       <div class="entry-meta meta">
@@ -138,7 +138,7 @@
   
 
 
-<time datetime="2016-07-13T00:00:00+03:00" pubdate data-updated="true">Jul 13<span>th</span>, 2016</time> | 
+<time datetime="2016-07-13T00:00:00-05:00" pubdate data-updated="true">Jul 13<span>th</span>, 2016</time> | 
   
 
 
@@ -165,7 +165,7 @@
 
 <p>Which is great. But today, we will be exploring the types of bugs that do not come up in our day-to-day work.</p>
 
-<p><img class="center" src="/assets/2016-07-13-advanced-debugging/99-bugs-in-the-code.jpg" title="'Grumpy Cat meme: fixed one bug added 28'" ></p>
+<p><img class="center" src="/assets/2016-07-13-difficult-debugging/99-bugs-in-the-code.jpg" title="'Grumpy Cat meme: fixed one bug added 28'" ></p>
 
 <p align="center">
   Image source:
@@ -194,7 +194,7 @@
 
 <p>One of our teams created an interactive DOM based treemap which worked in Internet Explorer 8 (IE8) and above. It wasn’t lightning fast in IE8, but it worked sufficiently well with a reasonably complex dataset. That is until the browser started crashing intermittently for some of our users.</p>
 
-<p><img class="center" src="/assets/2016-07-13-advanced-debugging/treemap.png" title="'Example treemap'" ></p>
+<p><img class="center" src="/assets/2016-07-13-difficult-debugging/treemap.png" title="'Example treemap'" ></p>
 
 <p align="center">Example treemap with dummy data</p>
 
@@ -212,7 +212,7 @@
 
 <p>Given the intermittent nature of the problem, our experiences in the past, and the patterns we had observed, we assumed we had a memory leak, a race condition, or both. In an attempt to rule one of those options out, we tested with small and large datasets for the treemap.</p>
 
-<p><img class="center" src="/assets/2016-07-13-advanced-debugging/15k_treemap.png" title="'Treemap with 15,000 cells'" ></p>
+<p><img class="center" src="/assets/2016-07-13-difficult-debugging/15k_treemap.png" title="'Treemap with 15,000 cells'" ></p>
 
 <p align="center">Treemap with 15,000 cells in it rendered by Chrome</p>
 
@@ -225,7 +225,7 @@
 
 <p>After several more days of investigation we were just as perplexed as the day we started. We had a plethora of information which told us nothing. At this point our capacity had to be reduced down to just one developer &ndash; me. Frustrated with the resultless weeks spent investigating the issue, I decided step back and take a completely different approach.</p>
 
-<p><img class="center" src="/assets/2016-07-13-advanced-debugging/500_treemap.png" title="'Treemap with 500 cells'" ></p>
+<p><img class="center" src="/assets/2016-07-13-difficult-debugging/500_treemap.png" title="'Treemap with 500 cells'" ></p>
 
 <p align="center">IE8 managed to render a 500 cell treemap without crashing</p>
 
@@ -274,7 +274,7 @@
 
 <p>We worked on this from December 20th to January 9th, a total of twenty days!</p>
 
-<p><img class="center" src="/assets/2016-07-13-advanced-debugging/sad_panda.png" title="'Meme: 20 days of debugging makes me a sad panda'" ></p>
+<p><img class="center" src="/assets/2016-07-13-difficult-debugging/sad_panda.png" title="'Meme: 20 days of debugging makes me a sad panda'" ></p>
 
 <p align="center">
   Image Source:
@@ -337,7 +337,7 @@
 
 <p>He had been working on C++ code prior to this project which features block scoping while JavaScript (ES5) only features function scoping. A linter would have immediately caught this mistake and informed him of it, saving 19 hours of debugging.</p>
 
-<p><img class="center" src="/assets/2016-07-13-advanced-debugging/semi-colon.jpg" title="'Meme: Semi-colons are the hide and seek champion since 1958'" ></p>
+<p><img class="center" src="/assets/2016-07-13-difficult-debugging/semi-colon.jpg" title="'Meme: Semi-colons are the hide and seek champion since 1958'" ></p>
 
 <p align="center">
   Image source:
@@ -444,7 +444,7 @@
   <ul id="recent_posts" class="nav nav-list">
     
       <li>
-        <a href="/blog/advanced-debugging/">Advanced Debugging: Learning From Utter Nonsense</a>
+        <a href="/advanced-debugging/">Difficult Debugging: Learning From Utter Nonsense</a>
       </li>
     
       <li>
