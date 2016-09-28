@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "Advanced Debugging: Learning From Utter Nonsense"
+title: "Difficult Debugging: Learning From Utter Nonsense"
 author: Rory Hardy
 date: 2016-07-13
 tags: [debugging, development, programming, javascript, css, IE8]
+permalink: /advanced-debugging/
 ---
 
 ## Preface
@@ -18,7 +19,7 @@ We are not. We are good at pattern recognition and recognizing similarities to p
 
 Which is great. But today, we will be exploring the types of bugs that do not come up in our day-to-day work.
 
-{% img center /assets/2016-07-13-advanced-debugging/99-bugs-in-the-code.jpg 'Grumpy Cat meme: fixed one bug added 28' %}
+{% img center /assets/2016-07-13-difficult-debugging/99-bugs-in-the-code.jpg 'Grumpy Cat meme: fixed one bug added 28' %}
 
 <p align="center">
   Image source:
@@ -43,7 +44,7 @@ Debugging gets even trickier and more time consuming when we encounter a bug tha
 
 One of our teams created an interactive DOM based treemap which worked in Internet Explorer 8 (IE8) and above. It wasn’t lightning fast in IE8, but it worked sufficiently well with a reasonably complex dataset. That is until the browser started crashing intermittently for some of our users.
 
-{% img center /assets/2016-07-13-advanced-debugging/treemap.png 'Example treemap' %}
+{% img center /assets/2016-07-13-difficult-debugging/treemap.png 'Example treemap' %}
 
 <p align="center">Example treemap with dummy data</p>
 
@@ -57,7 +58,7 @@ Our initial investigation was good. We isolated the problem browser and determin
 
 Given the intermittent nature of the problem, our experiences in the past, and the patterns we had observed, we assumed we had a memory leak, a race condition, or both. In an attempt to rule one of those options out, we tested with small and large datasets for the treemap.
 
-{% img center /assets/2016-07-13-advanced-debugging/15k_treemap.png 'Treemap with 15,000 cells' %}
+{% img center /assets/2016-07-13-difficult-debugging/15k_treemap.png 'Treemap with 15,000 cells' %}
 
 <p align="center">Treemap with 15,000 cells in it rendered by Chrome</p>
 
@@ -69,7 +70,7 @@ We chose different sized datasets thinking that smaller datasets would not trigg
 
 After several more days of investigation we were just as perplexed as the day we started. We had a plethora of information which told us nothing. At this point our capacity had to be reduced down to just one developer - me. Frustrated with the resultless weeks spent investigating the issue, I decided step back and take a completely different approach.
 
-{% img center /assets/2016-07-13-advanced-debugging/500_treemap.png 'Treemap with 500 cells' %}
+{% img center /assets/2016-07-13-difficult-debugging/500_treemap.png 'Treemap with 500 cells' %}
 
 <p align="center">IE8 managed to render a 500 cell treemap without crashing</p>
 
@@ -110,7 +111,7 @@ We weren’t wrong in that we were facing a race condition, but we were very wro
 
 We worked on this from December 20th to January 9th, a total of twenty days!
 
-{% img center /assets/2016-07-13-advanced-debugging/sad_panda.png 'Meme: 20 days of debugging makes me a sad panda' %}
+{% img center /assets/2016-07-13-difficult-debugging/sad_panda.png 'Meme: 20 days of debugging makes me a sad panda' %}
 
 <p align="center">
   Image Source:
@@ -161,7 +162,7 @@ for (var i = 0; i < 10; i++) {
 
 He had been working on C++ code prior to this project which features block scoping while JavaScript (ES5) only features function scoping. A linter would have immediately caught this mistake and informed him of it, saving 19 hours of debugging.
 
-{% img center /assets/2016-07-13-advanced-debugging/semi-colon.jpg 'Meme: Semi-colons are the hide and seek champion since 1958' %}
+{% img center /assets/2016-07-13-difficult-debugging/semi-colon.jpg 'Meme: Semi-colons are the hide and seek champion since 1958' %}
 
 <p align="center">
   Image source:
