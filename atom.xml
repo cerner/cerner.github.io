@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2016-09-28T08:41:51-05:00</updated>
+  <updated>2016-10-02T00:17:46-05:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Michelle Brush Receives the Rising Trendsetter STEMMY Award!]]></title>
+    <link href="http://engineering.cerner.com/blog/michelle-brush-receives-the-rising-trendsetter-stemmy-award/"/>
+    <updated>2016-10-02T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/blog/michelle-brush-receives-the-rising-trendsetter-stemmy-award</id>
+    <content type="html"><![CDATA[<p>We are excited to congratulation our own Michelle Brush for receiving the Rising Trendsetter STEMMY award. The Rising Trendsetter Award is given to a woman in STEMM areas with less than 20 years of experience and has demonstrated significant achievements early in their career.</p>
+
+<p>Michelle is a director at Cerner who manages an engineering team in population health as well as a team dedicated to improving Cerner’s development culture. One of Michelle’s most notable career accomplishments was her leadership role in reconstructing Cerner’s software engineer development program in 2013, which she personally oversaw until the end of 2014 (read about the details of this program in her <a href="http://engineering.cerner.com/2013/08/devacademy/">blog</a>). In 2014, she transitioned into an executive role in the Population Health platform, where she fields particularly tricky support issues to help resolve data inconsistencies. Since 2014, Michelle has also managed the Development Culture team at Cerner, a team that focuses on improving associate morale through cultural empowerment, encouraging and providing opportunities for collaboration and innovation, and growing Cerner’s presence in the technical community.</p>
+
+<p>Michelle actively promotes women entering and growing their STEMM careers through her leadership in the community and at Cerner. She is an integral member of Cerner’s women in tech committee, which has the goal to provide development, networking and leadership opportunities to women in technical roles in a supportive and inclusive environment that promotes authenticity and values differences. Additionally, she is a member of several other leadership councils ranging from helping design the new software engineer campus, improving development culture across the company, and intern planning.</p>
+
+<p>In the community, Michelle is also a local chapter leader of <a href="https://www.girldevelopit.com/chapters/kansas-city">Girl Develop It</a>, a nonprofit organization that provides affordable programs for adult women interested in learning web and software development. Michelle is also an organizer of <a href="http://www.midwest.io/">Midwest.io</a>, a two-day industry tech conference in Kansas City that brings together developers across the Midwest for an eclectic collection of talks covering the latest trends, best practices, and research in the field of computing. As a member of the organizing team, she defines the vision for the conference, which includes finding speakers, promoting the conference in the industry, and ensuring diversity is top of mind at the conference.</p>
+
+<p>Michelle also actively speaks at tech conferences, and has spoken at conferences like OSCON, CityCode, O’Reilly’s Software Architecture Conference, and Strange Loop. Michelle is also a MSU Computer Science Board Member.</p>
+
+<p>Congratulations, Michelle!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[DevCon 2016 Word Cloud]]></title>
@@ -2464,24 +2483,6 @@ about proactive solutions.</p>
 <p>Source: [<a href="https://github.com/cerner/scrimp">https://github.com/cerner/scrimp</a>]</p>
 
 <p>Scrimp is a tool for interactively testing <a href="http://thrift.apache.org/">Thrift</a> services in a web browser. It’s meant to fill the same role that browser-based REST clients fill for web services. Given the IDL files for the services, it provides a UI to help construct requests, invoke services, and display formatted responses.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Cerner Tech Talks]]></title>
-    <link href="http://engineering.cerner.com/2013/11/cerner-tech-talks/"/>
-    <updated>2013-11-12T00:00:00-06:00</updated>
-    <id>http://engineering.cerner.com/2013/11/cerner-tech-talks</id>
-    <content type="html"><![CDATA[<p>We are always looking for ways to share knowledge and learn new things within engineering at Cerner. Whether that be through meetups, lunch &amp; learns, conferences, or <a href="http://engineering.cerner.com/2013/08/devcon/">DevCon</a>, we have a variety of outlets available to us.</p>
-
-<p>Today, we’re announcing a new program we recently launched: Cerner Tech Talks.</p>
-
-<p>Cerner Tech Talks brings in great speakers for talks that would be of interest to engineers at Cerner. These talks will be held periodically and will vary widely in their content. Each talk will be recorded and available for viewing via our <a href="http://www.youtube.com/user/CernerEng">Cerner Engineering YouTube channel</a>.</p>
-
-<p>Last week, we held our first tech talk, which you can view below. <a href="http://www.robertvbinder.com/">Robert Binder</a>, an accomplished software testing expert, presented on model-driven development.</p>
-
-<iframe width="560" height="315" src="//www.youtube.com/embed/OSlm6F8YmKc" frameborder="0" allowfullscreen></iframe>
-
 ]]></content>
   </entry>
   
