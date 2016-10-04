@@ -5,7 +5,7 @@ author: Cerner Engineering
 date: 2016-10-02
 ---
 
-We are excited to congratulation our own Michelle Brush for receiving the Rising Trendsetter STEMMY award. The Rising Trendsetter Award is given to a woman in STEMM areas with less than 20 years of experience and has demonstrated significant achievements early in their career.
+We are excited to congratulate our own Michelle Brush for receiving the Rising Trendsetter STEMMY award. The Rising Trendsetter Award is given to a woman in STEMM areas with less than 20 years of experience and has demonstrated significant achievements early in their career.
 
 Michelle is a director at Cerner who manages an engineering team in population health as well as a team dedicated to improving Cerner’s development culture. One of Michelle’s most notable career accomplishments was her leadership role in reconstructing Cerner’s software engineer development program in 2013, which she personally oversaw until the end of 2014 (read about the details of this program in her [blog](http://engineering.cerner.com/2013/08/devacademy/)). In 2014, she transitioned into an executive role in the Population Health platform, where she fields particularly tricky support issues to help resolve data inconsistencies. Since 2014, Michelle has also managed the Development Culture team at Cerner, a team that focuses on improving associate morale through cultural empowerment, encouraging and providing opportunities for collaboration and innovation, and growing Cerner’s presence in the technical community.
  
