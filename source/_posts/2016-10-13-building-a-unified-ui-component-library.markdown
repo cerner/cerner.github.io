@@ -4,7 +4,6 @@ title: "Building a Unified UI Component Library: Lessons Learned"
 author: Rory Hardy
 date: 2016-10-13
 tags: [UI, UX, library, development, programming, JavaScript, CSS]
-permalink: /blog/building-a-unified-component-library/
 ---
 
 Cerner is building an open source, mobile-first user interface component library for healthcare applications. Pulling years of experience and lessons learned across multiple teams together, we are creating something great. We are very excited to bring this solution to the public and to be contributing back to the community!
@@ -23,11 +22,11 @@ The approach of merging existing components saved time up-front, but came with a
 
 Blue Steel still exists but is comprised primarily of Terra components. It persists to provide HealtheIntent-specific styles and functionality, while also being a Rails wrapper around Terra. Terra has been historically kept below version 1.0.0 for rapid development, while Blue Steel has been above 1.0.0. This strategy has caused a lot of pain for the consumers of both Terra and Blue Steel.
 
-Keeping Terra below version 1.0.0 allowed non-passive changes to occur without cutting a major release. Although this made development easier in some aspects, it damaged consumer trust. We always attempted to communicate non-passive changes, but it didn’t always happen and it wasn’t always clear. Any time a team had to upgrade, they had to be prepared to fix their application which caused them not to trust us.
+Keeping Terra below version 1.0.0 allowed breaking changes to occur without cutting a major release. Although this made development easier in some aspects, it damaged consumer trust. We always attempted to communicate breaking changes, but it didn’t always happen and it wasn’t always clear. Any time a team had to upgrade, they had to be prepared to fix their application which caused them not to trust us.
 
-The issue was even worse in Blue Steel since it had to accommodate for Terra’s non-passivity. Blue Steel would consume a non-passive version of Terra and would still release as a minor update by providing styles and hooks to work around that non-passivity. Deprecation schedules and documentation were written to help keep Blue Steel passive. Unfortunately, it often wasn’t passive; sometimes, non-passivity would only manifest in an application. 
+The issue was even worse in Blue Steel since it had to accommodate for Terra’s breaking changes. Blue Steel would consume a version of Terra with breaking changes and would still release as a minor update by providing styles and hooks to work around the breaking changes. Deprecation schedules and documentation were written to help keep Blue Steel backwards compatible. Unfortunately, it often wasn’t; sometimes, breaking changes would only manifest in an application. 
 
-Blue Steel and Terra were both tested separately with their own documentation sites. These tests were extensive and thorough but could not accommodate the complexity of the various applications consuming them. Non-passivity would creep into applications even when we thought everything was passive in Blue Steel.
+Blue Steel and Terra were both tested separately with their own documentation sites. These tests were extensive and thorough but could not accommodate the complexity of the various applications consuming them. Breaking changes would creep into applications even when we thought everything was backwards compatible in Blue Steel.
 
 In Terra, the preference was to style on HTML elements, states, and ARIA-roles whenever possible since they carried far more meaning than CSS classes. Unfortunately, this form of styling is somewhat global in nature. It was easy for style collisions to occur between components within Terra, consumer styles, and 3rd party libraries.
 
@@ -52,7 +51,7 @@ By starting with base components (buttons, images, etc), we effectively create a
 
 Introducing opinion into more complex components enables us to build better and more maintainable components with our most common use cases in mind. This does not preclude consumers who do not wish to consume the frameworks and libraries we use. By keeping each component in its own repository, it’s possible to create alternative versions of componentry to meet application needs. Additionally, keeping each component in its own repo allows for individual versioning, limiting scope of change, and makes it very easy for consumers to omit what they don’t need.
 
-Finally, providing helpers for all components will enable easy and consistent development. It will be possible to build complex components solely out of the smaller components leveraging helpers to output the correct HTML. The abstraction also makes it possible to passively update the implementation while making it so developers don’t have to be aware of complexities like semantic HTML and accessibility. This will enable developers to build solid applications easily and quickly.
+Finally, providing helpers for all components will enable easy and consistent development. It will be possible to build complex components solely out of the smaller components leveraging helpers to output the correct HTML. The abstraction also makes it possible to update the implementation in a compatible way while making it so developers don’t have to be aware of complexities like semantic HTML and accessibility. This will enable developers to build solid applications easily and quickly.
 
 ## Lessons Learned
 
