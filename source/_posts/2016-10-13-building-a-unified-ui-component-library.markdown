@@ -19,7 +19,7 @@ Blue Steel is a Rails gem that provides some basic helpers, CSS, JavaScript, and
 In its infancy, the project was well received; other platforms saw the value and wanted to take advantage of the work being done. To accommodate the additional platforms, Blue Steel was merged with another internal UI library called Style Guide. The best features of each library were pulled together, sometimes one overriding the other, sometimes merging feature sets. The merged project was called Terra.
 
 ## Problems
-The approach of merging existing components saved time up-front, but came with a steep cost. The library was fragmented in the approaches taken to design and development. As such, it became difficult to work on without pre-existing familiarity. It was fairly obvious that we put two frameworks together on a time constraint.
+The approach of merging existing components saved time up-front, but came with a steep cost. The library was fragmented in the approaches taken during design and development. As such, it became difficult to work on without pre-existing familiarity. It was fairly obvious that we put two frameworks together on a time constraint.
 
 Blue Steel still exists but is comprised primarily of Terra components. It persists to provide HealtheIntent-specific styles and functionality, while also being a Rails wrapper around Terra. Terra has been historically kept below version 1.0.0 for rapid development, while Blue Steel has been above 1.0.0. This strategy has caused a lot of pain for the consumers of both Terra and Blue Steel.
 
