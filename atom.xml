@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2016-10-14T03:16:53-05:00</updated>
+  <updated>2016-11-09T07:22:38-06:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,88 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Fall 2016 ShipIt Day]]></title>
+    <link href="http://engineering.cerner.com/blog/fall-2016-shipit-day/"/>
+    <updated>2016-11-08T00:00:00-06:00</updated>
+    <id>http://engineering.cerner.com/blog/fall-2016-shipit-day</id>
+    <content type="html"><![CDATA[<p>Another ShipIt Day was held on September 8th-9th at the Realization Campus at Cerner. ShipIt is a
+24-hour hackathon with the goal of building something awesome, usable, and value-adding within a
+single day. This fall marked our sixth ShipIt, which has has grown significantly since our first
+event.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-11-08-fall-2016-shipit-day/shipit-sign.jpg" title="Announcement" ></p>
+
+<p>The event kicked off in the morning at the auditorium of our Realization campus. At this point,
+teams were already formed, instructions were given, and shirts were handed out. This ShipIt day came
+with cool new t-shirts for all participants featuring the ShipIt squirrel (<a href="https://www.quora.com/GitHub-What-is-the-significance-of-the-Ship-It-squirrel">inspired by GitHub</a>)!</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-11-08-fall-2016-shipit-day/shipit-squirrel-shirt.jpg" title="ShipIt shirt" ></p>
+
+<p>Teams broke out to their work spaces and got to work on their projects. One team, <strong>LearnStack</strong>,
+decided to focus their project on associate development. The judges greatly appreciated their
+approach to this very real problem, and decided to award them the third place prize.</p>
+
+<p><strong>LearnStack</strong> &ndash; Jake LaCombe, Daniel Stucky, Sujay Sudheendra</p>
+
+<blockquote><p>Developers can get to a struggling point when they try to increase their experience level. Sure,
+getting started with any language can be very easy to do. Rails for example has their
+<a href="https://www.railstutorial.org/">impressive tutorial from Michael Hartl</a> for getting started
+with the framework. However, what happens when you
+get done with those beginning steps? What does it take to go from a beginner to an intermediate
+Rails developer, and then again from Intermediate to Advanced?</p>
+
+<p>The answer here is LearnStack. LearnStack takes a list of resources that are recommended by other
+developers, and rated appropriately based on the experience level of the material. Developers can
+easily share resources related to beginner, intermediate, and advanced knowledge of a particular
+language, process, framework, or whatever it may be. No need to keep doing endless searches online
+to figure out how to get to the next level! Let LearnStack point you to the resources you need!”</p></blockquote>
+
+<p>Another team decided to tackle the time it takes to provision a virtual machine. This team called
+themselves, &ldquo;All your base are belong to us,&rdquo; and they were awarded second place.</p>
+
+<p><strong>All your base are belong to us</strong> &ndash; Chris Soukup, Alex Harder, Ben Hemphill</p>
+
+<blockquote><p>The current situation for OS image creation is that it is done infrequently, in an ad-hoc manner,
+with little consistency among the various hypervisors. This means that we take the base image and
+then use <a href="https://www.chef.io/">Chef</a> to upgrade the image to the desired state. This adds significant
+amounts of time to the process of provisioning a virtual machine.</p>
+
+<p>Our project was to use <a href="https://www.packer.io/">Packer</a> to create a generic image with all of the
+universal settings that we set with our base OS Chef recipe. This image can then be distributed to all
+the hypervisors and made available to consumers. Since the image would be generated regularly, the
+provisioning time could be significantly decreased by not having to immediately upgrade the system. Additionally,
+since the universal settings are already applied, we save considerable amounts of time on the OS preparation
+as well. We took provisioning time for a RedHat 7.2 <a href="https://www.openstack.org/">OpenStack</a> VM from 12 minutes,
+50 seconds to 4 minutes, 1 second, a 320% decrease in time!</p>
+
+<p>Future enhancements will allow us to automatically generate these images, distribute them, and make
+them available to consumers. This will allow a consuming team to naturally stay current on OS
+patches at provisioning time, decrease the human effort in creating these OS images, and provide a
+consistent experience for teams across Vagrant, VMWare, OpenStack, EC2, Docker, etc.”</p></blockquote>
+
+<p>For the first time we had a unanimous winner for both the judges and the participant winners. The
+<strong>206 Partial Content</strong> team not only won two giant tubs of cheese balls, but also the all important
+<a href="http://engineering.cerner.com/blog/shipit-hackathon-mplus/">Golden Keyboard</a> and bragging rights
+until the next ShipIt Day. <strong>206 Partial Content</strong> decided to solve a problem to &ldquo;enable solution designers,
+engineers, and grandparents to easily create, stage, and process data for testing scenarios required for
+verification without being dependent on upstream processing or rules.&rdquo;</p>
+
+<p><strong>206 Partial Content</strong> &ndash; Madhur Sikri, Ian Kottman, Venkatesh Sridharan, Andy Nelson, Brian van de
+Boogard</p>
+
+<blockquote><p>Our project was primarily driven by two rock star engineers on our team, Ian Kottman and Brian van
+de Boogaard. We coined our project Sinecure, which means a position requiring little or no work but
+giving the holder status or financial benefit. The goal of the project was to find a solution to
+creating test data more easily and efficiently for anyone on our team to consume.”</p></blockquote>
+
+<p>Thanks to all who participated and congratulations to our winners. Until next time, at ShipIt VII in
+December!</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2016-11-08-fall-2016-shipit-day/shipit-winners.jpg" title="Winners" ></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Building a Unified UI Component Library: Lessons Learned]]></title>
@@ -2496,43 +2578,6 @@ about proactive solutions.</p>
 <p>Today, we’re happy to announce that <a href="http://www.apache.org/foundation/thanks.html">Cerner is now a sponsor</a> of the non-profit <a href="http://www.apache.org/">Apache Software Foundation</a> (ASF). The ASF is home to several projects that are essential components in many of our systems. We’ve blogged previously about several of these projects: <a href="http://engineering.cerner.com/2013/02/composable-mapreduce-with-hadoop-and-crunch/">Hadoop, HBase, Crunch</a>, <a href="http://engineering.cerner.com/2013/03/cerner-and-tycho/">Maven</a>, and <a href="http://engineering.cerner.com/2013/02/near-real-time-processing-over-hadoop-and-hbase/">Storm</a>. In addition to these projects, there are dozens of other ASF projects that we use and have contributed to via patches and enhancements.</p>
 
 <p>Sponsoring the ASF allows us to show support for their mission and to ensure the ASF can continue to provide infrastructure and resources for the open source projects they host.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The Raft Protocol: A Better Paxos?]]></title>
-    <link href="http://engineering.cerner.com/2014/01/the-raft-protocol-a-better-paxos/"/>
-    <updated>2014-01-24T00:00:00-06:00</updated>
-    <id>http://engineering.cerner.com/2014/01/the-raft-protocol-a-better-paxos</id>
-    <content type="html"><![CDATA[<p>Among the many compelling talks that attendees come to expect every year at the Strange Loop conference was a <a href="https://thestrangeloop.com/sessions/raft-the-understandable-distributed-protocol">session</a> given by Ben Johnson that provided an overview of a new distributed consensus protocol originating from research at Stanford University, named <a href="http://raftconsensus.github.io/">Raft</a>.</p>
-
-<h2>What is distributed consensus?</h2>
-
-<p>Distributed consensus can be described as the act of reaching agreement among a collection of machines cooperating to solve a problem. With the rise of open source distributed computing and storage platforms, consensus algorithms have become essential tools for replication, and thus, serve to enhance resiliency by eliminating single points of failure.</p>
-
-<p>Examples of distributed consensus in action can often be elusive because such protocols are ordinarily buried inside core systems, and consequently, are largely invisible to application developers. For example, a relational database in a clustered configuration would typically employ a consensus algorithm to coordinate commits with other replicas. And similarly, Apache ZooKeeper, a popular distributed synchronization service used in projects such as HBase and Solr, utilizes a consensus protocol to achieve fault-tolerance by replicating its configuration repository across many servers.</p>
-
-<h2>Raft is about understandability and practicality</h2>
-
-<p>The current Raft <a href="https://ramcloud.stanford.edu/wiki/download/attachments/11370504/raft.pdf">paper</a> argues that while <a href="http://en.wikipedia.org/wiki/Paxos_%28computer_science%29">Paxos</a> has historically dominated both academic and commercial discourse with respect to distributed consensus, the protocol itself is too complicated to reason about and that a more understandable algorithm was needed, not only for educational purposes, but also to serve as a foundation for building practical systems.</p>
-
-<p>An obvious question instinctively arises for the inquisitive reader: what makes Raft better than Paxos? Having personally implemented a replicated log using the Paxos algorithm, there was a natural curiosity in understanding how Raft approached the problem of solving consensus. It is worth noting, however, that comparing Raft and Paxos can be a bit misleading. Even though both address the fundamental problem of reaching consensus among a network of connected machines, Paxos is more academic in nature and primarily concerned with the mechanics of consensus, whereas Raft is oriented around the practical challenges of implementing a replicated log.</p>
-
-<h2>Paxos is about theory</h2>
-
-<p>The seminal work done by Leslie Lamport in 1989 with the design of the Paxos protocol was an important step forward in establishing a theoretical foundation for achieving consensus in asynchronous distributed systems. His contributions were largely academic and centered around reaching agreement on a single value, thus relying on software engineers to translate these ideas into practical solutions, such as replicated databases, which must decide on many values. However, the actual requirements necessary to build a real system, including areas such as leader election, failure detection, and log management, are not present in the Paxos specification, yet add a degree of complexity that almost always significantly alters the original protocol. This is precisely where the Raft designers correctly argue that the absence of specificity leads to great difficulty in applying Paxos to real world problems. A subsequent <a href="http://research.microsoft.com/en-us/um/people/lamport/pubs/paxos-simple.pdf">paper</a> by Lamport in 2001 does an excellent job of making the original protocol accessible to practitioners, and to some degree, proposes techniques for designing a replicated log, but it stops short of being prescriptive in the way that Raft does.</p>
-
-<h2>You say tomāto, I say tomäto</h2>
-
-<p>Raft is unique in many ways compared to typical Paxos implementations, but despite those differences, both are grounded in a similar set of core principles. For example, Raft requires leader election to occur strictly before any new values can be appended to the log, whereas a Paxos implementation would make the election process an implicit outcome of reaching agreement. The Raft designers claim that doing so has the consequence of simplifying log management, particularly with respect to edge cases in which a succession of leadership changes can result in log discrepancies, but the tradeoff is that leader election in Raft is more complicated than its counterpart in Paxos.</p>
-
-<p>What both protocols acknowledge, though, is that leader election is imperative if systems want to ensure progress. The notion of progress simply means that a system eventually does something useful. An important discovery in 1985, called the <a href="http://cs-www.cs.yale.edu/homes/arvind/cs425/doc/fischer.pdf">FLP Impossibility Result</a>, proved that consensus was impossible in asynchronous distributed systems with the presence of only one faulty process. The practical implication follows: a system that cannot reach consensus is a system that cannot make progress. To be clear, the finding did not state that consensus was unreachable, just that some executions cannot reach consensus in bounded time. As a consequence, leader election, combined with timeouts, is often used as a technique for eliminating a class of conditions under which reaching agreement could take an arbitrarily long period of time. Interestingly, the Paxos algorithm as originally described by Lamport, makes no guarantees about progress, so implementations are compelled to incorporate timeouts as a compensatory measure. Raft, on the other hand, is prescriptive about the use of timeouts.</p>
-
-<h2>Raft wins on accessibility</h2>
-
-<p>One especially interesting component of the Raft specification is the mechanism for coordinating changes to cluster membership. The protocol employs a novel approach in which joint consensus is reached using two overlapping majorities, i.e. quorums defined by both the old and new cluster configuration, thereby supporting dynamic elasticity without disruption to operations.</p>
-
-<p>The emergence of Raft has clearly seen a positive embrace by the software development community as evidenced by nearly 40 <a href="http://raftconsensus.github.io/#implementations">open source implementations</a> in a variety of different languages. Even though Paxos is beautifully elegant in describing the essence of distributed consensus, the absence of a comprehensive and prescriptive specification has rendered it inaccessible and notoriously difficult to implement in practical systems.</p>
 ]]></content>
   </entry>
   
