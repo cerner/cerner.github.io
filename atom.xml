@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2016-11-09T07:22:38-06:00</updated>
+  <updated>2016-11-11T04:07:49-06:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,38 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Clara Rules Joins Cerner's Open Source]]></title>
+    <link href="http://engineering.cerner.com/blog/clara-rules-joins-cerner-open-source/"/>
+    <updated>2016-11-11T00:00:00-06:00</updated>
+    <id>http://engineering.cerner.com/blog/clara-rules-joins-cerner-open-source</id>
+    <content type="html"><![CDATA[<p>Sometimes a small experiment on the side can grow into something valuable. We at Cerner have long
+used forward-chaining rules engines to express and execute clinical knowledge, but we’ve also had to
+extend or work around the capabilities of such engines. Engines targeting business users just
+weren’t expressive enough to model some of our logic. To meet this need we are making Clara Rules an
+open source project driven by Cerner Engineering.</p>
+
+<p>Clara took an unusual path, starting as a minimal implementation of the
+<a href="https://en.wikipedia.org/wiki/Rete_algorithm">Rete algorithm</a> to help my
+own understanding. After sharing this with others at Cerner, we started to see an opportunity to
+gain the modularity and reasoning advantages of a rules engine, while preserving the expressiveness
+and power of a modern programming language. We wanted to combine the best ideas of rules engines
+with good software engineering practices. You can see the result of this on the
+<a href="http://www.clara-rules.org">Clara Rules home page</a>.</p>
+
+<p><a href="https://github.com/mrrodriguez">Mike Rodriguez</a> has been essential in turning Clara from an
+experiment into a valuable system to fill a gap for rules engines which are oriented towards
+developers. More recently, <a href="https://github.com/WilliamParker">Will Parker</a>
+has also made significant contributions to help make Clara fast and reliable. They made it possible for Clara
+to help analyze millions of medical records every day. Therefore Mike and Will are joining as the
+initial committers to Cerner Engineering’s Clara project. We will welcome other contributors to make
+this step in the future.</p>
+
+<p>You can find project <a href="https://github.com/cerner/clara-rules">source code on GitHub</a>, and the
+documentation on the <a href="http://www.clara-rules.org">clara-rules.org</a> site.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Fall 2016 ShipIt Day]]></title>
@@ -2565,19 +2597,6 @@ about proactive solutions.</p>
 <p>The final item is something we&rsquo;ve already been working on for a little while know but are really going after hard this year is moving to P2. We released our last version using features and products and we&rsquo;re continuing to play with how we can best leverage them to deliver our solutions to clients.</p>
 
 <p>The introduction of Eclipse 4.x represented somewhat of a turning point for our team. While the process of uplifting was challenging at times, it was a great learning experience and it provided us the ability to enhance the functionality of the iAware platform, which was a huge benefit to our teams developing solutions. Integral to our ability to enhance the iAware platform was the fact that with 4.x we’re able to use native API where previously we wouldn’t have been able to accomplish it or it required us to use a workaround, usually entailing use of internal classes.  The work also lead to more involvement and participation in the Eclipse community by our team. We were involved in discussions in the forums, logged bugs and provided patches, which is a positive for all involved.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Sponsoring the Apache Software Foundation]]></title>
-    <link href="http://engineering.cerner.com/2014/01/sponsoring-the-apache-software-foundation/"/>
-    <updated>2014-01-28T00:00:00-06:00</updated>
-    <id>http://engineering.cerner.com/2014/01/sponsoring-the-apache-software-foundation</id>
-    <content type="html"><![CDATA[<p>Open source plays an integral role within engineering at Cerner. In addition to using open source software throughout our architecture, we <a href="http://engineering.cerner.com/2014/01/cerner-and-open-source/">recently released a few projects</a> back to the community via our <a href="https://github.com/cerner">Github organization</a>.</p>
-
-<p>Today, we’re happy to announce that <a href="http://www.apache.org/foundation/thanks.html">Cerner is now a sponsor</a> of the non-profit <a href="http://www.apache.org/">Apache Software Foundation</a> (ASF). The ASF is home to several projects that are essential components in many of our systems. We’ve blogged previously about several of these projects: <a href="http://engineering.cerner.com/2013/02/composable-mapreduce-with-hadoop-and-crunch/">Hadoop, HBase, Crunch</a>, <a href="http://engineering.cerner.com/2013/03/cerner-and-tycho/">Maven</a>, and <a href="http://engineering.cerner.com/2013/02/near-real-time-processing-over-hadoop-and-hbase/">Storm</a>. In addition to these projects, there are dozens of other ASF projects that we use and have contributed to via patches and enhancements.</p>
-
-<p>Sponsoring the ASF allows us to show support for their mission and to ensure the ASF can continue to provide infrastructure and resources for the open source projects they host.</p>
 ]]></content>
   </entry>
   

@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Cerner and the Apache Software Foundation - Engineering Health</title>
+  <title>Clara Rules Joins Cerner's Open Source - Engineering Health</title>
   <meta name="author" content="Cerner">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://engineering.cerner.com/blog/cerner-and-the-apache-software-foundation">
+  <link rel="canonical" href="http://engineering.cerner.com/blog/clara-rules-joins-cerner-open-source">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -122,7 +122,7 @@
     
   <header class="entry-header">
     
-      <h1 class="entry-title">Cerner and the Apache Software Foundation</h1>
+      <h1 class="entry-title">Clara Rules Joins Cerner's Open Source</h1>
     
     
       <div class="entry-meta meta">
@@ -138,12 +138,12 @@
   
 
 
-<time datetime="2014-10-28T00:00:00-05:00" pubdate data-updated="true">Oct 28<span>th</span>, 2014</time> | 
+<time datetime="2016-11-11T00:00:00-06:00" pubdate data-updated="true">Nov 11<span>th</span>, 2016</time> | 
   
 
 
   <span class="byline author vcard">
-    <span class="fn">Kevin Shekleton</span>
+    <span class="fn">Ryan Brush</span>
   </span>
 
 
@@ -153,13 +153,30 @@
   </header>
 
 
-<div class="entry-content"><p>At the beginning of this year, <a href="/2014/01/sponsoring-the-apache-software-foundation/">we announced that Cerner became a bronze-level sponsor</a> of the non-profit <a href="http://www.apache.org/">Apache Software Foundation</a> (ASF). Many of the open source projects we use and contribute to are under the ASF umbrella, so supporting the mission and work of the ASF is important to us.</p>
+<div class="entry-content"><p>Sometimes a small experiment on the side can grow into something valuable. We at Cerner have long
+used forward-chaining rules engines to express and execute clinical knowledge, but we’ve also had to
+extend or work around the capabilities of such engines. Engines targeting business users just
+weren’t expressive enough to model some of our logic. To meet this need we are making Clara Rules an
+open source project driven by Cerner Engineering.</p>
 
-<p>We&rsquo;re happy to announce that <a href="http://www.apache.org/foundation/thanks.html">Cerner has now increased our sponsorship of the ASF to become a silver-level sponsor</a>. Open source continues to play an integral role in both our architecture and engineering culture. We&rsquo;ve blogged and spoken at conferences about how several ASF projects are core foundational components in our architecture and several of our <a href="http://www.youtube.com/playlist?list=PLSti19ysyJtDYa2JdSjVYWaKhuul1jPUP">tech talks</a> have focused on ASF projects.</p>
+<p>Clara took an unusual path, starting as a minimal implementation of the
+<a href="https://en.wikipedia.org/wiki/Rete_algorithm">Rete algorithm</a> to help my
+own understanding. After sharing this with others at Cerner, we started to see an opportunity to
+gain the modularity and reasoning advantages of a rules engine, while preserving the expressiveness
+and power of a modern programming language. We wanted to combine the best ideas of rules engines
+with good software engineering practices. You can see the result of this on the
+<a href="http://www.clara-rules.org">Clara Rules home page</a>.</p>
 
-<p>Further increasing our sponsorship of the ASF reaffirms our continued support for an organization that provides homes for numerous open source projects that are important not only to us, but the larger development community.</p>
+<p><a href="https://github.com/mrrodriguez">Mike Rodriguez</a> has been essential in turning Clara from an
+experiment into a valuable system to fill a gap for rules engines which are oriented towards
+developers. More recently, <a href="https://github.com/WilliamParker">Will Parker</a>
+has also made significant contributions to help make Clara fast and reliable. They made it possible for Clara
+to help analyze millions of medical records every day. Therefore Mike and Will are joining as the
+initial committers to Cerner Engineering’s Clara project. We will welcome other contributors to make
+this step in the future.</p>
 
-<p><a href="http://sponsor.apache.org/"><img class="center" src="/assets/2014-10-28-cerner-and-the-apache-software-foundation/asf-sponsorship-silver-logo.jpg" title="ASF Silver Sponsorship" ></a></p>
+<p>You can find project <a href="https://github.com/cerner/clara-rules">source code on GitHub</a>, and the
+documentation on the <a href="http://www.clara-rules.org">clara-rules.org</a> site.</p>
 </div>
 
 
@@ -182,13 +199,10 @@
     <ul class="pager">
       
       <li class="previous"><a class="basic-alignment left"
-        href="/blog/closures-and-currying-in-javascript/" title="Previous Post:
-        Closures & Currying in JavaScript">&laquo; Previous Post</a></li>
+        href="/blog/fall-2016-shipit-day/" title="Previous Post:
+        Fall 2016 ShipIt Day">&laquo; Previous Post</a></li>
       
       <li><a href="/blog/archives">Blog Archives</a></li>
-      
-      <li class="next"><a class="basic-alignment right" href="/blog/managing-30000-logging-events-per-day-with-splunk/"
-        title="Next Post: Managing 30,000 Logging Events per Day with Splunk">Next Post &raquo;</a></li>
       
     </ul>
   </footer>
