@@ -50,7 +50,7 @@ imagination of Alan Turing. Cue the mic drop now.
 <sub>Sources: <a href="http://www.alanturing.net/turing_archive/graphics/photos%20of%20Turing/pages/alan1_psd.htm">alanturing.net</a>, <a href="http://worldnews.nbcnews.com/_news/2013/12/23/22025978-queen-pardons-computing-giant-alan-turing-59-years-after-his-suicide">nbcnews.com</a></sub>
 </div>
 
----
+___
 
 {% img center /assets/2016-11-23-alan-and-grace-an-origin-story/grace-8bit.png Grace %}
 
