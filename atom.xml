@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2016-11-23T05:19:42-06:00</updated>
+  <updated>2016-11-30T17:16:19-08:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Alan and Grace: An Origin Story]]></title>
     <link href="http://engineering.cerner.com/blog/alan-and-grace-an-origin-story/"/>
-    <updated>2016-11-23T00:00:00-06:00</updated>
+    <updated>2016-11-23T00:00:00-08:00</updated>
     <id>http://engineering.cerner.com/blog/alan-and-grace-an-origin-story</id>
     <content type="html"><![CDATA[<p><img class="center" src="http://engineering.cerner.com/assets/2016-11-23-alan-and-grace-an-origin-story/alan-grace.png" title="Alan and Grace" ></p>
 
@@ -98,10 +98,7 @@ inspiration to women in tech everywhere. Was there any other choice?</p>
 <p>Alan and Grace represent a beacon of inspiration, providing icons that
 encapsulate and promote a culture of innovation, forward thinking, and just
 plain fun. The creation of mascots Alan and Grace has been a big win for the
-passionate Cerner engineers dedicated to fostering Cerner’s Engineering culture.
-Alan and Grace represent a beacon of inspiration, providing icons that
-encapsulate and promote a culture of innovation, forward thinking, and just
-plain fun.</p>
+passionate Cerner engineers dedicated to fostering Cerner’s Engineering culture.</p>
 
 <p><img class="center" src="http://engineering.cerner.com/assets/2016-11-23-alan-and-grace-an-origin-story/alan-grace-2.png" title="Alan and Grace" ></p>
 ]]></content>
@@ -110,7 +107,7 @@ plain fun.</p>
   <entry>
     <title type="html"><![CDATA[Clara Rules Joins Cerner's Open Source]]></title>
     <link href="http://engineering.cerner.com/blog/clara-rules-joins-cerner-open-source/"/>
-    <updated>2016-11-11T00:00:00-06:00</updated>
+    <updated>2016-11-11T00:00:00-08:00</updated>
     <id>http://engineering.cerner.com/blog/clara-rules-joins-cerner-open-source</id>
     <content type="html"><![CDATA[<p>Sometimes a small experiment on the side can grow into something valuable. We at Cerner have long
 used forward-chaining rules engines to express and execute clinical knowledge, but we’ve also had to
@@ -142,7 +139,7 @@ documentation on the <a href="http://www.clara-rules.org">clara-rules.org</a> si
   <entry>
     <title type="html"><![CDATA[Fall 2016 ShipIt Day]]></title>
     <link href="http://engineering.cerner.com/blog/fall-2016-shipit-day/"/>
-    <updated>2016-11-08T00:00:00-06:00</updated>
+    <updated>2016-11-08T00:00:00-08:00</updated>
     <id>http://engineering.cerner.com/blog/fall-2016-shipit-day</id>
     <content type="html"><![CDATA[<p>Another ShipIt Day was held on September 8th-9th at the Realization Campus at Cerner. ShipIt is a
 24-hour hackathon with the goal of building something awesome, usable, and value-adding within a
@@ -224,7 +221,7 @@ December!</p>
   <entry>
     <title type="html"><![CDATA[Building a Unified UI Component Library: Lessons Learned]]></title>
     <link href="http://engineering.cerner.com/blog/building-a-unified-ui-component-library/"/>
-    <updated>2016-10-13T00:00:00-05:00</updated>
+    <updated>2016-10-13T00:00:00-07:00</updated>
     <id>http://engineering.cerner.com/blog/building-a-unified-ui-component-library</id>
     <content type="html"><![CDATA[<p>Cerner is building an open source, mobile-first user interface component library for healthcare applications. Pulling years of experience and lessons learned across multiple teams together, we are creating something great. We are very excited to bring this solution to the public and to be contributing back to the community!</p>
 
@@ -299,7 +296,7 @@ December!</p>
   <entry>
     <title type="html"><![CDATA[Michelle Brush Receives the Rising Trendsetter STEMMY Award!]]></title>
     <link href="http://engineering.cerner.com/blog/michelle-brush-receives-the-rising-trendsetter-stemmy-award/"/>
-    <updated>2016-10-02T00:00:00-05:00</updated>
+    <updated>2016-10-02T00:00:00-07:00</updated>
     <id>http://engineering.cerner.com/blog/michelle-brush-receives-the-rising-trendsetter-stemmy-award</id>
     <content type="html"><![CDATA[<p>We are excited to congratulate our own Michelle Brush for receiving the Rising Trendsetter STEMMY award. The Rising Trendsetter Award is given to a woman in STEMM areas with less than 20 years of experience and has demonstrated significant achievements early in their career.</p>
 
@@ -318,7 +315,7 @@ December!</p>
   <entry>
     <title type="html"><![CDATA[DevCon 2016 Word Cloud]]></title>
     <link href="http://engineering.cerner.com/blog/devcon-word-cloud/"/>
-    <updated>2016-09-28T00:00:00-05:00</updated>
+    <updated>2016-09-28T00:00:00-07:00</updated>
     <id>http://engineering.cerner.com/blog/devcon-word-cloud</id>
     <content type="html"><![CDATA[<p>Every year we hold an internal developers conference called <a href="http://engineering.cerner.com/2013/08/devcon/">DevCon</a>. This year
 we had 295 submissions for talks, ranging from a deep technical dive into the inner workings of Kafka to a reflection on the power of office pranks.‌ I wondered what, if anything, do these submissions have in common? Are there any common themes/topics being discussed? To find out I decided to visualize the talk submissions in a word cloud to create an easily understandable (and hopefully aesthetically pleasing) view of what topics were most common.</p>
@@ -440,7 +437,7 @@ we had 295 submissions for talks, ranging from a deep technical dive into the in
   <entry>
     <title type="html"><![CDATA[Difficult Debugging: Learning From Utter Nonsense]]></title>
     <link href="http://engineering.cerner.com/blog/advanced-debugging/"/>
-    <updated>2016-07-13T00:00:00-05:00</updated>
+    <updated>2016-07-13T00:00:00-07:00</updated>
     <id>http://engineering.cerner.com/blog/difficult-debugging</id>
     <content type="html"><![CDATA[<h2>Preface</h2>
 
@@ -701,7 +698,7 @@ we had 295 submissions for talks, ranging from a deep technical dive into the in
   <entry>
     <title type="html"><![CDATA[RailsConf 2016 Recap]]></title>
     <link href="http://engineering.cerner.com/blog/railsconf-2016-recap/"/>
-    <updated>2016-05-19T00:00:00-05:00</updated>
+    <updated>2016-05-19T00:00:00-07:00</updated>
     <id>http://engineering.cerner.com/blog/railsconf-2016-recap</id>
     <content type="html"><![CDATA[<p>At Cerner, we love Ruby and Rails and use it prominently in our cloud based solutions. When we found out RailsConf 2016 was going to be held in the hometown of Cerner&rsquo;s headquarters in Kansas City, Missouri, we were excited for the opportunity to support the conference by attending as well as being a sponsor and hosting one of the official after parties.</p>
 
@@ -746,7 +743,7 @@ we had 295 submissions for talks, ranging from a deep technical dive into the in
   <entry>
     <title type="html"><![CDATA[Spring 2016 ShipIt Day]]></title>
     <link href="http://engineering.cerner.com/blog/spring-2016-shipit-day/"/>
-    <updated>2016-04-18T00:00:00-05:00</updated>
+    <updated>2016-04-18T00:00:00-07:00</updated>
     <id>http://engineering.cerner.com/blog/spring-2016-shipit-day</id>
     <content type="html"><![CDATA[<p>ShipIt Day is an all day, all night hackathon with the goal of building something awesome, usable, and value-adding
 within the given 24 hours. This Spring marked our fifth ShipIt Day, with participation and reach growing with each
@@ -842,7 +839,7 @@ organizations are doing.</p></blockquote>
   <entry>
     <title type="html"><![CDATA[Deploying Web Services With Apache Tomcat and Chef]]></title>
     <link href="http://engineering.cerner.com/blog/deploying-web-services-with-apache-tomcat-and-chef/"/>
-    <updated>2016-02-04T00:00:00-06:00</updated>
+    <updated>2016-02-04T00:00:00-08:00</updated>
     <id>http://engineering.cerner.com/blog/deploying-web-services-with-apache-tomcat-and-chef</id>
     <content type="html"><![CDATA[<p>Open source is an important part of our engineering culture and we love when we’re able to contribute back to the community. We recently open sourced our <a href="https://github.com/cerner/cerner_tomcat">Tomcat Chef Cookbook</a>, which we use to automate deploying many of our web services here at Cerner. The cookbook is meant to be simple, yet flexible enough to change most anything about <a href="http://tomcat.apache.org/">Apache Tomcat</a> to your liking. It supports installing any version of Tomcat, configuring any file within the Tomcat installation and deploying web applications.</p>
 
@@ -857,7 +854,7 @@ organizations are doing.</p></blockquote>
   <entry>
     <title type="html"><![CDATA[Girls in Technology Movement - Hour of Code]]></title>
     <link href="http://engineering.cerner.com/blog/girls-in-technology-movement-hour-of-code/"/>
-    <updated>2016-01-20T00:00:00-06:00</updated>
+    <updated>2016-01-20T00:00:00-08:00</updated>
     <id>http://engineering.cerner.com/blog/girls-in-technology-movement-hour-of-code</id>
     <content type="html"><![CDATA[<p>As a female Software Engineer, I know the benefits of having other females in the field to fellowship with as well as the benefits of early exposure to coding and the technology field. The Girls in Technology Movement Hour of Code event held December 9th, 2015 at Cerner’s Innovation Campus was a great opportunity for girls from nearby schools to gather and hear a little about the technology industry, the opportunities available for their future, meet some women in the industry, and get a hands-on introduction to coding.</p>
 
@@ -880,7 +877,7 @@ organizations are doing.</p></blockquote>
   <entry>
     <title type="html"><![CDATA[Identifying Network ACL Issues With Chef Locally]]></title>
     <link href="http://engineering.cerner.com/blog/identifying-network-acl-issues-with-chef-locally/"/>
-    <updated>2015-11-17T00:00:00-06:00</updated>
+    <updated>2015-11-17T00:00:00-08:00</updated>
     <id>http://engineering.cerner.com/blog/identifying-network-acl-issues-with-chef-locally</id>
     <content type="html"><![CDATA[<p>At Cerner, we use <a href="https://www.chef.io/">Chef</a> to automate our deployments across a very large distributed system comprised of many thousands of nodes. While we employ <a href="http://serverspec.org/">ServerSpec</a> and <a href="http://kitchen.ci/">Test Kitchen</a> extensively to test our Chef recipes, this still doesn&rsquo;t identify all possible failure scenarios. In a large distributed system such as ours, we occasionally run into connectivity failures between machines due to network ACL issues. This could be due to a variety of reasons. The simplest being that you didn’t know what all you were connecting to. The second being that you didn’t ask for the ACLs to be opened early enough, or at all. And finally (and most frustrating), you asked and were granted an ACL change but there still exists an issue (like an unfollowed redirect). When we took a look at these issues, we saw an opportunity for improvement in our Chef testing.</p>
 
@@ -911,7 +908,7 @@ organizations are doing.</p></blockquote>
   <entry>
     <title type="html"><![CDATA[JavaScript Logging: We Can Do Better!]]></title>
     <link href="http://engineering.cerner.com/blog/javascript-logging-we-can-do-better/"/>
-    <updated>2015-07-20T00:00:00-05:00</updated>
+    <updated>2015-07-20T00:00:00-07:00</updated>
     <id>http://engineering.cerner.com/blog/javascript-logging-we-can-do-better</id>
     <content type="html"><![CDATA[<p>Currently in the world of JavaScript these options
 are what we most commonly use to generate logs:</p>
@@ -1453,7 +1450,7 @@ about proactive solutions.</p>
   <entry>
     <title type="html"><![CDATA[Managing 30,000 Logging Events Per Day With Splunk]]></title>
     <link href="http://engineering.cerner.com/blog/managing-30000-logging-events-per-day-with-splunk/"/>
-    <updated>2015-01-29T00:00:00-06:00</updated>
+    <updated>2015-01-29T00:00:00-08:00</updated>
     <id>http://engineering.cerner.com/blog/managing-30000-logging-events-per-day-with-splunk</id>
     <content type="html"><![CDATA[<p>Our team works on a patient facing web application with a thousand live clients with 2,315,000+ users. On an average, the high traffic results into more than 40,000 visits and 300,000 page views daily generating about 30,000 logging events. A considerable portion of these events are of information and warning level in order to aid proactive monitoring or identify potential issues due to clients’ misconfiguration.</p>
 
@@ -1523,7 +1520,7 @@ about proactive solutions.</p>
   <entry>
     <title type="html"><![CDATA[Cerner and the Apache Software Foundation]]></title>
     <link href="http://engineering.cerner.com/blog/cerner-and-the-apache-software-foundation/"/>
-    <updated>2014-10-28T00:00:00-05:00</updated>
+    <updated>2014-10-28T00:00:00-07:00</updated>
     <id>http://engineering.cerner.com/blog/cerner-and-the-apache-software-foundation</id>
     <content type="html"><![CDATA[<p>At the beginning of this year, <a href="http://engineering.cerner.com/2014/01/sponsoring-the-apache-software-foundation/">we announced that Cerner became a bronze-level sponsor</a> of the non-profit <a href="http://www.apache.org/">Apache Software Foundation</a> (ASF). Many of the open source projects we use and contribute to are under the ASF umbrella, so supporting the mission and work of the ASF is important to us.</p>
 
@@ -1538,7 +1535,7 @@ about proactive solutions.</p>
   <entry>
     <title type="html"><![CDATA[Closures & Currying in JavaScript]]></title>
     <link href="http://engineering.cerner.com/blog/closures-and-currying-in-javascript/"/>
-    <updated>2014-09-29T00:00:00-05:00</updated>
+    <updated>2014-09-29T00:00:00-07:00</updated>
     <id>http://engineering.cerner.com/blog/closures-and-currying-in-javascript</id>
     <content type="html"><![CDATA[<h2>Preface</h2>
 
@@ -1902,7 +1899,7 @@ about proactive solutions.</p>
   <entry>
     <title type="html"><![CDATA[Intern HackFest 2014]]></title>
     <link href="http://engineering.cerner.com/blog/intern-hackfest-2014/"/>
-    <updated>2014-09-08T00:00:00-05:00</updated>
+    <updated>2014-09-08T00:00:00-07:00</updated>
     <id>http://engineering.cerner.com/blog/intern-hackfest-2014</id>
     <content type="html"><![CDATA[<p>Ten teams of two to four Cerner interns competed in a week-long HackFest this summer, working to solve any problem they put their minds to. This competition cumulated in a presentation and judging of projects, with prizes of Raspberry Pi Kits for each member of the second place team and Leap Motions for each member of the winning team. From mobile apps, to machine learning algorithms, to drones…this year’s Summer Intern HackFest has been one for the books.</p>
 
@@ -1931,7 +1928,7 @@ about proactive solutions.</p>
   <entry>
     <title type="html"><![CDATA[The Plain Text Is a Lie]]></title>
     <link href="http://engineering.cerner.com/blog/the-plain-text-is-a-lie/"/>
-    <updated>2014-08-02T00:00:00-05:00</updated>
+    <updated>2014-08-02T00:00:00-07:00</updated>
     <id>http://engineering.cerner.com/blog/the-plain-text-is-a-lie</id>
     <content type="html"><![CDATA[<h2>There is no such thing as plain text</h2>
 
@@ -2280,7 +2277,7 @@ about proactive solutions.</p>
   <entry>
     <title type="html"><![CDATA[ShipIt - 24-hour Hackathon for Millennium+ Platform Dev]]></title>
     <link href="http://engineering.cerner.com/blog/shipit-hackathon-mplus/"/>
-    <updated>2014-07-01T00:00:00-05:00</updated>
+    <updated>2014-07-01T00:00:00-07:00</updated>
     <id>http://engineering.cerner.com/blog/shipit-hackathon-mplus</id>
     <content type="html"><![CDATA[<p>At the end of March, some of our teams held their first 24-hour hackathon, titled ShipIt: Millennium+ Services FedEx Day. We had 41 participants, in 15 teams working on 15 unique projects. The idea was inspired by several teams spending a few hours every so often to work on different projects. After reading about <a href="https://www.atlassian.com/company/about/shipit">Atlassian’s</a> hack days, we decided to hold one.</p>
 
@@ -2313,7 +2310,7 @@ about proactive solutions.</p>
   <entry>
     <title type="html"><![CDATA[Scaling People With Apache Crunch]]></title>
     <link href="http://engineering.cerner.com/blog/scaling-people-with-apache-crunch/"/>
-    <updated>2014-05-09T00:00:00-05:00</updated>
+    <updated>2014-05-09T00:00:00-07:00</updated>
     <id>http://engineering.cerner.com/blog/scaling-people-with-apache-crunch</id>
     <content type="html"><![CDATA[<h2>Starting the Big Data Journey</h2>
 
