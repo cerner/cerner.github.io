@@ -85,8 +85,5 @@ Alan and Grace represent a beacon of inspiration, providing icons that
 encapsulate and promote a culture of innovation, forward thinking, and just
 plain fun. The creation of mascots Alan and Grace has been a big win for the
 passionate Cerner engineers dedicated to fostering Cerner’s Engineering culture.
-Alan and Grace represent a beacon of inspiration, providing icons that
-encapsulate and promote a culture of innovation, forward thinking, and just
-plain fun.
 
 {% img center /assets/2016-11-23-alan-and-grace-an-origin-story/alan-grace-2.png Alan and Grace %}
