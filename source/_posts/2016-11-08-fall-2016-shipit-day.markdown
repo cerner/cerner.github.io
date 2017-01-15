@@ -3,7 +3,7 @@ layout: post
 title: Fall 2016 ShipIt Day
 author: Melanie Carpenter
 date: 2016-11-08
-tags: [culture, engineering]
+tags: [culture, engineering, hackathon, shipit]
 ---
 
 Another ShipIt Day was held on September 8th-9th at the Realization Campus at Cerner. ShipIt is a

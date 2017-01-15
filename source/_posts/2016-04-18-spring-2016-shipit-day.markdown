@@ -3,7 +3,7 @@ layout: post
 title: Spring 2016 ShipIt Day
 author: Melanie Carpenter
 date: 2016-04-18
-tags: [culture, engineering]
+tags: [culture, engineering, hackathon, shipit]]
 ---
 
 ShipIt Day is an all day, all night hackathon with the goal of building something awesome, usable, and value-adding

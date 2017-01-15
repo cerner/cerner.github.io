@@ -3,7 +3,7 @@ layout: post
 title: ShipIt - 24-hour hackathon for Millennium+ Platform Dev
 author: Shahzad Zafar
 date: 2014-07-01
-tags: [culture, engineering]
+tags: [culture, engineering, hackathon, shipit]
 ---
 
 At the end of March, some of our teams held their first 24-hour hackathon, titled ShipIt: Millennium+ Services FedEx Day. We had 41 participants, in 15 teams working on 15 unique projects. The idea was inspired by several teams spending a few hours every so often to work on different projects. After reading about [Atlassian’s](https://www.atlassian.com/company/about/shipit) hack days, we decided to hold one.
