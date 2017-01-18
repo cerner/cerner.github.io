@@ -2,7 +2,7 @@
 layout: post
 title: "ShipIt VII Day: Winter 2016"
 author: Isabella Kuzava and Carl Chesser
-date: 2017-01-17
+date: 2017-01-18
 tags: [culture, engineering, hackathon, shipit]
 ---
 
@@ -20,8 +20,8 @@ Look how big these pizzas were!
 <div align="center">
 <table>
   <tr>
-    <td>{% img /assets/2017-01-17-shipit-vii-day-winter-2016/shipit-01.jpg %}</td>
-    <td>{% img /assets/2017-01-17-shipit-vii-day-winter-2016/shipit-03.jpg %}</td>
+    <td>{% img /assets/2017-01-18-shipit-vii-day-winter-2016/shipit-01.jpg %}</td>
+    <td>{% img /assets/2017-01-18-shipit-vii-day-winter-2016/shipit-03.jpg %}</td>
   </tr>
 </table>
 </div>
@@ -30,7 +30,7 @@ It was predicted we hit a record in Kansas City for the most pizza in an elevato
 we were not able to get an official count!
 
 <div style="float:left;" >
-{% img /assets/2017-01-17-shipit-vii-day-winter-2016/shipit-04.png %}
+{% img /assets/2017-01-18-shipit-vii-day-winter-2016/shipit-04.png %}
 </div>
 
 When getting pizzas of this size, there was a significant amount to fuel the innovation that was
@@ -44,8 +44,8 @@ Nintendo and cheering on the [Chiefs](http://www.chiefs.com/)!
 <div align="center">
 <table>
   <tr>
-    <td>{% img /assets/2017-01-17-shipit-vii-day-winter-2016/shipit-00.jpg %}</td>
-    <td>{% img /assets/2017-01-17-shipit-vii-day-winter-2016/shipit-07.jpg %}</td>
+    <td>{% img /assets/2017-01-18-shipit-vii-day-winter-2016/shipit-00.jpg %}</td>
+    <td>{% img /assets/2017-01-18-shipit-vii-day-winter-2016/shipit-07.jpg %}</td>
   </tr>
 </table>
 </div>
@@ -64,7 +64,7 @@ Judge Sean Griffin was impressed. "Really cool, awesome idea. Great innovation! 
 towards data entry could definitely be useful."
 
 <div align="center">
-{% img /assets/2017-01-17-shipit-vii-day-winter-2016/shipit-08.jpg %}
+{% img /assets/2017-01-18-shipit-vii-day-winter-2016/shipit-08.jpg %}
 <sub>Team GLADos with the Golden Keyboard</sub>
 </div>
 
@@ -81,7 +81,7 @@ needs to do.
 Judge Jim Dwyer noted, "This is a great tool to help drive down operational costs and reduce TCO."
 
 <div align="center">
-{% img /assets/2017-01-17-shipit-vii-day-winter-2016/shipit-05.jpg %}
+{% img /assets/2017-01-18-shipit-vii-day-winter-2016/shipit-05.jpg %}
 <sub>Team Trogdor</sub>
 </div>
 
@@ -107,7 +107,7 @@ milestone they could press a button to send an email to the gym staff that inclu
 running log, their total mileage, and what milestones they had achieved.
 
 <div align="center">
-{% img center /assets/2017-01-17-shipit-vii-day-winter-2016/shipit-06.jpg %}
+{% img center /assets/2017-01-18-shipit-vii-day-winter-2016/shipit-06.jpg %}
 <sub>Team 402 Cheeseballs Required</sub>
 </div>
 
@@ -144,7 +144,7 @@ down, or service experiencing a lot of errors) and is designed in such a way as 
 extremely fast for longer time spans, compared to ad-hoc splunk queries.
 
 <div align="center">
-{% img /assets/2017-01-17-shipit-vii-day-winter-2016/shipit-02.jpg %}
+{% img /assets/2017-01-18-shipit-vii-day-winter-2016/shipit-02.jpg %}
 <sub>People’s Choice Winners</sub>
 </div>
 
@@ -159,6 +159,10 @@ Thank you to all our participants and a special thanks to our judges Jenni Syed
 ([@JenniSyed](https://twitter.com/JenniSyed)), Yegor Hanov, Sean Griffin
 ([@trenchguinea](https://twitter.com/trenchguinea)), and Jim Dwyer
 ([@episodicdata](https://twitter.com/episodicdata)).
+
+Check out some additional highlights of our event in this video:
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/iqTp0dmLgUk" frameborder="0" allowfullscreen></iframe>
 
 If you are interested in reading more about previous ShipIt Day events, see these earlier posts:
 
