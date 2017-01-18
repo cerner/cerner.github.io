@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2016-11-30T17:16:19-08:00</updated>
+  <updated>2017-01-18T17:14:39-06:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -14,9 +14,191 @@
 
   
   <entry>
+    <title type="html"><![CDATA[ShipIt VII Day: Winter 2016]]></title>
+    <link href="http://engineering.cerner.com/blog/shipit-vii-day-winter-2016/"/>
+    <updated>2017-01-18T00:00:00-06:00</updated>
+    <id>http://engineering.cerner.com/blog/shipit-vii-day-winter-2016</id>
+    <content type="html"><![CDATA[<p>Cerner’s 7th ShipIt Day took place on December 8th and 9th. ShipIt is a 24-hour hackathon with the
+goal of building something awesome, usable, and value-adding within a single day.  The event was
+hosted at our DevCenter in the Realization Campus, a large open space that hosts our DevAcademy (to
+learn more about our DevAcademy, check out this
+<a href="http://engineering.cerner.com/2013/08/devacademy/">earlier post</a>).  We had 18 teams made up of
+associates from different Cerner organizations. The DevCenter was stocked with all kinds of snacks,
+which of course included a traditional drink: Monster Energy. Participants worked hard all day long
+and when dinner came around they were ready to dig in. Good thing we ordered 8 twenty-six inch
+pizzas and 40 breadsticks from a local Kansas City favorite, <a href="http://www.pizza51.com/">Pizza 51</a>.
+Look how big these pizzas were!</p>
+
+<div align="center">
+<table>
+  <tr>
+    <td><img src="http://engineering.cerner.com/assets/2017-01-18-shipit-vii-day-winter-2016/shipit-01.jpg"></td>
+    <td><img src="http://engineering.cerner.com/assets/2017-01-18-shipit-vii-day-winter-2016/shipit-03.jpg"></td>
+  </tr>
+</table>
+</div>
+
+
+<p>It was predicted we hit a record in Kansas City for the most pizza in an elevator at this time, but
+we were not able to get an official count!</p>
+
+<div style="float:left;" >
+<img src="http://engineering.cerner.com/assets/2017-01-18-shipit-vii-day-winter-2016/shipit-04.png">
+</div>
+
+
+<p>When getting pizzas of this size, there was a significant amount to fuel the innovation that was
+happening. To break it down:</p>
+
+<p>A = πr<sup>2</sup> = π x 132 ≈ 530.93 square inches = 3.68 square feet x 8 = 29.44 square feet of pizza. Which
+is larger than a twin bed size of solid pizza, and slightly smaller than a queen bed. A perfect
+amount for a ShipIt event! Teams took a break from their work throughout the evening by playing
+Nintendo and cheering on the <a href="http://www.chiefs.com/">Chiefs</a>!</p>
+
+<div align="center">
+<table>
+  <tr>
+    <td><img src="http://engineering.cerner.com/assets/2017-01-18-shipit-vii-day-winter-2016/shipit-00.jpg"></td>
+    <td><img src="http://engineering.cerner.com/assets/2017-01-18-shipit-vii-day-winter-2016/shipit-07.jpg"></td>
+  </tr>
+</table>
+</div>
+
+
+<p>There were some impressive projects that came out of ShipIt Day VII. <em>Team GLADoS</em>, made up of Kyle
+Harper, Sarah Harper, Snehit Gajjar, and Andy Quangvan took first place, and the coveted Golden
+Keyboard, with their impressive idea.</p>
+
+<blockquote><p>This ShipIt, we created a new <a href="https://developer.amazon.com/alexa">Alexa skill</a> called Scribe.
+With our new skill we integrated the
+<a href="https://www.amazon.com/All-New-Echo-Dot-2nd-Generation/dp/B01DFKC2SO/ref=cp_aucc_ods">Amazon Echo and Echo Dot</a>
+smart speakers with <a href="https://code.cerner.com/">Cerner&rsquo;s FHIR implementation</a>. This integration allows
+a patient or care provider to access clinical data by simply speaking to the Echo.</p></blockquote>
+
+<p>Judge Sean Griffin was impressed. &ldquo;Really cool, awesome idea. Great innovation! The applicability
+towards data entry could definitely be useful.&rdquo;</p>
+
+<div align="center">
+<img src="http://engineering.cerner.com/assets/2017-01-18-shipit-vii-day-winter-2016/shipit-08.jpg">
+<sub>Team GLADos with the Golden Keyboard</sub>
+</div>
+
+
+<p>Second place went to <em>Team Trogdor</em> (Kyle Lipke, Derek Dobler, Nikki Justice, Mike Harrison,
+and Nimesh Subramanain).</p>
+
+<blockquote><p>Troubleshooting errors or misconfigurations in Millennium OAuth can be time consuming. Missing
+information or misconfiguration can lead to hours of checking various sources of information. This
+web page tool allows us to perform a quick and accurate diagnostic check for what pieces are
+available and not available. Built with Ruby on <a href="http://www.sinatrarb.com/">Sinatra framework</a>.
+Made to allow for easy additions to various checks that ETS (Emerging Technology Services group)
+needs to do.</p></blockquote>
+
+<p>Judge Jim Dwyer noted, &ldquo;This is a great tool to help drive down operational costs and reduce TCO.&rdquo;</p>
+
+<div align="center">
+<img src="http://engineering.cerner.com/assets/2017-01-18-shipit-vii-day-winter-2016/shipit-05.jpg">
+<sub>Team Trogdor</sub>
+</div>
+
+
+<p>Third place winners, <em>Team 402 Cheeseballs Required</em> (Andy Nelson, Venkatesh Sridharan, Ian Kottman,
+Nate Schile, and Anthony Ross) created an application for tracking running mileage for the
+<a href="https://www.youtube.com/watch?v=w18fgEcMi7w">Healthe Fitness Center</a>.</p>
+
+<blockquote><p>Our goal was to make the process of submitting running milestones for the Cerner Running Club
+easier. The current process involved writing down how far you ran in a binder, and then one of the
+gym staff checking that binder occasionally to see when you accomplished a milestone so they could
+send a prize. We decided to make a web application that would integrate with Strava that would
+simplify tracking how far you&rsquo;ve run. <a href="https://www.strava.com/">Strava</a> is a platform that
+aggregates data from multiple fitness apps, such as <a href="https://www.fitbit.com/">Fitbit</a> and
+<a href="https://buy.garmin.com/en-US/US/cIntoSports-cRunning-p1.html">Garmin</a>.
+We used the <a href="https://strava.github.io/api/">Strava API</a> to pull a person&rsquo;s running data so
+we could total up their mileage, regardless of what fitness tracker they used. In order to
+integrate with Strava&rsquo;s public API we had to have an externally facing application. We decided to
+use an <a href="https://aws.amazon.com/ec2/">Amazon EC2</a> instance to do this, since it was easy and cheap.
+We used <a href="http://rubyonrails.org/">Rails</a> to create our web app since that was the web framework
+we had the most experience in. First, we would ask a person to connect to their Strava account,
+and then we pulled their running data and totaled up their mileage. If a person had reached a
+milestone they could press a button to send an email to the gym staff that included their
+running log, their total mileage, and what milestones they had achieved.</p></blockquote>
+
+<div align="center">
+<img class="center" src="http://engineering.cerner.com/assets/2017-01-18-shipit-vii-day-winter-2016/shipit-06.jpg">
+<sub>Team 402 Cheeseballs Required</sub>
+</div>
+
+
+<p>By Friday at 10 a.m. the participants were ready to present (for the most part). Cerner associates
+from different campuses watched the event via livestream and voted for People’s choice. Those
+results are as followed&hellip;</p>
+
+<p><strong>Favorite team name</strong>: <em>I Shipped My Pants</em> &ndash; Brandon Inman and Steven Goldberg</p>
+
+<blockquote><p>Improvements made to the existing
+<a href="http://techblog.netflix.com/2016/08/vizceral-open-source.html">Vizceral-based implementation</a>
+of HealtheIntent Intuition
+Engineering.  Improvements made by the team included features to make it easier to switch between
+streaming and batch processing, more timely updates of data, and several cosmetic features to
+improve user experience and differentiate the tool from other Vizceral apps.  Voice activation was
+added as a &ldquo;fun&rdquo; feature.</p></blockquote>
+
+<p><strong>Favorite Presentation</strong>: <em>Guys on FHIR</em> &ndash; Bhaumik Aniruddha, Bhagat Parthiv, Vetri Selvi Vairamutha,
+Neil Pfeiffer, Sai Praveen Gampa</p>
+
+<blockquote><p>Our ShipIt project was a NICU SMART App, intended for the NICU unit. The app will be used to get a
+live video of the baby inside an incubator alongside the vitals of the baby. This will prevent
+anyone from disturbing the sleeping pattern of the newborn. The live feedback can also be viewed
+by the parents which will ease the mental tension. The future scope of this project is to hook up
+with an app, which can read the facial expression of the baby.</p></blockquote>
+
+<p><strong>Best Project</strong>: <em>RSA (Readmission Security Admission)</em> &ndash; Kristopher Williams, Karthik Nimmagadda, Sai
+Inampudi</p>
+
+<blockquote><p>Our project was to create an intuitive dashboard that lets the user visualize the network traffic
+for readmission solution&rsquo;s services for a given time period (hour/day/week/month currently). This
+dashboard will allow the user to easily and quickly identify abnormal behavior (e.g. service goes
+down, or service experiencing a lot of errors) and is designed in such a way as to return results
+extremely fast for longer time spans, compared to ad-hoc splunk queries.</p></blockquote>
+
+<div align="center">
+<img src="http://engineering.cerner.com/assets/2017-01-18-shipit-vii-day-winter-2016/shipit-02.jpg">
+<sub>People’s Choice Winners</sub>
+</div>
+
+
+<p>ShipIt Day continues to be a great way for Cerner associates to work on projects they don’t normally
+have time for, meet people in different organizations and learn something new. Participant
+Kristopher Williams said:</p>
+
+<blockquote><p>My favorite part of ShipIt Day was being able to work on something entirely different, and in my
+case, with a different group of people. Just a fresh change of pace.</p></blockquote>
+
+<p>Thank you to all our participants and a special thanks to our judges Jenni Syed
+(<a href="https://twitter.com/JenniSyed">@JenniSyed</a>), Yegor Hanov, Sean Griffin
+(<a href="https://twitter.com/trenchguinea">@trenchguinea</a>), and Jim Dwyer
+(<a href="https://twitter.com/episodicdata">@episodicdata</a>).</p>
+
+<p>Check out some additional highlights of our event in this video:</p>
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/iqTp0dmLgUk" frameborder="0" allowfullscreen></iframe>
+
+
+<p>If you are interested in reading more about previous ShipIt Day events, see these earlier posts:</p>
+
+<ul>
+<li><a href="http://engineering.cerner.com/blog/fall-2016-shipit-day/">Fall 2016 ShipIt Day</a></li>
+<li><a href="http://engineering.cerner.com/blog/spring-2016-shipit-day/">Spring 2016 ShipIt Day</a></li>
+<li><a href="http://engineering.cerner.com/blog/shipit-hackathon-mplus/">ShipIt &ndash; 24-hour hackathon for Millennium+ Platform Dev</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Alan and Grace: An Origin Story]]></title>
     <link href="http://engineering.cerner.com/blog/alan-and-grace-an-origin-story/"/>
-    <updated>2016-11-23T00:00:00-08:00</updated>
+    <updated>2016-11-23T00:00:00-06:00</updated>
     <id>http://engineering.cerner.com/blog/alan-and-grace-an-origin-story</id>
     <content type="html"><![CDATA[<p><img class="center" src="http://engineering.cerner.com/assets/2016-11-23-alan-and-grace-an-origin-story/alan-grace.png" title="Alan and Grace" ></p>
 
@@ -107,7 +289,7 @@ passionate Cerner engineers dedicated to fostering Cerner’s Engineering cultur
   <entry>
     <title type="html"><![CDATA[Clara Rules Joins Cerner's Open Source]]></title>
     <link href="http://engineering.cerner.com/blog/clara-rules-joins-cerner-open-source/"/>
-    <updated>2016-11-11T00:00:00-08:00</updated>
+    <updated>2016-11-11T00:00:00-06:00</updated>
     <id>http://engineering.cerner.com/blog/clara-rules-joins-cerner-open-source</id>
     <content type="html"><![CDATA[<p>Sometimes a small experiment on the side can grow into something valuable. We at Cerner have long
 used forward-chaining rules engines to express and execute clinical knowledge, but we’ve also had to
@@ -139,7 +321,7 @@ documentation on the <a href="http://www.clara-rules.org">clara-rules.org</a> si
   <entry>
     <title type="html"><![CDATA[Fall 2016 ShipIt Day]]></title>
     <link href="http://engineering.cerner.com/blog/fall-2016-shipit-day/"/>
-    <updated>2016-11-08T00:00:00-08:00</updated>
+    <updated>2016-11-08T00:00:00-06:00</updated>
     <id>http://engineering.cerner.com/blog/fall-2016-shipit-day</id>
     <content type="html"><![CDATA[<p>Another ShipIt Day was held on September 8th-9th at the Realization Campus at Cerner. ShipIt is a
 24-hour hackathon with the goal of building something awesome, usable, and value-adding within a
@@ -221,7 +403,7 @@ December!</p>
   <entry>
     <title type="html"><![CDATA[Building a Unified UI Component Library: Lessons Learned]]></title>
     <link href="http://engineering.cerner.com/blog/building-a-unified-ui-component-library/"/>
-    <updated>2016-10-13T00:00:00-07:00</updated>
+    <updated>2016-10-13T00:00:00-05:00</updated>
     <id>http://engineering.cerner.com/blog/building-a-unified-ui-component-library</id>
     <content type="html"><![CDATA[<p>Cerner is building an open source, mobile-first user interface component library for healthcare applications. Pulling years of experience and lessons learned across multiple teams together, we are creating something great. We are very excited to bring this solution to the public and to be contributing back to the community!</p>
 
@@ -296,7 +478,7 @@ December!</p>
   <entry>
     <title type="html"><![CDATA[Michelle Brush Receives the Rising Trendsetter STEMMY Award!]]></title>
     <link href="http://engineering.cerner.com/blog/michelle-brush-receives-the-rising-trendsetter-stemmy-award/"/>
-    <updated>2016-10-02T00:00:00-07:00</updated>
+    <updated>2016-10-02T00:00:00-05:00</updated>
     <id>http://engineering.cerner.com/blog/michelle-brush-receives-the-rising-trendsetter-stemmy-award</id>
     <content type="html"><![CDATA[<p>We are excited to congratulate our own Michelle Brush for receiving the Rising Trendsetter STEMMY award. The Rising Trendsetter Award is given to a woman in STEMM areas with less than 20 years of experience and has demonstrated significant achievements early in their career.</p>
 
@@ -315,7 +497,7 @@ December!</p>
   <entry>
     <title type="html"><![CDATA[DevCon 2016 Word Cloud]]></title>
     <link href="http://engineering.cerner.com/blog/devcon-word-cloud/"/>
-    <updated>2016-09-28T00:00:00-07:00</updated>
+    <updated>2016-09-28T00:00:00-05:00</updated>
     <id>http://engineering.cerner.com/blog/devcon-word-cloud</id>
     <content type="html"><![CDATA[<p>Every year we hold an internal developers conference called <a href="http://engineering.cerner.com/2013/08/devcon/">DevCon</a>. This year
 we had 295 submissions for talks, ranging from a deep technical dive into the inner workings of Kafka to a reflection on the power of office pranks.‌ I wondered what, if anything, do these submissions have in common? Are there any common themes/topics being discussed? To find out I decided to visualize the talk submissions in a word cloud to create an easily understandable (and hopefully aesthetically pleasing) view of what topics were most common.</p>
@@ -437,7 +619,7 @@ we had 295 submissions for talks, ranging from a deep technical dive into the in
   <entry>
     <title type="html"><![CDATA[Difficult Debugging: Learning From Utter Nonsense]]></title>
     <link href="http://engineering.cerner.com/blog/advanced-debugging/"/>
-    <updated>2016-07-13T00:00:00-07:00</updated>
+    <updated>2016-07-13T00:00:00-05:00</updated>
     <id>http://engineering.cerner.com/blog/difficult-debugging</id>
     <content type="html"><![CDATA[<h2>Preface</h2>
 
@@ -698,7 +880,7 @@ we had 295 submissions for talks, ranging from a deep technical dive into the in
   <entry>
     <title type="html"><![CDATA[RailsConf 2016 Recap]]></title>
     <link href="http://engineering.cerner.com/blog/railsconf-2016-recap/"/>
-    <updated>2016-05-19T00:00:00-07:00</updated>
+    <updated>2016-05-19T00:00:00-05:00</updated>
     <id>http://engineering.cerner.com/blog/railsconf-2016-recap</id>
     <content type="html"><![CDATA[<p>At Cerner, we love Ruby and Rails and use it prominently in our cloud based solutions. When we found out RailsConf 2016 was going to be held in the hometown of Cerner&rsquo;s headquarters in Kansas City, Missouri, we were excited for the opportunity to support the conference by attending as well as being a sponsor and hosting one of the official after parties.</p>
 
@@ -741,9 +923,9 @@ we had 295 submissions for talks, ranging from a deep technical dive into the in
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Spring 2016 ShipIt Day]]></title>
+    <title type="html"><![CDATA[Spring 2016 Shipit Day]]></title>
     <link href="http://engineering.cerner.com/blog/spring-2016-shipit-day/"/>
-    <updated>2016-04-18T00:00:00-07:00</updated>
+    <updated>2016-04-18T00:00:00-05:00</updated>
     <id>http://engineering.cerner.com/blog/spring-2016-shipit-day</id>
     <content type="html"><![CDATA[<p>ShipIt Day is an all day, all night hackathon with the goal of building something awesome, usable, and value-adding
 within the given 24 hours. This Spring marked our fifth ShipIt Day, with participation and reach growing with each
@@ -839,7 +1021,7 @@ organizations are doing.</p></blockquote>
   <entry>
     <title type="html"><![CDATA[Deploying Web Services With Apache Tomcat and Chef]]></title>
     <link href="http://engineering.cerner.com/blog/deploying-web-services-with-apache-tomcat-and-chef/"/>
-    <updated>2016-02-04T00:00:00-08:00</updated>
+    <updated>2016-02-04T00:00:00-06:00</updated>
     <id>http://engineering.cerner.com/blog/deploying-web-services-with-apache-tomcat-and-chef</id>
     <content type="html"><![CDATA[<p>Open source is an important part of our engineering culture and we love when we’re able to contribute back to the community. We recently open sourced our <a href="https://github.com/cerner/cerner_tomcat">Tomcat Chef Cookbook</a>, which we use to automate deploying many of our web services here at Cerner. The cookbook is meant to be simple, yet flexible enough to change most anything about <a href="http://tomcat.apache.org/">Apache Tomcat</a> to your liking. It supports installing any version of Tomcat, configuring any file within the Tomcat installation and deploying web applications.</p>
 
@@ -854,7 +1036,7 @@ organizations are doing.</p></blockquote>
   <entry>
     <title type="html"><![CDATA[Girls in Technology Movement - Hour of Code]]></title>
     <link href="http://engineering.cerner.com/blog/girls-in-technology-movement-hour-of-code/"/>
-    <updated>2016-01-20T00:00:00-08:00</updated>
+    <updated>2016-01-20T00:00:00-06:00</updated>
     <id>http://engineering.cerner.com/blog/girls-in-technology-movement-hour-of-code</id>
     <content type="html"><![CDATA[<p>As a female Software Engineer, I know the benefits of having other females in the field to fellowship with as well as the benefits of early exposure to coding and the technology field. The Girls in Technology Movement Hour of Code event held December 9th, 2015 at Cerner’s Innovation Campus was a great opportunity for girls from nearby schools to gather and hear a little about the technology industry, the opportunities available for their future, meet some women in the industry, and get a hands-on introduction to coding.</p>
 
@@ -877,7 +1059,7 @@ organizations are doing.</p></blockquote>
   <entry>
     <title type="html"><![CDATA[Identifying Network ACL Issues With Chef Locally]]></title>
     <link href="http://engineering.cerner.com/blog/identifying-network-acl-issues-with-chef-locally/"/>
-    <updated>2015-11-17T00:00:00-08:00</updated>
+    <updated>2015-11-17T00:00:00-06:00</updated>
     <id>http://engineering.cerner.com/blog/identifying-network-acl-issues-with-chef-locally</id>
     <content type="html"><![CDATA[<p>At Cerner, we use <a href="https://www.chef.io/">Chef</a> to automate our deployments across a very large distributed system comprised of many thousands of nodes. While we employ <a href="http://serverspec.org/">ServerSpec</a> and <a href="http://kitchen.ci/">Test Kitchen</a> extensively to test our Chef recipes, this still doesn&rsquo;t identify all possible failure scenarios. In a large distributed system such as ours, we occasionally run into connectivity failures between machines due to network ACL issues. This could be due to a variety of reasons. The simplest being that you didn’t know what all you were connecting to. The second being that you didn’t ask for the ACLs to be opened early enough, or at all. And finally (and most frustrating), you asked and were granted an ACL change but there still exists an issue (like an unfollowed redirect). When we took a look at these issues, we saw an opportunity for improvement in our Chef testing.</p>
 
@@ -908,7 +1090,7 @@ organizations are doing.</p></blockquote>
   <entry>
     <title type="html"><![CDATA[JavaScript Logging: We Can Do Better!]]></title>
     <link href="http://engineering.cerner.com/blog/javascript-logging-we-can-do-better/"/>
-    <updated>2015-07-20T00:00:00-07:00</updated>
+    <updated>2015-07-20T00:00:00-05:00</updated>
     <id>http://engineering.cerner.com/blog/javascript-logging-we-can-do-better</id>
     <content type="html"><![CDATA[<p>Currently in the world of JavaScript these options
 are what we most commonly use to generate logs:</p>
@@ -1450,7 +1632,7 @@ about proactive solutions.</p>
   <entry>
     <title type="html"><![CDATA[Managing 30,000 Logging Events Per Day With Splunk]]></title>
     <link href="http://engineering.cerner.com/blog/managing-30000-logging-events-per-day-with-splunk/"/>
-    <updated>2015-01-29T00:00:00-08:00</updated>
+    <updated>2015-01-29T00:00:00-06:00</updated>
     <id>http://engineering.cerner.com/blog/managing-30000-logging-events-per-day-with-splunk</id>
     <content type="html"><![CDATA[<p>Our team works on a patient facing web application with a thousand live clients with 2,315,000+ users. On an average, the high traffic results into more than 40,000 visits and 300,000 page views daily generating about 30,000 logging events. A considerable portion of these events are of information and warning level in order to aid proactive monitoring or identify potential issues due to clients’ misconfiguration.</p>
 
@@ -1520,7 +1702,7 @@ about proactive solutions.</p>
   <entry>
     <title type="html"><![CDATA[Cerner and the Apache Software Foundation]]></title>
     <link href="http://engineering.cerner.com/blog/cerner-and-the-apache-software-foundation/"/>
-    <updated>2014-10-28T00:00:00-07:00</updated>
+    <updated>2014-10-28T00:00:00-05:00</updated>
     <id>http://engineering.cerner.com/blog/cerner-and-the-apache-software-foundation</id>
     <content type="html"><![CDATA[<p>At the beginning of this year, <a href="http://engineering.cerner.com/2014/01/sponsoring-the-apache-software-foundation/">we announced that Cerner became a bronze-level sponsor</a> of the non-profit <a href="http://www.apache.org/">Apache Software Foundation</a> (ASF). Many of the open source projects we use and contribute to are under the ASF umbrella, so supporting the mission and work of the ASF is important to us.</p>
 
@@ -1535,7 +1717,7 @@ about proactive solutions.</p>
   <entry>
     <title type="html"><![CDATA[Closures & Currying in JavaScript]]></title>
     <link href="http://engineering.cerner.com/blog/closures-and-currying-in-javascript/"/>
-    <updated>2014-09-29T00:00:00-07:00</updated>
+    <updated>2014-09-29T00:00:00-05:00</updated>
     <id>http://engineering.cerner.com/blog/closures-and-currying-in-javascript</id>
     <content type="html"><![CDATA[<h2>Preface</h2>
 
@@ -1899,7 +2081,7 @@ about proactive solutions.</p>
   <entry>
     <title type="html"><![CDATA[Intern HackFest 2014]]></title>
     <link href="http://engineering.cerner.com/blog/intern-hackfest-2014/"/>
-    <updated>2014-09-08T00:00:00-07:00</updated>
+    <updated>2014-09-08T00:00:00-05:00</updated>
     <id>http://engineering.cerner.com/blog/intern-hackfest-2014</id>
     <content type="html"><![CDATA[<p>Ten teams of two to four Cerner interns competed in a week-long HackFest this summer, working to solve any problem they put their minds to. This competition cumulated in a presentation and judging of projects, with prizes of Raspberry Pi Kits for each member of the second place team and Leap Motions for each member of the winning team. From mobile apps, to machine learning algorithms, to drones…this year’s Summer Intern HackFest has been one for the books.</p>
 
@@ -1928,7 +2110,7 @@ about proactive solutions.</p>
   <entry>
     <title type="html"><![CDATA[The Plain Text Is a Lie]]></title>
     <link href="http://engineering.cerner.com/blog/the-plain-text-is-a-lie/"/>
-    <updated>2014-08-02T00:00:00-07:00</updated>
+    <updated>2014-08-02T00:00:00-05:00</updated>
     <id>http://engineering.cerner.com/blog/the-plain-text-is-a-lie</id>
     <content type="html"><![CDATA[<h2>There is no such thing as plain text</h2>
 
@@ -2277,7 +2459,7 @@ about proactive solutions.</p>
   <entry>
     <title type="html"><![CDATA[ShipIt - 24-hour Hackathon for Millennium+ Platform Dev]]></title>
     <link href="http://engineering.cerner.com/blog/shipit-hackathon-mplus/"/>
-    <updated>2014-07-01T00:00:00-07:00</updated>
+    <updated>2014-07-01T00:00:00-05:00</updated>
     <id>http://engineering.cerner.com/blog/shipit-hackathon-mplus</id>
     <content type="html"><![CDATA[<p>At the end of March, some of our teams held their first 24-hour hackathon, titled ShipIt: Millennium+ Services FedEx Day. We had 41 participants, in 15 teams working on 15 unique projects. The idea was inspired by several teams spending a few hours every so often to work on different projects. After reading about <a href="https://www.atlassian.com/company/about/shipit">Atlassian’s</a> hack days, we decided to hold one.</p>
 
@@ -2304,303 +2486,6 @@ about proactive solutions.</p>
 <p><img class="center" src="http://engineering.cerner.com/assets/2014-07-01-shipit-hackathon-mplus/winners.jpg" title="Winners" ></p>
 
 <p>This was our first hackathon, but it won’t be our last! We will have at least one more later this year and plan on a recurring event, with the Golden Keyboard traveling around with the winning team. It was amazing to see what people can do in a short amount of time and with the flexibility of choosing what you want to work on, the end result will always be something cool. We hope to continue the innovative thinking, not only by team level hack days, but having larger hack days.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Scaling People With Apache Crunch]]></title>
-    <link href="http://engineering.cerner.com/blog/scaling-people-with-apache-crunch/"/>
-    <updated>2014-05-09T00:00:00-07:00</updated>
-    <id>http://engineering.cerner.com/blog/scaling-people-with-apache-crunch</id>
-    <content type="html"><![CDATA[<h2>Starting the Big Data Journey</h2>
-
-<p>When a company first starts to play with Big Data it typically involves a small team of engineers trying to solve a specific problem.  The team decides to experiment with scalable technologies either due to outside guidance or research which makes it applicable to their problem.  The team begins with the basics of Big Data spending time learning and prototyping.  They learn about <a href="http://hadoop.apache.org/">HDFS</a>, flirt with <a href="http://hbase.apache.org/">HBase</a> or other NoSQL, write the required WordCount example, and start to figure out how the technologies can fit their needs.  The group&rsquo;s immersion into Big Data deepens as they start to move beyond a prototype into a real product.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2014-05-09-scaling-people-with-apache-crunch/team_bigdata.png" title="Team using Big Data" ></p>
-
-<p>The company sees the success of using Big Data technologies and the possibilities to solve difficult problems, tackle new endeavors, and open new doors.  The company has now shifted its scalability problem out from the technical architecture into a people problem.  The small team of experts cannot satisfy the demand and transferring their accumulated knowledge to new teams is a significant investment.  Both new and experienced engineers face a steep learning curve to get up to speed.  Learning the API is not difficult but challenges typically oocur when applying the WordCount example to complex problems.   Making the mental jump from processing homogeneous data which produce a single output to a complex processing pipeline involving heterogeneous inputs, joins, and multiple outputs is difficult for even a skilled engineer.</p>
-
-<p>Cerner has developed a number of Big Data solutions each demonstrating the 3 V&rsquo;s of data (variety, velocity, and volume).  The complexity of the problems being solved, evolving functionality, and required integration across teams led Cerner to look beyond simple MapReduce.  Cerner began to focus on how to construct a processing infrastructure that naturally aligned with the way the processing is described.  Looking through the options available for processing pipelines including <a href="http://hive.apache.org/">Hive</a>, <a href="http://pig.apache.org/">Pig</a>, and <a href="http://www.cascading.org/">Cascading</a>, Cerner finally arrived at using <a href="http://crunch.apache.org/">Apache Crunch</a>.  Using Crunch&rsquo;s concepts, we found that we were easily able to translate how we described a problem into concepts we can code.  Additionally the API was well suited for our complicated data models and building integration contracts between teams.</p>
-
-<p>When we describe a problem we often talk about its flow through the various processing steps.  The processing flow is comprised of data from multiple sources, several transformations, various joins, and finally the persistence of the data.  Looking at an example problem of transforming raw data into a normalized object for downstream consumers we might encounter a problem similar to the diagram below.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2014-05-09-scaling-people-with-apache-crunch/example_processing_pipeline.png" title="Example Processing Problem" ></p>
-
-<p>If we apply this problem to the raw MapReduce framework we begin to see problems absent in the standard WordCount example.  The heterogeneous data and models, the custom join logic, and follow up grouping by key all could result in extra code or difficulty fitting this processing into a single MapReduce job.  When our problem expands to multiple MapReduce jobs we now have to write custom driver code or bring in another system like <a href="http://oozie.apache.org/">Oozie</a> to chain the workflow together.  Additionally while we could fit the steps neatly into 1-2 MapReduce jobs that careful orchestration and arrangement could become imbalanced as we introduce new processing needs into the workflow.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2014-05-09-scaling-people-with-apache-crunch/example_processing_pipeline_new_functionality.png" title="Example Processing Problem with more functionality" ></p>
-
-<p>This problem is common and fairly basic with respect to some of the processing needs we faced at Cerner.  For the experienced MapReduce developers this problem might cause a momentary pause to design it but that is due to your expertise.  For those less skilled imagine being able to break this problem down into the processing steps you understand and POJO like models of which you are already familiar.  Breaking this problem down using Apache Crunch we can see how we can articulate the problem and still take advantage of the processing efficiency of MapReduce.</p>
-
-<h2>Building a Processing Pipeline with Apache Crunch</h2>
-
-<p>Apache Crunch allows developers to construct complicated processing workflows into <a href="http://crunch.apache.org/user-guide.html#mrpipeline">pipelines</a>.  Pipelines are directed acyclic graphs (DAG) comprised of input data that is then transformed through functions and groupings to produce output data.  When a developer is done constructing the pipeline Apache Crunch will calculate the appropriate processing steps and submit the steps to the execution engine.  In this example we will talk about using Apache Crunch in the context of MapReduce but it also supports running on <a href="http://spark.apache.org/">Apache Spark</a>.  It should be noted that pipelines are lazily executed.  This means that no work will be done until the pipeline is executed.</p>
-
-<p>To begin processing we need a pipeline instance on which we will construct our DAG.  To create a MRPipeline we need the typical Hadoop <a href="https://hadoop.apache.org/docs/r2.2.0/api/org/apache/hadoop/conf/Configuration.html">Configuration</a> instance for the cluster and <a href="http://hadoop.apache.org/docs/r2.3.0/api/org/apache/hadoop/mapreduce/Job.html#setJarByClass(java.lang.Class">the driver class</a>) for the processing.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">Pipeline</span> <span class="n">pipeline</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MRPipeline</span><span class="o">(</span><span class="n">Driver</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">conf</span><span class="o">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>With a pipeline instance available the next step is to describe the inputs to the processing using at least one Crunch <a href="http://crunch.apache.org/user-guide.html#rwdata">Source</a>.  A pipeline must contain at least one source but could read from multiple.  Apache Crunch provides implementations for the typical inputs such as Sequence Files, HFiles, Parquet, Avro, HBase, and Text.  As an example if we were to read data out of a text file we might write code like the following:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">PType</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ptype</span> <span class="o">=</span> <span class="n">Avros</span><span class="o">.</span><span class="na">strings</span><span class="o">();</span>
-</span><span class='line'><span class="n">PCollection</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">refDataStrings</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="k">new</span> <span class="n">TextFileSource</span><span class="o">(</span><span class="n">path</span><span class="o">,</span> <span class="n">ptype</span><span class="o">));</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This code utilizes the TextFileSource to generate a collection of Java Strings from files at a certain path.  The code also introduces two additional Apache Crunch concepts of <a href="http://crunch.apache.org/user-guide.html#datamodel">PCollections</a> and <a href="http://crunch.apache.org/user-guide.html#serde">PTypes</a>.  A PCollection represents potential data elements to process.  Since a pipeline is lazily executed it is not a physical representation of all of the elements.  A PCollection cannot be created but can be read or transformed.  Apache Crunch also has special forms of PCollections, PTable and PGroupedTable, which are useful in performing join operations on the data.  A PType is a concept that hides serialization and deserialization from pipeline developers.  In this example the developer is using native Java strings instead of dealing with wrapper classes like Writable&rsquo;s Text class.</p>
-
-<p>Processing based off of Java Strings is error prone so typically developers would transform the data into a model object that is easier to work with.  Transformation of a PCollection is done through a <a href="http://crunch.apache.org/user-guide.html#dataproc">DoFn</a>.  A DoFn processes a single element of the PCollection into zero or many alternate forms depending on its logic.  The bulk of a processing pipeline&rsquo;s logic resides in implementations of DoFn.  Custom implementations of a DoFn requires extending the DoFn class as well as defining the input and output types.  This allows Crunch to provide compile time checking as transformations are applied to collections.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">class</span> <span class="nc">ConvertReferenceDataFn</span> <span class="kd">extends</span> <span class="n">DoFn</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefData</span><span class="o">&gt;{</span>
-</span><span class='line'>     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">process</span> <span class="o">(</span><span class="n">String</span> <span class="n">input</span><span class="o">,</span> <span class="n">Emitter</span><span class="o">&lt;</span><span class="n">RefData</span><span class="o">&gt;</span> <span class="n">emitter</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>       <span class="n">RefData</span> <span class="n">data</span> <span class="o">=</span> <span class="c1">//processing logic;</span>
-</span><span class='line'>       <span class="n">emitter</span><span class="o">.</span><span class="na">emit</span><span class="o">(</span><span class="n">data</span><span class="o">);</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">...</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">PType</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ptype</span> <span class="o">=</span> <span class="n">Avros</span><span class="o">.</span><span class="na">strings</span><span class="o">();</span>
-</span><span class='line'><span class="n">PCollection</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">refDataStrings</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="k">new</span> <span class="n">TextFileSource</span><span class="o">(</span><span class="n">path</span><span class="o">,</span> <span class="n">ptype</span><span class="o">));</span>
-</span><span class='line'><span class="n">PCollection</span><span class="o">&lt;</span><span class="n">RefData</span><span class="o">&gt;</span> <span class="n">refData</span> <span class="o">=</span>
-</span><span class='line'>  <span class="n">refStrings</span><span class="o">.</span><span class="na">parallelDo</span><span class="o">(</span><span class="k">new</span> <span class="n">ConvertReferenceDataFn</span><span class="o">(),</span> <span class="n">Avros</span><span class="o">.</span><span class="na">records</span><span class="o">(</span><span class="n">RefData</span><span class="o">.</span><span class="na">class</span><span class="o">));</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Recalling the previous example processing problem we see that we need to perform join and grouping operations based on a key.  Instead of converting the strings into a RefData object it would actually be better to convert the string into a key/value pair (e.g. Pair&lt;String, RefData>).  Apache Crunch has a PTable&lt;K, V>, which is simply a special form of PCollection&lt;Pair&lt;K, V>>.  Adjusting the function we can instead produce the key/value pair.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">class</span> <span class="nc">ConvertReferenceDataFn</span> <span class="kd">extends</span> <span class="n">DoFn</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefData</span><span class="o">&gt;&gt;{</span>
-</span><span class='line'>     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">process</span> <span class="o">(</span><span class="n">String</span> <span class="n">input</span><span class="o">,</span> <span class="n">Emitter</span><span class="o">&lt;</span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefData</span><span class="o">&gt;&gt;</span> <span class="n">emitter</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>       <span class="n">RefData</span> <span class="n">data</span> <span class="o">=</span> <span class="c1">//processing logic;</span>
-</span><span class='line'>       <span class="n">String</span> <span class="n">id</span> <span class="o">=</span> <span class="c1">//extract id;</span>
-</span><span class='line'>       <span class="n">emitter</span><span class="o">.</span><span class="na">emit</span><span class="o">(</span><span class="k">new</span> <span class="n">Pair</span><span class="o">(</span><span class="n">id</span><span class="o">,</span> <span class="n">data</span><span class="o">));</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">...</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">PType</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ptype</span> <span class="o">=</span> <span class="n">Avros</span><span class="o">.</span><span class="na">strings</span><span class="o">();</span>
-</span><span class='line'><span class="n">PCollection</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">refDataStrings</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="k">new</span> <span class="n">TextFileSource</span><span class="o">(</span><span class="n">path</span><span class="o">,</span> <span class="n">ptype</span><span class="o">));</span>
-</span><span class='line'><span class="n">PTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefData</span><span class="o">&gt;</span> <span class="n">refData</span> <span class="o">=</span>
-</span><span class='line'>  <span class="n">refStrings</span><span class="o">.</span><span class="na">parallelDo</span><span class="o">(</span><span class="k">new</span> <span class="n">ConvertReferenceDataFn</span><span class="o">(),</span>
-</span><span class='line'>    <span class="n">Avros</span><span class="o">.</span><span class="na">tableOf</span><span class="o">(</span><span class="n">Avros</span><span class="o">.</span><span class="na">strings</span><span class="o">(),</span> <span class="n">Avros</span><span class="o">.</span><span class="na">records</span><span class="o">(</span><span class="n">RefData</span><span class="o">.</span><span class="na">class</span><span class="o">)));</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Utilizing the PTable&lt;String, RefData> collection we could then <a href="http://crunch.apache.org/user-guide.html#joins">join</a> that collection with another similarly keyed PTable using one of the many prebuilt implementations.  The built in join functionality helps to avoid developing custom implementations of a common data processing pattern.</p>
-
-<p>More functions are applied to the joined data to continue the processing workflow.  The processing of the data is distributed in separate tasks across the cluster.  In the example problem we need all of the data for a <a href="http://crunch.apache.org/user-guide.html#gbk">given key to be grouped</a> to a single task for processing.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">PTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Model</span><span class="o">&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="o">...;</span>
-</span><span class='line'><span class="n">PGroupedTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Model</span><span class="o">&gt;</span> <span class="n">groupedModels</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="na">groupByKey</span><span class="o">();</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>A pipeline requires at least one collection of data to be persisted to a <a href="http://crunch.apache.org/user-guide.html#targets">target</a>.  Crunch provides the standard targets for data but consumer can also easily create new custom inputs.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="c1">//persist Avro models</span>
-</span><span class='line'><span class="n">pipeline</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">models</span><span class="o">,</span> <span class="k">new</span> <span class="n">AvroFileTarget</span><span class="o">(</span><span class="n">path</span><span class="o">));</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>When constructing the processing pipline for the example problem we would end up with an executable program that looks like the following:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(){</span>
-</span><span class='line'>    <span class="n">Pipeline</span> <span class="n">pipeline</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MRPipeline</span><span class="o">(</span><span class="n">Driver</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">conf</span><span class="o">);</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">//Read data from sources</span>
-</span><span class='line'>    <span class="n">PType</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ptype</span> <span class="o">=</span> <span class="n">Avros</span><span class="o">.</span><span class="na">strings</span><span class="o">();</span>
-</span><span class='line'>    <span class="n">PTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefData</span><span class="o">&gt;</span> <span class="n">refDataStrings</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="k">new</span> <span class="n">TextFileSource</span><span class="o">(</span><span class="n">path1</span><span class="o">,</span> <span class="n">ptype</span><span class="o">));</span>
-</span><span class='line'>    <span class="n">PTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefModel</span><span class="o">&gt;</span> <span class="n">refModelStrings</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="k">new</span> <span class="n">TextFileSource</span><span class="o">(</span><span class="n">path1</span><span class="o">,</span> <span class="n">ptype</span><span class="o">));</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">//Convert the Strings into models</span>
-</span><span class='line'>    <span class="n">PTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefData</span><span class="o">&gt;</span> <span class="n">refData</span> <span class="o">=</span>
-</span><span class='line'>      <span class="n">refStrings</span><span class="o">.</span><span class="na">parallelDo</span><span class="o">(</span><span class="k">new</span> <span class="n">ConvertReferenceDataFn</span><span class="o">(),</span>
-</span><span class='line'>        <span class="n">Avros</span><span class="o">.</span><span class="na">tableOf</span><span class="o">(</span><span class="n">Avros</span><span class="o">.</span><span class="na">strings</span><span class="o">(),</span> <span class="n">Avros</span><span class="o">.</span><span class="na">records</span><span class="o">(</span><span class="n">RefData</span><span class="o">.</span><span class="na">class</span><span class="o">)));</span>
-</span><span class='line'>    <span class="n">PTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefModel</span><span class="o">&gt;</span> <span class="n">refModel</span> <span class="o">=</span>
-</span><span class='line'>      <span class="n">refStrings</span><span class="o">.</span><span class="na">parallelDo</span><span class="o">(</span><span class="k">new</span> <span class="n">ConvertReferenceModelFn</span><span class="o">(),</span>
-</span><span class='line'>        <span class="n">Avros</span><span class="o">.</span><span class="na">tableOf</span><span class="o">(</span><span class="n">Avros</span><span class="o">.</span><span class="na">strings</span><span class="o">(),</span> <span class="n">Avros</span><span class="o">.</span><span class="na">records</span><span class="o">(</span><span class="n">RefModel</span><span class="o">.</span><span class="na">class</span><span class="o">)));</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">//Data separate input together.</span>
-</span><span class='line'>    <span class="n">PTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Pair</span><span class="o">&lt;</span><span class="n">RefData</span><span class="o">,</span> <span class="n">RefModel</span><span class="o">&gt;&gt;</span> <span class="n">joinedDataModel</span> <span class="o">=</span> <span class="n">refModel</span><span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="n">refData</span><span class="o">);</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">//Apply a similar DoFn to convert the Pair&lt;RefData, RefModel&gt; into a single object</span>
-</span><span class='line'>    <span class="n">PTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Model</span><span class="o">&gt;</span> <span class="n">models</span> <span class="o">=</span> <span class="o">...;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">//Filter out data that is not useful</span>
-</span><span class='line'>    <span class="n">PTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Model</span><span class="o">&gt;</span> <span class="n">filteredModels</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="k">new</span> <span class="n">FilterModelFn</span><span class="o">());</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">//Group the data by key to have all model instances with the same key in a single location</span>
-</span><span class='line'>    <span class="n">PGroupedTable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Model</span><span class="o">&gt;</span> <span class="n">groupedModels</span> <span class="o">=</span> <span class="n">filteredModels</span><span class="o">.</span><span class="na">groupByKey</span><span class="o">();</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">//Convert the grouped Models into a single model object if they share the same key.</span>
-</span><span class='line'>    <span class="n">PCollection</span><span class="o">&lt;</span><span class="n">PersonModel</span><span class="o">&gt;</span> <span class="n">personModels</span> <span class="o">=</span>
-</span><span class='line'>      <span class="n">groupedModels</span><span class="o">.</span><span class="na">parallelDo</span><span class="o">(</span><span class="k">new</span> <span class="n">ConvertPersonModelFn</span><span class="o">(),</span> <span class="n">Avros</span><span class="o">.</span><span class="na">records</span><span class="o">(</span><span class="n">PersonModel</span><span class="o">.</span><span class="na">class</span><span class="o">));</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">//Write out the Person Model objects</span>
-</span><span class='line'>    <span class="n">pipeline</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">personModels</span><span class="o">,</span> <span class="k">new</span> <span class="n">AvroFileTarget</span><span class="o">(</span><span class="n">path</span><span class="o">));</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">//At this point the pipeline has been constructed but nothing executed.  </span>
-</span><span class='line'>    <span class="c1">//Therefore tell the pipeline to execute.</span>
-</span><span class='line'>    <span class="n">PipelineResult</span> <span class="n">result</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="na">done</span><span class="o">();</span>
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="kd">class</span> <span class="nc">ConvertReferenceDataFn</span> <span class="kd">extends</span> <span class="n">DoFn</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefData</span><span class="o">&gt;&gt;{</span>
-</span><span class='line'>     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">process</span> <span class="o">(</span><span class="n">String</span> <span class="n">input</span><span class="o">,</span> <span class="n">Emitter</span><span class="o">&lt;</span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefData</span><span class="o">&gt;&gt;</span> <span class="n">emitter</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>       <span class="n">RefData</span> <span class="n">data</span> <span class="o">=</span> <span class="c1">//processing logic;</span>
-</span><span class='line'>       <span class="n">String</span> <span class="n">id</span> <span class="o">=</span> <span class="c1">//extract id;</span>
-</span><span class='line'>       <span class="n">emitter</span><span class="o">.</span><span class="na">emit</span><span class="o">(</span><span class="k">new</span> <span class="n">Pair</span><span class="o">(</span><span class="n">id</span><span class="o">,</span> <span class="n">data</span><span class="o">));</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="kd">class</span> <span class="nc">ConvertReferenceModelFn</span> <span class="kd">extends</span> <span class="n">DoFn</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefModel</span><span class="o">&gt;&gt;{</span>
-</span><span class='line'>     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">process</span> <span class="o">(</span><span class="n">String</span> <span class="n">input</span><span class="o">,</span> <span class="n">Emitter</span><span class="o">&lt;</span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">RefModel</span><span class="o">&gt;&gt;</span> <span class="n">emitter</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>       <span class="n">RefModel</span> <span class="n">model</span> <span class="o">=</span> <span class="c1">//processing logic;</span>
-</span><span class='line'>       <span class="n">String</span> <span class="n">id</span> <span class="o">=</span> <span class="c1">//extract id;</span>
-</span><span class='line'>       <span class="n">emitter</span><span class="o">.</span><span class="na">emit</span><span class="o">(</span><span class="k">new</span> <span class="n">Pair</span><span class="o">(</span><span class="n">id</span><span class="o">,</span> <span class="n">model</span><span class="o">));</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="kd">class</span> <span class="nc">FilterModelFn</span> <span class="kd">extends</span> <span class="n">Filter</span><span class="o">&lt;</span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Model</span><span class="o">&gt;&gt;{</span>
-</span><span class='line'>     <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">filter</span> <span class="o">(</span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Model</span><span class="o">&gt;</span> <span class="n">model</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>       <span class="kt">boolean</span> <span class="n">include</span> <span class="o">=</span> <span class="c1">//logic to apply to the model</span>
-</span><span class='line'>       <span class="k">return</span> <span class="n">include</span><span class="o">;</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="kd">class</span> <span class="nc">ConvertPersonModelFn</span> <span class="kd">extends</span> <span class="n">MapFn</span><span class="o">&lt;</span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">Model</span><span class="o">&gt;&gt;&gt;{</span>
-</span><span class='line'>     <span class="kd">public</span> <span class="n">PersonModel</span> <span class="nf">map</span> <span class="o">(</span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">Model</span><span class="o">&gt;&gt;</span> <span class="n">models</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>       <span class="n">PersonModel</span> <span class="n">model</span> <span class="o">=</span> <span class="c1">//apply grouping logic to generate model from many items.</span>
-</span><span class='line'>       <span class="k">return</span> <span class="n">model</span><span class="o">;</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>It is very easy to see how the processing steps and flow of the original diagram can be mapped to Apache Crunch concepts.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2014-05-09-scaling-people-with-apache-crunch/example_processing_pipeline_crunch_concepts.png" title="Crunch Concepts Applied to Processing" ></p>
-
-<p>Executing the code as written above would cause Apache Crunch to calculate the execution graph to be spread over two MapReduce jobs.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2014-05-09-scaling-people-with-apache-crunch/pipeline_mr.png" title="Pipeline Execution" ></p>
-
-<p>In this case having a MapReduce job being reduce only is less than ideal but the team has been able to focus on correctness and functionality first.  Focus can now be shifted on performance tuning or adjusting algorithms as appropriate.  The solid foundation of functionality and the simplicity of the concepts allows developers to easily understand how the processing pipeline.  The ease of understanding helps to allow the team to refactor and iterate with confidence.</p>
-
-<p>This blog post is essentially my script for my <a href="http://apacheconnorthamerica2014.sched.org/event/37a39cc1b611e53ea5b6e348786337ad?iframe=no&amp;w=100&amp;sidebar=yes&amp;bg=no#.U1hyq-ZdVDw">North America ApacheCon 2014 presentation</a>.  Slides are available <a href="http://events.linuxfoundation.org/sites/events/files/slides/Simplifying%20Big%20Data%20with%20Apache%20Crunch.pdf">here</a>.</p>
-
-<h2>Links</h2>
-
-<ul>
-<li><a href="http://crunch.apache.org/user-guide.html">Crunch User Guide</a></li>
-</ul>
-
 ]]></content>
   </entry>
   
