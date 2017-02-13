@@ -11,7 +11,9 @@ a number of related technologies like [Apache Hadoop](http://engineering.cerner.
 along with its Map/Reduce, HDFS and even [Apache HBase](http://engineering.cerner.com/2013/02/near-real-time-processing-over-hadoop-and-hbase/).
 Our team first started using [Apache Kafka](http://kafka.apache.org/) in 2014
 when Kafka 0.8 first came out. Since then we've expanded to using Kafka for a
-number of different use cases and it has become a core piece of Cerner's infrastructure.
+number of different use cases
+([1](http://blog.cloudera.com/blog/2014/11/how-cerner-uses-cdh-with-apache-kafka/), [2](https://www.confluent.io/kafka-summit-2016-users-ingesting-complex-healthcare-data-with-apache-kafka))
+and it has become a core piece of Cerner's infrastructure.
 
 Just like the [applications we create](http://engineering.cerner.com/blog/deploying-web-services-with-apache-tomcat-and-chef/)
 we also needed to automate the deployment of Kafka to handle the ever growing
