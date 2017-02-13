@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Automation Deployment with Apache Kafka"
+title: "Automated Deployment with Apache Kafka"
 author: Bryan Baugher
 date: 2017-02-13
 tags: [engineering, kafka]
