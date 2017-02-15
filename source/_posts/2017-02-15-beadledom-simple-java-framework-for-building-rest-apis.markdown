@@ -3,7 +3,7 @@ layout: post
 title: "Beadledom - Simple Java framework for building REST APIs"
 author: Sundeep Paruvu
 date: 2017-02-15
-tags: [engineering, beadledom, java, REST, apis]]
+tags: [engineering, beadledom, java, REST, apis]
 ---
 
 Beadledom is a framework for building Java based web services. It bundles several open sourced components required for building JAX-RS services.
