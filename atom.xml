@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2017-01-18T17:14:39-06:00</updated>
+  <updated>2017-02-15T15:52:41-06:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,54 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Beadledom - Simple Java Framework for Building REST APIs]]></title>
+    <link href="http://engineering.cerner.com/blog/beadledom-simple-java-framework-for-building-rest-apis/"/>
+    <updated>2017-02-15T00:00:00-06:00</updated>
+    <id>http://engineering.cerner.com/blog/beadledom-simple-java-framework-for-building-rest-apis</id>
+    <content type="html"><![CDATA[<p>Beadledom is a framework for building Java based web services. It bundles several open sourced components required for building JAX-RS services.</p>
+
+<h3>Why?</h3>
+
+<p>HealtheIntent, Cerner’s population health management platform, started 3.5 years ago. We went through the process of investigating different technologies for the platform. We decided on using Java for building  services and arrived on a set of libraries that we believed work well together.</p>
+
+<p>The long history of Java has led to an ocean of libraries that are available to Java developers. Picking up the right set of tools is very important to get the job done the right way. The trickiest part is to know what  “the right set of tools” are. This is only the first of many tough decisions that a developer makes during the lifecycle of a project.</p>
+
+<p>If choosing the libraries for a project is a game, then getting them all to play well together is a whole new game. Beadledom not only brings all the awesome java libraries together but also binds them well, making the developer&rsquo;s life easy. It gives a good head start to the developer by letting them start from a strong foundation.</p>
+
+<p>At Cerner we understand how important and tedious these decisions are and we always want to contribute back to the community. So we open sourced Beadledom because it  helped us develop our platform quickly and consistently. We hope that others in the community can also leverage its power.</p>
+
+<h3>What?</h3>
+
+<p>Beadledom uses several open source projects that are widely used and well maintained. Below is a list of a few of the major components that Beadledom uses.</p>
+
+<p>Guice for  gluing  and bootstrapping components;
+Jackson for JSON serialization/deserialization;
+Resteasy for JAX-RS implementation;
+Stagemonitor for Monitoring and metrics;
+Swagger for API Documentation;
+Apache Commons-Configuration for handling different types of configurations consistently.
+Where?
+You can find the source code on GitHub.  Please find our documentation at <a href="http://engineering.cerner.com/beadledom/.">http://engineering.cerner.com/beadledom/.</a></p>
+
+<h3>Who?</h3>
+
+<p>Below are the core developers of Beadledom:
+John Leacox
+Sundeep Paruvu
+Nimesh Subramanian
+Brian van de Boogaard
+Supriya Lal
+Here is the complete list of contributors who made Beadledom awesome.</p>
+
+<h3>Cookie Cake Time!</h3>
+
+<p>Cerner takes pride in our open source contributions. When teams contribute to the community Cerner rewards them with a cake. Here is the cookie cake for Beadledom.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2017-02-15-beadledom-simple-java-framework-for-building-rest-apis/beadledom-01.png" title="Beadledom Cookie Cake" ></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[ShipIt VII Day: Winter 2016]]></title>
@@ -2453,39 +2501,6 @@ about proactive solutions.</p>
 
 
 <p>Thanks for reading!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[ShipIt - 24-hour Hackathon for Millennium+ Platform Dev]]></title>
-    <link href="http://engineering.cerner.com/blog/shipit-hackathon-mplus/"/>
-    <updated>2014-07-01T00:00:00-05:00</updated>
-    <id>http://engineering.cerner.com/blog/shipit-hackathon-mplus</id>
-    <content type="html"><![CDATA[<p>At the end of March, some of our teams held their first 24-hour hackathon, titled ShipIt: Millennium+ Services FedEx Day. We had 41 participants, in 15 teams working on 15 unique projects. The idea was inspired by several teams spending a few hours every so often to work on different projects. After reading about <a href="https://www.atlassian.com/company/about/shipit">Atlassian’s</a> hack days, we decided to hold one.</p>
-
-<p>The event was initially announced early in February, to give teams time to work this into their project plans. The schedule was to start at 10 am on a Thursday and wrap-up at 10 AM on Friday. Teams then presented their awesome projects and then were free to leave for the weekend (and catch-up on some sleep). Each team was free to choose the project they wanted to work on, with the limitation added that they should work on something which can be deployed somewhere in 24 hours (there were bonus points involved for deployed projects).  The winning prize not only included bragging rights, but also the ‘Golden Keyboard’, which will be a traveling trophy.</p>
-
-<p>Behold, the Golden Keyboard:</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2014-07-01-shipit-hackathon-mplus/golden-keyboard.jpg" title="Golden Keyboard" ></p>
-
-<p>We had reserved a large room off campus to get everyone away from their daily routines. Teams immediately jumped into their projects as soon as the hack day started on March 27th. Plenty of food and snacks were on hand, with lunch and dinner delivered to keep everyone fed. A hackavision dashboard (Sinatra application which subscribed to a list of atom feeds) was created, to track all the github commits by the teams.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2014-07-01-shipit-hackathon-mplus/hackavision.jpg" title="Hackavision" ></p>
-
-<p>The projects had amazing breadth. These include <a href="http://www.neo4j.org/">Neo4j</a>, <a href="http://riemann.io/">Riemann</a>, <a href="http://capistranorb.com/">Capistrano</a> and languages such as Ruby and Clojure. Teams not only learned new languages and projects in the 24 hours, but also had most of them fully functional and deployed at the end of the hackathon.</p>
-
-<p>There were other activities as well, such as playing Xbox and watching the NCAA Basketball Tournament, which provided to be great breaks throughout the night. Motivational movies, like <a href="http://www.imdb.com/title/tt0107977/">Robin Hood: Men in Tights</a>, were also on tap through the night.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2014-07-01-shipit-hackathon-mplus/fifa.jpg" title="FIFA" ></p>
-
-<p>By 10 am on Friday morning on March 28th, everyone was ready to present their projects. We had four judges representing different areas of expertise. The demos were awesome and judges had a tough time picking the top three projects. Third place went to the SplunkOverflow team, who worked on a Maven plugin that would build site documentation for Thrift RPC services. Second place went to the Short Circuit team, who improved the performance of hash calculations in our <a href="https://github.com/apache/incubator-storm">Storm</a> topologies. First place (and the Golden Keyboard) went to the Minions team, who created &ldquo;lando&rdquo;, a set of services that supported monitoring and management tasks on JVM-based Thrift RPC services.</p>
-
-<p>All in all, it was an exciting 24 hours where teams showed their innovative abilities. All the projects were demo’ed to a larger audience about a week later. Most of the projects started on during ShipIt are being enhanced further, by the teams during their team level hack time or scheduled projects.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2014-07-01-shipit-hackathon-mplus/winners.jpg" title="Winners" ></p>
-
-<p>This was our first hackathon, but it won’t be our last! We will have at least one more later this year and plan on a recurring event, with the Golden Keyboard traveling around with the winning team. It was amazing to see what people can do in a short amount of time and with the flexibility of choosing what you want to work on, the end result will always be something cool. We hope to continue the innovative thinking, not only by team level hack days, but having larger hack days.</p>
 ]]></content>
   </entry>
   
