@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2017-03-24T15:37:22-05:00</updated>
+  <updated>2017-04-05T15:37:09-05:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Version Databag - a Chef Release Process]]></title>
+    <link href="http://engineering.cerner.com/blog/version-databag---a-chef-release-process/"/>
+    <updated>2017-04-04T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/blog/version-databag&#8212;a-chef-release-process</id>
+    <content type="html"><![CDATA[<p>At Cerner, we use <a href="https://www.chef.io/">Chef</a>. In fact, we&rsquo;re heavily ingrained with Chef in our <a href="https://en.wikipedia.org/wiki/Software_configuration_management">configuration management practices</a>. We deploy services from <a href="http://engineering.cerner.com/blog/deploying-web-services-with-apache-tomcat-and-chef/">Tomcat</a> to <a href="http://engineering.cerner.com/blog/automated-deployment-with-apache-kafka/">Kafka</a> with Chef. Even the first open source project we announced was <a href="http://engineering.cerner.com/2014/01/cerner-and-open-source/">a tool for Chef</a>!</p>
+
+<p>With all of this integration with Chef, we need a simple way to manage all of those versions. This is where the <a href="https://supermarket.chef.io/cookbooks/version_databag">Version Databag cookbook</a> comes in. At a high level, this cookbook allows us to define our versions in a centralized data bag (grouped under conceptual units) and populates the corresponding node attributes required with those versions at runtime. This significantly reduces the effort involved in finding, updating, and maintaining the various versions of things that we have across our Chef configuration.</p>
+
+<p>Because we found it so useful, we decided to open source it! We encourage you to try it and manage Chef versions with it for easier configuration management practices. If you feel that it could be further improved, <a href="https://github.com/cerner/version_databag/issues">let us know</a> (or better yet, submit the improvement yourself!). We&rsquo;re welcome to take enhancements and feedback to improve our processes.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Engineers on the Road for SMART and FHIR (CHC 2016)]]></title>
@@ -1836,21 +1849,6 @@ about proactive solutions.</p>
 <p>Since our site is dependent on multiple services, most of the service problems are resolved by escalated support. We are currently working on identifying problems with known resolutions  along with  the people that need to be contacted to perform the resolution steps. Eventually we would like to send alerts/emails from Splunk to Cerner’s general support directly for these issues.</p>
 
 <p>We also plan on integrating Jira into splunk with the help of the Splunk Jira app. This will give us the ability to not only track issues in our logs, but also view their current status (investigation, assigned, fixed, resolved). This closes the loop on finding new issues, tracking their impact, and finally their resolution until the end. Splunk has been extremely exciting to work on and has been an invaluable asset to our team. We&rsquo;d love to continue the conversations on how we can improve our usage of Splunk and how others are using it as well.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Cerner and the Apache Software Foundation]]></title>
-    <link href="http://engineering.cerner.com/blog/cerner-and-the-apache-software-foundation/"/>
-    <updated>2014-10-28T00:00:00-05:00</updated>
-    <id>http://engineering.cerner.com/blog/cerner-and-the-apache-software-foundation</id>
-    <content type="html"><![CDATA[<p>At the beginning of this year, <a href="http://engineering.cerner.com/2014/01/sponsoring-the-apache-software-foundation/">we announced that Cerner became a bronze-level sponsor</a> of the non-profit <a href="http://www.apache.org/">Apache Software Foundation</a> (ASF). Many of the open source projects we use and contribute to are under the ASF umbrella, so supporting the mission and work of the ASF is important to us.</p>
-
-<p>We&rsquo;re happy to announce that <a href="http://www.apache.org/foundation/thanks.html">Cerner has now increased our sponsorship of the ASF to become a silver-level sponsor</a>. Open source continues to play an integral role in both our architecture and engineering culture. We&rsquo;ve blogged and spoken at conferences about how several ASF projects are core foundational components in our architecture and several of our <a href="http://www.youtube.com/playlist?list=PLSti19ysyJtDYa2JdSjVYWaKhuul1jPUP">tech talks</a> have focused on ASF projects.</p>
-
-<p>Further increasing our sponsorship of the ASF reaffirms our continued support for an organization that provides homes for numerous open source projects that are important not only to us, but the larger development community.</p>
-
-<p><a href="http://sponsor.apache.org/"><img class="center" src="http://engineering.cerner.com/assets/2014-10-28-cerner-and-the-apache-software-foundation/asf-sponsorship-silver-logo.jpg" title="ASF Silver Sponsorship" ></a></p>
 ]]></content>
   </entry>
   
