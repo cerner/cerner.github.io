@@ -212,8 +212,7 @@ I ask you to:
 
 ## Additional readings and inspirations
 * [JavaScript Allongé](https://leanpub.com/javascript-allonge/read)
-* [MDN Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures)
-* [jQuery - JavaScript 101 Closures](http://learn.jquery.com/javascript-101/closures/)
+* [MDN Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 * [Understand JavaScript Closures With Ease](http://javascriptissexy.com/understand-javascript-closures-with-ease/)
 * [Partial Application in JavaScript](http://ejohn.org/blog/partial-functions-in-javascript/)
 * [Curried JavaScript Functions](http://www.crockford.com/javascript/www_svendtofte_com/code/curried_javascript/index.html)
