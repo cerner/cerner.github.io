@@ -23,7 +23,7 @@ After being a committer for over a year, I was selected as a PMC of [Apache Crun
 ### What are your favorite parts about being a committer?
 One of the coolest parts about being a committer is making new connections with larger tech community. It forces you to build new relationships and talk to people you may have not spoken to before. It's cool being able to meet new people who don't work at the company you're working for. I also enjoy being able to look at the project as a whole and figure out the right way to solve something, rather than solving it right now.
 
-I've also spoken I've spoken at ApacheCon twice on [Apache Crunch](https://crunch.apache.org/), which have been awesome opportunities.
+I've also spoken at ApacheCon twice on [Apache Crunch](https://crunch.apache.org/), which have been awesome opportunities.
 
 ### How else are you involved in the tech industry?
 I also like to be involved in our development culture at Cerner, helping improve our internal community and increasing awareness of Cerner in the industry.  I've been a member of the planning committee and have spoken at our internal conference, DevCon, given internal tech talks at Cerner, and have also spoken at industry conferences like Kafka Summit 2016 and Midwest.io 2014. I've also written an Engineering Health blog (Scaling People with [Apache Crunch](https://crunch.apache.org/)). I am an open source reviewer for Cerner projects, helping review and provide feedback on Cerner open source projects prior to them being published.
