@@ -301,8 +301,16 @@ and let us know how it works for you.</p>
       entries : '.entries',         // selector for search entries containing element (contained within results above)
       template: '#search-results-template'  // selector for Mustache.js template
     });
+    //Currently ignoring the "return/enter" keystroke when searching (as this would just result in a 404 for the page lookup).
+    $('#search-query').keydown(function(event){
+      if(event.keyCode == 13) {
+        event.preventDefault();
+        return false;
+      }
+    });
   });
 </script>
+
   <footer role="contentinfo" class="page-footer">
   <div class="container-fluid">
     <div class="row">

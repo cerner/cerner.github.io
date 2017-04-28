@@ -445,8 +445,7 @@
 
 <ul>
 <li><a href="https://leanpub.com/javascript-allonge/read">JavaScript Allongé</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures">MDN Closures</a></li>
-<li><a href="http://learn.jquery.com/javascript-101/closures/">jQuery &ndash; JavaScript 101 Closures</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures">MDN Closures</a></li>
 <li><a href="http://javascriptissexy.com/understand-javascript-closures-with-ease/">Understand JavaScript Closures With Ease</a></li>
 <li><a href="http://ejohn.org/blog/partial-functions-in-javascript/">Partial Application in JavaScript</a></li>
 <li><a href="http://www.crockford.com/javascript/www_svendtofte_com/code/curried_javascript/index.html">Curried JavaScript Functions</a></li>
@@ -635,8 +634,16 @@
       entries : '.entries',         // selector for search entries containing element (contained within results above)
       template: '#search-results-template'  // selector for Mustache.js template
     });
+    //Currently ignoring the "return/enter" keystroke when searching (as this would just result in a 404 for the page lookup).
+    $('#search-query').keydown(function(event){
+      if(event.keyCode == 13) {
+        event.preventDefault();
+        return false;
+      }
+    });
   });
 </script>
+
   <footer role="contentinfo" class="page-footer">
   <div class="container-fluid">
     <div class="row">
