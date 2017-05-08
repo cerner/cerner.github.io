@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2017-04-28T10:36:29-05:00</updated>
+  <updated>2017-05-08T17:22:17-05:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -1105,7 +1105,7 @@ we had 295 submissions for talks, ranging from a deep technical dive into the in
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Spring 2016 Shipit Day]]></title>
+    <title type="html"><![CDATA[Spring 2016 ShipIt Day]]></title>
     <link href="http://engineering.cerner.com/blog/spring-2016-shipit-day/"/>
     <updated>2016-04-18T00:00:00-05:00</updated>
     <id>http://engineering.cerner.com/blog/spring-2016-shipit-day</id>
