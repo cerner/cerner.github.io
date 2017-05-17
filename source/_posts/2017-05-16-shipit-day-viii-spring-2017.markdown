@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "ShipIt VIII Day: Spring 2017"
-author: Isabella Kuzava and Carl Chesser
+author: Isabella Kuzava and Shahzad Zafar
 date: 2017-05-16
 tags: [culture, engineering, hackathon, shipit]
 ---
