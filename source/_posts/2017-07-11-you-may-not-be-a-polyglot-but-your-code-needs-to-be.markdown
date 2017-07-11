@@ -9,7 +9,7 @@ tags: [engineering, polyglot, localization, internationalization, grace, hopper]
 Last October, I had the privilege to speak at [Grace Hopper](https://ghc.anitaborg.org/), the world's largest gathering of women technologists. It was impressive to see 15,000 fellow female technologists gather together to share their experiences and technical expertise. To look into the audience, and see a room full of other female engineers was a great experience! 
 
 My talk was titled, You May Not Be a Polyglot, but Your Code Needs to Be ([previously presented at Midwest.io](https://www.youtube.com/watch?v=923ac4CSqsw)).
-One definition of the term polyglot is "composed in many languages." During my talk, I discussed common misconceptions about writing code for global audiences, and I provided tips to help position engineers for successful in these types of projects. 
+One definition of the term polyglot is "composed in many languages." During my talk, I discussed common misconceptions about writing code for global audiences, and I provided tips to help position engineers for success in these types of projects. 
 
 Having worked in engineering, translation, and localization for more than over a decade, I have seen first-hand how projects struggle through the globalization process. A properly globalized solution is generally achieved by ensuring the appropriate internationalization, localization, and translation steps have taken place; however, as developers, we have misconceptions that make this process more costly and less effective than it needs to be.
 
