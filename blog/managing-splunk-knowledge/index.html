@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Engineering Health</title>
+  <title>Managing Splunk's Knowledge - Engineering Health</title>
   <meta name="author" content="Cerner">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://engineering.cerner.com/blog/page/11">
+  <link rel="canonical" href="http://engineering.cerner.com/blog/managing-splunk-knowledge">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -115,12 +115,15 @@
 </section>
     </div>
     <div class="row-fluid">
-      <div id="main" class="span8" role="main">
-  
-  
-  
-    <article class="entry">
-        <header class="entry-header">
+      
+<article id="main" class="hentry span8" role="article">
+
+  <section class="post">
+    
+  <header class="entry-header">
+    
+      <h1 class="entry-title">Managing Splunk's Knowledge</h1>
+    
     
       <div class="entry-meta meta">
         
@@ -135,163 +138,77 @@
   
 
 
-<time datetime="2013-08-14T00:00:00-05:00" pubdate data-updated="true">Aug 14<span>th</span>, 2013</time> | 
+<time datetime="2017-07-14T00:00:00-05:00" pubdate data-updated="true">Jul 14<span>th</span>, 2017</time> | 
   
 
 
   <span class="byline author vcard">
-    <span class="fn">Michelle Brush</span>
+    <span class="fn">Bryan Baugher</span>
   </span>
 
 
         
       </div>
     
-    <h1 class="entry-title">DevAcademy</h1>
   </header>
-  <div class="entry-content">
-    When I graduated from college, I thought I understood what it meant to develop software in the real world. It required process. It required troubleshooting. It required quality. However, to me, process meant waterfall. Troubleshooting meant trying a few things and then asking for help. Quality meant manual testing. Agile &hellip;
-    <footer>
-      <a rel="full-article" href="/2013/08/devacademy/">Read More</a>
-    </footer>
-  </div>
-
-    </article>
-  
-  
-    <article class="entry">
-        <header class="entry-header">
-    
-      <div class="entry-meta meta">
-        
 
 
+<div class="entry-content"><p>When we first were given access to <a href="https://www.splunk.com/">Splunk</a> we were excited about all the functionality it could provide our team to help us monitor and debug our applications. We created alerts to email us if our applications are logging errors, dashboards to show health or metrics of our services, and field extractions as well as tags to make searching easier. As we created more and more of these Splunk knowledge objects we started to have issues. For regulatory and validation concerns, we have several Splunk instances that represent different environments. This required us to copy and paste or duplicate the Splunk knowledge object we created in one environment to all the others. This became very tedious and we saw all sorts of problems. Objects were only copied to some Splunk instances, updates were sometimes lost, and permissions weren&rsquo;t consistent or someone would forget to make their object publically viewable. We set out to look for a solution.</p>
+
+<p>After we couldn&rsquo;t find anything that could easily help us we created a tool called <a href="https://github.com/cerner/splunk-pickaxe">splunk-pickaxe</a>. splunk-pickaxe is a Ruby gem that provides a command-line interface for synchronizing a directory or repository of Splunk knowledge objects written as files to a Splunk instance. So now when a developer creates a new Splunk object, they would create and test it in our Splunk dev instance and then open a pull request to our Splunk Github repository with the object&rsquo;s configuration or contents . Other developers review the changes before it gets merged and automatically pushed out to all our Splunk instances using our splunk-pickaxe tool and <a href="https://jenkins.io/">Jenkins</a> our continuous integration engine. This simplified things and provided consistency on these Splunk changes. We were also able to more effectively review the Splunk objects for efficient and proper Splunk usage.</p>
+
+<p>The tool grew in popularity at Cerner and currently supports many Splunk objects:</p>
+
+<ul>
+<li><a href="http://docs.splunk.com/Documentation/Splunk/6.6.2/Viz/Aboutthismanual">Dashboards</a></li>
+<li><a href="https://docs.splunk.com/Documentation/Splunk/latest/Alert/Aboutalerts">Alerts</a></li>
+<li><a href="https://docs.splunk.com/Documentation/Splunk/6.6.2/Report/Aboutreports">Reports</a></li>
+<li><a href="http://docs.splunk.com/Documentation/Splunk/6.6.2/Knowledge/ExtractfieldsinteractivelywithIFX">Field Extractions</a></li>
+<li><a href="http://docs.splunk.com/Documentation/SplunkCloud/6.6.0/Knowledge/TagandaliasfieldvaluesinSplunkWeb">Tags</a></li>
+<li><a href="http://docs.splunk.com/Documentation/Splunk/6.6.2/Knowledge/Abouteventtypes">Event Types</a></li>
+</ul>
 
 
-
-
-
-
-  
-
-
-<time datetime="2013-08-06T00:00:00-05:00" pubdate data-updated="true">Aug 6<span>th</span>, 2013</time> | 
-  
-
-
-  <span class="byline author vcard">
-    <span class="fn">Carl Chesser</span>
-  </span>
-
-
-        
-      </div>
-    
-    <h1 class="entry-title">The 30 Days of Code Experiment</h1>
-  </header>
-  <div class="entry-content">
-    In software development, we solve problems. As we solve these problems, we build connections in our minds of how to look at a problem, relate it to previous problems and solutions, and re-apply past approaches and techniques. These behavior habits build dogmatic ways of thinking and limit design choices to &hellip;
-    <footer>
-      <a rel="full-article" href="/2013/08/the-30-days-of-code-experiment/">Read More</a>
-    </footer>
-  </div>
-
-    </article>
-  
-  
-    <article class="entry">
-        <header class="entry-header">
-    
-      <div class="entry-meta meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-31T00:00:00-05:00" pubdate data-updated="true">Jul 31<span>st</span>, 2013</time> | 
-  
-
-
-  <span class="byline author vcard">
-    <span class="fn">Ryan Brush</span>
-  </span>
-
-
-        
-      </div>
-    
-    <h1 class="entry-title">Thinking in MapReduce</h1>
-  </header>
-  <div class="entry-content">
-    This is the blog form of the Thinking in MapReduce talk at StampedeCon 2013. I’ve linked to existing resources for some items discussed in the talk, but the structure and major points are here. We programmers have had it pretty good over the years. In almost all cases, hardware scaled up faster &hellip;
-    <footer>
-      <a rel="full-article" href="/2013/07/thinking-in-mapreduce/">Read More</a>
-    </footer>
-  </div>
-
-    </article>
-  
-  
-    <article class="entry">
-        <header class="entry-header">
-    
-      <div class="entry-meta meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-23T00:00:00-05:00" pubdate data-updated="true">Apr 23<span>rd</span>, 2013</time> | 
-  
-
-
-  <span class="byline author vcard">
-    <span class="fn">Cerner Engineering</span>
-  </span>
-
-
-        
-      </div>
-    
-    <h1 class="entry-title">FIRST Robotics Championship Competition in St. Louis</h1>
-  </header>
-  <div class="entry-content">
-    Cerner places a high value on talent development programs offering students the experience to build practical and tangible skills for the modern work environment. As part of this focus, Cerner supports FIRST Robotics, a competition providing experience in software engineering, where students learn to deal with complexity, time constraints, quality, &hellip;
-    <footer>
-      <a rel="full-article" href="/2013/04/first-robotics-championship-competition-in-st-louis/">Read More</a>
-    </footer>
-  </div>
-
-    </article>
-  
-  <ul class="pager">
-    
-    <li><a href="/blog/page/12/">Load More</a></li>
-    
-  </ul>
+<p>Check out the <a href="https://github.com/cerner/splunk-pickaxe#getting-started">Getting Started</a> section to try it out and feel welcome to <a href="https://github.com/cerner/splunk-pickaxe#contributing">contribute</a> any ideas or improvements.</p>
 </div>
-<aside class="sidebar-nav span4" role="complementary">
+
+
+  </section>
+  <footer>
+    <p class="meta">
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    
+    <ul class="pager">
+      
+      <li class="previous"><a class="basic-alignment left"
+        href="/blog/you-may-not-be-a-polyglot-but-your-code-needs-to-be/" title="Previous Post:
+        You May Not Be a Polyglot, but Your Code Needs to Be">&laquo; Previous Post</a></li>
+      
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      
+    </ul>
+  </footer>
+</article>
+
+<aside class="sidebar-nav span4">
   
     <section class="well">
   <h2>Recent Posts</h2>
   <ul id="recent_posts" class="nav nav-list">
     
       <li>
-        <a href="/blog/managing-splunk-knowledge/">Managing Splunk&#8217;s Knowledge</a>
+        <a href="/blog/managing-splunk-knowledge/">Managing Splunk's Knowledge</a>
       </li>
     
       <li>
@@ -323,7 +240,7 @@
 <section class="well">
   <h2>GitHub Repos</h2>
   <ul id="gh_repos" class="nav">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/cerner">@cerner</a> on GitHub
@@ -352,6 +269,7 @@
 
   
 </aside>
+
 
     </div>
   </div>
