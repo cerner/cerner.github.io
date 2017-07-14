@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Managing Splunk's Knoweldge"
+title: "Managing Splunk's Knowledge"
 author: Bryan Baugher
 date: 2017-07-14
 tags: [engineering, splunk]
