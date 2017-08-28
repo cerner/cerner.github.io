@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Structure Matters: How Cerner Handled Too Much Health Data in HBase - Engineering Health</title>
+  <meta name="author" content="Cerner">
+
+  
+  <meta name="description" content="">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://engineering.cerner.com/blog/structure-matters-how-cerner-handled-too-much-health-data-in-hbase">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/site/site.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <script src="/javascripts/libs/bootstrap.min.js"></script>
+
+  <link href="/atom.xml" rel="alternate" title="Engineering Health" type="application/atom+xml">
+  <script src="/javascripts/search.min.js" type="text/javascript" charset="utf-8"></script>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37701128-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body  class="top-navbar  ">
+  
+
+
+
+<header id="banner" role="banner" class="container-fluid banner-kc-background">
+
+  <div class="image">
+
+    
+      <img src="/images/KC.jpg" alt="Kansas City" />
+    
+
+    <div id="header1">Engineering Health<br/><span class="header2">A <b>Cerner</b> Blog</span></div>
+
+  </div>
+  <nav class="navbar navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Engineering Health</a>
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="selected">
+            <a href="/">Blog</a>
+          </li>
+          <li >
+            <a href="/culture">Culture</a>
+          </li>
+          <li >
+            <a href="/tech_talks">Tech Talks</a>
+          </li>
+          <li >
+            <a href="/open_source">Open Source</a>
+          </li>
+          <li >
+            <a href="/blog/archives">Archives</a>
+          </li>
+        </ul>
+        <div id="search" class="pull-right">
+          <form action="/search" method="get" class="navbar-search">
+            <input type="text" id="search-query" name="q" class="search-query" placeholder="Search" autocomplete="off">
+            <img src="/images/MagnifyingGlass.png" alt="Search" width="16" height="16" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+</header>
+
+
+  <div class="container-fluid post-container">
+    <div class="row-fluid">
+      <section class="span12" id="search-results" style="display: none;">
+  <h2>Search results</h2>
+  <div class="entries">
+  </div>
+</section>
+    </div>
+    <div class="row-fluid">
+      
+<article id="main" class="hentry span8" role="article">
+
+  <section class="post">
+    
+  <header class="entry-header">
+    
+      <h1 class="entry-title">Structure Matters: How Cerner Handled Too Much Health Data in HBase</h1>
+    
+    
+      <div class="entry-meta meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-08-28T00:00:00-05:00" pubdate data-updated="true">Aug 28<span>th</span>, 2017</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Michelle Brush and Vinay Koduri</span>
+  </span>
+
+
+        
+      </div>
+    
+  </header>
+
+
+<div class="entry-content"><h3>Background</h3>
+
+<p>In order to manage the health of populations, Cerner builds data-driven solutions built on top of its <em>HealtheIntent</em>&#8480; platform. The platform transforms and standardizes data across disparate health systems. The data is then used in algorithms that aid healthcare providers and hospitals in managing and monitoring health both at a person and population level.</p>
+
+<p>The Reference Record is one of the core components of the HealtheIntent platform. It represents the data known about a person&rsquo;s health from a particular source of healthcare information. Downstream components in the platform aggregate information across multiple reference records to understand the full picture of a person&rsquo;s health.</p>
+
+<p>To create the record, the system performs both batch and stream processing. Some sources send the data to HealtheIntent once a day or once a month. That data is processed in batch, using Hadoop MapReduce jobs. For sources that send the data as streams of updates in near real time, we rely on a homegrown near real time framework that sits on top of Apache Storm. Both the pipelines persist their processed data in HBase tables.</p>
+
+<p>For the data processed in batch, we write all the data about the person from a given source to the HBase table as one HBase row. We refer to this as a wide table. The HBase Rowkey is the source identifier followed by the person identifier: <code>/source:&lt;id&gt;/person:&lt;id&gt;</code>. Each row could have multiple columns, one per each healthcare entity like allergy, medication, procedure, etc. Another thing to note is this table is salted for better distribution of data across regions. That means a given person&rsquo;s data will be in a single region since it&rsquo;s all in one row, but the data for a given source will be distributed across the HBase cluster.</p>
+
+<p>For streaming sources, we use a different table approach. We have a tall table, where each healthcare entity is written separately. The Rowkey in this approach would be built from the source identifier, person identifier, entity type, and then individual entity identifier. This allows the system to manage the information flowing from the stream more efficiently.</p>
+
+<p>To make sure that the consumers of the record don&rsquo;t have to know whether the data is coming from a streaming or batch source system, we offer a Crunch-based extract API that is capable of reading from either table structure. The API provides a single, consistent representation of the data.</p>
+
+<p>The purpose of this post is to discuss what happened when a single person in our system received a little too much healthcare over the course of her fake life.</p>
+
+<h3>The Investigation</h3>
+
+<p>We were bringing a new source of healthcare data onto the HealtheIntent platform using our batch processing pipeline. In the midst of this work, a small number of MapReduce jobs started failing. Our failure monitoring triggered and notified us that something wasn&rsquo;t right.</p>
+
+<p>We turned to the logs to investigate the failures. We saw this (not very informative) message:</p>
+
+<blockquote><p>Task attempt_xxxx failed to report status for 601 seconds. Killing!</p></blockquote>
+
+<p>Our first assumption was that the issue was related to memory, but we profiled the job and found that the heap utilization looked fine.</p>
+
+<p>Querying across all the logs, we were able to see two key pieces of information. One, a job was more likely to fail if it was reading from a particular source of data, and two, failures were correlated with alerts on slow response times in HBase. Drilling deeper into our logs, we were able to find that sure enough, we were timing out trying to read from a particular region in HBase.</p>
+
+<p>The next obvious step was to look at region metrics. We found the region had grown in size to 115 GB on a cluster configured to have a max region size of 10 GB. More logs showed the table had stopped compacting and splits weren&rsquo;t working due to a 30 GB row in the table.</p>
+
+<p>At this time, anything trying to read that row was failing, but some large writes were still succeeding. There would be attempts to bulk load new data to the region, but the loads would invariably fail due to the large row. When the job ran again, it would attempt to write the same data, over and over. Occasionally during these attempts, some of the data would get written to the region. This process piled more and more data onto the region, and the region wouldn&rsquo;t split.</p>
+
+<p>As the region was growing, the situation got worse. As previously mentioned, we salt the row keys to distribute data across the cluster. Jobs interested in other source data were also reading from this region, so we started seeing failures in other jobs. Then in the midst of our investigation, we saw more HBase region servers start failing. Then HBase bulk loads in other MapReduce jobs were also failing. We knew we had to get rid of the row and split the region.</p>
+
+<p>As some team members worked on a plan to deal with the row, others moved on to answering the question, &ldquo;How did this one row get so big that the bulk loads started failing?&rdquo;</p>
+
+<p>With healthcare data, it&rsquo;s possible to imagine diseases that might lead someone to have so many encounters and activity within a single healthcare system that we could get to a gigabyte of health data about a person. However, we had never seen anything near this large before. It was a pretty significant outlier.</p>
+
+<h3>Getting Rid of the Alternative Fact</h3>
+
+<p>We decided to delete the person&rsquo;s data. However, the person had grown so large, this proved difficult. (The naive approach to deleting a row in HBase failed spectacularly.) Splitting was also not possible.</p>
+
+<p>We needed a better plan. First, all reads and writes to the region had to stopped. This meant suspending all jobs that any potential to read or write. Since several teams depended on our data for their processing, we started by notifying all our downstream consumers. Then we stopped all reads and writes to the affected region. We copied the affected Hfiles to a new table. This allowed compaction (and as a result, deletion) to succeed. Cleaning up this one bad record brought the region size down to 2 GB from 200 GB. As part of this process, the table was disabled and the compacted Hfiles from the fixed region were copied back to the old table before it was re-enabled.</p>
+
+<h3>Damage</h3>
+
+<p>When we stopped all the jobs loading into that table, we had a stale data period for downstream processing. Reports that needed the data showed old information during the length of the incident investigation and mitigation. The good news is that our near real-time algorithms such as our Sepsis alerts and readmissions risk assessments were built on top of the stream processing system which was not impacted by this incident.</p>
+
+<h3>Prevention</h3>
+
+<p>In our postmortem for the incident, we reviewed what we could have done better before, during, and immediately following the situation. A quick win for us was to add HBase region size monitoring &amp; alerting. It is still reactive, but would help us react faster and minimize the duration of the event.</p>
+
+<p>Ultimately, the root of the problem is that we have an approach that encourages a lot of data to accumulate in a single row. We had a design flaw. While this patient was outside the realm of anything we&rsquo;d seen before, it wasn&rsquo;t outside the realm of possibility. To quote an oldie, but goodie from Frederick Brooks, &ldquo;Our first response should be to reorganize the modules&#8217; data structures.&rdquo;</p>
+
+<p>This event made us realize our batch and streaming representations of the data need to converge. That is the path we&rsquo;re now taking which will introduce its own set of challenges, but we&rsquo;re confident this will land us in a more stable, scalable place.</p>
+</div>
+
+
+  </section>
+  <footer>
+    <p class="meta">
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    
+    <ul class="pager">
+      
+      <li class="previous"><a class="basic-alignment left"
+        href="/blog/managing-splunk-knowledge/" title="Previous Post:
+        Managing Splunk's Knowledge">&laquo; Previous Post</a></li>
+      
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      
+    </ul>
+  </footer>
+</article>
+
+<aside class="sidebar-nav span4">
+  
+    <section class="well">
+  <h2>Recent Posts</h2>
+  <ul id="recent_posts" class="nav nav-list">
+    
+      <li>
+        <a href="/blog/structure-matters-how-cerner-handled-too-much-health-data-in-hbase/">Structure Matters: How Cerner Handled Too Much Health Data in HBase</a>
+      </li>
+    
+      <li>
+        <a href="/blog/managing-splunk-knowledge/">Managing Splunk's Knowledge</a>
+      </li>
+    
+      <li>
+        <a href="/blog/you-may-not-be-a-polyglot-but-your-code-needs-to-be/">You May Not Be a Polyglot, but Your Code Needs to Be</a>
+      </li>
+    
+      <li>
+        <a href="/blog/shipit-day-viii-spring-2017/">ShipIt VIII Day: Spring 2017</a>
+      </li>
+    
+      <li>
+        <a href="/blog/influyendo-en-una-generacion-de-jovencitas-de-habla-hispana/">Influyendo en Una Generación De Jovencitas De Habla Hispana</a>
+      </li>
+    
+  </ul>
+</section>
+<section class="divider">
+  <svg width="70" height="10">
+   <rect width="10" height="10" x="0" y="0" style="fill:rgb(20,124,193)" />
+   <rect width="10" height="10" x="20" y="0" style="fill:rgb(121,193,68)" />
+   <rect width="10" height="10" x="40" y="0" style="fill:rgb(20,124,193)" />
+   <rect width="10" height="10" x="60" y="0" style="fill:rgb(121,193,68)" />
+</svg>
+</section>
+<section class="well">
+  <h2>GitHub Repos</h2>
+  <ul id="gh_repos" class="nav">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/cerner">@cerner</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'cerner',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  
+<script id="search-results-template" type="text/mustache">
+  {{#entries}}
+    <article class="search-result">
+        <div class="search-meta meta">
+        {{#date}}<time datetime="{{pubdate}}" pubdate>{{displaydate}}</time>{{/date}} | {{author}}
+        </div>
+        <a href="{{url}}">{{title}}</a>
+    </article>
+  {{/entries}}
+</script>
+
+<script type="text/javascript">
+  $(function() {
+    $('#search-query').lunrSearch({
+      indexUrl: '/javascripts/index.json',   // Url for the .json file containing search index data
+      results : '#search-results',  // selector for containing search results element
+      entries : '.entries',         // selector for search entries containing element (contained within results above)
+      template: '#search-results-template'  // selector for Mustache.js template
+    });
+    //Currently ignoring the "return/enter" keystroke when searching (as this would just result in a 404 for the page lookup).
+    $('#search-query').keydown(function(event){
+      if(event.keyCode == 13) {
+        event.preventDefault();
+        return false;
+      }
+    });
+  });
+</script>
+
+  <footer role="contentinfo" class="page-footer">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="span2">
+          <img src="/images/cerner_small_logo_white.png" alt="Cerner Logo" />
+      </div>
+      <div class="span10 pull-left">
+          <p>&copy; 2017</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
