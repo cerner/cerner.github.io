@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2017-08-28T15:23:46-05:00</updated>
+  <updated>2017-09-08T12:52:43-05:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,28 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Continuous Delivery for DC/OS With Spinnaker]]></title>
+    <link href="http://engineering.cerner.com/blog/continuous-delivery-for-dcos-with-spinnaker/"/>
+    <updated>2017-09-08T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/blog/continuous-delivery-for-dcos-with-spinnaker</id>
+    <content type="html"><![CDATA[<p>Last fall our team (<a href="https://github.com/mtweten">Mike Tweten</a>, <a href="https://github.com/TrevinTeacutter">Trevin Teacutter</a>, and <a href="https://github.com/zsura">Zameer Sura</a>) started working on the problem of automating <a href="https://mesosphere.com/product/">DC/OS</a> deployments in a way that wouldn&rsquo;t require multiple teams to duplicate effort and tie themselves directly to DC/OS APIs.  While DC/OS certainly makes the act of deploying an application much easier than anything we&rsquo;ve used previously, there are still many different ways you could choose to layer on deployment strategies and integrate with continuous delivery systems. Additionally, there may be lots of teams with very similar needs in this space and there are certainly more efficient uses of their time than making them all solve the same problems.  Furthermore, while DC/OS is a good choice today we need to make sure that we don’t become locked in and can change our mind in the future without a big impact to those teams.</p>
+
+<p>Being an engineering team, naturally our first approach was to try to write a service to manage a simple set of deployment strategies with an API that we could reimplement over other resource schedulers (like <a href="https://kubernetes.io/">Kubernetes</a>) in the future.  However, after producing a prototype we really started to grasp that we were taking on a much bigger task than we should.  Our API could handle some basic pre-built deployment workflows, but if it wasn&rsquo;t flexible enough for teams we&rsquo;d need to continue to adapt it.  In addition, we would still have to work out how it would integrate with CI/CD tools like <a href="https://jenkins.io/">Jenkins</a>, and we&rsquo;d have to do a lot of that work again each time we wanted to support another resource scheduler as a deployment target.</p>
+
+<p>At this point we decided to take a deeper look at <a href="https://www.spinnaker.io/">Spinnaker</a>, a continuous delivery platform that was open-sourced by Netflix.  It had originally been developed to orchestrate AWS deployments and had expanded to other providers like Azure, OpenStack, and more recently Kubernetes was added as the first container based deployment target.
+Spinnaker allows for building deployment pipelines that can be triggered by things like Github commits or Jenkins builds and can then run stages to do things like start other Jenkins jobs, deploy new versions of an application, scale up or down applications, and disable old application versions.  With these capabilities we would be able to use Spinnaker to provide a consistent deployment abstraction while still providing the flexibility to handle deployment workflows that we didn&rsquo;t build ourselves.</p>
+
+<p>The only minor problem was that it didn&rsquo;t support DC/OS, our preferred deployment target. After taking some time to dive in and get familiar with the details it quickly became apparent that adding support for DC/OS would be much easier than continuing to build our own system, especially since we had already become familiar with the DC/OS APIs while developing our prototype.  Not only would we then gain the flexibility to allow more deployment strategies than we originally anticipated, but it would also buy us integration with Jenkins and the ability to convert pipelines over to Kubernetes without much effort.  We checked with the Spinnaker community to make sure that no one was already working on DC/OS support and also with <a href="https://mesosphere.com/">Mesosphere</a> (the company behind DC/OS) to make sure they weren&rsquo;t planning to do it.  When both of those came back negative we began working on the project in earnest, with the goal of building something that would benefit not only Cerner but also the entire Spinnaker and DC/OS communities.</p>
+
+<p>This was the first time that any of us had tried to contribute significant changes to an established open-source project so there was some adjustment and learning along the way.  We initially created our fork of the necessary repositories to our internal Github with the plan to finish the project before making anything visible publicly. Instead, we found that we wanted to more easily be able to share things with Mesosphere since they had agreed to give us any guidance we might need.  It also became apparent that it was too easy to commit things like config that referenced internal resources, or comments that referred to our own <a href="https://www.atlassian.com/software/jira">JIRA</a> issues.  If we kept going that way we were only going to make more work for ourselves cleaning those things up when it came time to submit our changes.  By moving our development to repos in <a href="https://github.com/cerner">Cerner&rsquo;s Github organization</a> we were able to solve both of these problems at once.</p>
+
+<p>In spite of moving our code into the public Github we still maintained an insular development approach, determined to get everything just right before submitting a perfect polished gem to the upstream project.  In hindsight, we should have been less concerned about trying to get everything right all at once and submitted more incremental changes.  We thought it would be easier for everyone not to have to deal with our messy work in progress, but after our first pull request for one of the services ended up with over 130 files and a history of 100+ commits we realized that it&rsquo;s too much to expect the maintainers to review so much at once, especially when they may not be that familiar with DC/OS.  Ultimately, they wanted us to carve up that massive patch anyway so it would have been less work for us to do it from the start.</p>
+
+<p>After completing this effort we&rsquo;ve found that we get even more benefit from Spinnaker than we initially expected.  Spinnaker also helps us manage deployments to multiple DC/OS clusters, use <a href="https://github.com/Netflix/chaosmonkey">Chaos Monkey</a> to test the resiliency of our applications, and even to deploy DC/OS itself on AWS. We&rsquo;re pleased to announce that our contribution has been accepted by the Spinnaker maintainers and is now <a href="https://www.spinnaker.io/community/releases/versions/1-3-0-changelog">available for anyone to use</a>.  The Spinnaker community has been great to work with and helped us by answering questions and inviting us to participate in the discussions with other companies that have contributed major functionality to Spinnaker.  This is an exciting opportunity to contribute something back to the open-source community and we can&rsquo;t wait to see where it goes from here.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Structure Matters: How Cerner Handled Too Much Health Data in HBase]]></title>
@@ -1239,267 +1261,6 @@ we had 295 submissions for talks, ranging from a deep technical dive into the in
 <p>Success! It is obvious what some of the most common themes are, such as &ldquo;data&rdquo; and &ldquo;team&rdquo;. Possible future steps for cleaning up the data would be grouping noun phrases, such as &ldquo;software engineer&rdquo; into single words or possibly removing common spelling mistakes using a spell checking library like <a href="https://pythonhosted.org/pyenchant/">PyEnchant</a>.</p>
 
 <p>You can checkout the full code on <a href="https://github.com/ikottman/devcon-word-cloud">Github</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Difficult Debugging: Learning From Utter Nonsense]]></title>
-    <link href="http://engineering.cerner.com/blog/advanced-debugging/"/>
-    <updated>2016-07-13T00:00:00-05:00</updated>
-    <id>http://engineering.cerner.com/blog/difficult-debugging</id>
-    <content type="html"><![CDATA[<h2>Preface</h2>
-
-<p>As software engineers we invest time into thinking about the problems we are trying to solve every day. Sometimes the problems we face are small or simple. Other times they are large and complex. Either way, we can usually draw from our experience to find a path forward.</p>
-
-<p>While coding, we run into a lot of different bugs. Often, they are simple typos or a misuse of an API. These problems do not bog us down very much, and they are quick and easy to fix. Even complex bugs, while requiring investigation, often follow a familiar pattern(s) that help us identify a path to a solution.</p>
-
-<p>Given this experience, it’s easy for us to think that we are good at debugging.</p>
-
-<p>We are not. We are good at pattern recognition and recognizing similarities to problems we’ve faced in the past. Because we recognize the pattern, we can quickly debug most of the bugs we come across in our day-to-day work.</p>
-
-<p>Which is great. But today, we will be exploring the types of bugs that do not come up in our day-to-day work.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2016-07-13-difficult-debugging/99-bugs-in-the-code.jpg" title="'Grumpy Cat meme: fixed one bug added 28'" ></p>
-
-<p align="center">
-  Image source:
-  <a href="http://weknowmemes.com/2014/04/99-bugs-in-the-code/">weknowmemes.com</a>
-</p>
-
-
-<h2>How Bugs Can Mislead Investigative Efforts</h2>
-
-<p>When a bug is brand new to us, we haven’t had the opportunity to derive a pattern from it yet because we have no experience to draw upon to create that pattern(s). Thus, we must investigate using a limited set of tools:</p>
-
-<ul>
-<li>Error messages</li>
-<li>Stack traces</li>
-<li>Guessing and check debugging</li>
-<li>Colleagues</li>
-<li>Google</li>
-</ul>
-
-
-<p>Often enough, that set of tools will guide you to a solution within a reasonable amount of time. Be warned, sometimes the solutions online solve a similar problem, but not your root problem. Testing is always in order with new bugs (or any bug more complex than a typo).</p>
-
-<p>Debugging gets even trickier and more time consuming when we encounter a bug that resembles a pattern that we’ve seen before. Once, I came across a bug which looked like two other things, but turned out to be a third unexpected thing.</p>
-
-<h3>Treemaps and IE8, and Fonts, Oh My</h3>
-
-<p>One of our teams created an interactive DOM based treemap which worked in Internet Explorer 8 (IE8) and above. It wasn’t lightning fast in IE8, but it worked sufficiently well with a reasonably complex dataset. That is until the browser started crashing intermittently for some of our users.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2016-07-13-difficult-debugging/treemap.png" title="'Example treemap'" ></p>
-
-<p align="center">Example treemap with dummy data</p>
-
-
-<p>There were a few things that we (four engineers) noticed right away:</p>
-
-<ul>
-<li>It only crashed in IE8</li>
-<li>The presence of a treemap seemed to be a driving factor</li>
-<li>Crashing was intermittent</li>
-</ul>
-
-
-<p>Our initial investigation was good. We isolated the problem browser and determined that there was something wrong with the treemap, which was causing the issues, we were on our way to solving this problem &ndash; or so we thought.</p>
-
-<p>Given the intermittent nature of the problem, our experiences in the past, and the patterns we had observed, we assumed we had a memory leak, a race condition, or both. In an attempt to rule one of those options out, we tested with small and large datasets for the treemap.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2016-07-13-difficult-debugging/15k_treemap.png" title="'Treemap with 15,000 cells'" ></p>
-
-<p align="center">Treemap with 15,000 cells in it rendered by Chrome</p>
-
-
-<p>The above image serves as proof that modern browsers were unaffected by the bug we were experiencing.</p>
-
-<p>Convinced that the treemap was the issue and that it had to be a memory leak or a race condition, we created automated tooling using sIEve, virtual machines, and AutoIt scripts. The automation enabled us to test dozens of scenarios hundreds of times easily to gain metrics which might help illuminate where, in the code, we should look next.</p>
-
-<p>We chose different sized datasets thinking that smaller datasets would not trigger a memory leak while a large one would. Unfortunately, it crashed either way and we were no closer to figuring out what was wrong.</p>
-
-<p>After several more days of investigation we were just as perplexed as the day we started. We had a plethora of information which told us nothing. At this point our capacity had to be reduced down to just one developer &ndash; me. Frustrated with the resultless weeks spent investigating the issue, I decided step back and take a completely different approach.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2016-07-13-difficult-debugging/500_treemap.png" title="'Treemap with 500 cells'" ></p>
-
-<p align="center">IE8 managed to render a 500 cell treemap without crashing</p>
-
-
-<p>To re-evaluate everything we did, I removed all of the assets from our application to minimize moving parts; regardless of how unlikely a variable was, I wanted to remove it. I ran our test scripts against the application to find that, unsurprisingly, the browser did not crash. I then added JS and CSS assets separately to find that neither alone caused the browser to crash. As a sanity check, I added both back to the application and it would reliably crash. This implied that there was some interplay between CSS and JS which was causing the browser to crash.</p>
-
-<p>In our application, it was easier to add CSS file by file than it was for JS so I went that route. Along the way, I noticed that we were sending the wrong X-UA meta tag so I got sidetracked and fixed that to no avail. Eventually, I added back our Font Awesome CSS which caused the browser to crash. Thinking there was no way that a font could be the issue, I added and removed various pieces of our CSS to determine if it was the cause of the problem. I tried changing selectors, changing the load order, and everything else I could think of to no avail. After a while, frustrated, I commented out every line referencing Font Awesome and the browser stopped crashing. At this point, I just started adding code back line by line until the browser started crashing. What I found made no sense:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&:before {
-</span><span class='line'>  font-family: 'FontAwesome';
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-<p>I looked over this for a while and eventually noticed that we were using single quotes when we referenced the font while the font declaration</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>@font-face {
-</span><span class='line'>  font-family: "FontAwesome";
-</span><span class='line'>  src: url(@fontAwesomeEotPath);
-</span><span class='line'>  font-weight: normal;
-</span><span class='line'>  font-style: normal;
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-<p>was using double quotes.</p>
-
-<p>Having exhausted most other options already, I tried making the quotes match to see if the browser would crash and, to my surprise, it wouldn’t. It didn’t matter whether I used double or single quotes as long as they matched. I added back all of the remaining assets and tested this again; sure enough, the app did not crash even after 200 tests.</p>
-
-<p><strong>Yes, it’s true. It wasn’t a race condition or a memory leak within the treemap, or anything else we thought it might be. It was mismatched quotes.</strong> I would never have guessed this in a million years.</p>
-
-<p>I did not stop here! Although I solved the problem, I needed to understand what was going on. I was also very curious which part of the JS was causing issues with Font Awesome. I reintroduced the old CSS and started testing the JavaScript. The application broke as soon as I re-introduced Modernizr. The treemap was, at this point, seemingly faultless as I was able to reproduce the crashes without it.</p>
-
-<p>I researched mismatched quotes and Modernizr online to try and get a better understanding of what was going on. I found several articles that detailed similar issues, but did not identify the root cause. Eventually I found a post on StackOverflow that enabled me to connect the dots.</p>
-
-<p>Browsers do a lot for developers under the hood and IE8 treats different types of quotes differently and kicks off an error handling subroutine to smooth it over. If that error handling subroutine occurs while Modernizr is attempting to shim the browser for HTML5 compatibility, the browser will crash.</p>
-
-<p>We weren’t wrong in that we were facing a race condition, but we were very wrong about our presumption about the treemap. The only interplay the treemap had was that it caused Modernizr to take longer to apply the shim thus widening the window of opportunity for the race condition to apply.</p>
-
-<p>We worked on this from December 20th to January 9th, a total of twenty days!</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2016-07-13-difficult-debugging/sad_panda.png" title="'Meme: 20 days of debugging makes me a sad panda'" ></p>
-
-<p align="center">
-  Image Source:
-  <a href="https://www.linkedin.com/in/jessicazehring">Jessica Zehring</a>
-</p>
-
-
-<h2>How To Tackle Perplexing Bugs</h2>
-
-<p>Oftentimes, our ability to recognize coding patterns enables us to identify and solve bugs in a timely manner. As the example bug shows, however, following them can lead you down a rabbit hole. At face value, twenty days were spent working on that bug, but when you consider that there were up to four developers involved at a time, the lost time actually equates to one to three months. Once you factor in opportunity cost on top of that, you look at two to six months of time lost to debugging this issue.</p>
-
-<p>That is a disturbingly significant amount of time to have lost on a bug. It was a difficult bug to solve, but it could have been solved faster had we recognized that our past experience was insufficient to solve this problem. There are some key points to take away from debugging something perplexing like the example bug we looked at:</p>
-
-<ol>
-<li>Isolate the problem. Find a single way that the bug can be consistently replicated and remove any variance that can trip you up.</li>
-<li>Automate as much as you can. There are likely to be many tests; let the computer handle that work for you. While working on the example bug, we ran thousands of tests over those twenty days.</li>
-<li>Remove as many variables as possible and keep a list of what’s remaining.</li>
-<li>Change one variable at a time. If you change many things simultaneously, you won’t know what yielded which results.</li>
-<li>Test, document, and repeat. When you change a single variable, record all of your findings. How did the results change? Eventually new patterns will present themselves.</li>
-<li>Narrow the scope. As your testing reveals patterns, narrow down to a smaller area. In the example bug, we went from “somewhere in our static assets” to “something in our CSS and JS” to “something in this particular file” to “it’s this particular line”.</li>
-<li>Repeat and keep repeating. Be meticulous in recording your findings. Even if you don’t see a pattern, someone else studying your results might.</li>
-</ol>
-
-
-<p>When you find that past experience is not yielding results in a timely manner (you’ll have to define what that means for yourself), take a step back and follow the steps above. Doing this allows your past experience to help you when it applies and gets it out of the way when it doesn’t. Don’t see how far the rabbit hole goes when you can scientifically figure it out.</p>
-
-<p>Additionally, do not blindly trust answers found online. When working on the example bug, we found several examples of people correctly identifying a similar problems to ours, none of which correctly identified the underlying cause. Treat online resources as what they are &ndash; resources. Sometimes they have the answer you seek while other times they are the dots you must connect yourself.</p>
-
-<h2>Tools and Techniques Which Will Help With Day-to-Day Developing and Debugging</h2>
-
-<h3>Linters</h3>
-
-<p>Static analysis, or linting, is a technique to catch common coding mistakes quickly. A linter will evaluate raw source code and give back a report detailing what needs to be fixed. Most languages have some form of linting software available for them. Since this post is front-end oriented, below are a few linters available for JS:</p>
-
-<ul>
-<li><a href="http://eslint.org/">ESLint</a></li>
-<li><a href="http://jshint.com/">JSHint</a></li>
-<li><a href="http://jscs.info/">JSCS</a></li>
-</ul>
-
-
-<p>All of these tools will notify you when you make typos, aren’t using variables, fail to follow a predefined set of coding styles, and more. They are very fast and are your first line of defense against day-to-day bugs. Linters will catch mistakes much faster than a human.</p>
-
-<h4>Example</h4>
-
-<p>I have a friend who is a very talented software engineer and mathematician. One day he called me to see if I could help him debug an issue he had been struggling with for about 19 hours. His Angular application kept spin locking (freezing up) and he couldn’t figure out why.  We scrolled through the code and luckily for him, a piece of it caught my eye:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="c1">// logic</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>He had been working on C++ code prior to this project which features block scoping while JavaScript (ES5) only features function scoping. A linter would have immediately caught this mistake and informed him of it, saving 19 hours of debugging.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2016-07-13-difficult-debugging/semi-colon.jpg" title="'Meme: Semi-colons are the hide and seek champion since 1958'" ></p>
-
-<p align="center">
-  Image source:
-  <a href="https://www.reddit.com/r/ProgrammerHumor/comments/3dqj35/several_hours_of_debugging_later/">reddit.com</a>
-  by Wilsam239
-</p>
-
-
-<h3>Automated Testing Frameworks</h3>
-
-<p>While static analysis is your first line of defense, tests for your code are your second line of defense. Tests should depict the behavior of your codebase and should fail if you deviate from that contract. Just like linters, most languages support automated testing. There are several frameworks that you can leverage for testing JS, a few are:</p>
-
-<ul>
-<li><a href="https://mochajs.org/">Mocha</a></li>
-<li><a href="http://jasmine.github.io/">Jasmine</a></li>
-<li><a href="https://qunitjs.com/">QUnit</a></li>
-</ul>
-
-
-<p>Defining a set of behaviors for your code helps to protect you from unintentional changes and side effects. Tests will take longer to run than a linter, but are still frequently quicker at catching mistakes than a human. Since automated unit tests are like a contract for behavior, they can also help keep developers unfamiliar with the behavioral contract from making mistakes.</p>
-
-<h3>Debugging Tools</h3>
-
-<p>When automated approaches are insufficient, it’s time to start the manual debugging process. Every programming language has a debugging toolset that can be used to work through code with bugs. Since this post is front-end oriented, we’ll look at browser tools.</p>
-
-<p>You could use JS to alert variables at different times, but this is radically inefficient. Today’s modern browsers have a plethora of tools available to you starting with the debugger keyword for JS code. When the browser’s console is open, the debugger statement acts as a breakpoint; it does nothing otherwise. Although simple, it’s very powerful as it gives easy control of adding/removing breakpoints to step through the code.</p>
-
-<p>Atop the debugger keyword lay all of the browser tools. These enable you to step through code, inspect code, profile code runtimes, inject assertions, and even monitor the network traffic relating to the current page. Different browsers have different tools; below are some guides for debugging in different browsers:</p>
-
-<ul>
-<li><a href="https://developer.chrome.com/devtools">Chrome</a></li>
-<li><a href="https://developer.apple.com/safari/tools/">Safari</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Tools">Firefox</a></li>
-<li><a href="https://developer.microsoft.com/en-us/microsoft-edge/platform/documentation/f12-devtools-guide/">Edge</a></li>
-</ul>
-
-
-<h4>Automated Robustness Testing</h4>
-
-<p>When you are in the process of manually debugging code, it is useful to automate what you can. For example, when testing the IE8 crashes, we used virtual machines and an AutoIt script to recreate and test the scenario as well as to keep logs of what happened for future reference.</p>
-
-<p>Whenever possible, always automate recreating the scenario(s) for testing purposes as it:</p>
-
-<ul>
-<li>Speeds up the process</li>
-<li>Removes human error</li>
-<li>Ensures consistently gathered metrics</li>
-</ul>
-
-
-<h2>Conclusion</h2>
-
-<p>Many bugs will follow the pattern(s) of another bug and this can help you debug them quickly. However, this is not always the case; tools and automated tests will help you speed up your debugging time, but cannot keep you from chasing ghosts.</p>
-
-<p>Remember, the following steps are the key to solving difficult bugs without losing a lot of time and effort:</p>
-
-<ol>
-<li>Isolate the problem</li>
-<li>Automate</li>
-<li>Remove as many variables as possible</li>
-<li>Change one variable at a time</li>
-<li>Test, document, and repeat</li>
-<li>Narrow the scope</li>
-<li>Repeat</li>
-</ol>
-
-
-<p>When faced with a challenging bug watch how much time and effort you give to it. When it’s time to step back and re-evaluate your approach, do so and success will follow.</p>
 ]]></content>
   </entry>
   
