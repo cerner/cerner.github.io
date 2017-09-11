@@ -92,7 +92,7 @@ Judges commented that this project was what the heart of ShipIt Day is all about
   <sub>Team Jumpy Woodchucks.</sub>
 </div>
 
-### People Choice Awards
+### People's Choice Awards
 
 We had a packed house for ShipIt Day presentations. Associates could watch live in the Assembly or catch it on the livestream website.  One of the best parts of ShipIt Day is letting the audience join in on the fun and vote for their favorite team name, best presentation, and favorite project. Congratulations to the following teams...
 
