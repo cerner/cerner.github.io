@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2017-09-08T12:52:43-05:00</updated>
+  <updated>2017-09-11T16:07:03-05:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,149 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ShipIt IX Day: Summer 2017]]></title>
+    <link href="http://engineering.cerner.com/blog/shipit-ix-day-summer-2017/"/>
+    <updated>2017-09-11T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/blog/shipit-ix-day-summer-2017</id>
+    <content type="html"><![CDATA[<p><img class="center" src="http://engineering.cerner.com/assets/2017-09-11-shipit-ix-day-summer-2017/shipit-day-ix-6.jpg"></p>
+
+<p>There is no better way to end summer than with ShipIt Day! We kicked off our ninth ShipIt Day on August 10th, with more than 75 Cerner associates signed up. Nineteen different teams worked for 24 hours straight to complete their projects. For those unfamiliar with the event, ShipIt Day is a 24 hour hackathon for internal associates to create something innovative, usable, and value-adding. This was the second ShipIt held at our new <a href="https://www.bizjournals.com/kansascity/news/2017/02/10/get-a-sneak-peek-inside-cerner-s-new-innovations.html">Innovations Campus</a>. Associates love using our new campus for ShipIt because of the game rooms and collaboration spaces! One new addition to this quarter’s ShipIt Day was the scavenger hunt. Participants were given a list of crazy tasks to accomplish within the 24 hours. Some tasks included spoon feeding a fellow team member, completing the obstacle courses around the outdoor walking trail, and finding binary codes around campus and decoding them. Shoutout to the winners of the scavenger hunt: the Jumpy Woodchucks team!</p>
+
+<div align="center">
+  <img class="center" src="http://engineering.cerner.com/assets/2017-09-11-shipit-ix-day-summer-2017/shipit-day-ix-1.jpg">
+  <sub>Teams were given lots of snacks and drinks to keep them fueled for the next 24 hours.</sub>
+</div>
+
+
+
+
+<div align="center">
+  <img class="center" src="http://engineering.cerner.com/assets/2017-09-11-shipit-ix-day-summer-2017/shipit-day-ix-3.jpg">
+  <sub>Collaboration is key to a successful project.</sub>
+</div>
+
+
+<p>For dinner, we brought in some of the biggest pizzas Kansas City has to offer from Pizza 51. By dinner time the participants were ready to chow down and give their brains a break. Dinner entertainment included <em>School of Rock</em> and <em>Futurama</em>.</p>
+
+<div align="center">
+  <img class="center" src="http://engineering.cerner.com/assets/2017-09-11-shipit-ix-day-summer-2017/shipit-day-ix-11.jpg">
+  <sub>Chaos ensued as everyone runs to grab some pizza!</sub>
+</div>
+
+
+
+
+<div align="center">
+  <img class="center" src="http://engineering.cerner.com/assets/2017-09-11-shipit-ix-day-summer-2017/shipit-day-ix-2.jpg">
+  <sub><i>School of Rock</i> was played during dinner.</sub>
+</div>
+
+
+<p>Associates stayed overnight and worked around the clock to ensure their projects would be complete by presentation time. However, sometimes you just need a nap.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2017-09-11-shipit-ix-day-summer-2017/shipit-day-ix-4.jpg"></p>
+
+<p>Presentation day is always an exciting one. After 24 hours of hard work, the teams have 4 minutes to show off their product to their peers and a panel of rock-star judges. A special thank you to Brian Wallace, Amon Woolridge, and Greg Whitsitt for judging this round.</p>
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2017-09-11-shipit-ix-day-summer-2017/shipit-day-ix-9.jpg">
+        <sub>We always start presentation day off with bagels for breakfast from Panera.</sub>
+      </td>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2017-09-11-shipit-ix-day-summer-2017/shipit-day-ix-12.jpg">
+        <sub>The Prize Table.</sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<h3>Team Bravo Avocado</h3>
+
+<p>ShipIt Day IX teams brought their A game. The projects get more intricate and more impressive each time around. ShipIt Day is a great way to show off the talent we have at Cerner. Team Bravo Avocado, made up of Thomas Clay, Jacob Zimmerman, Jan Monterrubio, Max Schroeder, and Elisha Boozer took first place! Judges were impressed by their live demo and humorous presentation style.</p>
+
+<blockquote><p>Our project was an enhancement for Millennium Java services that removes certain required pieces of server implementation by adding custom annotations. Consumers will no longer have the same restrictions from traditional service generation (i.e. defining a generation file, method naming), because the annotation processor will generate that for them. Also, the framework can bind the structured request/reply objects to an annotated object of their choice. These annotations remove lots of redundant code and gives consumers more time to focus on what matters.</p></blockquote>
+
+<div align="center">
+  <img class="center" src="http://engineering.cerner.com/assets/2017-09-11-shipit-ix-day-summer-2017/shipit-day-ix-8.jpg">
+  <sub>Team Bravo Avocado with the Golden Keyboard.</sub>
+</div>
+
+
+<h3>Team E=MC Hammer</h3>
+
+<p>Second place went to team E=MC Hammer, made up of Kyle Lipke, Nimesh Subramanian, James Boyd, Mahesh Sampekatte, and Megan McConnell.</p>
+
+<blockquote><p>For ShipIt IX, our team E=MC Hammer built a tool that looks up and publishes Millennium OAuth keys. This tool was created to be an easy-to-use, easy-to-search, and updateable source of truth for all those that request and use Millennium OAuth keys. We set up an api that hosts only the data we wish to present, in a read-only &ldquo;MAP&rdquo; so users understand the structure of the data. We had a blast on the project and would recommend attending a ShipIt day yourself!</p></blockquote>
+
+<p>Judge Greg Whitsitt noted that their project was:</p>
+
+<blockquote><p>&hellip;applicable across teams, solves a problem many face. A great idea and great execution.</p></blockquote>
+
+<div align="center">
+  <img class="center" src="http://engineering.cerner.com/assets/2017-09-11-shipit-ix-day-summer-2017/shipit-day-ix-7.jpg">
+  <sub>Team E=MC Hammer.</sub>
+</div>
+
+
+<h3>Team Jumpy Woodchucks</h3>
+
+<p>Team Jumpy Woodchucks, made up of Hans Perera, Nathaniel Owen, Ann Dickey, James Thomas, and Pramoth Murali took third place. Their project was Chamberlain:</p>
+
+<blockquote><p>Light notification system for all your notification needs that decorates your desk. This system currently supports alerts for Microsoft Outlook, Crucible, and Millennium domain health. Designed to be highly customizable and a project for teams to learn about electronics and use of Makerspace.</p></blockquote>
+
+<p>Judges commented that this project was what the heart of ShipIt Day is all about.</p>
+
+<div align="center">
+  <img class="center" src="http://engineering.cerner.com/assets/2017-09-11-shipit-ix-day-summer-2017/shipit-day-ix-5.jpg">
+  <sub>Team Jumpy Woodchucks.</sub>
+</div>
+
+
+<h3>People&rsquo;s Choice Awards</h3>
+
+<p>We had a packed house for ShipIt Day presentations. Associates could watch live in the Assembly or catch it on the livestream website.  One of the best parts of ShipIt Day is letting the audience join in on the fun and vote for their favorite team name, best presentation, and favorite project. Congratulations to the following teams&hellip;</p>
+
+<ul>
+<li><strong>Favorite Team Name</strong>: 🌝 &ndash; Venkatesh Sridharan, Ian Kottman, Anthony Ross, Karthik Nimmagadda, and Abhi Mahabalshetti</li>
+<li><strong>Favorite Project</strong>: Message Therapist &ndash;  Siddhartha Dutta, Ashish Nair, Noah Benham, and James Lawson</li>
+<li><strong>Best Presentation</strong>: Bravo Avocado &ndash; Thomas Clay, Jacob Zimmerman, Jan Monterrubio, Max Schroeder, and Elisha Boozer</li>
+</ul>
+
+
+<div align="center">
+  <img class="center" src="http://engineering.cerner.com/assets/2017-09-11-shipit-ix-day-summer-2017/shipit-day-ix-10.jpg">
+  <sub>The Assembly during presentations.</sub>
+</div>
+
+
+<h3>Summary</h3>
+
+<p>Each ShipIt Day, we see a handful of ShipIt &ldquo;veterans.&rdquo; It is always interesting to hear our associates take on the 24 hour event. Ian Kottman, a software engineer on the Population Health Genomics team, has a lot to say about his experience participating in ShipIt Day.</p>
+
+<blockquote><p>I recently got to take part in one of my favorite events at Cerner: ShipIt Day. This was my fourth ShipIt and I was excited about the project my team had come up with. My team had named ourselves 🌝, which is one of the team member&rsquo;s favorite emoji. We planned to add a UI to a tool we created last ShipIt to manage access to Cerner&rsquo;s Makerspace. Our primary goal this time around was to have fun and win the coveted cheeseballs.</p>
+
+<p>In the short 24 hours we had our team went through all of the stages of a typical software project: design, implementation, realization we overestimated, shedding unneeded features, and finally getting something working. Partway through the day we ran into issues getting Chrome to run in a Docker container and there was a brief incident involving internationalization breaking our error page, but after many whiteboard sessions and late night sodas we completed a working product. We even managed to have time for a few hours of sleep before the presentations. When it was all said and done we had accomplished our goal: we won cheeseballs for best team name! All in all, we had an excellent time collaborating and developing a tool that will be used for a long time to come. I&rsquo;m already thinking about what to work on next ShipIt&hellip;</p></blockquote>
+
+<p>ShipIt continues to be a great way for associates to work on something they haven’t had a chance to work on, build relationships within different organizations, and most importantly, enjoy themselves. ShipIt Day IX was a great success. The projects were creative and have potential to be built upon and used in Cerner’s everyday work flow. We are already looking forward to our next ShipIt Day in December!</p>
+
+<p>If you are interested in learning more about other ShipIt Days, see these earlier posts:</p>
+
+<ul>
+<li><a href="http://engineering.cerner.com/blog/shipit-day-viii-spring-2017/">ShipIt Day VIII Spring 2017</a></li>
+<li><a href="http://engineering.cerner.com/blog/shipit-vii-day-winter-2016/">ShipIt Day VII Winter 2016</a></li>
+<li><a href="https://www.youtube.com/watch?v=iqTp0dmLgUk">ShipIt Day Winter 2016 Highlight Reel</a></li>
+<li><a href="http://engineering.cerner.com/blog/fall-2016-shipit-day/">ShipIt Day Fall 2016</a></li>
+<li><a href="http://engineering.cerner.com/blog/spring-2016-shipit-day/">ShipIt Day Spring 2016</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Continuous Delivery for DC/OS With Spinnaker]]></title>
@@ -1139,128 +1282,6 @@ December!</p>
 <p>Michelle also actively speaks at tech conferences, and has spoken at conferences like OSCON, CityCode, O’Reilly’s Software Architecture Conference, and Strange Loop. Michelle is also a MSU Computer Science Board Member.</p>
 
 <p>Congratulations, Michelle!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[DevCon 2016 Word Cloud]]></title>
-    <link href="http://engineering.cerner.com/blog/devcon-word-cloud/"/>
-    <updated>2016-09-28T00:00:00-05:00</updated>
-    <id>http://engineering.cerner.com/blog/devcon-word-cloud</id>
-    <content type="html"><![CDATA[<p>Every year we hold an internal developers conference called <a href="http://engineering.cerner.com/2013/08/devcon/">DevCon</a>. This year
-we had 295 submissions for talks, ranging from a deep technical dive into the inner workings of Kafka to a reflection on the power of office pranks.‌ I wondered what, if anything, do these submissions have in common? Are there any common themes/topics being discussed? To find out I decided to visualize the talk submissions in a word cloud to create an easily understandable (and hopefully aesthetically pleasing) view of what topics were most common.</p>
-
-<p>The first step was some basic data cleaning so I could get a good set of words to visualize. I used Python to read in the submissions into a single string, lowercase all words, and then remove all common contractions.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># read all submissions into a single string</span>
-</span><span class='line'><span class="n">text</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;./submissions.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># lower case</span>
-</span><span class='line'><span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># remove all contractions to prevent situations like &quot;we&#39;ll&quot; becoming &quot;well&quot; once punctuation is removed</span>
-</span><span class='line'><span class="c"># normally a regex tokenizer could be used for this but that assumes single quote is only ever used</span>
-</span><span class='line'><span class="c"># in contractions</span>
-</span><span class='line'><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">&quot;./resources/contractions.txt&quot;</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
-</span><span class='line'>    <span class="n">contractions</span> <span class="o">=</span> <span class="nb">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
-</span><span class='line'>    <span class="k">for</span> <span class="n">contraction</span> <span class="ow">in</span> <span class="n">contractions</span><span class="p">:</span>
-</span><span class='line'>        <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">contraction</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="n">Next</span> <span class="n">I</span> <span class="n">replaced</span> <span class="nb">all</span> <span class="n">punctuation</span> <span class="k">with</span> <span class="n">spaces</span><span class="o">.</span> <span class="n">I</span> <span class="n">did</span> <span class="ow">not</span> <span class="n">just</span> <span class="n">remove</span> <span class="n">the</span> <span class="n">punctuation</span> <span class="n">so</span> <span class="n">special</span> <span class="n">cases</span> <span class="n">such</span> <span class="k">as</span> <span class="n">hyphenated</span><span class="o">-</span><span class="n">words</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">phrase</span> <span class="s">&quot;and/or&quot;</span> <span class="n">are</span> <span class="n">preserved</span><span class="o">.</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># replace all punctuation with spaces.</span>
-</span><span class='line'><span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">):</span>
-</span><span class='line'>    <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="s">&quot; &quot;</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>At this point I had 32,987 total words. A word cloud of this dataset was too noisy, predominated by common words like &ldquo;the&rdquo; and &ldquo;talk&rdquo;. In natural language processing these unwanted common words are called &ldquo;stop words&rdquo;. To remove them I made a list out of the submissions and then only kept words that were not in a list of common English words, supplemented by words specific to this data set, such as &ldquo;Cerner&rdquo; and &ldquo;presentation&rdquo;.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># get list of all words</span>
-</span><span class='line'><span class="n">submission_words</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">&quot;[^\w]&quot;</span><span class="p">,</span> <span class="s">&quot; &quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># only keep words that are not in the stop words set</span>
-</span><span class='line'><span class="n">stopwords</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;./resources/stopwords.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-</span><span class='line'><span class="n">stopwords_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">))</span>
-</span><span class='line'><span class="n">filtered_word_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">submission_words</span> <span class="k">if</span> <span class="n">w</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stopwords_set</span><span class="p">]</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This left me with a list of 14,291 words and 4,264 distinct words. When visualized I noticed many similar words were taking the highest spots, such as &ldquo;team&rdquo; and &ldquo;teams&rdquo; or &ldquo;technology&rdquo; and &ldquo;technologies&rdquo;. To remove some of this noise I turned to lemmatization. Lemmatization is the process of finding a canonical representation of a word, i.e. its lemma. For example, the lemma for the words &ldquo;runs&rdquo; and &ldquo;running&rdquo; is run. I used the popular Python library Natural Language Toolkit for lemmatization.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">lemmatizer</span> <span class="o">=</span> <span class="n">WordNetLemmatizer</span><span class="p">()</span>
-</span><span class='line'><span class="n">reduced_list</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span class='line'><span class="c"># find the lemma of each word</span>
-</span><span class='line'><span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">filtered_word_list</span><span class="p">:</span>
-</span><span class='line'>  <span class="n">reduced_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lemmatizer</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This reduced the dataset to 3,834 distinct words. Now that the dataset was cleaned, common words filtered out, and similar words combined it was time to create the word cloud using a project called <a href="https://github.com/amueller/word_cloud">word_cloud</a>.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">cloud</span> <span class="o">=</span> <span class="n">WordCloud</span><span class="p">(</span><span class="n">relative_scaling</span><span class="o">=.</span><span class="mi">5</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">760</span><span class="p">)</span>
-</span><span class='line'><span class="n">cloud</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">submissions</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># write to file</span>
-</span><span class='line'><span class="n">cloud</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">),</span> <span class="s">&quot;cloud.png&quot;</span><span class="p">))</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># show word cloud using matplotlib</span>
-</span><span class='line'><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cloud</span><span class="p">)</span>
-</span><span class='line'><span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s">&quot;off&quot;</span><span class="p">)</span>
-</span><span class='line'><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2016-09-28-devcon-word-cloud/word_cloud.png" title="Word Cloud" ></p>
-
-<p>Success! It is obvious what some of the most common themes are, such as &ldquo;data&rdquo; and &ldquo;team&rdquo;. Possible future steps for cleaning up the data would be grouping noun phrases, such as &ldquo;software engineer&rdquo; into single words or possibly removing common spelling mistakes using a spell checking library like <a href="https://pythonhosted.org/pyenchant/">PyEnchant</a>.</p>
-
-<p>You can checkout the full code on <a href="https://github.com/ikottman/devcon-word-cloud">Github</a>.</p>
 ]]></content>
   </entry>
   
