@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2017-09-11T16:07:03-05:00</updated>
+  <updated>2017-09-21T10:05:14-06:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -14,9 +14,42 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Engineers Overseas for SMART and FHIR (FHIR DevDays 2016)]]></title>
+    <link href="http://engineering.cerner.com/blog/engineers-overseas-for-smart-and-fhir/"/>
+    <updated>2017-09-21T00:00:00-06:00</updated>
+    <id>http://engineering.cerner.com/blog/engineers-overseas-for-smart-and-fhir</id>
+    <content type="html"><![CDATA[<p>In a <a href="http://engineering.cerner.com/blog/engineers-on-the-road-for-smart-and-fhir/">previous post</a>, we discussed the need to provide education around our ecosystem and implementation of the <a href="http://hl7.org/fhir/overview-dev.html">FHIRⓇ</a> and <a href="http://docs.smarthealthit.org/">SMARTⓇ</a> standards for developers and how we did so at our annual Cerner Health Conference. That same week, we were also a part of <a href="http://www.fhirdevdays.com/">FHIR DevDays</a>, which included a track entitled &ldquo;Apps in the EHR.&rdquo; We worked alongside track participants who were seeking to integrate their apps in a variety of EHRs, including Cerner.</p>
+
+<p>FHIR DevDays is a conference put on by <a href="http://fhir.furore.com/">Furore</a> in Amsterdam. This year, over 250 participants from all over the world gathered to attend tutorials given by FHIR community leaders in the mornings and participate in hands-on sessions in the afternoons.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2017-09-21-engineers-overseas-for-smart-and-fhir/Devdays_2016.jpg"></p>
+
+<p>Cerner co-led the &ldquo;Apps in the EHR&rdquo; track. This track was comprised of roughly 20 people from across France, Germany, Ireland, Israel, Italy, Netherlands, Norway, Spain, Switzerland, the United Kingdom, and the United States. <a href="https://twitter.com/JoshCMandel">Josh Mandel</a> kicked things off with a tutorial on <a href="http://smarthealthit.org/">SMART</a> and how to <a href="http://docs.smarthealthit.org/">get started</a> building cross-vendor applications. Afterward, we met with track participants to show them how to get plugged into Cerner&rsquo;s sandbox and ecosystem. We started out by covering our <a href="https://code.cerner.com/">documentation launchpoint</a>, registering applications in our <a href="https://code.cerner.com/developer/smart-on-fhir">code console</a>, and going over our <a href="http://fhir.cerner.com/">technical documentation</a>. For those who didn&rsquo;t come to the conference with an existing application to work on, we provided a <a href="http://engineering.cerner.com/smart-on-fhir-tutorial">tutorial</a>. With those tools in hand, they were ready to get to work!</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2017-09-21-engineers-overseas-for-smart-and-fhir/hands-on.jpg"></p>
+
+<br />
+
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2017-09-21-engineers-overseas-for-smart-and-fhir/hands-on2.png"></p>
+
+<p>Over the course of the three afternoons, we assisted people as they used SMART and FHIR for the first time, but also people with experience in FHIR who were looking to get their technical and business questions answered about integrating with Cerner.
+Several of the projects were plugged into multiple sandboxes. The developers shared that once their app was working in one sandbox, it was easy to plug into others, which is exactly how it should be!</p>
+
+<p>When we gave our closing presentation, we actually had some technical difficulties loading up the slides. Little did we know that <a href="https://twitter.com/grahamegrieve">Grahame Grieve</a>, the original architect of FHIR, snapped a picture and would use it shortly in his <a href="https://vimeo.com/192190127">closing keynote</a> on FHIR’s future.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2017-09-21-engineers-overseas-for-smart-and-fhir/closing-keynote.jpg"></p>
+
+<p><a href="https://twitter.com/fhir_furore/status/799626324927053824">With this image on screen</a>, he stated: &ldquo;[to us:] Well done. [to the rest of the audience:] Next time somebody in your acquaintance tells you that certain vendors aren&rsquo;t invested in interoperability, I want you to think about this. That&rsquo;s part of what the FHIR community is about, alright? Cerner and Epic on the stage together. It&rsquo;s not special anymore, even. It&rsquo;s great!&rdquo;</p>
+
+<p>FHIR DevDays is Europe&rsquo;s biggest FHIR conference and many attendees don&rsquo;t typically make it to the tri-annual HL7 Working Group Meetings that focus on the formation and evolution of the specification. We were pleased to be a part of that gathering and to work alongside people interested in engaging with Cerner. But, we were also encouraged by the comments Grahame and others gave as they expressed appreciation that Cerner would be present and show our interest and dedication to the standard. We look forward to being back at DevDays 2017 this November to lead tracks on SMART &amp; FHIR and CDS Hooks.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[ShipIt IX Day: Summer 2017]]></title>
     <link href="http://engineering.cerner.com/blog/shipit-ix-day-summer-2017/"/>
-    <updated>2017-09-11T00:00:00-05:00</updated>
+    <updated>2017-09-11T00:00:00-06:00</updated>
     <id>http://engineering.cerner.com/blog/shipit-ix-day-summer-2017</id>
     <content type="html"><![CDATA[<p><img class="center" src="http://engineering.cerner.com/assets/2017-09-11-shipit-ix-day-summer-2017/shipit-day-ix-6.jpg"></p>
 
@@ -159,7 +192,7 @@
   <entry>
     <title type="html"><![CDATA[Continuous Delivery for DC/OS With Spinnaker]]></title>
     <link href="http://engineering.cerner.com/blog/continuous-delivery-for-dcos-with-spinnaker/"/>
-    <updated>2017-09-08T00:00:00-05:00</updated>
+    <updated>2017-09-08T00:00:00-06:00</updated>
     <id>http://engineering.cerner.com/blog/continuous-delivery-for-dcos-with-spinnaker</id>
     <content type="html"><![CDATA[<p>Last fall our team (<a href="https://github.com/mtweten">Mike Tweten</a>, <a href="https://github.com/TrevinTeacutter">Trevin Teacutter</a>, and <a href="https://github.com/zsura">Zameer Sura</a>) started working on the problem of automating <a href="https://mesosphere.com/product/">DC/OS</a> deployments in a way that wouldn&rsquo;t require multiple teams to duplicate effort and tie themselves directly to DC/OS APIs.  While DC/OS certainly makes the act of deploying an application much easier than anything we&rsquo;ve used previously, there are still many different ways you could choose to layer on deployment strategies and integrate with continuous delivery systems. Additionally, there may be lots of teams with very similar needs in this space and there are certainly more efficient uses of their time than making them all solve the same problems.  Furthermore, while DC/OS is a good choice today we need to make sure that we don’t become locked in and can change our mind in the future without a big impact to those teams.</p>
 
@@ -181,7 +214,7 @@ Spinnaker allows for building deployment pipelines that can be triggered by thin
   <entry>
     <title type="html"><![CDATA[Structure Matters: How Cerner Handled Too Much Health Data in HBase]]></title>
     <link href="http://engineering.cerner.com/blog/structure-matters-how-cerner-handled-too-much-health-data-in-hbase/"/>
-    <updated>2017-08-28T00:00:00-05:00</updated>
+    <updated>2017-08-28T00:00:00-06:00</updated>
     <id>http://engineering.cerner.com/blog/structure-matters-how-cerner-handled-too-much-health-data-in-hbase</id>
     <content type="html"><![CDATA[<h3>Background</h3>
 
@@ -244,7 +277,7 @@ Spinnaker allows for building deployment pipelines that can be triggered by thin
   <entry>
     <title type="html"><![CDATA[Managing Splunk's Knowledge]]></title>
     <link href="http://engineering.cerner.com/blog/managing-splunk-knowledge/"/>
-    <updated>2017-07-14T00:00:00-05:00</updated>
+    <updated>2017-07-14T00:00:00-06:00</updated>
     <id>http://engineering.cerner.com/blog/managing-splunk-knowledge</id>
     <content type="html"><![CDATA[<p>When we first were given access to <a href="https://www.splunk.com/">Splunk</a> we were excited about all the functionality it could provide our team to help us monitor and debug our applications. We created alerts to email us if our applications are logging errors, dashboards to show health or metrics of our services, and field extractions as well as tags to make searching easier. As we created more and more of these Splunk knowledge objects we started to have issues. For regulatory and validation concerns, we have several Splunk instances that represent different environments. This required us to copy and paste or duplicate the Splunk knowledge object we created in one environment to all the others. This became very tedious and we saw all sorts of problems. Objects were only copied to some Splunk instances, updates were sometimes lost, and permissions weren&rsquo;t consistent or someone would forget to make their object publically viewable. We set out to look for a solution.</p>
 
@@ -269,7 +302,7 @@ Spinnaker allows for building deployment pipelines that can be triggered by thin
   <entry>
     <title type="html"><![CDATA[You May Not Be a Polyglot, but Your Code Needs to Be]]></title>
     <link href="http://engineering.cerner.com/blog/you-may-not-be-a-polyglot-but-your-code-needs-to-be/"/>
-    <updated>2017-07-07T00:00:00-05:00</updated>
+    <updated>2017-07-07T00:00:00-06:00</updated>
     <id>http://engineering.cerner.com/blog/you-may-not-be-a-polyglot-but-your-code-needs-to-be</id>
     <content type="html"><![CDATA[<p>Last October, I had the privilege to speak at <a href="https://ghc.anitaborg.org/">Grace Hopper</a>, the world&rsquo;s largest gathering of women technologists. It was impressive to see 15,000 fellow female technologists gather together to share their experiences and technical expertise. To look into the audience, and see a room full of other female engineers was a great experience!</p>
 
@@ -447,7 +480,7 @@ I have endured more than a dozen Kansas City winters, and I still can&rsquo;t ma
   <entry>
     <title type="html"><![CDATA[ShipIt VIII Day: Spring 2017]]></title>
     <link href="http://engineering.cerner.com/blog/shipit-day-viii-spring-2017/"/>
-    <updated>2017-05-17T00:00:00-05:00</updated>
+    <updated>2017-05-17T00:00:00-06:00</updated>
     <id>http://engineering.cerner.com/blog/shipit-day-viii-spring-2017</id>
     <content type="html"><![CDATA[<p><img class="center" src="http://engineering.cerner.com/assets/2017-05-17-shipit-day-viii-spring-2017/pic0.png"></p>
 
@@ -585,7 +618,7 @@ I have endured more than a dozen Kansas City winters, and I still can&rsquo;t ma
   <entry>
     <title type="html"><![CDATA[Influyendo en Una Generación De Jovencitas De Habla Hispana]]></title>
     <link href="http://engineering.cerner.com/blog/influyendo-en-una-generacion-de-jovencitas-de-habla-hispana/"/>
-    <updated>2017-05-11T00:00:00-05:00</updated>
+    <updated>2017-05-11T00:00:00-06:00</updated>
     <id>http://engineering.cerner.com/blog/influyendo-en-una-generacion-de-jovencitas-de-habla-hispana</id>
     <content type="html"><![CDATA[<p>Cuando no están trabajando, Denisse Osorio de Large, Directora de Cerner en Desarrollo de Salud Poblacional y Steven Large, Director sénior de Desarrollo de IP, quienes están casados, tienen como pasión crear una generación joven motivada por la tecnología y mostrarle a la misma el amplio mundo de oportunidades existentes en el desarrollo de software. Además de dar su tiempo como voluntarios en la comunidad promotora del área de ciencias, tecnología, ingeniería y matemáticas (STEM), contribuyen a organizar la conferencia de desarrollo de Cerner (DevCon) y realizan presentaciones en conferencias, Denisse y Steven disfrutan trabajar con niños de la comunidad de habla hispana.</p>
 
@@ -605,7 +638,7 @@ I have endured more than a dozen Kansas City winters, and I still can&rsquo;t ma
   <entry>
     <title type="html"><![CDATA[Influencing the Young, Spanish-speaking Female Generation]]></title>
     <link href="http://engineering.cerner.com/blog/influencing-the-young-spanish-seaking-female-generation/"/>
-    <updated>2017-05-11T00:00:00-05:00</updated>
+    <updated>2017-05-11T00:00:00-06:00</updated>
     <id>http://engineering.cerner.com/blog/influencing-the-young-spanish-seaking-female-generation</id>
     <content type="html"><![CDATA[<p>Outside of work, married couple Denisse Osorio de Large, a Cerner Director in Population Health Development, and Steven Large, a Cerner Senior Director in IP Development, are passionate about creating a younger generation that is passionate about technology and introducing them to the vast world of opportunities in software development. In addition to volunteering in the STEM community, helping organize Cerner’s development conference (DevCon), and speaking at conferences, Denisse and Steven enjoy working with children in the spanish-speaking community.</p>
 
@@ -625,7 +658,7 @@ I have endured more than a dozen Kansas City winters, and I still can&rsquo;t ma
   <entry>
     <title type="html"><![CDATA[One Cerner Style Icons: The Future of Icons at Cerner]]></title>
     <link href="http://engineering.cerner.com/blog/one-cerner-style-icons/"/>
-    <updated>2017-04-06T00:00:00-05:00</updated>
+    <updated>2017-04-06T00:00:00-06:00</updated>
     <id>http://engineering.cerner.com/blog/one-cerner-style-icons</id>
     <content type="html"><![CDATA[<p>One Cerner Style Icons (OCS Icons) are foundational UI elements required to produce a cohesive and consistent User Experience for Cerner Solutions. OCS Icons consist of a comprehensive icon library of platform agnostic assets which can be easily consumed by development teams.</p>
 
@@ -654,7 +687,7 @@ I have endured more than a dozen Kansas City winters, and I still can&rsquo;t ma
   <entry>
     <title type="html"><![CDATA[Version Databag - a Chef Release Process]]></title>
     <link href="http://engineering.cerner.com/blog/version-databag---a-chef-release-process/"/>
-    <updated>2017-04-04T00:00:00-05:00</updated>
+    <updated>2017-04-04T00:00:00-06:00</updated>
     <id>http://engineering.cerner.com/blog/version-databag&#8212;a-chef-release-process</id>
     <content type="html"><![CDATA[<p>At Cerner, we use <a href="https://www.chef.io/">Chef</a>. In fact, we&rsquo;re heavily ingrained with Chef in our <a href="https://en.wikipedia.org/wiki/Software_configuration_management">configuration management practices</a>. We deploy services from <a href="http://engineering.cerner.com/blog/deploying-web-services-with-apache-tomcat-and-chef/">Tomcat</a> to <a href="http://engineering.cerner.com/blog/automated-deployment-with-apache-kafka/">Kafka</a> with Chef. Even the first open source project we announced was <a href="http://engineering.cerner.com/2014/01/cerner-and-open-source/">a tool for Chef</a>!</p>
 
@@ -667,7 +700,7 @@ I have endured more than a dozen Kansas City winters, and I still can&rsquo;t ma
   <entry>
     <title type="html"><![CDATA[Engineers on the Road for SMART and FHIR (CHC 2016)]]></title>
     <link href="http://engineering.cerner.com/blog/engineers-on-the-road-for-smart-and-fhir/"/>
-    <updated>2017-03-24T00:00:00-05:00</updated>
+    <updated>2017-03-24T00:00:00-06:00</updated>
     <id>http://engineering.cerner.com/blog/engineers-on-the-road-for-smart-and-fhir</id>
     <content type="html"><![CDATA[<p>Over the past few years, Cerner has been developing a standards-based platform on top of our Cerner Millennium® EHR.  Rather than roll our own API, we’ve been using the <a href="http://hl7.org/fhir/overview-dev.html">HL7® FHIR® standard</a>.  For app integration, we’ve been using the <a href="http://docs.smarthealthit.org/">SMART® on FHIR specification</a>.  If you’re not immediately familiar with those acronyms, you’re definitely not alone.</p>
 
@@ -694,7 +727,7 @@ I have endured more than a dozen Kansas City winters, and I still can&rsquo;t ma
   <entry>
     <title type="html"><![CDATA[One Cerner Associate's Contributions in the Tech Industry]]></title>
     <link href="http://engineering.cerner.com/blog/micah-whitacre-recognition-blog/"/>
-    <updated>2017-03-16T00:00:00-05:00</updated>
+    <updated>2017-03-16T00:00:00-06:00</updated>
     <id>http://engineering.cerner.com/blog/micah-whitacre-recognition-blog</id>
     <content type="html"><![CDATA[<h3>Background:</h3>
 
@@ -729,7 +762,7 @@ I have endured more than a dozen Kansas City winters, and I still can&rsquo;t ma
   <entry>
     <title type="html"><![CDATA[Automated Deployment With Apache Kafka]]></title>
     <link href="http://engineering.cerner.com/blog/automated-deployment-with-apache-kafka/"/>
-    <updated>2017-02-16T00:00:00-06:00</updated>
+    <updated>2017-02-16T00:00:00-07:00</updated>
     <id>http://engineering.cerner.com/blog/automated-deployment-with-apache-kafka</id>
     <content type="html"><![CDATA[<p>It&rsquo;s likely not a surprise that Cerner would use <a href="http://kafka.apache.org/">Apache Kafka</a>
 as we have used a number of related technologies like <a href="http://engineering.cerner.com/2013/02/composable-mapreduce-with-hadoop-and-crunch/">Apache Hadoop</a>
@@ -759,7 +792,7 @@ and let us know how it works for you.</p>
   <entry>
     <title type="html"><![CDATA[Beadledom - Simple Java Framework for Building REST APIs]]></title>
     <link href="http://engineering.cerner.com/blog/beadledom-simple-java-framework-for-building-rest-apis/"/>
-    <updated>2017-02-15T00:00:00-06:00</updated>
+    <updated>2017-02-15T00:00:00-07:00</updated>
     <id>http://engineering.cerner.com/blog/beadledom-simple-java-framework-for-building-rest-apis</id>
     <content type="html"><![CDATA[<p>Beadledom is a framework for building Java based web services. It bundles several open sourced components required for building JAX-RS services.</p>
 
@@ -807,7 +840,7 @@ Here is the complete list of contributors who made Beadledom awesome.</p>
   <entry>
     <title type="html"><![CDATA[ShipIt VII Day: Winter 2016]]></title>
     <link href="http://engineering.cerner.com/blog/shipit-vii-day-winter-2016/"/>
-    <updated>2017-01-18T00:00:00-06:00</updated>
+    <updated>2017-01-18T00:00:00-07:00</updated>
     <id>http://engineering.cerner.com/blog/shipit-vii-day-winter-2016</id>
     <content type="html"><![CDATA[<p>Cerner’s 7th ShipIt Day took place on December 8th and 9th. ShipIt is a 24-hour hackathon with the
 goal of building something awesome, usable, and value-adding within a single day.  The event was
@@ -989,7 +1022,7 @@ case, with a different group of people. Just a fresh change of pace.</p></blockq
   <entry>
     <title type="html"><![CDATA[Alan and Grace: An Origin Story]]></title>
     <link href="http://engineering.cerner.com/blog/alan-and-grace-an-origin-story/"/>
-    <updated>2016-11-23T00:00:00-06:00</updated>
+    <updated>2016-11-23T00:00:00-07:00</updated>
     <id>http://engineering.cerner.com/blog/alan-and-grace-an-origin-story</id>
     <content type="html"><![CDATA[<p><img class="center" src="http://engineering.cerner.com/assets/2016-11-23-alan-and-grace-an-origin-story/alan-grace.png" title="Alan and Grace" ></p>
 
@@ -1080,7 +1113,7 @@ passionate Cerner engineers dedicated to fostering Cerner’s Engineering cultur
   <entry>
     <title type="html"><![CDATA[Clara Rules Joins Cerner's Open Source]]></title>
     <link href="http://engineering.cerner.com/blog/clara-rules-joins-cerner-open-source/"/>
-    <updated>2016-11-11T00:00:00-06:00</updated>
+    <updated>2016-11-11T00:00:00-07:00</updated>
     <id>http://engineering.cerner.com/blog/clara-rules-joins-cerner-open-source</id>
     <content type="html"><![CDATA[<p>Sometimes a small experiment on the side can grow into something valuable. We at Cerner have long
 used forward-chaining rules engines to express and execute clinical knowledge, but we’ve also had to
@@ -1112,7 +1145,7 @@ documentation on the <a href="http://www.clara-rules.org">clara-rules.org</a> si
   <entry>
     <title type="html"><![CDATA[Fall 2016 ShipIt Day]]></title>
     <link href="http://engineering.cerner.com/blog/fall-2016-shipit-day/"/>
-    <updated>2016-11-08T00:00:00-06:00</updated>
+    <updated>2016-11-08T00:00:00-07:00</updated>
     <id>http://engineering.cerner.com/blog/fall-2016-shipit-day</id>
     <content type="html"><![CDATA[<p>Another ShipIt Day was held on September 8th-9th at the Realization Campus at Cerner. ShipIt is a
 24-hour hackathon with the goal of building something awesome, usable, and value-adding within a
@@ -1194,7 +1227,7 @@ December!</p>
   <entry>
     <title type="html"><![CDATA[Building a Unified UI Component Library: Lessons Learned]]></title>
     <link href="http://engineering.cerner.com/blog/building-a-unified-ui-component-library/"/>
-    <updated>2016-10-13T00:00:00-05:00</updated>
+    <updated>2016-10-13T00:00:00-06:00</updated>
     <id>http://engineering.cerner.com/blog/building-a-unified-ui-component-library</id>
     <content type="html"><![CDATA[<p>Cerner is building an open source, mobile-first user interface component library for healthcare applications. Pulling years of experience and lessons learned across multiple teams together, we are creating something great. We are very excited to bring this solution to the public and to be contributing back to the community!</p>
 
@@ -1263,25 +1296,6 @@ December!</p>
 
 
 <p>We’ve learned a lot and are excited to open source the results of our work and learning. Keep an eye on <a href="https://github.com/cerner/">github.com/cerner</a> and <a href="http://engineering.cerner.com/">engineering.cerner.com</a> while we build out this new library. It’s going to be great!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Michelle Brush Receives the Rising Trendsetter STEMMY Award!]]></title>
-    <link href="http://engineering.cerner.com/blog/michelle-brush-receives-the-rising-trendsetter-stemmy-award/"/>
-    <updated>2016-10-02T00:00:00-05:00</updated>
-    <id>http://engineering.cerner.com/blog/michelle-brush-receives-the-rising-trendsetter-stemmy-award</id>
-    <content type="html"><![CDATA[<p>We are excited to congratulate our own Michelle Brush for receiving the Rising Trendsetter STEMMY award. The Rising Trendsetter Award is given to a woman in STEMM areas with less than 20 years of experience and has demonstrated significant achievements early in their career.</p>
-
-<p>Michelle is a director at Cerner who manages an engineering team in population health as well as a team dedicated to improving Cerner’s development culture. One of Michelle’s most notable career accomplishments was her leadership role in reconstructing Cerner’s software engineer development program in 2013, which she personally oversaw until the end of 2014 (read about the details of this program in her <a href="http://engineering.cerner.com/2013/08/devacademy/">blog</a>). In 2014, she transitioned into an executive role in the Population Health platform, where she fields particularly tricky support issues to help resolve data inconsistencies. Since 2014, Michelle has also managed the Development Culture team at Cerner, a team that focuses on improving associate morale through cultural empowerment, encouraging and providing opportunities for collaboration and innovation, and growing Cerner’s presence in the technical community.</p>
-
-<p>Michelle actively promotes women entering and growing their STEMM careers through her leadership in the community and at Cerner. She is an integral member of Cerner’s women in tech committee, which has the goal to provide development, networking and leadership opportunities to women in technical roles in a supportive and inclusive environment that promotes authenticity and values differences. Additionally, she is a member of several other leadership councils ranging from helping design the new software engineer campus, improving development culture across the company, and intern planning.</p>
-
-<p>In the community, Michelle is also a local chapter leader of <a href="https://www.girldevelopit.com/chapters/kansas-city">Girl Develop It</a>, a nonprofit organization that provides affordable programs for adult women interested in learning web and software development. Michelle is also an organizer of <a href="http://www.midwest.io/">Midwest.io</a>, a two-day industry tech conference in Kansas City that brings together developers across the Midwest for an eclectic collection of talks covering the latest trends, best practices, and research in the field of computing. As a member of the organizing team, she defines the vision for the conference, which includes finding speakers, promoting the conference in the industry, and ensuring diversity is top of mind at the conference.</p>
-
-<p>Michelle also actively speaks at tech conferences, and has spoken at conferences like OSCON, CityCode, O’Reilly’s Software Architecture Conference, and Strange Loop. Michelle is also a MSU Computer Science Board Member.</p>
-
-<p>Congratulations, Michelle!</p>
 ]]></content>
   </entry>
   
