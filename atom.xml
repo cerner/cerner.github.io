@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2017-09-21T10:05:14-06:00</updated>
+  <updated>2017-09-27T08:55:09-05:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -14,9 +14,32 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Jwala Joins Cerner's Open Source]]></title>
+    <link href="http://engineering.cerner.com/blog/jwala-joins-cerner-open-source/"/>
+    <updated>2017-09-27T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/blog/jwala-joins-cerner-open-source</id>
+    <content type="html"><![CDATA[<h3>Introducing Jwala, a Resource Manager for the Apache Community</h3>
+
+<p><a href="http://tomcat.apache.org/">Apache Tomcat</a> and <a href="https://httpd.apache.org/">Apache httpd</a> are hardened, scalable, and reliable open-source solutions. Widely adopted, these solutions are commonly used to host and load-balance Java applications.</p>
+
+<p>Configuring and managing a small set of elements is relatively easy, but once you start scaling out your application and platform, things get complicated. Questions such as &ldquo;How do I update the heap or database pool-size across hundreds of Java Virtual Machines (JVMs)?&rdquo; arise. Although commercial solutions exist to solve this and other similar problems, an open-source solution was not available &ndash; until now.</p>
+
+<p>Originally designed and developed to accommodate Cerner&rsquo;s complex topologies, Jwala was developed to automate deploying our web applications here at Cerner. Now Cerner is donating Jwala as open source. Making contributions to development communities is an important part of Cerner&rsquo;s engineering culture. We love it when we&rsquo;re able to give back to the community, and we&rsquo;re sure you&rsquo;ll love Jwala!</p>
+
+<p>A Cerner platform based on Apache Tomcat and Apache httpd, Jwala enables the configuration, deployment, and management of logical groups of Tomcat JVMs load-balanced by Apache web servers.</p>
+
+<p>With Jwala you can configure, deploy, and manage your large-scale Tomcat and Apache httpd topology at an enterprise scale. You can create and persist definitions of Group instances that include web applications, JVMs, web servers, and other resources, and expose them through a RESTful interface, Jwala&rsquo;s REST API, to perform management operations on the group.</p>
+
+<p>Jwala utilizes a defined file system structure and Secure Shell (SSH) agents on each machine to manage running Tomcat instances on remote servers. Jwala&rsquo;s application deployment model knows how to request current status from each Tomcat and httpd instance. Jwala also is able to update each instance as changes are made to the configuration and allows maintenance operations to be executed from a central console. Last but not least, Jwala maintains an audit log of all the operations or changes performed on any of its managed resources.</p>
+
+<p>So, if you are someone in development, operations, or management looking for an easier way to configure and manage a large Tomcat topology, <a href="https://github.com/cerner/jwala">check out Jwala</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Engineers Overseas for SMART and FHIR (FHIR DevDays 2016)]]></title>
     <link href="http://engineering.cerner.com/blog/engineers-overseas-for-smart-and-fhir/"/>
-    <updated>2017-09-21T00:00:00-06:00</updated>
+    <updated>2017-09-21T00:00:00-05:00</updated>
     <id>http://engineering.cerner.com/blog/engineers-overseas-for-smart-and-fhir</id>
     <content type="html"><![CDATA[<p>In a <a href="http://engineering.cerner.com/blog/engineers-on-the-road-for-smart-and-fhir/">previous post</a>, we discussed the need to provide education around our ecosystem and implementation of the <a href="http://hl7.org/fhir/overview-dev.html">FHIRⓇ</a> and <a href="http://docs.smarthealthit.org/">SMARTⓇ</a> standards for developers and how we did so at our annual Cerner Health Conference. That same week, we were also a part of <a href="http://www.fhirdevdays.com/">FHIR DevDays</a>, which included a track entitled &ldquo;Apps in the EHR.&rdquo; We worked alongside track participants who were seeking to integrate their apps in a variety of EHRs, including Cerner.</p>
 
@@ -49,7 +72,7 @@ Several of the projects were plugged into multiple sandboxes. The developers sha
   <entry>
     <title type="html"><![CDATA[ShipIt IX Day: Summer 2017]]></title>
     <link href="http://engineering.cerner.com/blog/shipit-ix-day-summer-2017/"/>
-    <updated>2017-09-11T00:00:00-06:00</updated>
+    <updated>2017-09-11T00:00:00-05:00</updated>
     <id>http://engineering.cerner.com/blog/shipit-ix-day-summer-2017</id>
     <content type="html"><![CDATA[<p><img class="center" src="http://engineering.cerner.com/assets/2017-09-11-shipit-ix-day-summer-2017/shipit-day-ix-6.jpg"></p>
 
@@ -192,7 +215,7 @@ Several of the projects were plugged into multiple sandboxes. The developers sha
   <entry>
     <title type="html"><![CDATA[Continuous Delivery for DC/OS With Spinnaker]]></title>
     <link href="http://engineering.cerner.com/blog/continuous-delivery-for-dcos-with-spinnaker/"/>
-    <updated>2017-09-08T00:00:00-06:00</updated>
+    <updated>2017-09-08T00:00:00-05:00</updated>
     <id>http://engineering.cerner.com/blog/continuous-delivery-for-dcos-with-spinnaker</id>
     <content type="html"><![CDATA[<p>Last fall our team (<a href="https://github.com/mtweten">Mike Tweten</a>, <a href="https://github.com/TrevinTeacutter">Trevin Teacutter</a>, and <a href="https://github.com/zsura">Zameer Sura</a>) started working on the problem of automating <a href="https://mesosphere.com/product/">DC/OS</a> deployments in a way that wouldn&rsquo;t require multiple teams to duplicate effort and tie themselves directly to DC/OS APIs.  While DC/OS certainly makes the act of deploying an application much easier than anything we&rsquo;ve used previously, there are still many different ways you could choose to layer on deployment strategies and integrate with continuous delivery systems. Additionally, there may be lots of teams with very similar needs in this space and there are certainly more efficient uses of their time than making them all solve the same problems.  Furthermore, while DC/OS is a good choice today we need to make sure that we don’t become locked in and can change our mind in the future without a big impact to those teams.</p>
 
@@ -214,7 +237,7 @@ Spinnaker allows for building deployment pipelines that can be triggered by thin
   <entry>
     <title type="html"><![CDATA[Structure Matters: How Cerner Handled Too Much Health Data in HBase]]></title>
     <link href="http://engineering.cerner.com/blog/structure-matters-how-cerner-handled-too-much-health-data-in-hbase/"/>
-    <updated>2017-08-28T00:00:00-06:00</updated>
+    <updated>2017-08-28T00:00:00-05:00</updated>
     <id>http://engineering.cerner.com/blog/structure-matters-how-cerner-handled-too-much-health-data-in-hbase</id>
     <content type="html"><![CDATA[<h3>Background</h3>
 
@@ -277,7 +300,7 @@ Spinnaker allows for building deployment pipelines that can be triggered by thin
   <entry>
     <title type="html"><![CDATA[Managing Splunk's Knowledge]]></title>
     <link href="http://engineering.cerner.com/blog/managing-splunk-knowledge/"/>
-    <updated>2017-07-14T00:00:00-06:00</updated>
+    <updated>2017-07-14T00:00:00-05:00</updated>
     <id>http://engineering.cerner.com/blog/managing-splunk-knowledge</id>
     <content type="html"><![CDATA[<p>When we first were given access to <a href="https://www.splunk.com/">Splunk</a> we were excited about all the functionality it could provide our team to help us monitor and debug our applications. We created alerts to email us if our applications are logging errors, dashboards to show health or metrics of our services, and field extractions as well as tags to make searching easier. As we created more and more of these Splunk knowledge objects we started to have issues. For regulatory and validation concerns, we have several Splunk instances that represent different environments. This required us to copy and paste or duplicate the Splunk knowledge object we created in one environment to all the others. This became very tedious and we saw all sorts of problems. Objects were only copied to some Splunk instances, updates were sometimes lost, and permissions weren&rsquo;t consistent or someone would forget to make their object publically viewable. We set out to look for a solution.</p>
 
@@ -302,7 +325,7 @@ Spinnaker allows for building deployment pipelines that can be triggered by thin
   <entry>
     <title type="html"><![CDATA[You May Not Be a Polyglot, but Your Code Needs to Be]]></title>
     <link href="http://engineering.cerner.com/blog/you-may-not-be-a-polyglot-but-your-code-needs-to-be/"/>
-    <updated>2017-07-07T00:00:00-06:00</updated>
+    <updated>2017-07-07T00:00:00-05:00</updated>
     <id>http://engineering.cerner.com/blog/you-may-not-be-a-polyglot-but-your-code-needs-to-be</id>
     <content type="html"><![CDATA[<p>Last October, I had the privilege to speak at <a href="https://ghc.anitaborg.org/">Grace Hopper</a>, the world&rsquo;s largest gathering of women technologists. It was impressive to see 15,000 fellow female technologists gather together to share their experiences and technical expertise. To look into the audience, and see a room full of other female engineers was a great experience!</p>
 
@@ -480,7 +503,7 @@ I have endured more than a dozen Kansas City winters, and I still can&rsquo;t ma
   <entry>
     <title type="html"><![CDATA[ShipIt VIII Day: Spring 2017]]></title>
     <link href="http://engineering.cerner.com/blog/shipit-day-viii-spring-2017/"/>
-    <updated>2017-05-17T00:00:00-06:00</updated>
+    <updated>2017-05-17T00:00:00-05:00</updated>
     <id>http://engineering.cerner.com/blog/shipit-day-viii-spring-2017</id>
     <content type="html"><![CDATA[<p><img class="center" src="http://engineering.cerner.com/assets/2017-05-17-shipit-day-viii-spring-2017/pic0.png"></p>
 
@@ -618,7 +641,7 @@ I have endured more than a dozen Kansas City winters, and I still can&rsquo;t ma
   <entry>
     <title type="html"><![CDATA[Influyendo en Una Generación De Jovencitas De Habla Hispana]]></title>
     <link href="http://engineering.cerner.com/blog/influyendo-en-una-generacion-de-jovencitas-de-habla-hispana/"/>
-    <updated>2017-05-11T00:00:00-06:00</updated>
+    <updated>2017-05-11T00:00:00-05:00</updated>
     <id>http://engineering.cerner.com/blog/influyendo-en-una-generacion-de-jovencitas-de-habla-hispana</id>
     <content type="html"><![CDATA[<p>Cuando no están trabajando, Denisse Osorio de Large, Directora de Cerner en Desarrollo de Salud Poblacional y Steven Large, Director sénior de Desarrollo de IP, quienes están casados, tienen como pasión crear una generación joven motivada por la tecnología y mostrarle a la misma el amplio mundo de oportunidades existentes en el desarrollo de software. Además de dar su tiempo como voluntarios en la comunidad promotora del área de ciencias, tecnología, ingeniería y matemáticas (STEM), contribuyen a organizar la conferencia de desarrollo de Cerner (DevCon) y realizan presentaciones en conferencias, Denisse y Steven disfrutan trabajar con niños de la comunidad de habla hispana.</p>
 
@@ -638,7 +661,7 @@ I have endured more than a dozen Kansas City winters, and I still can&rsquo;t ma
   <entry>
     <title type="html"><![CDATA[Influencing the Young, Spanish-speaking Female Generation]]></title>
     <link href="http://engineering.cerner.com/blog/influencing-the-young-spanish-seaking-female-generation/"/>
-    <updated>2017-05-11T00:00:00-06:00</updated>
+    <updated>2017-05-11T00:00:00-05:00</updated>
     <id>http://engineering.cerner.com/blog/influencing-the-young-spanish-seaking-female-generation</id>
     <content type="html"><![CDATA[<p>Outside of work, married couple Denisse Osorio de Large, a Cerner Director in Population Health Development, and Steven Large, a Cerner Senior Director in IP Development, are passionate about creating a younger generation that is passionate about technology and introducing them to the vast world of opportunities in software development. In addition to volunteering in the STEM community, helping organize Cerner’s development conference (DevCon), and speaking at conferences, Denisse and Steven enjoy working with children in the spanish-speaking community.</p>
 
@@ -658,7 +681,7 @@ I have endured more than a dozen Kansas City winters, and I still can&rsquo;t ma
   <entry>
     <title type="html"><![CDATA[One Cerner Style Icons: The Future of Icons at Cerner]]></title>
     <link href="http://engineering.cerner.com/blog/one-cerner-style-icons/"/>
-    <updated>2017-04-06T00:00:00-06:00</updated>
+    <updated>2017-04-06T00:00:00-05:00</updated>
     <id>http://engineering.cerner.com/blog/one-cerner-style-icons</id>
     <content type="html"><![CDATA[<p>One Cerner Style Icons (OCS Icons) are foundational UI elements required to produce a cohesive and consistent User Experience for Cerner Solutions. OCS Icons consist of a comprehensive icon library of platform agnostic assets which can be easily consumed by development teams.</p>
 
@@ -687,7 +710,7 @@ I have endured more than a dozen Kansas City winters, and I still can&rsquo;t ma
   <entry>
     <title type="html"><![CDATA[Version Databag - a Chef Release Process]]></title>
     <link href="http://engineering.cerner.com/blog/version-databag---a-chef-release-process/"/>
-    <updated>2017-04-04T00:00:00-06:00</updated>
+    <updated>2017-04-04T00:00:00-05:00</updated>
     <id>http://engineering.cerner.com/blog/version-databag&#8212;a-chef-release-process</id>
     <content type="html"><![CDATA[<p>At Cerner, we use <a href="https://www.chef.io/">Chef</a>. In fact, we&rsquo;re heavily ingrained with Chef in our <a href="https://en.wikipedia.org/wiki/Software_configuration_management">configuration management practices</a>. We deploy services from <a href="http://engineering.cerner.com/blog/deploying-web-services-with-apache-tomcat-and-chef/">Tomcat</a> to <a href="http://engineering.cerner.com/blog/automated-deployment-with-apache-kafka/">Kafka</a> with Chef. Even the first open source project we announced was <a href="http://engineering.cerner.com/2014/01/cerner-and-open-source/">a tool for Chef</a>!</p>
 
@@ -700,7 +723,7 @@ I have endured more than a dozen Kansas City winters, and I still can&rsquo;t ma
   <entry>
     <title type="html"><![CDATA[Engineers on the Road for SMART and FHIR (CHC 2016)]]></title>
     <link href="http://engineering.cerner.com/blog/engineers-on-the-road-for-smart-and-fhir/"/>
-    <updated>2017-03-24T00:00:00-06:00</updated>
+    <updated>2017-03-24T00:00:00-05:00</updated>
     <id>http://engineering.cerner.com/blog/engineers-on-the-road-for-smart-and-fhir</id>
     <content type="html"><![CDATA[<p>Over the past few years, Cerner has been developing a standards-based platform on top of our Cerner Millennium® EHR.  Rather than roll our own API, we’ve been using the <a href="http://hl7.org/fhir/overview-dev.html">HL7® FHIR® standard</a>.  For app integration, we’ve been using the <a href="http://docs.smarthealthit.org/">SMART® on FHIR specification</a>.  If you’re not immediately familiar with those acronyms, you’re definitely not alone.</p>
 
@@ -727,7 +750,7 @@ I have endured more than a dozen Kansas City winters, and I still can&rsquo;t ma
   <entry>
     <title type="html"><![CDATA[One Cerner Associate's Contributions in the Tech Industry]]></title>
     <link href="http://engineering.cerner.com/blog/micah-whitacre-recognition-blog/"/>
-    <updated>2017-03-16T00:00:00-06:00</updated>
+    <updated>2017-03-16T00:00:00-05:00</updated>
     <id>http://engineering.cerner.com/blog/micah-whitacre-recognition-blog</id>
     <content type="html"><![CDATA[<h3>Background:</h3>
 
@@ -762,7 +785,7 @@ I have endured more than a dozen Kansas City winters, and I still can&rsquo;t ma
   <entry>
     <title type="html"><![CDATA[Automated Deployment With Apache Kafka]]></title>
     <link href="http://engineering.cerner.com/blog/automated-deployment-with-apache-kafka/"/>
-    <updated>2017-02-16T00:00:00-07:00</updated>
+    <updated>2017-02-16T00:00:00-06:00</updated>
     <id>http://engineering.cerner.com/blog/automated-deployment-with-apache-kafka</id>
     <content type="html"><![CDATA[<p>It&rsquo;s likely not a surprise that Cerner would use <a href="http://kafka.apache.org/">Apache Kafka</a>
 as we have used a number of related technologies like <a href="http://engineering.cerner.com/2013/02/composable-mapreduce-with-hadoop-and-crunch/">Apache Hadoop</a>
@@ -792,7 +815,7 @@ and let us know how it works for you.</p>
   <entry>
     <title type="html"><![CDATA[Beadledom - Simple Java Framework for Building REST APIs]]></title>
     <link href="http://engineering.cerner.com/blog/beadledom-simple-java-framework-for-building-rest-apis/"/>
-    <updated>2017-02-15T00:00:00-07:00</updated>
+    <updated>2017-02-15T00:00:00-06:00</updated>
     <id>http://engineering.cerner.com/blog/beadledom-simple-java-framework-for-building-rest-apis</id>
     <content type="html"><![CDATA[<p>Beadledom is a framework for building Java based web services. It bundles several open sourced components required for building JAX-RS services.</p>
 
@@ -840,7 +863,7 @@ Here is the complete list of contributors who made Beadledom awesome.</p>
   <entry>
     <title type="html"><![CDATA[ShipIt VII Day: Winter 2016]]></title>
     <link href="http://engineering.cerner.com/blog/shipit-vii-day-winter-2016/"/>
-    <updated>2017-01-18T00:00:00-07:00</updated>
+    <updated>2017-01-18T00:00:00-06:00</updated>
     <id>http://engineering.cerner.com/blog/shipit-vii-day-winter-2016</id>
     <content type="html"><![CDATA[<p>Cerner’s 7th ShipIt Day took place on December 8th and 9th. ShipIt is a 24-hour hackathon with the
 goal of building something awesome, usable, and value-adding within a single day.  The event was
@@ -1022,7 +1045,7 @@ case, with a different group of people. Just a fresh change of pace.</p></blockq
   <entry>
     <title type="html"><![CDATA[Alan and Grace: An Origin Story]]></title>
     <link href="http://engineering.cerner.com/blog/alan-and-grace-an-origin-story/"/>
-    <updated>2016-11-23T00:00:00-07:00</updated>
+    <updated>2016-11-23T00:00:00-06:00</updated>
     <id>http://engineering.cerner.com/blog/alan-and-grace-an-origin-story</id>
     <content type="html"><![CDATA[<p><img class="center" src="http://engineering.cerner.com/assets/2016-11-23-alan-and-grace-an-origin-story/alan-grace.png" title="Alan and Grace" ></p>
 
@@ -1113,7 +1136,7 @@ passionate Cerner engineers dedicated to fostering Cerner’s Engineering cultur
   <entry>
     <title type="html"><![CDATA[Clara Rules Joins Cerner's Open Source]]></title>
     <link href="http://engineering.cerner.com/blog/clara-rules-joins-cerner-open-source/"/>
-    <updated>2016-11-11T00:00:00-07:00</updated>
+    <updated>2016-11-11T00:00:00-06:00</updated>
     <id>http://engineering.cerner.com/blog/clara-rules-joins-cerner-open-source</id>
     <content type="html"><![CDATA[<p>Sometimes a small experiment on the side can grow into something valuable. We at Cerner have long
 used forward-chaining rules engines to express and execute clinical knowledge, but we’ve also had to
@@ -1145,7 +1168,7 @@ documentation on the <a href="http://www.clara-rules.org">clara-rules.org</a> si
   <entry>
     <title type="html"><![CDATA[Fall 2016 ShipIt Day]]></title>
     <link href="http://engineering.cerner.com/blog/fall-2016-shipit-day/"/>
-    <updated>2016-11-08T00:00:00-07:00</updated>
+    <updated>2016-11-08T00:00:00-06:00</updated>
     <id>http://engineering.cerner.com/blog/fall-2016-shipit-day</id>
     <content type="html"><![CDATA[<p>Another ShipIt Day was held on September 8th-9th at the Realization Campus at Cerner. ShipIt is a
 24-hour hackathon with the goal of building something awesome, usable, and value-adding within a
@@ -1221,81 +1244,6 @@ creating test data more easily and efficiently for anyone on our team to consume
 December!</p>
 
 <p><img class="center" src="http://engineering.cerner.com/assets/2016-11-08-fall-2016-shipit-day/shipit-winners.jpg" title="Winners" ></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Building a Unified UI Component Library: Lessons Learned]]></title>
-    <link href="http://engineering.cerner.com/blog/building-a-unified-ui-component-library/"/>
-    <updated>2016-10-13T00:00:00-06:00</updated>
-    <id>http://engineering.cerner.com/blog/building-a-unified-ui-component-library</id>
-    <content type="html"><![CDATA[<p>Cerner is building an open source, mobile-first user interface component library for healthcare applications. Pulling years of experience and lessons learned across multiple teams together, we are creating something great. We are very excited to bring this solution to the public and to be contributing back to the community!</p>
-
-<p>We didn’t simply decide to create this library, we started with segmented UI libraries focused on different aspects of the company which had smaller isolated needs. Mistakes were made along the way and we have learned much from them. Let’s take a look at where we started and how we got to where we are now.</p>
-
-<h2>History</h2>
-
-<p>In 2013, a group of engineers with strong front-end skills was put together with the task of creating a reusable component library for Cerner’s HealtheIntent platform. Twitter Bootstrap was used initially, but quickly outgrown as the needs and designs of UX expanded. The project this team built is called Blue Steel. It featured everything from simple typography to interactive data visualizations while adhering to UX guidelines and requirements.</p>
-
-<p>Blue Steel is a Rails gem that provides some basic helpers, CSS, JavaScript, and site templates to simplify layout and correct HTML usage. Blue Steel abstracts complex components to keep things simple and because we didn’t feel it was necessary to abstract native HTML elements.</p>
-
-<p>In its infancy, the project was well received; other platforms saw the value and wanted to take advantage of the work being done. To accommodate the additional platforms, Blue Steel was merged with another internal UI library called Style Guide. The best features of each library were pulled together, sometimes one overriding the other, sometimes merging feature sets. The merged project was called Terra.</p>
-
-<h2>Problems</h2>
-
-<p>The approach of merging existing components saved time up-front, but came with a steep cost. The library was fragmented in the approaches taken during design and development. As such, it became difficult to work on without pre-existing familiarity. It was fairly obvious that we put two frameworks together on a time constraint.</p>
-
-<p>Blue Steel still exists but is comprised primarily of Terra components. It persists to provide HealtheIntent-specific styles and functionality, while also being a Rails wrapper around Terra. Terra has been historically kept below version 1.0.0 for rapid development, while Blue Steel has been above 1.0.0. This strategy has caused a lot of pain for the consumers of both Terra and Blue Steel.</p>
-
-<p>Keeping Terra below version 1.0.0 allowed breaking changes to occur without cutting a major release. Although this made development easier in some aspects, it damaged consumer trust. We always attempted to communicate breaking changes, but it didn’t always happen and it wasn’t always clear. Any time a team had to upgrade, they had to be prepared to fix their application which caused them not to trust us.</p>
-
-<p>The issue was even worse in Blue Steel since it had to accommodate for Terra’s breaking changes. Blue Steel would consume a version of Terra with breaking changes and would still release as a minor update by providing styles and hooks to work around the breaking changes. Deprecation schedules and documentation were written to help keep Blue Steel backwards compatible. Unfortunately, it often wasn’t; sometimes, breaking changes would only manifest in an application.</p>
-
-<p>Blue Steel and Terra were both tested separately with their own documentation sites. These tests were extensive and thorough but could not accommodate the complexity of the various applications consuming them. Breaking changes would creep into applications even when we thought everything was backwards compatible in Blue Steel.</p>
-
-<p>In Terra, the preference was to style on HTML elements, states, and ARIA-roles whenever possible since they carried far more meaning than CSS classes. Unfortunately, this form of styling is somewhat global in nature. It was easy for style collisions to occur between components within Terra, consumer styles, and 3rd party libraries.</p>
-
-<p>Terra was developed in such a way that it discouraged consumers from building custom components. The thinking was that applications would write little to no custom CSS or JavaScript. This didn’t scale well as needs evolved and application developers had to move ahead of the UI library. Terra components had a very high CSS specificity and were difficult to override which forced consumers to write even more complex CSS to override it. In turn, many bugs were introduced to consumer applications.</p>
-
-<p>Terra was also built as a monolith with very little modularity in place. Consumers had the option of taking it all, figuring out how to make a custom build, or not using it. This caused applications which only needed a subset of functionality to become bloated.</p>
-
-<h2>Solutions</h2>
-
-<p>Today, Terra is in the process of being open sourced. We’ve looked extensively at the issues above and are taking measures to address all of them:</p>
-
-<ul>
-<li>Each component is in its own repository.</li>
-<li>The SUIT CSS convention is being used for all Terra components.</li>
-<li>Base componentry is being developed first.</li>
-<li>Components are being kept minimal and composable.</li>
-<li>Each component is being built to be a minimum viable product and released as 1.0.0 to follow <a href="http://semver.org/">SemVer</a> up front.</li>
-<li>Only as components become complex and specific do we introduce framework opinionation. Base components will be framework agnostic.</li>
-<li>Everything will have helpers to abstract underlying HTML structures.</li>
-</ul>
-
-
-<p>SUIT CSS bans the use of styling hooks which are considered global and effectively breaks the cascade in a global sense (you can leverage it within a component). At the root node of each component, only classes can be used. As a result, consumers can rest easy knowing that styles will not leak out of components and they have low specificity which allows them to be overridden as needed.</p>
-
-<p>By starting with base components (buttons, images, etc), we effectively create a set of building blocks to build more complex web components. By keeping them small, composable, and framework agnostic, they can be used anywhere with confidence. Following <a href="http://semver.org/">SemVer</a> from the start will boost consumer confidence when using our components.</p>
-
-<p>Introducing opinion into more complex components enables us to build better and more maintainable components with our most common use cases in mind. This does not preclude consumers who do not wish to consume the frameworks and libraries we use. By keeping each component in its own repository, it’s possible to create alternative versions of componentry to meet application needs. Additionally, keeping each component in its own repo allows for individual versioning, limiting scope of change, and makes it very easy for consumers to omit what they don’t need.</p>
-
-<p>Finally, providing helpers for all components will enable easy and consistent development. It will be possible to build complex components solely out of the smaller components leveraging helpers to output the correct HTML. The abstraction also makes it possible to update the implementation in a compatible way while making it so developers don’t have to be aware of complexities like semantic HTML and accessibility. This will enable developers to build solid applications easily and quickly.</p>
-
-<h2>Lessons Learned</h2>
-
-<ul>
-<li>When creating a reusable library, avoid global state or styles.</li>
-<li>Create an abstraction or facade to the underlying implementation regardless of simplicity.</li>
-<li>Keep your library modular.</li>
-<li>Start with <a href="http://semver.org/">SemVer</a> and stick to it.</li>
-<li>Start simple then reuse and compose.</li>
-<li>Keep your library cohesive by developing consistently across components.</li>
-<li>Don’t build with any particular framework(s) in mind when you can; the web is constantly evolving.</li>
-</ul>
-
-
-<p>We’ve learned a lot and are excited to open source the results of our work and learning. Keep an eye on <a href="https://github.com/cerner/">github.com/cerner</a> and <a href="http://engineering.cerner.com/">engineering.cerner.com</a> while we build out this new library. It’s going to be great!</p>
 ]]></content>
   </entry>
   
