@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2017-09-27T08:55:09-05:00</updated>
+  <updated>2017-10-09T10:27:21-05:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,61 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Accessibility and Usability: On the Road to Great UX]]></title>
+    <link href="http://engineering.cerner.com/blog/accessibility-and-usability-on-the-road-to-great-ux/"/>
+    <updated>2017-10-09T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/blog/accessibility-and-usability-on-the-road-to-great-ux</id>
+    <content type="html"><![CDATA[<p>In 2010, a group of designers from Columbus, Ohio set out to create a grassroots, cross-discipline, and creative conference. Since that first event, Midwest UX has been an ongoing tradition that attracts innovative ideas and provides an opportunity for regional professions to engage in discussion with other professionals. Last year, Amber Wilks and Dr. Becca Green were invited to take their talk from DevCon 2016 on the road to Midwest UX. On October 20, 2016, they presented Accessibility &amp; Usability: The Equality of Experience in Louisville, KY.</p>
+
+<p>At Midwest UX, the talk covered all of the great content from DevCon enhanced by examples of how accessibility specifically affects our solutions used by our consumer market or clinical staff. Each point covered demonstrated how UX and development work together to achieve an accessible software solution and the importance of crafting equally awesome experiences for all of our users. When people talk about accessibility, there are some common myths that go along with the topic. So the talks starts off by covering three myths of accessibility that have impacted the health care community, and Cerner in particular.</p>
+
+<p>The first myth covered was that project teams look at accessibility as a minefield they must cross to achieve accessible software. The truth is that it is simply a blend of legislation and regulation that aims to eliminate barriers in technology for people with disabilities. In fact there are two main forms of standards used in the U.S. to define accessible content, Section 508 and W3&rsquo;s Web Content Accessibility Guidelines. While they serve similar purposes, there are some very key differences. They different in terms of the technology they cover, the organization of the guidelines, and their application. However, they are just a small part of a landscape of legislation and regulation that make up accessibility.</p>
+
+<p>The second myth covered the assumption that accessibility is all about screen readers and alt tags. In reality, screen readers are just a small subset of assistive technologies. Low-vision or blind users only make up a small slice of all U.S. citizens with disabilities. There are a variety of assistive technologies to aid every type of disability. The third and final myth we covered is specific to the healthcare industry; that clinicians aren&rsquo;t disabled so accessibility isn&rsquo;t a priority for our users. The truth is that clinicians are not immune to disabilities. In fact, a study in the British Journal of General Practice that found that the proportion of male doctors with color vision deficiency was at 8%, in line with the percentage of the general population.</p>
+
+<p>As the guidelines for accessibility have evolved, so has the organization of these guidelines such that they can now be organized into 4 tenant principles: perceivable, operable, understandable, and robust.</p>
+
+<h3>Perceivable</h3>
+
+<p>Information and UI components must be presented in ways users can perceive. In other words, information can&rsquo;t be invisible. We do that by making information distinguishable and by providing alternative forms of content.</p>
+
+<p>To make information distinguishable, the foundations involve color math and text zoom. To create distinguishable information using color there are two mathematical calculations that can be used to ensure the content is both legible and discernible. To ensure the content is legible, Cerner follows WCAG&rsquo;s (Web Content Accessibility Guidelines) color contrast guidelines include Guideline 1.4.3, which states that &ldquo;the visual presentation of text and images of text has a contrast ration of at least 4.5:1.&rdquo; To check if your information is legible, the WCAG recommends using the WebAIM Color Contrast Checker. This tool simply requires that you enter in your text, or foreground, color and background color and it will tell you to what degree you meet the contrast guidelines.</p>
+
+<p>The second calculation ensures users can perceive changes in the content. While this calculation is not part of accessibility guidelines, we leverage the calculation as a baseline metric for interaction indications (i.e., hovers, click states, icons, etc.). This numerical value starts at 0 and the higher the number, the greater the difference between two colors. We recommend a minimum value of 3.5, which represents an obvious difference.</p>
+
+<p>The other part of having distinguishable content is allowing for text zooming. In the U.S. alone, 8.1 million people have a vision disability. In March 2013, WebAIM conducted a survey of users with low vision, which found that the bulk of accessible technologies used by these individuals included some form of text resizing. Text zooming is a method used to scale text up and down while retaining the screen formatting and layout. A successful text zoom is when the content can be resized up to 200% and everything on the screen scales uniformly and scroll bars are provided if needed.</p>
+
+<p>The second part of providing perceivable content is to provide content that supports all the senses. A video may require a paired audio supplement. An audio file may require a written transcript. Just like the transcript we provided with our talk. While people with vision disabilities are a small slice of the population, those with hearing disabilities make up a larger portion and are more likely to be employed. So it&rsquo;s far more likely that a user would need supplemental text than they would be using a screen reader.</p>
+
+<p>One of the most common ways to provide alternative content is through captioning. Captioning is the transcription of speech and important sound effects. Not to be confused with subtitling which is a written translation of dialogue.</p>
+
+<h3>Operable</h3>
+
+<p>UI components and navigation must be operable. In other words, the UI cannot require an interaction that a user cannot perform. Most assistive technologies used by people with disabilities emulate how a keyboard functions. So a good rule of thumb is that if it can be navigated with a keyboard, then it is accessible. Operability is about giving the user control with controls to pause, stop, and hide moving, blinking, or scrolling content.</p>
+
+<h3>Understandable</h3>
+
+<p>Information and the operation of the user interface must be understandable. In other words, the content and operation cannot be beyond a user&rsquo;s understanding. Users consume content in a variety of ways and we must be flexible to accommodate all of the different ways they might access information. Therefore, it&rsquo;s important to ensure that content is housed in a structured framework to facilitate navigation.</p>
+
+<p>As part of the talk, an example of the experience a screen reader user might have while navigating a well known and popular website is presented. This set of videos demonstrates some of the common problems found with navigation such as duplicate links, ambiguous link names, and long navigation. The results of an automated accessibility tool are presented to highlight that not only are automated tools important for assessing accessibility but that it also requires a manual component.</p>
+
+<h3>Robust</h3>
+
+<p>Content must be robust enough that it can be interpreted reliably by a wide range of user agents. In other words, user must be able to access the content as technologies advance. Since there are a lot of different types of assistive technology, as these technologies change, so does the landscape of accessibility. Being future friendly isn&rsquo;t as hard as keeping up with technology. It&rsquo;s actually as easy as sticking to &ldquo;the basics.&rdquo;</p>
+
+<ul>
+<li>Write valid code</li>
+<li>Optimize navigation</li>
+<li>Stick to standards</li>
+<li>Stay away from known hazards</li>
+</ul>
+
+
+<p>The key to crafting equally compelling experiences for all is the concept of Universal Design. Universal design is the design and composition of buildings, products, and services so they can be accessed, understood, and used by all people. It&rsquo;s an inclusive approach to design. When you design for the average person, you&rsquo;re actually designing for no one. We are each unique and have different needs. We want to encourage you to not think of accessibility as a flat, one-size-fits-all solution but instead as a multifaceted, configurable space. It&rsquo;s more than just what&rsquo;s on the screen though. It&rsquo;s about the environment and the users in that environment.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Jwala Joins Cerner's Open Source]]></title>
@@ -1162,88 +1217,6 @@ this step in the future.</p>
 
 <p>You can find project <a href="https://github.com/cerner/clara-rules">source code on GitHub</a>, and the
 documentation on the <a href="http://www.clara-rules.org">clara-rules.org</a> site.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Fall 2016 ShipIt Day]]></title>
-    <link href="http://engineering.cerner.com/blog/fall-2016-shipit-day/"/>
-    <updated>2016-11-08T00:00:00-06:00</updated>
-    <id>http://engineering.cerner.com/blog/fall-2016-shipit-day</id>
-    <content type="html"><![CDATA[<p>Another ShipIt Day was held on September 8th-9th at the Realization Campus at Cerner. ShipIt is a
-24-hour hackathon with the goal of building something awesome, usable, and value-adding within a
-single day. This fall marked our sixth ShipIt, which has has grown significantly since our first
-event.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2016-11-08-fall-2016-shipit-day/shipit-sign.jpg" title="Announcement" ></p>
-
-<p>The event kicked off in the morning at the auditorium of our Realization campus. At this point,
-teams were already formed, instructions were given, and shirts were handed out. This ShipIt day came
-with cool new t-shirts for all participants featuring the ShipIt squirrel (<a href="https://www.quora.com/GitHub-What-is-the-significance-of-the-Ship-It-squirrel">inspired by GitHub</a>)!</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2016-11-08-fall-2016-shipit-day/shipit-squirrel-shirt.jpg" title="ShipIt shirt" ></p>
-
-<p>Teams broke out to their work spaces and got to work on their projects. One team, <strong>LearnStack</strong>,
-decided to focus their project on associate development. The judges greatly appreciated their
-approach to this very real problem, and decided to award them the third place prize.</p>
-
-<p><strong>LearnStack</strong> &ndash; Jake LaCombe, Daniel Stucky, Sujay Sudheendra</p>
-
-<blockquote><p>Developers can get to a struggling point when they try to increase their experience level. Sure,
-getting started with any language can be very easy to do. Rails for example has their
-<a href="https://www.railstutorial.org/">impressive tutorial from Michael Hartl</a> for getting started
-with the framework. However, what happens when you
-get done with those beginning steps? What does it take to go from a beginner to an intermediate
-Rails developer, and then again from Intermediate to Advanced?</p>
-
-<p>The answer here is LearnStack. LearnStack takes a list of resources that are recommended by other
-developers, and rated appropriately based on the experience level of the material. Developers can
-easily share resources related to beginner, intermediate, and advanced knowledge of a particular
-language, process, framework, or whatever it may be. No need to keep doing endless searches online
-to figure out how to get to the next level! Let LearnStack point you to the resources you need!”</p></blockquote>
-
-<p>Another team decided to tackle the time it takes to provision a virtual machine. This team called
-themselves, &ldquo;All your base are belong to us,&rdquo; and they were awarded second place.</p>
-
-<p><strong>All your base are belong to us</strong> &ndash; Chris Soukup, Alex Harder, Ben Hemphill</p>
-
-<blockquote><p>The current situation for OS image creation is that it is done infrequently, in an ad-hoc manner,
-with little consistency among the various hypervisors. This means that we take the base image and
-then use <a href="https://www.chef.io/">Chef</a> to upgrade the image to the desired state. This adds significant
-amounts of time to the process of provisioning a virtual machine.</p>
-
-<p>Our project was to use <a href="https://www.packer.io/">Packer</a> to create a generic image with all of the
-universal settings that we set with our base OS Chef recipe. This image can then be distributed to all
-the hypervisors and made available to consumers. Since the image would be generated regularly, the
-provisioning time could be significantly decreased by not having to immediately upgrade the system. Additionally,
-since the universal settings are already applied, we save considerable amounts of time on the OS preparation
-as well. We took provisioning time for a RedHat 7.2 <a href="https://www.openstack.org/">OpenStack</a> VM from 12 minutes,
-50 seconds to 4 minutes, 1 second, a 320% decrease in time!</p>
-
-<p>Future enhancements will allow us to automatically generate these images, distribute them, and make
-them available to consumers. This will allow a consuming team to naturally stay current on OS
-patches at provisioning time, decrease the human effort in creating these OS images, and provide a
-consistent experience for teams across Vagrant, VMWare, OpenStack, EC2, Docker, etc.”</p></blockquote>
-
-<p>For the first time we had a unanimous winner for both the judges and the participant winners. The
-<strong>206 Partial Content</strong> team not only won two giant tubs of cheese balls, but also the all important
-<a href="http://engineering.cerner.com/blog/shipit-hackathon-mplus/">Golden Keyboard</a> and bragging rights
-until the next ShipIt Day. <strong>206 Partial Content</strong> decided to solve a problem to &ldquo;enable solution designers,
-engineers, and grandparents to easily create, stage, and process data for testing scenarios required for
-verification without being dependent on upstream processing or rules.&rdquo;</p>
-
-<p><strong>206 Partial Content</strong> &ndash; Madhur Sikri, Ian Kottman, Venkatesh Sridharan, Andy Nelson, Brian van de
-Boogard</p>
-
-<blockquote><p>Our project was primarily driven by two rock star engineers on our team, Ian Kottman and Brian van
-de Boogaard. We coined our project Sinecure, which means a position requiring little or no work but
-giving the holder status or financial benefit. The goal of the project was to find a solution to
-creating test data more easily and efficiently for anyone on our team to consume.”</p></blockquote>
-
-<p>Thanks to all who participated and congratulations to our winners. Until next time, at ShipIt VII in
-December!</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2016-11-08-fall-2016-shipit-day/shipit-winners.jpg" title="Winners" ></p>
 ]]></content>
   </entry>
   

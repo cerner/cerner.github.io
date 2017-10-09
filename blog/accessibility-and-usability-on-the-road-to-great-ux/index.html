@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Accessibility and Usability: On the Road to Great UX - Engineering Health</title>
+  <meta name="author" content="Cerner">
+
+  
+  <meta name="description" content="">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://engineering.cerner.com/blog/accessibility-and-usability-on-the-road-to-great-ux">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/site/site.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <script src="/javascripts/libs/bootstrap.min.js"></script>
+
+  <link href="/atom.xml" rel="alternate" title="Engineering Health" type="application/atom+xml">
+  <script src="/javascripts/search.min.js" type="text/javascript" charset="utf-8"></script>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37701128-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body  class="top-navbar  ">
+  
+
+
+
+<header id="banner" role="banner" class="container-fluid banner-kc-background">
+
+  <div class="image">
+
+    
+      <img src="/images/KC.png" alt="Kansas City" />
+    
+
+    <div id="header1">Engineering Health<br/><span class="header2">A <b>Cerner</b> Blog</span></div>
+
+  </div>
+  <nav class="navbar navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Engineering Health</a>
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="selected">
+            <a href="/">Blog</a>
+          </li>
+          <li >
+            <a href="/culture">Culture</a>
+          </li>
+          <li >
+            <a href="/tech_talks">Tech Talks</a>
+          </li>
+          <li >
+            <a href="/open_source">Open Source</a>
+          </li>
+          <li >
+            <a href="/blog/archives">Archives</a>
+          </li>
+        </ul>
+        <div id="search" class="pull-right">
+          <form action="/search" method="get" class="navbar-search">
+            <input type="text" id="search-query" name="q" class="search-query" placeholder="Search" autocomplete="off">
+            <img src="/images/MagnifyingGlass.png" alt="Search" width="16" height="16" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+</header>
+
+
+  <div class="container-fluid post-container">
+    <div class="row-fluid">
+      <section class="span12" id="search-results" style="display: none;">
+  <h2>Search results</h2>
+  <div class="entries">
+  </div>
+</section>
+    </div>
+    <div class="row-fluid">
+      
+<article id="main" class="hentry span8" role="article">
+
+  <section class="post">
+    
+  <header class="entry-header">
+    
+      <h1 class="entry-title">Accessibility and Usability: On the Road to Great UX</h1>
+    
+    
+      <div class="entry-meta meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-10-09T00:00:00-05:00" pubdate data-updated="true">Oct 9<span>th</span>, 2017</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Rebecca Green, Amber Wilks</span>
+  </span>
+
+
+        
+      </div>
+    
+  </header>
+
+
+<div class="entry-content"><p>In 2010, a group of designers from Columbus, Ohio set out to create a grassroots, cross-discipline, and creative conference. Since that first event, Midwest UX has been an ongoing tradition that attracts innovative ideas and provides an opportunity for regional professions to engage in discussion with other professionals. Last year, Amber Wilks and Dr. Becca Green were invited to take their talk from DevCon 2016 on the road to Midwest UX. On October 20, 2016, they presented Accessibility &amp; Usability: The Equality of Experience in Louisville, KY.</p>
+
+<p>At Midwest UX, the talk covered all of the great content from DevCon enhanced by examples of how accessibility specifically affects our solutions used by our consumer market or clinical staff. Each point covered demonstrated how UX and development work together to achieve an accessible software solution and the importance of crafting equally awesome experiences for all of our users. When people talk about accessibility, there are some common myths that go along with the topic. So the talks starts off by covering three myths of accessibility that have impacted the health care community, and Cerner in particular.</p>
+
+<p>The first myth covered was that project teams look at accessibility as a minefield they must cross to achieve accessible software. The truth is that it is simply a blend of legislation and regulation that aims to eliminate barriers in technology for people with disabilities. In fact there are two main forms of standards used in the U.S. to define accessible content, Section 508 and W3&rsquo;s Web Content Accessibility Guidelines. While they serve similar purposes, there are some very key differences. They different in terms of the technology they cover, the organization of the guidelines, and their application. However, they are just a small part of a landscape of legislation and regulation that make up accessibility.</p>
+
+<p>The second myth covered the assumption that accessibility is all about screen readers and alt tags. In reality, screen readers are just a small subset of assistive technologies. Low-vision or blind users only make up a small slice of all U.S. citizens with disabilities. There are a variety of assistive technologies to aid every type of disability. The third and final myth we covered is specific to the healthcare industry; that clinicians aren&rsquo;t disabled so accessibility isn&rsquo;t a priority for our users. The truth is that clinicians are not immune to disabilities. In fact, a study in the British Journal of General Practice that found that the proportion of male doctors with color vision deficiency was at 8%, in line with the percentage of the general population.</p>
+
+<p>As the guidelines for accessibility have evolved, so has the organization of these guidelines such that they can now be organized into 4 tenant principles: perceivable, operable, understandable, and robust.</p>
+
+<h3>Perceivable</h3>
+
+<p>Information and UI components must be presented in ways users can perceive. In other words, information can&rsquo;t be invisible. We do that by making information distinguishable and by providing alternative forms of content.</p>
+
+<p>To make information distinguishable, the foundations involve color math and text zoom. To create distinguishable information using color there are two mathematical calculations that can be used to ensure the content is both legible and discernible. To ensure the content is legible, Cerner follows WCAG&rsquo;s (Web Content Accessibility Guidelines) color contrast guidelines include Guideline 1.4.3, which states that &ldquo;the visual presentation of text and images of text has a contrast ration of at least 4.5:1.&rdquo; To check if your information is legible, the WCAG recommends using the WebAIM Color Contrast Checker. This tool simply requires that you enter in your text, or foreground, color and background color and it will tell you to what degree you meet the contrast guidelines.</p>
+
+<p>The second calculation ensures users can perceive changes in the content. While this calculation is not part of accessibility guidelines, we leverage the calculation as a baseline metric for interaction indications (i.e., hovers, click states, icons, etc.). This numerical value starts at 0 and the higher the number, the greater the difference between two colors. We recommend a minimum value of 3.5, which represents an obvious difference.</p>
+
+<p>The other part of having distinguishable content is allowing for text zooming. In the U.S. alone, 8.1 million people have a vision disability. In March 2013, WebAIM conducted a survey of users with low vision, which found that the bulk of accessible technologies used by these individuals included some form of text resizing. Text zooming is a method used to scale text up and down while retaining the screen formatting and layout. A successful text zoom is when the content can be resized up to 200% and everything on the screen scales uniformly and scroll bars are provided if needed.</p>
+
+<p>The second part of providing perceivable content is to provide content that supports all the senses. A video may require a paired audio supplement. An audio file may require a written transcript. Just like the transcript we provided with our talk. While people with vision disabilities are a small slice of the population, those with hearing disabilities make up a larger portion and are more likely to be employed. So it&rsquo;s far more likely that a user would need supplemental text than they would be using a screen reader.</p>
+
+<p>One of the most common ways to provide alternative content is through captioning. Captioning is the transcription of speech and important sound effects. Not to be confused with subtitling which is a written translation of dialogue.</p>
+
+<h3>Operable</h3>
+
+<p>UI components and navigation must be operable. In other words, the UI cannot require an interaction that a user cannot perform. Most assistive technologies used by people with disabilities emulate how a keyboard functions. So a good rule of thumb is that if it can be navigated with a keyboard, then it is accessible. Operability is about giving the user control with controls to pause, stop, and hide moving, blinking, or scrolling content.</p>
+
+<h3>Understandable</h3>
+
+<p>Information and the operation of the user interface must be understandable. In other words, the content and operation cannot be beyond a user&rsquo;s understanding. Users consume content in a variety of ways and we must be flexible to accommodate all of the different ways they might access information. Therefore, it&rsquo;s important to ensure that content is housed in a structured framework to facilitate navigation.</p>
+
+<p>As part of the talk, an example of the experience a screen reader user might have while navigating a well known and popular website is presented. This set of videos demonstrates some of the common problems found with navigation such as duplicate links, ambiguous link names, and long navigation. The results of an automated accessibility tool are presented to highlight that not only are automated tools important for assessing accessibility but that it also requires a manual component.</p>
+
+<h3>Robust</h3>
+
+<p>Content must be robust enough that it can be interpreted reliably by a wide range of user agents. In other words, user must be able to access the content as technologies advance. Since there are a lot of different types of assistive technology, as these technologies change, so does the landscape of accessibility. Being future friendly isn&rsquo;t as hard as keeping up with technology. It&rsquo;s actually as easy as sticking to &ldquo;the basics.&rdquo;</p>
+
+<ul>
+<li>Write valid code</li>
+<li>Optimize navigation</li>
+<li>Stick to standards</li>
+<li>Stay away from known hazards</li>
+</ul>
+
+
+<p>The key to crafting equally compelling experiences for all is the concept of Universal Design. Universal design is the design and composition of buildings, products, and services so they can be accessed, understood, and used by all people. It&rsquo;s an inclusive approach to design. When you design for the average person, you&rsquo;re actually designing for no one. We are each unique and have different needs. We want to encourage you to not think of accessibility as a flat, one-size-fits-all solution but instead as a multifaceted, configurable space. It&rsquo;s more than just what&rsquo;s on the screen though. It&rsquo;s about the environment and the users in that environment.</p>
+</div>
+
+
+  </section>
+  <footer>
+    <p class="meta">
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    
+    <ul class="pager">
+      
+      <li class="previous"><a class="basic-alignment left"
+        href="/blog/jwala-joins-cerner-open-source/" title="Previous Post:
+        Jwala Joins Cerner's Open Source">&laquo; Previous Post</a></li>
+      
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      
+    </ul>
+  </footer>
+</article>
+
+<aside class="sidebar-nav span4">
+  
+    <section class="well">
+  <h2>Recent Posts</h2>
+  <ul id="recent_posts" class="nav nav-list">
+    
+      <li>
+        <a href="/blog/accessibility-and-usability-on-the-road-to-great-ux/">Accessibility and Usability: On the Road to Great UX</a>
+      </li>
+    
+      <li>
+        <a href="/blog/jwala-joins-cerner-open-source/">Jwala Joins Cerner's Open Source</a>
+      </li>
+    
+      <li>
+        <a href="/blog/engineers-overseas-for-smart-and-fhir/">Engineers Overseas for SMART and FHIR (FHIR DevDays 2016)</a>
+      </li>
+    
+      <li>
+        <a href="/blog/shipit-ix-day-summer-2017/">ShipIt IX Day: Summer 2017</a>
+      </li>
+    
+      <li>
+        <a href="/blog/continuous-delivery-for-dcos-with-spinnaker/">Continuous Delivery for DC/OS With Spinnaker</a>
+      </li>
+    
+  </ul>
+</section>
+<section class="divider">
+  <svg width="70" height="10">
+   <rect width="10" height="10" x="0" y="0" style="fill:rgb(20,124,193)" />
+   <rect width="10" height="10" x="20" y="0" style="fill:rgb(121,193,68)" />
+   <rect width="10" height="10" x="40" y="0" style="fill:rgb(20,124,193)" />
+   <rect width="10" height="10" x="60" y="0" style="fill:rgb(121,193,68)" />
+</svg>
+</section>
+<section class="well">
+  <h2>GitHub Repos</h2>
+  <ul id="gh_repos" class="nav">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/cerner">@cerner</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'cerner',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  
+<script id="search-results-template" type="text/mustache">
+  {{#entries}}
+    <article class="search-result">
+        <div class="search-meta meta">
+        {{#date}}<time datetime="{{pubdate}}" pubdate>{{displaydate}}</time>{{/date}} | {{author}}
+        </div>
+        <a href="{{url}}">{{title}}</a>
+    </article>
+  {{/entries}}
+</script>
+
+<script type="text/javascript">
+  $(function() {
+    $('#search-query').lunrSearch({
+      indexUrl: '/javascripts/index.json',   // Url for the .json file containing search index data
+      results : '#search-results',  // selector for containing search results element
+      entries : '.entries',         // selector for search entries containing element (contained within results above)
+      template: '#search-results-template'  // selector for Mustache.js template
+    });
+    //Currently ignoring the "return/enter" keystroke when searching (as this would just result in a 404 for the page lookup).
+    $('#search-query').keydown(function(event){
+      if(event.keyCode == 13) {
+        event.preventDefault();
+        return false;
+      }
+    });
+  });
+</script>
+
+  <footer role="contentinfo" class="page-footer">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="span2">
+          <img src="/images/cerner_small_logo_white.png" alt="Cerner Logo" />
+      </div>
+      <div class="span10 pull-left">
+          <p>&copy; 2017</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
