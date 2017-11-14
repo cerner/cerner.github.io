@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2017-10-09T10:27:21-05:00</updated>
+  <updated>2017-11-14T10:08:52-06:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,41 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Celebrating World Usability Day at Cerner]]></title>
+    <link href="http://engineering.cerner.com/blog/celebrating-world-usability-day-at-cerner/"/>
+    <updated>2017-11-14T00:00:00-06:00</updated>
+    <id>http://engineering.cerner.com/blog/celebrating-world-usability-day-at-cerner</id>
+    <content type="html"><![CDATA[<p>World Usability Day is celebrated worldwide on the second Thursday in November every year. Across the globe, organizations host events and use this day to provide education on how to make products easier to use and simpler to access, as well as to celebrate progress in this pursuit.</p>
+
+<p>The World Usability Day theme for 2017 was &ldquo;Inclusion.&rdquo; Inclusive design considers the range of abilities, language and other forms of human difference when creating a solution. Designing with these in mind from the start can create a better suited product for everyone.</p>
+
+<p>Cerner&rsquo;s Kansas City-based User Experience (UX) team celebrated by hosting a day filled with five speaker sessions and an afternoon workshop for Cerner associates on November 9, in the Innovations Campus event space. Following the theme, the speakers covered topics such as accessibility and universal design.</p>
+
+<p>Lauren Bock, User Experience Designer on the UX team, kicked off the day with a presentation on <em>Universal Design: The Equality of Experience</em>. Lauren explained how designing only for the &ldquo;average user,&rdquo; or including only the minimum accessibility requirements, can result in something designed for no one. We each have unique needs and designing products, services and experiences designed in a way that honors those needs can result in a better outcome for everyone. She shared how designing universally from the beginning not only makes a better product, but does so for a larger number of users.</p>
+
+<p>Following the keynote, Dr. Ben Wilkerson, Physician Executive for Cerner&rsquo;s Population Health organization, shared his take on why <em>Healthcare Software is Failing at the Box Office</em>. In his talk, Dr. Wilkerson drew comparisons between healthcare software and the movie industry. He highlighted how healthcare software can take cues from films in the way that production teams spend the majority of time in research, preparation, and planning, before the costly filming step. Dr. Wilkerson also compared the different roles of the production team to those designing software at Cerner and how they can work together to create a compelling result.</p>
+
+<p>In the last session for the morning, Scott Wilmarth, Senior User Experience Designer on the UX team, shared his personal and real-world story on the importance of accessibility in <em>Retinas, Accessibility, and More Stuff I Learned About on the Way to Get Thai Food</em>. After an unexpected loss of vision in one of his eyes, Scott has become an accessibility advocate, sharing his story with development teams, Cerner Health Conference attendees and others at Cerner. Scott shared the impact of accessibility and shared ways for designers, developers and project teams at Cerner to integrate accessibility into their processes. He explained that designing for accessibility is not just required, but the right thing to do. Accounting for different abilities in design can ultimately create better products for all users.</p>
+
+<p>After lunch, Michael Turman, the Senior Strategist for the Reference Data Management team, gave his perspective on why <em>We&rsquo;re Going to Need a Bigger Boat</em> when designing our solutions at Cerner. Coming from the Cerner Consulting organization, Michael highlighted the importance of the post-development, implementation and maintenance steps of Cerner software with our clients. He provided tips for teams to design for these user bases and with implementation in mind. He explained that by designing for users both upstream and downstream in the development process we can create better experiences.</p>
+
+<p>Dr. Jeff Wall, Director of the Physician Strategy and Medical Specialties organization, concluded the speaking sessions with his talk <em>Designing the Physician Workflow: Technical vs. Adaptive considerations for success</em>. Dr. Wall summarized it perfectly, &ldquo;change is hard.&rdquo; How do we help users effectively handle change as we constantly improve our healthcare software? He explained that when designing software for our users, we must be considerate of adaptive challenges, making sure to distinguish between technical changes and changes to human behavior. With years of experience as a clinician, Dr. Wall explained methods for Cerner teams to prepare for and introduce change to our users.</p>
+
+<p>The last activity for the day was a Virtual Reality Workshop sponsored by the Cerner Labs team, who focus on the investigation of emerging technologies and how to use those to create new ways of engaging with data. Workshop participants were able to experience a scenario using Virtual Reality (VR) headsets. Small groups led by UX team members replayed the scenario and used the technique of Journey Mapping to lay out the course of the experience, ultimately discovering areas of opportunity for improvement for the scenario. Groups reconvened and shared each of their maps to learn from each other.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2017-11-14-celebrating-world-usability-day-at-cerner/ux-vr.jpg"></p>
+
+<p>The day concluded with a public evening meet-up hosted in partnership with the User Experience Professionals Association of Kansas City, a local non-profit organization focused on UX. Attendees were invited to tour the User Experience Lab where the Human Factors Research team conducts usability tests and other research studies. This tour was followed by a design challenge where attendees broke out into teams and collaborated on creating quick solutions to design prompts focused on inclusive design.</p>
+
+<p>Just around the corner from the User Experience Lab at the Innovations campus is a hand-drawn installation of epic proportion about World Usability Day. These 20 ft. long, 10 ft. tall installations of content are created and drawn by UX team members, and will rotate every quarter. Located next to the glass wall is an interactive puzzle also put together by the UX team, highlighting User Experience Vice President, Paul Weaver’s definition of UX: &ldquo;UX is the nexus between the user and the machine; a combination of design and research that works to perfect human-computer interaction.&rdquo;</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2017-11-14-celebrating-world-usability-day-at-cerner/ux-glass-wall.jpg"></p>
+
+<p><em>Photos by Lai Xu and Kelsey Daly</em></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Accessibility and Usability: On the Road to Great UX]]></title>
@@ -1185,38 +1220,6 @@ plain fun. The creation of mascots Alan and Grace has been a big win for the
 passionate Cerner engineers dedicated to fostering Cerner’s Engineering culture.</p>
 
 <p><img class="center" src="http://engineering.cerner.com/assets/2016-11-23-alan-and-grace-an-origin-story/alan-grace-2.png" title="Alan and Grace" ></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Clara Rules Joins Cerner's Open Source]]></title>
-    <link href="http://engineering.cerner.com/blog/clara-rules-joins-cerner-open-source/"/>
-    <updated>2016-11-11T00:00:00-06:00</updated>
-    <id>http://engineering.cerner.com/blog/clara-rules-joins-cerner-open-source</id>
-    <content type="html"><![CDATA[<p>Sometimes a small experiment on the side can grow into something valuable. We at Cerner have long
-used forward-chaining rules engines to express and execute clinical knowledge, but we’ve also had to
-extend or work around the capabilities of such engines. Engines targeting business users just
-weren’t expressive enough to model some of our logic. To meet this need we are making Clara Rules an
-open source project driven by Cerner Engineering.</p>
-
-<p>Clara took an unusual path, starting as a minimal implementation of the
-<a href="https://en.wikipedia.org/wiki/Rete_algorithm">Rete algorithm</a> to help my
-own understanding. After sharing this with others at Cerner, we started to see an opportunity to
-gain the modularity and reasoning advantages of a rules engine, while preserving the expressiveness
-and power of a modern programming language. We wanted to combine the best ideas of rules engines
-with good software engineering practices. You can see the result of this on the
-<a href="http://www.clara-rules.org">Clara Rules home page</a>.</p>
-
-<p><a href="https://github.com/mrrodriguez">Mike Rodriguez</a> has been essential in turning Clara from an
-experiment into a valuable system to fill a gap for rules engines which are oriented towards
-developers. More recently, <a href="https://github.com/WilliamParker">Will Parker</a>
-has also made significant contributions to help make Clara fast and reliable. They made it possible for Clara
-to help analyze millions of medical records every day. Therefore Mike and Will are joining as the
-initial committers to Cerner Engineering’s Clara project. We will welcome other contributors to make
-this step in the future.</p>
-
-<p>You can find project <a href="https://github.com/cerner/clara-rules">source code on GitHub</a>, and the
-documentation on the <a href="http://www.clara-rules.org">clara-rules.org</a> site.</p>
 ]]></content>
   </entry>
   

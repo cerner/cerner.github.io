@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>The Raft Protocol: A Better Paxos? - Engineering Health</title>
+  <title>Celebrating World Usability Day at Cerner - Engineering Health</title>
   <meta name="author" content="Cerner">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://engineering.cerner.com/2014/01/the-raft-protocol-a-better-paxos">
+  <link rel="canonical" href="http://engineering.cerner.com/blog/celebrating-world-usability-day-at-cerner">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -76,7 +76,7 @@
       </a>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li >
+          <li class="selected">
             <a href="/">Blog</a>
           </li>
           <li >
@@ -122,7 +122,7 @@
     
   <header class="entry-header">
     
-      <h1 class="entry-title">The Raft Protocol: A Better Paxos?</h1>
+      <h1 class="entry-title">Celebrating World Usability Day at Cerner</h1>
     
     
       <div class="entry-meta meta">
@@ -138,12 +138,12 @@
   
 
 
-<time datetime="2014-01-24T00:00:00-06:00" pubdate data-updated="true">Jan 24<span>th</span>, 2014</time> | 
+<time datetime="2017-11-14T00:00:00-06:00" pubdate data-updated="true">Nov 14<span>th</span>, 2017</time> | 
   
 
 
   <span class="byline author vcard">
-    <span class="fn">David Edwards</span>
+    <span class="fn">Lauren Bock</span>
   </span>
 
 
@@ -153,35 +153,33 @@
   </header>
 
 
-<div class="entry-content"><p>Among the many compelling talks that attendees come to expect every year at the Strange Loop conference was a <a href="https://thestrangeloop.com/sessions/raft-the-understandable-distributed-protocol">session</a> given by Ben Johnson that provided an overview of a new distributed consensus protocol originating from research at Stanford University, named <a href="http://raftconsensus.github.io/">Raft</a>.</p>
+<div class="entry-content"><p>World Usability Day is celebrated worldwide on the second Thursday in November every year. Across the globe, organizations host events and use this day to provide education on how to make products easier to use and simpler to access, as well as to celebrate progress in this pursuit.</p>
 
-<h2>What is distributed consensus?</h2>
+<p>The World Usability Day theme for 2017 was &ldquo;Inclusion.&rdquo; Inclusive design considers the range of abilities, language and other forms of human difference when creating a solution. Designing with these in mind from the start can create a better suited product for everyone.</p>
 
-<p>Distributed consensus can be described as the act of reaching agreement among a collection of machines cooperating to solve a problem. With the rise of open source distributed computing and storage platforms, consensus algorithms have become essential tools for replication, and thus, serve to enhance resiliency by eliminating single points of failure.</p>
+<p>Cerner&rsquo;s Kansas City-based User Experience (UX) team celebrated by hosting a day filled with five speaker sessions and an afternoon workshop for Cerner associates on November 9, in the Innovations Campus event space. Following the theme, the speakers covered topics such as accessibility and universal design.</p>
 
-<p>Examples of distributed consensus in action can often be elusive because such protocols are ordinarily buried inside core systems, and consequently, are largely invisible to application developers. For example, a relational database in a clustered configuration would typically employ a consensus algorithm to coordinate commits with other replicas. And similarly, Apache ZooKeeper, a popular distributed synchronization service used in projects such as HBase and Solr, utilizes a consensus protocol to achieve fault-tolerance by replicating its configuration repository across many servers.</p>
+<p>Lauren Bock, User Experience Designer on the UX team, kicked off the day with a presentation on <em>Universal Design: The Equality of Experience</em>. Lauren explained how designing only for the &ldquo;average user,&rdquo; or including only the minimum accessibility requirements, can result in something designed for no one. We each have unique needs and designing products, services and experiences designed in a way that honors those needs can result in a better outcome for everyone. She shared how designing universally from the beginning not only makes a better product, but does so for a larger number of users.</p>
 
-<h2>Raft is about understandability and practicality</h2>
+<p>Following the keynote, Dr. Ben Wilkerson, Physician Executive for Cerner&rsquo;s Population Health organization, shared his take on why <em>Healthcare Software is Failing at the Box Office</em>. In his talk, Dr. Wilkerson drew comparisons between healthcare software and the movie industry. He highlighted how healthcare software can take cues from films in the way that production teams spend the majority of time in research, preparation, and planning, before the costly filming step. Dr. Wilkerson also compared the different roles of the production team to those designing software at Cerner and how they can work together to create a compelling result.</p>
 
-<p>The current Raft <a href="https://ramcloud.stanford.edu/wiki/download/attachments/11370504/raft.pdf">paper</a> argues that while <a href="http://en.wikipedia.org/wiki/Paxos_%28computer_science%29">Paxos</a> has historically dominated both academic and commercial discourse with respect to distributed consensus, the protocol itself is too complicated to reason about and that a more understandable algorithm was needed, not only for educational purposes, but also to serve as a foundation for building practical systems.</p>
+<p>In the last session for the morning, Scott Wilmarth, Senior User Experience Designer on the UX team, shared his personal and real-world story on the importance of accessibility in <em>Retinas, Accessibility, and More Stuff I Learned About on the Way to Get Thai Food</em>. After an unexpected loss of vision in one of his eyes, Scott has become an accessibility advocate, sharing his story with development teams, Cerner Health Conference attendees and others at Cerner. Scott shared the impact of accessibility and shared ways for designers, developers and project teams at Cerner to integrate accessibility into their processes. He explained that designing for accessibility is not just required, but the right thing to do. Accounting for different abilities in design can ultimately create better products for all users.</p>
 
-<p>An obvious question instinctively arises for the inquisitive reader: what makes Raft better than Paxos? Having personally implemented a replicated log using the Paxos algorithm, there was a natural curiosity in understanding how Raft approached the problem of solving consensus. It is worth noting, however, that comparing Raft and Paxos can be a bit misleading. Even though both address the fundamental problem of reaching consensus among a network of connected machines, Paxos is more academic in nature and primarily concerned with the mechanics of consensus, whereas Raft is oriented around the practical challenges of implementing a replicated log.</p>
+<p>After lunch, Michael Turman, the Senior Strategist for the Reference Data Management team, gave his perspective on why <em>We&rsquo;re Going to Need a Bigger Boat</em> when designing our solutions at Cerner. Coming from the Cerner Consulting organization, Michael highlighted the importance of the post-development, implementation and maintenance steps of Cerner software with our clients. He provided tips for teams to design for these user bases and with implementation in mind. He explained that by designing for users both upstream and downstream in the development process we can create better experiences.</p>
 
-<h2>Paxos is about theory</h2>
+<p>Dr. Jeff Wall, Director of the Physician Strategy and Medical Specialties organization, concluded the speaking sessions with his talk <em>Designing the Physician Workflow: Technical vs. Adaptive considerations for success</em>. Dr. Wall summarized it perfectly, &ldquo;change is hard.&rdquo; How do we help users effectively handle change as we constantly improve our healthcare software? He explained that when designing software for our users, we must be considerate of adaptive challenges, making sure to distinguish between technical changes and changes to human behavior. With years of experience as a clinician, Dr. Wall explained methods for Cerner teams to prepare for and introduce change to our users.</p>
 
-<p>The seminal work done by Leslie Lamport in 1989 with the design of the Paxos protocol was an important step forward in establishing a theoretical foundation for achieving consensus in asynchronous distributed systems. His contributions were largely academic and centered around reaching agreement on a single value, thus relying on software engineers to translate these ideas into practical solutions, such as replicated databases, which must decide on many values. However, the actual requirements necessary to build a real system, including areas such as leader election, failure detection, and log management, are not present in the Paxos specification, yet add a degree of complexity that almost always significantly alters the original protocol. This is precisely where the Raft designers correctly argue that the absence of specificity leads to great difficulty in applying Paxos to real world problems. A subsequent <a href="http://research.microsoft.com/en-us/um/people/lamport/pubs/paxos-simple.pdf">paper</a> by Lamport in 2001 does an excellent job of making the original protocol accessible to practitioners, and to some degree, proposes techniques for designing a replicated log, but it stops short of being prescriptive in the way that Raft does.</p>
+<p>The last activity for the day was a Virtual Reality Workshop sponsored by the Cerner Labs team, who focus on the investigation of emerging technologies and how to use those to create new ways of engaging with data. Workshop participants were able to experience a scenario using Virtual Reality (VR) headsets. Small groups led by UX team members replayed the scenario and used the technique of Journey Mapping to lay out the course of the experience, ultimately discovering areas of opportunity for improvement for the scenario. Groups reconvened and shared each of their maps to learn from each other.</p>
 
-<h2>You say tomāto, I say tomäto</h2>
+<p><img class="center" src="/assets/2017-11-14-celebrating-world-usability-day-at-cerner/ux-vr.jpg"></p>
 
-<p>Raft is unique in many ways compared to typical Paxos implementations, but despite those differences, both are grounded in a similar set of core principles. For example, Raft requires leader election to occur strictly before any new values can be appended to the log, whereas a Paxos implementation would make the election process an implicit outcome of reaching agreement. The Raft designers claim that doing so has the consequence of simplifying log management, particularly with respect to edge cases in which a succession of leadership changes can result in log discrepancies, but the tradeoff is that leader election in Raft is more complicated than its counterpart in Paxos.</p>
+<p>The day concluded with a public evening meet-up hosted in partnership with the User Experience Professionals Association of Kansas City, a local non-profit organization focused on UX. Attendees were invited to tour the User Experience Lab where the Human Factors Research team conducts usability tests and other research studies. This tour was followed by a design challenge where attendees broke out into teams and collaborated on creating quick solutions to design prompts focused on inclusive design.</p>
 
-<p>What both protocols acknowledge, though, is that leader election is imperative if systems want to ensure progress. The notion of progress simply means that a system eventually does something useful. An important discovery in 1985, called the <a href="http://cs-www.cs.yale.edu/homes/arvind/cs425/doc/fischer.pdf">FLP Impossibility Result</a>, proved that consensus was impossible in asynchronous distributed systems with the presence of only one faulty process. The practical implication follows: a system that cannot reach consensus is a system that cannot make progress. To be clear, the finding did not state that consensus was unreachable, just that some executions cannot reach consensus in bounded time. As a consequence, leader election, combined with timeouts, is often used as a technique for eliminating a class of conditions under which reaching agreement could take an arbitrarily long period of time. Interestingly, the Paxos algorithm as originally described by Lamport, makes no guarantees about progress, so implementations are compelled to incorporate timeouts as a compensatory measure. Raft, on the other hand, is prescriptive about the use of timeouts.</p>
+<p>Just around the corner from the User Experience Lab at the Innovations campus is a hand-drawn installation of epic proportion about World Usability Day. These 20 ft. long, 10 ft. tall installations of content are created and drawn by UX team members, and will rotate every quarter. Located next to the glass wall is an interactive puzzle also put together by the UX team, highlighting User Experience Vice President, Paul Weaver’s definition of UX: &ldquo;UX is the nexus between the user and the machine; a combination of design and research that works to perfect human-computer interaction.&rdquo;</p>
 
-<h2>Raft wins on accessibility</h2>
+<p><img class="center" src="/assets/2017-11-14-celebrating-world-usability-day-at-cerner/ux-glass-wall.jpg"></p>
 
-<p>One especially interesting component of the Raft specification is the mechanism for coordinating changes to cluster membership. The protocol employs a novel approach in which joint consensus is reached using two overlapping majorities, i.e. quorums defined by both the old and new cluster configuration, thereby supporting dynamic elasticity without disruption to operations.</p>
-
-<p>The emergence of Raft has clearly seen a positive embrace by the software development community as evidenced by nearly 40 <a href="http://raftconsensus.github.io/#implementations">open source implementations</a> in a variety of different languages. Even though Paxos is beautifully elegant in describing the essence of distributed consensus, the absence of a comprehensive and prescriptive specification has rendered it inaccessible and notoriously difficult to implement in practical systems.</p>
+<p><em>Photos by Lai Xu and Kelsey Daly</em></p>
 </div>
 
 
@@ -204,13 +202,10 @@
     <ul class="pager">
       
       <li class="previous"><a class="basic-alignment left"
-        href="/2014/01/cerner-and-open-source/" title="Previous Post:
-        Cerner and Open Source">&laquo; Previous Post</a></li>
+        href="/blog/accessibility-and-usability-on-the-road-to-great-ux/" title="Previous Post:
+        Accessibility and Usability: On the Road to Great UX">&laquo; Previous Post</a></li>
       
       <li><a href="/blog/archives">Blog Archives</a></li>
-      
-      <li class="next"><a class="basic-alignment right" href="/2014/01/sponsoring-the-apache-software-foundation/"
-        title="Next Post: Sponsoring the Apache Software Foundation">Next Post &raquo;</a></li>
       
     </ul>
   </footer>
