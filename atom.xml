@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2017-11-14T10:08:52-06:00</updated>
+  <updated>2017-11-27T07:47:49-06:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,153 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Announcing Bunsen: FHIR Data With Apache Spark]]></title>
+    <link href="http://engineering.cerner.com/blog/announcing-bunsen-fhir-data-with-apache-spark/"/>
+    <updated>2017-11-27T00:00:00-06:00</updated>
+    <id>http://engineering.cerner.com/blog/announcing-bunsen-fhir-data-with-apache-spark</id>
+    <content type="html"><![CDATA[<p>We&rsquo;re excited to open source <a href="http://engineering.cerner.com/bunsen">Bunsen</a>, a library to make analyzing <a href="http://hl7.org/fhir/STU3/resourcelist.html">FHIR data</a> with <a href="https://spark.apache.org/">Apache Spark</a> simple and scalable. Bunsen encodes FHIR resources directly into Apache Spark&rsquo;s native data structures. This lets users leverage well-defined FHIR data models directly within Spark SQL.</p>
+
+<p>Here&rsquo;s a simple query against a table of FHIR observations that produces a table of
+heart rate values:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">&quot;&quot;&quot;</span>
+</span><span class='line'><span class="s">select subject.reference person_id,</span>
+</span><span class='line'><span class="s">       effectiveDateTime date_time,</span>
+</span><span class='line'><span class="s">       valueQuantity.value value</span>
+</span><span class='line'><span class="s">from observations</span>
+</span><span class='line'><span class="s">where in_valueset(code, &#39;heart_rate&#39;)</span>
+</span><span class='line'><span class="s"> &quot;&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Which prints a table like this:</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="left">person_id        </th>
+<th align="left">date_time    </th>
+<th align="left">value   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td align="left">Patient/123      </td>
+<td align="left">2016-12-27   </td>
+<td align="left">54.0000 </td>
+</tr>
+<tr>
+<td></td>
+<td align="left">Patient/123      </td>
+<td align="left">2017-04-18   </td>
+<td align="left">60.0000</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>Notice that each field in the above SQL is fully defined by the <a href="http://hl7.org/fhir/STU3/observation.html">FHIR Observation model</a>. This is because the table schemas are generated directly from FHIR resource definitions, ensuring these queries exactly match other FHIR-based views of the same data.</p>
+
+<p>Bunsen also provides a collection of helpful functions to make querying data easy. The above query includes the <em>in_valueset</em> user-defined function, allowing users to use code value sets directly in the query. You can see the <a href="http://engineering.cerner.com/bunsen/introduction.html#bring-your-own-value-sets">Bunsen value set documentation</a> for details.</p>
+
+<h3>Scalability and Performance</h3>
+
+<p>Because Bunsen encodes FHIR resources in Apache Spark&rsquo;s efficient binary format, we get all of Spark&rsquo;s scalability and performance advantages. Simple queries across billions of FHIR resources typically return in single-digit seconds in internal clusters. Arbitrary joins and aggregations of complex datasets scale with your Apache Spark cluster. We take advantage of Spark&rsquo;s built-in support for <a href="https://parquet.apache.org/">Apache Parquet</a> to read and write FHIR with an efficient columnar data format that is readable by other systems as well.</p>
+
+<h3>Sophisticated Queries</h3>
+
+<p>Spark SQL offers rich query semantics that can now be used directly over FHIR data models. For instance,
+here is a query that builds a timeseries-like table directly from a collection of observations by simply
+grouping items by the person and time period. This is just standard Spark SQL wrapped around
+our simple valueset-based function.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">select</span> <span class="n">subject</span><span class="p">.</span><span class="n">reference</span> <span class="n">patient_id</span><span class="p">,</span>
+</span><span class='line'>       <span class="k">year</span><span class="p">(</span><span class="n">effectiveDateTime</span><span class="p">)</span> <span class="n">obs_year</span><span class="p">,</span>
+</span><span class='line'>       <span class="k">month</span><span class="p">(</span><span class="n">effectiveDateTime</span><span class="p">)</span> <span class="n">obs_month</span><span class="p">,</span>
+</span><span class='line'>
+</span><span class='line'>       <span class="k">avg</span><span class="p">(</span><span class="n">if</span><span class="p">(</span><span class="n">in_valueset</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="s1">&#39;glucose_level&#39;</span><span class="p">),</span>
+</span><span class='line'>              <span class="n">valueQuantity</span><span class="p">.</span><span class="n">value</span><span class="p">,</span>
+</span><span class='line'>              <span class="k">null</span><span class="p">))</span> <span class="n">avg_glucose_level</span><span class="p">,</span>
+</span><span class='line'>
+</span><span class='line'>       <span class="k">avg</span><span class="p">(</span><span class="n">if</span><span class="p">(</span><span class="n">in_valueset</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="s1">&#39;bun&#39;</span><span class="p">),</span>
+</span><span class='line'>              <span class="n">valueQuantity</span><span class="p">.</span><span class="n">value</span><span class="p">,</span>
+</span><span class='line'>              <span class="k">null</span><span class="p">))</span> <span class="n">avg_bun</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">from</span> <span class="n">observations</span>
+</span><span class='line'><span class="k">group</span> <span class="k">by</span> <span class="n">subject</span><span class="p">.</span><span class="n">reference</span><span class="p">,</span>
+</span><span class='line'>         <span class="k">year</span><span class="p">(</span><span class="n">effectiveDateTime</span><span class="p">),</span>
+</span><span class='line'>         <span class="k">month</span><span class="p">(</span><span class="n">effectiveDateTime</span><span class="p">)</span>
+</span><span class='line'><span class="k">order</span> <span class="k">by</span> <span class="n">patient_id</span><span class="p">,</span> <span class="n">obs_year</span><span class="p">,</span> <span class="n">obs_month</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Typical queries may aggregate many other types of data and join to conditions, allergies, or other tables
+to build a more complete report. All of this can be done interactively over billions of records.</p>
+
+<h3>Java Usage</h3>
+
+<p>Bunsen uses the <a href="http://hapifhir.io/">HAPI FHIR</a> library to represent data in object form. Java users can convert their objects from the HAPI to Spark-native structures and back with a few lines of code. Here&rsquo;s an example:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">FhirEncoders</span> <span class="n">encoders</span> <span class="o">=</span> <span class="n">FhirEncoders</span><span class="o">.</span><span class="na">forStu3</span><span class="o">().</span><span class="na">getOrCreate</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">List</span><span class="o">&lt;</span><span class="n">Condition</span><span class="o">&gt;</span> <span class="n">conditionList</span> <span class="o">=</span> <span class="c1">// A list of org.hl7.fhir.dstu3.model.Condition objects.</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">Dataset</span><span class="o">&lt;</span><span class="n">Condition</span><span class="o">&gt;</span> <span class="n">conditions</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="na">createDataset</span><span class="o">(</span><span class="n">conditionList</span><span class="o">,</span>
+</span><span class='line'>    <span class="n">encoders</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">Condition</span><span class="o">.</span><span class="na">class</span><span class="o">));</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Query for conditions based on arbitrary Spark SQL expressions</span>
+</span><span class='line'><span class="n">Dataset</span><span class="o">&lt;</span><span class="n">Condition</span><span class="o">&gt;</span> <span class="n">activeConditions</span> <span class="o">=</span> <span class="n">conditions</span>
+</span><span class='line'>    <span class="o">.</span><span class="na">where</span><span class="o">(</span><span class="s">&quot;clinicalStatus == &#39;active&#39; and verificationStatus == &#39;confirmed&#39;&quot;</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Users can also leverage Spark&rsquo;s built-in functionality to write these datasets to tables and query these tables later.</p>
+
+<h3>Using and Contributing</h3>
+
+<p>Bunsen is available under the Apache 2.0 license. The initial release targets <a href="https://spark.apache.org/releases/spark-release-2-1-0.html">Apache Spark 2.1</a> and <a href="https://www.hl7.org/fhir/STU3/index.html">FHIR STU3</a>, and support for additional versions will emerge over time.</p>
+
+<p>Check out Bunsen&rsquo;s <a href="http://engineering.cerner.com/bunsen">documentation</a> and <a href="https://github.com/cerner/bunsen">GitHub Repository</a> for more on using or contributing to the project.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Celebrating World Usability Day at Cerner]]></title>
@@ -1129,97 +1276,6 @@ case, with a different group of people. Just a fresh change of pace.</p></blockq
 <li><a href="http://engineering.cerner.com/blog/shipit-hackathon-mplus/">ShipIt &ndash; 24-hour hackathon for Millennium+ Platform Dev</a></li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Alan and Grace: An Origin Story]]></title>
-    <link href="http://engineering.cerner.com/blog/alan-and-grace-an-origin-story/"/>
-    <updated>2016-11-23T00:00:00-06:00</updated>
-    <id>http://engineering.cerner.com/blog/alan-and-grace-an-origin-story</id>
-    <content type="html"><![CDATA[<p><img class="center" src="http://engineering.cerner.com/assets/2016-11-23-alan-and-grace-an-origin-story/alan-grace.png" title="Alan and Grace" ></p>
-
-<p>Meet Alan and Grace. These lighthearted, 8-bit characters were nominated in
-early 2014 to become the iconic mascots of Engineering at Cerner. Have you ever
-wondered who these 80’s video gaming inspired characters on our Engineering
-t-shirts are? Why were they chosen as mascots? What do they represent? The
-countless hours spent pondering these questions will be no more. Pull up a
-chair as we dive into the mystery behind the dynamic duo known as Alan and
-Grace.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2016-11-23-alan-and-grace-an-origin-story/shirt-laptop.png" title="Laptop and t-shirt" ></p>
-
-<p>Believe it or not, the enjoyable pair highlighted on a myriad of our engineering
-materials were named after two real life innovators: Alan Turing and Grace
-Hopper. Alan and Grace were visionaries in their time, championing advances
-that shaped the computer science innovations of today. These icons were chosen
-based on their contributions to computer science and the moxie they showed while
-doing it.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2016-11-23-alan-and-grace-an-origin-story/alan-8bit.png" title="Alan" ></p>
-
-<p>Alan, our spiky haired friend who embodies an 80’s meets hipster vibe, is named
-after the English mathematician Alan Mathison Turing (1912-1954). Turing is
-known to some as the father of theoretical computer science and artificial
-intelligence. Alan had an unquenchable mind and was in constant pursuit of
-knowledge, devoting his life to a vocation in science and mathematics as a
-computer scientist, mathematician, logician, cryptanalyst, and theoretical
-biologist. Among his many contributions is the notable Alan Turing Enigma
-machine. The machine was used to help break the enigma code used in German
-naval communications during World War II. The concept of the Turing Enigma
-machine has become the foundation of the modern theory of computation and
-computability. Alan and his Enigma machine have received some recent fame as
-featured in the Imitation Game, a 2014 American historical drama-thriller
-loosely based on the biography Alan Turing: The Enigma. It can be argued that
-computer science would not be what it is today without the mathematical
-imagination of Alan Turing. Cue the mic drop now.</p>
-
-<div align="center">
-<img class="left" src="http://engineering.cerner.com/assets/2016-11-23-alan-and-grace-an-origin-story/alan-turing.jpg" title="Alan" >
-<img class="right" src="http://engineering.cerner.com/assets/2016-11-23-alan-and-grace-an-origin-story/turing-machine.jpg" title="Turing Machine" >
-
-<sub>Sources: <a href="http://www.alanturing.net/turing_archive/graphics/photos%20of%20Turing/pages/alan1_psd.htm">alanturing.net</a>, <a href="http://worldnews.nbcnews.com/_news/2013/12/23/22025978-queen-pardons-computing-giant-alan-turing-59-years-after-his-suicide">nbcnews.com</a></sub>
-</div>
-
-
-<hr />
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2016-11-23-alan-and-grace-an-origin-story/grace-8bit.png" title="Grace" ></p>
-
-<p>Cerner Engineering’s jovial female mascot appears as if she’s ready to take on
-the world. The fearless spirit of the mascot encompases the nature of its muse
-for whom she was named, Grace Brewster Murray Hopper (1906-1992). Grace Hopper
-was an American mathematician, computer programmer, military leader, and a woman
-clearly ahead of her time. Grace received a Ph.D. in mathematics, one of the
-first women to earn this level of education. Grace’s path to computer science
-began while serving in the U.S. Naval Reserve as one of the first to program the
-Harvard Mark I computer. Grace went on to create the first compiler for
-computer languages leading to COBOL, a widely adapted language that would be
-used around the world. But Grace wasn’t finished yet. At the age of 60, she
-was recalled to active duty where she standardized communication between
-different computer languages. When Grace retired at the age of 79 as a rear
-admiral, she was the oldest serving officer in the service. In 1991, Grace was
-the first women awarded the National Medal of Technology. Throughout her life,
-Grace encouraged young people to learn how to program. Grace’s legacy lives on
-through the Grace Murray Hopper Award, the Grace Hopper Celebration of Women in
-Computing Conference, the University of Missouri’s computer museum “Grace’s
-Place”, and now Cerner’s Engineering mascot. Grace continues to serve as an
-inspiration to women in tech everywhere. Was there any other choice?</p>
-
-<div align="center">
-<img class="left" src="http://engineering.cerner.com/assets/2016-11-23-alan-and-grace-an-origin-story/grace-hopper.jpg" title="Grace Hopper" >
-<img class="right" src="http://engineering.cerner.com/assets/2016-11-23-alan-and-grace-an-origin-story/grace-hopper-2.jpg" title="Grace Hopper" >
-
-<sub>Sources: <a href="http://www.womenatworkmuseum.org/envision-engineering.html">womenatworkmuseum.org</a>, <a href="https://en.wikipedia.org/wiki/Grace_Hopper">wikipedia.org</a></sub>
-</div>
-
-
-<p>Alan and Grace represent a beacon of inspiration, providing icons that
-encapsulate and promote a culture of innovation, forward thinking, and just
-plain fun. The creation of mascots Alan and Grace has been a big win for the
-passionate Cerner engineers dedicated to fostering Cerner’s Engineering culture.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2016-11-23-alan-and-grace-an-origin-story/alan-grace-2.png" title="Alan and Grace" ></p>
 ]]></content>
   </entry>
   

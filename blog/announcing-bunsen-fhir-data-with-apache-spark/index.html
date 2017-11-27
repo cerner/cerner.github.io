@@ -1,0 +1,453 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Announcing Bunsen: FHIR Data With Apache Spark - Engineering Health</title>
+  <meta name="author" content="Cerner">
+
+  
+  <meta name="description" content="">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://engineering.cerner.com/blog/announcing-bunsen-fhir-data-with-apache-spark">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/site/site.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <script src="/javascripts/libs/bootstrap.min.js"></script>
+
+  <link href="/atom.xml" rel="alternate" title="Engineering Health" type="application/atom+xml">
+  <script src="/javascripts/search.min.js" type="text/javascript" charset="utf-8"></script>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37701128-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body  class="top-navbar  ">
+  
+
+
+
+<header id="banner" role="banner" class="container-fluid banner-kc-background">
+
+  <div class="image">
+
+    
+      <img src="/images/KC.png" alt="Kansas City" />
+    
+
+    <div id="header1">Engineering Health<br/><span class="header2">A <b>Cerner</b> Blog</span></div>
+
+  </div>
+  <nav class="navbar navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Engineering Health</a>
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="selected">
+            <a href="/">Blog</a>
+          </li>
+          <li >
+            <a href="/culture">Culture</a>
+          </li>
+          <li >
+            <a href="/tech_talks">Tech Talks</a>
+          </li>
+          <li >
+            <a href="/open_source">Open Source</a>
+          </li>
+          <li >
+            <a href="/blog/archives">Archives</a>
+          </li>
+        </ul>
+        <div id="search" class="pull-right">
+          <form action="/search" method="get" class="navbar-search">
+            <input type="text" id="search-query" name="q" class="search-query" placeholder="Search" autocomplete="off">
+            <img src="/images/MagnifyingGlass.png" alt="Search" width="16" height="16" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+</header>
+
+
+  <div class="container-fluid post-container">
+    <div class="row-fluid">
+      <section class="span12" id="search-results" style="display: none;">
+  <h2>Search results</h2>
+  <div class="entries">
+  </div>
+</section>
+    </div>
+    <div class="row-fluid">
+      
+<article id="main" class="hentry span8" role="article">
+
+  <section class="post">
+    
+  <header class="entry-header">
+    
+      <h1 class="entry-title">Announcing Bunsen: FHIR Data With Apache Spark</h1>
+    
+    
+      <div class="entry-meta meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-11-27T00:00:00-06:00" pubdate data-updated="true">Nov 27<span>th</span>, 2017</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Ryan Brush</span>
+  </span>
+
+
+        
+      </div>
+    
+  </header>
+
+
+<div class="entry-content"><p>We&rsquo;re excited to open source <a href="http://engineering.cerner.com/bunsen">Bunsen</a>, a library to make analyzing <a href="http://hl7.org/fhir/STU3/resourcelist.html">FHIR data</a> with <a href="https://spark.apache.org/">Apache Spark</a> simple and scalable. Bunsen encodes FHIR resources directly into Apache Spark&rsquo;s native data structures. This lets users leverage well-defined FHIR data models directly within Spark SQL.</p>
+
+<p>Here&rsquo;s a simple query against a table of FHIR observations that produces a table of
+heart rate values:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">&quot;&quot;&quot;</span>
+</span><span class='line'><span class="s">select subject.reference person_id,</span>
+</span><span class='line'><span class="s">       effectiveDateTime date_time,</span>
+</span><span class='line'><span class="s">       valueQuantity.value value</span>
+</span><span class='line'><span class="s">from observations</span>
+</span><span class='line'><span class="s">where in_valueset(code, &#39;heart_rate&#39;)</span>
+</span><span class='line'><span class="s"> &quot;&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Which prints a table like this:</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="left">person_id        </th>
+<th align="left">date_time    </th>
+<th align="left">value   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td align="left">Patient/123      </td>
+<td align="left">2016-12-27   </td>
+<td align="left">54.0000 </td>
+</tr>
+<tr>
+<td></td>
+<td align="left">Patient/123      </td>
+<td align="left">2017-04-18   </td>
+<td align="left">60.0000</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>Notice that each field in the above SQL is fully defined by the <a href="http://hl7.org/fhir/STU3/observation.html">FHIR Observation model</a>. This is because the table schemas are generated directly from FHIR resource definitions, ensuring these queries exactly match other FHIR-based views of the same data.</p>
+
+<p>Bunsen also provides a collection of helpful functions to make querying data easy. The above query includes the <em>in_valueset</em> user-defined function, allowing users to use code value sets directly in the query. You can see the <a href="http://engineering.cerner.com/bunsen/introduction.html#bring-your-own-value-sets">Bunsen value set documentation</a> for details.</p>
+
+<h3>Scalability and Performance</h3>
+
+<p>Because Bunsen encodes FHIR resources in Apache Spark&rsquo;s efficient binary format, we get all of Spark&rsquo;s scalability and performance advantages. Simple queries across billions of FHIR resources typically return in single-digit seconds in internal clusters. Arbitrary joins and aggregations of complex datasets scale with your Apache Spark cluster. We take advantage of Spark&rsquo;s built-in support for <a href="https://parquet.apache.org/">Apache Parquet</a> to read and write FHIR with an efficient columnar data format that is readable by other systems as well.</p>
+
+<h3>Sophisticated Queries</h3>
+
+<p>Spark SQL offers rich query semantics that can now be used directly over FHIR data models. For instance,
+here is a query that builds a timeseries-like table directly from a collection of observations by simply
+grouping items by the person and time period. This is just standard Spark SQL wrapped around
+our simple valueset-based function.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">select</span> <span class="n">subject</span><span class="p">.</span><span class="n">reference</span> <span class="n">patient_id</span><span class="p">,</span>
+</span><span class='line'>       <span class="k">year</span><span class="p">(</span><span class="n">effectiveDateTime</span><span class="p">)</span> <span class="n">obs_year</span><span class="p">,</span>
+</span><span class='line'>       <span class="k">month</span><span class="p">(</span><span class="n">effectiveDateTime</span><span class="p">)</span> <span class="n">obs_month</span><span class="p">,</span>
+</span><span class='line'>
+</span><span class='line'>       <span class="k">avg</span><span class="p">(</span><span class="n">if</span><span class="p">(</span><span class="n">in_valueset</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="s1">&#39;glucose_level&#39;</span><span class="p">),</span>
+</span><span class='line'>              <span class="n">valueQuantity</span><span class="p">.</span><span class="n">value</span><span class="p">,</span>
+</span><span class='line'>              <span class="k">null</span><span class="p">))</span> <span class="n">avg_glucose_level</span><span class="p">,</span>
+</span><span class='line'>
+</span><span class='line'>       <span class="k">avg</span><span class="p">(</span><span class="n">if</span><span class="p">(</span><span class="n">in_valueset</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="s1">&#39;bun&#39;</span><span class="p">),</span>
+</span><span class='line'>              <span class="n">valueQuantity</span><span class="p">.</span><span class="n">value</span><span class="p">,</span>
+</span><span class='line'>              <span class="k">null</span><span class="p">))</span> <span class="n">avg_bun</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">from</span> <span class="n">observations</span>
+</span><span class='line'><span class="k">group</span> <span class="k">by</span> <span class="n">subject</span><span class="p">.</span><span class="n">reference</span><span class="p">,</span>
+</span><span class='line'>         <span class="k">year</span><span class="p">(</span><span class="n">effectiveDateTime</span><span class="p">),</span>
+</span><span class='line'>         <span class="k">month</span><span class="p">(</span><span class="n">effectiveDateTime</span><span class="p">)</span>
+</span><span class='line'><span class="k">order</span> <span class="k">by</span> <span class="n">patient_id</span><span class="p">,</span> <span class="n">obs_year</span><span class="p">,</span> <span class="n">obs_month</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Typical queries may aggregate many other types of data and join to conditions, allergies, or other tables
+to build a more complete report. All of this can be done interactively over billions of records.</p>
+
+<h3>Java Usage</h3>
+
+<p>Bunsen uses the <a href="http://hapifhir.io/">HAPI FHIR</a> library to represent data in object form. Java users can convert their objects from the HAPI to Spark-native structures and back with a few lines of code. Here&rsquo;s an example:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">FhirEncoders</span> <span class="n">encoders</span> <span class="o">=</span> <span class="n">FhirEncoders</span><span class="o">.</span><span class="na">forStu3</span><span class="o">().</span><span class="na">getOrCreate</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">List</span><span class="o">&lt;</span><span class="n">Condition</span><span class="o">&gt;</span> <span class="n">conditionList</span> <span class="o">=</span> <span class="c1">// A list of org.hl7.fhir.dstu3.model.Condition objects.</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">Dataset</span><span class="o">&lt;</span><span class="n">Condition</span><span class="o">&gt;</span> <span class="n">conditions</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="na">createDataset</span><span class="o">(</span><span class="n">conditionList</span><span class="o">,</span>
+</span><span class='line'>    <span class="n">encoders</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">Condition</span><span class="o">.</span><span class="na">class</span><span class="o">));</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Query for conditions based on arbitrary Spark SQL expressions</span>
+</span><span class='line'><span class="n">Dataset</span><span class="o">&lt;</span><span class="n">Condition</span><span class="o">&gt;</span> <span class="n">activeConditions</span> <span class="o">=</span> <span class="n">conditions</span>
+</span><span class='line'>    <span class="o">.</span><span class="na">where</span><span class="o">(</span><span class="s">&quot;clinicalStatus == &#39;active&#39; and verificationStatus == &#39;confirmed&#39;&quot;</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Users can also leverage Spark&rsquo;s built-in functionality to write these datasets to tables and query these tables later.</p>
+
+<h3>Using and Contributing</h3>
+
+<p>Bunsen is available under the Apache 2.0 license. The initial release targets <a href="https://spark.apache.org/releases/spark-release-2-1-0.html">Apache Spark 2.1</a> and <a href="https://www.hl7.org/fhir/STU3/index.html">FHIR STU3</a>, and support for additional versions will emerge over time.</p>
+
+<p>Check out Bunsen&rsquo;s <a href="http://engineering.cerner.com/bunsen">documentation</a> and <a href="https://github.com/cerner/bunsen">GitHub Repository</a> for more on using or contributing to the project.</p>
+</div>
+
+
+  </section>
+  <footer>
+    <p class="meta">
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    
+    <ul class="pager">
+      
+      <li class="previous"><a class="basic-alignment left"
+        href="/blog/celebrating-world-usability-day-at-cerner/" title="Previous Post:
+        Celebrating World Usability Day at Cerner">&laquo; Previous Post</a></li>
+      
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      
+    </ul>
+  </footer>
+</article>
+
+<aside class="sidebar-nav span4">
+  
+    <section class="well">
+  <h2>Recent Posts</h2>
+  <ul id="recent_posts" class="nav nav-list">
+    
+      <li>
+        <a href="/blog/announcing-bunsen-fhir-data-with-apache-spark/">Announcing Bunsen: FHIR Data With Apache Spark</a>
+      </li>
+    
+      <li>
+        <a href="/blog/celebrating-world-usability-day-at-cerner/">Celebrating World Usability Day at Cerner</a>
+      </li>
+    
+      <li>
+        <a href="/blog/accessibility-and-usability-on-the-road-to-great-ux/">Accessibility and Usability: On the Road to Great UX</a>
+      </li>
+    
+      <li>
+        <a href="/blog/jwala-joins-cerner-open-source/">Jwala Joins Cerner's Open Source</a>
+      </li>
+    
+      <li>
+        <a href="/blog/engineers-overseas-for-smart-and-fhir/">Engineers Overseas for SMART and FHIR (FHIR DevDays 2016)</a>
+      </li>
+    
+  </ul>
+</section>
+<section class="divider">
+  <svg width="70" height="10">
+   <rect width="10" height="10" x="0" y="0" style="fill:rgb(20,124,193)" />
+   <rect width="10" height="10" x="20" y="0" style="fill:rgb(121,193,68)" />
+   <rect width="10" height="10" x="40" y="0" style="fill:rgb(20,124,193)" />
+   <rect width="10" height="10" x="60" y="0" style="fill:rgb(121,193,68)" />
+</svg>
+</section>
+<section class="well">
+  <h2>GitHub Repos</h2>
+  <ul id="gh_repos" class="nav">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/cerner">@cerner</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'cerner',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  
+<script id="search-results-template" type="text/mustache">
+  {{#entries}}
+    <article class="search-result">
+        <div class="search-meta meta">
+        {{#date}}<time datetime="{{pubdate}}" pubdate>{{displaydate}}</time>{{/date}} | {{author}}
+        </div>
+        <a href="{{url}}">{{title}}</a>
+    </article>
+  {{/entries}}
+</script>
+
+<script type="text/javascript">
+  $(function() {
+    $('#search-query').lunrSearch({
+      indexUrl: '/javascripts/index.json',   // Url for the .json file containing search index data
+      results : '#search-results',  // selector for containing search results element
+      entries : '.entries',         // selector for search entries containing element (contained within results above)
+      template: '#search-results-template'  // selector for Mustache.js template
+    });
+    //Currently ignoring the "return/enter" keystroke when searching (as this would just result in a 404 for the page lookup).
+    $('#search-query').keydown(function(event){
+      if(event.keyCode == 13) {
+        event.preventDefault();
+        return false;
+      }
+    });
+  });
+</script>
+
+  <footer role="contentinfo" class="page-footer">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="span2">
+          <img src="/images/cerner_small_logo_white.png" alt="Cerner Logo" />
+      </div>
+      <div class="span10 pull-left">
+          <p>&copy; 2017</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
