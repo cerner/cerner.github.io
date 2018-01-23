@@ -6,8 +6,6 @@ date: 2018-01-23
 tags: [engineering, agile, learning]
 ---
 
-## Cerner and the SD Learning Consortium
-
 Cerner has a very compelling story that many want to learn from. Cerner’s Agile Champions are regular presenters at local, national, and global conferences. We routinely host calls and site visits for interested companies around the world who want to figure out how we were able to adopt Agile so quickly and sustain it so successfully. 
 
 Despite our success, there has been a general feeling at the engineering leadership and Agile Champion tiers that we aren’t getting the benefits from Agile that we once were. We talk Agile well, but have far too many teams that could be classified as "[cargo cult](https://www.solutionsiq.com/resource/blog-post/cargo-cult-agile-approach/)" - going through the motions rather than having an agile mindset. We were great teachers, but somehow had gone stagnant in our learning and growth.
