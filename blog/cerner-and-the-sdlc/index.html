@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Cerner and the SDLC - Engineering Health</title>
+  <meta name="author" content="Cerner">
+
+  
+  <meta name="description" content="">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://engineering.cerner.com/blog/cerner-and-the-sdlc">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/site/site.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <script src="/javascripts/libs/bootstrap.min.js"></script>
+
+  <link href="/atom.xml" rel="alternate" title="Engineering Health" type="application/atom+xml">
+  <script src="/javascripts/search.min.js" type="text/javascript" charset="utf-8"></script>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37701128-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body  class="top-navbar  ">
+  
+
+
+
+<header id="banner" role="banner" class="container-fluid banner-kc-background">
+
+  <div class="image">
+
+    
+      <img src="/images/KC.png" alt="Kansas City" />
+    
+
+    <div id="header1">Engineering Health<br/><span class="header2">A <b>Cerner</b> Blog</span></div>
+
+  </div>
+  <nav class="navbar navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Engineering Health</a>
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="selected">
+            <a href="/">Blog</a>
+          </li>
+          <li >
+            <a href="/culture">Culture</a>
+          </li>
+          <li >
+            <a href="/tech_talks">Tech Talks</a>
+          </li>
+          <li >
+            <a href="/open_source">Open Source</a>
+          </li>
+          <li >
+            <a href="/blog/archives">Archives</a>
+          </li>
+        </ul>
+        <div id="search" class="pull-right">
+          <form action="/search" method="get" class="navbar-search">
+            <input type="text" id="search-query" name="q" class="search-query" placeholder="Search" autocomplete="off">
+            <img src="/images/MagnifyingGlass.png" alt="Search" width="16" height="16" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+</header>
+
+
+  <div class="container-fluid post-container">
+    <div class="row-fluid">
+      <section class="span12" id="search-results" style="display: none;">
+  <h2>Search results</h2>
+  <div class="entries">
+  </div>
+</section>
+    </div>
+    <div class="row-fluid">
+      
+<article id="main" class="hentry span8" role="article">
+
+  <section class="post">
+    
+  <header class="entry-header">
+    
+      <h1 class="entry-title">Cerner and the SDLC</h1>
+    
+    
+      <div class="entry-meta meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2018-01-23T00:00:00-06:00" pubdate data-updated="true">Jan 23<span>rd</span>, 2018</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Matt Anderson</span>
+  </span>
+
+
+        
+      </div>
+    
+  </header>
+
+
+<div class="entry-content"><p>Cerner has a very compelling story that many want to learn from. Cerner’s Agile Champions are regular presenters at local, national, and global conferences. We routinely host calls and site visits for interested companies around the world who want to figure out how we were able to adopt Agile so quickly and sustain it so successfully.</p>
+
+<p>Despite our success, there has been a general feeling at the engineering leadership and Agile Champion tiers that we aren’t getting the benefits from Agile that we once were. We talk Agile well, but have far too many teams that could be classified as &ldquo;<a href="https://www.solutionsiq.com/resource/blog-post/cargo-cult-agile-approach/">cargo cult</a>&rdquo; &ndash; going through the motions rather than having an agile mindset. We were great teachers, but somehow had gone stagnant in our learning and growth.</p>
+
+<p>Two events have ignited Cerner on a renewed learning journey that has already impacted Cerner in many business areas and allowed Cerner to help shape the future direction of business agility across the globe.</p>
+
+<h3>The Invitation</h3>
+
+<p>Ironically, the first came shortly after delivering a presentation at Agile 2014 that included a section on avoiding cargo cult agile. <a href="https://twitter.com/asidky">Ahmed Sidky</a>, CEO of ICAgile, invited me to connect for a brief meeting. When our &ldquo;brief meeting&rdquo; stretched over several hours, we knew we had a strong partnership opportunity. Thus, was born the certification of Cerner’s Agile courses against an <a href="https://icagile.com/Overview">independent, internationally recognized curriculum</a> and Cerner as one of ICAgile’s first Member Organizations.</p>
+
+<p>The second came shortly after Agile 2015 while hosting a call for CH Robinson and their delivery lead, <a href="https://twitter.com/jed2van">Vanessa Adams</a>. As the call wrapped up, Vanessa disclosed that she served on the board of directors for a newly formed group under the leadership of Steve Denning and Ahmed Sidky that was bringing together forward looking Agile companies to discover best practices in enterprise agility and share them back into the community. After talking with us, she felt that Cerner was an ideal candidate given our story and our willingness to learn and share.</p>
+
+<p>I was intrigued yet skeptical.</p>
+
+<p>I honestly didn’t know who <a href="https://twitter.com/stevedenning">Steve Denning</a> was so being a part of the &ldquo;Steve Denning Learning Consortium&rdquo; held no appeal. I respected Ahmed as a voice in the Agile community that understood how to address real business issues with an Agile mindset.</p>
+
+<p>Some quick research on Steve exposed his background in the business and banking world. He is an author and regular contributor to Forbes magazine and Harvard Business Review. While he had written books on Agile management and was on the Scrum Alliance board, my mental image was of a business school professor, not a practicing agilist.</p>
+
+<p>I voiced my concerns. Vanessa felt confident they would be resolved and invited us to attend an upcoming visit (May 2016) at Riot Games and Microsoft that would be partially hosted by Ahmed who had joined Riot Games as head of Delivery.</p>
+
+<h3>Converting the Skeptic</h3>
+
+<p>One of the keys to Cerner’s successful transformation was leveraging the idea of <em>Connectors</em>, <em>Mavens</em>, and <em>Salesmen</em> along with <em>Skeptics</em> as articulated by <a href="https://www.fastcompany.com/1799410/connectors-mavens-and-salesmen-how-new-ideas-spread-seeds">Malcolm Gladwell</a> in our early pilot groups so we could address potential issues head on and build momentum. We were especially successful as some of the biggest <em>Skeptics</em> were also <em>Connectors</em> or <em>Mavens</em> and they have been crucial to our broad adoption and continued sustainability. Our results were our best <em>Salesmen</em>.</p>
+
+<p>On Cerner’s first site visit to meet with the SD Learning Consortium, the roles played out again. <a href="http://www.sdlearningconsortium.org/who-we-are/">Microsoft, Riot Games, Ericsson, CH Robinson, Spotify</a>, Steve Denning, and a representative from the <a href="https://www.scrumalliance.org/">Scrum Alliance</a> were all in attendance. Over the four days in LA and Seattle, we got to see inside Riot and Microsoft and see what was working as well as what wasn’t. The open and frank conversations as well as the &ldquo;No BS&rdquo; attitude among all participants was extremely refreshing and productive.</p>
+
+<p>At conferences, messages are polished and even &ldquo;learning&rdquo; (a.k.a. failure) is always painted in the best possible light. This was completely different. Failures that were failures were shared and discussed. Current experiments were both admired and challenged, often by the same individual.</p>
+
+<p>Probably the most significant moment for me was sitting next to <a href="https://twitter.com/joakimsunden">Joakim Sunden</a> from Spotify, who co-authored what I still consider to be the best introductory book on Kanban for software development (<a href="https://www.amazon.com/Kanban-Action-Marcus-Hammarberg/dp/1617291056">Kanban in Action</a>), and having him explain how the Spotify videos were created and what really goes on. (Hint – they are Marketing videos and highlight models that Spotify does not rigidly follow. They don’t know what the Spotify Way is that many talk about.)  Spotify is great, visionary and different, but they aren’t a unicorn or perfect. A future site visit to Spotify solidified that fact and made me respect them even more.</p>
+
+<p>I found that each existing member was a <em>Connector</em> in their organizations, a <em>Maven</em> in terms of enterprise agility, and a healthy <em>Skeptic</em> towards the bulk of commercialized Agile. Ahmed was the <em>Salesman</em>. Steve was a little bit of the professor, but clearly demonstrated an Agile mindset and a vision to change the world of work. I caught his vision. It was refreshing and for the first time in several years, I learned several new things that I could try at Cerner as soon as I got back. The <em>Skeptic</em> was converted.</p>
+
+<h3>Assessing and Applying at Cerner</h3>
+
+<p>As I took a hard look at Cerner after returning from the visit, I realized that our success with things like <a href="http://engineering.cerner.com/2013/08/devcon/">DevCon</a> and the <a href="http://engineering.cerner.com/2013/08/devacademy/">DevAcademy</a> where we were truly industry trend setters had allowed us to be complacent in other areas that the other SDLC members had as strengths. In some cases, entropy was setting in and some of the benefits we realized from going Agile were no longer as prevalent. We weren’t in the danger zone, but some trends were heading in the wrong direction and merited a fresh look.</p>
+
+<p>In other cases, SDLC companies were branching out with experiments in areas like HR, Finance, or Marketing that were bearing fruit. Their success led to a desire to see what we could do at Cerner.</p>
+
+<p>Over the past two years, site visits have been held at Microsoft (Seattle), Ericsson (Stolkholm and Athelone Ireland), Barclays Bank (London), BMW (Munich), Riot Games (LA), Spotify (New York), Vistaprint (Boston), Fidelity Investments (Boston), CH Robinson (Chicago), and Cerner. Without exception, from each set of site visits, at least three action items have been taken by the Cerner attendees to improve Cerner. There is a renewed vigor towards an Agile mindset that had waned over the past 3-4 years.
+At the beginning, Shahzad Zafar and I were the only representatives for Cerner. Now we have four Cerner associates at each site visit and have many other associates engage in deep dive conversations on special topics like DevOps, Shadow IT, or HR.</p>
+
+<h3>Learning and Sharing</h3>
+
+<p>Part of the SDLC is to learn from each other and then share those messages back into the broader community. There is deep, rich learning that can be gained from blending large companies like Ericcson with over 100K employees with a mid-tier company like Cerner (20K+), smaller companies like Vistaprint (5k+) and &ldquo;born Agile&rdquo; start-ups like Riot Games.</p>
+
+<p>While each SDLC member has software components as part of the services that we offer to our clients, we operate in different verticals. The lessons we learn are universal and are not limited to a specific market or niche.</p>
+
+<p>At the end of 2016, the SDLC members got together and <a href="http://www.sdlearningconsortium.org/what-we-have-learned/">summarized our learnings</a> from the year in a paper that Steve then presented at the 2016 Drucker Forum.</p>
+
+<p>Personally, I have gone from the Skeptic to a very vocal evangelist, sharing the combined Cerner and SDLC story at the 2016 KC PMI Conference, <a href="http://2016.leanagilekc.com/sessions/the-future-is-here/">2016 LeanAgileKC</a>, 2017 Business Agility Conference, Agile 2017, 2017 Global PMI PMO Symposium as well as 2 of Cerner’s 2017 DevCons. Barclays Bank and Riot Games have been equally as active in sharing the SDLC learnings across the globe.</p>
+
+<p>Steve Denning recently published an <a href="https://www.forbes.com/sites/stevedenning/2017/10/15/what-is-agile-the-four-essential-elements/#24b8c3736e85">article in Forbes</a> with the findings that are starting to be cited as the core fundamentals for business agility across the globe with Cerner listed as a prevalent contributor.</p>
+
+<p>Like the Agile Manifesto, the principles are simple, yet powerful:</p>
+
+<ul>
+<li>Delighting Customers</li>
+<li>Descaling Work</li>
+<li>Enterprise-wide Agility</li>
+<li>Nurture Culture</li>
+</ul>
+
+
+<h3>The Future</h3>
+
+<p>The SDLC is currently viewed as the leader in business agility practices and is shaping the speakers and agendas for the <a href="http://businessagilityconf.com/">Business Agility Conferences</a> globally. We continue to expand membership to include new companies who meet the criteria of a leader in agility and have a story to tell. Current members have grown to include Barclays Bank, Vistaprint, Fidelity Investments, Target, American Express, and All State are all candidates to join in 2018.</p>
+
+<p>The brightest future is not about the SDLC but about Cerner and what we can accomplish based on learning from other SDLC members. Our 2018 Vision aligns well with the SDLC learnings and several strategies to achieve our vision include models based on what other SDLC members have already proven to be successful.</p>
+</div>
+
+
+  </section>
+  <footer>
+    <p class="meta">
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    
+    <ul class="pager">
+      
+      <li class="previous"><a class="basic-alignment left"
+        href="/blog/bad-design-is-bad-for-your-health-why-data-visualization-details-matter/" title="Previous Post:
+        Bad Design is Bad for Your Health: Why Data Visualization Details Matter">&laquo; Previous Post</a></li>
+      
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      
+    </ul>
+  </footer>
+</article>
+
+<aside class="sidebar-nav span4">
+  
+    <section class="well">
+  <h2>Recent Posts</h2>
+  <ul id="recent_posts" class="nav nav-list">
+    
+      <li>
+        <a href="/blog/cerner-and-the-sdlc/">Cerner and the SDLC</a>
+      </li>
+    
+      <li>
+        <a href="/blog/bad-design-is-bad-for-your-health-why-data-visualization-details-matter/">Bad Design Is Bad for Your Health: Why Data Visualization Details Matter</a>
+      </li>
+    
+      <li>
+        <a href="/blog/2-to-the-5th-coding-competition-2017/">2^5 Coding Competition 2017: 32 Lines or Less</a>
+      </li>
+    
+      <li>
+        <a href="/blog/announcing-bunsen-fhir-data-with-apache-spark/">Announcing Bunsen: FHIR Data With Apache Spark</a>
+      </li>
+    
+      <li>
+        <a href="/blog/celebrating-world-usability-day-at-cerner/">Celebrating World Usability Day at Cerner</a>
+      </li>
+    
+  </ul>
+</section>
+<section class="divider">
+  <svg width="70" height="10">
+   <rect width="10" height="10" x="0" y="0" style="fill:rgb(20,124,193)" />
+   <rect width="10" height="10" x="20" y="0" style="fill:rgb(121,193,68)" />
+   <rect width="10" height="10" x="40" y="0" style="fill:rgb(20,124,193)" />
+   <rect width="10" height="10" x="60" y="0" style="fill:rgb(121,193,68)" />
+</svg>
+</section>
+<section class="well">
+  <h2>GitHub Repos</h2>
+  <ul id="gh_repos" class="nav">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/cerner">@cerner</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'cerner',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  
+<script id="search-results-template" type="text/mustache">
+  {{#entries}}
+    <article class="search-result">
+        <div class="search-meta meta">
+        {{#date}}<time datetime="{{pubdate}}" pubdate>{{displaydate}}</time>{{/date}} | {{author}}
+        </div>
+        <a href="{{url}}">{{title}}</a>
+    </article>
+  {{/entries}}
+</script>
+
+<script type="text/javascript">
+  $(function() {
+    $('#search-query').lunrSearch({
+      indexUrl: '/javascripts/index.json',   // Url for the .json file containing search index data
+      results : '#search-results',  // selector for containing search results element
+      entries : '.entries',         // selector for search entries containing element (contained within results above)
+      template: '#search-results-template'  // selector for Mustache.js template
+    });
+    //Currently ignoring the "return/enter" keystroke when searching (as this would just result in a 404 for the page lookup).
+    $('#search-query').keydown(function(event){
+      if(event.keyCode == 13) {
+        event.preventDefault();
+        return false;
+      }
+    });
+  });
+</script>
+
+  <footer role="contentinfo" class="page-footer">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="span2">
+          <img src="/images/Cerner_White_Horizontal.png" alt="Cerner Logo" />
+      </div>
+      <div class="span10 pull-left">
+          <p>&copy; 2018</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
