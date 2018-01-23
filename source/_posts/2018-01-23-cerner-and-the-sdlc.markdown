@@ -65,7 +65,8 @@ Like the Agile Manifesto, the principles are simple, yet powerful:
 * Descaling Work
 * Enterprise-wide Agility
 * Nurture Culture
-* The Future
+
+### The Future
 
 The SDLC is currently viewed as the leader in business agility practices and is shaping the speakers and agendas for the [Business Agility Conferences](http://businessagilityconf.com/) globally. We continue to expand membership to include new companies who meet the criteria of a leader in agility and have a story to tell. Current members have grown to include Barclays Bank, Vistaprint, Fidelity Investments, Target, American Express, and All State are all candidates to join in 2018.
 
