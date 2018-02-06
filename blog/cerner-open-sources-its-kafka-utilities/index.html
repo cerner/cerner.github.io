@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Cerner and Open Source - Engineering Health</title>
+  <title>Cerner Open Sources Its Kafka Utilities - Engineering Health</title>
   <meta name="author" content="Cerner">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://engineering.cerner.com/2014/01/cerner-and-open-source">
+  <link rel="canonical" href="http://engineering.cerner.com/blog/cerner-open-sources-its-kafka-utilities">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -76,7 +76,7 @@
       </a>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li >
+          <li class="selected">
             <a href="/">Blog</a>
           </li>
           <li >
@@ -122,7 +122,7 @@
     
   <header class="entry-header">
     
-      <h1 class="entry-title">Cerner and Open Source</h1>
+      <h1 class="entry-title">Cerner Open Sources Its Kafka Utilities</h1>
     
     
       <div class="entry-meta meta">
@@ -138,12 +138,12 @@
   
 
 
-<time datetime="2014-01-16T00:00:00-06:00" pubdate data-updated="true">Jan 16<span>th</span>, 2014</time> | 
+<time datetime="2018-02-06T00:00:00-06:00" pubdate data-updated="true">Feb 6<span>th</span>, 2018</time> | 
   
 
 
   <span class="byline author vcard">
-    <span class="fn">Nathan Beyer</span>
+    <span class="fn">Bryan Baugher</span>
   </span>
 
 
@@ -153,23 +153,21 @@
   </header>
 
 
-<div class="entry-content"><p>(This post was written by Nathan Beyer, Bryan Baugher and Jacob Williams.)</p>
+<div class="entry-content"><p>At Cerner, we often make use of many open source projects in our infrastructure. I work on a team responsible for Cerner&rsquo;s Ingestion Platform, a critical piece of infrastructure that takes in TBs of data and over a billion messages per day. The platform’s responsibility is then to make this data available for downstream teams to consume. When designing the Ingestion Platform, we felt Apache Kafka was perfect for ingesting and consuming these massive streams of data. We originally built the Ingestion Platform in 2014 and it has grown with Kafka ever since.</p>
 
-<p>The use of open source software has become nearly ubiquitous in contemporary software development and it is no different for us, here at Cerner. We have been using open source software, directly and indirectly, for decades. Over the past decade, we’ve grown in maturity both in our use of open source software as well as our participation in open source communities. Our associates have long been contributors to open source communities, including helping users, logging bugs and enhancements, and submitting patches. Cerner associates also spearheaded the development of the <a href="http://wiki.directproject.org/Java+Reference+Implementation">Java Reference Implementation of the Direct Project</a>.</p>
+<p>Along the way, we’ve become experienced with Apache Kafka and how it works. We know how to monitor it, perform common administrative operations, and more. We’ve even made contributions to Kafka for various improvements [<a href="https://issues.apache.org/jira/browse/KAFKA-3297">1</a>][<a href="https://issues.apache.org/jira/browse/KAFKA-4687">2</a>][<a href="https://issues.apache.org/jira/browse/KAFKA-2434">3</a>] and Apache Crunch, our processing framework, to <a href="https://issues.apache.org/jira/browse/CRUNCH-606">add Kafka support</a>. We have also given <a href="https://www.confluent.io/resources/kafka-summit-2016/ingesting-complex-healthcare-data-apache-kafka/">talks</a> about our usage of Apache Kafka at Kafka Summit and we’ve written a <a href="http://blog.cloudera.com/blog/2014/11/how-cerner-uses-cdh-with-apache-kafka/">blog post</a> about it as well.</p>
 
-<p>Recently, we’ve decided to take another step in the open source journey by releasing complete projects on our <a href="https://github.com/cerner">Github organization</a>. Although these projects seem small, they are a big step for us and just the beginning of what we hope to open up and share in the future. We hope you’ll check out these projects and participate in their development.</p>
+<p>We are still interested in supporting the Kafka community, and today we hit another milestone as we open source some of our <a href="https://github.com/cerner/common-kafka">utilities for Kafka</a>. This includes:</p>
 
-<h2>Project: knife-tar</h2>
+<ul>
+<li>Lightweight wrappers over producer and consumer providing additional functionality</li>
+<li>A client to simplify admin operations</li>
+<li>A Kafka connect sink for delivering data to another Kafka cluster</li>
+<li>Kafka test infrastructure for integration testing</li>
+</ul>
 
-<p>Source: [<a href="https://github.com/cerner/knife-tar">https://github.com/cerner/knife-tar</a>]</p>
 
-<p>Knife-tar is a <a href="http://www.getchef.com/chef/">Chef</a> tool for uploading and downloading Chef components from a tar file. It can be used for creating backups of your chef-server or for uploading released Chef artifacts from a repository.</p>
-
-<h2>Project: scrimp</h2>
-
-<p>Source: [<a href="https://github.com/cerner/scrimp">https://github.com/cerner/scrimp</a>]</p>
-
-<p>Scrimp is a tool for interactively testing <a href="http://thrift.apache.org/">Thrift</a> services in a web browser. It’s meant to fill the same role that browser-based REST clients fill for web services. Given the IDL files for the services, it provides a UI to help construct requests, invoke services, and display formatted responses.</p>
+<p>Try it and let me know what you think! You can log issues for improvements, or email me your thoughts: <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#58;&#98;&#x72;&#121;&#97;&#x6e;&#46;&#98;&#x61;&#x75;&#103;&#104;&#101;&#114;&#x40;&#x63;&#x65;&#x72;&#110;&#101;&#x72;&#46;&#x63;&#x6f;&#109;&#46;">&#x62;&#x72;&#x79;&#97;&#110;&#x2e;&#98;&#97;&#117;&#x67;&#x68;&#101;&#x72;&#x40;&#x63;&#x65;&#x72;&#110;&#x65;&#114;&#x2e;&#99;&#111;&#x6d;&#46;</a> We hope to continue to improve the library and always welcome contributions and ideas from others.</p>
 </div>
 
 
@@ -192,13 +190,10 @@
     <ul class="pager">
       
       <li class="previous"><a class="basic-alignment left"
-        href="/2013/11/cerner-tech-talks/" title="Previous Post:
-        Cerner Tech Talks">&laquo; Previous Post</a></li>
+        href="/blog/cerner-and-the-sdlc/" title="Previous Post:
+        Cerner and the SDLC">&laquo; Previous Post</a></li>
       
       <li><a href="/blog/archives">Blog Archives</a></li>
-      
-      <li class="next"><a class="basic-alignment right" href="/2014/01/the-raft-protocol-a-better-paxos/"
-        title="Next Post: The Raft Protocol: A Better Paxos?">Next Post &raquo;</a></li>
       
     </ul>
   </footer>
