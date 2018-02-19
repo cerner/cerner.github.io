@@ -2,11 +2,11 @@
 layout: post
 title: "ShipIt X Day: Winter 2017"
 author: Isabella Kuzava, Carl Chesser
-date: 2018-02-16
+date: 2018-02-19
 tags: [culture, engineering, hackathon, shipit]
 ---
 
-{% img center /assets/2018-02-16-shipit-x-day-winter-2018/shipit-x-4.jpg 600px %}
+{% img center /assets/2018-02-19-shipit-x-day-winter-2018/shipit-x-4.jpg 600px %}
 
 On December 14th and 15th, 18 teams of Cerner associates competed for the Golden Trophy during our tenth ShipIt Day. Being this was our tenth, it was fun to reflect back on how this event started and how much it has grown.
 
@@ -16,7 +16,7 @@ On December 14th and 15th, 18 teams of Cerner associates competed for the Golden
   <tr>
     <td>
       <div class='pull-left' markdown="1">
-        {% img center /assets/2018-02-16-shipit-x-day-winter-2018/shipit-x-6.png 200px %}
+        {% img center /assets/2018-02-19-shipit-x-day-winter-2018/shipit-x-6.png 200px %}
       </div>
         This was our third ShipIt Day hosted at our new Innovations campus. It continues to be a great location for ShipIt because of our awesome game rooms and collaboration spaces. As part of this ShipIt, we had a sponsored theme, which focused on building React applications using <a href="https://github.com/cerner/kaiju">Kaiju</a> that are based on Cerner's consistent <a href="http://terra-ui.herokuapp.com/home">Terra UI</a> theme. Team members that support these projects were available to help participants if they wished to use these technologies, helping to gain more feedback on the projects, and to expand the exposure of these projects to ShipIt teams. By including this theme, we also introduced a new category for someone to win by using these projects.
     </td>
@@ -27,11 +27,11 @@ On December 14th and 15th, 18 teams of Cerner associates competed for the Golden
   <table>
     <tr>
       <td align="center">
-        {% img center /assets/2018-02-16-shipit-x-day-winter-2018/shipit-x-3.jpg 375x500px %}
+        {% img center /assets/2018-02-19-shipit-x-day-winter-2018/shipit-x-3.jpg 375x500px %}
         <sub>Shirt for participants.</sub>
       </td>
       <td align="center">
-        {% img center /assets/2018-02-16-shipit-x-day-winter-2018/shipit-x-8.png 672x500px %}
+        {% img center /assets/2018-02-19-shipit-x-day-winter-2018/shipit-x-8.png 672x500px %}
         <sub>Whiteboard action happening bright and early.</sub>
       </td>
     </tr>
@@ -44,15 +44,15 @@ Teams checked in bright and early for kick-off.  Vouchers to the cafe were provi
   <table>
     <tr>
       <td align="center">
-        {% img center /assets/2018-02-16-shipit-x-day-winter-2018/shipit-x-12.png 375x250px %}
+        {% img center /assets/2018-02-19-shipit-x-day-winter-2018/shipit-x-12.png 375x250px %}
       </td>
       <td align="center">
-        {% img center /assets/2018-02-16-shipit-x-day-winter-2018/shipit-x-13.png 375x250px %}
+        {% img center /assets/2018-02-19-shipit-x-day-winter-2018/shipit-x-13.png 375x250px %}
       </td>
     </tr>
     <tr>
       <td align="center" colspan="2">
-        <sub>Teams planning our their strategy.</sub>
+        <sub>Teams planning out their strategy.</sub>
       </td>
     </tr>
   </table>
@@ -62,7 +62,7 @@ Teams checked in bright and early for kick-off.  Vouchers to the cafe were provi
   <table>
     <tr>
       <td align="center">
-        {% img center /assets/2018-02-16-shipit-x-day-winter-2018/shipit-x-11.jpg 500px %}
+        {% img center /assets/2018-02-19-shipit-x-day-winter-2018/shipit-x-11.jpg 500px %}
         <sub>The Assembly filling up before presentations.</sub>
       </td>
     </tr>
@@ -77,7 +77,7 @@ Demos always arrive quicker than anticipated. Ready or not, 9am rolled around an
   <tr>
     <td>
       <div class='pull-left' markdown="1">
-        {% img center /assets/2018-02-16-shipit-x-day-winter-2018/shipit-x-7.jpg %}
+        {% img center /assets/2018-02-19-shipit-x-day-winter-2018/shipit-x-7.jpg %}
       </div>
     </td>
     <td>
@@ -92,7 +92,7 @@ Demos always arrive quicker than anticipated. Ready or not, 9am rolled around an
 
 ### Team ShipIt X Files
 
-{% img center /assets/2018-02-16-shipit-x-day-winter-2018/shipit-x-10.jpg 500px %}
+{% img center /assets/2018-02-19-shipit-x-day-winter-2018/shipit-x-10.jpg 500px %}
 
 Second place went to Team ShipIt X Files (Santosh Manughala, Carlos Salazar, Matt Horn, Seada Ali).
 
@@ -102,7 +102,7 @@ Way to go, Team ShipIT X Files!
 
 ### Team A Near Field Far Far Away
 
-{% img center /assets/2018-02-16-shipit-x-day-winter-2018/shipit-x-2.jpg 500px %}
+{% img center /assets/2018-02-19-shipit-x-day-winter-2018/shipit-x-2.jpg 500px %}
 
 Team A Near Field Far Far Away (Aurko Ghosh, Aaron Kaplan, Vijay Ayilavarapu, Nikhil Agrawal, Neil Pathare) took third place. Their project utilized our MakerSpace!
 
@@ -112,7 +112,7 @@ Judge Chuck Schneider noted, "I like that they took on a lot of different pieces
 
 ### Team Flying Mongoose
 
-{% img center /assets/2018-02-16-shipit-x-day-winter-2018/shipit-x-1.jpg 500px %}
+{% img center /assets/2018-02-19-shipit-x-day-winter-2018/shipit-x-1.jpg 500px %}
 
 The winners of the sponsored project theme was a veteran team, Flying Mongoose (Mahesh Acharya, Taylor Clay, Cihan Kaynak, Matt Stramel). They were able to start the migration of [Cerner's RxStation](https://www.cerner.com/solutions/automated-dispensing-cabinet) to a React application utilizing Terra UI. They were able to utilize Kaiju to build the prototype UI, which had dynamically loaded tables and mock buttons. By using ShipIt to start this transition, they were able to learn a lot of what it would take to make these next steps. 
 
@@ -120,7 +120,7 @@ Nicely done Team Flying Mongoose!
 
 ### People's Choice Awards
 
-{% img center /assets/2018-02-16-shipit-x-day-winter-2018/shipit-x-9.jpg 500px %}
+{% img center /assets/2018-02-19-shipit-x-day-winter-2018/shipit-x-9.jpg 500px %}
 
 * **Favorite Team Name**: Keep it on the DL (Eric Fung, Ian Kottman, Sam Livingston, Abhi Mahabalshetti, Will Pruyn)
 * **Favorite Project**: A Near Field Far Far Away (Aurko Ghosh, Aaron Kaplan, Vijay Ayilavarapu, Nikhil Agrawal, Neil Pathare)
@@ -128,7 +128,7 @@ Nicely done Team Flying Mongoose!
 
 Winning teams walked away with some awesome prizes. Wireless headphones, TileMates, portable chargers, Echo Dots, drones, Google Cardboards, and Lego tape were all up for grabs.
 
-{% img center /assets/2018-02-16-shipit-x-day-winter-2018/shipit-x-5.jpg 500px %}
+{% img center /assets/2018-02-19-shipit-x-day-winter-2018/shipit-x-5.jpg 500px %}
 
 Each ShipIt Day, the projects get more intricate and more creative. The projects presented show off the talent we have. After surveying the participants on their projects, 45% of the projects were identified to improve daily work at Cerner. ShipIt Day remains one of our most popular dev culture events at Cerner.
 
