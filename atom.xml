@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2018-02-06T14:01:43-06:00</updated>
+  <updated>2018-02-19T12:22:55-06:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,167 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ShipIt X Day: Winter 2017]]></title>
+    <link href="http://engineering.cerner.com/blog/shipit-x-day-winter-2017/"/>
+    <updated>2018-02-19T00:00:00-06:00</updated>
+    <id>http://engineering.cerner.com/blog/shipit-x-day-winter-2017</id>
+    <content type="html"><![CDATA[<p><img class="center" src="http://engineering.cerner.com/assets/2018-02-19-shipit-x-day-winter-2017/shipit-x-4.jpg" width="600"></p>
+
+<p>On December 14th and 15th, 18 teams of Cerner associates competed for the Golden Trophy during our tenth ShipIt Day. Being this was our tenth, it was fun to reflect back on how this event started and how much it has grown.</p>
+
+<blockquote><p>It has been great to see ShipIt Days start from small hackathons organically run by individual teams to now an engineering-wide quarterly event that brings together engineers from disparate organizations, allowing for a better cross-pollination of ideas and team members. &ndash; <a href="https://twitter.com/kpshek">Kevin Shekleton</a></p></blockquote>
+
+<table>
+  <tr>
+    <td>
+      <div class='pull-left' markdown="1">
+        <img class="center" src="http://engineering.cerner.com/assets/2018-02-19-shipit-x-day-winter-2017/shipit-x-6.png" width="200">
+      </div>
+        This was our third ShipIt Day hosted at our new Innovations campus. It continues to be a great location for ShipIt because of our awesome game rooms and collaboration spaces. As part of this ShipIt, we had a sponsored theme, which focused on building React applications using <a href="https://github.com/cerner/kaiju">Kaiju</a> that are based on Cerner&#8217;s consistent <a href="http://terra-ui.herokuapp.com/home">Terra UI</a> theme. Team members that support these projects were available to help participants if they wished to use these technologies, helping to gain more feedback on the projects, and to expand the exposure of these projects to ShipIt teams. By including this theme, we also introduced a new category for someone to win by using these projects.
+    </td>
+  </tr>
+</table>
+
+
+
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2018-02-19-shipit-x-day-winter-2017/shipit-x-3.jpg" width="375">
+        <sub>Shirt for participants.</sub>
+      </td>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2018-02-19-shipit-x-day-winter-2017/shipit-x-8.png" width="672">
+        <sub>Whiteboard action happening bright and early.</sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<p>Teams checked in bright and early for kick-off.  Vouchers to the cafe were provided so participants could fuel their hard work throughout the day. Workflow was constant with lots of collaboration.</p>
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2018-02-19-shipit-x-day-winter-2017/shipit-x-12.png" width="375">
+      </td>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2018-02-19-shipit-x-day-winter-2017/shipit-x-13.png" width="375">
+      </td>
+    </tr>
+    <tr>
+      <td align="center" colspan="2">
+        <sub>Teams planning out their strategy.</sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2018-02-19-shipit-x-day-winter-2017/shipit-x-11.jpg" width="500">
+        <sub>The Assembly filling up before presentations.</sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<p>Demos always arrive quicker than anticipated. Ready or not, 9am rolled around and demos were in full swing. Teams got 4 minutes to present their projects to a panel of judges, consisting of Michelle Brush, Robert Farr, Tim Erdel, Chad Moats, and Chuck Schneider.  Special thank you to those folks for spending their morning with us and supporting ShipIt Day!</p>
+
+<h3>Team Delayed Gratification</h3>
+
+<table cellpadding="10">
+  <tr>
+    <td>
+      <div class='pull-left' markdown="1">
+        <img class="center" src="http://engineering.cerner.com/assets/2018-02-19-shipit-x-day-winter-2017/shipit-x-7.jpg">
+      </div>
+    </td>
+    <td>
+      Coming in first place was Team Delayed Gratification (Russ Star, Ben Hemphill, Morgan Patterson).
+      
+      <blockquote><p>Our ShipIt team, Delayed Gratification, worked to complete  an existing side project called the &#8220;RUSS test,&#8221; aka Really Useful Speed Service. The goal is to allow service owners to make smart decisions about where to  geographically place their services by providing response time, bandwidth, and other key network metrics.</p></blockquote>
+      
+      Congratulations Team Delayed Gratification! A much deserved win.
+    </td>
+  </tr>
+</table>
+
+
+<h3>Team ShipIt X Files</h3>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2018-02-19-shipit-x-day-winter-2017/shipit-x-10.jpg" width="500"></p>
+
+<p>Second place went to Team ShipIt X Files (Santosh Manughala, Carlos Salazar, Matt Horn, Seada Ali).</p>
+
+<blockquote><p>Our project was to create an application for discovering related database rows that let&rsquo;s the user quickly navigate back-end data in Millennium, (e.g. look up lots of useful info for a given personnel id, person id, or event id). Each bit of data could be clickable to do a new search on that id (search the person you found on a clinical event in one click). The app displays information so that it is easy to navigate.</p></blockquote>
+
+<p>Way to go, Team ShipIT X Files!</p>
+
+<h3>Team A Near Field Far Far Away</h3>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2018-02-19-shipit-x-day-winter-2017/shipit-x-2.jpg" width="500"></p>
+
+<p>Team A Near Field Far Far Away (Aurko Ghosh, Aaron Kaplan, Vijay Ayilavarapu, Nikhil Agrawal, Neil Pathare) took third place. Their project utilized our MakerSpace!</p>
+
+<blockquote><p>For ShipIt, we assembled a 3D printed light bridge that provides 180% of bright light for the soldering workbench. In addition to assembly, we designed and attempted to implement an RGB LED controller using a Raspberry Pi 3 and mosfet chips. The controller uses both a physical switch, as well as a mobile app to control the lighting. The mobile app is developed using React Native, and communicates wirelessly with the controller via Near Field Communication (NFC).</p></blockquote>
+
+<p>Judge Chuck Schneider noted, &ldquo;I like that they took on a lot of different pieces, which adds to the complexity of the project.&rdquo;</p>
+
+<h3>Team Flying Mongoose</h3>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2018-02-19-shipit-x-day-winter-2017/shipit-x-1.jpg" width="500"></p>
+
+<p>The winners of the sponsored project theme was a veteran team, Flying Mongoose (Mahesh Acharya, Taylor Clay, Cihan Kaynak, Matt Stramel). They were able to start the migration of <a href="https://www.cerner.com/solutions/automated-dispensing-cabinet">Cerner&rsquo;s RxStation</a> to a React application utilizing Terra UI. They were able to utilize Kaiju to build the prototype UI, which had dynamically loaded tables and mock buttons. By using ShipIt to start this transition, they were able to learn a lot of what it would take to make these next steps.</p>
+
+<p>Nicely done Team Flying Mongoose!</p>
+
+<h3>People&rsquo;s Choice Awards</h3>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2018-02-19-shipit-x-day-winter-2017/shipit-x-9.jpg" width="500"></p>
+
+<ul>
+<li><strong>Favorite Team Name</strong>: Keep it on the DL (Eric Fung, Ian Kottman, Sam Livingston, Abhi Mahabalshetti, Will Pruyn)</li>
+<li><strong>Favorite Project</strong>: A Near Field Far Far Away (Aurko Ghosh, Aaron Kaplan, Vijay Ayilavarapu, Nikhil Agrawal, Neil Pathare)</li>
+<li><strong>Favorite Presentation</strong>: If It Doesn’t Ship, You Must Acquit (Steven Goldberg, Ryan Neff, Jason Xu)</li>
+</ul>
+
+
+<p>Winning teams walked away with some awesome prizes. Wireless headphones, TileMates, portable chargers, Echo Dots, drones, Google Cardboards, and Lego tape were all up for grabs.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2018-02-19-shipit-x-day-winter-2017/shipit-x-5.jpg" width="500"></p>
+
+<p>Each ShipIt Day, the projects get more intricate and more creative. The projects presented show off the talent we have. After surveying the participants on their projects, 45% of the projects were identified to improve daily work at Cerner. ShipIt Day remains one of our most popular dev culture events at Cerner.</p>
+
+<p>First time participant, Ted Segal said, &ldquo;I&rsquo;m a new developer, I&rsquo;m still in the <a href="http://engineering.cerner.com/2013/08/devacademy/">DevAcademy</a>, and I really appreciated the chance to learn about tools and ideas that I had not been exposed to yet from more experienced developers.&rdquo;</p>
+
+<p>Veteran participant, Alex Harder said he likes participating in ShipIt Day because he enjoys exploring new technologies and applying them to a problem. ShipIt Day continues to be successful among Cerner associates. Whether you want to work on something you don’t normally have time to, or you’re interested in meeting new people, ShipIt Day is a winner!</p>
+
+<p>Save the Date: ShipIt Day returns March 8th and 9th! If you are interested in learning more about other ShipIt Days, see these earlier posts:</p>
+
+<ul>
+<li><a href="http://engineering.cerner.com/blog/shipit-ix-day-summer-2017/">ShipIt Day IX Summer 2017</a></li>
+<li><a href="http://engineering.cerner.com/blog/shipit-day-viii-spring-2017/">ShipIt Day VIII Spring 2017</a></li>
+<li><a href="http://engineering.cerner.com/blog/shipit-vii-day-winter-2016/">ShipIt Day VII Winter 2016</a></li>
+<li><a href="https://www.youtube.com/watch?v=iqTp0dmLgUk">ShipIt Day Winter 2016 Highlight Reel</a></li>
+<li><a href="http://engineering.cerner.com/blog/fall-2016-shipit-day/">ShipIt Day Fall 2016</a></li>
+<li><a href="http://engineering.cerner.com/blog/spring-2016-shipit-day/">ShipIt Day Spring 2016</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Cerner Open Sources Its Kafka Utilities]]></title>
@@ -32,7 +193,7 @@
 </ul>
 
 
-<p>Try it and let me know what you think! You can log issues for improvements, or email me your thoughts: <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#58;&#98;&#x72;&#121;&#97;&#x6e;&#46;&#98;&#x61;&#x75;&#103;&#104;&#101;&#114;&#x40;&#x63;&#x65;&#x72;&#110;&#101;&#x72;&#46;&#x63;&#x6f;&#109;&#46;">&#x62;&#x72;&#x79;&#97;&#110;&#x2e;&#98;&#97;&#117;&#x67;&#x68;&#101;&#x72;&#x40;&#x63;&#x65;&#x72;&#110;&#x65;&#114;&#x2e;&#99;&#111;&#x6d;&#46;</a> We hope to continue to improve the library and always welcome contributions and ideas from others.</p>
+<p>Try it and let me know what you think! You can log issues for improvements, or email me your thoughts: <a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#111;&#x3a;&#x62;&#x72;&#x79;&#97;&#110;&#46;&#98;&#97;&#117;&#103;&#x68;&#101;&#x72;&#x40;&#99;&#x65;&#x72;&#110;&#x65;&#x72;&#46;&#x63;&#x6f;&#109;&#46;">&#x62;&#114;&#121;&#97;&#110;&#46;&#x62;&#97;&#x75;&#x67;&#104;&#x65;&#x72;&#x40;&#99;&#101;&#114;&#110;&#x65;&#x72;&#46;&#x63;&#x6f;&#109;&#46;</a> We hope to continue to improve the library and always welcome contributions and ideas from others.</p>
 ]]></content>
   </entry>
   
@@ -1196,33 +1357,6 @@ I have endured more than a dozen Kansas City winters, and I still can&rsquo;t ma
 <p>With all of this integration with Chef, we need a simple way to manage all of those versions. This is where the <a href="https://supermarket.chef.io/cookbooks/version_databag">Version Databag cookbook</a> comes in. At a high level, this cookbook allows us to define our versions in a centralized data bag (grouped under conceptual units) and populates the corresponding node attributes required with those versions at runtime. This significantly reduces the effort involved in finding, updating, and maintaining the various versions of things that we have across our Chef configuration.</p>
 
 <p>Because we found it so useful, we decided to open source it! We encourage you to try it and manage Chef versions with it for easier configuration management practices. If you feel that it could be further improved, <a href="https://github.com/cerner/version_databag/issues">let us know</a> (or better yet, submit the improvement yourself!). We&rsquo;re welcome to take enhancements and feedback to improve our processes.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Engineers on the Road for SMART and FHIR (CHC 2016)]]></title>
-    <link href="http://engineering.cerner.com/blog/engineers-on-the-road-for-smart-and-fhir/"/>
-    <updated>2017-03-24T00:00:00-05:00</updated>
-    <id>http://engineering.cerner.com/blog/engineers-on-the-road-for-smart-and-fhir</id>
-    <content type="html"><![CDATA[<p>Over the past few years, Cerner has been developing a standards-based platform on top of our Cerner Millennium® EHR.  Rather than roll our own API, we’ve been using the <a href="http://hl7.org/fhir/overview-dev.html">HL7® FHIR® standard</a>.  For app integration, we’ve been using the <a href="http://docs.smarthealthit.org/">SMART® on FHIR specification</a>.  If you’re not immediately familiar with those acronyms, you’re definitely not alone.</p>
-
-<p>As we were developing the services, we were also fielding questions from 3rd party developers, answering a lot of questions internally, and trying to keep up with the specifications themselves. We knew that we would need to help provide education around our ecosystem, our implementation of the FHIR and SMART standards to developers since the standards are new and evolving.</p>
-
-<p>This need will become much more pressing because <a href="https://www.healthit.gov/providers-professionals/how-attain-meaningful-use">Meaningful Use 3</a> will trigger deployment of our implementations out to most of our Millennium EHRs.  <a href="https://www.cdc.gov/ehrmeaningfuluse/introduction.html">Meaningful Use</a> introduces requirements from the Centers for Medicare and Medicaid (CMS) to modernize the US healthcare infrastructure.  This is nothing new, but we’ve been hard at work to support stage 3, which includes the requirement for patients to access their data via an API.  In order to attest, most of our clients will then require our implementation of the FHIR API.</p>
-
-<p>This past November offered up two exciting opportunities to provide hands-on instruction and support, which we’ll cover in separate posts.  In this first post, we want to highlight the work we did at our annual <a href="https://blogs.cerner.com/blog/CHC16-Summary-UK/">Cerner Health Conference</a>.  We decided that this year’s event would be a great opportunity to offer a small Code Learning Lab &ndash; providing education for some of the APIs that Cerner has available.</p>
-
-<p>The Code Learning Lab was run from November 14th &ndash; 17th in Kansas City with our annual CHC conference. The goal: give developers a hands-on training session with the different APIs that are part of the Cerner Open Developer Experience (<em>code</em>). One of the tracks covered SMART and FHIR specifically, while another went over some of the APIs available with our HealtheIntent and HealtheLife platforms.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2017-03-24-engineers-on-the-road-for-smart-and-fhir/smart-and-fhir-01.jpg"></p>
-
-<p>We saw participation from many of our clients and partners, from both the US and Canada. Over the four days, the lab was in the format of an overview or &ldquo;lecture&rdquo; followed by a longer hands-on lab to put what participants were learning to use. During the labs, our engineers would walk around to check on how everyone was doing, answer questions, and help troubleshoot.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2017-03-24-engineers-on-the-road-for-smart-and-fhir/smart-and-fhir-02.jpg"></p>
-
-<p>We received a lot of comments and excitement from everyone participating around the fact that our engineering team itself was involved in the learning lab. It was also very exciting for the engineering team to watch everyone try out our newer developer tools, read our documentation, and then put it to practice. Not only were the participants able to actually see the data coming back, but there were a lot of conversations that occurred that will help us improve the class (and our tooling) in the future to make the event better. In the end, it was a great experience for everyone involved!</p>
-
-<p>If you’re interested, you can check out some of the presentations and labs that were created for the learning lab here: <a href="https://github.com/cerner/ignite-learning-lab">https://github.com/cerner/ignite-learning-lab</a> and our SMART tutorial: <a href="http://engineering.cerner.com/smart-on-fhir-tutorial/#prerequisites">http://engineering.cerner.com/smart-on-fhir-tutorial/#prerequisites</a></p>
 ]]></content>
   </entry>
   
