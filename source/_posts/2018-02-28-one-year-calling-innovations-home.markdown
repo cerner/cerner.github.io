@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "One Year Calling Innvoations Home"
+title: "One Year Calling Innovations Home"
 author: Lindsey Bromberg
 date: 2018-02-28
 tags: [culture, engineering]
