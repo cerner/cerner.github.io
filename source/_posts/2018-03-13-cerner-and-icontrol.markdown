@@ -27,7 +27,7 @@ api.get_sys_dns
 
 The gem builds REST queries given a method delimited by underscores. The first word is the REST method and the following words are the path you'd like to send your request to.
 
-For example, if you'd like to get the version of the F5, given this [iControl REST API doc|https://devcentral.f5.com/d/icontrol-rest-api-reference-version-120]
+For example, if you'd like to get the version of the F5, given this [iControl REST API doc](https://devcentral.f5.com/d/icontrol-rest-api-reference-version-120)
 
 You'd call a method that looks like this:
 
