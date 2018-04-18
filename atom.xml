@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2018-03-16T10:34:26-05:00</updated>
+  <updated>2018-04-18T16:35:52-05:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,233 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ShipIt XI Day: Spring 2018]]></title>
+    <link href="http://engineering.cerner.com/blog/shipit-xi-spring-2018/"/>
+    <updated>2018-04-18T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/blog/shipit-xi-spring-2018</id>
+    <content type="html"><![CDATA[<p><img class="center" src="http://engineering.cerner.com/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-1.png" width="600"></p>
+
+<p>On March 8th and 9th, 17 teams of Cerner associates competed for the Golden Keyboard during our 11th ShipIt Day. During this 24-hour hackathon, associates were challenged to create something innovative, usable, and value-adding. This was the fourth ShipIt held at our new Innovations Campus, leveraging the wonderful collaborative spaces available.</p>
+
+<p>With Shipit XI, we expanded upon a time-honored tradition of this event, the traveling trophy Golden Keyboard. This keyboard, adorned with symbolic trinkets from past winners, provides an opportunity for winning teams to defend the trophy and leave their mark in ShipIt history.</p>
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-2.png" width="300">
+        <sub>Golden Keyboard</sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<p>However, we realized as ShipIt grew, the category for winning the &ldquo;People&rsquo;s Choice Award&rdquo; (the favorite as voted by the audience agnostic of the judges’ selection) needed to have something more special to symbolize its importance. As a result, we introduced the Golden Mouse! This trophy, while separate from the Golden Keyboard, is another peripheral that a team can win by vote of their peers. With ShipIt XI, the Golden Mouse is now added to the tradition.</p>
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-3.png" width="300">
+        <sub>Golden Mouse</sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<p>This ShipIt featured Reliability as its theme. This theme highlighted the work that is continually done to improve the reliability our systems. Reliability, it is the most fundamental feature! By including this theme, we also introduced a new winning category for best project that improved reliability.</p>
+
+<p>Like all ShipIts, signs of creativity, collaboration, and intense problem solving were abundant all night.</p>
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-4.png" width="600">
+        <sub>Registration and kick-off</sub>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-5.png" width="600">
+        <sub>Strategy planning</sub>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-6.png" width="600">
+        <sub>Focused concentration</sub>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-7.png" width="600">
+        <sub>Abundant caffeine</sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<p>In addition to café vouchers for breakfast and lunch, ShipIt XI featured a taco bar for dinner. Participants enjoyed unlimited tacos and delicious churros for dessert!</p>
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-8.png" width="300">
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<p>ShipIt XI also hosted a ping-pong “March Madness” tournament to provide an opportunity for the participants take a break and flaunt their athletic prowess.</p>
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-9.png" width="600">
+        <sub>The dreaded Jake Kramer power serve</sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<p>Demos always arrive quicker than anticipated. Ready or not, 9am rolled around and demos were in full swing. Teams were given four minutes to present their projects to a panel of judges, consisting of Julie Schlabach, Kevin Shekleton, Jeff Dittmer, and Chad Todd.  Special thank you to those folks for spending their morning with us and supporting ShipIt Day!</p>
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-10.png" width="600">
+        <sub>Team SPACES RUNNER – 1st Place</sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<p>Coming in first place was Team SPACES RUNNER (Ryan Scheidter, Darius Washington, Miguel Fernandez, Aarthi Gunda, and Sundeepa Godavarti).</p>
+
+<p>“Space Runner is a visualization tool to show previously run, currently running, and scheduled to run Apache Spark jobs. It also provides some color coding for jobs that take over the average amount of time of previous runs, along with links to the Spark UI where we can view more details about the job. This tool is being used as a visualization of my team’s (Spaces Platform) dev domain to see what ran at what time, what is running, and what is about to start. This is a huge asset in terms of seeing how the domain is running, when it has too many things scheduled, and when it has free time coming up to manually run a job. This tool takes far less time than manually looking at the frequency jobs are scheduled and determining if the domain is free or overbooked.”</p>
+
+<p>Congratulations SPACES RUNNER!</p>
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-11.png" width="600">
+        <sub>Team PSA – 2nd Place</sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<p>Second place went to Team PSA (Aaron Noll, Bryce McDonald, Jesse Gilbert, Bennet Lovejoy, and Snehil Wakchaure).</p>
+
+<p>“Team Patient Safety Analytics (PSA) developed a SMART on FHIR app with the aim of making hospitals safer and more reliable. This goal of this app is to decrease the time required to report patient safety events while also increasing accuracy by 1) Populating basic demographic fields automatically for a report (currently manually entered) and 2) Embedding the app within PowerChart to reduce the number of clicks necessary to create a report. Over time, the app could also enable Cerner to add more value by helping hospitals improve through analysis of their data and comparison against peers while also providing reporting utilities for clients to monitor and improve their processes.”
+ 
+Way to go PSA!</p>
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-12.png" width="600">
+        <sub>Team Pedantic Beasts – 3rd Place</sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<p>Team Pedantic Beasts (Robert Ryterski, Paul Dennis, Ian Kottman, and Anthony Ross) took third place.</p>
+
+<p>“MCop is a linter for Marathon app definitions. It statically analyzes definitions for problems such as syntax errors, unstable deployment configuration, and departures from best practices.”</p>
+
+<p>Great job Pedantic Beasts!</p>
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-13.png" width="600">
+        <sub>Team Reliabilibuddies – Best Reliability Themed Project and People’s Choice: Best Team Name</sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<p>The winner of the sponsored project theme of “Reliability” was Team Reliabilibuddies (Siri Varma Vegiraju, Nathan Schile, Vu Tran, Lucas Chandler, and Venkatesh Sridharan). Reliabilibuddies also won the people’s choice Best Team Name!</p>
+
+<p>Nicely done Reliabilibuddies!</p>
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-14.png" width="600">
+        <sub>Team The Centurions – People’s Choice: Best Project</sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<p>Winning the brand new Golden Mouse for people’s choice Best Project was team The Centurions (Mohan Chamarthy, Sanket Korgaonkar, Saranth Govindaraju, Vamsi Krishna Guntupalli, and Shyam Gopal Rajanna). Congratulations and enjoy your cheeseballs!</p>
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-15.png" width="600">
+        <sub>Team Whalenado – People’s Choice: Best Presentation</sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<p>Winning a glorious tub of cheeseballs is Team Whalenado (Mithun Singh, David Crowder, Nick Overfield, and Michael Rzepka) for people’s choice Best Presentation.</p>
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-16.png" width="600">
+        <sub>Winning teams walked away with some awesome prizes such as wireless headphones, TileMates, Echo Dots, and drones.</sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<p>ShipIt continues to be a great way for associates to explore new solutions to problems, build relationships within different organizations, and most importantly, enjoy themselves. ShipIt Day XI was a great success. The projects were creative and have potential to bring value Cerner’s associates and clients.</p>
+
+<p>Save the Date: ShipIt Day returns August 9th and 10th! If you are interested in learning more about other ShipIt Days, see these earlier posts:</p>
+
+<ul>
+<li><a href="http://engineering.cerner.com/blog/shipit-x-day-winter-2017/">ShipIt Day X Winter 2017</a></li>
+<li><a href="http://engineering.cerner.com/blog/shipit-ix-day-summer-2017/">ShipIt Day IX Summer 2017</a></li>
+<li><a href="http://engineering.cerner.com/blog/shipit-day-viii-spring-2017/">ShipIt Day VIII Spring 2017</a></li>
+<li><a href="http://engineering.cerner.com/blog/shipit-vii-day-winter-2016/">ShipIt Day VII Winter 2016</a></li>
+<li><a href="https://www.youtube.com/watch?v=iqTp0dmLgUk">ShipIt Day Winter 2016 Highlight Reel</a></li>
+<li><a href="http://engineering.cerner.com/blog/fall-2016-shipit-day/">ShipIt Day Fall 2016</a></li>
+<li><a href="http://engineering.cerner.com/blog/spring-2016-shipit-day/">ShipIt Day Spring 2016</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Cerner and iControl]]></title>
@@ -362,7 +589,7 @@
 </ul>
 
 
-<p>Try it and let me know what you think! You can log issues for improvements, or email me your thoughts: <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#x3a;&#98;&#x72;&#121;&#x61;&#110;&#x2e;&#98;&#x61;&#x75;&#103;&#104;&#x65;&#114;&#64;&#x63;&#101;&#114;&#x6e;&#x65;&#114;&#x2e;&#99;&#111;&#x6d;&#x2e;">&#x62;&#x72;&#121;&#97;&#110;&#x2e;&#98;&#x61;&#117;&#x67;&#x68;&#x65;&#114;&#64;&#99;&#101;&#x72;&#x6e;&#101;&#x72;&#46;&#x63;&#111;&#x6d;&#46;</a> We hope to continue to improve the library and always welcome contributions and ideas from others.</p>
+<p>Try it and let me know what you think! You can log issues for improvements, or email me your thoughts: <a href="&#109;&#97;&#105;&#108;&#x74;&#111;&#x3a;&#98;&#114;&#x79;&#97;&#110;&#46;&#98;&#97;&#x75;&#103;&#x68;&#101;&#x72;&#x40;&#99;&#x65;&#x72;&#x6e;&#x65;&#x72;&#46;&#x63;&#x6f;&#109;&#x2e;">&#x62;&#114;&#x79;&#x61;&#110;&#46;&#x62;&#x61;&#117;&#x67;&#x68;&#101;&#114;&#x40;&#99;&#101;&#x72;&#110;&#x65;&#114;&#x2e;&#99;&#x6f;&#109;&#x2e;</a> We hope to continue to improve the library and always welcome contributions and ideas from others.</p>
 ]]></content>
   </entry>
   
@@ -1462,26 +1689,6 @@ I have endured more than a dozen Kansas City winters, and I still can&rsquo;t ma
 
 
 <p>Como reconocimiento por su pasión por desarrollar a futuros innovadores en STEM, las <em>Girl Scouts</em>, honraron a Denisse y a Steven Large por conducir el evento Pastelitos y Programación, <em>Coding and Cupcakes</em> que se llevó a cabo en Cerner. El Premio de Innovador de las <em>Girl Scouts</em>, reconoce a los voluntarios que perciben un problema y desarrollan una solución innovadora para fomentar las actividades de escultismo para las chicas, <em>Girl Scouting</em>. Estos eventos familiares contribuyen a favorecer la comunicación entre padres e hijas al participar en eventos de <em>Girl Scouts</em>. Por su pasión y dedicación como voluntarios, Denisse y Steven alientan a cada vez más niñas a participar en las actividades de STEM. ¡Enhorabuena, Denisse y Steven!</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2017-05-11-influencing-the-young-spanish-seaking-female-generation/denisse-steven-award.jpg" title="Denisse and Steven" ></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Influencing the Young, Spanish-speaking Female Generation]]></title>
-    <link href="http://engineering.cerner.com/blog/influencing-the-young-spanish-seaking-female-generation/"/>
-    <updated>2017-05-11T00:00:00-05:00</updated>
-    <id>http://engineering.cerner.com/blog/influencing-the-young-spanish-seaking-female-generation</id>
-    <content type="html"><![CDATA[<p>Outside of work, married couple Denisse Osorio de Large, a Cerner Director in Population Health Development, and Steven Large, a Cerner Senior Director in IP Development, are passionate about creating a younger generation that is passionate about technology and introducing them to the vast world of opportunities in software development. In addition to volunteering in the STEM community, helping organize Cerner’s development conference (DevCon), and speaking at conferences, Denisse and Steven enjoy working with children in the spanish-speaking community.</p>
-
-<p>Last year, Denisse (who is Colombian and a spanish-speaking native) and Steven (who is fluent in spanish) hosted two coding events specifically catered to spanish speaking families in partnership with Girl Scouts. The goals of these events, “Pastelitos y Programación” (“Coding and Cupcakes”), were to provide a safe and inclusive environment for girls to program, grow leadership abilities, and love solving problems with code. Girls enjoyed completing coding challenges from code.org and playing Labyrinths for Angry Birds. In the game, the girls had fun figuring out how to guide birds through a labyrinth to the pigs (see more about the event in the video below) using programming concepts.</p>
-
-<div align="center">
-<iframe src="https://www.youtube.com/embed/dCxSAplU5og?ecver=2" width="480" height="360" frameborder="0" allowfullscreen></iframe>
-</div>
-
-
-<p>In recognition of their passion for developing future innovators in STEM, Girl Scouts honored Denisse and Steven Large for their work in hosting the Pastelitos y Programación (Coding and Cupcakes) at Cerner. The Girl Scouts Innovator Award recognizes volunteers who saw a problem and developed an innovative solution to further Girl Scouting. These family events help bridge the communication gap between parents and girls when it comes to participating in Girl Scout events. With their passion and dedication for volunteering in the community, Denisse and Steven are encouraging more girls to become involved with STEM activities. Congratulations, Denisse and Steven!</p>
 
 <p><img class="center" src="http://engineering.cerner.com/assets/2017-05-11-influencing-the-young-spanish-seaking-female-generation/denisse-steven-award.jpg" title="Denisse and Steven" ></p>
 ]]></content>
