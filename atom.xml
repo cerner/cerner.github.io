@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2018-05-08T12:47:17-05:00</updated>
+  <updated>2018-05-09T10:42:25-05:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -44,7 +44,7 @@
       <div class='pull-left' markdown="1">
         We recently had a &#8220;GitHub Day&#8221; at our Innovations campus, where GitHub and other Cerner engineers shared how to improve your use of source code management. In these presentations, a quote was shared that rang true:
         <blockquote><p>We are more receptive to feedback from pedantic robots than pedantic people.</p></blockquote>
-        When it comes to a code review, it easy to point out simple flaws in the code which relates to formatting or basic anti-patterns in a given language. However, should humans be spending time on these types of issues in a code review? Machines are well suited for testing code through linters and static analysis, where formatting rules and known bad patterns can be quickly identified. By focusing on having your CI system do these types of tests on your code, and failing your build when formatting problems emerge, you now have a filter which blocks a large set of noise from entering into a code review. As a result, humans don’t engage in a code review until the code actually builds (which would encompass both static and dynamic forms of tests). Furthermore, it is easier to receive these minor points from a machine (a bot which is communicating the results of your build), versus having a team member spend time pointing out all the minor things you forgot to check or format correctly. In the end, humans apply their creative mind on discussing deeper topics on the design and intentions of the code, versus getting distracted with noise of simple things that can be addressed earlier by machines.
+        When it comes to a code review, it is easy to point out simple flaws in the code which relates to formatting or basic anti-patterns in a given language. However, should humans be spending time on these types of issues in a code review? Machines are well suited for testing code through linters and static analysis, where formatting rules and known bad patterns can be quickly identified. By focusing on having your CI system do these types of tests on your code, and failing your build when formatting problems emerge, you now have a filter which blocks a large set of noise from entering into a code review. As a result, humans don’t engage in a code review until the code actually builds (which would encompass both static and dynamic forms of tests). Furthermore, it is easier to receive these minor points from a machine (a bot which is communicating the results of your build), versus having a team member spend time pointing out all the minor things you forgot to check or format correctly. In the end, humans apply their creative mind on discussing deeper topics on the design and intentions of the code, versus getting distracted with noise of simple things that can be addressed earlier by machines.
       </div>
     </td>
     <td>
@@ -672,7 +672,7 @@ Way to go PSA!</p>
 </ul>
 
 
-<p>Try it and let me know what you think! You can log issues for improvements, or email me your thoughts: <a href="&#109;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#x62;&#x72;&#121;&#97;&#110;&#x2e;&#x62;&#97;&#117;&#x67;&#104;&#101;&#114;&#x40;&#x63;&#x65;&#x72;&#x6e;&#101;&#x72;&#x2e;&#99;&#111;&#x6d;&#46;">&#x62;&#x72;&#x79;&#x61;&#110;&#46;&#x62;&#x61;&#x75;&#x67;&#104;&#101;&#x72;&#64;&#99;&#101;&#114;&#x6e;&#101;&#114;&#46;&#x63;&#x6f;&#x6d;&#46;</a> We hope to continue to improve the library and always welcome contributions and ideas from others.</p>
+<p>Try it and let me know what you think! You can log issues for improvements, or email me your thoughts: <a href="&#109;&#97;&#105;&#x6c;&#116;&#111;&#58;&#x62;&#x72;&#x79;&#x61;&#110;&#46;&#x62;&#97;&#x75;&#x67;&#104;&#x65;&#114;&#64;&#99;&#x65;&#114;&#110;&#x65;&#x72;&#x2e;&#x63;&#111;&#x6d;&#x2e;">&#x62;&#x72;&#121;&#x61;&#x6e;&#x2e;&#98;&#x61;&#117;&#x67;&#x68;&#101;&#114;&#x40;&#99;&#101;&#x72;&#x6e;&#101;&#x72;&#46;&#x63;&#x6f;&#109;&#x2e;</a> We hope to continue to improve the library and always welcome contributions and ideas from others.</p>
 ]]></content>
   </entry>
   
