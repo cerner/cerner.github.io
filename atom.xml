@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2018-05-09T10:42:25-05:00</updated>
+  <updated>2018-05-24T15:04:13-05:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,44 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Say Hello to the 2018 Summer Interns]]></title>
+    <link href="http://engineering.cerner.com/blog/say_hello_to_the_2018_summer_interns/"/>
+    <updated>2018-05-24T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/blog/say_hello_to_the_2018_summer_interns</id>
+    <content type="html"><![CDATA[<p>Throughout the month of May, teams across Cerner’s Engineering space have welcomed 197 software interns to our campuses in Kansas City and Malvern. Ranging from rising seniors in high school to rising seniors in college, these interns will be working alongside Cerner’s full time engineers to enhance and expand upon their current skillsets.</p>
+
+<p>While interning at Cerner, these associates will experience firsthand the look and feel of a day in the life of a full time software engineer. Potential projects include:</p>
+
+<ul>
+<li>working with data ETL and web technologies to produce analytical dashboards</li>
+<li>working on features and capabilities of our solutions to improve the overall experience of Cerner’s consumer solutions and/or development processes, and</li>
+<li>adding functionality to some cloud-based applications to provide more troubleshooting capabilities.</li>
+</ul>
+
+
+<p>The variety in projects interns will be working on allows for work in a robust development ecosystem using tools like JIRA, Crucible, Github and languages like Java, Javascript, and Ruby. Our interns have opportunities to work on real projects with real world impact in the healthcare space.</p>
+
+<p>In addition to their work, interns will attend a variety of culture and networking events like our internal developers conference, <a href="https://engineering.cerner.com/2013/08/devcon">DevCon</a>, a bi-weekly Tech Speakers Series, an intern-only hackathon, and a family day where interns are encouraged to bring their families to see their work environment and projects.
+Cerner has welcomed three intern groups in Kansas City and one in Malvern, with one more group to start in Kansas City next week. Stay tuned this summer for an in-depth look at a few of the projects our interns work on.</p>
+
+<table cellpadding="5">
+  <tr>
+    <td>
+      <img class="center" src="http://engineering.cerner.com/assets/2018-05-24-say_hello_to_the_2018_summer_interns/interns_1.jpg" width="300">
+    </td>
+    <td>
+      <img class="center" src="http://engineering.cerner.com/assets/2018-05-24-say_hello_to_the_2018_summer_interns/interns_2.jpg" width="300">
+    </td>
+    <td>
+      <img class="center" src="http://engineering.cerner.com/assets/2018-05-24-say_hello_to_the_2018_summer_interns/interns_3.jpg" width="300">
+    </td>
+  </tr>
+</table>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Code Reviews: There Is a Better Way]]></title>
@@ -672,7 +710,7 @@ Way to go PSA!</p>
 </ul>
 
 
-<p>Try it and let me know what you think! You can log issues for improvements, or email me your thoughts: <a href="&#109;&#97;&#105;&#x6c;&#116;&#111;&#58;&#x62;&#x72;&#x79;&#x61;&#110;&#46;&#x62;&#97;&#x75;&#x67;&#104;&#x65;&#114;&#64;&#99;&#x65;&#114;&#110;&#x65;&#x72;&#x2e;&#x63;&#111;&#x6d;&#x2e;">&#x62;&#x72;&#121;&#x61;&#x6e;&#x2e;&#98;&#x61;&#117;&#x67;&#x68;&#101;&#114;&#x40;&#99;&#101;&#x72;&#x6e;&#101;&#x72;&#46;&#x63;&#x6f;&#109;&#x2e;</a> We hope to continue to improve the library and always welcome contributions and ideas from others.</p>
+<p>Try it and let me know what you think! You can log issues for improvements, or email me your thoughts: <a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#111;&#x3a;&#x62;&#x72;&#121;&#97;&#110;&#46;&#98;&#97;&#117;&#x67;&#x68;&#x65;&#114;&#x40;&#x63;&#x65;&#114;&#110;&#101;&#114;&#46;&#99;&#x6f;&#109;&#x2e;">&#98;&#x72;&#121;&#x61;&#x6e;&#x2e;&#98;&#97;&#x75;&#103;&#104;&#101;&#x72;&#x40;&#99;&#101;&#114;&#110;&#101;&#114;&#x2e;&#99;&#111;&#x6d;&#46;</a> We hope to continue to improve the library and always welcome contributions and ideas from others.</p>
 ]]></content>
   </entry>
   
@@ -1616,144 +1654,6 @@ I have endured more than a dozen Kansas City winters, and I still can&rsquo;t ma
 <p>I have a personal story about this. When I went to file my marriage license, we had a very interesting conversation with the clerk. He asked me what was my middle name. When I said that I don&rsquo;t have a middle name, he said the system had it as a required field. I suggested that he enter a space&hellip;after about 15 tense seconds he confirmed it had worked. This was in early 2000, and I hope things have changed, but since government moves at the speed of snails, I doubt it has.</p>
 
 <p>My final tip to better handle localization is to always use the FULL locale, that is, both language and country code to allow for maximum flexibility and to budget more time than what you believe you will need for your project. This last tip sounds very lame, but experience has taught me that chances are you won&rsquo;t do it. Engineers tend to be very optimistic on their estimates, and generally fail to allocate sufficient time.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[ShipIt VIII Day: Spring 2017]]></title>
-    <link href="http://engineering.cerner.com/blog/shipit-day-viii-spring-2017/"/>
-    <updated>2017-05-17T00:00:00-05:00</updated>
-    <id>http://engineering.cerner.com/blog/shipit-day-viii-spring-2017</id>
-    <content type="html"><![CDATA[<p><img class="center" src="http://engineering.cerner.com/assets/2017-05-17-shipit-day-viii-spring-2017/pic0.png"></p>
-
-<p>ShipIt Day VIII was held on April 20 and 21st. Seventeen teams made up of internal associates had just 24 hours to create something innovative, usable, and value-adding. This quarter&rsquo;s ShipIt Day was held at our new <a href="http://www.bizjournals.com/kansascity/news/2017/02/10/get-a-sneak-peek-inside-cerner-s-new-innovations.html">Innovations Campus</a> in the Link Conference Center. We were excited to get to utilize the space for this event. Another awesome addition to this quarter&rsquo;s ShipIt Day was our new game rooms. We hosted a Donkey Kong challenge and the winner (<a href="https://twitter.com/russ_starr">@russ_starr</a>) received a five-pound gummy bear!</p>
-
-<div align="center">
-  <table>
-    <tr>
-      <td><img src="http://engineering.cerner.com/assets/2017-05-17-shipit-day-viii-spring-2017/pic1.png">
-        <br />
-        <sub>The start of a long day for participants!</sub>
-      </td>
-      <td><img src="http://engineering.cerner.com/assets/2017-05-17-shipit-day-viii-spring-2017/pic3.png">
-        <br />
-        <sub>Donkey Kong.</sub>
-      </td>
-    </tr>
-  </table>
-</div>
-
-
-<p>Participants were given loads of snacks, the most important being Monster Energy Drinks!</p>
-
-<div align="center">
-  <table>
-    <tr>
-      <td><img src="http://engineering.cerner.com/assets/2017-05-17-shipit-day-viii-spring-2017/pic4.png"></td>
-      <td><img src="http://engineering.cerner.com/assets/2017-05-17-shipit-day-viii-spring-2017/pic5.png"></td>
-    </tr>
-  </table>
-</div>
-
-
-<p>After a long day of hard work, everyone was ready to eat extra big pizzas from Pizza 51. Eleven big pizza&rsquo;s and one hundred and ninety-six breadsticks were surprisingly enough to feed the hard working brains.</p>
-
-<div align="center">
-  <table>
-    <tr>
-      <td><img src="http://engineering.cerner.com/assets/2017-05-17-shipit-day-viii-spring-2017/pic6.png"></td>
-      <td><img src="http://engineering.cerner.com/assets/2017-05-17-shipit-day-viii-spring-2017/pic7.png"></td>
-    </tr>
-  </table>
-</div>
-
-
-<p>After dinner, it was back to work for the teams. Later on in the evening, we played movies including Rogue One and MST3K. Participants also battled for the top Donkey Kong score.</p>
-
-<div align="center">
-  <img src="http://engineering.cerner.com/assets/2017-05-17-shipit-day-viii-spring-2017/pic8.png">
-  <br />
-  <sub>Watching movies while working on projects.</sub>
-</div>
-
-
-<p>Friday, April 21st rolled around and by 9:00am the teams were getting antsy to present their projects. Since this was our first ShipIt Day at the new Innovations Campus, we were able to utilize the Assembly space.</p>
-
-<div align="center">
-  <img src="http://engineering.cerner.com/assets/2017-05-17-shipit-day-viii-spring-2017/pic9.png">
-  <br />
-  <sub>Old school advertising for ShipIt Day Demo&#8217;s- chalk!</sub>
-</div>
-
-
-
-
-<div align="center">
-  <img src="http://engineering.cerner.com/assets/2017-05-17-shipit-day-viii-spring-2017/pic10.jpg">
-  <br />
-  <sub>Prize table</sub>
-</div>
-
-
-<p>ShipIt Day VIII brought to life some incredible projects. Team Freudian Ship, made up of Kate Young, Erin Dorpinghaus, Courtney Ground, Chris Farr and Sean Albery, took first place (and the golden keyboard!) with their project.</p>
-
-<blockquote><p>The Intellectual Property (IP) Analytics team is tasked with managing a data warehouse. This includes ensuring that data updates take place in &ldquo;jobs.&rdquo; When a job fails it results in stale data and this can impact thousands of associates. This project took advantage of <a href="https://aws.amazon.com/">Amazon Web Services</a> by connecting tasks associated with managing the database to a voice command <a href="https://developer.amazon.com/alexa">Alexa</a> skill which results in the ability to manage the database from anywhere the user has an internet connection. To put it in perspective, the database admin will now be able to ensure that the database is up to date without even getting out of bed in the morning. A simple voice command to an <a href="https://www.amazon.com/All-New-Amazon-Echo-Dot-Add-Alexa-To-Any-Room/dp/B01DFKC2SO">Amazon Echo Dot</a> (which each of us won as a prize) will result in the restarting of failed jobs and even logging JIRA tickets to begin the troubleshooting process if needed.</p></blockquote>
-
-<p>ShipIt Judge Dan Stocksick was impressed with the project, &ldquo;Great use of consumer products into our ecosystem.&rdquo;</p>
-
-<div align="center">
-  <img src="http://engineering.cerner.com/assets/2017-05-17-shipit-day-viii-spring-2017/pic11.png">
-  <br />
-  <sub>Team Freudian Ship with the coveted Gold Keyboard!</sub>
-</div>
-
-
-<p>Second place went to team Flowalva (Wuchen Wang and Dhruv Patel).</p>
-
-<blockquote><p>Our ShipIt project was a traffic visualization system for web services supporting Millennium. In this project we used Splunk API to collect the data from services and visualize the traffic between nodes in using <a href="https://github.com/Netflix/vizceral">Netflix&rsquo;s vizceral project.</a></p></blockquote>
-
-<p>Judge Jason Heiting was impressed. &ldquo;Very neat visualizations.  Intuitive UI for navigation.&rdquo;</p>
-
-<p>Last but not least, was third place winners, Flying Mongoose (Cihan Kaynak, Matt Stramel, Mahesh Acharya, Taylor Clay).</p>
-
-<blockquote><p>We created a cross platform mobile app which can be used by a pharmacy technician while picking up and scanning medications at the pharmacy to refill <a href="https://www.cerner.com/solutions/automated-dispensing-cabinet">Cerner&rsquo;s RxStation</a> cabinets. Prior to this project, an RCP based desktop app was running in a PC mounted on a cart with an attached barcode scanner and label printer. This type of bulky setup was reducing the mobility of the technician.</p></blockquote>
-
-<div align="center">
-  <img src="http://engineering.cerner.com/assets/2017-05-17-shipit-day-viii-spring-2017/pic12.png">
-  <br />
-  <sub>The Assembly was crowded with associates watching presentations.</sub>
-</div>
-
-
-<p>Part of the ShipIt Day fun is livestreaming the presentations and allowing our associates from all over to participate by voting for their favorite team name, favorite presentation and favorite project. The winners of the categories are as followed:</p>
-
-<ul>
-<li><p><strong>Favorite Presentation</strong>: <em>Sip It</em> &ndash; Patrick Gross, Adam Tibbs, Mario Perez, Robert Cornett, Trey Peek</p></li>
-<li><p><strong>Favorite Team Name</strong>: <em>CHAPPiE</em> &ndash; Karthik Nimmagadda, Manidee Gattamaneni, Venkatesh Sridharan, Prasanth Chakka, Wendell Wolfe</p></li>
-<li><p><strong>Favorite Project</strong>: <em>Freudian Ship</em> &ndash; Kate Young, Erin Dorpinghaus, Courtney Ground, Chris Farr, Sean Albery</p></li>
-</ul>
-
-
-<div align="center">
-<img src="http://engineering.cerner.com/assets/2017-05-17-shipit-day-viii-spring-2017/pic13.png">
-  <br />
-  <sub>People&#8217;s Choice Winners with the coveted cheeseballs!</sub>
-</div>
-
-
-<p>ShipIt continues to be a great way for associates to work on something they haven&rsquo;t had a chance to work on, build relationships within different organizations and most importantly, enjoy themselves. Ian Kottman, an engineer on the Population Health Genomics team, has participated in multiple ShipIt Days. The reason: &ldquo;I enjoy getting the time to create something that will make someone&rsquo;s life easier.&rdquo; Carlo Filipelli, system engineer, also agrees, adding on, &ldquo;ShipIt is great because it allows associates to work on interesting projects that they might not be able to get to during normal work hours. It fosters innovation and new ideas that would typically get overlooked in our busy day to day jobs. It is also a conducive environment for learning, collaboration, and having some fun!&rdquo;</p>
-
-<p>Thank you to all our participants and a special thank you to judges Jason Heiting, Justin Morrison, Dwight Sloan and Dan Stocksick.</p>
-
-<p>Mark your calendars: ShipIt Day IX will be held in July 2017. If you are interested in learning more about other ShipIt Days, see these earlier posts:</p>
-
-<ul>
-<li><a href="http://engineering.cerner.com/blog/shipit-vii-day-winter-2016/">ShipIt Day VII Winter 2016</a></li>
-<li><a href="https://www.youtube.com/watch?v=iqTp0dmLgUk">ShipIt Day Winter 2016 Highlight Reel</a></li>
-<li><a href="http://engineering.cerner.com/blog/fall-2016-shipit-day/">ShipIt Day Fall 2016</a></li>
-<li><a href="http://engineering.cerner.com/blog/spring-2016-shipit-day/">ShipIt Day Spring 2016</a></li>
-</ul>
-
 ]]></content>
   </entry>
   
