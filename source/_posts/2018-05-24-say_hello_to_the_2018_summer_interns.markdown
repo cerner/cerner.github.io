@@ -16,7 +16,7 @@ While interning at Cerner, these associates will experience firsthand the look a
 
 The variety in projects interns will be working on allows for work in a robust development ecosystem using tools like JIRA, Crucible, Github and languages like Java, Javascript, and Ruby. Our interns have opportunities to work on real projects with real world impact in the healthcare space.
 
-In addition to their work, interns will attend a variety of culture and networking events like our internal developers conference, DevCon, a bi-weekly Tech Speakers Series, an intern-only hackathon, and a family day where interns are encouraged to bring their families to see their work environment and projects.
+In addition to their work, interns will attend a variety of culture and networking events like our internal developers conference, [DevCon](https://engineering.cerner.com/2013/08/devcon), a bi-weekly Tech Speakers Series, an intern-only hackathon, and a family day where interns are encouraged to bring their families to see their work environment and projects.
 Cerner has welcomed three intern groups in Kansas City and one in Malvern, with one more group to start in Kansas City next week. Stay tuned this summer for an in-depth look at a few of the projects our interns work on.
 
 <table cellpadding="5">
