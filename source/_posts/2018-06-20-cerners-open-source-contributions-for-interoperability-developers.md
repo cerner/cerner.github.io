@@ -6,7 +6,7 @@ date: 2018-06-20
 tags: [engineering, open source, interoperability]
 ---
 
-At Cerner, developing open platforms that support interoperability standards like SMART and FHIR is integral to our mission of transforming health care. In addition to implementing these standards into our platforms, we also participate in organizations like [HL7](http://www.hl7.org/) and the [Argonaut Project](http://argonautwiki.hl7.org/index.php?title=Main_Page) to help shape and develop these standards as well as attending and speaking at conferences on interoperability, like [FHIR DevDays this week in Boston, MA](https://www.fhirdevdays.com/boston/).
+At Cerner, developing open platforms that support interoperability standards like SMART® and FHIR® is integral to our mission of transforming health care. In addition to implementing these standards into our platforms, we also participate in organizations like [HL7](http://www.hl7.org/) and the [Argonaut Project](http://argonautwiki.hl7.org/index.php?title=Main_Page) to help shape and develop these standards as well as attending and speaking at conferences on interoperability, like [FHIR DevDays this week in Boston, MA](https://www.fhirdevdays.com/boston/).
 
 In addition to all of this work, we're continually developing open source projects and work for the benefit of all interoperability developers. As we speak on and support interoperability this week in Boston for FHIR DevDays, we thought it would be great to highlight our current open source interoperability work over the past couple of years.
 
@@ -20,7 +20,7 @@ A couple of years ago, we developed a [tutorial](https://engineering.cerner.com/
 
 Source: https://github.com/cerner/fhir-client-cerner-additions
 
-Over the years, we've contributed several changes to the popular open source JavaScript library ([fhir-client.js](https://github.com/smart-on-fhir/client-js), maintained by the SMART Health IT organization) used by many SMART app developers for launching and interacting with the FHIR API from their web-based SMART application. Running these types of applications within an embedded IE browser in a Windows application (like Cerner's PowerChart EHR) requires a bit of extra work to ensure SMART apps running concurrently don't exhibit critical patient safety bugs. We released an [open source library](https://github.com/cerner/fhir-client-cerner-additions), used in conjunction with fhir-client.js, to prevent these bugs and is in use by SMART app developers running their apps not only within Cerner EHR environments but also other EHR vendors.
+Over the years, we've contributed several changes to the popular open source JavaScript library ([fhir-client.js](https://github.com/smart-on-fhir/client-js), maintained by the SMART Health IT organization) used by many SMART app developers for launching and interacting with the FHIR API from their web-based SMART application. Running these types of applications within an embedded IE browser in a Windows application (like Cerner's PowerChart® EHR) requires a bit of extra work to ensure SMART apps running concurrently don't exhibit critical patient safety bugs. We released an [open source library](https://github.com/cerner/fhir-client-cerner-additions), used in conjunction with fhir-client.js, to prevent these bugs and is in use by SMART app developers running their apps not only within Cerner EHR environments but also other EHR vendors.
 
 ### ASCVD Risk Calculator SMART Application
 
