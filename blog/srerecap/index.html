@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>SREcon18 Recap - Engineering Health</title>
+  <meta name="author" content="Cerner">
+
+  
+  <meta name="description" content="">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://engineering.cerner.com/blog/srerecap">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/site/site.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <script src="/javascripts/libs/bootstrap.min.js"></script>
+
+  <link href="/atom.xml" rel="alternate" title="Engineering Health" type="application/atom+xml">
+  <script src="/javascripts/search.min.js" type="text/javascript" charset="utf-8"></script>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37701128-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body  class="top-navbar  ">
+  
+
+
+
+<header id="banner" role="banner" class="container-fluid banner-kc-background">
+
+  <div class="image">
+
+    
+      <img src="/images/KC.png" alt="Kansas City" />
+    
+
+    <div id="header1">Engineering Health<br/><span class="header2">A <b>Cerner</b> Blog</span></div>
+
+  </div>
+  <nav class="navbar navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Engineering Health</a>
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="selected">
+            <a href="/">Blog</a>
+          </li>
+          <li >
+            <a href="/culture">Culture</a>
+          </li>
+          <li >
+            <a href="/tech_talks">Tech Talks</a>
+          </li>
+          <li >
+            <a href="/open_source">Open Source</a>
+          </li>
+          <li >
+            <a href="/blog/archives">Archives</a>
+          </li>
+        </ul>
+        <div id="search" class="pull-right">
+          <form action="/search" method="get" class="navbar-search">
+            <input type="text" id="search-query" name="q" class="search-query" placeholder="Search" autocomplete="off">
+            <img src="/images/MagnifyingGlass.png" alt="Search" width="16" height="16" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+</header>
+
+
+  <div class="container-fluid post-container">
+    <div class="row-fluid">
+      <section class="span12" id="search-results" style="display: none;">
+  <h2>Search results</h2>
+  <div class="entries">
+  </div>
+</section>
+    </div>
+    <div class="row-fluid">
+      
+<article id="main" class="hentry span8" role="article">
+
+  <section class="post">
+    
+  <header class="entry-header">
+    
+      <h1 class="entry-title">SREcon18 Recap</h1>
+    
+    
+      <div class="entry-meta meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2018-06-19T00:00:00-05:00" pubdate data-updated="true">Jun 19<span>th</span>, 2018</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Jared Moore</span>
+  </span>
+
+
+        
+      </div>
+    
+  </header>
+
+
+<div class="entry-content"><p>This past spring, I had the pleasure of attending <a href="https://www.usenix.org/conference/srecon18americas">SREcon18</a> in Santa Clara, California. If you have never heard about SREcon or the term SRE then let me diverge for a moment to describe. SRE, or Site Reliability Engineer, was coined by Google employees back in 2003 when a team of software engineers were tasked with running a production environment. It&rsquo;s the new hotness in the technology world, so an internet search will turn up a bunch of topics. If you are interested in learning more, I recommend sticking with the more trusted sources:
+* <a href="https://landing.google.com/sre/">Google</a> (an obvious choice)
+* <a href="https://landing.google.com/sre/book.html">SRE book</a>
+* <a href="https://en.wikipedia.org/wiki/Site_Reliability_Engineering">SRE Wikipedia entry</a></p>
+
+<p>Since SRE concepts have been codified, organized, and documented by the creators, the above resources are easy to explore without getting conflicting information from other entities who have taken the ideas and modified them to fit their organization. There is a lot of excitement in the industry around the SRE concept and there&rsquo;s a lot of overlap between SRE and DevOps. Having been working in this industry for a while now, this is a much-needed evolution in the operations and development roles.</p>
+
+<p>SREcon started in 2014, so it is relatively new and is hosted by <a href="https://www.usenix.org/">Usenix Association</a>. Usenix has been hosting technical conferences since 1975 and one of their tenants is to host vendor-neutral events. I have been to a few vendor hosted conferences over the past few years and they are always heavy on the sales and light on the ideas. The sales aspect of these conferences got to the point where I was burned out and looking for something idea based. SREcon was the complete inverse, heavy on the ideas and light on the sales. It fit my need perfectly. My only complaint, and this is minor, was that most of the speakers selected this year were backed by big name tech companies, i.e. Google, Facebook, LinkedIn, Netflix, etc. A fellow attendee I was talking to mentioned that they enjoyed the company diversity this year over previous years, though. Apparently, the tone of the conference in previous years was Google heavy, i.e. &ldquo;This is the Google Way&rdquo; which is not surprising since that&rsquo;s where it all started. The conference was being held in the heart of Silicon Valley therefore, the proximity made it reasonable to have many presenters come from companies in the valley. I fully expect to see more diversity in the coming years. SREcon19 was announced to be held in Brooklyn, NY, so I would not be surprised if there are many east coast companies represented. Additionally, I attended the SREcon Americas conference. Showcasing another aspect of diversity, there are SREcons in Europe/Middle East/Africa and Asia/Australia, so it&rsquo;s become a world-wide conference.</p>
+
+<p>The idea-sharing phenomenon of SREcon played an important role in my decision to attend, since I&rsquo;m leading an automation development team in CernerWorks℠. CernerWorks is Cerner&rsquo;s managed services organization responsible for hosting, managing, and monitoring our client&rsquo;s systems in order to provide the most reliable, highest performing and cost effective delivery of technology services for healthcare. My team is focused on automation in the client aligned systems management space. That&rsquo;s just a fancy way of saying that our focus is on the non-cloud solutions. We are focusing on solution provisioning, configuration management, and upgrades. The work we are doing aligns well with the tenants of SRE, DevOps and other philosophies that have been discussed in the past few years. I am very interested in these philosophies simply because change is hard, especially when it comes to changes in a culture with an established mentality of doing things a certain way. The technical part of our job is easier in my opinion since technology is always changing.</p>
+
+<p>Some of the more interesting sessions I attended talked about patterns and behaviors that we can learn from other industries. For example, the way that firefighters and other first responders react to incidents and the command structures they put in place outline ways that we can improve how we deal with incidents. Having a plan and structure when engaging with an incident has many benefits. It allows you to define what normal operations for your team look like versus what emergency operations looks like. Determining the chain of command and defining pre-set roles that anyone can fit into can help streamline the time to respond and the emergency command hierarchy of the team. Other industries, such as oil and gas refineries, must have strong contingency plans in place in order to not go boom when things go south. There are a lot of patterns, behaviors, and philosophies that we can learn from almost any industry out there if we open our eyes.</p>
+
+<p>A key topic for the conference is learning from failures and mistakes. The idea of a blameless postmortem was discussed at length in multiple talks and conversations. The need for such a thing stems from our human nature to want to assign blame and fault when dealing with problems. But in many ways this type of behavior causes actions to be hidden out of fear of retribution. A blameless postmortem comes from the idea that learning and preventing is more important than assigning blame. <a href="https://codeascraft.com/">Etsy</a>, for example, has an annual award for the employee who&rsquo;s made the biggest mistake. The culture they are building is one where accidents are a source of learning rather than a source of embarrassment. This is quite an interesting concept.</p>
+
+<p>Working in the technology industry and never having been to Silicon Valley was surreal. Seeing big company names on the side of buildings and realizing those were the corporate headquarters of companies whose software I have interacted with for years was an experience. One of the nights, I took a trip to the Googleplex to walk around the campus. It was a beautiful campus with trees and flowers everywhere and the weather was amazing. The campus was abuzz with people and activity that you would expect to take place at Google late at night. While walking a thought started forming in my mind around the type of work we do at Cerner. A thought that continued to form later at the conference when I spoke with development teams from various big-name tech companies. It was rewarding to talk about how we are using technology to make healthcare better. These conversations would usually end with the team from the big tech company expressing admiration, respect, and praise for the work we are doing. The Googles, Facebooks, Twitters, and the like are doing interesting things, and it&rsquo;s easy to get distracted by those names, but the problems that we are solving have real impact on the lives of our fellow humans and we shouldn&rsquo;t take that for granted.</p>
+
+<p>SREcon18 was worth the trip, but if you couldn&rsquo;t attend this year&rsquo;s, previous years, or future SREcons you don&rsquo;t need to worry about missing out. Usenix has an open access policy which means that slides, videos, and audio of all the talks are available after of the conference. I strongly recommend reviewing the <a href="https://www.usenix.org/conference/srecon18americas/program">program for this year&rsquo;s conference</a> and watching any of the talks that catch your fancy.</p>
+</div>
+
+
+  </section>
+  <footer>
+    <p class="meta">
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    
+    <ul class="pager">
+      
+      <li class="previous"><a class="basic-alignment left"
+        href="/blog/say_hello_to_the_2018_summer_interns/" title="Previous Post:
+        Say Hello to the 2018 Summer Interns">&laquo; Previous Post</a></li>
+      
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      
+    </ul>
+  </footer>
+</article>
+
+<aside class="sidebar-nav span4">
+  
+    <section class="well">
+  <h2>Recent Posts</h2>
+  <ul id="recent_posts" class="nav nav-list">
+    
+      <li>
+        <a href="/blog/srerecap/">SREcon18 Recap</a>
+      </li>
+    
+      <li>
+        <a href="/blog/say_hello_to_the_2018_summer_interns/">Say Hello to the 2018 Summer Interns</a>
+      </li>
+    
+      <li>
+        <a href="/blog/code-reviews-there-is-a-better-way/">Code Reviews: There Is a Better Way</a>
+      </li>
+    
+      <li>
+        <a href="/blog/shipit-xi-spring-2018/">ShipIt XI Day: Spring 2018</a>
+      </li>
+    
+      <li>
+        <a href="/blog/cerner-and-icontrol/">Cerner and iControl</a>
+      </li>
+    
+  </ul>
+</section>
+<section class="divider">
+  <svg width="70" height="10">
+   <rect width="10" height="10" x="0" y="0" style="fill:rgb(20,124,193)" />
+   <rect width="10" height="10" x="20" y="0" style="fill:rgb(121,193,68)" />
+   <rect width="10" height="10" x="40" y="0" style="fill:rgb(20,124,193)" />
+   <rect width="10" height="10" x="60" y="0" style="fill:rgb(121,193,68)" />
+</svg>
+</section>
+<section class="well">
+  <h2>GitHub Repos</h2>
+  <ul id="gh_repos" class="nav">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/cerner">@cerner</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'cerner',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  
+<script id="search-results-template" type="text/mustache">
+  {{#entries}}
+    <article class="search-result">
+        <div class="search-meta meta">
+        {{#date}}<time datetime="{{pubdate}}" pubdate>{{displaydate}}</time>{{/date}} | {{author}}
+        </div>
+        <a href="{{url}}">{{title}}</a>
+    </article>
+  {{/entries}}
+</script>
+
+<script type="text/javascript">
+  $(function() {
+    $('#search-query').lunrSearch({
+      indexUrl: '/javascripts/index.json',   // Url for the .json file containing search index data
+      results : '#search-results',  // selector for containing search results element
+      entries : '.entries',         // selector for search entries containing element (contained within results above)
+      template: '#search-results-template'  // selector for Mustache.js template
+    });
+    //Currently ignoring the "return/enter" keystroke when searching (as this would just result in a 404 for the page lookup).
+    $('#search-query').keydown(function(event){
+      if(event.keyCode == 13) {
+        event.preventDefault();
+        return false;
+      }
+    });
+  });
+</script>
+
+  <footer role="contentinfo" class="page-footer">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="span2">
+          <img src="/images/Cerner_White_Horizontal.png" alt="Cerner Logo" />
+      </div>
+      <div class="span10 pull-left">
+          <p>&copy; 2018</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
