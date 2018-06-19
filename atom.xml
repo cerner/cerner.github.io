@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2018-06-19T16:11:13-05:00</updated>
+  <updated>2018-06-19T16:31:51-05:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -15,13 +15,17 @@
   
   <entry>
     <title type="html"><![CDATA[SREcon18 Recap]]></title>
-    <link href="http://engineering.cerner.com/blog/srerecap/"/>
+    <link href="http://engineering.cerner.com/blog/srecon18-recap/"/>
     <updated>2018-06-19T00:00:00-05:00</updated>
-    <id>http://engineering.cerner.com/blog/srerecap</id>
-    <content type="html"><![CDATA[<p>This past spring, I had the pleasure of attending <a href="https://www.usenix.org/conference/srecon18americas">SREcon18</a> in Santa Clara, California. If you have never heard about SREcon or the term SRE then let me diverge for a moment to describe. SRE, or Site Reliability Engineer, was coined by Google employees back in 2003 when a team of software engineers were tasked with running a production environment. It&rsquo;s the new hotness in the technology world, so an internet search will turn up a bunch of topics. If you are interested in learning more, I recommend sticking with the more trusted sources:
-* <a href="https://landing.google.com/sre/">Google</a> (an obvious choice)
-* <a href="https://landing.google.com/sre/book.html">SRE book</a>
-* <a href="https://en.wikipedia.org/wiki/Site_Reliability_Engineering">SRE Wikipedia entry</a></p>
+    <id>http://engineering.cerner.com/blog/srecon18-recap</id>
+    <content type="html"><![CDATA[<p>This past spring, I had the pleasure of attending <a href="https://www.usenix.org/conference/srecon18americas">SREcon18</a> in Santa Clara, California. If you have never heard about SREcon or the term SRE then let me diverge for a moment to describe. SRE, or Site Reliability Engineer, was coined by Google employees back in 2003 when a team of software engineers were tasked with running a production environment. It&rsquo;s the new hotness in the technology world, so an internet search will turn up a bunch of topics. If you are interested in learning more, I recommend sticking with the more trusted sources:</p>
+
+<ul>
+<li><a href="https://landing.google.com/sre/">Google</a> (an obvious choice)</li>
+<li><a href="https://landing.google.com/sre/book.html">SRE book</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Site_Reliability_Engineering">SRE Wikipedia entry</a></li>
+</ul>
+
 
 <p>Since SRE concepts have been codified, organized, and documented by the creators, the above resources are easy to explore without getting conflicting information from other entities who have taken the ideas and modified them to fit their organization. There is a lot of excitement in the industry around the SRE concept and there&rsquo;s a lot of overlap between SRE and DevOps. Having been working in this industry for a while now, this is a much-needed evolution in the operations and development roles.</p>
 
@@ -736,7 +740,7 @@ Way to go PSA!</p>
 </ul>
 
 
-<p>Try it and let me know what you think! You can log issues for improvements, or email me your thoughts: <a href="&#109;&#x61;&#105;&#108;&#x74;&#111;&#58;&#x62;&#114;&#x79;&#97;&#x6e;&#x2e;&#98;&#x61;&#117;&#x67;&#x68;&#101;&#x72;&#x40;&#x63;&#x65;&#114;&#x6e;&#101;&#114;&#46;&#99;&#111;&#x6d;&#46;">&#x62;&#114;&#x79;&#97;&#110;&#x2e;&#x62;&#x61;&#117;&#x67;&#104;&#x65;&#x72;&#64;&#x63;&#101;&#x72;&#110;&#101;&#114;&#x2e;&#x63;&#111;&#109;&#x2e;</a> We hope to continue to improve the library and always welcome contributions and ideas from others.</p>
+<p>Try it and let me know what you think! You can log issues for improvements, or email me your thoughts: <a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#98;&#x72;&#x79;&#x61;&#x6e;&#x2e;&#x62;&#97;&#x75;&#x67;&#x68;&#101;&#114;&#x40;&#99;&#x65;&#x72;&#x6e;&#x65;&#114;&#46;&#99;&#x6f;&#109;&#46;">&#x62;&#114;&#x79;&#x61;&#x6e;&#x2e;&#x62;&#x61;&#117;&#103;&#104;&#x65;&#x72;&#64;&#99;&#x65;&#x72;&#x6e;&#x65;&#114;&#x2e;&#99;&#111;&#109;&#46;</a> We hope to continue to improve the library and always welcome contributions and ideas from others.</p>
 ]]></content>
   </entry>
   
