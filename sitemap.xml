@@ -319,24 +319,30 @@
         <lastmod>2018-06-19T16:28:43-05:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://engineering.cerner.com/blog/cerners-open-source-contributions-for-interoperability-developers/
+        </loc>
+        <lastmod>2018-06-21T12:59:16-05:00</lastmod>
+    </url>
+    <url>
         <loc>http://engineering.cerner.com/about/</loc>
         <lastmod>2018-03-13T15:19:20-05:00</lastmod>
     </url>
     <url>
         <loc>http://engineering.cerner.com/blog/archives/</loc>
-        <lastmod>2018-06-19T16:28:43-05:00</lastmod>
+        <lastmod>2018-06-21T12:59:16-05:00</lastmod>
     </url>
     <url>
         <loc>http://engineering.cerner.com/culture/</loc>
-        <lastmod>2018-06-19T16:28:43-05:00</lastmod>
+        <lastmod>2018-06-21T12:59:16-05:00</lastmod>
     </url>
     <url>
         <loc>http://engineering.cerner.com/</loc>
-        <lastmod>2018-06-19T16:28:43-05:00</lastmod>
+        <lastmod>2018-06-21T12:59:16-05:00</lastmod>
     </url>
     <url>
         <loc>http://engineering.cerner.com/open_source/</loc>
-        <lastmod>2018-06-19T16:28:43-05:00</lastmod>
+        <lastmod>2018-06-21T12:59:16-05:00</lastmod>
     </url>
     <url>
         <loc>http://engineering.cerner.com/robots.txt</loc>
@@ -344,6 +350,6 @@
     </url>
     <url>
         <loc>http://engineering.cerner.com/tech_talks/</loc>
-        <lastmod>2018-06-19T16:28:43-05:00</lastmod>
+        <lastmod>2018-06-21T12:59:16-05:00</lastmod>
     </url>
 </urlset>

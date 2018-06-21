@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2018-06-21T12:57:10-05:00</updated>
+  <updated>2018-06-21T12:59:56-05:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,53 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Cerner's Open Source Contributions for Interoperability Developers]]></title>
+    <link href="http://engineering.cerner.com/blog/cerners-open-source-contributions-for-interoperability-developers/"/>
+    <updated>2018-06-21T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/blog/cerners-open-source-contributions-for-interoperability-developers</id>
+    <content type="html"><![CDATA[<p>Open source and open standards encourage collaboration around innovation that advances the health care industry through improved interoperability. Developers across health care can come together and use open source code to share information, as well as develop and continually improve apps to support better health outcomes for patients.</p>
+
+<p>At Cerner, developing open platforms that support interoperability standards like SMART® and FHIR® is integral to our mission of transforming health care. In addition to implementing these standards in our platforms, we also participate in organizations like <a href="http://www.hl7.org/">HL7</a> and the <a href="http://argonautwiki.hl7.org/index.php?title=Main_Page">Argonaut Project</a> to help shape and develop these standards. Cerner attends and speaks at conferences on interoperability like <a href="https://www.fhirdevdays.com/boston/">FHIR DevDays this week in Boston, MA</a>.</p>
+
+<p>In addition to all of this work, we&rsquo;re continually developing open source projects and work for the benefit of all interoperability developers. As we speak on and support interoperability this week in Boston for FHIR DevDays, we thought it would be great to highlight our current open source interoperability work over the past couple of years.</p>
+
+<h3>SMART on FHIR Tutorial</h3>
+
+<p>A couple of years ago, Cerner developed a <a href="https://engineering.cerner.com/smart-on-fhir-tutorial/">tutorial</a> walking developers through the process of creating their first <a href="https://smarthealthit.org/">SMART on FHIR application</a>. With this hands-on tutorial, developers can write and deploy their SMART on FHIR application, running it against Cerner&rsquo;s <a href="https://code.cerner.com/"><em>code</em></a> Console and our <a href="https://fhir.cerner.com/">FHIR Sandbox</a>. Because SMART applications are interoperable with other vendors, the tutorial also walks the developer through running that same app against other sandboxes like the one provided by the <a href="https://launch.smarthealthit.org/">SMART Health IT project</a>. Over 700 developers have completed this tutorial as of June, 2018.</p>
+
+<p>You can find the source code for the tutorial at <a href="https://github.com/cerner/smart-on-fhir-tutorial">https://github.com/cerner/smart-on-fhir-tutorial</a></p>
+
+<h3>SMART on FHIR Apps in Embedded Browsers</h3>
+
+<p>Over the years, Cerner has contributed to several changes to the popular open source JavaScript library (<a href="https://github.com/smart-on-fhir/client-js">fhir-client.js</a>, maintained by the SMART Health IT organization), used by many SMART app developers for launching and interacting with the FHIR API from their web-based SMART application. Running these types of applications within an embedded IE browser in a Windows application (like Cerner&rsquo;s PowerChart® EHR) requires a bit of added effort to ensure SMART apps running concurrently do not exhibit critical patient safety issues. Cerner released an <a href="https://github.com/cerner/fhir-client-cerner-additions">open source library</a>, used in conjunction with fhir-client.js, to prevent these issues from happening. Our open source library is in use by SMART app developers running their apps not only within Cerner EHR environments, but also within other EHR vendor environments.</p>
+
+<p>You can find the source code for this project at <a href="https://github.com/cerner/fhir-client-cerner-additions">https://github.com/cerner/fhir-client-cerner-additions</a></p>
+
+<h3>ASCVD Risk Calculator SMART Application</h3>
+
+<p>Through collaborative efforts, Cerner and <a href="https://www.dukehealth.org/">Duke University Health System</a> recognized a need for the development of a more clinically relevant cardiac risk calculator app. To solve for this, together we developed the open source <a href="https://apps.smarthealthit.org/app/ascvd-risk-calculator">ASCVD Risk Calculator SMART application</a>. Not only is the app freely available to all Cerner clients, but all our work on the app is open source so that other hospitals and health systems can  run and modify it to meet their needs.</p>
+
+<p>You can find the ASCVD Risk Calculator source code at <a href="https://github.com/cerner/ascvd-risk-calculator">https://github.com/cerner/ascvd-risk-calculator</a></p>
+
+<h3>CDS Hooks</h3>
+
+<p><a href="https://cds-hooks.org">CDS Hooks</a> is an emerging standard for interoperable clinical decision support. Similar to our SMART on FHIR tutorial, Cerner wrote an <a href="https://github.com/cerner/cds-services-tutorial">open source, hands-on tutorial</a> that walks a developer through writing their first CDS Service.</p>
+
+<p>Cerner is also the primary developer and maintainer of the <a href="https://sandbox.cds-hooks.org/">CDS Hooks Sandbox</a>, an open source Sandbox used by the CDS Hooks community. The CDS Hooks Sandbox has been proven to be incredibly valuable and helps developers test and demonstrate their CDS Services against any FHIR server of their choosing.</p>
+
+<p>You can find the CDS Hooks Sandbox source code at <a href="https://github.com/cds-hooks/sandbox">https://github.com/cds-hooks/sandbox</a></p>
+
+<h3>Bunsen: FHIR and Big Data</h3>
+
+<p>Big data can have a great impact on health care when used correctly. Health care organizations are analyzing big data to improve health care in a number of ways, from increasing revenue and improving efficiency to predicting diseases and improving patient care. As technology advance, health care organizations will continue to gather more data and developers will need to find ways to make that data useful and actionable.</p>
+
+<p>Cerner has many years of experience working with big data. To support big data developers, we made Bunsen open source. Bunsen is a project that makes it easy for developers to explore, transform and analyze FHIR data with Apache Spark. In addition, Cerner recently released a <a href="https://github.com/cerner/bunsen-tutorial">tutorial for getting started with Bunsen</a>. You can <a href="https://engineering.cerner.com/blog/announcing-bunsen-fhir-data-with-apache-spark/">read more about Bunsen on our blog post here</a>.</p>
+
+<p>You can view the Bunsen source code at <a href="https://github.com/cerner/bunsen">https://github.com/cerner/bunsen</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[SREcon18 Recap]]></title>
@@ -740,7 +787,7 @@ Way to go PSA!</p>
 </ul>
 
 
-<p>Try it and let me know what you think! You can log issues for improvements, or email me your thoughts: <a href="&#109;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#x62;&#114;&#121;&#97;&#110;&#x2e;&#98;&#x61;&#117;&#x67;&#104;&#101;&#x72;&#64;&#99;&#101;&#x72;&#x6e;&#x65;&#x72;&#x2e;&#x63;&#x6f;&#109;&#x2e;">&#98;&#114;&#x79;&#x61;&#x6e;&#46;&#98;&#97;&#117;&#x67;&#104;&#x65;&#x72;&#64;&#x63;&#101;&#114;&#x6e;&#x65;&#114;&#x2e;&#x63;&#x6f;&#109;&#46;</a> We hope to continue to improve the library and always welcome contributions and ideas from others.</p>
+<p>Try it and let me know what you think! You can log issues for improvements, or email me your thoughts: <a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#111;&#58;&#98;&#114;&#x79;&#x61;&#110;&#46;&#x62;&#x61;&#117;&#x67;&#104;&#x65;&#114;&#64;&#99;&#101;&#114;&#x6e;&#x65;&#114;&#x2e;&#99;&#x6f;&#109;&#46;">&#98;&#x72;&#121;&#x61;&#110;&#46;&#x62;&#97;&#x75;&#103;&#104;&#x65;&#114;&#x40;&#99;&#x65;&#x72;&#x6e;&#101;&#x72;&#x2e;&#99;&#x6f;&#109;&#x2e;</a> We hope to continue to improve the library and always welcome contributions and ideas from others.</p>
 ]]></content>
   </entry>
   
@@ -1481,31 +1528,6 @@ Spinnaker allows for building deployment pipelines that can be triggered by thin
 <p>Ultimately, the root of the problem is that we have an approach that encourages a lot of data to accumulate in a single row. We had a design flaw. While this patient was outside the realm of anything we&rsquo;d seen before, it wasn&rsquo;t outside the realm of possibility. To quote an oldie, but goodie from Frederick Brooks, &ldquo;Our first response should be to reorganize the modules&#8217; data structures.&rdquo;</p>
 
 <p>This event made us realize our batch and streaming representations of the data need to converge. That is the path we&rsquo;re now taking which will introduce its own set of challenges, but we&rsquo;re confident this will land us in a more stable, scalable place.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Managing Splunk's Knowledge]]></title>
-    <link href="http://engineering.cerner.com/blog/managing-splunk-knowledge/"/>
-    <updated>2017-07-14T00:00:00-05:00</updated>
-    <id>http://engineering.cerner.com/blog/managing-splunk-knowledge</id>
-    <content type="html"><![CDATA[<p>When we first were given access to <a href="https://www.splunk.com/">Splunk</a> we were excited about all the functionality it could provide our team to help us monitor and debug our applications. We created alerts to email us if our applications are logging errors, dashboards to show health or metrics of our services, and field extractions as well as tags to make searching easier. As we created more and more of these Splunk knowledge objects we started to have issues. For regulatory and validation concerns, we have several Splunk instances that represent different environments. This required us to copy and paste or duplicate the Splunk knowledge object we created in one environment to all the others. This became very tedious and we saw all sorts of problems. Objects were only copied to some Splunk instances, updates were sometimes lost, and permissions weren&rsquo;t consistent or someone would forget to make their object publically viewable. We set out to look for a solution.</p>
-
-<p>After we couldn&rsquo;t find anything that could easily help us we created a tool called <a href="https://github.com/cerner/splunk-pickaxe">splunk-pickaxe</a>. splunk-pickaxe is a Ruby gem that provides a command-line interface for synchronizing a directory or repository of Splunk knowledge objects written as files to a Splunk instance. So now when a developer creates a new Splunk object, they would create and test it in our Splunk dev instance and then open a pull request to our Splunk Github repository with the object&rsquo;s configuration or contents . Other developers review the changes before it gets merged and automatically pushed out to all our Splunk instances using our splunk-pickaxe tool and <a href="https://jenkins.io/">Jenkins</a> our continuous integration engine. This simplified things and provided consistency on these Splunk changes. We were also able to more effectively review the Splunk objects for efficient and proper Splunk usage.</p>
-
-<p>The tool grew in popularity at Cerner and currently supports many Splunk objects:</p>
-
-<ul>
-<li><a href="http://docs.splunk.com/Documentation/Splunk/6.6.2/Viz/Aboutthismanual">Dashboards</a></li>
-<li><a href="https://docs.splunk.com/Documentation/Splunk/latest/Alert/Aboutalerts">Alerts</a></li>
-<li><a href="https://docs.splunk.com/Documentation/Splunk/6.6.2/Report/Aboutreports">Reports</a></li>
-<li><a href="http://docs.splunk.com/Documentation/Splunk/6.6.2/Knowledge/ExtractfieldsinteractivelywithIFX">Field Extractions</a></li>
-<li><a href="http://docs.splunk.com/Documentation/SplunkCloud/6.6.0/Knowledge/TagandaliasfieldvaluesinSplunkWeb">Tags</a></li>
-<li><a href="http://docs.splunk.com/Documentation/Splunk/6.6.2/Knowledge/Abouteventtypes">Event Types</a></li>
-</ul>
-
-
-<p>Check out the <a href="https://github.com/cerner/splunk-pickaxe#getting-started">Getting Started</a> section to try it out and feel welcome to <a href="https://github.com/cerner/splunk-pickaxe#contributing">contribute</a> any ideas or improvements.</p>
 ]]></content>
   </entry>
   
