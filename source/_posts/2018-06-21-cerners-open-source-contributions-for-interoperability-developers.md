@@ -2,7 +2,7 @@
 layout: post
 title: "Cerner's Open Source Contributions for Interoperability Developers"
 author: Kevin Shekleton
-date: 2018-06-20
+date: 2018-06-21
 tags: [engineering, open source, interoperability]
 ---
 
