@@ -6,9 +6,9 @@ date: 2018-07-02
 tags: [engineering, spark, FHIR, bunsen]
 ---
 
-The [FHIR standard](https://www.hl7.org/fhir/overview.html) started as a better way to exchange healthcare data, but it also provides a solid basis for deep analytics and Machine Learning. This post is based on a talk I gave at the recent [FHIR DevDays](https://www.fhirdevdays.com/) conference, which included an interactive [FHIR data engineering tutorial](https://github.com/cerner/bunsen-tutorial) that you can download and run yourself.
+The [FHIR standard](https://www.hl7.org/fhir/overview.html) started as a better way to exchange healthcare data, but it also provides a solid basis for deep analytics and Machine Learning at scale. This post looks at an example from the recent [FHIR DevDays](https://www.fhirdevdays.com/) conference that does just that. You can also run the interactive [FHIR data engineering tutorial](https://github.com/cerner/bunsen-tutorial) used in the conference yourself.
 
-Our first step is to bring FHIR data into a data lake -- a computational environment where our analysis can easily and efficiently work through petabytes of data. Let's look at some patterns for doing so, with concrete examples using the open source [Bunsen](http://engineering.cerner.com/bunsen) and [Apache Spark](https://spark.apache.org/) projects.
+Our first step is to bring FHIR data into a data lake -- a computational environment where our analysis can easily and efficiently work through petabytes of data. We'll look at some patterns for doing so, with concrete examples using the open source [Bunsen](http://engineering.cerner.com/bunsen) and [Apache Spark](https://spark.apache.org/) projects.
 
 ### FHIR StructureDefinitions Define the Schema
 The schema for every dataset you see here was generated from a [FHIR StructureDefinition](https://www.hl7.org/fhir/stu3/structuredefinition.html). There is a big gap between building a FHIR-based schema by hand and generating it directly from the source. Every field in every query here is fully documented as a [FHIR resource](https://www.hl7.org/fhir/stu3/resourcelist.html), making the FHIR documentation itself the primary reference to our datasets. This means the data is well-defined, curated, and familiar to those who have used FHIR.
@@ -67,9 +67,9 @@ where in_valueset(code, 'chd')
 |urn:uuid:5a28... |http://snomed.info/sct |53741008 |2015-08-28T01:17:20
 
 
-It's worth looking at what's going on here: in a few lines of SQL, we are going from the rich (but somewhat complicated) FHIR Condition data model to a simple table of onset times of Coronary Heart Disease.
+It's worth looking at what's going on here: in a few lines of SQL, we are going from the rich (but somewhat complicated) FHIR Condition data model to a simple table of onset times of Coronary Heart Disease conditions.
 
-### FHIR Data in Columnar Files
+### FHIR Data in Columnar Storage
 Users see a clear catalog of FHIR datasets, but something important is happening behind the scenes. Most data stores or serialization encodings like JSON keep data in a row-wise format. This means all columns from a given record are physically adjacent on disk, like this:
 
  {% img center /assets/2018-07-02-data-engineering-with-bunsen/row-wise.png 600px %}
@@ -78,12 +78,12 @@ This is a good fit for many workloads, but often not for analysis at scale. For 
 
 {% img center /assets/2018-07-02-data-engineering-with-bunsen/columnar.png 600px %}
 
-This is complete transparent to the user; she simply sees FHIR data from the specification.
+This is completely transparent to the user; she simply sees FHIR data from the specification.
 
 So while users see the FHIR data model, it is encoded in a columnar file like Parquet. In such files, all of these "code" columns next to one another, allowing the queries to do tight scans over columns of interest without expensive seeking past unneeded data.
 
 ### Creating For-Purpose Views
-These are the building blocks that simplify otherwise complex analysis. For instance, if we want to identify people with diabetes-related risks, we can create a collection of simple views of the underlying data customized for that purpose. You can see the full example in the [Bunsen data engineering tutorial](https://github.com/cerner/bunsen-tutorial/blob/fhirdevdays2018/data_engineering_tutorial.ipynb), but we'll start by with a dataframe of people with diabetes-related conditions as defined by a provided ValueSet:
+These are the building blocks that simplify otherwise complex analysis. For instance, if we want to identify people with diabetes-related risks, we can create a collection of simple views of the underlying data customized for that purpose. You can see the full example in the [Bunsen data engineering tutorial](https://github.com/cerner/bunsen-tutorial/blob/fhirdevdays2018/data_engineering_tutorial.ipynb), but we'll start with a dataframe of people with diabetes-related conditions as defined by a provided ValueSet:
 
 ```python
 diabetes_conditions = spark.sql("""
@@ -125,7 +125,7 @@ where class.code = 'WELLNESS' and
 |urn:uuid:d9ac... |2016-05-16T06:56:19 |2016-05-16T06:56:19
 
 
-Now that we've loaded and analyzed are dataframes, we can simply exclude those with wellness visits by doing an anti join between them:
+Now that we've loaded and analyzed our dataframes, we can simply exclude those with wellness visits by doing an anti join between them:
 
 ```python
 diabetes_without_wellness = diabetes_conditions.join(wellness_visits,
@@ -136,7 +136,7 @@ diabetes_without_wellness = diabetes_conditions.join(wellness_visits,
 The result is a simple table containing the cohort we're looking for! Check out the complete [tutorial notebook](https://github.com/cerner/bunsen-tutorial/blob/fhirdevdays2018/data_engineering_tutorial.ipynb) for the full story.
 
 ### Reproducible Results from Immutable Data
-Repeatability is an essential property for deep analysis. Re-running the same notebook in the future must load exactly the same data and produce exactly the same results. This gives us the controls needed to build on and iteratively improve previous analysis over time. Fortunately, using immutable data partitions are a common pattern in this type of system. We won't go into depth here, but will touch on a couple good practices:
+Repeatability is an essential property for deep analysis. Re-running the same notebook in the future must load *exactly* the same data and produce *exactly* the same results. This gives us the controls needed to build on and iteratively improve previous analysis over time. Fortunately, using immutable data partitions are a common pattern in this type of system. We won't go into depth here, but will touch on a couple good practices:
 
 * Data is never mutated. Updates coming into our data lake are appended to previous data, and we can reproduce previous results by only working with data that was available at a given processing time.
 * If necessary, a policy to archive or remove previous views of data from the data catalog is used to manage size.
