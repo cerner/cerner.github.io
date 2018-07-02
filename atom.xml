@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2018-06-21T12:59:56-05:00</updated>
+  <updated>2018-07-02T15:59:10-05:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,322 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Scalable Data Science With FHIR]]></title>
+    <link href="http://engineering.cerner.com/blog/data-engineering-with-bunsen/"/>
+    <updated>2018-07-02T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/blog/data-engineering-with-bunsen</id>
+    <content type="html"><![CDATA[<p>The <a href="https://www.hl7.org/fhir/overview.html">FHIR standard</a> started as a better way to exchange healthcare data, but it also provides a solid basis for deep analytics and Machine Learning at scale. This post looks at an example from the recent <a href="https://www.fhirdevdays.com/">FHIR DevDays</a> conference that does just that. You can also run the interactive <a href="https://github.com/cerner/bunsen-tutorial">FHIR data engineering tutorial</a> used in the conference yourself.</p>
+
+<p>Our first step is to bring FHIR data into a data lake &mdash; a computational environment where our analysis can easily and efficiently work through petabytes of data. We&rsquo;ll look at some patterns for doing so, with concrete examples using the open source <a href="http://engineering.cerner.com/bunsen">Bunsen</a> and <a href="https://spark.apache.org/">Apache Spark</a> projects.</p>
+
+<h3>FHIR StructureDefinitions Define the Schema</h3>
+
+<p>The schema for every dataset you see here was generated from a <a href="https://www.hl7.org/fhir/stu3/structuredefinition.html">FHIR StructureDefinition</a>. There is a big gap between building a FHIR-based schema by hand and generating it directly from the source. Every field in every query here is fully documented as a <a href="https://www.hl7.org/fhir/stu3/resourcelist.html">FHIR resource</a>, making the FHIR documentation itself the primary reference to our datasets. This means the data is well-defined, curated, and familiar to those who have used FHIR.</p>
+
+<h3>Data Catalogs over Filesystems</h3>
+
+<p>Organizing data in files and directories is convenient, but it becomes unwieldy when working with a large number of complex datasets. Data catalogs can meet this need &mdash; and to offer a foundation for further data governance. The <a href="https://hive.apache.org/">Apache Hive metastore</a> is the most common way to catalog data in Hadoop-based environments and has native integration with Spark, so we organize data as one FHIR resource per table. Here&rsquo;s an example from the <a href="https://github.com/cerner/bunsen-tutorial/blob/fhirdevdays2018/data_engineering_tutorial.ipynb">tutorial used at FHIR DevDays</a>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">&#39;use tutorial_small&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">&#39;show tables&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Which prints a table like this:</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="left">database       </th>
+<th align="left">tableName          </th>
+<th align="left">isTemporary </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td align="left">tutorial_small </td>
+<td align="left">allergyintolerance </td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">tutorial_small </td>
+<td align="left">careplan           </td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">tutorial_small </td>
+<td align="left">claim              </td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">tutorial_small </td>
+<td align="left">condition          </td>
+<td align="left">false</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>&hellip;and so on. This makes it trivial to use intuitive database metaphors like <code>use tutorial_small</code> and <code>select * from condition</code>.</p>
+
+<h3>First-class ValueSet Support</h3>
+
+<p><a href="https://www.hl7.org/fhir/stu3/valueset.html">FHIR ValueSets</a> &mdash; collections of code values for a specific purpose &mdash; are essential to querying or working with FHIR data. Therefore they should be a first-class construct in our healthcare data lake. Here&rsquo;s a look at using some FHIR valuesets in our queries as supported by <a href="https://engineering.cerner.com/bunsen/0.4.0/">Bunsen</a>.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">bunsen.stu3.valuesets</span> <span class="kn">import</span> <span class="n">push_valuesets</span><span class="p">,</span> <span class="n">valueset</span><span class="p">,</span> <span class="n">isa_loinc</span><span class="p">,</span> <span class="n">isa_snomed</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">push_valuesets</span><span class="p">(</span><span class="n">spark</span><span class="p">,</span>
+</span><span class='line'>               <span class="p">{</span><span class="s">&#39;ldl&#39;</span>          <span class="p">:</span> <span class="n">isa_loinc</span><span class="p">(</span><span class="s">&#39;18262-6&#39;</span><span class="p">),</span> <span class="c"># Loads LOINC descendants         </span>
+</span><span class='line'>                <span class="s">&#39;hdl&#39;</span>          <span class="p">:</span> <span class="n">isa_loinc</span><span class="p">(</span><span class="s">&#39;2085-9&#39;</span><span class="p">),</span>
+</span><span class='line'>                <span class="s">&#39;hypertension&#39;</span> <span class="p">:</span> <span class="n">isa_snomed</span><span class="p">(</span><span class="s">&#39;38341003&#39;</span><span class="p">),</span> <span class="c"># Loads SNOMED descendants</span>
+</span><span class='line'>                <span class="c"># Loaded from a FHIR ValueSet resource</span>
+</span><span class='line'>                <span class="s">&#39;chd&#39;</span>          <span class="p">:</span> <span class="n">valueset</span><span class="p">(</span><span class="s">&#39;http://engineering.cerner.com/bunsen/example/chd&#39;</span><span class="p">,</span> <span class="s">&#39;201806001&#39;</span><span class="p">)});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now we can use these valuesets in our SQL queries via the <em>in_valueset</em> user-defined function:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">&quot;&quot;&quot;</span>
+</span><span class='line'><span class="s">select subject.reference,</span>
+</span><span class='line'><span class="s">       code.coding[0].system system,</span>
+</span><span class='line'><span class="s">       code.coding[0].code code,</span>
+</span><span class='line'><span class="s">       onsetDateTime</span>
+</span><span class='line'><span class="s">from condition</span>
+</span><span class='line'><span class="s">where in_valueset(code, &#39;chd&#39;)</span>
+</span><span class='line'><span class="s">&quot;&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="left">reference        </th>
+<th align="left">system                 </th>
+<th align="left">code     </th>
+<th align="left">onsetDateTime      </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td align="left">urn:uuid:f88c&hellip; </td>
+<td align="left"><a href="http://snomed.info/sct">http://snomed.info/sct</a> </td>
+<td align="left">53741008 </td>
+<td align="left">2014-09-14T07:45:47</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">urn:uuid:d9ac&hellip; </td>
+<td align="left"><a href="http://snomed.info/sct">http://snomed.info/sct</a> </td>
+<td align="left">53741008 </td>
+<td align="left">2017-05-22T06:56:19</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">urn:uuid:7460&hellip; </td>
+<td align="left"><a href="http://snomed.info/sct">http://snomed.info/sct</a> </td>
+<td align="left">53741008 </td>
+<td align="left">1974-08-06T06:50:32</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">urn:uuid:5a28&hellip; </td>
+<td align="left"><a href="http://snomed.info/sct">http://snomed.info/sct</a> </td>
+<td align="left">53741008 </td>
+<td align="left">2015-08-28T01:17:20</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>It&rsquo;s worth looking at what&rsquo;s going on here: in a few lines of SQL, we are going from the rich (but somewhat complicated) FHIR Condition data model to a simple table of onset times of Coronary Heart Disease conditions.</p>
+
+<h3>FHIR Data in Columnar Storage</h3>
+
+<p>Users see a clear catalog of FHIR datasets, but something important is happening behind the scenes. Most data stores or serialization encodings like JSON keep data in a row-wise format. This means all columns from a given record are physically adjacent on disk, like this:</p>
+
+<p> <img class="center" src="http://engineering.cerner.com/assets/2018-07-02-data-engineering-with-bunsen/row-wise.png" width="600"></p>
+
+<p>This is a good fit for many workloads, but often not for analysis at scale. For instance, we may want to query the &ldquo;code&rdquo; column of several billion observation rows, and retrieve only those in a certain valueset. This is more efficient if columns are grouped together, like this:</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2018-07-02-data-engineering-with-bunsen/columnar.png" width="600"></p>
+
+<p>This is completely transparent to the user; she simply sees FHIR data from the specification.</p>
+
+<p>So while users see the FHIR data model, it is encoded in a columnar file like Parquet. In such files, all of these &ldquo;code&rdquo; columns next to one another, allowing the queries to do tight scans over columns of interest without expensive seeking past unneeded data.</p>
+
+<h3>Creating For-Purpose Views</h3>
+
+<p>These are the building blocks that simplify otherwise complex analysis. For instance, if we want to identify people with diabetes-related risks, we can create a collection of simple views of the underlying data customized for that purpose. You can see the full example in the <a href="https://github.com/cerner/bunsen-tutorial/blob/fhirdevdays2018/data_engineering_tutorial.ipynb">Bunsen data engineering tutorial</a>, but we&rsquo;ll start with a dataframe of people with diabetes-related conditions as defined by a provided ValueSet:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">diabetes_conditions</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">&quot;&quot;&quot;</span>
+</span><span class='line'><span class="s">select id condition_id,</span>
+</span><span class='line'><span class="s">       subject.reference person_ref,</span>
+</span><span class='line'><span class="s">       coding.system,</span>
+</span><span class='line'><span class="s">       coding.code,</span>
+</span><span class='line'><span class="s">       coding.display</span>
+</span><span class='line'><span class="s">from condition</span>
+</span><span class='line'><span class="s">     lateral view explode(code.coding) nested as coding</span>
+</span><span class='line'><span class="s">where in_valueset(code, &#39;diabetes_risks&#39;)</span>
+</span><span class='line'><span class="s">&quot;&quot;&quot;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="left">condition_id     </th>
+<th align="left">person_ref       </th>
+<th align="left">system                 </th>
+<th align="left">code     </th>
+<th align="left">display    </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td align="left">urn:uuid:9c72&hellip; </td>
+<td align="left">urn:uuid:5a28&hellip; </td>
+<td align="left"><a href="http://snomed.info/sct">http://snomed.info/sct</a> </td>
+<td align="left">44054006 </td>
+<td align="left">Diabetes</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">urn:uuid:56d5&hellip; </td>
+<td align="left">urn:uuid:214f&hellip; </td>
+<td align="left"><a href="http://snomed.info/sct">http://snomed.info/sct</a> </td>
+<td align="left">15777000 </td>
+<td align="left">Prediabetes</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">urn:uuid:69de&hellip; </td>
+<td align="left">urn:uuid:7f4d&hellip; </td>
+<td align="left"><a href="http://snomed.info/sct">http://snomed.info/sct</a> </td>
+<td align="left">15777000 </td>
+<td align="left">Prediabetes</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>We can inspect and validate this dataframe, and then move onto the next part of our analysis. Let&rsquo;s say we want to exclude anyone who has had a wellness visit in the last two years from our analysis. We just build a dataframe with them:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">wellness_visits</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">&quot;&quot;&quot;</span>
+</span><span class='line'><span class="s">select subject.reference person_ref,</span>
+</span><span class='line'><span class="s">       period.start encounter_start,</span>
+</span><span class='line'><span class="s">       period.end encounter_end</span>
+</span><span class='line'><span class="s">from encounter</span>
+</span><span class='line'><span class="s">where class.code = &#39;WELLNESS&#39; and</span>
+</span><span class='line'><span class="s">      period.start &gt; &#39;2016&#39;</span>
+</span><span class='line'><span class="s">&quot;&quot;&quot;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="left">person_ref       </th>
+<th align="left">encounter_start     </th>
+<th align="left">encounter_end      </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td align="left">urn:uuid:f88c&hellip; </td>
+<td align="left">2016-08-21T07:45:47 </td>
+<td align="left">2016-08-21T07:45:47</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">urn:uuid:f88c&hellip; </td>
+<td align="left">2017-08-27T07:45:47 </td>
+<td align="left">2017-08-27T07:45:47</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">urn:uuid:d9ac&hellip; </td>
+<td align="left">2016-05-16T06:56:19 </td>
+<td align="left">2016-05-16T06:56:19</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>Now that we&rsquo;ve loaded and analyzed our dataframes, we can simply exclude those with wellness visits by doing an anti join between them:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">diabetes_without_wellness</span> <span class="o">=</span> <span class="n">diabetes_conditions</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">wellness_visits</span><span class="p">,</span>
+</span><span class='line'>                                                     <span class="p">[</span><span class="s">&#39;person_ref&#39;</span><span class="p">],</span>
+</span><span class='line'>                                                     <span class="s">&#39;left_anti&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The result is a simple table containing the cohort we&rsquo;re looking for! Check out the complete <a href="https://github.com/cerner/bunsen-tutorial/blob/fhirdevdays2018/data_engineering_tutorial.ipynb">tutorial notebook</a> for the full story.</p>
+
+<h3>Reproducible Results from Immutable Data</h3>
+
+<p>Repeatability is an essential property for deep analysis. Re-running the same notebook in the future must load <em>exactly</em> the same data and produce <em>exactly</em> the same results. This gives us the controls needed to build on and iteratively improve previous analysis over time. Fortunately, using immutable data partitions are a common pattern in this type of system. We won&rsquo;t go into depth here, but will touch on a couple good practices:</p>
+
+<ul>
+<li>Data is never mutated. Updates coming into our data lake are appended to previous data, and we can reproduce previous results by only working with data that was available at a given processing time.</li>
+<li>If necessary, a policy to archive or remove previous views of data from the data catalog is used to manage size.</li>
+</ul>
+
+
+<p>Finally, building on such a FHIR-based data lake enables portability. The predictive model or analysis output is fully captured starting with portable data &mdash; which means it can be more easily deployed into other systems. FHIR has made great progress in exchanging data in online systems, and we see a lot of promise for data science at scale as well.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Cerner's Open Source Contributions for Interoperability Developers]]></title>
@@ -787,7 +1103,7 @@ Way to go PSA!</p>
 </ul>
 
 
-<p>Try it and let me know what you think! You can log issues for improvements, or email me your thoughts: <a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#111;&#58;&#98;&#114;&#x79;&#x61;&#110;&#46;&#x62;&#x61;&#117;&#x67;&#104;&#x65;&#114;&#64;&#99;&#101;&#114;&#x6e;&#x65;&#114;&#x2e;&#99;&#x6f;&#109;&#46;">&#98;&#x72;&#121;&#x61;&#110;&#46;&#x62;&#97;&#x75;&#103;&#104;&#x65;&#114;&#x40;&#99;&#x65;&#x72;&#x6e;&#101;&#x72;&#x2e;&#99;&#x6f;&#109;&#x2e;</a> We hope to continue to improve the library and always welcome contributions and ideas from others.</p>
+<p>Try it and let me know what you think! You can log issues for improvements, or email me your thoughts: <a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#111;&#58;&#98;&#114;&#x79;&#97;&#x6e;&#46;&#98;&#97;&#117;&#103;&#104;&#x65;&#x72;&#64;&#x63;&#101;&#114;&#110;&#101;&#114;&#46;&#x63;&#111;&#109;&#x2e;">&#98;&#114;&#121;&#x61;&#110;&#46;&#98;&#97;&#x75;&#103;&#x68;&#101;&#114;&#64;&#99;&#101;&#114;&#x6e;&#x65;&#x72;&#x2e;&#x63;&#x6f;&#x6d;&#x2e;</a> We hope to continue to improve the library and always welcome contributions and ideas from others.</p>
 ]]></content>
   </entry>
   
@@ -1465,69 +1781,6 @@ Spinnaker allows for building deployment pipelines that can be triggered by thin
 <p>In spite of moving our code into the public Github we still maintained an insular development approach, determined to get everything just right before submitting a perfect polished gem to the upstream project.  In hindsight, we should have been less concerned about trying to get everything right all at once and submitted more incremental changes.  We thought it would be easier for everyone not to have to deal with our messy work in progress, but after our first pull request for one of the services ended up with over 130 files and a history of 100+ commits we realized that it&rsquo;s too much to expect the maintainers to review so much at once, especially when they may not be that familiar with DC/OS.  Ultimately, they wanted us to carve up that massive patch anyway so it would have been less work for us to do it from the start.</p>
 
 <p>After completing this effort we&rsquo;ve found that we get even more benefit from Spinnaker than we initially expected.  Spinnaker also helps us manage deployments to multiple DC/OS clusters, use <a href="https://github.com/Netflix/chaosmonkey">Chaos Monkey</a> to test the resiliency of our applications, and even to deploy DC/OS itself on AWS. We&rsquo;re pleased to announce that our contribution has been accepted by the Spinnaker maintainers and is now <a href="https://www.spinnaker.io/community/releases/versions/1-3-0-changelog">available for anyone to use</a>.  The Spinnaker community has been great to work with and helped us by answering questions and inviting us to participate in the discussions with other companies that have contributed major functionality to Spinnaker.  This is an exciting opportunity to contribute something back to the open-source community and we can&rsquo;t wait to see where it goes from here.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Structure Matters: How Cerner Handled Too Much Health Data in HBase]]></title>
-    <link href="http://engineering.cerner.com/blog/structure-matters-how-cerner-handled-too-much-health-data-in-hbase/"/>
-    <updated>2017-08-28T00:00:00-05:00</updated>
-    <id>http://engineering.cerner.com/blog/structure-matters-how-cerner-handled-too-much-health-data-in-hbase</id>
-    <content type="html"><![CDATA[<h3>Background</h3>
-
-<p>In order to manage the health of populations, Cerner builds data-driven solutions built on top of its <em>HealtheIntent</em>&#8480; platform. The platform transforms and standardizes data across disparate health systems. The data is then used in algorithms that aid healthcare providers and hospitals in managing and monitoring health both at a person and population level.</p>
-
-<p>The Reference Record is one of the core components of the HealtheIntent platform. It represents the data known about a person&rsquo;s health from a particular source of healthcare information. Downstream components in the platform aggregate information across multiple reference records to understand the full picture of a person&rsquo;s health.</p>
-
-<p>To create the record, the system performs both batch and stream processing. Some sources send the data to HealtheIntent once a day or once a month. That data is processed in batch, using Hadoop MapReduce jobs. For sources that send the data as streams of updates in near real time, we rely on a homegrown near real time framework that sits on top of Apache Storm. Both the pipelines persist their processed data in HBase tables.</p>
-
-<p>For the data processed in batch, we write all the data about the person from a given source to the HBase table as one HBase row. We refer to this as a wide table. The HBase Rowkey is the source identifier followed by the person identifier: <code>/source:&lt;id&gt;/person:&lt;id&gt;</code>. Each row could have multiple columns, one per each healthcare entity like allergy, medication, procedure, etc. Another thing to note is this table is salted for better distribution of data across regions. That means a given person&rsquo;s data will be in a single region since it&rsquo;s all in one row, but the data for a given source will be distributed across the HBase cluster.</p>
-
-<p>For streaming sources, we use a different table approach. We have a tall table, where each healthcare entity is written separately. The Rowkey in this approach would be built from the source identifier, person identifier, entity type, and then individual entity identifier. This allows the system to manage the information flowing from the stream more efficiently.</p>
-
-<p>To make sure that the consumers of the record don&rsquo;t have to know whether the data is coming from a streaming or batch source system, we offer a Crunch-based extract API that is capable of reading from either table structure. The API provides a single, consistent representation of the data.</p>
-
-<p>The purpose of this post is to discuss what happened when a single person in our system received a little too much healthcare over the course of her fake life.</p>
-
-<h3>The Investigation</h3>
-
-<p>We were bringing a new source of healthcare data onto the HealtheIntent platform using our batch processing pipeline. In the midst of this work, a small number of MapReduce jobs started failing. Our failure monitoring triggered and notified us that something wasn&rsquo;t right.</p>
-
-<p>We turned to the logs to investigate the failures. We saw this (not very informative) message:</p>
-
-<blockquote><p>Task attempt_xxxx failed to report status for 601 seconds. Killing!</p></blockquote>
-
-<p>Our first assumption was that the issue was related to memory, but we profiled the job and found that the heap utilization looked fine.</p>
-
-<p>Querying across all the logs, we were able to see two key pieces of information. One, a job was more likely to fail if it was reading from a particular source of data, and two, failures were correlated with alerts on slow response times in HBase. Drilling deeper into our logs, we were able to find that sure enough, we were timing out trying to read from a particular region in HBase.</p>
-
-<p>The next obvious step was to look at region metrics. We found the region had grown in size to 115 GB on a cluster configured to have a max region size of 10 GB. More logs showed the table had stopped compacting and splits weren&rsquo;t working due to a 30 GB row in the table.</p>
-
-<p>At this time, anything trying to read that row was failing, but some large writes were still succeeding. There would be attempts to bulk load new data to the region, but the loads would invariably fail due to the large row. When the job ran again, it would attempt to write the same data, over and over. Occasionally during these attempts, some of the data would get written to the region. This process piled more and more data onto the region, and the region wouldn&rsquo;t split.</p>
-
-<p>As the region was growing, the situation got worse. As previously mentioned, we salt the row keys to distribute data across the cluster. Jobs interested in other source data were also reading from this region, so we started seeing failures in other jobs. Then in the midst of our investigation, we saw more HBase region servers start failing. Then HBase bulk loads in other MapReduce jobs were also failing. We knew we had to get rid of the row and split the region.</p>
-
-<p>As some team members worked on a plan to deal with the row, others moved on to answering the question, &ldquo;How did this one row get so big that the bulk loads started failing?&rdquo;</p>
-
-<p>With healthcare data, it&rsquo;s possible to imagine diseases that might lead someone to have so many encounters and activity within a single healthcare system that we could get to a gigabyte of health data about a person. However, we had never seen anything near this large before. It was a pretty significant outlier.</p>
-
-<h3>Getting Rid of the Alternative Fact</h3>
-
-<p>We decided to delete the person&rsquo;s data. However, the person had grown so large, this proved difficult. (The naive approach to deleting a row in HBase failed spectacularly.) Splitting was also not possible.</p>
-
-<p>We needed a better plan. First, all reads and writes to the region had to stopped. This meant suspending all jobs that any potential to read or write. Since several teams depended on our data for their processing, we started by notifying all our downstream consumers. Then we stopped all reads and writes to the affected region. We copied the affected Hfiles to a new table. This allowed compaction (and as a result, deletion) to succeed. Cleaning up this one bad record brought the region size down to 2 GB from 200 GB. As part of this process, the table was disabled and the compacted Hfiles from the fixed region were copied back to the old table before it was re-enabled.</p>
-
-<h3>Damage</h3>
-
-<p>When we stopped all the jobs loading into that table, we had a stale data period for downstream processing. Reports that needed the data showed old information during the length of the incident investigation and mitigation. The good news is that our near real-time algorithms such as our Sepsis alerts and readmissions risk assessments were built on top of the stream processing system which was not impacted by this incident.</p>
-
-<h3>Prevention</h3>
-
-<p>In our postmortem for the incident, we reviewed what we could have done better before, during, and immediately following the situation. A quick win for us was to add HBase region size monitoring &amp; alerting. It is still reactive, but would help us react faster and minimize the duration of the event.</p>
-
-<p>Ultimately, the root of the problem is that we have an approach that encourages a lot of data to accumulate in a single row. We had a design flaw. While this patient was outside the realm of anything we&rsquo;d seen before, it wasn&rsquo;t outside the realm of possibility. To quote an oldie, but goodie from Frederick Brooks, &ldquo;Our first response should be to reorganize the modules&#8217; data structures.&rdquo;</p>
-
-<p>This event made us realize our batch and streaming representations of the data need to converge. That is the path we&rsquo;re now taking which will introduce its own set of challenges, but we&rsquo;re confident this will land us in a more stable, scalable place.</p>
 ]]></content>
   </entry>
   

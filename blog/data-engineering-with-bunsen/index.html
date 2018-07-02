@@ -1,0 +1,623 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Scalable Data Science With FHIR - Engineering Health</title>
+  <meta name="author" content="Cerner">
+
+  
+  <meta name="description" content="">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://engineering.cerner.com/blog/data-engineering-with-bunsen">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/site/site.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <script src="/javascripts/libs/bootstrap.min.js"></script>
+
+  <link href="/atom.xml" rel="alternate" title="Engineering Health" type="application/atom+xml">
+  <script src="/javascripts/search.min.js" type="text/javascript" charset="utf-8"></script>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37701128-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body  class="top-navbar  ">
+  
+
+
+
+<header id="banner" role="banner" class="container-fluid banner-kc-background">
+
+  <div class="image">
+
+    
+      <img src="/images/KC.png" alt="Kansas City" />
+    
+
+    <div id="header1">Engineering Health<br/><span class="header2">A <b>Cerner</b> Blog</span></div>
+
+  </div>
+  <nav class="navbar navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Engineering Health</a>
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="selected">
+            <a href="/">Blog</a>
+          </li>
+          <li >
+            <a href="/culture">Culture</a>
+          </li>
+          <li >
+            <a href="/tech_talks">Tech Talks</a>
+          </li>
+          <li >
+            <a href="/open_source">Open Source</a>
+          </li>
+          <li >
+            <a href="/blog/archives">Archives</a>
+          </li>
+        </ul>
+        <div id="search" class="pull-right">
+          <form action="/search" method="get" class="navbar-search">
+            <input type="text" id="search-query" name="q" class="search-query" placeholder="Search" autocomplete="off">
+            <img src="/images/MagnifyingGlass.png" alt="Search" width="16" height="16" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+</header>
+
+
+  <div class="container-fluid post-container">
+    <div class="row-fluid">
+      <section class="span12" id="search-results" style="display: none;">
+  <h2>Search results</h2>
+  <div class="entries">
+  </div>
+</section>
+    </div>
+    <div class="row-fluid">
+      
+<article id="main" class="hentry span8" role="article">
+
+  <section class="post">
+    
+  <header class="entry-header">
+    
+      <h1 class="entry-title">Scalable Data Science With FHIR</h1>
+    
+    
+      <div class="entry-meta meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2018-07-02T00:00:00-05:00" pubdate data-updated="true">Jul 2<span>nd</span>, 2018</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Ryan Brush</span>
+  </span>
+
+
+        
+      </div>
+    
+  </header>
+
+
+<div class="entry-content"><p>The <a href="https://www.hl7.org/fhir/overview.html">FHIR standard</a> started as a better way to exchange healthcare data, but it also provides a solid basis for deep analytics and Machine Learning at scale. This post looks at an example from the recent <a href="https://www.fhirdevdays.com/">FHIR DevDays</a> conference that does just that. You can also run the interactive <a href="https://github.com/cerner/bunsen-tutorial">FHIR data engineering tutorial</a> used in the conference yourself.</p>
+
+<p>Our first step is to bring FHIR data into a data lake &mdash; a computational environment where our analysis can easily and efficiently work through petabytes of data. We&rsquo;ll look at some patterns for doing so, with concrete examples using the open source <a href="http://engineering.cerner.com/bunsen">Bunsen</a> and <a href="https://spark.apache.org/">Apache Spark</a> projects.</p>
+
+<h3>FHIR StructureDefinitions Define the Schema</h3>
+
+<p>The schema for every dataset you see here was generated from a <a href="https://www.hl7.org/fhir/stu3/structuredefinition.html">FHIR StructureDefinition</a>. There is a big gap between building a FHIR-based schema by hand and generating it directly from the source. Every field in every query here is fully documented as a <a href="https://www.hl7.org/fhir/stu3/resourcelist.html">FHIR resource</a>, making the FHIR documentation itself the primary reference to our datasets. This means the data is well-defined, curated, and familiar to those who have used FHIR.</p>
+
+<h3>Data Catalogs over Filesystems</h3>
+
+<p>Organizing data in files and directories is convenient, but it becomes unwieldy when working with a large number of complex datasets. Data catalogs can meet this need &mdash; and to offer a foundation for further data governance. The <a href="https://hive.apache.org/">Apache Hive metastore</a> is the most common way to catalog data in Hadoop-based environments and has native integration with Spark, so we organize data as one FHIR resource per table. Here&rsquo;s an example from the <a href="https://github.com/cerner/bunsen-tutorial/blob/fhirdevdays2018/data_engineering_tutorial.ipynb">tutorial used at FHIR DevDays</a>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">&#39;use tutorial_small&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">&#39;show tables&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Which prints a table like this:</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="left">database       </th>
+<th align="left">tableName          </th>
+<th align="left">isTemporary </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td align="left">tutorial_small </td>
+<td align="left">allergyintolerance </td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">tutorial_small </td>
+<td align="left">careplan           </td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">tutorial_small </td>
+<td align="left">claim              </td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">tutorial_small </td>
+<td align="left">condition          </td>
+<td align="left">false</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>&hellip;and so on. This makes it trivial to use intuitive database metaphors like <code>use tutorial_small</code> and <code>select * from condition</code>.</p>
+
+<h3>First-class ValueSet Support</h3>
+
+<p><a href="https://www.hl7.org/fhir/stu3/valueset.html">FHIR ValueSets</a> &mdash; collections of code values for a specific purpose &mdash; are essential to querying or working with FHIR data. Therefore they should be a first-class construct in our healthcare data lake. Here&rsquo;s a look at using some FHIR valuesets in our queries as supported by <a href="https://engineering.cerner.com/bunsen/0.4.0/">Bunsen</a>.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">bunsen.stu3.valuesets</span> <span class="kn">import</span> <span class="n">push_valuesets</span><span class="p">,</span> <span class="n">valueset</span><span class="p">,</span> <span class="n">isa_loinc</span><span class="p">,</span> <span class="n">isa_snomed</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">push_valuesets</span><span class="p">(</span><span class="n">spark</span><span class="p">,</span>
+</span><span class='line'>               <span class="p">{</span><span class="s">&#39;ldl&#39;</span>          <span class="p">:</span> <span class="n">isa_loinc</span><span class="p">(</span><span class="s">&#39;18262-6&#39;</span><span class="p">),</span> <span class="c"># Loads LOINC descendants         </span>
+</span><span class='line'>                <span class="s">&#39;hdl&#39;</span>          <span class="p">:</span> <span class="n">isa_loinc</span><span class="p">(</span><span class="s">&#39;2085-9&#39;</span><span class="p">),</span>
+</span><span class='line'>                <span class="s">&#39;hypertension&#39;</span> <span class="p">:</span> <span class="n">isa_snomed</span><span class="p">(</span><span class="s">&#39;38341003&#39;</span><span class="p">),</span> <span class="c"># Loads SNOMED descendants</span>
+</span><span class='line'>                <span class="c"># Loaded from a FHIR ValueSet resource</span>
+</span><span class='line'>                <span class="s">&#39;chd&#39;</span>          <span class="p">:</span> <span class="n">valueset</span><span class="p">(</span><span class="s">&#39;http://engineering.cerner.com/bunsen/example/chd&#39;</span><span class="p">,</span> <span class="s">&#39;201806001&#39;</span><span class="p">)});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now we can use these valuesets in our SQL queries via the <em>in_valueset</em> user-defined function:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">&quot;&quot;&quot;</span>
+</span><span class='line'><span class="s">select subject.reference,</span>
+</span><span class='line'><span class="s">       code.coding[0].system system,</span>
+</span><span class='line'><span class="s">       code.coding[0].code code,</span>
+</span><span class='line'><span class="s">       onsetDateTime</span>
+</span><span class='line'><span class="s">from condition</span>
+</span><span class='line'><span class="s">where in_valueset(code, &#39;chd&#39;)</span>
+</span><span class='line'><span class="s">&quot;&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="left">reference        </th>
+<th align="left">system                 </th>
+<th align="left">code     </th>
+<th align="left">onsetDateTime      </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td align="left">urn:uuid:f88c&hellip; </td>
+<td align="left"><a href="http://snomed.info/sct">http://snomed.info/sct</a> </td>
+<td align="left">53741008 </td>
+<td align="left">2014-09-14T07:45:47</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">urn:uuid:d9ac&hellip; </td>
+<td align="left"><a href="http://snomed.info/sct">http://snomed.info/sct</a> </td>
+<td align="left">53741008 </td>
+<td align="left">2017-05-22T06:56:19</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">urn:uuid:7460&hellip; </td>
+<td align="left"><a href="http://snomed.info/sct">http://snomed.info/sct</a> </td>
+<td align="left">53741008 </td>
+<td align="left">1974-08-06T06:50:32</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">urn:uuid:5a28&hellip; </td>
+<td align="left"><a href="http://snomed.info/sct">http://snomed.info/sct</a> </td>
+<td align="left">53741008 </td>
+<td align="left">2015-08-28T01:17:20</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>It&rsquo;s worth looking at what&rsquo;s going on here: in a few lines of SQL, we are going from the rich (but somewhat complicated) FHIR Condition data model to a simple table of onset times of Coronary Heart Disease conditions.</p>
+
+<h3>FHIR Data in Columnar Storage</h3>
+
+<p>Users see a clear catalog of FHIR datasets, but something important is happening behind the scenes. Most data stores or serialization encodings like JSON keep data in a row-wise format. This means all columns from a given record are physically adjacent on disk, like this:</p>
+
+<p> <img class="center" src="/assets/2018-07-02-data-engineering-with-bunsen/row-wise.png" width="600"></p>
+
+<p>This is a good fit for many workloads, but often not for analysis at scale. For instance, we may want to query the &ldquo;code&rdquo; column of several billion observation rows, and retrieve only those in a certain valueset. This is more efficient if columns are grouped together, like this:</p>
+
+<p><img class="center" src="/assets/2018-07-02-data-engineering-with-bunsen/columnar.png" width="600"></p>
+
+<p>This is completely transparent to the user; she simply sees FHIR data from the specification.</p>
+
+<p>So while users see the FHIR data model, it is encoded in a columnar file like Parquet. In such files, all of these &ldquo;code&rdquo; columns next to one another, allowing the queries to do tight scans over columns of interest without expensive seeking past unneeded data.</p>
+
+<h3>Creating For-Purpose Views</h3>
+
+<p>These are the building blocks that simplify otherwise complex analysis. For instance, if we want to identify people with diabetes-related risks, we can create a collection of simple views of the underlying data customized for that purpose. You can see the full example in the <a href="https://github.com/cerner/bunsen-tutorial/blob/fhirdevdays2018/data_engineering_tutorial.ipynb">Bunsen data engineering tutorial</a>, but we&rsquo;ll start with a dataframe of people with diabetes-related conditions as defined by a provided ValueSet:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">diabetes_conditions</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">&quot;&quot;&quot;</span>
+</span><span class='line'><span class="s">select id condition_id,</span>
+</span><span class='line'><span class="s">       subject.reference person_ref,</span>
+</span><span class='line'><span class="s">       coding.system,</span>
+</span><span class='line'><span class="s">       coding.code,</span>
+</span><span class='line'><span class="s">       coding.display</span>
+</span><span class='line'><span class="s">from condition</span>
+</span><span class='line'><span class="s">     lateral view explode(code.coding) nested as coding</span>
+</span><span class='line'><span class="s">where in_valueset(code, &#39;diabetes_risks&#39;)</span>
+</span><span class='line'><span class="s">&quot;&quot;&quot;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="left">condition_id     </th>
+<th align="left">person_ref       </th>
+<th align="left">system                 </th>
+<th align="left">code     </th>
+<th align="left">display    </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td align="left">urn:uuid:9c72&hellip; </td>
+<td align="left">urn:uuid:5a28&hellip; </td>
+<td align="left"><a href="http://snomed.info/sct">http://snomed.info/sct</a> </td>
+<td align="left">44054006 </td>
+<td align="left">Diabetes</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">urn:uuid:56d5&hellip; </td>
+<td align="left">urn:uuid:214f&hellip; </td>
+<td align="left"><a href="http://snomed.info/sct">http://snomed.info/sct</a> </td>
+<td align="left">15777000 </td>
+<td align="left">Prediabetes</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">urn:uuid:69de&hellip; </td>
+<td align="left">urn:uuid:7f4d&hellip; </td>
+<td align="left"><a href="http://snomed.info/sct">http://snomed.info/sct</a> </td>
+<td align="left">15777000 </td>
+<td align="left">Prediabetes</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>We can inspect and validate this dataframe, and then move onto the next part of our analysis. Let&rsquo;s say we want to exclude anyone who has had a wellness visit in the last two years from our analysis. We just build a dataframe with them:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">wellness_visits</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">&quot;&quot;&quot;</span>
+</span><span class='line'><span class="s">select subject.reference person_ref,</span>
+</span><span class='line'><span class="s">       period.start encounter_start,</span>
+</span><span class='line'><span class="s">       period.end encounter_end</span>
+</span><span class='line'><span class="s">from encounter</span>
+</span><span class='line'><span class="s">where class.code = &#39;WELLNESS&#39; and</span>
+</span><span class='line'><span class="s">      period.start &gt; &#39;2016&#39;</span>
+</span><span class='line'><span class="s">&quot;&quot;&quot;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="left">person_ref       </th>
+<th align="left">encounter_start     </th>
+<th align="left">encounter_end      </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td align="left">urn:uuid:f88c&hellip; </td>
+<td align="left">2016-08-21T07:45:47 </td>
+<td align="left">2016-08-21T07:45:47</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">urn:uuid:f88c&hellip; </td>
+<td align="left">2017-08-27T07:45:47 </td>
+<td align="left">2017-08-27T07:45:47</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">urn:uuid:d9ac&hellip; </td>
+<td align="left">2016-05-16T06:56:19 </td>
+<td align="left">2016-05-16T06:56:19</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>Now that we&rsquo;ve loaded and analyzed our dataframes, we can simply exclude those with wellness visits by doing an anti join between them:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">diabetes_without_wellness</span> <span class="o">=</span> <span class="n">diabetes_conditions</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">wellness_visits</span><span class="p">,</span>
+</span><span class='line'>                                                     <span class="p">[</span><span class="s">&#39;person_ref&#39;</span><span class="p">],</span>
+</span><span class='line'>                                                     <span class="s">&#39;left_anti&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The result is a simple table containing the cohort we&rsquo;re looking for! Check out the complete <a href="https://github.com/cerner/bunsen-tutorial/blob/fhirdevdays2018/data_engineering_tutorial.ipynb">tutorial notebook</a> for the full story.</p>
+
+<h3>Reproducible Results from Immutable Data</h3>
+
+<p>Repeatability is an essential property for deep analysis. Re-running the same notebook in the future must load <em>exactly</em> the same data and produce <em>exactly</em> the same results. This gives us the controls needed to build on and iteratively improve previous analysis over time. Fortunately, using immutable data partitions are a common pattern in this type of system. We won&rsquo;t go into depth here, but will touch on a couple good practices:</p>
+
+<ul>
+<li>Data is never mutated. Updates coming into our data lake are appended to previous data, and we can reproduce previous results by only working with data that was available at a given processing time.</li>
+<li>If necessary, a policy to archive or remove previous views of data from the data catalog is used to manage size.</li>
+</ul>
+
+
+<p>Finally, building on such a FHIR-based data lake enables portability. The predictive model or analysis output is fully captured starting with portable data &mdash; which means it can be more easily deployed into other systems. FHIR has made great progress in exchanging data in online systems, and we see a lot of promise for data science at scale as well.</p>
+</div>
+
+
+  </section>
+  <footer>
+    <p class="meta">
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    
+    <ul class="pager">
+      
+      <li class="previous"><a class="basic-alignment left"
+        href="/blog/cerners-open-source-contributions-for-interoperability-developers/" title="Previous Post:
+        Cerner's Open Source Contributions for Interoperability Developers">&laquo; Previous Post</a></li>
+      
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      
+    </ul>
+  </footer>
+</article>
+
+<aside class="sidebar-nav span4">
+  
+    <section class="well">
+  <h2>Recent Posts</h2>
+  <ul id="recent_posts" class="nav nav-list">
+    
+      <li>
+        <a href="/blog/data-engineering-with-bunsen/">Scalable Data Science With FHIR</a>
+      </li>
+    
+      <li>
+        <a href="/blog/cerners-open-source-contributions-for-interoperability-developers/">Cerner's Open Source Contributions for Interoperability Developers</a>
+      </li>
+    
+      <li>
+        <a href="/blog/srecon18-recap/">SREcon18 Recap</a>
+      </li>
+    
+      <li>
+        <a href="/blog/say_hello_to_the_2018_summer_interns/">Say Hello to the 2018 Summer Interns</a>
+      </li>
+    
+      <li>
+        <a href="/blog/code-reviews-there-is-a-better-way/">Code Reviews: There Is a Better Way</a>
+      </li>
+    
+  </ul>
+</section>
+<section class="divider">
+  <svg width="70" height="10">
+   <rect width="10" height="10" x="0" y="0" style="fill:rgb(20,124,193)" />
+   <rect width="10" height="10" x="20" y="0" style="fill:rgb(121,193,68)" />
+   <rect width="10" height="10" x="40" y="0" style="fill:rgb(20,124,193)" />
+   <rect width="10" height="10" x="60" y="0" style="fill:rgb(121,193,68)" />
+</svg>
+</section>
+<section class="well">
+  <h2>GitHub Repos</h2>
+  <ul id="gh_repos" class="nav">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/cerner">@cerner</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'cerner',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  
+<script id="search-results-template" type="text/mustache">
+  {{#entries}}
+    <article class="search-result">
+        <div class="search-meta meta">
+        {{#date}}<time datetime="{{pubdate}}" pubdate>{{displaydate}}</time>{{/date}} | {{author}}
+        </div>
+        <a href="{{url}}">{{title}}</a>
+    </article>
+  {{/entries}}
+</script>
+
+<script type="text/javascript">
+  $(function() {
+    $('#search-query').lunrSearch({
+      indexUrl: '/javascripts/index.json',   // Url for the .json file containing search index data
+      results : '#search-results',  // selector for containing search results element
+      entries : '.entries',         // selector for search entries containing element (contained within results above)
+      template: '#search-results-template'  // selector for Mustache.js template
+    });
+    //Currently ignoring the "return/enter" keystroke when searching (as this would just result in a 404 for the page lookup).
+    $('#search-query').keydown(function(event){
+      if(event.keyCode == 13) {
+        event.preventDefault();
+        return false;
+      }
+    });
+  });
+</script>
+
+  <footer role="contentinfo" class="page-footer">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="span2">
+          <img src="/images/Cerner_White_Horizontal.png" alt="Cerner Logo" />
+      </div>
+      <div class="span10 pull-left">
+          <p>&copy; 2018</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
