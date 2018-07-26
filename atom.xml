@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2018-07-10T12:21:32-05:00</updated>
+  <updated>2018-07-26T15:38:23-05:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Summer of Engineering Health: A Software Intern's Story]]></title>
+    <link href="http://engineering.cerner.com/blog/summer-of-engineering-health-intern-story/"/>
+    <updated>2018-07-26T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/blog/summer-of-engineering-health-intern-story</id>
+    <content type="html"><![CDATA[<p><em>Pratik will be starting his Junior year at the University of Michigan this Fall studying Computer Science and Biomedical Engineering. This summer he’s a Software Intern on Cerner’s LightsOn Network team. This is the story of his summer experience:</em></p>
+
+<p>As a college student, it&rsquo;s not every day that you get to work on cutting edge technology to transform healthcare as we know it. Every morning, I walk past a wall on the way to the elevator: &ldquo;Health care is too important to stay the same.&rdquo; Simple enough, huh?</p>
+
+<p>Healthcare has been one of the few fields that has yet to fully embrace the possibilities new technology has afforded. Throughout my internship, there&rsquo;s been an overall culture where associates understand they wouldn&rsquo;t be working on something unless it was important. As a result, associates are visibly passionate and driven about the problems they&rsquo;re working on, constantly striving to improve and add value. In my experience thus far, the environment at Cerner has been both engaging and supportive, allowing me to grow both personally and professionally as I strive to help improve healthcare and better the lives of others.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2018-07-26-summer-of-engineering-health-intern-story/summer-2018-intern-1.jpg"></p>
+
+<p>As interns, we had the opportunity to attend our two-day developer conference (<a href="https://engineering.cerner.com/2013/08/devcon/">DevCon</a>) where we learned from <a href="https://www.youtube.com/user/CernerEng/featured">talks</a> on topics ranging from development technologies, innovating for maximum value, and understanding the perspectives of our clients when they use our solutions. I found it interesting to reflect on the differences between the &ldquo;best solution&rdquo; from a technology/development standpoint versus that of the end-user, maneuvering the product every day. More importantly, we discussed how we as engineers can provide users with opportunities to streamline their workflow and increase efficacy, without causing frustration among clients accustomed to a more traditional process. Changes need to be implemented gradually and seamlessly in order to get the most buy-in. Introduce change too fast and the users will be frustrated, regardless of the overall improvement.</p>
+
+<h3>Small Data, Big Picture</h3>
+
+<p>This summer, I have had the opportunity to work as a Software Intern on the <a href="https://www.cerner.com/solutions/lights-on-network">LightsOn Network</a> team, which develops a solution that provides both internal associates and external clients with the pertinent information necessary to make organizational decisions, whether that be in workforce experience, system configuration optimization, or organizational value. I&rsquo;ve been contributing to a project aimed at providing users with additional clarity about the status of their data at the metric, dashboard, and data source levels. The status indicators update in real-time to provide clients with the most up to date information about their data. Users can then examine the dashboards with this information in mind or drill down to identify what specific feed may be causing the issue to troubleshoot. The ability to immediately make such a large impact on clients around the world as an intern has been a humbling experience.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2018-07-26-summer-of-engineering-health-intern-story/summer-2018-intern-3.jpg"></p>
+
+<p>The internship experience thus far has not only helped me learn about useful development languages including <a href="https://www.djangoproject.com/">Django</a>, <a href="https://angular.io/">Angular</a>, and <a href="https://jquery.com/">JQuery</a>, but also opened my eyes to the considerations taken into account when delivering a successful analytics product and software application in general. I&rsquo;ve experienced the importance of breaking down the product into individual problems to target and then working on telling a clear story in the final product. All around me, the decisions made are not based on technology alone, but first truly consider the value added to the individual providers we aim to serve. By reducing inefficiencies in healthcare, we allow providers to do their jobs more effectively and in turn, allow more people access to healthcare.</p>
+
+<h3>Key Takeaways</h3>
+
+<ul>
+<li>Built great connections with our team members and fellow interns</li>
+<li>Learned new programming languages, but more importantly, became more experienced with engineering practices in a highly regulated industry, as well as, the agile development framework</li>
+<li>Improved time management skills, especially optimizing my time usage when managing code reviews and future development tasks</li>
+<li>Learned first-hand the value of diving in deep and taking advantage of every opportunity possible</li>
+<li>Became inspired to continue applying computer science to the field of healthcare and constantly look for avenues to strengthen our solutions to ultimately benefit each patient</li>
+<li>Realized that improvements to healthcare technology doesn’t only affect a specific group of people, but each and every one of us &ndash; the impact is enormous.</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Scalable Data Science With FHIR]]></title>
@@ -1103,7 +1140,7 @@ Way to go PSA!</p>
 </ul>
 
 
-<p>Try it and let me know what you think! You can log issues for improvements, or email me your thoughts: <a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#111;&#58;&#x62;&#x72;&#x79;&#97;&#110;&#46;&#x62;&#97;&#x75;&#103;&#x68;&#x65;&#114;&#x40;&#x63;&#x65;&#114;&#110;&#x65;&#x72;&#x2e;&#x63;&#x6f;&#x6d;&#46;">&#98;&#114;&#x79;&#97;&#110;&#x2e;&#x62;&#97;&#117;&#x67;&#104;&#101;&#114;&#x40;&#99;&#101;&#114;&#x6e;&#x65;&#x72;&#x2e;&#99;&#x6f;&#x6d;&#x2e;</a> We hope to continue to improve the library and always welcome contributions and ideas from others.</p>
+<p>Try it and let me know what you think! You can log issues for improvements, or email me your thoughts: <a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#111;&#58;&#x62;&#114;&#x79;&#x61;&#110;&#x2e;&#x62;&#x61;&#117;&#x67;&#104;&#101;&#114;&#x40;&#x63;&#101;&#114;&#x6e;&#x65;&#114;&#x2e;&#99;&#x6f;&#x6d;&#x2e;">&#98;&#x72;&#x79;&#x61;&#x6e;&#x2e;&#98;&#x61;&#x75;&#x67;&#104;&#101;&#x72;&#x40;&#99;&#101;&#x72;&#110;&#101;&#114;&#46;&#99;&#x6f;&#x6d;&#x2e;</a> We hope to continue to improve the library and always welcome contributions and ideas from others.</p>
 ]]></content>
   </entry>
   
@@ -1759,28 +1796,6 @@ Several of the projects were plugged into multiple sandboxes. The developers sha
 <li><a href="http://engineering.cerner.com/blog/spring-2016-shipit-day/">ShipIt Day Spring 2016</a></li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Continuous Delivery for DC/OS With Spinnaker]]></title>
-    <link href="http://engineering.cerner.com/blog/continuous-delivery-for-dcos-with-spinnaker/"/>
-    <updated>2017-09-08T00:00:00-05:00</updated>
-    <id>http://engineering.cerner.com/blog/continuous-delivery-for-dcos-with-spinnaker</id>
-    <content type="html"><![CDATA[<p>Last fall our team (<a href="https://github.com/mtweten">Mike Tweten</a>, <a href="https://github.com/TrevinTeacutter">Trevin Teacutter</a>, and <a href="https://github.com/zsura">Zameer Sura</a>) started working on the problem of automating <a href="https://mesosphere.com/product/">DC/OS</a> deployments in a way that wouldn&rsquo;t require multiple teams to duplicate effort and tie themselves directly to DC/OS APIs.  While DC/OS certainly makes the act of deploying an application much easier than anything we&rsquo;ve used previously, there are still many different ways you could choose to layer on deployment strategies and integrate with continuous delivery systems. Additionally, there may be lots of teams with very similar needs in this space and there are certainly more efficient uses of their time than making them all solve the same problems.  Furthermore, while DC/OS is a good choice today we need to make sure that we don’t become locked in and can change our mind in the future without a big impact to those teams.</p>
-
-<p>Being an engineering team, naturally our first approach was to try to write a service to manage a simple set of deployment strategies with an API that we could reimplement over other resource schedulers (like <a href="https://kubernetes.io/">Kubernetes</a>) in the future.  However, after producing a prototype we really started to grasp that we were taking on a much bigger task than we should.  Our API could handle some basic pre-built deployment workflows, but if it wasn&rsquo;t flexible enough for teams we&rsquo;d need to continue to adapt it.  In addition, we would still have to work out how it would integrate with CI/CD tools like <a href="https://jenkins.io/">Jenkins</a>, and we&rsquo;d have to do a lot of that work again each time we wanted to support another resource scheduler as a deployment target.</p>
-
-<p>At this point we decided to take a deeper look at <a href="https://www.spinnaker.io/">Spinnaker</a>, a continuous delivery platform that was open-sourced by Netflix.  It had originally been developed to orchestrate AWS deployments and had expanded to other providers like Azure, OpenStack, and more recently Kubernetes was added as the first container based deployment target.
-Spinnaker allows for building deployment pipelines that can be triggered by things like Github commits or Jenkins builds and can then run stages to do things like start other Jenkins jobs, deploy new versions of an application, scale up or down applications, and disable old application versions.  With these capabilities we would be able to use Spinnaker to provide a consistent deployment abstraction while still providing the flexibility to handle deployment workflows that we didn&rsquo;t build ourselves.</p>
-
-<p>The only minor problem was that it didn&rsquo;t support DC/OS, our preferred deployment target. After taking some time to dive in and get familiar with the details it quickly became apparent that adding support for DC/OS would be much easier than continuing to build our own system, especially since we had already become familiar with the DC/OS APIs while developing our prototype.  Not only would we then gain the flexibility to allow more deployment strategies than we originally anticipated, but it would also buy us integration with Jenkins and the ability to convert pipelines over to Kubernetes without much effort.  We checked with the Spinnaker community to make sure that no one was already working on DC/OS support and also with <a href="https://mesosphere.com/">Mesosphere</a> (the company behind DC/OS) to make sure they weren&rsquo;t planning to do it.  When both of those came back negative we began working on the project in earnest, with the goal of building something that would benefit not only Cerner but also the entire Spinnaker and DC/OS communities.</p>
-
-<p>This was the first time that any of us had tried to contribute significant changes to an established open-source project so there was some adjustment and learning along the way.  We initially created our fork of the necessary repositories to our internal Github with the plan to finish the project before making anything visible publicly. Instead, we found that we wanted to more easily be able to share things with Mesosphere since they had agreed to give us any guidance we might need.  It also became apparent that it was too easy to commit things like config that referenced internal resources, or comments that referred to our own <a href="https://www.atlassian.com/software/jira">JIRA</a> issues.  If we kept going that way we were only going to make more work for ourselves cleaning those things up when it came time to submit our changes.  By moving our development to repos in <a href="https://github.com/cerner">Cerner&rsquo;s Github organization</a> we were able to solve both of these problems at once.</p>
-
-<p>In spite of moving our code into the public Github we still maintained an insular development approach, determined to get everything just right before submitting a perfect polished gem to the upstream project.  In hindsight, we should have been less concerned about trying to get everything right all at once and submitted more incremental changes.  We thought it would be easier for everyone not to have to deal with our messy work in progress, but after our first pull request for one of the services ended up with over 130 files and a history of 100+ commits we realized that it&rsquo;s too much to expect the maintainers to review so much at once, especially when they may not be that familiar with DC/OS.  Ultimately, they wanted us to carve up that massive patch anyway so it would have been less work for us to do it from the start.</p>
-
-<p>After completing this effort we&rsquo;ve found that we get even more benefit from Spinnaker than we initially expected.  Spinnaker also helps us manage deployments to multiple DC/OS clusters, use <a href="https://github.com/Netflix/chaosmonkey">Chaos Monkey</a> to test the resiliency of our applications, and even to deploy DC/OS itself on AWS. We&rsquo;re pleased to announce that our contribution has been accepted by the Spinnaker maintainers and is now <a href="https://www.spinnaker.io/community/releases/versions/1-3-0-changelog">available for anyone to use</a>.  The Spinnaker community has been great to work with and helped us by answering questions and inviting us to participate in the discussions with other companies that have contributed major functionality to Spinnaker.  This is an exciting opportunity to contribute something back to the open-source community and we can&rsquo;t wait to see where it goes from here.</p>
 ]]></content>
   </entry>
   
