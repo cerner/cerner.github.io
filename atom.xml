@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2018-07-26T15:38:23-05:00</updated>
+  <updated>2018-08-30T17:23:47-05:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,94 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ShipIt XII]]></title>
+    <link href="http://engineering.cerner.com/blog/shipit-xii/"/>
+    <updated>2018-08-30T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/blog/shipit-xii</id>
+    <content type="html"><![CDATA[<p><img class="center" src="http://engineering.cerner.com/assets/2018-08-30-shipit-xii/shipitxii-logo.png" width="400"></p>
+
+<p>This month we held our quarterly hackathon event- called ShipIt Day. We would like to thank all the participants for making ShipIt Day XII a huge success. With 75 participants, we had associates representing 13 different organizations across Cerner. These associates were given 24-hours to meet the requirements of this hackathon which included making something that was innovative, usable, and value-adding. As the clock ticked down, our associates worked in their teams to complete a project while taking some time to enjoy the fun activities happening throughout ShipIt day.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2018-08-30-shipit-xii/shipitxii-1.jpg" width="640"></p>
+
+<p>It is an unwritten rule that the balance between fun and project time during ShipIt days should remain even. Associates are encouraged to enjoy the collaborative spaces of Cerner&rsquo;s Innovations campus and participate in various activities such as ping-pong, eating snacks, playing games, and building relationships with other Cerner associates. Participants were given vouchers to use in the Innovations Café for breakfast and lunch. They were also served a fully-catered taco bar to stay energized for dinner.</p>
+
+<p>This year, <a href="https://www.imdb.com/title/tt0086567/">WarGames</a> and <a href="https://en.wikipedia.org/wiki/ColecoVision">ColecoVision</a> gameplay were brought in for participants to enjoy throughout the evening. As said best by Cerner associate, Carl Chesser (<a href="https://twitter.com/che55er">@che55er</a>):</p>
+
+<blockquote><p>Software creation requires additional breaks… ShipIt at Cerner is no exception of this software craftmanship approach.</p></blockquote>
+
+<p>The morning crept up on the teams quickly, and they had to begin preparing for their 4-minute presentation in the Assembly at Innovations campus. The goal of the team presentations is to explain the project, how it was implemented, and show a brief demo to the judges and audience. All the teams delivered competitive pitches, which made judging very difficult.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2018-08-30-shipit-xii/shipitxii-2.jpg" width="640"></p>
+
+<p>Huge thanks to Micah Whitacre, Nick Smith, Jon Miller, and Jared Moore for serving as our rockstar judges!</p>
+
+<h2>Overall Winners</h2>
+
+<p>The judges gathered together after the completion of the presentations to decide the top three performing teams. Congratulations to the following teams on your outstanding performance!</p>
+
+<h3>First Place: Let&rsquo;s Take Suggestions</h3>
+
+<p>Team Members: Scott Grissom, Alex Harder, and Matt Nelson</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2018-08-30-shipit-xii/shipitxii-8.jpg" width="400"></p>
+
+<p>This team was awarded the Golden Keyboard for their first-place achievement. They will defend the traveling trophy for the upcoming months and add a symbolic trinket to the collection for their team to be remembered in ShipIt history.</p>
+
+<p>The focus of this project was to provide a mechanism for customized cloud-based ACL testing. Utilizing serverless functions through the <a href="https://www.openfaas.com/">OpenFaaS framework</a>, the team enabled rapid development and deployment of serverless functions which test a specific type of network access, e.g. using <a href="https://en.wikipedia.org/wiki/CURL">cURL</a> to access a ReST endpoint or a JDBC client to access a database instance. Deploying these functions to the same cloud instance which hosts services provides a more accurate testing of network dependencies from the perspective of a service as opposed to testing from a developer machine.</p>
+
+<h3>Second Place: &#35;crowdercrowd</h3>
+
+<p>Team Members: Ian Kottman, Heather Boveri, Robert Ryterski, and David Crowder</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2018-08-30-shipit-xii/shipitxii-6.jpg" width="400"></p>
+
+<p>&#35;crowdercrowd created a dashboard showing cluster utilization of applications across both on-premise and public cloud clusters. The metrics show how much CPU and memory an application is using versus how much it is requesting, along with an estimated yearly cost to run the application. This dashboard will be used to identify what applications can be scaled down to better fit their actual resource needs.</p>
+
+<h3>Third Place: Bravo Avocado</h3>
+
+<p>Team Members: Jan Monterrubio, Maximilian Schroeder, and Jacob Zimmermann</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2018-08-30-shipit-xii/shipitxii-7.jpg" width="400"></p>
+
+<p>Bravo Avocado created a <a href="https://maven.apache.org/index.html">Maven plugin</a> that starts a <a href="https://www.docker.com/">Docker container</a> of a ReST service. It also allows the integration tests to dynamically connect to the correct URL and port of the container. This lets users run integration tests directly against the working code as part of the Maven lifecycle. Before the team wrote the plugin, they had to manually stand up the service and update the test configuration to validate any changes. By tying these eight steps to an existing command, users can streamline development for ReST services.</p>
+
+<h3>People&rsquo;s Choice</h3>
+
+<p>Aside from our talented official judges, many associates join in on the ShipIt Day fun to act as peer judges in the People&rsquo;s Choice category. The large audience during the ShipIt presentations was asked to get involved and vote for their favorite teams in certain categories.</p>
+
+<ul>
+<li><p><strong>Favorite Team Name</strong>: Chef BoyarDeployments could be better (Steven Goldberg, Ryan Neff)</p></li>
+<li><p><strong>Favorite Project</strong>: Audio Bot (Mitali Paygude, Kunal Suryavanshi, Vinay Datta Pinnaka)</p></li>
+<li><p><strong>Best Presentation</strong>: Team Rhinos (Venkata Adusumilli, Veda Bhaskar Bhamidipati, Naga Prashanth Chanda, Sunand Kumar Matam, Prashanth Gajula)</p></li>
+</ul>
+
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2018-08-30-shipit-xii/shipitxii-4.jpg" width="300">
+        <sub>Favorite Team Name</sub>
+      </td>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2018-08-30-shipit-xii/shipitxii-5.jpg" width="300">
+        <sub>Favorite Project</sub>
+      </td>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2018-08-30-shipit-xii/shipitxii-3.jpg" width="300">
+        <sub>Best Presentation</sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<p></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Summer of Engineering Health: A Software Intern's Story]]></title>
@@ -1140,7 +1228,7 @@ Way to go PSA!</p>
 </ul>
 
 
-<p>Try it and let me know what you think! You can log issues for improvements, or email me your thoughts: <a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#111;&#58;&#x62;&#114;&#x79;&#x61;&#110;&#x2e;&#x62;&#x61;&#117;&#x67;&#104;&#101;&#114;&#x40;&#x63;&#101;&#114;&#x6e;&#x65;&#114;&#x2e;&#99;&#x6f;&#x6d;&#x2e;">&#98;&#x72;&#x79;&#x61;&#x6e;&#x2e;&#98;&#x61;&#x75;&#x67;&#104;&#101;&#x72;&#x40;&#99;&#101;&#x72;&#110;&#101;&#114;&#46;&#99;&#x6f;&#x6d;&#x2e;</a> We hope to continue to improve the library and always welcome contributions and ideas from others.</p>
+<p>Try it and let me know what you think! You can log issues for improvements, or email me your thoughts: <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#111;&#x3a;&#98;&#114;&#x79;&#x61;&#110;&#46;&#98;&#x61;&#x75;&#x67;&#x68;&#101;&#114;&#64;&#99;&#x65;&#x72;&#x6e;&#x65;&#114;&#46;&#99;&#111;&#109;&#46;">&#98;&#114;&#x79;&#x61;&#110;&#x2e;&#x62;&#97;&#117;&#x67;&#x68;&#101;&#x72;&#64;&#x63;&#101;&#x72;&#x6e;&#101;&#114;&#46;&#99;&#x6f;&#x6d;&#x2e;</a> We hope to continue to improve the library and always welcome contributions and ideas from others.</p>
 ]]></content>
   </entry>
   
@@ -1653,149 +1741,6 @@ Several of the projects were plugged into multiple sandboxes. The developers sha
 <p><a href="https://twitter.com/fhir_furore/status/799626324927053824">With this image on screen</a>, he stated: &ldquo;[to us:] Well done. [to the rest of the audience:] Next time somebody in your acquaintance tells you that certain vendors aren&rsquo;t invested in interoperability, I want you to think about this. That&rsquo;s part of what the FHIR community is about, alright? Cerner and Epic on the stage together. It&rsquo;s not special anymore, even. It&rsquo;s great!&rdquo;</p>
 
 <p>FHIR DevDays is Europe&rsquo;s biggest FHIR conference and many attendees don&rsquo;t typically make it to the tri-annual HL7 Working Group Meetings that focus on the formation and evolution of the specification. We were pleased to be a part of that gathering and to work alongside people interested in engaging with Cerner. But, we were also encouraged by the comments Grahame and others gave as they expressed appreciation that Cerner would be present and show our interest and dedication to the standard. We look forward to being back at DevDays 2017 this November to lead tracks on SMART &amp; FHIR and CDS Hooks.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[ShipIt IX Day: Summer 2017]]></title>
-    <link href="http://engineering.cerner.com/blog/shipit-ix-day-summer-2017/"/>
-    <updated>2017-09-11T00:00:00-05:00</updated>
-    <id>http://engineering.cerner.com/blog/shipit-ix-day-summer-2017</id>
-    <content type="html"><![CDATA[<p><img class="center" src="http://engineering.cerner.com/assets/2017-09-11-shipit-ix-day-summer-2017/shipit-day-ix-6.jpg"></p>
-
-<p>There is no better way to end summer than with ShipIt Day! We kicked off our ninth ShipIt Day on August 10th, with more than 75 Cerner associates signed up. Nineteen different teams worked for 24 hours straight to complete their projects. For those unfamiliar with the event, ShipIt Day is a 24 hour hackathon for internal associates to create something innovative, usable, and value-adding. This was the second ShipIt held at our new <a href="https://www.bizjournals.com/kansascity/news/2017/02/10/get-a-sneak-peek-inside-cerner-s-new-innovations.html">Innovations Campus</a>. Associates love using our new campus for ShipIt because of the game rooms and collaboration spaces! One new addition to this quarter’s ShipIt Day was the scavenger hunt. Participants were given a list of crazy tasks to accomplish within the 24 hours. Some tasks included spoon feeding a fellow team member, completing the obstacle courses around the outdoor walking trail, and finding binary codes around campus and decoding them. Shoutout to the winners of the scavenger hunt: the Jumpy Woodchucks team!</p>
-
-<div align="center">
-  <img class="center" src="http://engineering.cerner.com/assets/2017-09-11-shipit-ix-day-summer-2017/shipit-day-ix-1.jpg">
-  <sub>Teams were given lots of snacks and drinks to keep them fueled for the next 24 hours.</sub>
-</div>
-
-
-
-
-<div align="center">
-  <img class="center" src="http://engineering.cerner.com/assets/2017-09-11-shipit-ix-day-summer-2017/shipit-day-ix-3.jpg">
-  <sub>Collaboration is key to a successful project.</sub>
-</div>
-
-
-<p>For dinner, we brought in some of the biggest pizzas Kansas City has to offer from Pizza 51. By dinner time the participants were ready to chow down and give their brains a break. Dinner entertainment included <em>School of Rock</em> and <em>Futurama</em>.</p>
-
-<div align="center">
-  <img class="center" src="http://engineering.cerner.com/assets/2017-09-11-shipit-ix-day-summer-2017/shipit-day-ix-11.jpg">
-  <sub>Chaos ensued as everyone runs to grab some pizza!</sub>
-</div>
-
-
-
-
-<div align="center">
-  <img class="center" src="http://engineering.cerner.com/assets/2017-09-11-shipit-ix-day-summer-2017/shipit-day-ix-2.jpg">
-  <sub><i>School of Rock</i> was played during dinner.</sub>
-</div>
-
-
-<p>Associates stayed overnight and worked around the clock to ensure their projects would be complete by presentation time. However, sometimes you just need a nap.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2017-09-11-shipit-ix-day-summer-2017/shipit-day-ix-4.jpg"></p>
-
-<p>Presentation day is always an exciting one. After 24 hours of hard work, the teams have 4 minutes to show off their product to their peers and a panel of rock-star judges. A special thank you to Brian Wallace, Amon Woolridge, and Greg Whitsitt for judging this round.</p>
-
-<div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <img class="center" src="http://engineering.cerner.com/assets/2017-09-11-shipit-ix-day-summer-2017/shipit-day-ix-9.jpg">
-        <sub>We always start presentation day off with bagels for breakfast from Panera.</sub>
-      </td>
-      <td align="center">
-        <img class="center" src="http://engineering.cerner.com/assets/2017-09-11-shipit-ix-day-summer-2017/shipit-day-ix-12.jpg">
-        <sub>The Prize Table.</sub>
-      </td>
-    </tr>
-  </table>
-</div>
-
-
-<h3>Team Bravo Avocado</h3>
-
-<p>ShipIt Day IX teams brought their A game. The projects get more intricate and more impressive each time around. ShipIt Day is a great way to show off the talent we have at Cerner. Team Bravo Avocado, made up of Thomas Clay, Jacob Zimmerman, Jan Monterrubio, Max Schroeder, and Elisha Boozer took first place! Judges were impressed by their live demo and humorous presentation style.</p>
-
-<blockquote><p>Our project was an enhancement for Millennium Java services that removes certain required pieces of server implementation by adding custom annotations. Consumers will no longer have the same restrictions from traditional service generation (i.e. defining a generation file, method naming), because the annotation processor will generate that for them. Also, the framework can bind the structured request/reply objects to an annotated object of their choice. These annotations remove lots of redundant code and gives consumers more time to focus on what matters.</p></blockquote>
-
-<div align="center">
-  <img class="center" src="http://engineering.cerner.com/assets/2017-09-11-shipit-ix-day-summer-2017/shipit-day-ix-8.jpg">
-  <sub>Team Bravo Avocado with the Golden Keyboard.</sub>
-</div>
-
-
-<h3>Team E=MC Hammer</h3>
-
-<p>Second place went to team E=MC Hammer, made up of Kyle Lipke, Nimesh Subramanian, James Boyd, Mahesh Sampekatte, and Megan McConnell.</p>
-
-<blockquote><p>For ShipIt IX, our team E=MC Hammer built a tool that looks up and publishes Millennium OAuth keys. This tool was created to be an easy-to-use, easy-to-search, and updateable source of truth for all those that request and use Millennium OAuth keys. We set up an api that hosts only the data we wish to present, in a read-only &ldquo;MAP&rdquo; so users understand the structure of the data. We had a blast on the project and would recommend attending a ShipIt day yourself!</p></blockquote>
-
-<p>Judge Greg Whitsitt noted that their project was:</p>
-
-<blockquote><p>&hellip;applicable across teams, solves a problem many face. A great idea and great execution.</p></blockquote>
-
-<div align="center">
-  <img class="center" src="http://engineering.cerner.com/assets/2017-09-11-shipit-ix-day-summer-2017/shipit-day-ix-7.jpg">
-  <sub>Team E=MC Hammer.</sub>
-</div>
-
-
-<h3>Team Jumpy Woodchucks</h3>
-
-<p>Team Jumpy Woodchucks, made up of Hans Perera, Nathaniel Owen, Ann Dickey, James Thomas, and Pramoth Murali took third place. Their project was Chamberlain:</p>
-
-<blockquote><p>Light notification system for all your notification needs that decorates your desk. This system currently supports alerts for Microsoft Outlook, Crucible, and Millennium domain health. Designed to be highly customizable and a project for teams to learn about electronics and use of Makerspace.</p></blockquote>
-
-<p>Judges commented that this project was what the heart of ShipIt Day is all about.</p>
-
-<div align="center">
-  <img class="center" src="http://engineering.cerner.com/assets/2017-09-11-shipit-ix-day-summer-2017/shipit-day-ix-5.jpg">
-  <sub>Team Jumpy Woodchucks.</sub>
-</div>
-
-
-<h3>People&rsquo;s Choice Awards</h3>
-
-<p>We had a packed house for ShipIt Day presentations. Associates could watch live in the Assembly or catch it on the livestream website.  One of the best parts of ShipIt Day is letting the audience join in on the fun and vote for their favorite team name, best presentation, and favorite project. Congratulations to the following teams&hellip;</p>
-
-<ul>
-<li><strong>Favorite Team Name</strong>: 🌝 &ndash; Venkatesh Sridharan, Ian Kottman, Anthony Ross, Karthik Nimmagadda, and Abhi Mahabalshetti</li>
-<li><strong>Favorite Project</strong>: Message Therapist &ndash;  Siddhartha Dutta, Ashish Nair, Noah Benham, and James Lawson</li>
-<li><strong>Best Presentation</strong>: Bravo Avocado &ndash; Thomas Clay, Jacob Zimmerman, Jan Monterrubio, Max Schroeder, and Elisha Boozer</li>
-</ul>
-
-
-<div align="center">
-  <img class="center" src="http://engineering.cerner.com/assets/2017-09-11-shipit-ix-day-summer-2017/shipit-day-ix-10.jpg">
-  <sub>The Assembly during presentations.</sub>
-</div>
-
-
-<h3>Summary</h3>
-
-<p>Each ShipIt Day, we see a handful of ShipIt &ldquo;veterans.&rdquo; It is always interesting to hear our associates take on the 24 hour event. Ian Kottman, a software engineer on the Population Health Genomics team, has a lot to say about his experience participating in ShipIt Day.</p>
-
-<blockquote><p>I recently got to take part in one of my favorite events at Cerner: ShipIt Day. This was my fourth ShipIt and I was excited about the project my team had come up with. My team had named ourselves 🌝, which is one of the team member&rsquo;s favorite emoji. We planned to add a UI to a tool we created last ShipIt to manage access to Cerner&rsquo;s Makerspace. Our primary goal this time around was to have fun and win the coveted cheeseballs.</p>
-
-<p>In the short 24 hours we had our team went through all of the stages of a typical software project: design, implementation, realization we overestimated, shedding unneeded features, and finally getting something working. Partway through the day we ran into issues getting Chrome to run in a Docker container and there was a brief incident involving internationalization breaking our error page, but after many whiteboard sessions and late night sodas we completed a working product. We even managed to have time for a few hours of sleep before the presentations. When it was all said and done we had accomplished our goal: we won cheeseballs for best team name! All in all, we had an excellent time collaborating and developing a tool that will be used for a long time to come. I&rsquo;m already thinking about what to work on next ShipIt&hellip;</p></blockquote>
-
-<p>ShipIt continues to be a great way for associates to work on something they haven’t had a chance to work on, build relationships within different organizations, and most importantly, enjoy themselves. ShipIt Day IX was a great success. The projects were creative and have potential to be built upon and used in Cerner’s everyday work flow. We are already looking forward to our next ShipIt Day in December!</p>
-
-<p>If you are interested in learning more about other ShipIt Days, see these earlier posts:</p>
-
-<ul>
-<li><a href="http://engineering.cerner.com/blog/shipit-day-viii-spring-2017/">ShipIt Day VIII Spring 2017</a></li>
-<li><a href="http://engineering.cerner.com/blog/shipit-vii-day-winter-2016/">ShipIt Day VII Winter 2016</a></li>
-<li><a href="https://www.youtube.com/watch?v=iqTp0dmLgUk">ShipIt Day Winter 2016 Highlight Reel</a></li>
-<li><a href="http://engineering.cerner.com/blog/fall-2016-shipit-day/">ShipIt Day Fall 2016</a></li>
-<li><a href="http://engineering.cerner.com/blog/spring-2016-shipit-day/">ShipIt Day Spring 2016</a></li>
-</ul>
-
 ]]></content>
   </entry>
   
