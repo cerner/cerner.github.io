@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2018-08-30T17:23:47-05:00</updated>
+  <updated>2018-09-20T09:41:10-05:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,312 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[SSH Steps for Jenkins Pipeline]]></title>
+    <link href="http://engineering.cerner.com/blog/ssh-steps-for-jenkins-pipeline/"/>
+    <updated>2018-09-20T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/blog/ssh-steps-for-jenkins-pipeline</id>
+    <content type="html"><![CDATA[<p><strong>Pipeline-as-code</strong> or defining the deployment pipeline through code rather than manual job creation through UI, provides tremendous benefits for teams automating builds and deployment infrastructure across their environments.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2018-09-20-ssh-steps-for-jenkins-pipeline/jenkins-pipeline.png" width="800"></p>
+
+<p><em>Source of image: <a href="https://jenkins.io/doc/book/pipeline/">https://jenkins.io/doc/book/pipeline/</a></em></p>
+
+<h1>Jenkins Pipelines</h1>
+
+<p><a href="https://jenkins.io/">Jenkins</a> is a well-known open source continuous integration and continuous deployment automation tool. With the latest 2.0 release, Jenkins introduced the Workflow plugin that implements Pipeline-as-code. This plugin lets you define delivery pipelines using concise scripts which deal elegantly with jobs involving persistence and asynchrony.</p>
+
+<p>The Pipeline-as-code&rsquo;s script is also known as a <em>Jenkinsfile</em>.</p>
+
+<p>Jenkinsfiles uses a domain specific language syntax based on the <a href="http://groovy-lang.org/">Groovy</a> programming language. They are persistent files which can be checked in and version-controlled along with the rest of their project source code. This file can contain the complete set of encoded steps (steps, nodes, and stages) necessary to define the entire application life-cycle, becoming the intersecting point between development and operations.</p>
+
+<h2>Missing piece of the puzzle</h2>
+
+<p>One of the most common steps defined in a basic pipeline workflow is the <em>Deploy</em> step. The deployment stage encompasses everything from publishing build artifacts to pushing code into pre-production and production environments. This deployment stage usually involves both development and operations teams logging onto various remote nodes to run commands and/or scripts to deploy code and configuration. While there are a couple of existing ssh plugins for Jenkins, they currently don&rsquo;t support the functionality such as logging into nodes for pipelines. Thus, there was a need for a plugin that supports these steps.</p>
+
+<h1>Introducing SSH Steps</h1>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2018-09-20-ssh-steps-for-jenkins-pipeline/jenkins-ssh-steps-plugin.png"></p>
+
+<p>Recently, our team consisting of <a href="https://github.com/ghenkes">Gabe Henkes</a>, <a href="https://github.com/wuchenwang">Wuchen Wang</a> and <a href="https://github.com/nrayapati">myself</a> started working on a project to automate deployments through Jenkins pipelines to help facilitate running commands on over one thousand nodes. We looked at several options including existing plugins, internal shared Jenkins libraries, and others. In the end, we felt it was best to create and open source a plugin to fill this gap so that it can be used across Cerner and beyond.</p>
+
+<p>The initial version of this new plugin SSH Steps supports the following:</p>
+
+<ul>
+<li><code>sshCommand</code>: Executes the given command on a remote node.</li>
+<li><code>sshScript</code>: Executes the given shell script on a remote node.</li>
+<li><code>sshGet</code>: Gets a file/directory from the remote node to current workspace.</li>
+<li><code>sshPut</code>: Puts a file/directory from the current workspace to remote node.</li>
+<li><code>sshRemove</code>: Removes a file/directory from the remote node.</li>
+</ul>
+
+
+<h2>Usage</h2>
+
+<p>Below is a simple demonstration on how to use above steps. More documentation can be found on <a href="https://github.com/jenkinsci/ssh-steps-plugin/blob/master/README.adoc">GitHub</a>.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='groovy'><span class='line'><span class="kt">def</span> <span class="n">remote</span> <span class="o">=</span> <span class="o">[:]</span>
+</span><span class='line'><span class="n">remote</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="s2">&quot;node&quot;</span>
+</span><span class='line'><span class="n">remote</span><span class="o">.</span><span class="na">host</span> <span class="o">=</span> <span class="s2">&quot;node.abc.com&quot;</span>
+</span><span class='line'><span class="n">remote</span><span class="o">.</span><span class="na">allowAnyHosts</span> <span class="o">=</span> <span class="kc">true</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">node</span> <span class="o">{</span>
+</span><span class='line'>    <span class="n">withCredentials</span><span class="o">([</span><span class="n">usernamePassword</span><span class="o">(</span><span class="nl">credentialsId:</span> <span class="s1">&#39;sshUserAcct&#39;</span><span class="o">,</span> <span class="nl">passwordVariable:</span> <span class="s1">&#39;password&#39;</span><span class="o">,</span> <span class="nl">usernameVariable:</span> <span class="s1">&#39;userName&#39;</span><span class="o">)])</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">remote</span><span class="o">.</span><span class="na">user</span> <span class="o">=</span> <span class="n">userName</span>
+</span><span class='line'>        <span class="n">remote</span><span class="o">.</span><span class="na">password</span> <span class="o">=</span> <span class="n">password</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="n">stage</span><span class="o">(</span><span class="s2">&quot;SSH Steps Rocks!&quot;</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>            <span class="n">writeFile</span> <span class="nl">file:</span> <span class="s1">&#39;test.sh&#39;</span><span class="o">,</span> <span class="nl">text:</span> <span class="s1">&#39;ls&#39;</span>
+</span><span class='line'>            <span class="n">sshCommand</span> <span class="nl">remote:</span> <span class="n">remote</span><span class="o">,</span> <span class="nl">command:</span> <span class="s1">&#39;for i in {1..5}; do echo -n \&quot;Loop \$i \&quot;; date ; sleep 1; done&#39;</span>
+</span><span class='line'>            <span class="n">sshScript</span> <span class="nl">remote:</span> <span class="n">remote</span><span class="o">,</span> <span class="nl">script:</span> <span class="s1">&#39;test.sh&#39;</span>
+</span><span class='line'>            <span class="n">sshPut</span> <span class="nl">remote:</span> <span class="n">remote</span><span class="o">,</span> <span class="nl">from:</span> <span class="s1">&#39;test.sh&#39;</span><span class="o">,</span> <span class="nl">into:</span> <span class="s1">&#39;.&#39;</span>
+</span><span class='line'>            <span class="n">sshGet</span> <span class="nl">remote:</span> <span class="n">remote</span><span class="o">,</span> <span class="nl">from:</span> <span class="s1">&#39;test.sh&#39;</span><span class="o">,</span> <span class="nl">into:</span> <span class="s1">&#39;test_new.sh&#39;</span><span class="o">,</span> <span class="nl">override:</span> <span class="kc">true</span>
+</span><span class='line'>            <span class="n">sshRemove</span> <span class="nl">remote:</span> <span class="n">remote</span><span class="o">,</span> <span class="nl">path:</span> <span class="s1">&#39;test.sh&#39;</span>
+</span><span class='line'>        <span class="o">}</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Configuring via YAML</h2>
+
+<p>At Cerner, we always strive to have simple configuration files for CI/CD pipelines whenever possible. With that in mind, my team built a wrapper on top of these steps from this plugin. After some design and analysis, we came up with the following YAML structure to run commands across various remote groups:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="l-Scalar-Plain">config</span><span class="p-Indicator">:</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">credentials_id</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">sshUserAcct</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">remote_groups</span><span class="p-Indicator">:</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">r_group_1</span><span class="p-Indicator">:</span>
+</span><span class='line'>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">node01</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">host</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">node01.abc.net</span>
+</span><span class='line'>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">node02</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">host</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">node02.abc.net</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">r_group_2</span><span class="p-Indicator">:</span>
+</span><span class='line'>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">node03</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">host</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">node03.abc.net</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">command_groups</span><span class="p-Indicator">:</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">c_group_1</span><span class="p-Indicator">:</span>
+</span><span class='line'>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">commands</span><span class="p-Indicator">:</span>
+</span><span class='line'>        <span class="p-Indicator">-</span> <span class="s">&#39;ls</span><span class="nv"> </span><span class="s">-lrt&#39;</span>
+</span><span class='line'>        <span class="p-Indicator">-</span> <span class="s">&#39;whoami&#39;</span>
+</span><span class='line'>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">scripts</span><span class="p-Indicator">:</span>
+</span><span class='line'>        <span class="p-Indicator">-</span> <span class="s">&#39;test.sh&#39;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">c_group_2</span><span class="p-Indicator">:</span>
+</span><span class='line'>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">gets</span><span class="p-Indicator">:</span>
+</span><span class='line'>        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">from</span><span class="p-Indicator">:</span> <span class="s">&#39;test.sh&#39;</span>
+</span><span class='line'>          <span class="l-Scalar-Plain">to</span><span class="p-Indicator">:</span> <span class="s">&#39;test_new.sh&#39;</span>
+</span><span class='line'>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">puts</span><span class="p-Indicator">:</span>
+</span><span class='line'>        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">from</span><span class="p-Indicator">:</span> <span class="s">&#39;test.sh&#39;</span>
+</span><span class='line'>          <span class="l-Scalar-Plain">to</span><span class="p-Indicator">:</span> <span class="s">&#39;.&#39;</span>
+</span><span class='line'>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">removes</span><span class="p-Indicator">:</span>
+</span><span class='line'>        <span class="p-Indicator">-</span> <span class="s">&#39;test.sh&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">steps</span><span class="p-Indicator">:</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">deploy</span><span class="p-Indicator">:</span>
+</span><span class='line'>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">remote_groups</span><span class="p-Indicator">:</span>
+</span><span class='line'>        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">r_group_1</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">command_groups</span><span class="p-Indicator">:</span>
+</span><span class='line'>        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">c_group_1</span>
+</span><span class='line'>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">remote_groups</span><span class="p-Indicator">:</span>
+</span><span class='line'>        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">r_group_2</span>
+</span><span class='line'>      <span class="l-Scalar-Plain">command_groups</span><span class="p-Indicator">:</span>
+</span><span class='line'>        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">c_group_2</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The above example runs commands from <code>c_group_1</code> on remote nodes within <code>r_group_1</code> in parallel before it moves on to the next group using <code>sshUserAcct</code> (from the <a href="https://jenkins.io/doc/book/using/using-credentials/">Jenkins Credentials</a> store) to logon to nodes.</p>
+
+<h2>Shared Pipeline Library</h2>
+
+<p>We have created a shared pipeline library that contains a <code>sshDeploy</code> step to support the above mentioned YAML syntax. Below is the code snippet for the sshDeploy step from the library. The full version can be found <a href="https://github.com/nrayapati/ssh-deploy-library">here</a> on Github.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+</pre></td><td class='code'><pre><code class='groovy'><span class='line'><span class="err">#</span><span class="o">!</span><span class="s">/usr/</span><span class="n">bin</span><span class="o">/</span><span class="n">groovy</span>
+</span><span class='line'><span class="kt">def</span> <span class="nf">call</span><span class="o">(</span><span class="n">String</span> <span class="n">yamlName</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>    <span class="kt">def</span> <span class="n">yaml</span> <span class="o">=</span> <span class="n">readYaml</span> <span class="nl">file:</span> <span class="n">yamlName</span>
+</span><span class='line'>    <span class="n">withCredentials</span><span class="o">([</span><span class="n">usernamePassword</span><span class="o">(</span><span class="nl">credentialsId:</span> <span class="n">yaml</span><span class="o">.</span><span class="na">config</span><span class="o">.</span><span class="na">credentials_id</span><span class="o">,</span> <span class="nl">passwordVariable:</span> <span class="s1">&#39;password&#39;</span><span class="o">,</span> <span class="nl">usernameVariable:</span> <span class="s1">&#39;userName&#39;</span><span class="o">)])</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">yaml</span><span class="o">.</span><span class="na">steps</span><span class="o">.</span><span class="na">each</span> <span class="o">{</span> <span class="n">stageName</span><span class="o">,</span> <span class="n">step</span> <span class="o">-&gt;</span>
+</span><span class='line'>            <span class="n">step</span><span class="o">.</span><span class="na">each</span> <span class="o">{</span>
+</span><span class='line'>                <span class="kt">def</span> <span class="n">remoteGroups</span> <span class="o">=</span> <span class="o">[:]</span>
+</span><span class='line'>                <span class="kt">def</span> <span class="n">allRemotes</span> <span class="o">=</span> <span class="o">[]</span>
+</span><span class='line'>                <span class="n">it</span><span class="o">.</span><span class="na">remote_groups</span><span class="o">.</span><span class="na">each</span> <span class="o">{</span>
+</span><span class='line'>                    <span class="n">remoteGroups</span><span class="o">[</span><span class="n">it</span><span class="o">]</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="na">remotes</span><span class="o">.</span><span class="s2">&quot;$it&quot;</span>
+</span><span class='line'>                <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>                <span class="kt">def</span> <span class="n">commandGroups</span> <span class="o">=</span> <span class="o">[:]</span>
+</span><span class='line'>                <span class="n">it</span><span class="o">.</span><span class="na">command_groups</span><span class="o">.</span><span class="na">each</span> <span class="o">{</span>
+</span><span class='line'>                    <span class="n">commandGroups</span><span class="o">[</span><span class="n">it</span><span class="o">]</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="na">commands</span><span class="o">.</span><span class="s2">&quot;$it&quot;</span>
+</span><span class='line'>                <span class="o">}</span>
+</span><span class='line'>                <span class="kt">def</span> <span class="n">isSudo</span> <span class="o">=</span> <span class="kc">false</span>
+</span><span class='line'>                <span class="n">remoteGroups</span><span class="o">.</span><span class="na">each</span> <span class="o">{</span> <span class="n">remoteGroupName</span><span class="o">,</span> <span class="n">remotes</span> <span class="o">-&gt;</span>
+</span><span class='line'>                    <span class="n">allRemotes</span> <span class="o">+=</span> <span class="n">remotes</span><span class="o">.</span><span class="na">collect</span> <span class="o">{</span> <span class="n">remote</span> <span class="o">-&gt;</span>
+</span><span class='line'>                        <span class="k">if</span><span class="o">(!</span><span class="n">remote</span><span class="o">.</span><span class="na">name</span><span class="o">)</span>
+</span><span class='line'>                            <span class="n">remote</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">remote</span><span class="o">.</span><span class="na">host</span>
+</span><span class='line'>                        <span class="n">remote</span><span class="o">.</span><span class="na">user</span> <span class="o">=</span> <span class="n">userName</span>
+</span><span class='line'>                        <span class="n">remote</span><span class="o">.</span><span class="na">password</span> <span class="o">=</span> <span class="n">password</span>
+</span><span class='line'>                        <span class="n">remote</span><span class="o">.</span><span class="na">allowAnyHosts</span> <span class="o">=</span> <span class="kc">true</span>
+</span><span class='line'>                        <span class="n">remote</span><span class="o">.</span><span class="na">groupName</span> <span class="o">=</span> <span class="n">remoteGroupName</span>
+</span><span class='line'>                        <span class="n">remote</span>
+</span><span class='line'>                    <span class="o">}</span>
+</span><span class='line'>                <span class="o">}</span>
+</span><span class='line'>                <span class="k">if</span><span class="o">(</span><span class="n">allRemotes</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>                    <span class="k">if</span><span class="o">(</span><span class="n">allRemotes</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>                        <span class="kt">def</span> <span class="n">stepsForParallel</span> <span class="o">=</span> <span class="n">allRemotes</span><span class="o">.</span><span class="na">collectEntries</span> <span class="o">{</span> <span class="n">remote</span> <span class="o">-&gt;</span>
+</span><span class='line'>                            <span class="o">[</span><span class="s2">&quot;${remote.groupName}-${remote.name}&quot;</span> <span class="o">:</span> <span class="n">transformIntoStep</span><span class="o">(</span><span class="n">stageName</span><span class="o">,</span> <span class="n">remote</span><span class="o">.</span><span class="na">groupName</span><span class="o">,</span> <span class="n">remote</span><span class="o">,</span> <span class="n">commandGroups</span><span class="o">)]</span>
+</span><span class='line'>                        <span class="o">}</span>
+</span><span class='line'>                        <span class="n">stage</span><span class="o">(</span><span class="n">stageName</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>                            <span class="n">parallel</span> <span class="n">stepsForParallel</span>
+</span><span class='line'>                        <span class="o">}</span>
+</span><span class='line'>                    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+</span><span class='line'>                        <span class="kt">def</span> <span class="n">remote</span> <span class="o">=</span> <span class="n">allRemotes</span><span class="o">.</span><span class="na">first</span><span class="o">()</span>
+</span><span class='line'>                        <span class="n">stage</span><span class="o">(</span><span class="n">stageName</span> <span class="o">+</span> <span class="s2">&quot;\n&quot;</span> <span class="o">+</span> <span class="n">remote</span><span class="o">.</span><span class="na">groupName</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">remote</span><span class="o">.</span><span class="na">name</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>                            <span class="n">transformIntoStep</span><span class="o">(</span><span class="n">stageName</span><span class="o">,</span> <span class="n">remote</span><span class="o">.</span><span class="na">groupName</span><span class="o">,</span> <span class="n">remote</span><span class="o">,</span> <span class="n">commandGroups</span><span class="o">).</span><span class="na">call</span><span class="o">()</span>
+</span><span class='line'>                        <span class="o">}</span>
+</span><span class='line'>                    <span class="o">}</span>
+</span><span class='line'>                <span class="o">}</span>
+</span><span class='line'>            <span class="o">}</span>
+</span><span class='line'>        <span class="o">}</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>By using the step (as described in the snippet above) from this shared pipeline library, a Jenkinsfile can be reduced to:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='groovy'><span class='line'><span class="nd">@Library</span><span class="o">(</span><span class="s1">&#39;ssh_deploy&#39;</span><span class="o">)</span> <span class="n">_</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">node</span> <span class="o">{</span>
+</span><span class='line'>  <span class="n">checkout</span> <span class="n">scm</span>
+</span><span class='line'>  <span class="nf">sshDeploy</span><span class="o">(</span><span class="s1">&#39;dev/deploy.yml&#39;</span><span class="o">);</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>An example execution of the above pipeline code in Blue Ocean looks like this:</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2018-09-20-ssh-steps-for-jenkins-pipeline/jenkins-ssh-deploy.png" width="600"></p>
+
+<h2>Wrapping up</h2>
+
+<p>Steps from the <a href="https://github.com/jenkinsci/ssh-steps-plugin">SSH Steps Plugin</a> are deliberately generic enough that they can be used for various other use-cases as well, not just for deploying code. Using SSH Steps has significantly reduced the time we spend on deployments and has given us the possibility of easily scaling our deployment workflows to various environments.</p>
+
+<p>Help us make this <a href="https://github.com/jenkinsci/ssh-steps-plugin">plugin</a> better by contributing. Whether it is adding or suggesting a new feature, bug fixes, or simply improving documentation, contributions are always welcome.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[ShipIt XII]]></title>
@@ -1228,7 +1534,7 @@ Way to go PSA!</p>
 </ul>
 
 
-<p>Try it and let me know what you think! You can log issues for improvements, or email me your thoughts: <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#111;&#x3a;&#98;&#114;&#x79;&#x61;&#110;&#46;&#98;&#x61;&#x75;&#x67;&#x68;&#101;&#114;&#64;&#99;&#x65;&#x72;&#x6e;&#x65;&#114;&#46;&#99;&#111;&#109;&#46;">&#98;&#114;&#x79;&#x61;&#110;&#x2e;&#x62;&#97;&#117;&#x67;&#x68;&#101;&#x72;&#64;&#x63;&#101;&#x72;&#x6e;&#101;&#114;&#46;&#99;&#x6f;&#x6d;&#x2e;</a> We hope to continue to improve the library and always welcome contributions and ideas from others.</p>
+<p>Try it and let me know what you think! You can log issues for improvements, or email me your thoughts: <a href="&#x6d;&#97;&#x69;&#108;&#116;&#x6f;&#58;&#98;&#114;&#121;&#97;&#x6e;&#46;&#98;&#97;&#117;&#x67;&#104;&#x65;&#114;&#x40;&#99;&#x65;&#x72;&#110;&#x65;&#114;&#x2e;&#x63;&#x6f;&#x6d;&#46;">&#98;&#114;&#121;&#97;&#x6e;&#46;&#98;&#97;&#117;&#103;&#x68;&#x65;&#114;&#64;&#x63;&#x65;&#114;&#110;&#x65;&#x72;&#x2e;&#99;&#111;&#x6d;&#x2e;</a> We hope to continue to improve the library and always welcome contributions and ideas from others.</p>
 ]]></content>
   </entry>
   
@@ -1708,39 +2014,6 @@ to build a more complete report. All of this can be done interactively over bill
 <p>Jwala utilizes a defined file system structure and Secure Shell (SSH) agents on each machine to manage running Tomcat instances on remote servers. Jwala&rsquo;s application deployment model knows how to request current status from each Tomcat and httpd instance. Jwala also is able to update each instance as changes are made to the configuration and allows maintenance operations to be executed from a central console. Last but not least, Jwala maintains an audit log of all the operations or changes performed on any of its managed resources.</p>
 
 <p>So, if you are someone in development, operations, or management looking for an easier way to configure and manage a large Tomcat topology, <a href="https://github.com/cerner/jwala">check out Jwala</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Engineers Overseas for SMART and FHIR (FHIR DevDays 2016)]]></title>
-    <link href="http://engineering.cerner.com/blog/engineers-overseas-for-smart-and-fhir/"/>
-    <updated>2017-09-21T00:00:00-05:00</updated>
-    <id>http://engineering.cerner.com/blog/engineers-overseas-for-smart-and-fhir</id>
-    <content type="html"><![CDATA[<p>In a <a href="http://engineering.cerner.com/blog/engineers-on-the-road-for-smart-and-fhir/">previous post</a>, we discussed the need to provide education around our ecosystem and implementation of the <a href="http://hl7.org/fhir/overview-dev.html">FHIRⓇ</a> and <a href="http://docs.smarthealthit.org/">SMARTⓇ</a> standards for developers and how we did so at our annual Cerner Health Conference. That same week, we were also a part of <a href="http://www.fhirdevdays.com/">FHIR DevDays</a>, which included a track entitled &ldquo;Apps in the EHR.&rdquo; We worked alongside track participants who were seeking to integrate their apps in a variety of EHRs, including Cerner.</p>
-
-<p>FHIR DevDays is a conference put on by <a href="http://fhir.furore.com/">Furore</a> in Amsterdam. This year, over 250 participants from all over the world gathered to attend tutorials given by FHIR community leaders in the mornings and participate in hands-on sessions in the afternoons.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2017-09-21-engineers-overseas-for-smart-and-fhir/Devdays_2016.jpg"></p>
-
-<p>Cerner co-led the &ldquo;Apps in the EHR&rdquo; track. This track was comprised of roughly 20 people from across France, Germany, Ireland, Israel, Italy, Netherlands, Norway, Spain, Switzerland, the United Kingdom, and the United States. <a href="https://twitter.com/JoshCMandel">Josh Mandel</a> kicked things off with a tutorial on <a href="http://smarthealthit.org/">SMART</a> and how to <a href="http://docs.smarthealthit.org/">get started</a> building cross-vendor applications. Afterward, we met with track participants to show them how to get plugged into Cerner&rsquo;s sandbox and ecosystem. We started out by covering our <a href="https://code.cerner.com/">documentation launchpoint</a>, registering applications in our <a href="https://code.cerner.com/developer/smart-on-fhir">code console</a>, and going over our <a href="http://fhir.cerner.com/">technical documentation</a>. For those who didn&rsquo;t come to the conference with an existing application to work on, we provided a <a href="http://engineering.cerner.com/smart-on-fhir-tutorial">tutorial</a>. With those tools in hand, they were ready to get to work!</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2017-09-21-engineers-overseas-for-smart-and-fhir/hands-on.jpg"></p>
-
-<br />
-
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2017-09-21-engineers-overseas-for-smart-and-fhir/hands-on2.png"></p>
-
-<p>Over the course of the three afternoons, we assisted people as they used SMART and FHIR for the first time, but also people with experience in FHIR who were looking to get their technical and business questions answered about integrating with Cerner.
-Several of the projects were plugged into multiple sandboxes. The developers shared that once their app was working in one sandbox, it was easy to plug into others, which is exactly how it should be!</p>
-
-<p>When we gave our closing presentation, we actually had some technical difficulties loading up the slides. Little did we know that <a href="https://twitter.com/grahamegrieve">Grahame Grieve</a>, the original architect of FHIR, snapped a picture and would use it shortly in his <a href="https://vimeo.com/192190127">closing keynote</a> on FHIR’s future.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2017-09-21-engineers-overseas-for-smart-and-fhir/closing-keynote.jpg"></p>
-
-<p><a href="https://twitter.com/fhir_furore/status/799626324927053824">With this image on screen</a>, he stated: &ldquo;[to us:] Well done. [to the rest of the audience:] Next time somebody in your acquaintance tells you that certain vendors aren&rsquo;t invested in interoperability, I want you to think about this. That&rsquo;s part of what the FHIR community is about, alright? Cerner and Epic on the stage together. It&rsquo;s not special anymore, even. It&rsquo;s great!&rdquo;</p>
-
-<p>FHIR DevDays is Europe&rsquo;s biggest FHIR conference and many attendees don&rsquo;t typically make it to the tri-annual HL7 Working Group Meetings that focus on the formation and evolution of the specification. We were pleased to be a part of that gathering and to work alongside people interested in engaging with Cerner. But, we were also encouraged by the comments Grahame and others gave as they expressed appreciation that Cerner would be present and show our interest and dedication to the standard. We look forward to being back at DevDays 2017 this November to lead tracks on SMART &amp; FHIR and CDS Hooks.</p>
 ]]></content>
   </entry>
   
