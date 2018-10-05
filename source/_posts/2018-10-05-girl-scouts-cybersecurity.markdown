@@ -6,9 +6,9 @@ date: 2018-10-05
 tags: [engineering, cybersecurity, girlscouts, community]
 ---
 
-As a software engineering executive from Colombia, I thought that the best way to honor [Hispanic Heritage Month](https://www.hispanicheritagemonth.gov) (September 15-October 15) was to help the local Girl Scout Hispanic troops earn one of the new Cybersecurity Badges. October is Cybersecurity Awareness Month, so having the activities nearing October seemed very fitting.
+As a software engineering executive from Colombia, I thought that the best way to honor [Hispanic Heritage Month](https://www.hispanicheritagemonth.gov) (September 15-October 15) was to help the local Girl Scout Hispanic troops earn one of the new cybersecurity badges. October is Cybersecurity Awareness Month, having the activities nearing October seemed very fitting.
 
-[Girl Scouts organization has been focusing on STEM badges](https://www.girlscouts.org/en/about-girl-scouts/girl-scouts-and-stem.html) for all ages with several new initiatives in the past couple of years. The cyber security badges are some of the latest additions to the growing list of STEM badges that girls can earn. I was excited to help the troops earn their badge and I wanted to make it very special and appealing to these girls, so I decided to run the event entirely in Spanish. I thought that this approach would be a great way not only to engage the girls, but also their family members who often accompany them to the events.
+[Girl Scouts has been focusing on STEM badges](https://www.girlscouts.org/en/about-girl-scouts/girl-scouts-and-stem.html) for all ages with several new initiatives in the past couple of years. The cybersecurity badges are some of the latest additions to the growing list of STEM badges that girls can earn. I was excited to help the troops earn their badge and I wanted to make it very special and appealing to these girls, so I decided to run the event entirely in Spanish. I thought that this approach would be a great way not only to engage the girls, but also their family members who often accompany them to the events.
 
 The badge was designed to be very interactive and engaging. The first activity was a game that helped the girls think about all the different kinds of electronic devices that exist, such as Fitbits, iPads, cell phones, TVs, etc, and how they interact with them in their daily life. The activity then focused on how security in everyday life can translate to security in cyberspace.
 
@@ -30,10 +30,7 @@ To help illustrate the concept of how layers of security are important, the girl
     </tr>
   </table>
   <sub>The girls secured their “castles” effectively. One of the most technologically advanced castles included dragons, a force-field and a keypad for the password.</sub>
-</div>  
-
-
-The girls secured their “castles” effectively. One of the most technologically advanced castles included dragons, a force-field and a keypad for the password.
+</div>
 
 The subsequent area of emphasis was regarding how electronic devices communicate. It was interesting to break down networking concepts like TCP/IP, network topology, and firewalls to a group of 1<sup>st</sup> and 2<sup>nd</sup> graders, but I made these concepts relatable. IP packets were explained by building key chains using beads that spelled “brownies.” The activity involved the girls acting as senders, messengers and receivers, along with individual beads acting as packets with headers, contents, and other metadata.
 
