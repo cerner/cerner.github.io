@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2018-10-05T11:52:59-05:00</updated>
+  <updated>2018-10-29T13:46:56-05:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,51 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Infusing a Culture of Cybersecurity Within Cerner Engineering]]></title>
+    <link href="http://engineering.cerner.com/blog/culture-of-cybersecurity/"/>
+    <updated>2018-10-29T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/blog/culture-of-cybersecurity</id>
+    <content type="html"><![CDATA[<p>With October being <a href="https://www.dhs.gov/national-cyber-security-awareness-month">Cybersecurity Awareness month</a>, we thought it would be a good time to reflect on some of the things we do in engineering to educate our associates and infuse security into our culture. We have over 28,000 associates worldwide supporting hundreds of solutions with millions of lines of code. Each associate has a specialization, such as software development, system support, and consulting. Keeping everyone up to date on the latest in security is a difficult task.</p>
+
+<p>So how do we do it? We have teams dedicated to security that work directly within engineering. These teams have various responsibilities such as ownership of scanning tools and vulnerability tracking. My team&rsquo;s goal is to bridge the gap by injecting security as a first-class citizen in the software development lifecycle. When working with developers, you have to make the right thing to do the easy thing to do. This is no different when it comes to security. In order to make security easy, we scan, assess, and create a plan for our developers to remediate their vulnerabilities. We promote the tools for scanning, help teams understand the results, and identify fixes for vulnerabilities. We run a monthly cybersecurity meetup which we use as a venue for associates to speak and learn about varying security topics.</p>
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2018-10-29-culture-of-cybersecurity/cybersecurity-1.jpg" width="450">
+      </td>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2018-10-29-culture-of-cybersecurity/cybersecurity-2.jpg" width="450">
+      </td>
+    </tr>
+  </table>
+  <sub>Andy Nelson opening the September edition of the Cybersecurity meetup and Sebastian Brown presenting at the July edition.</sub>
+</div>
+
+
+<p>We also take advantage of opportunities like Cybersecurity Awareness month. We bridge organizational gaps to host a variety of security focused events, engaging associates in development, security, and operations to facilitate better relationships and collaboration. Events like these lower the barrier to entry for our developers to learn more secure practices, and embrace and celebrate the progress we are making in our security journey. We kicked off the activities this month with an external tech talk from <a href="https://twitter.com/bhommertzheim">Britney Hommertzheim</a>. Britney, the Director of Information Security at <a href="https://www.amctheatres.com">AMC Theatres</a>, presented on how we can better integrate security teams and developers. It was a great talk and you can watch the talk on our <a href="https://youtu.be/DTYiNidFjzM">YouTube</a> channel. We invited another external speaker for our Cybersecurity meetup a few weeks ago too. Caleb Christopher, a Technical Business Adviser at <a href="https://www.allegianttechnology.com">Allegiant Technology</a>, gave a great talk titled &ldquo;Defeating Email Fraud with DMARC&rdquo;. Along side those 2 events, we have held lunch and learns throughout the month, and are wrapping it all up with an hour of security focused lightning talks tomorrow.</p>
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2018-10-29-culture-of-cybersecurity/cybersecurity-3.jpg" width="450">
+      </td>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2018-10-29-culture-of-cybersecurity/cybersecurity-4.jpg" width="450">
+      </td>
+    </tr>
+  </table>
+  <sub>Britney Hommertzheim giving an external tech talk about integrating security across organizations</sub>
+</div>
+
+
+<p>Security is not easy and we always have to strive to get better. Our development, operations, and security teams must work together, so we are doing our best to provide a forum for collaboration and sharing.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Girl Scouts Earn Cybersecurity Badge at Cerner]]></title>
@@ -1589,7 +1634,7 @@ Way to go PSA!</p>
 </ul>
 
 
-<p>Try it and let me know what you think! You can log issues for improvements, or email me your thoughts: <a href="&#x6d;&#97;&#105;&#x6c;&#116;&#111;&#58;&#x62;&#x72;&#121;&#97;&#110;&#x2e;&#98;&#97;&#117;&#103;&#104;&#x65;&#114;&#x40;&#99;&#101;&#x72;&#x6e;&#101;&#114;&#x2e;&#x63;&#111;&#109;&#x2e;">&#98;&#114;&#121;&#97;&#x6e;&#46;&#x62;&#97;&#x75;&#103;&#x68;&#101;&#114;&#x40;&#x63;&#101;&#x72;&#110;&#101;&#114;&#46;&#x63;&#x6f;&#x6d;&#x2e;</a> We hope to continue to improve the library and always welcome contributions and ideas from others.</p>
+<p>Try it and let me know what you think! You can log issues for improvements, or email me your thoughts: <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#111;&#x3a;&#98;&#x72;&#121;&#97;&#110;&#x2e;&#x62;&#x61;&#x75;&#103;&#x68;&#101;&#114;&#64;&#99;&#101;&#114;&#110;&#101;&#114;&#46;&#x63;&#111;&#x6d;&#46;">&#98;&#114;&#x79;&#x61;&#x6e;&#x2e;&#x62;&#97;&#x75;&#103;&#x68;&#101;&#x72;&#64;&#x63;&#x65;&#x72;&#x6e;&#x65;&#x72;&#x2e;&#99;&#x6f;&#x6d;&#46;</a> We hope to continue to improve the library and always welcome contributions and ideas from others.</p>
 ]]></content>
   </entry>
   
@@ -1991,61 +2036,6 @@ to build a more complete report. All of this can be done interactively over bill
 <p><img class="center" src="http://engineering.cerner.com/assets/2017-11-14-celebrating-world-usability-day-at-cerner/ux-glass-wall.jpg"></p>
 
 <p><em>Photos by Lai Xu and Kelsey Daly</em></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Accessibility and Usability: On the Road to Great UX]]></title>
-    <link href="http://engineering.cerner.com/blog/accessibility-and-usability-on-the-road-to-great-ux/"/>
-    <updated>2017-10-09T00:00:00-05:00</updated>
-    <id>http://engineering.cerner.com/blog/accessibility-and-usability-on-the-road-to-great-ux</id>
-    <content type="html"><![CDATA[<p>In 2010, a group of designers from Columbus, Ohio set out to create a grassroots, cross-discipline, and creative conference. Since that first event, Midwest UX has been an ongoing tradition that attracts innovative ideas and provides an opportunity for regional professions to engage in discussion with other professionals. Last year, Amber Wilks and Dr. Becca Green were invited to take their talk from DevCon 2016 on the road to Midwest UX. On October 20, 2016, they presented Accessibility &amp; Usability: The Equality of Experience in Louisville, KY.</p>
-
-<p>At Midwest UX, the talk covered all of the great content from DevCon enhanced by examples of how accessibility specifically affects our solutions used by our consumer market or clinical staff. Each point covered demonstrated how UX and development work together to achieve an accessible software solution and the importance of crafting equally awesome experiences for all of our users. When people talk about accessibility, there are some common myths that go along with the topic. So the talks starts off by covering three myths of accessibility that have impacted the health care community, and Cerner in particular.</p>
-
-<p>The first myth covered was that project teams look at accessibility as a minefield they must cross to achieve accessible software. The truth is that it is simply a blend of legislation and regulation that aims to eliminate barriers in technology for people with disabilities. In fact there are two main forms of standards used in the U.S. to define accessible content, Section 508 and W3&rsquo;s Web Content Accessibility Guidelines. While they serve similar purposes, there are some very key differences. They different in terms of the technology they cover, the organization of the guidelines, and their application. However, they are just a small part of a landscape of legislation and regulation that make up accessibility.</p>
-
-<p>The second myth covered the assumption that accessibility is all about screen readers and alt tags. In reality, screen readers are just a small subset of assistive technologies. Low-vision or blind users only make up a small slice of all U.S. citizens with disabilities. There are a variety of assistive technologies to aid every type of disability. The third and final myth we covered is specific to the healthcare industry; that clinicians aren&rsquo;t disabled so accessibility isn&rsquo;t a priority for our users. The truth is that clinicians are not immune to disabilities. In fact, a study in the British Journal of General Practice that found that the proportion of male doctors with color vision deficiency was at 8%, in line with the percentage of the general population.</p>
-
-<p>As the guidelines for accessibility have evolved, so has the organization of these guidelines such that they can now be organized into 4 tenant principles: perceivable, operable, understandable, and robust.</p>
-
-<h3>Perceivable</h3>
-
-<p>Information and UI components must be presented in ways users can perceive. In other words, information can&rsquo;t be invisible. We do that by making information distinguishable and by providing alternative forms of content.</p>
-
-<p>To make information distinguishable, the foundations involve color math and text zoom. To create distinguishable information using color there are two mathematical calculations that can be used to ensure the content is both legible and discernible. To ensure the content is legible, Cerner follows WCAG&rsquo;s (Web Content Accessibility Guidelines) color contrast guidelines include Guideline 1.4.3, which states that &ldquo;the visual presentation of text and images of text has a contrast ration of at least 4.5:1.&rdquo; To check if your information is legible, the WCAG recommends using the WebAIM Color Contrast Checker. This tool simply requires that you enter in your text, or foreground, color and background color and it will tell you to what degree you meet the contrast guidelines.</p>
-
-<p>The second calculation ensures users can perceive changes in the content. While this calculation is not part of accessibility guidelines, we leverage the calculation as a baseline metric for interaction indications (i.e., hovers, click states, icons, etc.). This numerical value starts at 0 and the higher the number, the greater the difference between two colors. We recommend a minimum value of 3.5, which represents an obvious difference.</p>
-
-<p>The other part of having distinguishable content is allowing for text zooming. In the U.S. alone, 8.1 million people have a vision disability. In March 2013, WebAIM conducted a survey of users with low vision, which found that the bulk of accessible technologies used by these individuals included some form of text resizing. Text zooming is a method used to scale text up and down while retaining the screen formatting and layout. A successful text zoom is when the content can be resized up to 200% and everything on the screen scales uniformly and scroll bars are provided if needed.</p>
-
-<p>The second part of providing perceivable content is to provide content that supports all the senses. A video may require a paired audio supplement. An audio file may require a written transcript. Just like the transcript we provided with our talk. While people with vision disabilities are a small slice of the population, those with hearing disabilities make up a larger portion and are more likely to be employed. So it&rsquo;s far more likely that a user would need supplemental text than they would be using a screen reader.</p>
-
-<p>One of the most common ways to provide alternative content is through captioning. Captioning is the transcription of speech and important sound effects. Not to be confused with subtitling which is a written translation of dialogue.</p>
-
-<h3>Operable</h3>
-
-<p>UI components and navigation must be operable. In other words, the UI cannot require an interaction that a user cannot perform. Most assistive technologies used by people with disabilities emulate how a keyboard functions. So a good rule of thumb is that if it can be navigated with a keyboard, then it is accessible. Operability is about giving the user control with controls to pause, stop, and hide moving, blinking, or scrolling content.</p>
-
-<h3>Understandable</h3>
-
-<p>Information and the operation of the user interface must be understandable. In other words, the content and operation cannot be beyond a user&rsquo;s understanding. Users consume content in a variety of ways and we must be flexible to accommodate all of the different ways they might access information. Therefore, it&rsquo;s important to ensure that content is housed in a structured framework to facilitate navigation.</p>
-
-<p>As part of the talk, an example of the experience a screen reader user might have while navigating a well known and popular website is presented. This set of videos demonstrates some of the common problems found with navigation such as duplicate links, ambiguous link names, and long navigation. The results of an automated accessibility tool are presented to highlight that not only are automated tools important for assessing accessibility but that it also requires a manual component.</p>
-
-<h3>Robust</h3>
-
-<p>Content must be robust enough that it can be interpreted reliably by a wide range of user agents. In other words, user must be able to access the content as technologies advance. Since there are a lot of different types of assistive technology, as these technologies change, so does the landscape of accessibility. Being future friendly isn&rsquo;t as hard as keeping up with technology. It&rsquo;s actually as easy as sticking to &ldquo;the basics.&rdquo;</p>
-
-<ul>
-<li>Write valid code</li>
-<li>Optimize navigation</li>
-<li>Stick to standards</li>
-<li>Stay away from known hazards</li>
-</ul>
-
-
-<p>The key to crafting equally compelling experiences for all is the concept of Universal Design. Universal design is the design and composition of buildings, products, and services so they can be accessed, understood, and used by all people. It&rsquo;s an inclusive approach to design. When you design for the average person, you&rsquo;re actually designing for no one. We are each unique and have different needs. We want to encourage you to not think of accessibility as a flat, one-size-fits-all solution but instead as a multifaceted, configurable space. It&rsquo;s more than just what&rsquo;s on the screen though. It&rsquo;s about the environment and the users in that environment.</p>
 ]]></content>
   </entry>
   
