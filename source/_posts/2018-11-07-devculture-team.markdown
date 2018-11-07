@@ -11,9 +11,8 @@ The tech industry is constantly evolving; for better or worse, there's no way ar
     {% img center /assets/2018-11-07-devculture-team/culture-1.jpg 450px %}
 </div>
 
-**Our Mission**
-
-We exist as a strategic lever to establish Cerner as a destination for top tech talent, helping shift workforce behavior to catalyze the change Cerner needs for the Next.
+#### Our Mission
+>We exist as a strategic lever to establish Cerner as a destination for top tech talent, helping shift workforce behavior to catalyze the change Cerner needs for the Next.
 
 Cerner associates consider themselves privileged to work on challenging problems in an important space, healthcare. In 2010-2011, associates across dev and ops began to realize how much more they could learn from and contribute to the broader tech industry. We started attending conferences and bringing back new insights on the opportunities available when companies focused on culture as a driver for hiring, retaining, and leveling up associates working on software.  
 
@@ -23,6 +22,7 @@ This led to establishing [DevCon](https://engineering.cerner.com/2013/08/devcon)
     {% img center /assets/2018-11-07-devculture-team/culture-2.jpg 450px %}
     <sub>Currently, we focus on 10,495  associates across Cerner globally which represents a third of the company.</sub>
 </div>
+<br />
 
 So who do we target and how do we develop our strategies? We focus our programs and work on both sides of the Dev/Ops equation, including user experience and product strategy. We also uniquely report through development executives which gives us the ability to advocate for their perspectives, represent engineering, and align strategies as we partner with other organizations (such as Recruiting, Talent Development, Learning, Finance, etc.) to implement our programs and values. 
 
@@ -40,8 +40,11 @@ From industry leader keynote speakers to hours of associate led sessions and a g
 
 <div align="center">
     {% img center /assets/2018-11-07-devculture-team/culture-3.jpg 450px %}
-    <sub>Each year, the DevCulture team partners with associates from various organizations and roles to form the Core Planning Team that guides the overall direction of the conference, decides the theme, selects the talks, and plans engaging activities for associates to participate in at the conference.</sub>
+    <div style="width: 600px;">
+        <sub>Each year, the DevCulture team partners with associates from various organizations and roles to form the Core Planning Team that guides the overall direction of the conference, decides the theme, selects the talks, and plans engaging activities for associates to participate in at the conference.</sub>
+    </div>
 </div>
+<br />
 
 **Engaging with the Industry**
 
@@ -53,6 +56,7 @@ While attending and sponsoring conferences helps us bring essential knowledge ba
     {% img center /assets/2018-11-07-devculture-team/culture-4.jpg 450px %}
     <sub>Engineering Director Jenni Syed and Engineering Vice President Kevin Shekleton present at FHIR DevDays 2018.</sub>
 </div>
+<br />
 
 When we consume open source in our software, we have the opportunity to leverage the talent from a broad cross section of the industry to make our solutions better. We also encourage associates to contribute to open source software both internally and externally. Learn more about the work we’re doing in Open Source on our [Blog](http://bit.ly/2Oj5DeL).
 
@@ -64,6 +68,7 @@ Modeled after [Atlassian’s ShipIt Day](https://www.atlassian.com/company/shipi
     {% img center /assets/2018-11-07-devculture-team/culture-5.jpg 450px %}
     <sub>Teams present their projects to a panel of judges at the conclusion of the hackathon to determine the winners.</sub>
 </div>
+<br />
 
 **Our Work Can Sometimes Be Quite Odd.**
 
@@ -77,11 +82,14 @@ Renting a uHaul to transport old couches, coffee tables, TV stands, and TV’s w
 
 <div align="center">
     {% img center /assets/2018-11-07-devculture-team/culture-6.jpg 450px %}
-    <sub>Prior to moving into our brand new Kansas City [Innovations Campus](http://bit.ly/2GP1vuU) in 2017, our team made a video to demonstrate all the ways the desks can be configured to showcase the new setup. To avoid it being boring, we dressed up with various costumes we had on hand from other programs.</sub>
+    <div style="width: 600px;">
+        <sub>Prior to moving into our brand new Kansas City <a href="http://bit.ly/2GP1vuU">Innovations Campus</a> in 2017, our team made a video to demonstrate all the ways the desks can be configured to showcase the new setup. To avoid it being boring, we dressed up with various costumes we had on hand from other programs.</sub>
+    </div>
 </div>
+<br />
 
 We believe culture is a journey, not a destination, and something we will always have to invest in and improve upon. These programs and efforts mentioned just scratch the surface of what we’re working on, with other projects ranging from how we can increase manager effectiveness to influencing our growth in continuous delivery models. Culture doesn't change overnight, we're iterating over ours with new programs based on regular feedback, that must be supported from within, and/or that we feel it's important enough to truly invest in it. 
 
-Interested in starting your own culture team? Great idea! We started out with smaller programs and projects to prove their effect and as they grew, documented the amount of work and any measurements we could to provide justification to have our first full time team member in 2012. Measuring cultural advancement can be challenging. We have done this by pulling engagement rates across different roles and organizations to gauge what is or isn’t effective, surveys following program events, and collecting anecdotal evidence of effect of programs (i.e. our team implemented XYZ because of the keynote at DevCon last month). 
+Interested in starting your own culture team? Great idea! We started out with smaller programs and projects to prove their effect and as they grew, documented the amount of work and any measurements we could to provide justification to have our first full time team member in 2012. Measuring cultural advancement can be challenging. We have done this by pulling engagement rates across different roles and organizations to gauge what is or isn’t effective, surveys following program events, and collecting anecdotal evidence of effect of programs (i.e. our team implemented these new SRE approaches/strategies because of Dave Rensin's keynote at DevCon last month). 
 
 Join us on [Twitter](https://twitter.com/CernerEng) to stay up to date with all our cultural programs.
