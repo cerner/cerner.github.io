@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2018-10-29T13:46:56-05:00</updated>
+  <updated>2018-11-07T16:32:25-06:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,122 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Our DevCulture Team: Connecting Communities & Empowering Teams to Invent the Future]]></title>
+    <link href="http://engineering.cerner.com/blog/devculture-team/"/>
+    <updated>2018-11-07T00:00:00-06:00</updated>
+    <id>http://engineering.cerner.com/blog/devculture-team</id>
+    <content type="html"><![CDATA[<p>The tech industry is constantly evolving; for better or worse, there&rsquo;s no way around it. Now, more than ever, having a culture that fosters collaboration, empowers associates, and supports innovation is vital to a company&rsquo;s success in the face of such constant change. However, an effective culture must be grown organically while being supported by senior leadership. At Cerner, we recognize the challenges involved in growing an effective, rewarding, and fun culture.With this in mind, we&rsquo;ve made intentional strategic investments to overcome them. We’ve taken a unique approach by establishing a team that focuses on growing our culture across dev and ops specifically. Our team is called the DevCulture Team.</p>
+
+<div align="center">
+    <img class="center" src="http://engineering.cerner.com/assets/2018-11-07-devculture-team/culture-1.jpg" width="450">
+</div>
+
+
+<h4>Our Mission</h4>
+
+<blockquote><p>We exist as a strategic lever to establish Cerner as a destination for top tech talent, helping shift workforce behavior to catalyze the change Cerner needs for the Next.</p></blockquote>
+
+<p>Cerner associates consider themselves privileged to work on challenging problems in an important space, healthcare. In 2010-2011, associates across dev and ops began to realize how much more they could learn from and contribute to the broader tech industry. We started attending conferences and bringing back new insights on the opportunities available when companies focused on culture as a driver for hiring, retaining, and leveling up associates working on software.</p>
+
+<p>This led to establishing <a href="https://engineering.cerner.com/2013/08/devcon">DevCon</a> (our internal Developers Conference) in 2011, sponsoring local tech meetups as well as large scale tech conferences, sharing our work through this Engineering Health blog platform, and establishing the DevCulture Team officially in 2012. Prior to 2012, all efforts were completed by our first team member as extra projects while gaining the justification for a full time position on this new team. Not long after, we shifted our focus from awareness to associate industry engagement, encouraging associates to speak at conferences and to contribute to open source. As the work continued to increase, the DevCulture Team and our Culture Councils (described in more detail below) have grown around the globe as we work to align our values and advance together.</p>
+
+<div align="center">
+    <img class="center" src="http://engineering.cerner.com/assets/2018-11-07-devculture-team/culture-2.jpg" width="450">
+    <sub>Currently, we focus on 10,495  associates across Cerner globally which represents a third of the company.</sub>
+</div>
+
+
+<br />
+
+
+<p>So who do we target and how do we develop our strategies? We focus our programs and work on both sides of the Dev/Ops equation, including user experience and product strategy. We also uniquely report through development executives which gives us the ability to advocate for their perspectives, represent engineering, and align strategies as we partner with other organizations (such as Recruiting, Talent Development, Learning, Finance, etc.) to implement our programs and values.</p>
+
+<p><strong>Culture Councils</strong></p>
+
+<p>In effort to have buy-in, perspectives, and engagement from all sides of the business, we established Culture Councils to help us define our strategic direction. Each year, members are selected from an open application process. These Councils around the globe meet regularly to discuss where we are, where we are going, and where we need to be in order to be successful culturally. From existing programs to identifying cultural gaps, the Councils’ support of our team makes all of our work possible.</p>
+
+<p>Curious about what type of programs we run? We thought you might be. Check out some of our favorites!</p>
+
+<p><strong>DevCon</strong></p>
+
+<p>Embodying our values, DevCon is the foundation of our development culture. Providing opportunities to learn, share, network, and grow, DevCon is an internal conference and now takes place in three locations each year: Kansas City, Philadelphia, and Bangalore.</p>
+
+<p>From industry leader keynote speakers to hours of associate led sessions and a geek trivia night, associates look forward to DevCon all year round. Watch <a href="https://www.youtube.com/watch?v=8FR0tO1-1rk">DevCon highlight videos</a>, <a href="https://www.youtube.com/watch?v=QFfmTLmn3Ow&amp;list=PLSti19ysyJtBJqtXDxtlSFdA1herhJecj">keynote sessions</a>, and some <a href="https://www.youtube.com/watch?v=aZZCZpc0AcY">associate sessions</a> on YouTube to get a feel for what this awesome conference entails.</p>
+
+<div align="center">
+    <img class="center" src="http://engineering.cerner.com/assets/2018-11-07-devculture-team/culture-3.jpg" width="450">
+    <div style="width: 600px;">
+        <sub>Each year, the DevCulture team partners with associates from various organizations and roles to form the Core Planning Team that guides the overall direction of the conference, decides the theme, selects the talks, and plans engaging activities for associates to participate in at the conference.</sub>
+    </div>
+</div>
+
+
+<br />
+
+
+<p><strong>Engaging with the Industry</strong></p>
+
+<p>We believe we have a lot to learn from and share back with the industry and local tech community. From agile methodologies to big data processing, we bring in industry experts on a monthly basis in our Tech Talk Series to share their knowledge and perspectives that help our associates learn and grow. You can subscribe to our <a href="https://www.youtube.com/user/CernerEng?sub_confirmation=1">YouTube Channel</a> to get notified anytime we post one!</p>
+
+<p>While attending and sponsoring conferences helps us bring essential knowledge back to Cerner, we’re privileged to send associates out to speak at conferences each year around the world. Being accepted to these conferences recognizes our associates for their complex work and talent while sharing more about what we’re working on at Cerner. Follow us on <a href="https://twitter.com/CernerEng">Twitter</a> to find out what conferences we’re attending, sponsoring, or speaking at and come say hello! As a fun example of one of our talks, check out Kevin Shekleton’s talk at Strange Loop 2017 on ‘<a href="https://www.youtube.com/watch?v=s0XmiXs8iRw">The Security of Classic Game Consoles</a>’.</p>
+
+<div align="center">
+    <img class="center" src="http://engineering.cerner.com/assets/2018-11-07-devculture-team/culture-4.jpg" width="450">
+    <sub>Engineering Director Jenni Syed and Engineering Vice President Kevin Shekleton present at FHIR DevDays 2018.</sub>
+</div>
+
+
+<br />
+
+
+<p>When we consume open source in our software, we have the opportunity to leverage the talent from a broad cross section of the industry to make our solutions better. We also encourage associates to contribute to open source software both internally and externally. Learn more about the work we’re doing in Open Source on our <a href="http://bit.ly/2Oj5DeL">Blog</a>.</p>
+
+<p><strong>ShipIt Day</strong></p>
+
+<p>Modeled after <a href="https://www.atlassian.com/company/shipit">Atlassian’s ShipIt Day</a>, we frequently host these 24 hour hackathons throughout the year in Kansas City, Malvern, Bangalore, and Brasov. We believe this encourages ingenuity and collaboration by promoting cross-pollination of ideas and teams as they solve problems together. Teams in KC compete for the coveted Golden Keyboard and Golden Mouse trophies that travel the campus, each winning team adding a trinket to the trophy representing their unique winning project. Learn about our most recent ShipIt Day winners on this <a href="http://bit.ly/2PQXprk">Engineering Health blog</a>.</p>
+
+<div align="center">
+    <img class="center" src="http://engineering.cerner.com/assets/2018-11-07-devculture-team/culture-5.jpg" width="450">
+    <sub>Teams present their projects to a panel of judges at the conclusion of the hackathon to determine the winners.</sub>
+</div>
+
+
+<br />
+
+
+<p><strong>Our Work Can Sometimes Be Quite Odd.</strong></p>
+
+<p>Amidst the strategic work in advancing our culture, we have found ourselves completing work for things most people would never consider to be a small part of their full time adult day job. Some of our favorite odd job memories from the past six years include:</p>
+
+<ul>
+<li>Ordering over 34,000 Lego bricks for <a href="https://www.youtube.com/watch?v=E-TcZBTCZdo">DevCon 2014</a> (following multiple strategy meetings and spreadsheets to determine how many would be necessary for our 3,000+ attendees)</li>
+<li>Researching backstories on Marvel characters for DevCon 2017</li>
+<li>Watching Doctor Who, Star Trek, Star Wars, Harry Potter, Lord of the Rings, etc. as part of our Training Requirements. We’re also required to pass a test covering Marvel vs. DC Characters. This is all to help ensure our team understand various cultural reference points that are popular amongst our target audience.</li>
+<li>Building an elaborate patchwork of Lego shapes on a giant Lego board to serve as a background for an all company meeting
+Renting a uHaul to transport old couches, coffee tables, TV stands, and TV’s we purchased from thrift stores in order to create retro living room spaces at <a href="https://www.youtube.com/watch?v=cE0YoFg-hkE">DevCon 2013</a> where associates played video games between sessions.</li>
+</ul>
+
+
+<div align="center">
+    <img class="center" src="http://engineering.cerner.com/assets/2018-11-07-devculture-team/culture-6.jpg" width="450">
+    <div style="width: 600px;">
+        <sub>Prior to moving into our brand new Kansas City <a href="http://bit.ly/2GP1vuU">Innovations Campus</a> in 2017, our team made a video to demonstrate all the ways the desks can be configured to showcase the new setup. To avoid it being boring, we dressed up with various costumes we had on hand from other programs.</sub>
+    </div>
+</div>
+
+
+<br />
+
+
+<p>We believe culture is a journey, not a destination, and something we will always have to invest in and improve upon. These programs and efforts mentioned just scratch the surface of what we’re working on, with other projects ranging from how we can increase manager effectiveness to influencing our growth in continuous delivery models. Culture doesn&rsquo;t change overnight, we&rsquo;re iterating over ours with new programs based on regular feedback, that must be supported from within, and/or that we feel it&rsquo;s important enough to truly invest in it.</p>
+
+<p>Interested in starting your own culture team? Great idea! We started out with smaller programs and projects to prove their effect and as they grew, documented the amount of work and any measurements we could to provide justification to have our first full time team member in 2012. Measuring cultural advancement can be challenging. We have done this by pulling engagement rates across different roles and organizations to gauge what is or isn’t effective, surveys following program events, and collecting anecdotal evidence of effect of programs (i.e. our team implemented these new SRE approaches/strategies because of Dave Rensin&rsquo;s keynote at DevCon last month).</p>
+
+<p>Join us on <a href="https://twitter.com/CernerEng">Twitter</a> to stay up to date with all our cultural programs.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Infusing a Culture of Cybersecurity Within Cerner Engineering]]></title>
@@ -1634,7 +1750,7 @@ Way to go PSA!</p>
 </ul>
 
 
-<p>Try it and let me know what you think! You can log issues for improvements, or email me your thoughts: <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#111;&#x3a;&#98;&#x72;&#121;&#97;&#110;&#x2e;&#x62;&#x61;&#x75;&#103;&#x68;&#101;&#114;&#64;&#99;&#101;&#114;&#110;&#101;&#114;&#46;&#x63;&#111;&#x6d;&#46;">&#98;&#114;&#x79;&#x61;&#x6e;&#x2e;&#x62;&#97;&#x75;&#103;&#x68;&#101;&#x72;&#64;&#x63;&#x65;&#x72;&#x6e;&#x65;&#x72;&#x2e;&#99;&#x6f;&#x6d;&#46;</a> We hope to continue to improve the library and always welcome contributions and ideas from others.</p>
+<p>Try it and let me know what you think! You can log issues for improvements, or email me your thoughts: <a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#98;&#114;&#121;&#x61;&#x6e;&#46;&#98;&#x61;&#x75;&#103;&#x68;&#x65;&#114;&#64;&#99;&#101;&#114;&#x6e;&#x65;&#x72;&#x2e;&#99;&#x6f;&#x6d;&#46;">&#98;&#x72;&#121;&#97;&#110;&#x2e;&#98;&#97;&#x75;&#x67;&#104;&#101;&#114;&#x40;&#x63;&#101;&#x72;&#x6e;&#101;&#x72;&#x2e;&#99;&#x6f;&#109;&#x2e;</a> We hope to continue to improve the library and always welcome contributions and ideas from others.</p>
 ]]></content>
   </entry>
   
@@ -2001,41 +2117,6 @@ to build a more complete report. All of this can be done interactively over bill
 <p>Bunsen is available under the Apache 2.0 license. The initial release targets <a href="https://spark.apache.org/releases/spark-release-2-1-0.html">Apache Spark 2.1</a> and <a href="https://www.hl7.org/fhir/STU3/index.html">FHIR STU3</a>, and support for additional versions will emerge over time.</p>
 
 <p>Check out Bunsen&rsquo;s <a href="http://engineering.cerner.com/bunsen">documentation</a> and <a href="https://github.com/cerner/bunsen">GitHub Repository</a> for more on using or contributing to the project.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Celebrating World Usability Day at Cerner]]></title>
-    <link href="http://engineering.cerner.com/blog/celebrating-world-usability-day-at-cerner/"/>
-    <updated>2017-11-14T00:00:00-06:00</updated>
-    <id>http://engineering.cerner.com/blog/celebrating-world-usability-day-at-cerner</id>
-    <content type="html"><![CDATA[<p>World Usability Day is celebrated worldwide on the second Thursday in November every year. Across the globe, organizations host events and use this day to provide education on how to make products easier to use and simpler to access, as well as to celebrate progress in this pursuit.</p>
-
-<p>The World Usability Day theme for 2017 was &ldquo;Inclusion.&rdquo; Inclusive design considers the range of abilities, language and other forms of human difference when creating a solution. Designing with these in mind from the start can create a better suited product for everyone.</p>
-
-<p>Cerner&rsquo;s Kansas City-based User Experience (UX) team celebrated by hosting a day filled with five speaker sessions and an afternoon workshop for Cerner associates on November 9, in the Innovations Campus event space. Following the theme, the speakers covered topics such as accessibility and universal design.</p>
-
-<p>Lauren Bock, User Experience Designer on the UX team, kicked off the day with a presentation on <em>Universal Design: The Equality of Experience</em>. Lauren explained how designing only for the &ldquo;average user,&rdquo; or including only the minimum accessibility requirements, can result in something designed for no one. We each have unique needs and designing products, services and experiences designed in a way that honors those needs can result in a better outcome for everyone. She shared how designing universally from the beginning not only makes a better product, but does so for a larger number of users.</p>
-
-<p>Following the keynote, Dr. Ben Wilkerson, Physician Executive for Cerner&rsquo;s Population Health organization, shared his take on why <em>Healthcare Software is Failing at the Box Office</em>. In his talk, Dr. Wilkerson drew comparisons between healthcare software and the movie industry. He highlighted how healthcare software can take cues from films in the way that production teams spend the majority of time in research, preparation, and planning, before the costly filming step. Dr. Wilkerson also compared the different roles of the production team to those designing software at Cerner and how they can work together to create a compelling result.</p>
-
-<p>In the last session for the morning, Scott Wilmarth, Senior User Experience Designer on the UX team, shared his personal and real-world story on the importance of accessibility in <em>Retinas, Accessibility, and More Stuff I Learned About on the Way to Get Thai Food</em>. After an unexpected loss of vision in one of his eyes, Scott has become an accessibility advocate, sharing his story with development teams, Cerner Health Conference attendees and others at Cerner. Scott shared the impact of accessibility and shared ways for designers, developers and project teams at Cerner to integrate accessibility into their processes. He explained that designing for accessibility is not just required, but the right thing to do. Accounting for different abilities in design can ultimately create better products for all users.</p>
-
-<p>After lunch, Michael Turman, the Senior Strategist for the Reference Data Management team, gave his perspective on why <em>We&rsquo;re Going to Need a Bigger Boat</em> when designing our solutions at Cerner. Coming from the Cerner Consulting organization, Michael highlighted the importance of the post-development, implementation and maintenance steps of Cerner software with our clients. He provided tips for teams to design for these user bases and with implementation in mind. He explained that by designing for users both upstream and downstream in the development process we can create better experiences.</p>
-
-<p>Dr. Jeff Wall, Director of the Physician Strategy and Medical Specialties organization, concluded the speaking sessions with his talk <em>Designing the Physician Workflow: Technical vs. Adaptive considerations for success</em>. Dr. Wall summarized it perfectly, &ldquo;change is hard.&rdquo; How do we help users effectively handle change as we constantly improve our healthcare software? He explained that when designing software for our users, we must be considerate of adaptive challenges, making sure to distinguish between technical changes and changes to human behavior. With years of experience as a clinician, Dr. Wall explained methods for Cerner teams to prepare for and introduce change to our users.</p>
-
-<p>The last activity for the day was a Virtual Reality Workshop sponsored by the Cerner Labs team, who focus on the investigation of emerging technologies and how to use those to create new ways of engaging with data. Workshop participants were able to experience a scenario using Virtual Reality (VR) headsets. Small groups led by UX team members replayed the scenario and used the technique of Journey Mapping to lay out the course of the experience, ultimately discovering areas of opportunity for improvement for the scenario. Groups reconvened and shared each of their maps to learn from each other.</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2017-11-14-celebrating-world-usability-day-at-cerner/ux-vr.jpg"></p>
-
-<p>The day concluded with a public evening meet-up hosted in partnership with the User Experience Professionals Association of Kansas City, a local non-profit organization focused on UX. Attendees were invited to tour the User Experience Lab where the Human Factors Research team conducts usability tests and other research studies. This tour was followed by a design challenge where attendees broke out into teams and collaborated on creating quick solutions to design prompts focused on inclusive design.</p>
-
-<p>Just around the corner from the User Experience Lab at the Innovations campus is a hand-drawn installation of epic proportion about World Usability Day. These 20 ft. long, 10 ft. tall installations of content are created and drawn by UX team members, and will rotate every quarter. Located next to the glass wall is an interactive puzzle also put together by the UX team, highlighting User Experience Vice President, Paul Weaver’s definition of UX: &ldquo;UX is the nexus between the user and the machine; a combination of design and research that works to perfect human-computer interaction.&rdquo;</p>
-
-<p><img class="center" src="http://engineering.cerner.com/assets/2017-11-14-celebrating-world-usability-day-at-cerner/ux-glass-wall.jpg"></p>
-
-<p><em>Photos by Lai Xu and Kelsey Daly</em></p>
 ]]></content>
   </entry>
   
