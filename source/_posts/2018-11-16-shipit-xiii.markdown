@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "ShipIt XIII"
-author: Caitie Oder
+author: DevCulture Team
 date: 2018-11-16
 tags: [culture, engineering, hackathon, shipit]
 ---
