@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2019-01-08T10:10:38-06:00</updated>
+  <updated>2019-02-08T14:16:52-06:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,46 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[DevCon: A Tech Conference for Engineering, by Engineering]]></title>
+    <link href="http://engineering.cerner.com/blog/devcon-recap/"/>
+    <updated>2019-02-08T00:00:00-06:00</updated>
+    <id>http://engineering.cerner.com/blog/devcon-recap</id>
+    <content type="html"><![CDATA[<p>In 2010 a group of Cerner engineers went to their leadership with an idea: a Cerner tech conference just for the internal development community, built and run from the ground up. The idea for a conference like this had been brewing at Cerner for several years. It was seen as an opportunity to create a large scale, sharing and learning experience for associates in Cerner&rsquo;s technical workforces.</p>
+
+<p>From the beginning, buy-in from leadership was essential for the conference to succeed. In their original pitch, these engineers demonstrated how DevCon would create opportunities for knowledge sharing, networking, and collapsing long standing organizational silos by placing the teaching and learning opportunities into associates’ hands. The idea of associates getting together to share experiences  and lessons learned around topics they were genuinely passionate about resonated right away as an intrinsic benefit to the company. Leadership’s support combined with the efforts of associates driving the conference forward year to year have pushed DevCon to an entirely new level since 2011.</p>
+
+<p>The first DevCon had 600 attendees, all in Kansas City; now DevCon spans three locations &ndash; Kansas City, MO; Malvern, PA; and Bangalore, India &ndash; and in 2018 hosted over 7,500 attendees.  The three experiences included 25 corporate sponsors, over 150 unique, associate-led sessions, and 5 keynote sessions delivered by industry thought leaders. Each year involves a new quirky visual theme, ranging from 8-bit vintage video games to large film and book franchises like Star Wars and Marvel Comics.</p>
+
+<p>In addition to the keynotes and breakout sessions, attendees are given the opportunity to mingle and network with coworkers through trivia night, a social, lightning talks, and quick breaks for lunch and snacks throughout the day.  Also, DevCon is fun. It’s two days to step away from your desk and become immersed in a creative, accepting, and open environment.</p>
+
+<div align="center">
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/8FR0tO1-1rk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
+<p>DevCon is a great example of the work that can be done across a wide variety of groups collaborating, allowing us to create something amazing. Some of these groups include:</p>
+
+<ul>
+<li>Presenters. Cerner has an amazing community of people who step up and share their stories, trials, ideas, and new information. The presentations are the core of what makes this conference a success and topic tracks range from devops and experiences with bleeding edge programming languages/frameworks, to people skills and UX design.</li>
+<li>A group of user experience designers that put an impressive level of thought and consideration into the aesthetics of the space, the flow of the event, and the promotional materials used before, during, and after the event.</li>
+<li>Organizers and volunteers who put their heart into choosing the right talks, training presenters, recruiting keynote speakers, choosing menus, organizing activities, marketing sessions, and helping attendees be at the right place at the right time. It takes a lot of work on the ground to get this thing going, then to successfully recreate it year after year.</li>
+</ul>
+
+
+<p>See some of our favorite DevCon talks over the years on our CernerEng YouTube channel:</p>
+
+<ul>
+<li><p><a href="https://www.youtube.com/watch?v=5Aabg_IpXpk">The Power of Pranks with Carl Chesser and Cornel Codrea</a></p></li>
+<li><p><a href="https://www.youtube.com/watch?v=1d-Hx7v36ng">Leagues of Sea &amp; Sky with Dr. Jeff Norris</a></p></li>
+<li><p><a href="https://www.youtube.com/watch?v=ecjvI-CbR60">Live Coding the Intersection Between the Arts, Research and Education with Sam Aaron</a></p></li>
+<li><p><a href="https://www.youtube.com/watch?v=vZpt1lHYTNE">Don&rsquo;t Blink &ndash; a Pursuit in Cognitive Bias with Brandy Poiry &amp; Michelle Brush</a></p></li>
+<li><p><a href="https://www.youtube.com/watch?v=0zqBlRW_6jA">Less Risk Through Greater Humanity with Dave Rensin</a></p></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[2^5 Coding Competition 2018]]></title>
@@ -1886,7 +1926,7 @@ Way to go PSA!</p>
 </ul>
 
 
-<p>Try it and let me know what you think! You can log issues for improvements, or email me your thoughts: <a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#x3a;&#x62;&#x72;&#x79;&#97;&#x6e;&#46;&#98;&#x61;&#117;&#x67;&#x68;&#x65;&#x72;&#x40;&#x63;&#101;&#114;&#x6e;&#x65;&#114;&#x2e;&#x63;&#111;&#109;&#x2e;">&#x62;&#114;&#x79;&#x61;&#110;&#46;&#98;&#x61;&#x75;&#103;&#104;&#x65;&#x72;&#x40;&#x63;&#101;&#x72;&#110;&#x65;&#114;&#x2e;&#x63;&#111;&#109;&#46;</a> We hope to continue to improve the library and always welcome contributions and ideas from others.</p>
+<p>Try it and let me know what you think! You can log issues for improvements, or email me your thoughts: <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#58;&#98;&#114;&#x79;&#x61;&#x6e;&#x2e;&#98;&#x61;&#117;&#103;&#x68;&#x65;&#x72;&#64;&#99;&#101;&#114;&#110;&#x65;&#x72;&#x2e;&#x63;&#x6f;&#x6d;&#46;">&#98;&#x72;&#x79;&#x61;&#110;&#x2e;&#x62;&#97;&#x75;&#103;&#x68;&#101;&#114;&#x40;&#99;&#x65;&#114;&#110;&#101;&#x72;&#46;&#x63;&#x6f;&#109;&#46;</a> We hope to continue to improve the library and always welcome contributions and ideas from others.</p>
 ]]></content>
   </entry>
   
@@ -1963,96 +2003,6 @@ At the beginning, Shahzad Zafar and I were the only representatives for Cerner. 
 <p>The SDLC is currently viewed as the leader in business agility practices and is shaping the speakers and agendas for the <a href="http://businessagilityconf.com/">Business Agility Conferences</a> globally. We continue to expand membership to include new companies who meet the criteria of a leader in agility and have a story to tell. Current members have grown to include Barclays Bank, Vistaprint, Fidelity Investments, Target, American Express, and All State are all candidates to join in 2018.</p>
 
 <p>The brightest future is not about the SDLC but about Cerner and what we can accomplish based on learning from other SDLC members. Our 2018 Vision aligns well with the SDLC learnings and several strategies to achieve our vision include models based on what other SDLC members have already proven to be successful.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Bad Design Is Bad for Your Health: Why Data Visualization Details Matter]]></title>
-    <link href="http://engineering.cerner.com/blog/bad-design-is-bad-for-your-health-why-data-visualization-details-matter/"/>
-    <updated>2018-01-04T00:00:00-06:00</updated>
-    <id>http://engineering.cerner.com/blog/bad-design-is-bad-for-your-health-why-data-visualization-details-matter</id>
-    <content type="html"><![CDATA[<p>Presentation Abstract by Jody Butts, Sr. User Experience Designer
-Given on August 11, 2017 at the UX Australia Conference in Sydney</p>
-
-<p><em>Full presentation audio and slides are available here:</em> <a href="http://www.uxaustralia.com.au/conferences/uxaustralia-2017/presentation/bad-design-is-bad-for-your-health-why-data-visualization-details-matter/">http://www.uxaustralia.com.au/conferences/uxaustralia-2017/presentation/bad-design-is-bad-for-your-health-why-data-visualization-details-matter/</a></p>
-
-<p>The proper design of data visualization details is imperative for accurate and actionable data visualizations and dashboards. In the health care technology industry, even the smallest design detail on a graph of patient data can have a dramatic impact on patient safety and outcomes. For example, auto-adjusting y-axes in vitals graphs across patient charts in the EMR could cause change blindness which impacts the perception of patient data trends.</p>
-
-<h2>Patient Safety</h2>
-
-<p>As a user experience designer for Cerner, a health care IT company, patient safety is the foundation of my work. However, we see startling patient safety statistics around the world today. According to a Johns Hopkins <a href="https://hub.jhu.edu/2016/05/03/medical-errors-third-leading-cause-of-death/">study</a> from 2016, medical error is the third leading cause of death in the United States, following heart disease and cancer. The World Health Organization (WHO) <a href="http://www.who.int/features/factfiles/patient_safety/en/">estimates</a> that in developed countries across the globe, as many as one in ten patients are harmed while receiving hospital care.</p>
-
-<p>Based on research the User Experience team at Cerner has done, there are several challenges the health care industry faces to ensure patient safety. From workflow and communication to external rules and regulation, there is a complex and interconnected web of factors.</p>
-
-<p>While human error is unavoidable, there should be several defensive layers for every system. Despite the training, regulation, and process our health systems have, health care providers are still working in high-risk environments.</p>
-
-<p>Understaffed health systems are flooded by people in need of care. On a bustling hospital floor with alarms going off at all hours, care team members running between patient rooms, and the need to use a computer to document patient data to meet government regulations, it is no wonder that medical error occurs.</p>
-
-<p>Although we cannot ensure software will always work perfectly, we do have responsibility to ensure that the UI and UX layers of our systems are designed to protect our users and enable them to perform their tasks well.</p>
-
-<h2>User Experience at Cerner</h2>
-
-<p>I work for Cerner, a company at the intersection of health care and IT. Cerner technologies support the full continuum of care including clinical, financial, and patient engagement solutions. We have products licensed at more than 25,000 facilities across 35 countries.</p>
-
-<p>As a part of Cerner’s UX team, I spend most of my time designing in the clinical space, working on projects for our main product: the electronic medical record (EMR), mainly used by doctors and nurses. Our technology is subject to a long list of legislation and regulations. Cerner has an entire team dedicated to reviewing standards for each country to ensure we are meeting all health IT requirements.</p>
-
-<p>Our UX team also has training on how these standards impact our designs and research. Accessibility guidelines, patient privacy, and medication safety are just a few examples of regulation themes that guide our work. I focus on the rules that impact data visualizations and incorporate additional research to create safe and usable experiences.</p>
-
-<p>The accurate graphical display of patient data has become my passion over the past two and a half years. Data visualization is a very powerful tool across industries, but I’m biased toward believing that its most amazing applications are in health care technology.</p>
-
-<h2>Data Visualization in Pediatric Health Care</h2>
-
-<p>For many years, the EMR was simply an input tool for charting patient data–most data review was solely displayed in rows and columns. Now we are creating meaningful displays of information for clinicians to support their decisions.</p>
-
-<p>For example, the pediatric growth chart has been used by health care providers to track children’s growth from birth into adulthood for almost 40 years, starting on paper. The WHO and Centers for Disease Control and Prevention (CDC) have standards for healthy growth of height, weight, head circumference and more based on age, sex, and so on.</p>
-
-<p>These standards are displayed as percentile lines that create a unique curve for each measure. When patient data is plotted, it becomes easy to identify if a child’s growth is progressing normally, or if there are abnormal patterns. For the first 20 years of an individual’s life, the growth chart is essential for tracking healthy growth progression. It is also an invaluable tool for communication between parents and clinicians.</p>
-
-<p>As I have worked on a redesign of Cerner’s interactive growth chart tools, I have had the opportunity to observe clinicians using the growth chart in hospitals. In a Neonatal Intensive Care Unit (NICU) setting, or neonatal intensive care unit, physicians are making life-saving decisions for premature infants based on this information. For specialists, such as pediatric endocrinologists, the pattern of the trend line is often the first indication of diagnoses such as hypothyroidism. Can you imagine being able to recognize a disease by looking at a line graph?</p>
-
-<h2>Data Visualization Design Details</h2>
-
-<p>In a matter of clicks, we can take tables with thousands of numbers and transform them into graphics that provide immediate insights. From problem solving to storytelling, this information drives action across every industry.</p>
-
-<p>There are countless examples of confusing and even misleading graphs–just try a Google search for “bad data visualizations,” and you’ll see what I mean. This assumed legitimacy is dangerous, especially when the design is sleek and appears trustworthy. The details that lead to accurate and impactful data visualizations fall into three categories: clarity, context, and creativity.</p>
-
-<p>Clarity</p>
-
-<p>Clarity is the foundation of data visualization design. We want to avoid all potential for confusion in order to empower our users to confidently make decisions. To achieve this, we must start with the basics. The title of a visualization should be succinct, yet provide the information needed to understand what data are being viewed and how they are being measured. If additional details are important to include, consider using supporting text below the title.</p>
-
-<p>A dangerous mistake I regularly see while consulting on visualizations and dashboards is improper or missing labels. Do not make users guess what data points are being shown or how they are being measured. All axes in visualizations should be labeled. It is also important to include the unit of measure, which I like to include in parentheses next to the label. </p>
-
-<p>While labels are important, I believe the most powerful element for clear data visualizations is proper scale. A simple mistake I often see is to start the y-axis of a bar graph at a value other than 0. Human eyes interpret the value of a bar to be equal to its length, so when the y-axis does not begin at 0, the values are not interpreted accurately. Similarly, the perception of data measured in percentages is also often skewed by scale. This sometimes occurs because a tool automatically adjusts the scale to fit to the data, but sometimes it is done to manipulate the data display. This <a href="https://www.youtube.com/watch?v=E91bGT9BjYk&amp;t=40s">example</a> of an ad from Chevy illustrates the power scale has on perception (starting at 0:45).</p>
-
-<p>Context</p>
-
-<p>Once there is a truthful and clear foundation for data, the following techniques can bring users quicker insights and increase their confidence in data interpretation.</p>
-
-<p>If there is a normal, expected, or ideal range of values for the data, adding a target range is a simple but powerful way to add context. A light shaded region behind the grid lines can allow users to easily identify high and low values. Similar to a target range, a goal line can be added to indicate a discrete value that the plotted data should be achieving. A goal line and target range can be used together as well.</p>
-
-<p>It’s important to mark visualizations and dashboards with the date it was published. I also recommend including the date or date range of the data as well in order to maintain trust and relevancy of your visualization.</p>
-
-<p>Annotations are another simple way to provide your user with context. On-canvas notes and labels should be used sparingly, but can help highlight insights. These can be placed in context of a specific data point, a date or timeframe, etc.</p>
-
-<p>Creativity</p>
-
-<p>Once we have created a clear visualization and provided our user with additional context, we are ready to polish our design. There is great potential for creativity in data visualization, but it can cause more harm than good if done poorly. Let’s look at visual encoding methods, colors, and other visual design details that can enhance your visualization or dashboard.</p>
-
-<p>Qualitative and quantitative data is visually encoded, or translated, through a variety of graphical methods that make up each visualization type. <a href="https://ils.unc.edu/courses/2015_spring/inls541_001/Readings/Cleveland%20and%20McGill%201985%20-%20Graphical%20Perception%20and%20Cleveland1985-Graphical%20Methods%20for%20Analyzing%20Scientific%20Data.pdf">Research</a> has been done on these visual encoding methods, giving us insights for human graphical perception. Statistician William Cleveland and his colleague, Robert McGill, tested the visual encoding methods and ranked them by accuracy of perception. Their findings give us a scientific foundation for data visualization.</p>
-
-<p>Position is the best encoding method for accuracy, followed by length, angle, area, volume, and finally, with color taking the last spot. This means that color is not reliable for communicating data information in a graph. This aligns to the WCAG 2.0 accessibility <a href="https://www.w3.org/WAI/WCAG20/quickref/#visual-audio-contrast-without-color">guidelines</a>, which state that color cannot be used as the only visual means of conveying information, indicating an action, and so on. Second, bar, and line graphs are common for good reason–they are most effective for our brains to accurately understand. Ultimately, it’s always best to try a couple of options and compare their effectiveness.</p>
-
-<p>Use color sparingly. Think of it as a tool for drawing attention to the most important insights. If everything has color, especially on a dashboard, nothing will stand out. Since approximately 10% of the population is color blind, we should avoid using red and green together on a visualization. <a href="http://colororacle.org/">Color Oracle</a> is a great color blindness simulator that you can use to see how your colors appear for users with these vision deficiencies.</p>
-
-<p>Ensure you maintain high contrast between colors by avoiding very light or very dark shades. The <a href="http://colormine.org/delta-e-calculator/">Delta-E calculation</a> measures the distance between two colors. At Cerner, we ensure a difference of at least 3.5.</p>
-
-<p>The best way to test the colors you are using is to print it out in grayscale. Make sure you can still match plotted data to its labels. Better yet, get additional eyes on it. This test ensures that color is not being utilized as the only way to communicate meaning.</p>
-
-<h2>Visualizations are the Key to Understanding Data</h2>
-
-<p>The world is overflowing with big, complex problems, but we also have big, complex data to solve them. This big, complex data exists as numbers that can go on forever. Data visualizations are the key for humans to understand it all. Data must be visualized clearly and effectively to enable professionals across industries to understand it, make decisions, and take action based on it.</p>
-
-<p>We can revolutionize health care and other fields through the way we visualize data. The design details matter. Through clear, contextual, and creative data visualizations, we can drive action that will change the world and even save lives.</p>
 ]]></content>
   </entry>
   
