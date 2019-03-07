@@ -1,0 +1,66 @@
+---
+layout: post
+title: "ShipIt XIV"
+author: Caitie Oder
+date: 2019-03-12
+tags: [culture, engineering, hackathon, shipit]
+---
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        {% img /assets/2019-03-12-shipit-xiv/shipit-xiv-1.jpg 400px %}
+      </td>
+      <td align="center">
+        {% img /assets/2019-03-12-shipit-xiv/shipit-xiv-2.jpg 400px %}
+      </td>
+    </tr>
+  </table>
+</div> 	
+
+Readily awaiting the winter storm racing towards Kansas City, ShipIt Day XIV teams began preparing their ideas and tactics to compete in the 24-hour hackathon competition. Although the snowy weather may have kept participants between the warm walls of our Innovations Campus, the winter storm did not disturb the initiative and enthusiasm of the fourteen participating teams.
+It seems a bit daring to voluntarily bear the winter weather, stay up for 24-hours, complete a project start to finish, and place all other responsibilities on hold. Nevertheless, ShipIt Day always is bursting with Cerner associates prepared to take on the challenge.  *help this sentence please* Check out the video below to hear from ShipIt Day participants and supporters as to why ShipIt Day has become an engineering-wide program that supports Cerner’s development culture.
+
+<div align="center">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/uNo5666TPaA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+## The Winning ShipIt Day XIV Teams
+1st Place- Bravo Avocado (Max Schroeder, Jacob Zimmermann, Jan Monterrubio)
+
+{% img center /assets/2019-03-12-shipit-xiv/shipit-xiv-3.jpg 600px %}
+
+ >“We created "HCCgle" (pronounced "WHO-gull"), a search application for looking up HCC information by ICD-10 diagnosis code (e.g. - "E13.11") or by term (e.g. - "Diabetes mellitus"), including across physician-friendly terminologies like IMO and SNOMED CT. The app presented which HCC categories the requested term belongs to (if any) and shows how its categorization in the HCC specification has changed over time between revisions. This was created using Java, React, and DropWizard as well as an Oracle database. Our primary use case for this project is for aiding support troubleshooting, as there was not a good way to find the HCC codes used in production.” – Bravo Avocado
+
+2nd Place- Risky Salt (Kevin Eilers, Ryan Rickard, Pepper Pancoast)
+
+{% img center /assets/2019-03-12-shipit-xiv/shipit-xiv-4.jpg 600px %}
+
+>“We created an innovation/strategic roadmap prototype for Cerner's clients that shows past, current and future projects, along with crucial data points for each. The data was directly from a Microsoft SQL server that houses all of our PPM project data, and the application was built on Ruby on Rails and React.”– Risky Salt
+
+3rd Place- All the Data (Taylor Clay, Bilal Ahmad, Eric Ringle)
+
+{% img center /assets/2019-03-12-shipit-xiv/shipit-xiv-5.jpg 600px %}
+
+>“Our team worked on Prototype for a Flow Sheet- a real-time, customizable data visualization tool for patient device data. In the real world, this would be used to view trends in a patient’s health to proactively identify risks. The goal of this project was Protoype UI to support a dense flow sheet/graphical view of critical care data that would support iBus and Millennium data sources, as well as understand complexity to better gauge bringing function into solution. This was created using Node-Red (created a mock service that published data to the app) and ReactJS (the application UI).” – All the Data
+
+
+## People’s Choice Award Winners
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        {% img /assets/2019-03-12-shipit-xiv/shipit-xiv-6.jpg 400px %}<br>
+        <sub>Best Team Name - :(){:|:&};:<br> (Ian Kottman, Sam Livingston, Paul Dennis, Bobby Ryterski, Anthony Ross)</sub>
+      </td>
+      <td align="center">
+        {% img /assets/2019-03-12-shipit-xiv/shipit-xiv-7.jpg 400px %}<br>
+        <sub>Best Presentation - Ship O'Holics <br>(Sowmya Mathukumalli, Shrutha Kashyap, Yasho Jhamvar, Tejendra Velaga)</sub>
+      </td>
+    </tr>
+  </table>
+</div> 	
+
+Thank you to our talented judges Ben York, Adilson Ribeiro, and Scott Julius. Thank you to Kyle Harper for taking awesome pictures throughout our event.
