@@ -365,12 +365,16 @@
         <lastmod>2019-02-08T14:15:42-06:00</lastmod>
     </url>
     <url>
+        <loc>http://engineering.cerner.com/blog/shipit-xiv/</loc>
+        <lastmod>2019-03-08T12:19:13-06:00</lastmod>
+    </url>
+    <url>
         <loc>http://engineering.cerner.com/</loc>
-        <lastmod>2019-02-08T14:15:43-06:00</lastmod>
+        <lastmod>2019-03-08T12:19:13-06:00</lastmod>
     </url>
     <url>
         <loc>http://engineering.cerner.com/tech_talks/</loc>
-        <lastmod>2019-02-08T14:15:43-06:00</lastmod>
+        <lastmod>2019-03-08T12:19:13-06:00</lastmod>
     </url>
     <url>
         <loc>http://engineering.cerner.com/about/</loc>
@@ -378,11 +382,11 @@
     </url>
     <url>
         <loc>http://engineering.cerner.com/blog/archives/</loc>
-        <lastmod>2019-02-08T14:15:43-06:00</lastmod>
+        <lastmod>2019-03-08T12:19:13-06:00</lastmod>
     </url>
     <url>
         <loc>http://engineering.cerner.com/open_source/</loc>
-        <lastmod>2019-02-08T14:15:43-06:00</lastmod>
+        <lastmod>2019-03-08T12:19:13-06:00</lastmod>
     </url>
     <url>
         <loc>http://engineering.cerner.com/robots.txt</loc>
@@ -390,6 +394,6 @@
     </url>
     <url>
         <loc>http://engineering.cerner.com/culture/</loc>
-        <lastmod>2019-02-08T14:15:43-06:00</lastmod>
+        <lastmod>2019-03-08T12:19:13-06:00</lastmod>
     </url>
 </urlset>
