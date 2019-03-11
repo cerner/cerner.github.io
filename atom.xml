@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2019-03-08T12:19:23-06:00</updated>
+  <updated>2019-03-11T09:52:51-05:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -44,7 +44,7 @@ Check out the video below to hear from ShipIt Day participants and supporters as
 
 <p><img class="center" src="http://engineering.cerner.com/assets/2019-03-08-shipit-xiv/shipit-xiv-3.jpg" width="600"></p>
 
-<blockquote><p>“Our team worked on a prototype of a real-time flow sheet, that was a customizable data visualization tool for patient device data. In the real world, this would be used to view trends in a patient’s health to proactively identify risks. The goal of this project was to build a prototype UI support a dense flow sheet and graphical view of critical care data. This would include Cerner <a href="https://www.cerner.com/pages/careaware">CareAware iBus</a> and <a href="https://www.cerner.com/solutions/health-systems">Cerner Millennium</a> data sources, as well as, understand complexity to better gauge what functions to bring into the solution. This was created using <a href="https://nodered.org/">Node-RED</a> (created a mock service that published data to the app) and React (the application UI). This was created using Node-Red (created a mock service that published data to the app) and ReactJS (the application UI).” – All the Data</p></blockquote>
+<blockquote><p>“Our team worked on a prototype of a real-time flow sheet, that was a customizable data visualization tool for patient device data. In the real world, this would be used to view trends in a patient’s health to proactively identify risks. The goal of this project was to build a prototype UI support a dense flow sheet and graphical view of critical care data. This would include Cerner <a href="https://www.cerner.com/pages/careaware">CareAware iBus</a> and <a href="https://www.cerner.com/solutions/health-systems">Cerner Millennium</a> data sources, as well as, understand complexity to better gauge what functions to bring into the solution. This was created using <a href="https://nodered.org/">Node-RED</a> (created a mock service that published data to the app) and React (the application UI).” – All the Data</p></blockquote>
 
 <h2>People’s Choice Award Winners</h2>
 
@@ -1983,7 +1983,7 @@ Way to go PSA!</p>
 </ul>
 
 
-<p>Try it and let me know what you think! You can log issues for improvements, or email me your thoughts: <a href="&#109;&#x61;&#105;&#108;&#x74;&#111;&#58;&#x62;&#x72;&#x79;&#x61;&#x6e;&#x2e;&#98;&#x61;&#x75;&#103;&#x68;&#101;&#x72;&#64;&#x63;&#x65;&#114;&#x6e;&#x65;&#114;&#x2e;&#99;&#x6f;&#109;&#46;">&#98;&#114;&#x79;&#x61;&#110;&#x2e;&#x62;&#97;&#117;&#103;&#x68;&#101;&#114;&#64;&#x63;&#101;&#x72;&#110;&#x65;&#x72;&#x2e;&#99;&#111;&#x6d;&#46;</a> We hope to continue to improve the library and always welcome contributions and ideas from others.</p>
+<p>Try it and let me know what you think! You can log issues for improvements, or email me your thoughts: <a href="&#109;&#x61;&#105;&#x6c;&#116;&#111;&#58;&#x62;&#x72;&#x79;&#97;&#110;&#x2e;&#98;&#97;&#x75;&#103;&#104;&#101;&#114;&#64;&#99;&#101;&#x72;&#x6e;&#101;&#114;&#x2e;&#99;&#111;&#x6d;&#46;">&#x62;&#114;&#x79;&#x61;&#110;&#x2e;&#98;&#x61;&#x75;&#x67;&#x68;&#101;&#x72;&#x40;&#x63;&#x65;&#x72;&#x6e;&#101;&#114;&#x2e;&#99;&#x6f;&#x6d;&#x2e;</a> We hope to continue to improve the library and always welcome contributions and ideas from others.</p>
 ]]></content>
   </entry>
   
