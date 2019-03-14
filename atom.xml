@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2019-03-11T09:52:51-05:00</updated>
+  <updated>2019-03-14T08:29:54-05:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,435 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Pi Day 2019: Build Your Own Alarm System]]></title>
+    <link href="http://engineering.cerner.com/blog/pi-day-2019-build-your-own-alarm-system/"/>
+    <updated>2019-03-14T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/blog/pi-day-2019-build-your-own-alarm-system</id>
+    <content type="html"><![CDATA[<p>At Cerner Engineering, we love to celebrate <a href="https://en.wikipedia.org/wiki/Pi_Day">Pi Day</a>. This day is not only a fun time to enjoy eating pie and reflecting on mathematical properties, but we also share big announcements internally for our developers conference, <a href="https://engineering.cerner.com/blog/devcon-recap/">DevCon</a>.</p>
+
+<div align="center"><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Drew a crowd to celebrate Pi Day this afternoon with snacks, lightning talks, and our DevCon 2018 theme reveal! <a href="https://twitter.com/hashtag/314day?src=hash&amp;ref_src=twsrc%5Etfw">#314day</a> <a href="https://twitter.com/hashtag/cernerdevcon?src=hash&amp;ref_src=twsrc%5Etfw">#cernerdevcon</a> <a href="https://t.co/wyy5eLKHVl">pic.twitter.com/wyy5eLKHVl</a></p>&mdash; Cerner Engineering (@CernerEng) <a href="https://twitter.com/CernerEng/status/974023542504411136?ref_src=twsrc%5Etfw">March 14, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+
+
+<p>For this post, we thought it would be fun to share a simple example of how you can hook your existing monitoring system to a physical alarm system powered by a <a href="https://www.raspberrypi.org/">Raspberry Pi</a>. This alarm will be a red spinning light, the universal symbol of &ldquo;something is going wrong.&rdquo; We will build a program that will integrate with New Relic to determine if there are issues in our environment. If there are any issues, it will trigger the alarm and your monitoring system will come alive!</p>
+
+<h2>Parts List</h2>
+
+<ul>
+<li><a href="https://www.adafruit.com/product/825">Jumper wires</a> &ndash; Wires that we will use to trigger the switch from your GPIO pins.</li>
+<li><a href="https://www.amazon.com/Rhode-Island-Novelty-Police-Beacon/dp/B0011CZV5A">Alarm light that is AC powered</a> &ndash; There are several different types of fun alarm or party lights you could use. The important characteristic that we are seeking is an AC powered light, as we will use this to control its state. Many lights you will find are battery powered, which will not work for this example.</li>
+<li><a href="https://www.adafruit.com/product/2935">PowerSwitch Tail or alternative</a> &ndash; I have had this setup for quite some time, so I still have a PowerSwitch Tail, but looks like they may not be available by all providers. You can get other alternatives out there, where you can control an AC power switch safely through GPIO interactions.</li>
+<li><a href="https://www.raspberrypi.org">Raspberry Pi</a> &ndash; I have an older model, but anything with a powered ethernet connection works well (ex. Raspberry Pi 3 Model B+), as we will be making remote HTTPS calls. If this is your first time getting a Raspberry Pi, there are great kits that include your power adapter and SD card (as you will need that too).</li>
+<li>RJ45 ethernet cable <em>(optional)</em> &ndash; We won’t leverage WiFi for this example, and simply use a ethernet cable for maintaining a network connection for the Raspberry Pi. You don’t need this if you already know how you plan to connect your Raspberry Pi to your existing network.</li>
+</ul>
+
+
+<h2>The Alarm</h2>
+
+<p>Once you have this setup, we are going to use the Raspberry Pi to control your AC output by communicating to the PowerSwitch Tail through our <a href="https://www.raspberrypi.org/documentation/usage/gpio/">GPIO pins</a>. A <a href="https://golang.org/">Go program</a> will control the logic of flexing the alarm on or off by polling a monitoring system: <a href="https://newrelic.com/">New Relic</a>. New Relic is a real-time monitoring platform that gives you powerful insights about the applications you are operating. One of the features of New Relic, is that you can build alerts about different indicators of your application (ex. high memory utilization of a service). These can be rolled up to an &ldquo;incident&rdquo; concept, when you have <a href="https://docs.newrelic.com/docs/alerts/new-relic-alerts/configuring-alert-policies/specify-when-new-relic-creates-incidents">a violation on an alert condition</a>. For this physical alarm, it made sense to pair it with this concept that we use from New Relic. Therefore, if you build something that would trigger human engagement with your alerts (like an incident), this alarm can generically pick these up, without you having to manage anything else.</p>
+
+<h2>The Code</h2>
+
+<p>Here is the code snippet of what we will implement. It is a Go program, which will interact with the GPIO pins using <a href="https://github.com/stianeikeland/go-rpio">go-rpio</a>. It will essentially run in a loop, and poll New Relic’s Alert API every minute. To ensure we aren’t running the alarm in the after-hours, we will also flex when this can trigger (ex. Mon &ndash; Friday, 9 &ndash; 5 PM).</p>
+
+<p>First, we will build something that can invoke the <a href="https://rpm.newrelic.com/api/explore/alerts_incidents/list">New Relic Alerts API</a>. This will offer a single function (<code>hasOpenIncidents</code>) that will dictate if there are any open incidents when checking with New Relic.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+</pre></td><td class='code'><pre><code class='go'><span class='line'><span class="c1">// New Relic Incident API type (just using including two of the fields as an example)</span>
+</span><span class='line'><span class="kd">type</span> <span class="nx">Incident</span> <span class="kd">struct</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">Id</span>       <span class="kt">int</span>   <span class="s">`json:&quot;id&quot;`</span>
+</span><span class='line'>  <span class="nx">OpenedAt</span> <span class="kt">int64</span> <span class="s">`json:&quot;opened_at&quot;`</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// New Relic Incident API response type, which we will assess on having any items in the array for the alarm.</span>
+</span><span class='line'><span class="kd">type</span> <span class="nx">IncidentsResponse</span> <span class="kd">struct</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">Incidents</span> <span class="p">[]</span><span class="nx">Incident</span> <span class="s">`json:&quot;incidents&quot;`</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Documented here: https://rpm.newrelic.com/api/explore/alerts_incidents/list</span>
+</span><span class='line'><span class="kd">func</span> <span class="nx">hasOpenIncidents</span><span class="p">(</span><span class="nx">apiKey</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">url</span> <span class="o">:=</span> <span class="s">&quot;https://api.newrelic.com/v2/alerts_incidents.json?only_open=true&quot;</span>
+</span><span class='line'>  <span class="nx">spaceClient</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nx">Client</span><span class="p">{</span>
+</span><span class='line'>      <span class="nx">Timeout</span><span class="p">:</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Second</span> <span class="o">*</span> <span class="mi">15</span><span class="p">,</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="nx">req</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nx">NewRequest</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">MethodGet</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="kc">nil</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">log</span><span class="p">.</span><span class="nx">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nx">Set</span><span class="p">(</span><span class="s">&quot;X-Api-Key&quot;</span><span class="p">,</span> <span class="nx">apiKey</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">res</span><span class="p">,</span> <span class="nx">getErr</span> <span class="o">:=</span> <span class="nx">spaceClient</span><span class="p">.</span><span class="nx">Do</span><span class="p">(</span><span class="nx">req</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// If there is a failure to calling New Relic (ex. timeout), simply logging and returning back</span>
+</span><span class='line'>  <span class="c1">// for a later retry</span>
+</span><span class='line'>  <span class="k">if</span> <span class="nx">getErr</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">log</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;Failed to get a response: %s&quot;</span><span class="p">,</span> <span class="nx">getErr</span><span class="p">)</span>
+</span><span class='line'>      <span class="k">return</span> <span class="kc">false</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">incidentsResponse</span> <span class="o">:=</span> <span class="nx">IncidentsResponse</span><span class="p">{}</span>
+</span><span class='line'>  <span class="nx">jsonError</span> <span class="o">:=</span> <span class="nx">json</span><span class="p">.</span><span class="nx">NewDecoder</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">Body</span><span class="p">).</span><span class="nx">Decode</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">incidentsResponse</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">if</span> <span class="nx">jsonError</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">log</span><span class="p">.</span><span class="nx">Fatal</span><span class="p">(</span><span class="nx">jsonError</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="nx">incidentsResponse</span><span class="p">.</span><span class="nx">Incidents</span><span class="p">)</span> <span class="p">&gt;</span> <span class="mi">0</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>We will then manage the GPIO pin state in a simple loop which will check to see if there are any open incidents. If so, it will set the pin to <em>High</em>, which will trigger the light switch. Otherwise it will set it to low. We will also include a handler for setting the pin to low when we terminate the application (ex. via a SIGTERM). Example of managing the state:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='go'><span class='line'>   <span class="c1">// If there are any open New Relic incidents, set the pin to high</span>
+</span><span class='line'>  <span class="k">if</span> <span class="nx">hasOpenIncidents</span><span class="p">(</span><span class="nx">apiKey</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">log</span><span class="p">.</span><span class="nx">Print</span><span class="p">(</span><span class="s">&quot;Incidents detected, setting alarm.&quot;</span><span class="p">)</span>
+</span><span class='line'>      <span class="nx">pin</span><span class="p">.</span><span class="nx">High</span><span class="p">()</span>
+</span><span class='line'>  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">log</span><span class="p">.</span><span class="nx">Print</span><span class="p">(</span><span class="s">&quot;No incidents detected.&quot;</span><span class="p">)</span>
+</span><span class='line'>      <span class="nx">pin</span><span class="p">.</span><span class="nx">Low</span><span class="p">()</span>
+</span><span class='line'>  <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>When you put it all together, the full picture of code looks like this (<code>alarm.go</code>):</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+<span class='line-number'>104</span>
+<span class='line-number'>105</span>
+<span class='line-number'>106</span>
+<span class='line-number'>107</span>
+<span class='line-number'>108</span>
+<span class='line-number'>109</span>
+<span class='line-number'>110</span>
+<span class='line-number'>111</span>
+<span class='line-number'>112</span>
+<span class='line-number'>113</span>
+</pre></td><td class='code'><pre><code class='go'><span class='line'><span class="kn">package</span> <span class="nx">main</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">import</span> <span class="p">(</span>
+</span><span class='line'>  <span class="s">&quot;encoding/json&quot;</span>
+</span><span class='line'>  <span class="s">&quot;github.com/spf13/viper&quot;</span>
+</span><span class='line'>  <span class="s">&quot;github.com/stianeikeland/go-rpio&quot;</span>
+</span><span class='line'>  <span class="s">&quot;log&quot;</span>
+</span><span class='line'>  <span class="s">&quot;net/http&quot;</span>
+</span><span class='line'>  <span class="s">&quot;os&quot;</span>
+</span><span class='line'>  <span class="s">&quot;os/signal&quot;</span>
+</span><span class='line'>  <span class="s">&quot;syscall&quot;</span>
+</span><span class='line'>  <span class="s">&quot;time&quot;</span>
+</span><span class='line'><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// New Relic Incident API type (just using including two of the fields as an example)</span>
+</span><span class='line'><span class="kd">type</span> <span class="nx">Incident</span> <span class="kd">struct</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">Id</span>       <span class="kt">int</span>   <span class="s">`json:&quot;id&quot;`</span>
+</span><span class='line'>  <span class="nx">OpenedAt</span> <span class="kt">int64</span> <span class="s">`json:&quot;opened_at&quot;`</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// New Relic Incident API response type, which we will assess on having any items in the array for the alarm.</span>
+</span><span class='line'><span class="kd">type</span> <span class="nx">IncidentsResponse</span> <span class="kd">struct</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">Incidents</span> <span class="p">[]</span><span class="nx">Incident</span> <span class="s">`json:&quot;incidents&quot;`</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Documented here: https://rpm.newrelic.com/api/explore/alerts_incidents/list</span>
+</span><span class='line'><span class="kd">func</span> <span class="nx">hasOpenIncidents</span><span class="p">(</span><span class="nx">apiKey</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">url</span> <span class="o">:=</span> <span class="s">&quot;https://api.newrelic.com/v2/alerts_incidents.json?only_open=true&quot;</span>
+</span><span class='line'>  <span class="nx">spaceClient</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nx">Client</span><span class="p">{</span>
+</span><span class='line'>      <span class="nx">Timeout</span><span class="p">:</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Second</span> <span class="o">*</span> <span class="mi">15</span><span class="p">,</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="nx">req</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nx">NewRequest</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">MethodGet</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="kc">nil</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">log</span><span class="p">.</span><span class="nx">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nx">Set</span><span class="p">(</span><span class="s">&quot;X-Api-Key&quot;</span><span class="p">,</span> <span class="nx">apiKey</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">res</span><span class="p">,</span> <span class="nx">getErr</span> <span class="o">:=</span> <span class="nx">spaceClient</span><span class="p">.</span><span class="nx">Do</span><span class="p">(</span><span class="nx">req</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// If there is a failure to calling New Relic (ex. timeout), simply logging and returning back</span>
+</span><span class='line'>  <span class="c1">// for a later retry</span>
+</span><span class='line'>  <span class="k">if</span> <span class="nx">getErr</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">log</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;Failed to get a response: %s&quot;</span><span class="p">,</span> <span class="nx">getErr</span><span class="p">)</span>
+</span><span class='line'>      <span class="k">return</span> <span class="kc">false</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">incidentsResponse</span> <span class="o">:=</span> <span class="nx">IncidentsResponse</span><span class="p">{}</span>
+</span><span class='line'>  <span class="nx">jsonError</span> <span class="o">:=</span> <span class="nx">json</span><span class="p">.</span><span class="nx">NewDecoder</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">Body</span><span class="p">).</span><span class="nx">Decode</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">incidentsResponse</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">if</span> <span class="nx">jsonError</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">log</span><span class="p">.</span><span class="nx">Fatal</span><span class="p">(</span><span class="nx">jsonError</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="nx">incidentsResponse</span><span class="p">.</span><span class="nx">Incidents</span><span class="p">)</span> <span class="p">&gt;</span> <span class="mi">0</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Simple handler to set the pin to a LOW signal when terminating the application</span>
+</span><span class='line'><span class="kd">func</span> <span class="nx">closeHandler</span><span class="p">(</span><span class="nx">pin</span> <span class="nx">rpio</span><span class="p">.</span><span class="nx">Pin</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">c</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="nx">os</span><span class="p">.</span><span class="nx">Signal</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>  <span class="nx">signal</span><span class="p">.</span><span class="nx">Notify</span><span class="p">(</span><span class="nx">c</span><span class="p">,</span> <span class="nx">os</span><span class="p">.</span><span class="nx">Interrupt</span><span class="p">,</span> <span class="nx">syscall</span><span class="p">.</span><span class="nx">SIGTERM</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>      <span class="o">&lt;-</span><span class="nx">c</span>
+</span><span class='line'>      <span class="nx">log</span><span class="p">.</span><span class="nx">Print</span><span class="p">(</span><span class="s">&quot;SIGTERM detected, setting pin off&quot;</span><span class="p">)</span>
+</span><span class='line'>      <span class="nx">pin</span><span class="p">.</span><span class="nx">Low</span><span class="p">()</span>
+</span><span class='line'>      <span class="nx">os</span><span class="p">.</span><span class="nx">Exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">}()</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="c1">// Load configuration</span>
+</span><span class='line'>  <span class="nx">viper</span><span class="p">.</span><span class="nx">SetConfigName</span><span class="p">(</span><span class="s">&quot;config&quot;</span><span class="p">)</span>
+</span><span class='line'>  <span class="nx">viper</span><span class="p">.</span><span class="nx">AddConfigPath</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">)</span>
+</span><span class='line'>  <span class="nx">configErr</span> <span class="o">:=</span> <span class="nx">viper</span><span class="p">.</span><span class="nx">ReadInConfig</span><span class="p">()</span>
+</span><span class='line'>  <span class="k">if</span> <span class="nx">configErr</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">log</span><span class="p">.</span><span class="nx">Panicf</span><span class="p">(</span><span class="s">&quot;Fatal error config file: %s \n&quot;</span><span class="p">,</span> <span class="nx">configErr</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="nx">apiKey</span> <span class="o">:=</span> <span class="nx">viper</span><span class="p">.</span><span class="nx">GetString</span><span class="p">(</span><span class="s">&quot;new_relic.api_key&quot;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// Setup GPIO pin</span>
+</span><span class='line'>  <span class="nx">log</span><span class="p">.</span><span class="nx">Print</span><span class="p">(</span><span class="s">&quot;Opening GPIO&quot;</span><span class="p">)</span>
+</span><span class='line'>  <span class="nx">err</span> <span class="o">:=</span> <span class="nx">rpio</span><span class="p">.</span><span class="nx">Open</span><span class="p">()</span>
+</span><span class='line'>  <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">log</span><span class="p">.</span><span class="nx">Panic</span><span class="p">(</span><span class="s">&quot;Unable to open GPIO&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">Error</span><span class="p">())</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">defer</span> <span class="nx">rpio</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// Mapping to BCM2835 pin 18, which is the physical 12 pin. For more information about pin mapping, you can see</span>
+</span><span class='line'>  <span class="c1">// how these are being mapped: https://github.com/stianeikeland/go-rpio/blob/v4.4.0/rpio.go#L35-L59</span>
+</span><span class='line'>  <span class="nx">pin</span> <span class="o">:=</span> <span class="nx">rpio</span><span class="p">.</span><span class="nx">Pin</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span>
+</span><span class='line'>  <span class="nx">pin</span><span class="p">.</span><span class="nx">Output</span><span class="p">()</span>
+</span><span class='line'>  <span class="nx">closeHandler</span><span class="p">(</span><span class="nx">pin</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">for</span> <span class="p">{</span>
+</span><span class='line'>      <span class="c1">// If it is after-hours, don&#39;t worry about triggering the alarm (trigger during: Mon - Fri, 9 - 5)</span>
+</span><span class='line'>      <span class="nx">t</span> <span class="o">:=</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Now</span><span class="p">()</span>
+</span><span class='line'>      <span class="k">if</span> <span class="p">(</span><span class="nx">t</span><span class="p">.</span><span class="nx">Weekday</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="nx">t</span><span class="p">.</span><span class="nx">Weekday</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">t</span><span class="p">.</span><span class="nx">Hour</span><span class="p">()</span> <span class="p">&lt;</span> <span class="mi">9</span> <span class="o">||</span> <span class="nx">t</span><span class="p">.</span><span class="nx">Hour</span><span class="p">()</span> <span class="p">&gt;</span> <span class="mi">17</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>          <span class="nx">pin</span><span class="p">.</span><span class="nx">Low</span><span class="p">()</span>
+</span><span class='line'>          <span class="nx">log</span><span class="p">.</span><span class="nx">Print</span><span class="p">(</span><span class="s">&quot;After hours, sleeping for 5 minutes before continuing...&quot;</span><span class="p">)</span>
+</span><span class='line'>          <span class="nx">time</span><span class="p">.</span><span class="nx">Sleep</span><span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Minute</span><span class="p">)</span>
+</span><span class='line'>          <span class="k">continue</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="c1">// If there are any open New Relic incidents, set the pin to high</span>
+</span><span class='line'>      <span class="k">if</span> <span class="nx">hasOpenIncidents</span><span class="p">(</span><span class="nx">apiKey</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>          <span class="nx">log</span><span class="p">.</span><span class="nx">Print</span><span class="p">(</span><span class="s">&quot;Incidents detected, setting alarm.&quot;</span><span class="p">)</span>
+</span><span class='line'>          <span class="nx">pin</span><span class="p">.</span><span class="nx">High</span><span class="p">()</span>
+</span><span class='line'>      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>          <span class="nx">log</span><span class="p">.</span><span class="nx">Print</span><span class="p">(</span><span class="s">&quot;No incidents detected.&quot;</span><span class="p">)</span>
+</span><span class='line'>          <span class="nx">pin</span><span class="p">.</span><span class="nx">Low</span><span class="p">()</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="nx">time</span><span class="p">.</span><span class="nx">Sleep</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Minute</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Building</h3>
+
+<p>For my example, I have this in a <code>alarm.go</code> file within my <code>nr-pi-alarm</code> directory. I then issue the following command:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>env <span class="nv">GOOS</span><span class="o">=</span>linux <span class="nv">GOARCH</span><span class="o">=</span>arm <span class="nv">GOARM</span><span class="o">=</span>5 go build
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This will produce a <code>nr-pi-alarm</code> you can then transfer to your Raspberry Pi for execution. One example of doing this is with <code>scp</code>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># Will transfer it to the alarm directory for the pi user on the Raspberry Pi</span>
+</span><span class='line'>scp nr-pi-alarm pi@INSERT_YOUR_RASPBERRY_PI_IP_ADDRESS:alarm
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Wiring it up</h3>
+
+<p>For this example, we are using the physical pins #12 and #14 (GPIO18 and GND). We will use our jumper wires to then hook this to the AC switch:</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2019-03-14-pi-day-2019-build-your-own-alarm-system/pi-alarm-gpio.jpg" width="600"></p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2019-03-14-pi-day-2019-build-your-own-alarm-system/pi-alarm-switch.jpg" width="600"></p>
+
+<p>You will then hook your alarm light to the AC switch (PowerSwitch Tail). If the alarm light has its own on/off switch, turn it to on, as we don&rsquo;t want this manual switch to block what our Raspberry Pi is going to control based on the flow of power.</p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2019-03-14-pi-day-2019-build-your-own-alarm-system/pi-alarm-setup.jpg" width="600"></p>
+
+<h3>Run it</h3>
+
+<p>After you have transferred the build to your pi, you can then configure the alarm to use your New Relic account. This is achieved by creating a <code>config.yml</code> file in your <code>alarm</code> directory which currently hosts the <code>nr-pi-alarm</code> program (set to <code>600</code> for file permissions):</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="l-Scalar-Plain">new_relic</span><span class="p-Indicator">:</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">api_key</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">INSERT_NEW_RELIC_API_KEY_HERE</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After you have configured it, simply invoke this to run the alarm:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>./nr-pi-alarm
+</span><span class='line'>2019/03/14 10:04:12 Opening GPIO
+</span><span class='line'>2019/03/14 10:04:26 Incidents detected, setting alarm.
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2019-03-14-pi-day-2019-build-your-own-alarm-system/alarm.gif"></p>
+
+<h2>Happy Pi Day</h2>
+
+<p>We hope you are having a great Pi Day and maybe this example will give you other ideas of what you can build to bring your systems alive. 😀</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[ShipIt XIV]]></title>
@@ -1961,29 +2390,6 @@ Way to go PSA!</p>
 <li><a href="http://engineering.cerner.com/blog/spring-2016-shipit-day/">ShipIt Day Spring 2016</a></li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Cerner Open Sources Its Kafka Utilities]]></title>
-    <link href="http://engineering.cerner.com/blog/cerner-open-sources-its-kafka-utilities/"/>
-    <updated>2018-02-06T00:00:00-06:00</updated>
-    <id>http://engineering.cerner.com/blog/cerner-open-sources-its-kafka-utilities</id>
-    <content type="html"><![CDATA[<p>At Cerner, we often make use of many open source projects in our infrastructure. I work on a team responsible for Cerner&rsquo;s Ingestion Platform, a critical piece of infrastructure that takes in TBs of data and over a billion messages per day. The platform’s responsibility is then to make this data available for downstream teams to consume. When designing the Ingestion Platform, we felt Apache Kafka was perfect for ingesting and consuming these massive streams of data. We originally built the Ingestion Platform in 2014 and it has grown with Kafka ever since.</p>
-
-<p>Along the way, we’ve become experienced with Apache Kafka and how it works. We know how to monitor it, perform common administrative operations, and more. We’ve even made contributions to Kafka for various improvements [<a href="https://issues.apache.org/jira/browse/KAFKA-3297">1</a>][<a href="https://issues.apache.org/jira/browse/KAFKA-4687">2</a>][<a href="https://issues.apache.org/jira/browse/KAFKA-2434">3</a>] and Apache Crunch, our processing framework, to <a href="https://issues.apache.org/jira/browse/CRUNCH-606">add Kafka support</a>. We have also given <a href="https://www.confluent.io/resources/kafka-summit-2016/ingesting-complex-healthcare-data-apache-kafka/">talks</a> about our usage of Apache Kafka at Kafka Summit and we’ve written a <a href="http://blog.cloudera.com/blog/2014/11/how-cerner-uses-cdh-with-apache-kafka/">blog post</a> about it as well.</p>
-
-<p>We are still interested in supporting the Kafka community, and today we hit another milestone as we open source some of our <a href="https://github.com/cerner/common-kafka">utilities for Kafka</a>. This includes:</p>
-
-<ul>
-<li>Lightweight wrappers over producer and consumer providing additional functionality</li>
-<li>A client to simplify admin operations</li>
-<li>A Kafka connect sink for delivering data to another Kafka cluster</li>
-<li>Kafka test infrastructure for integration testing</li>
-</ul>
-
-
-<p>Try it and let me know what you think! You can log issues for improvements, or email me your thoughts: <a href="&#109;&#x61;&#105;&#x6c;&#116;&#111;&#58;&#x62;&#x72;&#x79;&#97;&#110;&#x2e;&#98;&#97;&#x75;&#103;&#104;&#101;&#114;&#64;&#99;&#101;&#x72;&#x6e;&#101;&#114;&#x2e;&#99;&#111;&#x6d;&#46;">&#x62;&#114;&#x79;&#x61;&#110;&#x2e;&#98;&#x61;&#x75;&#x67;&#x68;&#101;&#x72;&#x40;&#x63;&#x65;&#x72;&#x6e;&#101;&#114;&#x2e;&#99;&#x6f;&#x6d;&#x2e;</a> We hope to continue to improve the library and always welcome contributions and ideas from others.</p>
 ]]></content>
   </entry>
   
