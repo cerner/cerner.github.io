@@ -22,7 +22,7 @@ GEM
       pygments.rb (~> 0.3.2)
     json (1.8.3)
     kramdown (0.13.8)
-    libv8 (3.16.14.7)
+    libv8 (3.16.14.19)
     liquid (2.3.0)
     maruku (0.6.1)
       syntax (>= 1.0.0)
@@ -78,3 +78,6 @@ DEPENDENCIES
   sinatra (~> 1.4.2)
   stringex (~> 1.4.0)
   therubyracer (~> 0.12)
+
+BUNDLED WITH
+   2.0.2
