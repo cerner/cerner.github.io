@@ -8,7 +8,7 @@ tags: [engineering, oss]
 
 We are pleased to announce Carbon Graphs as an open source code project!
 
-*[Carbon](https://github.com/cerner/carbon-graphs)* is a lightweight, vanilla JavaScript visualization API that integrates well with consumer's tech stack built using [D3](https://d3js.org/). It provides a variety of graph types that are **framework agnostic** and **responsive** out of the box.
+*[Carbon](https://github.com/cerner/carbon-graphs)* is a lightweight, vanilla JavaScript visualization API built with [D3](https://d3js.org/) that integrates well with any consumer's tech stack. It provides a variety of graph types that are **framework agnostic** and **responsive** out of the box.
 
 <div align="center">
   <table>
@@ -23,20 +23,20 @@ We are pleased to announce Carbon Graphs as an open source code project!
 # Motivation
 Over the past few years, we have gradually updated our user interface to use modern JavaScript libraries such as *mithril.js* and *React*. Our components needed a graphing solution that would work well with our current framework while providing visualizations based on leading industry solutions.
 
-We did an extensive audit of various Cerner solutions already available, the graph types they were using, and the libraries used to plot the data. We discovered that most solutions had graph implementations baked into their product such that they were modifying or extending open source libraries in an effort to support Cerner's unique clinical and accessibility needs. These implementations, however, could not be broadly reused. As such, we saw an opportunity to collaborate with our User Experience team to create an attractive, modern, and flexible graphing solutions that not only would meet Cerner's design standards, but that could be open sourced to give back to the engineering community for their own graphing needs.
+We did an extensive audit of various Cerner solutions already available, the graph types they were using, and the libraries used to plot the data. We discovered that most solutions had graph implementations baked into their product such that they were modifying or extending open source libraries in an effort to support Cerner's unique clinical and accessibility needs. These implementations, however, could not be broadly reused. As such, we saw an opportunity to collaborate with our User Experience team to create an attractive, modern, and flexible graphing solution that not only would meet Cerner's design standards, but that could be open sourced to give back to the engineering community for their own graphing needs.
 
 # Graph Types
 With *Carbon*, you get:
 
-* Line graph
-* Multiline graph
-* Spline Line graph
-* Non-Contiguous Line graph
-* Paired Result graph
-* Timeline graph
-* Bar graph
-* Pie chart
-* Gantt chart
+* [Line graph](https://engineering.cerner.com/carbon-graphs/#/line/simple)
+* [Multiline graph](https://engineering.cerner.com/carbon-graphs/#/multi-line/simple)
+* [Spline Line graph](https://engineering.cerner.com/carbon-graphs/#/spline/simple)
+* [Non-Contiguous Line graph](https://engineering.cerner.com/carbon-graphs/#/non-contiguous-line/simple)
+* [Paired Result graph](https://engineering.cerner.com/carbon-graphs/#/paired-result/simple)
+* [Timeline graph](https://engineering.cerner.com/carbon-graphs/#/timeline/simple)
+* [Bar graph](https://engineering.cerner.com/carbon-graphs/#/bar/simple)
+* [Pie chart](https://engineering.cerner.com/carbon-graphs/#/pie/simple)
+* [Gantt chart](https://engineering.cerner.com/carbon-graphs/#/gantt/simple)
 
 Graphs come with following settings that be customized:
 
@@ -66,20 +66,20 @@ From there, we will initialize a JavaScript object that configures various aspec
 
 ``` js
 const graphConfiguration = {
-   bindTo: "#root",
-   axis: {
-       x: {
-           type: Carbon.helpers.AXIS_TYPE.TIME_SERIES,
-           label: "Datetime",
-           lowerLimit: new Date(2016, 0, 1, 1, 0).toISOString(),
-           upperLimit: new Date(2016, 0, 1, 17, 59).toISOString()
-       },
-       y: {
-           label: "Temperature (degF)",
-           lowerLimit: 90,
-           upperLimit: 106
-       }
-   }
+    bindTo: "#root",
+    axis: {
+        x: {
+            type: Carbon.helpers.AXIS_TYPE.TIME_SERIES,
+            label: "Datetime",
+            lowerLimit: new Date(2016, 0, 1, 9, 0).toISOString(),
+            upperLimit: new Date(2016, 0, 1, 15, 59).toISOString()
+        },
+        y: {
+            label: "Temperature (degF)",
+            lowerLimit: 90,
+            upperLimit: 106
+        }
+    }
 };
 
 ```
@@ -126,7 +126,7 @@ That’s it!
   <table>
     <tr>
       <td align="center">
-        {% img /assets/2019-08-27-carbon-graphs-open-source-visualization-api/carbon-2.png 1000px %}<br>
+        {% img /assets/2019-08-27-carbon-graphs-open-source-visualization-api/carbon-2.png 600px %}<br>
       </td>
     </tr>
   </table>
