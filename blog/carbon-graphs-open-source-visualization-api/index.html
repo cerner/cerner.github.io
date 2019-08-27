@@ -1,0 +1,514 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Carbon Graphs: An Open Source Visualization API - Engineering Health</title>
+  <meta name="author" content="Cerner">
+
+  
+  <meta name="description" content="">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://engineering.cerner.com/blog/carbon-graphs-open-source-visualization-api">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/site/site.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <script src="/javascripts/libs/bootstrap.min.js"></script>
+
+  <link href="/atom.xml" rel="alternate" title="Engineering Health" type="application/atom+xml">
+  <script src="/javascripts/search.min.js" type="text/javascript" charset="utf-8"></script>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37701128-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body  class="top-navbar  ">
+  
+
+
+
+<header id="banner" role="banner" class="container-fluid banner-kc-background">
+
+  <div class="image">
+
+    
+      <img src="/images/KC.png" alt="Kansas City" />
+    
+
+    <div id="header1">Engineering Health<br/><span class="header2">A <b>Cerner</b> Blog</span></div>
+
+  </div>
+  <nav class="navbar navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Engineering Health</a>
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="selected">
+            <a href="/">Blog</a>
+          </li>
+          <li >
+            <a href="/culture">Culture</a>
+          </li>
+          <li >
+            <a href="/tech_talks">Tech Talks</a>
+          </li>
+          <li >
+            <a href="/open_source">Open Source</a>
+          </li>
+          <li >
+            <a href="/blog/archives">Archives</a>
+          </li>
+        </ul>
+        <div id="search" class="pull-right">
+          <form action="/search" method="get" class="navbar-search">
+            <input type="text" id="search-query" name="q" class="search-query" placeholder="Search" autocomplete="off">
+            <img src="/images/MagnifyingGlass.png" alt="Search" width="16" height="16" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+</header>
+
+
+  <div class="container-fluid post-container">
+    <div class="row-fluid">
+      <section class="span12" id="search-results" style="display: none;">
+  <h2>Search results</h2>
+  <div class="entries">
+  </div>
+</section>
+    </div>
+    <div class="row-fluid">
+      
+<article id="main" class="hentry span8" role="article">
+
+  <section class="post">
+    
+  <header class="entry-header">
+    
+      <h1 class="entry-title">Carbon Graphs: An Open Source Visualization API</h1>
+    
+    
+      <div class="entry-meta meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2019-08-27T00:00:00-05:00" pubdate data-updated="true">Aug 27<span>th</span>, 2019</time> | 
+  
+
+
+  <span class="byline author vcard">
+    <span class="fn">Abhijit Rao</span>
+  </span>
+
+
+        
+      </div>
+    
+  </header>
+
+
+<div class="entry-content"><p>We are pleased to announce Carbon Graphs as an open source code project!</p>
+
+<p><em><a href="https://github.com/cerner/carbon-graphs">Carbon</a></em> is a lightweight, vanilla JavaScript visualization API built with <a href="https://d3js.org/">D3</a> that integrates well with any consumer&rsquo;s tech stack. It provides a variety of graph types that are <strong>framework agnostic</strong> and <strong>responsive</strong> out of the box.</p>
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="/assets/2019-08-27-carbon-graphs-open-source-visualization-api/carbon-1.png" width="200"><br>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<h1>Motivation</h1>
+
+<p>Over the past few years, we have gradually updated our user interface to use modern JavaScript libraries such as <em>mithril.js</em> and <em>React</em>. Our components needed a graphing solution that would work well with our current framework while providing visualizations based on leading industry solutions.</p>
+
+<p>We did an extensive audit of various Cerner solutions already available, the graph types they were using, and the libraries used to plot the data. We discovered that most solutions had graph implementations baked into their product such that they were modifying or extending open source libraries in an effort to support Cerner&rsquo;s unique clinical and accessibility needs. These implementations, however, could not be broadly reused. As such, we saw an opportunity to collaborate with our User Experience team to create an attractive, modern, and flexible graphing solution that not only would meet Cerner&rsquo;s design standards, but that could be open sourced to give back to the engineering community for their own graphing needs.</p>
+
+<h1>Graph Types</h1>
+
+<p>With <em>Carbon</em>, you get:</p>
+
+<ul>
+<li><a href="https://engineering.cerner.com/carbon-graphs/#/line/simple">Line graph</a></li>
+<li><a href="https://engineering.cerner.com/carbon-graphs/#/multi-line/simple">Multiline graph</a></li>
+<li><a href="https://engineering.cerner.com/carbon-graphs/#/spline/simple">Spline Line graph</a></li>
+<li><a href="https://engineering.cerner.com/carbon-graphs/#/non-contiguous-line/simple">Non-Contiguous Line graph</a></li>
+<li><a href="https://engineering.cerner.com/carbon-graphs/#/paired-result/simple">Paired Result graph</a></li>
+<li><a href="https://engineering.cerner.com/carbon-graphs/#/timeline/simple">Timeline graph</a></li>
+<li><a href="https://engineering.cerner.com/carbon-graphs/#/bar/simple">Bar graph</a></li>
+<li><a href="https://engineering.cerner.com/carbon-graphs/#/pie/simple">Pie chart</a></li>
+<li><a href="https://engineering.cerner.com/carbon-graphs/#/gantt/simple">Gantt chart</a></li>
+</ul>
+
+
+<p>Graphs come with following settings that be customized:</p>
+
+<ul>
+<li>Legend</li>
+<li>Labels</li>
+<li>Grid lines (Vertical and Horizontal)</li>
+<li>Axes (X and Y, or Y2)</li>
+<li>Regions (Horizontal only)</li>
+</ul>
+
+
+<p><em>Carbon</em> also supports functionalities that are not provided with popular open source libraries such as:</p>
+
+<ul>
+<li>Support for custom SVG shapes as data points</li>
+<li>Support for different standard shapes (dark or light) as data points</li>
+<li>Locale support for axes ticks</li>
+</ul>
+
+
+<h1>Drawing a Line Graph</h1>
+
+<p>Let’s see how easy it can be to get started!</p>
+
+<p>To create a line graph, first create an HTML element that will hold the graph. Here, we are specifying a main element with an <strong>id</strong> of <strong>root</strong>.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;main</span> <span class="na">id=</span><span class="s">&quot;root&quot;</span><span class="nt">&gt;&lt;/main&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>From there, we will initialize a JavaScript object that configures various aspects of the graph, including where the graph will be drawn and how the axes should appear.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kr">const</span> <span class="nx">graphConfiguration</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">bindTo</span><span class="o">:</span> <span class="s2">&quot;#root&quot;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">axis</span><span class="o">:</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">x</span><span class="o">:</span> <span class="p">{</span>
+</span><span class='line'>            <span class="nx">type</span><span class="o">:</span> <span class="nx">Carbon</span><span class="p">.</span><span class="nx">helpers</span><span class="p">.</span><span class="nx">AXIS_TYPE</span><span class="p">.</span><span class="nx">TIME_SERIES</span><span class="p">,</span>
+</span><span class='line'>            <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;Datetime&quot;</span><span class="p">,</span>
+</span><span class='line'>            <span class="nx">lowerLimit</span><span class="o">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">).</span><span class="nx">toISOString</span><span class="p">(),</span>
+</span><span class='line'>            <span class="nx">upperLimit</span><span class="o">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">59</span><span class="p">).</span><span class="nx">toISOString</span><span class="p">()</span>
+</span><span class='line'>        <span class="p">},</span>
+</span><span class='line'>        <span class="nx">y</span><span class="o">:</span> <span class="p">{</span>
+</span><span class='line'>            <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;Temperature (degF)&quot;</span><span class="p">,</span>
+</span><span class='line'>            <span class="nx">lowerLimit</span><span class="o">:</span> <span class="mi">90</span><span class="p">,</span>
+</span><span class='line'>            <span class="nx">upperLimit</span><span class="o">:</span> <span class="mi">106</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">};</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Next, we’ll configure the dataset we want to plot.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kr">const</span> <span class="nx">dataset</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">key</span><span class="o">:</span> <span class="s2">&quot;uid_1&quot;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">label</span><span class="o">:</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">display</span><span class="o">:</span> <span class="s2">&quot;Oral Temperature&quot;</span>
+</span><span class='line'>    <span class="p">},</span>
+</span><span class='line'>    <span class="nx">shape</span><span class="o">:</span> <span class="nx">Carbon</span><span class="p">.</span><span class="nx">helpers</span><span class="p">.</span><span class="nx">SHAPES</span><span class="p">.</span><span class="nx">RHOMBUS</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">color</span><span class="o">:</span> <span class="nx">Carbon</span><span class="p">.</span><span class="nx">helpers</span><span class="p">.</span><span class="nx">COLORS</span><span class="p">.</span><span class="nx">BLUE</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">values</span><span class="o">:</span> <span class="p">[</span>
+</span><span class='line'>       <span class="p">{</span>
+</span><span class='line'>            <span class="nx">x</span><span class="o">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">).</span><span class="nx">toISOString</span><span class="p">(),</span>
+</span><span class='line'>            <span class="nx">y</span><span class="o">:</span> <span class="mf">96.5</span>
+</span><span class='line'>       <span class="p">},</span>
+</span><span class='line'>       <span class="p">{</span>
+</span><span class='line'>            <span class="nx">x</span><span class="o">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">).</span><span class="nx">toISOString</span><span class="p">(),</span>
+</span><span class='line'>            <span class="nx">y</span><span class="o">:</span> <span class="mf">98.7</span>
+</span><span class='line'>       <span class="p">},</span>
+</span><span class='line'>       <span class="p">{</span>
+</span><span class='line'>            <span class="nx">x</span><span class="o">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">).</span><span class="nx">toISOString</span><span class="p">(),</span>
+</span><span class='line'>            <span class="nx">y</span><span class="o">:</span> <span class="mf">97.4</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>    <span class="p">]</span>
+</span><span class='line'><span class="p">};</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And to wrap it all up, we’ll call <strong><em>loadContent</em></strong> to draw the content.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kr">const</span> <span class="nx">graph</span> <span class="o">=</span> <span class="nx">Carbon</span><span class="p">.</span><span class="nx">api</span><span class="p">.</span><span class="nx">graph</span><span class="p">(</span><span class="nx">graphConfiguration</span><span class="p">);</span>
+</span><span class='line'><span class="nx">graph</span><span class="p">.</span><span class="nx">loadContent</span><span class="p">(</span><span class="nx">Carbon</span><span class="p">.</span><span class="nx">api</span><span class="p">.</span><span class="nx">line</span><span class="p">(</span><span class="nx">dataset</span><span class="p">));</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>That’s it!</p>
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="/assets/2019-08-27-carbon-graphs-open-source-visualization-api/carbon-2.png" width="600"><br>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<h1>Contribute!</h1>
+
+<p>We are continuously working on improving <em>Carbon</em> to support our ever-increasing clinical needs! Help us make it better by reporting issues using the GitHub <a href="https://github.com/cerner/carbon-graphs/issues">issues</a> queue or feel free to contribute with <a href="https://github.com/cerner/carbon-graphs/pulls">pull requests</a>.</p>
+
+<p>NPM: <a href="https://www.npmjs.com/package/@cerner/carbon-graphs">https://www.npmjs.com/package/@cerner/carbon-graphs</a></p>
+
+<p>Site: <a href="https://engineering.cerner.com/carbon-graphs/">https://engineering.cerner.com/carbon-graphs/</a></p>
+</div>
+
+
+  </section>
+  <footer>
+    <p class="meta">
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    
+    <ul class="pager">
+      
+      <li class="previous"><a class="basic-alignment left"
+        href="/blog/ccl-unit-and-ccl-testing-released-to-open-source/" title="Previous Post:
+        CCL Unit and CCL Testing released to open source">&laquo; Previous Post</a></li>
+      
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      
+    </ul>
+  </footer>
+</article>
+
+<aside class="sidebar-nav span4">
+  
+    <section class="well">
+  <h2>Recent Posts</h2>
+  <ul id="recent_posts" class="nav nav-list">
+    
+      <li>
+        <a href="/blog/carbon-graphs-open-source-visualization-api/">Carbon Graphs: An Open Source Visualization API</a>
+      </li>
+    
+      <li>
+        <a href="/blog/ccl-unit-and-ccl-testing-released-to-open-source/">CCL Unit and CCL Testing Released to Open Source</a>
+      </li>
+    
+      <li>
+        <a href="/blog/devacademy-six-years-later/">DevAcademy Six Years Later</a>
+      </li>
+    
+      <li>
+        <a href="/blog/pi-day-2019-build-your-own-alarm-system/">Pi Day 2019: Build Your Own Alarm System</a>
+      </li>
+    
+      <li>
+        <a href="/blog/shipit-xiv/">ShipIt XIV</a>
+      </li>
+    
+  </ul>
+</section>
+<section class="divider">
+  <svg width="70" height="10">
+   <rect width="10" height="10" x="0" y="0" style="fill:rgb(20,124,193)" />
+   <rect width="10" height="10" x="20" y="0" style="fill:rgb(121,193,68)" />
+   <rect width="10" height="10" x="40" y="0" style="fill:rgb(20,124,193)" />
+   <rect width="10" height="10" x="60" y="0" style="fill:rgb(121,193,68)" />
+</svg>
+</section><section class="well">
+  <h2>Follow Us</h2>
+  <script src="https://apis.google.com/js/platform.js"></script>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+  <div class="g-ytsubscribe" data-channelid="UCYHiZDU0YLN0dWLWSCP1JYQ" data-layout="default" data-count="default"></div>
+  <a href="https://twitter.com/CernerEng?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-screen-name="false" data-show-count="false">Follow @CernerEng</a>
+</section>
+<section class="divider">
+  <svg width="70" height="10">
+   <rect width="10" height="10" x="0" y="0" style="fill:rgb(20,124,193)" />
+   <rect width="10" height="10" x="20" y="0" style="fill:rgb(121,193,68)" />
+   <rect width="10" height="10" x="40" y="0" style="fill:rgb(20,124,193)" />
+   <rect width="10" height="10" x="60" y="0" style="fill:rgb(121,193,68)" />
+</svg>
+</section>
+<section class="well">
+  <h2>GitHub Repos</h2>
+  <ul id="gh_repos" class="nav">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/cerner">@cerner</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'cerner',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  
+<script id="search-results-template" type="text/mustache">
+  {{#entries}}
+    <article class="search-result">
+        <div class="search-meta meta">
+        {{#date}}<time datetime="{{pubdate}}" pubdate>{{displaydate}}</time>{{/date}} | {{author}}
+        </div>
+        <a href="{{url}}">{{title}}</a>
+    </article>
+  {{/entries}}
+</script>
+
+<script type="text/javascript">
+  $(function() {
+    $('#search-query').lunrSearch({
+      indexUrl: '/javascripts/index.json',   // Url for the .json file containing search index data
+      results : '#search-results',  // selector for containing search results element
+      entries : '.entries',         // selector for search entries containing element (contained within results above)
+      template: '#search-results-template'  // selector for Mustache.js template
+    });
+    //Currently ignoring the "return/enter" keystroke when searching (as this would just result in a 404 for the page lookup).
+    $('#search-query').keydown(function(event){
+      if(event.keyCode == 13) {
+        event.preventDefault();
+        return false;
+      }
+    });
+  });
+</script>
+
+  <footer role="contentinfo" class="page-footer">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="span2">
+          <img src="/images/Cerner_White_Horizontal.png" alt="Cerner Logo" />
+      </div>
+      <div class="span10 pull-left">
+          <p>&copy; 2019</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
