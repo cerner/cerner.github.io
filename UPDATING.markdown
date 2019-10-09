@@ -13,7 +13,7 @@ This project contain two branches:
 
 # Running Locally
 
-    rake preview
+    bundle exec rake preview
 
 # Contributors
 
@@ -49,8 +49,8 @@ First, push your changes to the site source
 Next, generate the site content and deploy it to Github
 
     git clone git@github.com:cerner/cerner.github.io.git _deploy
-    rake generate
-    rake deploy
+    bundle exec rake generate
+    bundle exec rake deploy
 
 ### Keeping Up-to-date with the latest Octopress Changes
 
