@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Fall 2016 ShipIt Day - Engineering Health</title>
+  <title>Introducing F-Twelve, an Open Source Dev Console - Engineering Health</title>
   <meta name="author" content="Cerner">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://engineering.cerner.com/blog/fall-2016-shipit-day">
+  <link rel="canonical" href="http://engineering.cerner.com/blog/introducing-f-twelve-an-open-source-dev-console">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -122,7 +122,7 @@
     
   <header class="entry-header">
     
-      <h1 class="entry-title">Fall 2016 ShipIt Day</h1>
+      <h1 class="entry-title">Introducing F-Twelve, an Open Source Dev Console</h1>
     
     
       <div class="entry-meta meta">
@@ -138,12 +138,12 @@
   
 
 
-<time datetime="2016-11-08T00:00:00-06:00" pubdate data-updated="true">Nov 8<span>th</span>, 2016</time> | 
+<time datetime="2019-10-08T00:00:00-05:00" pubdate data-updated="true">Oct 8<span>th</span>, 2019</time> | 
   
 
 
   <span class="byline author vcard">
-    <span class="fn">Melanie Carpenter</span>
+    <span class="fn">Patrick Gross</span>
   </span>
 
 
@@ -153,80 +153,36 @@
   </header>
 
 
-<div class="entry-content"><p>Another ShipIt Day was held on September 8th-9th at the Realization Campus at Cerner. ShipIt is a
-24-hour hackathon with the goal of building something awesome, usable, and value-adding within a
-single day. This fall marked our sixth ShipIt, which has has grown significantly since our first
-event.</p>
+<div class="entry-content"><p>Many modern web browsers come with tools that can help developers debug their websites. If you are using Google Chrome or Firefox for example, try pressing F12. A new panel should open containing various tools. These tools provide a look “under the hood” for the current page. Common tools include a JavaScript console, JavaScript debugger, DOM explorer, network request viewer, performance profile, local storage manager, and more.</p>
 
-<p><img class="center" src="/assets/2016-11-08-fall-2016-shipit-day/shipit-sign.jpg" title="Announcement" ></p>
+<p>Usually these tools are just a keypress away, but some environments don’t have browser tools. Alternate options exist such as Windows F12 chooser (which inspired the name F-Twelve) and Firebug Lite. These are nice but neither of them is a perfect solution. The former requires a certain version of Windows and the latter has not been updated in over 6 years. The kicker is, neither work inside an embedded IE frame. We ran into this issue while developing a <a href="https://fhir.cerner.com/">SMART on FHIR</a> application. Local development in a web browser would go smoothly but then we’d deploy to our test environment which used an embedded IE frame and it would not work. This was frustrating because it gave absolutely no indication of what the issue could be. It was typically either a blank white screen, or an eternal loading icon. The only way to troubleshoot was making a guess, adding alert calls, redeploying, and hoping it had something useful. This situation was occurring frequently and very inhibiting to development. We didn’t have access to F12, so we wrote our own JavaScript tool, F-Twelve.</p>
 
-<p>The event kicked off in the morning at the auditorium of our Realization campus. At this point,
-teams were already formed, instructions were given, and shirts were handed out. This ShipIt day came
-with cool new t-shirts for all participants featuring the ShipIt squirrel (<a href="https://www.quora.com/GitHub-What-is-the-significance-of-the-Ship-It-squirrel">inspired by GitHub</a>)!</p>
+<p>The initial version was simply a div at the bottom of the page that would print window.onerror events and anything sent to console.log. The functionality was very limited, but it solved our problem of being able to identify errors. Since then we have cleaned up the UI and added functionality.</p>
 
-<p><img class="center" src="/assets/2016-11-08-fall-2016-shipit-day/shipit-squirrel-shirt.jpg" title="ShipIt shirt" ></p>
+<p>Current features include:</p>
 
-<p>Teams broke out to their work spaces and got to work on their projects. One team, <strong>LearnStack</strong>,
-decided to focus their project on associate development. The judges greatly appreciated their
-approach to this very real problem, and decided to award them the third place prize.</p>
+<ul>
+<li>Display console output (log, info, warn, error)</li>
+<li>Evaluate expressions from console input</li>
+<li>Hide or show the tool via keyboard shortcut</li>
+</ul>
 
-<p><strong>LearnStack</strong> &ndash; Jake LaCombe, Daniel Stucky, Sujay Sudheendra</p>
 
-<blockquote><p>Developers can get to a struggling point when they try to increase their experience level. Sure,
-getting started with any language can be very easy to do. Rails for example has their
-<a href="https://www.railstutorial.org/">impressive tutorial from Michael Hartl</a> for getting started
-with the framework. However, what happens when you
-get done with those beginning steps? What does it take to go from a beginner to an intermediate
-Rails developer, and then again from Intermediate to Advanced?</p>
+<p>For security reasons the console input does not execute arbitrary code, it can only parse and evaluate variables (e.g. window.location).</p>
 
-<p>The answer here is LearnStack. LearnStack takes a list of resources that are recommended by other
-developers, and rated appropriately based on the experience level of the material. Developers can
-easily share resources related to beginner, intermediate, and advanced knowledge of a particular
-language, process, framework, or whatever it may be. No need to keep doing endless searches online
-to figure out how to get to the next level! Let LearnStack point you to the resources you need!”</p></blockquote>
+<p>Potential features for the future include:</p>
 
-<p>Another team decided to tackle the time it takes to provision a virtual machine. This team called
-themselves, &ldquo;All your base are belong to us,&rdquo; and they were awarded second place.</p>
+<ul>
+<li>DOM explorer</li>
+<li>Network request viewer</li>
+<li>Debugger</li>
+<li>(Any other Dev Tools features)</li>
+</ul>
 
-<p><strong>All your base are belong to us</strong> &ndash; Chris Soukup, Alex Harder, Ben Hemphill</p>
 
-<blockquote><p>The current situation for OS image creation is that it is done infrequently, in an ad-hoc manner,
-with little consistency among the various hypervisors. This means that we take the base image and
-then use <a href="https://www.chef.io/">Chef</a> to upgrade the image to the desired state. This adds significant
-amounts of time to the process of provisioning a virtual machine.</p>
+<p>The project is still very young and the functionality that it has now is just the tip of the iceberg. The end goal is ultimately to provide all the functionality of modern browser’s Dev Tools without the need for a modern browser.</p>
 
-<p>Our project was to use <a href="https://www.packer.io/">Packer</a> to create a generic image with all of the
-universal settings that we set with our base OS Chef recipe. This image can then be distributed to all
-the hypervisors and made available to consumers. Since the image would be generated regularly, the
-provisioning time could be significantly decreased by not having to immediately upgrade the system. Additionally,
-since the universal settings are already applied, we save considerable amounts of time on the OS preparation
-as well. We took provisioning time for a RedHat 7.2 <a href="https://www.openstack.org/">OpenStack</a> VM from 12 minutes,
-50 seconds to 4 minutes, 1 second, a 320% decrease in time!</p>
-
-<p>Future enhancements will allow us to automatically generate these images, distribute them, and make
-them available to consumers. This will allow a consuming team to naturally stay current on OS
-patches at provisioning time, decrease the human effort in creating these OS images, and provide a
-consistent experience for teams across Vagrant, VMWare, OpenStack, EC2, Docker, etc.”</p></blockquote>
-
-<p>For the first time we had a unanimous winner for both the judges and the participant winners. The
-<strong>206 Partial Content</strong> team not only won two giant tubs of cheese balls, but also the all important
-<a href="/blog/shipit-hackathon-mplus/">Golden Keyboard</a> and bragging rights
-until the next ShipIt Day. <strong>206 Partial Content</strong> decided to solve a problem to &ldquo;enable solution designers,
-engineers, and grandparents to easily create, stage, and process data for testing scenarios required for
-verification without being dependent on upstream processing or rules.&rdquo;</p>
-
-<p><strong>206 Partial Content</strong> &ndash; Madhur Sikri, Ian Kottman, Venkatesh Sridharan, Andy Nelson, Brian van de
-Boogard</p>
-
-<blockquote><p>Our project was primarily driven by two rock star engineers on our team, Ian Kottman and Brian van
-de Boogaard. We coined our project Sinecure, which means a position requiring little or no work but
-giving the holder status or financial benefit. The goal of the project was to find a solution to
-creating test data more easily and efficiently for anyone on our team to consume.”</p></blockquote>
-
-<p>Thanks to all who participated and congratulations to our winners. Until next time, at ShipIt VII in
-December!</p>
-
-<p><img class="center" src="/assets/2016-11-08-fall-2016-shipit-day/shipit-winners.jpg" title="Winners" ></p>
+<p>If you want to contribute or learn more about the tool, check out <a href="https://github.com/cerner/f-twelve">the code</a> or try the <a href="https://engineering.cerner.com/f-twelve/demo/">live demo</a>.</p>
 </div>
 
 
@@ -249,13 +205,10 @@ December!</p>
     <ul class="pager">
       
       <li class="previous"><a class="basic-alignment left"
-        href="/blog/building-a-unified-ui-component-library/" title="Previous Post:
-        Building a Unified UI Component Library: Lessons Learned">&laquo; Previous Post</a></li>
+        href="/blog/carbon-graphs-open-source-visualization-api/" title="Previous Post:
+        Carbon Graphs: An Open Source Visualization API">&laquo; Previous Post</a></li>
       
       <li><a href="/blog/archives">Blog Archives</a></li>
-      
-      <li class="next"><a class="basic-alignment right" href="/blog/clara-rules-joins-cerner-open-source/"
-        title="Next Post: Clara Rules joins Cerner's open source">Next Post &raquo;</a></li>
       
     </ul>
   </footer>
