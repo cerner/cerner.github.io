@@ -2,12 +2,11 @@
 layout: post
 title: "Terra UI: A Health-Care focused UI Component Library"
 author: Brett Jankord
-date: 2019-10-24
+date: 2019-10-25
 tags: [engineering, oss]
 ---
 
 <div align="center">
-
   <table>
     <tr>
       <td align="center">
