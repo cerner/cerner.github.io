@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Jwala Joins Cerner's Open Source - Engineering Health</title>
+  <title>Terra UI: A Health-Care Focused UI Component Library - Engineering Health</title>
   <meta name="author" content="Cerner">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://engineering.cerner.com/blog/jwala-joins-cerner-open-source">
+  <link rel="canonical" href="http://engineering.cerner.com/blog/terra-ui">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -122,7 +122,7 @@
     
   <header class="entry-header">
     
-      <h1 class="entry-title">Jwala Joins Cerner's Open Source</h1>
+      <h1 class="entry-title">Terra UI: A Health-Care Focused UI Component Library</h1>
     
     
       <div class="entry-meta meta">
@@ -138,12 +138,12 @@
   
 
 
-<time datetime="2017-09-27T00:00:00-05:00" pubdate data-updated="true">Sep 27<span>th</span>, 2017</time> | 
+<time datetime="2019-10-25T00:00:00-05:00" pubdate data-updated="true">Oct 25<span>th</span>, 2019</time> | 
   
 
 
   <span class="byline author vcard">
-    <span class="fn">Arvindo Kinny</span>
+    <span class="fn">Brett Jankord</span>
   </span>
 
 
@@ -153,21 +153,62 @@
   </header>
 
 
-<div class="entry-content"><h3>Introducing Jwala, a Resource Manager for the Apache Community</h3>
+<div class="entry-content"><div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="/assets/2019-10-24-terra-ui/terra-ui-1.png" width="200"><br>
+      </td>
+    </tr>
+  </table>
+</div>
 
-<p><a href="http://tomcat.apache.org/">Apache Tomcat</a> and <a href="https://httpd.apache.org/">Apache httpd</a> are hardened, scalable, and reliable open-source solutions. Widely adopted, these solutions are commonly used to host and load-balance Java applications.</p>
 
-<p>Configuring and managing a small set of elements is relatively easy, but once you start scaling out your application and platform, things get complicated. Questions such as &ldquo;How do I update the heap or database pool-size across hundreds of Java Virtual Machines (JVMs)?&rdquo; arise. Although commercial solutions exist to solve this and other similar problems, an open-source solution was not available &ndash; until now.</p>
+<p>Back in 2013, like most other companies, Cerner was heavily invested in building user interfaces with Twitter Bootstrap. Around that time, <a href="https://daverupert.com/2013/04/responsive-deliverables/">Dave Rupert wrote about the concept of Responsive Deliverables</a> and touched on a key concept, creating “Tiny Bootstraps, for Every Client”. Along with this, Brad Frost had started promoting the idea of <a href="http://atomicdesign.bradfrost.com/">Atomic Design</a>. We saw a lot of value in these ideas and saw that we needed to evolve how we were developing UI at Cerner. We could see that Bootstrap was no longer meeting our needs and we felt we needed to start the process of building our own &ldquo;tiny bootstrap&rdquo;.</p>
 
-<p>Originally designed and developed to accommodate Cerner&rsquo;s complex topologies, Jwala was developed to automate deploying our web applications here at Cerner. Now Cerner is donating Jwala as open source. Making contributions to development communities is an important part of Cerner&rsquo;s engineering culture. We love it when we&rsquo;re able to give back to the community, and we&rsquo;re sure you&rsquo;ll love Jwala!</p>
+<p>A small team was formed to begin work on a project named “Terra” to establish a component library for reusable UI patterns needed in our health care applications. We begin work building responsive, accessible, and internationalized components. The work was very similar to Twitter Bootstrap, but tailored to our specific needs at Cerner. We found great success and adoption with this new project but as tech evolved, we found our jQuery based UI components were showing a bit of age.</p>
 
-<p>A Cerner platform based on Apache Tomcat and Apache httpd, Jwala enables the configuration, deployment, and management of logical groups of Tomcat JVMs load-balanced by Apache web servers.</p>
+<p>Fast-forward a few years, ReactJS and ES2015 had started to grow in popularity. At Cerner, we started to see more and more teams developing solutions with ReactJS. We could see that if we wanted to continue to provide consistent UI solutions that incorporated responsive design, accessibility, and internationalization concerns, we needed to evolve our component library.</p>
 
-<p>With Jwala you can configure, deploy, and manage your large-scale Tomcat and Apache httpd topology at an enterprise scale. You can create and persist definitions of Group instances that include web applications, JVMs, web servers, and other resources, and expose them through a RESTful interface, Jwala&rsquo;s REST API, to perform management operations on the group.</p>
+<p>We took this as an opportunity to build something new and share it with a wider audience. We decided to build a new version of our component library and base it on ReactJS. We also decided we wanted to make the project open source so anyone could help contribute to it. Today, we have a wide offering of UI components with a focus on health care applications in our open source component library, <a href="https://engineering.cerner.com/terra-ui/">Terra UI</a>.</p>
 
-<p>Jwala utilizes a defined file system structure and Secure Shell (SSH) agents on each machine to manage running Tomcat instances on remote servers. Jwala&rsquo;s application deployment model knows how to request current status from each Tomcat and httpd instance. Jwala also is able to update each instance as changes are made to the configuration and allows maintenance operations to be executed from a central console. Last but not least, Jwala maintains an audit log of all the operations or changes performed on any of its managed resources.</p>
+<h2>Who is Terra UI for?</h2>
 
-<p>So, if you are someone in development, operations, or management looking for an easier way to configure and manage a large Tomcat topology, <a href="https://github.com/cerner/jwala">check out Jwala</a>.</p>
+<p>Terra UI is developed with the goal of helping consumers (including many app teams across Cerner, as well as external consumers in the open-source community) focus their efforts towards higher-level app concerns. We&rsquo;ve leveraged the expertise of our UX team to create attractive and intuitive UI components that provide a consistent look and feel backed by usability research. Additionally, we&rsquo;ve put a heavy focus into abstracting styling, accessibility, responsive design, cross-browser support, and internationalization considerations into our components so that consumers can get their projects up and running quickly. Cerner is utilizing Terra UI for healthcare web applications at scale with great success. We&rsquo;re proud to make it available to other via open source and we hope you&rsquo;ll check it out. Keep reading below to learn more about how you can consume and/or contribute to Terra UI.</p>
+
+<h2>Terra UI Ecosystem</h2>
+
+<p>The <a href="https://engineering.cerner.com/terra-ui/">Terra UI</a> ecosystem covers three types of components.</p>
+
+<h3><a href="https://github.com/cerner/terra-core">Terra Core</a></h3>
+
+<p>A repository containing a collection of common UI components ranging from buttons, to alerts, to form components, and more needed for building accessible, responsive, and internationalized applications.</p>
+
+<h3><a href="https://github.com/cerner/terra-framework">Terra Framework</a></h3>
+
+<p>A repository that contains higher-order and composable UI components that build on top of terra-core components that help with application layout concerns and progressive disclosures.</p>
+
+<h3><a href="https://github.com/cerner/terra-clinical">Terra Clinical</a></h3>
+
+<p>A repository that includes clinically focused UI components that build on top of terra-core.</p>
+
+<h3>Additional Terra Packages</h3>
+
+<p>Along with our component repositories, we provide webpack configuration and testing utilities via <a href="https://github.com/cerner/terra-toolkit">terra-toolkit</a>, linter configs for <a href="https://github.com/cerner/stylelint-config-terra">stylelint</a> and <a href="https://github.com/cerner/eslint-config-terra">eslint</a>, a component doc site webpack plugin via <a href="https://github.com/cerner/terra-dev-site">terra-dev-site</a>, and <a href="https://github.com/cerner/terra-aggregate-translations">tooling to help aggregate application translations</a>.</p>
+
+<h2>Getting Started</h2>
+
+<p>To get started, we recommend checking out <a href="https://engineering.cerner.com/terra-ui/getting-started/terra-ui/installing-components">our guide to installing your first Terra UI component</a>.</p>
+
+<h2>Contributions</h2>
+
+<p>We welcome contributions to <a href="https://engineering.cerner.com/terra-ui/">Terra UI</a>. Check our <a href="https://github.com/issues?utf8=%E2%9C%93&amp;q=is%3Aopen+is%3Aissue+archived%3Afalse+repo%3Acerner%2Fduplicate-package-checker-webpack-plugin+repo%3Acerner%2Fterra-aggregate-translations+repo%3Acerner%2Fterra-clinical+repo%3Acerner%2Fterra-core+repo%3Acerner%2Fterra-dev-site+repo%3Acerner%2Fterra-enzyme-intl+repo%3Acerner%2Fterra-framework+repo%3Acerner%2Fterra-toolkit+repo%3Acerner%2Fgenerator-terra-module+repo%3Acerner%2Feslint-config-terra+repo%3Acerner%2Fstylelint-config-terra+repo%3Acerner%2Fbrowserslist-config-terra+repo%3Acerner%2Fterra-ui">Github issues</a> for ways you can get started with contributing, and be sure to <a href="https://engineering.cerner.com/terra-ui/contributing/terra-ui/prerequisites">check out our contribution guidelines</a>.</p>
+
+<ul>
+<li>NPM: <a href="https://www.npmjs.com/search?q=keywords%3ACerner%20Terra">https://www.npmjs.com/search?q=keywords%3ACerner%20Terra</a></li>
+<li>Site: <a href="https://engineering.cerner.com/terra-ui/">https://engineering.cerner.com/terra-ui/</a></li>
+</ul>
+
 </div>
 
 
@@ -190,13 +231,10 @@
     <ul class="pager">
       
       <li class="previous"><a class="basic-alignment left"
-        href="/blog/engineers-overseas-for-smart-and-fhir/" title="Previous Post:
-        Engineers Overseas for SMART and FHIR (FHIR DevDays 2016)">&laquo; Previous Post</a></li>
+        href="/blog/introducing-f-twelve-an-open-source-dev-console/" title="Previous Post:
+        Introducing F-Twelve, an Open Source Dev Console">&laquo; Previous Post</a></li>
       
       <li><a href="/blog/archives">Blog Archives</a></li>
-      
-      <li class="next"><a class="basic-alignment right" href="/blog/accessibility-and-usability-on-the-road-to-great-ux/"
-        title="Next Post: Accessibility and Usability: On the Road to Great UX">Next Post &raquo;</a></li>
       
     </ul>
   </footer>

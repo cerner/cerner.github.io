@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2019-10-10T13:09:29-05:00</updated>
+  <updated>2019-10-25T09:23:42-05:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,70 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Terra UI: A Health-Care Focused UI Component Library]]></title>
+    <link href="http://engineering.cerner.com/blog/terra-ui/"/>
+    <updated>2019-10-25T00:00:00-05:00</updated>
+    <id>http://engineering.cerner.com/blog/terra-ui</id>
+    <content type="html"><![CDATA[<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="http://engineering.cerner.com/assets/2019-10-24-terra-ui/terra-ui-1.png" width="200"><br>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<p>Back in 2013, like most other companies, Cerner was heavily invested in building user interfaces with Twitter Bootstrap. Around that time, <a href="https://daverupert.com/2013/04/responsive-deliverables/">Dave Rupert wrote about the concept of Responsive Deliverables</a> and touched on a key concept, creating “Tiny Bootstraps, for Every Client”. Along with this, Brad Frost had started promoting the idea of <a href="http://atomicdesign.bradfrost.com/">Atomic Design</a>. We saw a lot of value in these ideas and saw that we needed to evolve how we were developing UI at Cerner. We could see that Bootstrap was no longer meeting our needs and we felt we needed to start the process of building our own &ldquo;tiny bootstrap&rdquo;.</p>
+
+<p>A small team was formed to begin work on a project named “Terra” to establish a component library for reusable UI patterns needed in our health care applications. We begin work building responsive, accessible, and internationalized components. The work was very similar to Twitter Bootstrap, but tailored to our specific needs at Cerner. We found great success and adoption with this new project but as tech evolved, we found our jQuery based UI components were showing a bit of age.</p>
+
+<p>Fast-forward a few years, ReactJS and ES2015 had started to grow in popularity. At Cerner, we started to see more and more teams developing solutions with ReactJS. We could see that if we wanted to continue to provide consistent UI solutions that incorporated responsive design, accessibility, and internationalization concerns, we needed to evolve our component library.</p>
+
+<p>We took this as an opportunity to build something new and share it with a wider audience. We decided to build a new version of our component library and base it on ReactJS. We also decided we wanted to make the project open source so anyone could help contribute to it. Today, we have a wide offering of UI components with a focus on health care applications in our open source component library, <a href="https://engineering.cerner.com/terra-ui/">Terra UI</a>.</p>
+
+<h2>Who is Terra UI for?</h2>
+
+<p>Terra UI is developed with the goal of helping consumers (including many app teams across Cerner, as well as external consumers in the open-source community) focus their efforts towards higher-level app concerns. We&rsquo;ve leveraged the expertise of our UX team to create attractive and intuitive UI components that provide a consistent look and feel backed by usability research. Additionally, we&rsquo;ve put a heavy focus into abstracting styling, accessibility, responsive design, cross-browser support, and internationalization considerations into our components so that consumers can get their projects up and running quickly. Cerner is utilizing Terra UI for healthcare web applications at scale with great success. We&rsquo;re proud to make it available to other via open source and we hope you&rsquo;ll check it out. Keep reading below to learn more about how you can consume and/or contribute to Terra UI.</p>
+
+<h2>Terra UI Ecosystem</h2>
+
+<p>The <a href="https://engineering.cerner.com/terra-ui/">Terra UI</a> ecosystem covers three types of components.</p>
+
+<h3><a href="https://github.com/cerner/terra-core">Terra Core</a></h3>
+
+<p>A repository containing a collection of common UI components ranging from buttons, to alerts, to form components, and more needed for building accessible, responsive, and internationalized applications.</p>
+
+<h3><a href="https://github.com/cerner/terra-framework">Terra Framework</a></h3>
+
+<p>A repository that contains higher-order and composable UI components that build on top of terra-core components that help with application layout concerns and progressive disclosures.</p>
+
+<h3><a href="https://github.com/cerner/terra-clinical">Terra Clinical</a></h3>
+
+<p>A repository that includes clinically focused UI components that build on top of terra-core.</p>
+
+<h3>Additional Terra Packages</h3>
+
+<p>Along with our component repositories, we provide webpack configuration and testing utilities via <a href="https://github.com/cerner/terra-toolkit">terra-toolkit</a>, linter configs for <a href="https://github.com/cerner/stylelint-config-terra">stylelint</a> and <a href="https://github.com/cerner/eslint-config-terra">eslint</a>, a component doc site webpack plugin via <a href="https://github.com/cerner/terra-dev-site">terra-dev-site</a>, and <a href="https://github.com/cerner/terra-aggregate-translations">tooling to help aggregate application translations</a>.</p>
+
+<h2>Getting Started</h2>
+
+<p>To get started, we recommend checking out <a href="https://engineering.cerner.com/terra-ui/getting-started/terra-ui/installing-components">our guide to installing your first Terra UI component</a>.</p>
+
+<h2>Contributions</h2>
+
+<p>We welcome contributions to <a href="https://engineering.cerner.com/terra-ui/">Terra UI</a>. Check our <a href="https://github.com/issues?utf8=%E2%9C%93&amp;q=is%3Aopen+is%3Aissue+archived%3Afalse+repo%3Acerner%2Fduplicate-package-checker-webpack-plugin+repo%3Acerner%2Fterra-aggregate-translations+repo%3Acerner%2Fterra-clinical+repo%3Acerner%2Fterra-core+repo%3Acerner%2Fterra-dev-site+repo%3Acerner%2Fterra-enzyme-intl+repo%3Acerner%2Fterra-framework+repo%3Acerner%2Fterra-toolkit+repo%3Acerner%2Fgenerator-terra-module+repo%3Acerner%2Feslint-config-terra+repo%3Acerner%2Fstylelint-config-terra+repo%3Acerner%2Fbrowserslist-config-terra+repo%3Acerner%2Fterra-ui">Github issues</a> for ways you can get started with contributing, and be sure to <a href="https://engineering.cerner.com/terra-ui/contributing/terra-ui/prerequisites">check out our contribution guidelines</a>.</p>
+
+<ul>
+<li>NPM: <a href="https://www.npmjs.com/search?q=keywords%3ACerner%20Terra">https://www.npmjs.com/search?q=keywords%3ACerner%20Terra</a></li>
+<li>Site: <a href="https://engineering.cerner.com/terra-ui/">https://engineering.cerner.com/terra-ui/</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Introducing F-Twelve, an Open Source Dev Console]]></title>
@@ -2057,89 +2121,6 @@ Cerner has welcomed three intern groups in Kansas City and one in Malvern, with 
   </tr>
 </table>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Code Reviews: There Is a Better Way]]></title>
-    <link href="http://engineering.cerner.com/blog/code-reviews-there-is-a-better-way/"/>
-    <updated>2018-05-08T00:00:00-05:00</updated>
-    <id>http://engineering.cerner.com/blog/code-reviews-there-is-a-better-way</id>
-    <content type="html"><![CDATA[<p>At Cerner, peer review of code is an important job. We have found it to greatly improve the quality of code and improve a team’s knowledge of the codebase. Through code review discussions, newer engineers are able to learn on valuable areas to question or challenge when something is being changed. While we heavily embrace the practice of peer code review, we also recognize it can make an engineer’s life challenging when you are overwhelmed with code to review. Furthermore, it can be large source of project delay when points of coordination are not managed well. In this blog, we will cover some tactics that you can apply to improve how you approach code reviews.</p>
-
-<h2>Smaller code reviews are better code reviews</h2>
-
-<table cellpadding="5">
-  <tr>
-    <td>
-      <div class='pull-left' markdown="1">
-        The first step of making a code review inviting for others to provide feedback, is by making the scope of the review small. This generally requires thought and planning on how to incrementally present code for review, allowing each review to be smaller in size which can be safely included into the codebase in isolation. This can ultimately help morale of a team by avoiding monster-size reviews from being stagnate, and never reaching a point of completion due to amount of work necessary to review or the length of feedback that exists. By having the review small, a laser set of focus can be achieved to promptly and effectively complete the review, providing a positive reinforcement of being able to also complete the work.
-      </div>
-    </td>
-    <td>
-      <img class="center" src="http://engineering.cerner.com/assets/2018-05-08-code-reviews-there-is-a-better-way/code-review-size.png">
-    </td>
-  </tr>
-</table>
-
-
-<h2>Have machines filter what code qualifies for review</h2>
-
-<table cellpadding="5">
-  <tr>
-    <td>
-      <div class='pull-left' markdown="1">
-        We recently had a &#8220;GitHub Day&#8221; at our Innovations campus, where GitHub and other Cerner engineers shared how to improve your use of source code management. In these presentations, a quote was shared that rang true:
-        <blockquote><p>We are more receptive to feedback from pedantic robots than pedantic people.</p></blockquote>
-        When it comes to a code review, it is easy to point out simple flaws in the code which relates to formatting or basic anti-patterns in a given language. However, should humans be spending time on these types of issues in a code review? Machines are well suited for testing code through linters and static analysis, where formatting rules and known bad patterns can be quickly identified. By focusing on having your CI system do these types of tests on your code, and failing your build when formatting problems emerge, you now have a filter which blocks a large set of noise from entering into a code review. As a result, humans don’t engage in a code review until the code actually builds (which would encompass both static and dynamic forms of tests). Furthermore, it is easier to receive these minor points from a machine (a bot which is communicating the results of your build), versus having a team member spend time pointing out all the minor things you forgot to check or format correctly. In the end, humans apply their creative mind on discussing deeper topics on the design and intentions of the code, versus getting distracted with noise of simple things that can be addressed earlier by machines.
-      </div>
-    </td>
-    <td>
-      <img class="center" src="http://engineering.cerner.com/assets/2018-05-08-code-reviews-there-is-a-better-way/code-review-human-bot.png">
-    </td>
-  </tr>
-</table>
-
-
-<h2>Agreed upon conventions</h2>
-
-<table cellpadding="5">
-  <tr>
-    <td>
-      <div class='pull-left' markdown="1">
-        Building upon the previous point, teams should have agreed upon conventions on things like style and code formatting, so that those things can be automatically found (and even fixed with the proper tooling).  This eliminates the propensity for style/formatting comments in code reviews which detract from the actual purpose of finding substantive issues within the code. If you find code styling questions or debates are occurring in the code review, ensure the team comes to an agreement on the convention, and that styling rule gets fed into your linter (ex. CheckStyle, Rubocop, IDE formatters) to avoid it from entering into a code review again. Furthermore, this helps reinforce the “boy scout rule”: Always leave the campground cleaner than you found it. By having your linter now embrace this new formatting rule, existing codebases that you start changing in the future will be invited to be updated as well, versus allowing the drift to continue to occur.
-      </div>
-    </td>
-    <td>
-      <img class="center" src="http://engineering.cerner.com/assets/2018-05-08-code-reviews-there-is-a-better-way/code-review-conventions.png">
-    </td>
-  </tr>
-</table>
-
-
-<h2>&ldquo;How I would have done it&rdquo;</h2>
-
-<p>When comments emerge on a code review which are being conveyed as opinions, like “I’d have done it this way,” this can detract the focus of the code review away from correctness and more on personal preferences. In this section we will discuss two challenges when including personal preferences in code reviews: the distractions and how they can be interpreted.</p>
-
-<h3>Distraction on personal preferences</h3>
-
-<p>While personal preferences may help the readability of the code (based on the viewer), it is also important to provide the larger “why” when sharing opinions. When multiple opinions are being shared within the review, it may invite for a larger debate that might simply derail the ultimate focus of the code review. As a result, the code review may languish and not be completed due to the debate of opinions.</p>
-
-<h3>Accidental preference becoming &ldquo;law&rdquo;</h3>
-
-<p>When opinions like this are shared, especially when communicated from someone more senior on the team, their opinion may be viewed as “law”. In that, it is simply accepted by the engineer to apply the change because the source of the opinion carries a large amount of weight in the discussion. However, it is expected that no personal preference would simply be applied without additional thought and reason. When personal preferences are brought up in a review, it is best to capture and understand the “why” versus assuming the opinion is simply true or accepting it as its face value.</p>
-
-<h2>Moderator</h2>
-
-<p>All code reviews should have a moderator for the review to ensure the review doesn’t get off track (discussing items not applicable to the review, circular discussions, personal preference comments, etc).  The moderator isn’t necessarily an engineer reviewing the code, but could be the technical project manager for the project where the code resides.  The moderator is also responsible for ensuring comments are addressed and the review is closed when appropriate.</p>
-
-<h2>Review agility</h2>
-
-<p>Code reviews should be given priority, as the author is being blocked waiting for the review to be completed.  In order to achieve review agility, code reviews must be small (as mentioned above), so that reviewers are able to process the content of the review and provide substantive feedback easily. In order to give reviews priority, your team should actively work to ensure people are planning accordingly when they are assigned to reviews. Based on the expertise on the team, it is not uncommon for some team members to become a bottleneck on the team due to amount of code reviews that are assigned to them. It is important for the team to identify this issue, and ensure the team is growing other team members to shed the load of reviews by building up the expertise.</p>
-
-<h2>Conclusion</h2>
-
-<p>While peer code reviews are a crucial component of our software development process, they also require evaluation on how they can be improved. These are simply a few tactics that can be applied to help improve how you approach code reviews. As with the Agile process, we want to continuously improve how we build software, and by focusing on how to improve this process, you can ultimately improve the quality and delivery time of your software.</p>
 ]]></content>
   </entry>
   
