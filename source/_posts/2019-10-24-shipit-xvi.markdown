@@ -25,7 +25,7 @@ During this 24-hour event, the team created a capacity meter for Cerner’s DC/O
 
 The code as well as additional notes on the project can be found in the public GitHub repository: https://github.com/mboveri/dcos_meter.
 
-{% img center /assets/2019-10-24-shipit-xvi/shipit-xvi-2.gif 600px %}
+{% img center /assets/2019-10-24-shipit-xvi/shipit-xvi-2.png 600px %}
 
 ### Meter Metrics
 
