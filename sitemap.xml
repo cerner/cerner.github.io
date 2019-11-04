@@ -394,15 +394,19 @@
     </url>
     <url>
         <loc>http://engineering.cerner.com/blog/terra-ui/</loc>
-        <lastmod>2019-10-25T09:22:09-05:00</lastmod>
+        <lastmod>2019-11-04T15:21:18-06:00</lastmod>
+    </url>
+    <url>
+        <loc>http://engineering.cerner.com/blog/shipit-xvi/</loc>
+        <lastmod>2019-11-04T15:21:22-06:00</lastmod>
     </url>
     <url>
         <loc>http://engineering.cerner.com/</loc>
-        <lastmod>2019-10-25T09:22:09-05:00</lastmod>
+        <lastmod>2019-11-04T15:21:22-06:00</lastmod>
     </url>
     <url>
         <loc>http://engineering.cerner.com/tech_talks/</loc>
-        <lastmod>2019-10-25T09:22:09-05:00</lastmod>
+        <lastmod>2019-11-04T15:21:22-06:00</lastmod>
     </url>
     <url>
         <loc>http://engineering.cerner.com/about/</loc>
@@ -410,11 +414,11 @@
     </url>
     <url>
         <loc>http://engineering.cerner.com/blog/archives/</loc>
-        <lastmod>2019-10-25T09:22:09-05:00</lastmod>
+        <lastmod>2019-11-04T15:21:22-06:00</lastmod>
     </url>
     <url>
         <loc>http://engineering.cerner.com/open_source/</loc>
-        <lastmod>2019-10-25T09:22:09-05:00</lastmod>
+        <lastmod>2019-11-04T15:21:22-06:00</lastmod>
     </url>
     <url>
         <loc>http://engineering.cerner.com/robots.txt</loc>
@@ -422,6 +426,6 @@
     </url>
     <url>
         <loc>http://engineering.cerner.com/culture/</loc>
-        <lastmod>2019-10-25T09:22:09-05:00</lastmod>
+        <lastmod>2019-11-04T15:21:22-06:00</lastmod>
     </url>
 </urlset>

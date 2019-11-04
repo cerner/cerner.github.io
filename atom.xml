@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2019-10-25T09:23:42-05:00</updated>
+  <updated>2019-11-04T15:22:28-06:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,69 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ShipIt Day XVI]]></title>
+    <link href="http://engineering.cerner.com/blog/shipit-xvi/"/>
+    <updated>2019-11-04T00:00:00-06:00</updated>
+    <id>http://engineering.cerner.com/blog/shipit-xvi</id>
+    <content type="html"><![CDATA[<p>Finishing our 16th occurrence of the series, our quarterly ShipIt Day hackathon invites the makers and innovators to come out and share new ways to think about our daily work here at Cerner. Whether it&rsquo;s experimenting with new features or improving our developer workflows, ShipIt Day gives our engineers a chance to try and learn new things. This ShipIt day in particular had some exciting projects that melded hardware and software. Here are the top teams.</p>
+
+<h2>ShipIt Day XVI Winning Project</h2>
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2019-11-04-shipit-xvi/shipit-xvi-1.png" width="600">
+        <sub>Left to Right - Matt Boveri, David Crowder, Sam Livingston, Ian Kottman, Anthony Ross</sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<p>During this 24-hour event, the team created a capacity meter for Cerner’s DC/OS cluster. The focus was to map out the potential for failure within a DC/OS cluster based on hardware constraints: CPU / Memory / Disk space. Every hour the meter will sample the usage and display the currently most used resource. During the live demo seen below, CPU is the most utilized at just under 70%. Colorful LEDs were used to signify which hardware type is currently displayed. As the DC/OS cluster hits 95% a trigger will flash the red LED to alert that the cluster is nearly at capacity.</p>
+
+<p>The code as well as additional notes on the project can be found in the public GitHub repository: <a href="https://github.com/mboveri/dcos_meter.">https://github.com/mboveri/dcos_meter.</a></p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2019-11-04-shipit-xvi/shipit-xvi-2.png" width="600"></p>
+
+<h3>Meter Metrics</h3>
+
+<ul>
+<li>0 &ndash; 70% = Green</li>
+<li>71 &ndash; 85% = Yellow</li>
+<li>86% &ndash; 100% = Red</li>
+<li>At 95%+ Red LED is illuminated</li>
+</ul>
+
+
+<h3>Raspberry Pi Configuration</h3>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2019-11-04-shipit-xvi/shipit-xvi-3.png" width="600"></p>
+
+<p><img class="center" src="http://engineering.cerner.com/assets/2019-11-04-shipit-xvi/shipit-xvi-4.png" width="600"></p>
+
+<h2>Other ShipIt Day Winners</h2>
+
+<p><strong>2nd Place- Sparkling Darlings:</strong> Aakash Pydi, Gunjan Kaphle, James Freeman, Jokongir Rikhsiboev, &amp; Cory Tenbarge</p>
+
+<blockquote><p>In this project, the team worked on prototyping their team&rsquo;s user experience monitoring (UEM) jobs using <a href="https://spark.apache.org">Apache Spark</a>.</p>
+
+<p>The UEM jobs currently run a series of giant aggregation summarizing SQL queries on our <a href="https://www.vertica.com/">Vertica</a> cluster. This leads to issues such as (i) significant lag in data availability, (ii) giant, unintuitive SQL challenging to support and debug, (iii) the addition of significant load to our Vertica cluster, (iv) the load added to Vertica being &lsquo;inefficient&rsquo;.  If these jobs were in Spark, it would be much more efficient, have near real time data availability, and be significantly easier to debug and support. It also could potentially leverage Spark libraries for machine learning and graph processing.</p>
+
+<p>The more general goal is to set up an incremental development and adoption strategy, for a Spark powered aggregation, summarization, and analytics layer in the team&rsquo;s data architecture. This will be an immensely valuable tool in the team&rsquo;s arsenal.</p></blockquote>
+
+<p><strong>3rd Place- Syug Looc:</strong> Eric Vue, Minhaz Abdullah, Zach Miller, Tarun Kolla, Sydne Anchutz &amp; Zachary Herridge</p>
+
+<blockquote><p>This project focused on making the <a href="https://engineering.cerner.com/blog/devacademy-six-years-later/">Dev Academy</a> process more accessible to new hires at Cerner. While going through training, there is a very specific development process that associates must follow. The documentation for different parts of this process are currently hosted in multiple locations and sometimes contradicts itself. To fix this, the team developed a Chrome extension. The Chrome extension modeled a checklist to keep track of each step of the process per development task. It also cataloged the instructions and requirements for each step of the process and provided useful links to documentation to minimize errors. There were also quick links that allowed the user to jump between Jira/Crucible/GitHub/Jenkins for each task assigned to them. The use of this extension will make development in the Dev Academy much more efficient and reduce user error.</p></blockquote>
+
+<p><strong>Best Presentation- Shippie-ki-yay Mother FHIR:</strong> Steven Goldberg, Ryan Neff, &amp; Jean Fernandez</p>
+
+<p><strong>Best Team Name- ThunderCats:</strong> Chris Wheeler, Saranath Govindaraju, Vinayak Tare, &amp; Nageswara rao Nandigam</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Terra UI: A Health-Care Focused UI Component Library]]></title>
@@ -2083,44 +2146,6 @@ Renting a uHaul to transport old couches, coffee tables, TV stands, and TV’s w
 <p>Working in the technology industry and never having been to Silicon Valley was surreal. Seeing big company names on the side of buildings and realizing those were the corporate headquarters of companies whose software I have interacted with for years was an experience. One of the nights, I took a trip to the Googleplex to walk around the campus. It was a beautiful campus with trees and flowers everywhere and the weather was amazing. The campus was abuzz with people and activity that you would expect to take place at Google late at night. While walking a thought started forming in my mind around the type of work we do at Cerner. A thought that continued to form later at the conference when I spoke with development teams from various big-name tech companies. It was rewarding to talk about how we are using technology to make healthcare better. These conversations would usually end with the team from the big tech company expressing admiration, respect, and praise for the work we are doing. The Googles, Facebooks, Twitters, and the like are doing interesting things, and it&rsquo;s easy to get distracted by those names, but the problems that we are solving have real impact on the lives of our fellow humans and we shouldn&rsquo;t take that for granted.</p>
 
 <p>SREcon18 was worth the trip, but if you couldn&rsquo;t attend this year&rsquo;s, previous years, or future SREcons you don&rsquo;t need to worry about missing out. Usenix has an open access policy which means that slides, videos, and audio of all the talks are available after of the conference. I strongly recommend reviewing the <a href="https://www.usenix.org/conference/srecon18americas/program">program for this year&rsquo;s conference</a> and watching any of the talks that catch your fancy.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Say Hello to the 2018 Summer Interns]]></title>
-    <link href="http://engineering.cerner.com/blog/say_hello_to_the_2018_summer_interns/"/>
-    <updated>2018-05-24T00:00:00-05:00</updated>
-    <id>http://engineering.cerner.com/blog/say_hello_to_the_2018_summer_interns</id>
-    <content type="html"><![CDATA[<p>Throughout the month of May, teams across Cerner’s Engineering space have welcomed 197 software interns to our campuses in Kansas City and Malvern. Ranging from rising seniors in high school to rising seniors in college, these interns will be working alongside Cerner’s full time engineers to enhance and expand upon their current skillsets.</p>
-
-<p>While interning at Cerner, these associates will experience firsthand the look and feel of a day in the life of a full time software engineer. Potential projects include:</p>
-
-<ul>
-<li>working with data ETL and web technologies to produce analytical dashboards</li>
-<li>working on features and capabilities of our solutions to improve the overall experience of Cerner’s consumer solutions and/or development processes, and</li>
-<li>adding functionality to some cloud-based applications to provide more troubleshooting capabilities.</li>
-</ul>
-
-
-<p>The variety in projects interns will be working on allows for work in a robust development ecosystem using tools like JIRA, Crucible, Github and languages like Java, Javascript, and Ruby. Our interns have opportunities to work on real projects with real world impact in the healthcare space.</p>
-
-<p>In addition to their work, interns will attend a variety of culture and networking events like our internal developers conference, <a href="https://engineering.cerner.com/2013/08/devcon">DevCon</a>, a bi-weekly Tech Speakers Series, an intern-only hackathon, and a family day where interns are encouraged to bring their families to see their work environment and projects.
-Cerner has welcomed three intern groups in Kansas City and one in Malvern, with one more group to start in Kansas City next week. Stay tuned this summer for an in-depth look at a few of the projects our interns work on.</p>
-
-<table cellpadding="5">
-  <tr>
-    <td>
-      <img class="center" src="http://engineering.cerner.com/assets/2018-05-24-say_hello_to_the_2018_summer_interns/interns_1.jpg" width="300">
-    </td>
-    <td>
-      <img class="center" src="http://engineering.cerner.com/assets/2018-05-24-say_hello_to_the_2018_summer_interns/interns_2.jpg" width="300">
-    </td>
-    <td>
-      <img class="center" src="http://engineering.cerner.com/assets/2018-05-24-say_hello_to_the_2018_summer_interns/interns_3.jpg" width="300">
-    </td>
-  </tr>
-</table>
-
 ]]></content>
   </entry>
   
