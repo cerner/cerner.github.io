@@ -2,7 +2,7 @@
 layout: post
 title: "ShipIt Day XVI"
 author: Matt Boveri
-date: 2019-10-24
+date: 2019-11-04
 tags: [engineering, shipit]
 ---
 
@@ -14,7 +14,7 @@ Finishing our 16th occurrence of the series, our quarterly ShipIt Day hackathon 
   <table>
     <tr>
       <td align="center">
-        {% img center /assets/2019-10-24-shipit-xvi/shipit-xvi-1.png 600px %}
+        {% img center /assets/2019-11-04-shipit-xvi/shipit-xvi-1.png 600px %}
         <sub>Left to Right - Matt Boveri, David Crowder, Sam Livingston, Ian Kottman, Anthony Ross</sub>
       </td>
     </tr>
@@ -25,7 +25,7 @@ During this 24-hour event, the team created a capacity meter for Cerner’s DC/O
 
 The code as well as additional notes on the project can be found in the public GitHub repository: https://github.com/mboveri/dcos_meter.
 
-{% img center /assets/2019-10-24-shipit-xvi/shipit-xvi-2.png 600px %}
+{% img center /assets/2019-11-04-shipit-xvi/shipit-xvi-2.png 600px %}
 
 ### Meter Metrics
 
@@ -36,9 +36,9 @@ The code as well as additional notes on the project can be found in the public G
 
 ### Raspberry Pi Configuration
 
-{% img center /assets/2019-10-24-shipit-xvi/shipit-xvi-3.png 600px %}
+{% img center /assets/2019-11-04-shipit-xvi/shipit-xvi-3.png 600px %}
 
-{% img center /assets/2019-10-24-shipit-xvi/shipit-xvi-4.png 600px %}
+{% img center /assets/2019-11-04-shipit-xvi/shipit-xvi-4.png 600px %}
 
 ## Other ShipIt Day Winners
 **2nd Place- Sparkling Darlings:** Aakash Pydi, Gunjan Kaphle, James Freeman, Jokongir Rikhsiboev, & Cory Tenbarge
