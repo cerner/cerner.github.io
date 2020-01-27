@@ -36,7 +36,7 @@ We created the Z3R0 D4Y dashboard (shown below) to help solve this problem.
   <table>
     <tr>
       <td align="center">
-        {% img /assets/2020-01-29-shipit-xvii/dashboard.png %}<br>
+        {% img /assets/2020-01-29-shipit-xvii/dashboard.png %}<br />
       </td>
     </tr>
   </table>
