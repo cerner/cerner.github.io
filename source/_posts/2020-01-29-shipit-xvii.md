@@ -30,17 +30,13 @@ But where can we get this data?
 
 ## Our Solution: Z3R0 D4Y
 
-We created the Z3R0 D4Y dashboard (shown below) to help solve this problem.
+We created the Z3R0 D4Y dashboard (shown below) to help solve this problem. The dashboard gives an overview of different CVEs and which products are affected.
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        {% img /assets/2020-01-29-shipit-xvii/dashboard.png %}<br />
-      </td>
-    </tr>
-  </table>
-</div>
+{% img /assets/2020-01-29-shipit-xvii/Z3R0_D4Y_DASHBOARD_summary_view.png %}<br />
+
+It then allows you to drill in and see details about the affected products. Below is an example of a test app to show a vulnerability.
+
+{% img /assets/2020-01-29-shipit-xvii/Z3R0_D4Y_DASHBOARD_detailed_view.png %}<br />
 
 ## How It Works
 
