@@ -2,7 +2,7 @@
 layout: post
 title: "ShipIt Day XVII"
 author: Caitie Oder
-date: 2020-01-29
+date: 2020-02-17
 tags: [engineering, shipit]
 ---
 
@@ -50,8 +50,6 @@ The dashboard site is a simple Github page that displays all CVEs, their descrip
 
 ### Second Place: nudgers
 
-John Moses, Pat Walsh, Justin Eddings, Anna Luckey
-
 The nudgers teamed up to create a ‘Nudge’ behavior-changing native iOS or Android application that can be quickly delivered to Cerner Associates to begin using. The app has users select a single behavior they’d like to improve upon (drink more water, less screen time, etc), they will manually enter their day’s total, and the app will begin ‘nudging’ them to make small changes based on their entries
 
 <div align="center">
@@ -66,9 +64,8 @@ The nudgers teamed up to create a ‘Nudge’ behavior-changing native iOS or An
 </div>
 
 
-### Third Place: Stop Trying To Make <Cameras> Happen
+### Third Place: Stop Trying To Make &lt;Cameras&gt; Happen
 
-Taylor Clay, Bilal Ahmad, Duncan Dufva
 This team worked on part two of a previous project they had worked on in a ShipIt Day, which is a virtual ICU Mobile Cart. In this hackathon they were able to implement device event listeners, encounter and location device association, conference calling integration, and data calls to the eHospital API.
 
 <div align="center">
