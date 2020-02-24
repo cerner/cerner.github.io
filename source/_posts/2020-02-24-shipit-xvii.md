@@ -2,7 +2,7 @@
 layout: post
 title: "ShipIt Day XVII"
 author: Caitie Oder
-date: 2020-02-17
+date: 2020-02-24
 tags: [engineering, shipit]
 ---
 
@@ -12,7 +12,7 @@ ShipIt Day, Cerner Engineering’s 24-hour hackathon, provides associates an env
   <table>
     <tr>
       <td align="center">
-        {% img center /assets/2020-01-29-shipit-xvii/z3ro_d4y-min.png 600px %}
+        {% img center /assets/2020-02-24-shipit-xvii/z3ro_d4y-min.png 600px %}
         <sub>Left to Right - Sharynne Azhar, Vu Tran, Harish Pendyala, and Jordan Bush</sub>
       </td>
     </tr>
@@ -32,11 +32,11 @@ But where can we get this data?
 
 We created the Z3R0 D4Y dashboard (shown below) to help solve this problem. The dashboard gives an overview of different CVEs and which products are affected.
 
-{% img /assets/2020-01-29-shipit-xvii/Z3R0_D4Y_DASHBOARD_summary_view.png %}<br />
+{% img /assets/2020-02-24-shipit-xvii/Z3R0_D4Y_DASHBOARD_summary_view.png %}<br />
 
 It then allows you to drill in and see details about the affected products. Below is an example of a test app to show a vulnerability.
 
-{% img /assets/2020-01-29-shipit-xvii/Z3R0_D4Y_DASHBOARD_detailed_view.png %}<br />
+{% img /assets/2020-02-24-shipit-xvii/Z3R0_D4Y_DASHBOARD_detailed_view.png %}<br />
 
 ## How It Works
 
@@ -56,7 +56,7 @@ The nudgers teamed up to create a ‘Nudge’ behavior-changing native iOS or An
   <table>
     <tr>
       <td align="center">
-        {% img center /assets/2020-01-29-shipit-xvii/runnerup1.jpg 600px %}
+        {% img center /assets/2020-02-24-shipit-xvii/runnerup1.jpg 600px %}
         <sub>Left to Right - Pat Walsh, Anna Luckey, John Moses, Justin Eddings</sub>
       </td>
     </tr>
@@ -72,7 +72,7 @@ This team worked on part two of a previous project they had worked on in a ShipI
   <table>
     <tr>
       <td align="center">
-        {% img center /assets/2020-01-29-shipit-xvii/runnerup2.jpg 600px %}
+        {% img center /assets/2020-02-24-shipit-xvii/runnerup2.jpg 600px %}
         <sub>Left to Right - Taylor Clay, Bilal Ahmad, Duncan Dufva</sub>
       </td>
     </tr>
