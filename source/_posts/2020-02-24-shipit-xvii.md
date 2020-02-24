@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "ShipIt Day XVII"
-author: Caitie Oder
+author: Sharynne Azhar, Jordan Bush, Harish Pendyala, Vu Tran
 date: 2020-02-24
 tags: [engineering, shipit]
 ---
