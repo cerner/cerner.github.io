@@ -4,7 +4,7 @@
   <title><![CDATA[Engineering Health]]></title>
   <link href="http://engineering.cerner.com/atom.xml" rel="self"/>
   <link href="http://engineering.cerner.com/"/>
-  <updated>2019-11-04T15:22:28-06:00</updated>
+  <updated>2020-02-24T10:43:05-06:00</updated>
   <id>http://engineering.cerner.com/</id>
   <author>
     <name><![CDATA[Cerner]]></name>
@@ -12,6 +12,89 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ShipIt Day XVII]]></title>
+    <link href="http://engineering.cerner.com/blog/shipit-xvii/"/>
+    <updated>2020-02-24T00:00:00-06:00</updated>
+    <id>http://engineering.cerner.com/blog/shipit-xvii</id>
+    <content type="html"><![CDATA[<p>ShipIt Day, Cerner Engineering’s 24-hour hackathon, provides associates an environment to be creative, work on new projects, and network with other associates. This event is one of the many things that sit at the core of our <a href="https://engineering.cerner.com/blog/devculture-team">Engineering Culture</a> at Cerner, and is rapidly growing- now being hosted globally in Romania, Sweden, India, and the UK. In October, our team had the chance to participate in the seventeenth ShipIt Day at Kansas City’s <a href="https://engineering.cerner.com/blog/one-year-calling-innovations-home/">Innovations Campus</a> and managed to take home the Golden Keyboard trophy as the first place team!</p>
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2020-02-24-shipit-xvii/z3ro_d4y-min.png" width="600">
+        <sub>Left to Right - Sharynne Azhar, Vu Tran, Harish Pendyala, and Jordan Bush</sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<h2>Overview</h2>
+
+<p>During this ShipIt challenge, our team&rsquo;s goal is to create a dashboard that tracks newly discovered <a href="https://cve.mitre.org/">CVEs</a> and displays any affected Cerner artifacts. The Z3R0 D4Y dashboard is a centralized place where teams can quickly go to identify and remediate any new security vulnerabilities and threats.</p>
+
+<h2>The Problem</h2>
+
+<p>New security vulnerabilities come up every day and keeping up with the latest updates can be tough. To take a more proactive response, we needed a way to get real-time updates of the latest vulnerabilities and identify which Cerner artifacts are affected.</p>
+
+<p>But where can we get this data?</p>
+
+<h2>Our Solution: Z3R0 D4Y</h2>
+
+<p>We created the Z3R0 D4Y dashboard (shown below) to help solve this problem. The dashboard gives an overview of different CVEs and which products are affected.</p>
+
+<p><img src="http://engineering.cerner.com/assets/2020-02-24-shipit-xvii/Z3R0_D4Y_DASHBOARD_summary_view.png"><br /></p>
+
+<p>It then allows you to drill in and see details about the affected products. Below is an example of a test app to show a vulnerability.</p>
+
+<p><img src="http://engineering.cerner.com/assets/2020-02-24-shipit-xvii/Z3R0_D4Y_DASHBOARD_detailed_view.png"><br /></p>
+
+<h2>How It Works</h2>
+
+<p>The project is comprised of two components: the backend engine and the dashboard site.</p>
+
+<p>The engine subscribes to the National Vulnerability Database (<a href="https://nvd.nist.gov/">NVD</a>). The NVD provides a collection of <a href="https://nvd.nist.gov/vuln/data-feeds#JSON_FEED">data feeds</a> of published vulnerabilities which are updated approximately every two hours. The Z3R0 D4Y engine runs nightly to retrieve the list of most <a href="https://nvd.nist.gov/vuln/data-feeds#JSON_FEED">recently discovered CVEs</a>. The data then is parsed to identify details of the new CVEs and the list of vulnerable dependencies. Using the <a href="https://developer.github.com/v3/">GitHub API</a>,  the engine then checks all of Cerner&rsquo;s artifacts available in Github for matches based on that project’s dependency file. In Ruby, this would be the Gemfile.lock, for example. Finally, it publishes the findings to the Z3R0 D4Y dashboard.</p>
+
+<p>The dashboard site is a simple Github page that displays all CVEs, their description, publish date, and affected artifacts. Its content is updated automatically nightly whenever the engine produces new data. The site also supports sorting and searching across the CVEs and Cerner artifacts data.</p>
+
+<h2>Other ShipIt Day Winners</h2>
+
+<h3>Second Place: nudgers</h3>
+
+<p>The nudgers teamed up to create a ‘Nudge’ behavior-changing native iOS or Android application that can be quickly delivered to Cerner Associates to begin using. The app has users select a single behavior they’d like to improve upon (drink more water, less screen time, etc), they will manually enter their day’s total, and the app will begin ‘nudging’ them to make small changes based on their entries</p>
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2020-02-24-shipit-xvii/runnerup1.jpg" width="600">
+        <sub>Left to Right - Pat Walsh, Anna Luckey, John Moses, Justin Eddings</sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<h3>Third Place: Stop Trying To Make &lt;Cameras&gt; Happen</h3>
+
+<p>This team worked on part two of a previous project they had worked on in a ShipIt Day, which is a virtual ICU Mobile Cart. In this hackathon they were able to implement device event listeners, encounter and location device association, conference calling integration, and data calls to the eHospital API.</p>
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img class="center" src="http://engineering.cerner.com/assets/2020-02-24-shipit-xvii/runnerup2.jpg" width="600">
+        <sub>Left to Right - Taylor Clay, Bilal Ahmad, Duncan Dufva</sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[ShipIt Day XVI]]></title>
@@ -2116,36 +2199,6 @@ Renting a uHaul to transport old couches, coffee tables, TV stands, and TV’s w
 <p>Cerner has many years of experience working with big data. To support big data developers, we made Bunsen open source. Bunsen is a project that makes it easy for developers to explore, transform and analyze FHIR data with Apache Spark. In addition, Cerner recently released a <a href="https://github.com/cerner/bunsen-tutorial">tutorial for getting started with Bunsen</a>. You can <a href="https://engineering.cerner.com/blog/announcing-bunsen-fhir-data-with-apache-spark/">read more about Bunsen on our blog post here</a>.</p>
 
 <p>You can view the Bunsen source code at <a href="https://github.com/cerner/bunsen">https://github.com/cerner/bunsen</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[SREcon18 Recap]]></title>
-    <link href="http://engineering.cerner.com/blog/srecon18-recap/"/>
-    <updated>2018-06-19T00:00:00-05:00</updated>
-    <id>http://engineering.cerner.com/blog/srecon18-recap</id>
-    <content type="html"><![CDATA[<p>This past spring, I had the pleasure of attending <a href="https://www.usenix.org/conference/srecon18americas">SREcon18</a> in Santa Clara, California. If you have never heard about SREcon or the term SRE then let me diverge for a moment to describe. SRE, or Site Reliability Engineer, was coined by Google employees back in 2003 when a team of software engineers were tasked with running a production environment. It&rsquo;s the new hotness in the technology world, so an internet search will turn up a bunch of topics. If you are interested in learning more, I recommend sticking with the more trusted sources:</p>
-
-<ul>
-<li><a href="https://landing.google.com/sre/">Google</a> (an obvious choice)</li>
-<li><a href="https://landing.google.com/sre/book.html">SRE book</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Site_Reliability_Engineering">SRE Wikipedia entry</a></li>
-</ul>
-
-
-<p>Since SRE concepts have been codified, organized, and documented by the creators, the above resources are easy to explore without getting conflicting information from other entities who have taken the ideas and modified them to fit their organization. There is a lot of excitement in the industry around the SRE concept and there&rsquo;s a lot of overlap between SRE and DevOps. Having been working in this industry for a while now, this is a much-needed evolution in the operations and development roles.</p>
-
-<p>SREcon started in 2014, so it is relatively new and is hosted by <a href="https://www.usenix.org/">Usenix Association</a>. Usenix has been hosting technical conferences since 1975 and one of their tenants is to host vendor-neutral events. I have been to a few vendor hosted conferences over the past few years and they are always heavy on the sales and light on the ideas. The sales aspect of these conferences got to the point where I was burned out and looking for something idea based. SREcon was the complete inverse, heavy on the ideas and light on the sales. It fit my need perfectly. My only complaint, and this is minor, was that most of the speakers selected this year were backed by big name tech companies, i.e. Google, Facebook, LinkedIn, Netflix, etc. A fellow attendee I was talking to mentioned that they enjoyed the company diversity this year over previous years, though. Apparently, the tone of the conference in previous years was Google heavy, i.e. &ldquo;This is the Google Way&rdquo; which is not surprising since that&rsquo;s where it all started. The conference was being held in the heart of Silicon Valley therefore, the proximity made it reasonable to have many presenters come from companies in the valley. I fully expect to see more diversity in the coming years. SREcon19 was announced to be held in Brooklyn, NY, so I would not be surprised if there are many east coast companies represented. Additionally, I attended the SREcon Americas conference. Showcasing another aspect of diversity, there are SREcons in Europe/Middle East/Africa and Asia/Australia, so it&rsquo;s become a world-wide conference.</p>
-
-<p>The idea-sharing phenomenon of SREcon played an important role in my decision to attend, since I&rsquo;m leading an automation development team in CernerWorks℠. CernerWorks is Cerner&rsquo;s managed services organization responsible for hosting, managing, and monitoring our client&rsquo;s systems in order to provide the most reliable, highest performing and cost effective delivery of technology services for healthcare. My team is focused on automation in the client aligned systems management space. That&rsquo;s just a fancy way of saying that our focus is on the non-cloud solutions. We are focusing on solution provisioning, configuration management, and upgrades. The work we are doing aligns well with the tenants of SRE, DevOps and other philosophies that have been discussed in the past few years. I am very interested in these philosophies simply because change is hard, especially when it comes to changes in a culture with an established mentality of doing things a certain way. The technical part of our job is easier in my opinion since technology is always changing.</p>
-
-<p>Some of the more interesting sessions I attended talked about patterns and behaviors that we can learn from other industries. For example, the way that firefighters and other first responders react to incidents and the command structures they put in place outline ways that we can improve how we deal with incidents. Having a plan and structure when engaging with an incident has many benefits. It allows you to define what normal operations for your team look like versus what emergency operations looks like. Determining the chain of command and defining pre-set roles that anyone can fit into can help streamline the time to respond and the emergency command hierarchy of the team. Other industries, such as oil and gas refineries, must have strong contingency plans in place in order to not go boom when things go south. There are a lot of patterns, behaviors, and philosophies that we can learn from almost any industry out there if we open our eyes.</p>
-
-<p>A key topic for the conference is learning from failures and mistakes. The idea of a blameless postmortem was discussed at length in multiple talks and conversations. The need for such a thing stems from our human nature to want to assign blame and fault when dealing with problems. But in many ways this type of behavior causes actions to be hidden out of fear of retribution. A blameless postmortem comes from the idea that learning and preventing is more important than assigning blame. <a href="https://codeascraft.com/">Etsy</a>, for example, has an annual award for the employee who&rsquo;s made the biggest mistake. The culture they are building is one where accidents are a source of learning rather than a source of embarrassment. This is quite an interesting concept.</p>
-
-<p>Working in the technology industry and never having been to Silicon Valley was surreal. Seeing big company names on the side of buildings and realizing those were the corporate headquarters of companies whose software I have interacted with for years was an experience. One of the nights, I took a trip to the Googleplex to walk around the campus. It was a beautiful campus with trees and flowers everywhere and the weather was amazing. The campus was abuzz with people and activity that you would expect to take place at Google late at night. While walking a thought started forming in my mind around the type of work we do at Cerner. A thought that continued to form later at the conference when I spoke with development teams from various big-name tech companies. It was rewarding to talk about how we are using technology to make healthcare better. These conversations would usually end with the team from the big tech company expressing admiration, respect, and praise for the work we are doing. The Googles, Facebooks, Twitters, and the like are doing interesting things, and it&rsquo;s easy to get distracted by those names, but the problems that we are solving have real impact on the lives of our fellow humans and we shouldn&rsquo;t take that for granted.</p>
-
-<p>SREcon18 was worth the trip, but if you couldn&rsquo;t attend this year&rsquo;s, previous years, or future SREcons you don&rsquo;t need to worry about missing out. Usenix has an open access policy which means that slides, videos, and audio of all the talks are available after of the conference. I strongly recommend reviewing the <a href="https://www.usenix.org/conference/srecon18americas/program">program for this year&rsquo;s conference</a> and watching any of the talks that catch your fancy.</p>
 ]]></content>
   </entry>
   
