@@ -1,0 +1,56 @@
+baseURL = "https://engineering.cerner.com"
+title = "Engineering Health"
+copyright = "Copyright © 2020"
+paginate = 4
+languageCode = "en"
+DefaultContentLanguage = "en"
+enableInlineShortcodes = true
+footnoteReturnLinkContents = "^"
+googleAnalytics = "UA-37701128-1"
+theme = "eh-theme"
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "culture"
+    name = "Culture"
+    url = "/culture/"
+    weight = 2
+  [[menu.main]]
+    identifier = "open-source"
+    name = "Open Source"
+    url = "/open-source/"
+    weight = 3
+  [[menu.main]]
+    identifier = "tech-talks"
+    name = "Tech Talks"
+    url = "https://www.youtube.com/user/cernereng"
+    weight = 4
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+author = "authors"
+
+[params]
+  author = "Cerner Engineering"
+  description = "a blog by engineers, for engineers"
+  homepageImage = "/images/alan-grace.png"
+  share = true
+  showLanguageSwitcher = false
+
+  [params.social]
+    rss = true
+    twitter = "https://twitter.com/CernerEng"
+    linkedin = "https://www.linkedin.com/company/cerner-corporation"
+    instagram = "https://www.instagram.com/cernercorporation/"
+    github = "https://github.com/cerner"
+
+  [params.prismJS]
+    enable = true
+    theme = "okaidia"
