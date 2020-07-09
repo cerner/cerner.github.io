@@ -15,12 +15,12 @@ Recently, we’ve decided to take another step in the open source journey by rel
 
 ## Project: knife-tar
 
-Source: [https://github.com/cerner/knife-tar]
+Source: https://github.com/cerner/knife-tar
 
 Knife-tar is a [Chef](http://www.getchef.com/chef/) tool for uploading and downloading Chef components from a tar file. It can be used for creating backups of your chef-server or for uploading released Chef artifacts from a repository.
 
 ## Project: scrimp
 
-Source: [https://github.com/cerner/scrimp]
+Source: https://github.com/cerner/scrimp
 
 Scrimp is a tool for interactively testing [Thrift](http://thrift.apache.org/) services in a web browser. It’s meant to fill the same role that browser-based REST clients fill for web services. Given the IDL files for the services, it provides a UI to help construct requests, invoke services, and display formatted responses.

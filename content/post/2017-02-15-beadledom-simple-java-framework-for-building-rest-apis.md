@@ -41,4 +41,4 @@ Here is the complete list of contributors who made Beadledom awesome.
 ### Cookie Cake Time!
 Cerner takes pride in our open source contributions. When teams contribute to the community Cerner rewards them with a cake. Here is the cookie cake for Beadledom.
 
-{% img center /assets/2017-02-15-beadledom-simple-java-framework-for-building-rest-apis/beadledom-01.png Beadledom Cookie Cake %}
+{{< figure src="/images/2017-02-15-beadledom-simple-java-framework-for-building-rest-apis/beadledom-01.png" alt="Beadledom Cookie Cake" >}}

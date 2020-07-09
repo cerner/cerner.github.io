@@ -43,10 +43,6 @@ Last but not least, a winning ShipIt Day team always makes sure to enjoy the eve
 
 {{< figure src="/images/2018-11-16-shipit-xiii/shipit-xiii-6.jpg" >}}
 
-<div align="center">
-   {% img center /assets/2018-11-16-shipit-xiii/shipit-xiii-6.jpg 600px %}
-</div>
-
 This team designed a MS SQL Server database to track files received from clients into _[HealtheIntent](https://www.cerner.com/solutions/population-health-management)_ and determine the latency since the last file arrived, as well as file size. They also created configuration tables to define expected file latency, acceptable thresholds before triggering an alert, and tables to track the people who want to receive an alert.  Feeding off of that data, the team also developed an email alerting service (in C#), [Tableau visualization](https://www.tableau.com/) dashboards for internal project investigations, and a Web UI to manage configurations (using PHP/SQL Server).
 
 ### 3rd Place: Overnight Shippers!

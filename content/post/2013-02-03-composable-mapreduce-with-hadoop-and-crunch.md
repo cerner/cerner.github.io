@@ -4,7 +4,6 @@ authors: ["Ryan Brush"]
 date:   2013-02-03
 tags: [design, engineering]
 permalink: /2013/02/composable-mapreduce-with-hadoop-and-crunch/
-images: ["/images/2013-02-03-composable-mapreduce-with-hadoop-and-crunch/diagram1.png"]
 ---
 
 Most developers know this pattern well: we design a set of schemas to represent our data, and then work with that data via a query language. This works great in most cases, but becomes a challenge as data sets grow to an arbitrary size and complexity. Data sets can become too large to query and update with conventional means.

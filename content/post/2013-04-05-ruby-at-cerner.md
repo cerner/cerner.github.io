@@ -9,7 +9,7 @@ permalink: /2013/04/ruby-at-cerner/
 
 Cerner's journey with Ruby started in the summer of 2009. We selected Ruby on Rails for rapid development of the [Cerner Store](https://store.cerner.com/) to prepare for release at the Cerner Health Conference that year. In three months, with three engineers and a designer, we wrote and released the first version of an e-commerce web application. Two of those engineers, including me, had never worked with Ruby before but quickly realized the power and expressiveness of the language due to resources like [Why's (Poignant) Guide to Ruby](http://mislav.uniqpath.com/poignant-guide/).
 
-{% img center /assets/2013-04-05-ruby-at-cerner/the.foxes-4c.png Chunky bacon! %}
+{{< figure src="/images/2013-04-05-ruby-at-cerner/the.foxes-4c.png" alt="Chunky bacon!" >}}
 
 Our experience with the Cerner Store taught us that Rails led to high productivity. Ruby is a very natural language to write code in and principles like [convention over configuration](http://en.wikipedia.org/wiki/Convention_over_configuration) enabled us to solve our problems instead of spending time wrangling the framework. In addition, we valued the good practices of the Ruby community like easy-to-understand code and thorough unit testing with tools that aren't painful.
 
@@ -25,7 +25,7 @@ We've bolstered our internal Ruby community with lots of documentation and guide
 
 Ruby has quickly become a very important part of Cerner's engineering culture, primarily as the language behind Rails and Chef. An internal Ruby meetup has begun and there have been presentations involving Ruby at our annual Developer Conference.
 
-{% img center /assets/2013-04-05-ruby-at-cerner/ruby-midwest-logo-2013.png Ruby Midwest 2013 Logo %}
+{{< figure src="/images/2013-04-05-ruby-at-cerner/ruby-midwest-logo-2013.png" alt="Ruby Midwest 2013 Logo" >}}
 
 Additionally, we are sponsoring [Ruby Midwest](http://rubymidwest.com/) because we want developers to know that Ruby is highly valued at Cerner. We're also sending a large number of our own associates there to learn.
 

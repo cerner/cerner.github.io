@@ -24,13 +24,13 @@ Dr. Jeff Wall, Director of the Physician Strategy and Medical Specialties organi
 
 The last activity for the day was a Virtual Reality Workshop sponsored by the Cerner Labs team, who focus on the investigation of emerging technologies and how to use those to create new ways of engaging with data. Workshop participants were able to experience a scenario using Virtual Reality (VR) headsets. Small groups led by UX team members replayed the scenario and used the technique of Journey Mapping to lay out the course of the experience, ultimately discovering areas of opportunity for improvement for the scenario. Groups reconvened and shared each of their maps to learn from each other.
 
-{% img center /assets/2017-11-14-celebrating-world-usability-day-at-cerner/ux-vr.jpg %}
+{{< figure src="/images/2017-11-14-celebrating-world-usability-day-at-cerner/ux-vr.jpg" >}}
 
 The day concluded with a public evening meet-up hosted in partnership with the User Experience Professionals Association of Kansas City, a local non-profit organization focused on UX. Attendees were invited to tour the User Experience Lab where the Human Factors Research team conducts usability tests and other research studies. This tour was followed by a design challenge where attendees broke out into teams and collaborated on creating quick solutions to design prompts focused on inclusive design.
  
 Just around the corner from the User Experience Lab at the Innovations campus is a hand-drawn installation of epic proportion about World Usability Day. These 20 ft. long, 10 ft. tall installations of content are created and drawn by UX team members, and will rotate every quarter. Located next to the glass wall is an interactive puzzle also put together by the UX team, highlighting User Experience Vice President, Paul Weaver’s definition of UX: "UX is the nexus between the user and the machine; a combination of design and research that works to perfect human-computer interaction."
 
-{% img center /assets/2017-11-14-celebrating-world-usability-day-at-cerner/ux-glass-wall.jpg %}
+{{< figure src="/images/2017-11-14-celebrating-world-usability-day-at-cerner/ux-glass-wall.jpg" >}}
 
 _Photos by Lai Xu and Kelsey Daly_
 

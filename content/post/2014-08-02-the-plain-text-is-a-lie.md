@@ -39,17 +39,15 @@ Let's start off by demonstrating how text handling can fail, and fail hard. The 
 
 ### UX and web people
 
-
-{% img center /assets/2014-08-02-the-plain-text-is-a-lie/resume.jpeg Resumé Wikipedia article rendered in the wrong encoding %}
+{{< figure src="/images/2014-08-02-the-plain-text-is-a-lie/resume.jpeg" alt="Resumé Wikipedia article rendered in the wrong encoding" >}}
 
 The above image shows the English wikipedia article on <a href="http://en.wikipedia.org/wiki/R%C3%A9sum%C3%A9">Résumés</a> with garbled text. Garbled text can happen if your web pages don't specify an encoding or character set in your markup. Specifying the *wrong* encoding can also cause garbled text. XML and JavaScript need correct character sets too. It's important to note that <em>no error or exception was raised here</em>. The text looks wrong to the user, but the failure happens silently.
 
-
-{% img center /assets/2014-08-02-the-plain-text-is-a-lie/tokyo.jpeg Tokyo Wikipedia article Aramaic translation %}
+{{< figure src="/images/2014-08-02-the-plain-text-is-a-lie/tokyo.jpeg" alt="Tokyo Wikipedia article Aramaic translation" >}}
 
 This [article on Tokyo](http://arc.wikipedia.org/wiki/%DC%9B%DC%98%DC%A9%DC%9D%DC%98) above is displayed in a language (Aramaic) that my fonts don't support. Instead of a symbol, we see a box with a number identifying the un-showable character. If you think that example is too contrived, here is a more commonly used symbol: a [16th note from sheet music](http://www.fileformat.info/info/unicode/char/1d161/browsertest.htm). Many perfectly valid characters are not supported by widely used fonts. Specialized web fonts might not support the characters you need.
 
-{% img center /assets/2014-08-02-the-plain-text-is-a-lie/music.jpeg Music note character test page %}
+{{< figure src="/images/2014-08-02-the-plain-text-is-a-lie/music.jpeg" alt="Music note character test page" >}}
 
 ### API developers
 
@@ -58,7 +56,7 @@ This [article on Tokyo](http://arc.wikipedia.org/wiki/%DC%9B%DC%98%DC%A9%DC%9D%D
 documentAPIClient.getTitle(docID=123)
 ```
 
-{% img center /assets/2014-08-02-the-plain-text-is-a-lie/mojibake1.png Mojibake example 1 %}
+{{< figure src="/images/2014-08-02-the-plain-text-is-a-lie/mojibake1.png" alt="Mojibake example 1" >}}
 
 The result of this API call (<a href="http://en.wikipedia.org/wiki/Mojibake#Example">example source</a>) is similar to the last two examples: nonsense text. This can happen if the client and server use different text encodings. By the way, this situation happens so often that there's a term for it: [Mojibake](https://en.wikipedia.org/wiki/Mojibake).
 
@@ -69,13 +67,13 @@ Here are some client/server scenarios resulting in Mojibake:
 
 ### DBAs
 
-{% img center /assets/2014-08-02-the-plain-text-is-a-lie/mojibake2.png Mojibake example 2 %}
+{{< figure src="/images/2014-08-02-the-plain-text-is-a-lie/mojibake2.png" alt="Mojibake example 2" >}}
 
 Database systems can be misconfigured such that characters sent to the database are not stored accurately. In this example, the offending characters are replaced with the imaginatively-named *Replacement Character* ("�"). The original characters are forever lost. Worse still, replacement characters will be returned by your queries and ultimately shown to your users. Sometimes, offending characters will be omitted from the stored value or replaced with a nearest match supported character. In both scenarios the database has mangled the original data.
 
 ### App developers
 
-{% img center /assets/2014-08-02-the-plain-text-is-a-lie/stack-trace.png Unicode encoding error traceback %}
+{{< figure src="/images/2014-08-02-the-plain-text-is-a-lie/stack-trace.png" alt="Unicode encoding error traceback" >}}
 
 ```scala
 org.scalatest.exceptions.TestFailedException: "d[Ã©]funt" did not equal "d[é]funt"
@@ -95,7 +93,7 @@ Your source code, web pages, properties files, and any other text artifact you w
 
 You've seen examples of failure and (hopefully) are wondering how such failures can be avoided. To avoid failure you must ask yourself one question: "Can my system store and transmit a ghost?"
 
-{% img center /assets/2014-08-02-the-plain-text-is-a-lie/ghost.png GHOST unicode character %}
+{{< figure src="/images/2014-08-02-the-plain-text-is-a-lie/ghost.png" alt="GHOST unicode character" >}}
 
 *GHOST* (code point [U+1F47B](http://codepoints.net/U+1F47B)) is a valid (albeit weird) part of the [Unicode](http://www.unicode.org/standard/WhatIsUnicode.html) standard. Unicode is a system of storing and manipulating text that supports thousands of languages.  Using Unicode properly will go a long way to prevent text handling problems. Thus, if your system can store, transmit, read and write GHOST then you're doing it right. But how to handle this GHOST?
 
@@ -129,7 +127,7 @@ Now that you've got the necessary terminology under your belt, let's prevent tex
 
 *Analogy credit*: [Ned Batchelder](http://nedbatchelder.com/) coined the Unicode sandwich analogy in his [Pragmatic Unicode](http://nedbatchelder.com/text/unipain.html) presentation at PyCon 2012 ([video](http://youtu.be/sgHbC6udIqc)). It's so clever that I can't resist re-using it in this article!
 
-  {% img center /assets/2014-08-02-the-plain-text-is-a-lie/unicode-sandwich.png The unicode sandwich %}
+  {{< figure src="/images/2014-08-02-the-plain-text-is-a-lie/unicode-sandwich.png" alt="The unicode sandwich" >}}
   <a href="http://www.flickr.com/photos/nofeel/4106942084/">Original image</a>
 
 
@@ -199,7 +197,7 @@ To make things interesting, let's pretend we are inventing how computers will ha
 
 Our challenge is to invent how computers handle text. Morse code is an encoding that pre-dates digital computers but provides a model for our approach: Each character has a transmission sequence of dots and dashes to represent it. We'll need to make a few changes and additions though...
 
-{% img center /assets/2014-08-02-the-plain-text-is-a-lie/morse-code.png Morse code %}
+{{< figure src="/images/2014-08-02-the-plain-text-is-a-lie/morse-code.png" alt="Morse code" >}}
 <a href="http://commons.wikimedia.org/wiki/File:International_Morse_Code.svg">Image source</a>
 
 
@@ -217,7 +215,7 @@ That's 96 printable characters and some control characters for a total of 128 ch
 
 ASCII forms the root influence of many text encodings still used today. In fact, at one time ASCII was the law: U.S. President Lyndon B. Johnson <a href="http://www.presidency.ucsb.edu/ws/index.php?pid=28724">mandated</a> that all computers purchased by the United States federal government support ASCII in 1968.
 
-{% img center /assets/2014-08-02-the-plain-text-is-a-lie/johnson.jpg President Lyndon Johnson %}
+{{< figure src="/images/2014-08-02-the-plain-text-is-a-lie/johnson.jpg" alt="President Lyndon Johnson" >}}
 <a href="http://commons.wikimedia.org/wiki/File:37_Lyndon_Johnson_3x4.jpg">Image source</a>
 
 ### International and OEM standards: Supporting other languages
@@ -230,7 +228,7 @@ For each block, we can keep the first 128 characters as-is from ASCII (identical
 
 A bunch of countries in Western Europe use the same latin alphabet plus special [diacritics](http://en.wikipedia.org/wiki/Diacritic) (also known as <em>accent marks</em>) like ü or é or ß. In fact, we can pack enough extra characters in those last 128 slots to support 29 other languages like Afrikaans, German, Swahili and Icelandic. Our Western European language block encoding is ready! We call this type of encoding a single-byte encoding because every character is represented by exactly one byte.
 
-{% img center /assets/2014-08-02-the-plain-text-is-a-lie/1252.png Windows 1252 code page %}
+{{< figure src="/images/2014-08-02-the-plain-text-is-a-lie/1252.png" alt="Windows 1252 code page" >}}
 <a href="https://commons.wikimedia.org/wiki/File:Windows-1252.svg">Image source</a>
 
 #### Additional single byte encodings for other language blocks
@@ -260,7 +258,7 @@ Enter Unicode.
 
 ## Unicode: One standard to rule them all
 
-{% img center /assets/2014-08-02-the-plain-text-is-a-lie/ring.png The ring of power %}
+{{< figure src="/images/2014-08-02-the-plain-text-is-a-lie/ring.png" alt="The ring of power" >}}
 <a href="http://commons.wikimedia.org/wiki/File:Unico_Anello.png">Image source</a>
 
 As mentioned earlier, Unicode is a single standard supporting thousands of languages. Unicode addresses the limitations of byte encodings by operating at a higher level than simple byte representations of characters. The foundation of Unicode is an über list of symbols chosen by a multinational committee.

@@ -72,7 +72,7 @@ plt.axis("off")
 plt.show()
 ```
 
-{% img center /assets/2016-09-28-devcon-word-cloud/word_cloud.png Word Cloud %}
+{{< figure src="/images/2016-09-28-devcon-word-cloud/word_cloud.png" alt="Word Cloud" >}}
 
 
 Success! It is obvious what some of the most common themes are, such as "data" and "team". Possible future steps for cleaning up the data would be grouping noun phrases, such as "software engineer" into single words or possibly removing common spelling mistakes using a spell checking library like [PyEnchant](https://pythonhosted.org/pyenchant/).

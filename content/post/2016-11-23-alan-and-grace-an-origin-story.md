@@ -6,7 +6,7 @@ date: 2016-11-23
 tags: [engineering]
 ---
 
-{% img center /assets/2016-11-23-alan-and-grace-an-origin-story/alan-grace.png Alan and Grace %}
+{{< figure src="/images/2016-11-23-alan-and-grace-an-origin-story/alan-grace.png" alt="Alan and Grace" >}}
 
 Meet Alan and Grace. These lighthearted, 8-bit characters were nominated in
 early 2014 to become the iconic mascots of Engineering at Cerner. Have you ever
@@ -16,7 +16,8 @@ countless hours spent pondering these questions will be no more. Pull up a
 chair as we dive into the mystery behind the dynamic duo known as Alan and
 Grace.
 
-{% img center /assets/2016-11-23-alan-and-grace-an-origin-story/shirt-laptop.png Laptop and t-shirt %}
+<!-- TODO: Center -->
+{{< figure src="/images/2016-11-23-alan-and-grace-an-origin-story/shirt-laptop.png" alt="Laptop and t-shirt" >}}
 
 Believe it or not, the enjoyable pair highlighted on a myriad of our engineering
 materials were named after two real life innovators: Alan Turing and Grace
@@ -25,7 +26,8 @@ that shaped the computer science innovations of today. These icons were chosen
 based on their contributions to computer science and the moxie they showed while
 doing it.
 
-{% img center /assets/2016-11-23-alan-and-grace-an-origin-story/alan-8bit.png Alan %}
+<!-- TODO: Center -->
+{{< figure src="/images/2016-11-23-alan-and-grace-an-origin-story/alan-8bit.png" alt="Alan" >}}
 
 Alan, our spiky haired friend who embodies an 80’s meets hipster vibe, is named
 after the English mathematician Alan Mathison Turing (1912-1954). Turing is
@@ -43,16 +45,12 @@ loosely based on the biography Alan Turing: The Enigma. It can be argued that
 computer science would not be what it is today without the mathematical
 imagination of Alan Turing. Cue the mic drop now.
 
-<div align="center">
-{% img left /assets/2016-11-23-alan-and-grace-an-origin-story/alan-turing.jpg Alan %}
-{% img right /assets/2016-11-23-alan-and-grace-an-origin-story/turing-machine.jpg Turing Machine %}
-
-<sub>Sources: <a href="http://www.alanturing.net/turing_archive/graphics/photos%20of%20Turing/pages/alan1_psd.htm">alanturing.net</a>, <a href="http://worldnews.nbcnews.com/_news/2013/12/23/22025978-queen-pardons-computing-giant-alan-turing-59-years-after-his-suicide">nbcnews.com</a></sub>
-</div>
+{{< figure src="/images/2016-11-23-alan-and-grace-an-origin-story/alan-turing.jpg" alt="Alan" attr="alanturing.net" attrlink="http://www.alanturing.net/turing_archive/graphics/photos%20of%20Turing/pages/alan1_psd.htm">}}
+{{< figure src="/images/2016-11-23-alan-and-grace-an-origin-story/turing-machine.jpg" alt="Turing Machine" attr="nbcnews.com" attrlink="http://worldnews.nbcnews.com/_news/2013/12/23/22025978-queen-pardons-computing-giant-alan-turing-59-years-after-his-suicide" >}}
 
 ___
 
-{% img center /assets/2016-11-23-alan-and-grace-an-origin-story/grace-8bit.png Grace %}
+{{< figure src="/images/2016-11-23-alan-and-grace-an-origin-story/grace-8bit.png" alt="Grace" >}}
 
 Cerner Engineering’s jovial female mascot appears as if she’s ready to take on
 the world. The fearless spirit of the mascot encompases the nature of its muse
@@ -74,16 +72,13 @@ Computing Conference, the University of Missouri’s computer museum “Grace’
 Place”, and now Cerner’s Engineering mascot. Grace continues to serve as an
 inspiration to women in tech everywhere. Was there any other choice?
 
-<div align="center">
-{% img left /assets/2016-11-23-alan-and-grace-an-origin-story/grace-hopper.jpg Grace Hopper %}
-{% img right /assets/2016-11-23-alan-and-grace-an-origin-story/grace-hopper-2.jpg Grace Hopper %}
-
-<sub>Sources: <a href="http://www.womenatworkmuseum.org/envision-engineering.html">womenatworkmuseum.org</a>, <a href="https://en.wikipedia.org/wiki/Grace_Hopper">wikipedia.org</a></sub>
-</div>
+{{< figure src="/images/2016-11-23-alan-and-grace-an-origin-story/grace-hopper.jpg" alt="Grace Hopper" attr="womenatworkmuseum.org" attrlink="http://www.womenatworkmuseum.org/envision-engineering.html">}}
+{{< figure src="/images/2016-11-23-alan-and-grace-an-origin-story/grace-hopper-2.jpg" alt="Grace Hopper" attr="wikipedia.org" attrlink="https://en.wikipedia.org/wiki/Grace_Hopper" >}}
 
 Alan and Grace represent a beacon of inspiration, providing icons that
 encapsulate and promote a culture of innovation, forward thinking, and just
 plain fun. The creation of mascots Alan and Grace has been a big win for the
 passionate Cerner engineers dedicated to fostering Cerner’s Engineering culture.
 
-{% img center /assets/2016-11-23-alan-and-grace-an-origin-story/alan-grace-2.png Alan and Grace %}
+<!-- TODO: Center -->
+{{< figure src="/images/2016-11-23-alan-and-grace-an-origin-story/alan-grace-2.png" alt="Alan and Grace" >}}

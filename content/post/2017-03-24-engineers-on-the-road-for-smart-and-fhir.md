@@ -16,11 +16,11 @@ This past November offered up two exciting opportunities to provide hands-on ins
 
 The Code Learning Lab was run from November 14th - 17th in Kansas City with our annual CHC conference. The goal: give developers a hands-on training session with the different APIs that are part of the Cerner Open Developer Experience (_code_). One of the tracks covered SMART and FHIR specifically, while another went over some of the APIs available with our HealtheIntent and HealtheLife platforms. 
 
-{% img center /assets/2017-03-24-engineers-on-the-road-for-smart-and-fhir/smart-and-fhir-01.jpg %}
+{{< figure src="/images/2017-03-24-engineers-on-the-road-for-smart-and-fhir/smart-and-fhir-01.jpg" >}}
 
 We saw participation from many of our clients and partners, from both the US and Canada. Over the four days, the lab was in the format of an overview or "lecture" followed by a longer hands-on lab to put what participants were learning to use. During the labs, our engineers would walk around to check on how everyone was doing, answer questions, and help troubleshoot.
 
-{% img center /assets/2017-03-24-engineers-on-the-road-for-smart-and-fhir/smart-and-fhir-02.jpg %}
+{{< figure src="/images/2017-03-24-engineers-on-the-road-for-smart-and-fhir/smart-and-fhir-02.jpg" >}}
 
 We received a lot of comments and excitement from everyone participating around the fact that our engineering team itself was involved in the learning lab. It was also very exciting for the engineering team to watch everyone try out our newer developer tools, read our documentation, and then put it to practice. Not only were the participants able to actually see the data coming back, but there were a lot of conversations that occurred that will help us improve the class (and our tooling) in the future to make the event better. In the end, it was a great experience for everyone involved!
 

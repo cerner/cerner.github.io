@@ -39,7 +39,7 @@ Which prints a table like this:
 from bunsen.stu3.valuesets import push_valuesets, valueset, isa_loinc, isa_snomed
 
 push_valuesets(spark,
-               {'ldl'          : isa_loinc('18262-6'), # Loads LOINC descendants         
+               {'ldl'          : isa_loinc('18262-6'), # Loads LOINC descendants
                 'hdl'          : isa_loinc('2085-9'),
                 'hypertension' : isa_snomed('38341003'), # Loads SNOMED descendants
                 # Loaded from a FHIR ValueSet resource
@@ -72,11 +72,11 @@ It's worth looking at what's going on here: in a few lines of SQL, we are going 
 ### FHIR Data in Columnar Storage
 Users see a clear catalog of FHIR datasets, but something important is happening behind the scenes. Most data stores or serialization encodings like JSON keep data in a row-wise format. This means all columns from a given record are physically adjacent on disk, like this:
 
- {% img center /assets/2018-07-02-data-engineering-with-bunsen/row-wise.png 600px %}
+ {{< figure src="/images/2018-07-02-data-engineering-with-bunsen/row-wise.png" >}}
 
 This is a good fit for many workloads, but often not for analysis at scale. For instance, we may want to query the "code" column of several billion observation rows, and retrieve only those in a certain valueset. This is more efficient if columns are grouped together, like this:
 
-{% img center /assets/2018-07-02-data-engineering-with-bunsen/columnar.png 600px %}
+{{< figure src="/images/2018-07-02-data-engineering-with-bunsen/columnar.png" >}}
 
 This is completely transparent to the user; she simply sees FHIR data from the specification.
 

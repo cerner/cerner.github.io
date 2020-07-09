@@ -11,13 +11,13 @@ Another ShipIt Day was held on September 8th-9th at the Realization Campus at Ce
 single day. This fall marked our sixth ShipIt, which has has grown significantly since our first
 event.
 
-{% img center /assets/2016-11-08-fall-2016-shipit-day/shipit-sign.jpg Announcement %}
+{{< figure src="/images/2016-11-08-fall-2016-shipit-day/shipit-sign.jpg" alt="Announcement" >}}
 
 The event kicked off in the morning at the auditorium of our Realization campus. At this point,
 teams were already formed, instructions were given, and shirts were handed out. This ShipIt day came
 with cool new t-shirts for all participants featuring the ShipIt squirrel ([inspired by GitHub](https://www.quora.com/GitHub-What-is-the-significance-of-the-Ship-It-squirrel))!
 
-{% img center /assets/2016-11-08-fall-2016-shipit-day/shipit-squirrel-shirt.jpg ShipIt shirt %}
+{{< figure src="/images/2016-11-08-fall-2016-shipit-day/shipit-squirrel-shirt.jpg" alt="ShipIt shirt" >}}
 
 Teams broke out to their work spaces and got to work on their projects. One team, **LearnStack**,
 decided to focus their project on associate development. The judges greatly appreciated their
@@ -79,4 +79,4 @@ creating test data more easily and efficiently for anyone on our team to consume
 Thanks to all who participated and congratulations to our winners. Until next time, at ShipIt VII in
 December!
 
-{% img center /assets/2016-11-08-fall-2016-shipit-day/shipit-winners.jpg Winners %}
+{{< figure src="/images/2016-11-08-fall-2016-shipit-day/shipit-winners.jpg" alt="Winners" >}}

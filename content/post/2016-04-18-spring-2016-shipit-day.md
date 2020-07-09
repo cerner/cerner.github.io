@@ -9,7 +9,7 @@ tags: [culture, engineering, hackathon, shipit]
 ShipIt Day is an all day, all night hackathon with the goal of building something awesome, usable, and value-adding
 within the given 24 hours. This Spring marked our fifth ShipIt Day, with participation and reach growing with each
 event.
- 
+
 We kicked off the event at 10 AM on Thursday, when teams broke out and got to work and stopped only for food and
 caffeine. Many stayed until a few hours after dinner arrived, several stayed all night and took naps in their workspace,
 and a few worked through the whole night. The event was initially announced early in February, to give teams time to
@@ -19,7 +19,7 @@ Each team was free to choose the project they wanted to work on, with the limita
 something which can be deployed somewhere in 24 hours (there were bonus points involved for deployed projects).  The
 winning prize not only included bragging rights, but also the _Golden Keyboard_, which will be a traveling trophy.
 
-{% img center /assets/2016-04-18-spring-2016-shipit-day/shipit-start.png Kickoff %}
+{{< figure src="/images/2016-04-18-spring-2016-shipit-day/shipit-start.png" alt="Kickoff" >}}
 
 The event wrapped up on April 1st at Continuous Campus. We had over 50 participants from nine different organizations
 split into teams. They survived several April Fools pranks, two cases of [Monster](https://www.monsterenergy.com/), and 18 extra large pizzas before
@@ -36,7 +36,7 @@ the remark,
 
 The people’s choice votes were tallied and judges decided on the top three winners.
 
-{% img center /assets/2016-04-18-spring-2016-shipit-day/shipit-judging.png Judging %}
+{{< figure src="/images/2016-04-18-spring-2016-shipit-day/shipit-judging.png" alt="Judging" >}}
 
 # Winning Projects
 
@@ -68,7 +68,7 @@ troubleshooting of timers.  Currently the application supports [Splunk](http://w
 checkpoint CSV files, or produce timers real-time as a Millennium application sends checkpoint data to it.  After timers
 have been produced, the user can inspect the composition of the timer by exposing checkpoints, incomplete timers, and
 chronological representation of a timer and other timers which may have affected it in a Gantt chart.
- 
+
 This application will improve the accuracy of timer definitions developed, improve speed of development on engineering,
 and empower engineers to develop and troubleshoot their timers without depending on the entire RTMS framework.
 
@@ -78,7 +78,7 @@ Wolfe Packe (Bryan Baugher, Micah Whitacre, Christian Duranleau, Michael Barker,
 > Kafkaesque is a Web UI to help manage and operate [Apache Kafka](http://kafka.apache.org/). It provides insightful statistics about topics,
 partitions and brokers and is able to balance and re-assign partitions to different brokers.
 
-{% img center /assets/2016-04-18-spring-2016-shipit-day/shipit-awards.png 550 Awards%}
+{{< figure src="/images/2016-04-18-spring-2016-shipit-day/shipit-awards.png" alt="Awards" >}}
 
 ShipIt Day has become an incredibly valuable experience for participants, giving them a chance to not only focus on
 projects that they wouldn’t normally have time for, but allowing them to meet people from other teams (in different

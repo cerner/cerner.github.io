@@ -15,18 +15,8 @@ So how do we do it? We have teams dedicated to security that work directly withi
 
 We also take advantage of opportunities like Cybersecurity Awareness month. We bridge organizational gaps to host a variety of security focused events, engaging associates in development, security, and operations to facilitate better relationships and collaboration. Events like these lower the barrier to entry for our developers to learn more secure practices, and embrace and celebrate the progress we are making in our security journey. We kicked off the activities this month with an external tech talk from [Britney Hommertzheim](https://twitter.com/bhommertzheim). Britney, the Director of Information Security at [AMC Theatres](https://www.amctheatres.com), presented on how we can better integrate security teams and developers. It was a great talk and you can watch the talk on our [YouTube](https://youtu.be/DTYiNidFjzM) channel. We invited another external speaker for our Cybersecurity meetup a few weeks ago too. Caleb Christopher, a Technical Business Adviser at [Allegiant Technology](https://www.allegianttechnology.com), gave a great talk titled "Defeating Email Fraud with DMARC". Along side those 2 events, we have held lunch and learns throughout the month, and are wrapping it all up with an hour of security focused lightning talks tomorrow.
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        {% img center /assets/2018-10-29-culture-of-cybersecurity/cybersecurity-3.jpg 450px %}
-      </td>
-      <td align="center">
-        {% img center /assets/2018-10-29-culture-of-cybersecurity/cybersecurity-4.jpg 450px %}
-      </td>
-    </tr>
-  </table>
-  <sub>Britney Hommertzheim giving an external tech talk about integrating security across organizations</sub>
-</div>
+{{< figure src="/images/2018-10-29-culture-of-cybersecurity/cybersecurity-3.jpg" caption="Britney Hommertzheim giving an external tech talk about integrating security across organizations">}}
+<!-- TODO: Didn't make sense to have the same caption twice but the image is mostly the same just 2 different views. Might need a new way to show 2 images -->
+{{< figure src="/images/2018-10-29-culture-of-cybersecurity/cybersecurity-4.jpg" >}}
 
 Security is not easy and we always have to strive to get better. Our development, operations, and security teams must work together, so we are doing our best to provide a forum for collaboration and sharing.

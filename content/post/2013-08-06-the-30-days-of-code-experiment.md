@@ -17,7 +17,7 @@ At the end of the talk, we announced the challenge: 30 days of code. It was a ch
 
 To make this a social learning experience, we built a Ruby web application called "mural" using async_sinatra and eventmachine to consume our GitHub Enterprise instance and show gists, which contained a code comment of "30_days_of_code". The result was really interesting. Similar to Twitter, where you follow a specific hashtag, we were following code snippets of fellow developers. Since most of them were gists, they were small enough so you could easily see what they were doing (without having to go through a mountain of code). With this dashboard, a score was calculated based on count of your posts and was displayed with your avatar. Having scores displayed in descending order added a little peer pressure to keep people active in challenge.
 
-{% img center /assets/2013-08-06-the-30-days-of-code-experiment/30-Days-of-Code.png '30 Days of Code' %}
+{{< figure src="/images/2013-08-06-the-30-days-of-code-experiment/30-Days-of-Code.png" alt="'30 Days of Code'" >}}
 
 By the time I got back to my desk, I received questions of where the URL was to see the app, so they could verify their posts were showing. Soon, people wanted GitHub repos to show up with gists, so a pull request was requested for that. We then wanted anonymous gists to also get pulled in, which required developing our own crawler since these were exposed on the gist search. It was apparent that people wanted to share what they were doing, and people wanted to see it.
 

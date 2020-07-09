@@ -8,37 +8,36 @@ tags: [engineering, jenkins]
 
 **Pipeline-as-code** or defining the deployment pipeline through code rather than manual job creation through UI, provides tremendous benefits for teams automating builds and deployment infrastructure across their environments.
 
-{% img center /assets/2018-09-20-ssh-steps-for-jenkins-pipeline/jenkins-pipeline.png 800px %}
-
-_Source of image: [https://jenkins.io/doc/book/pipeline/](https://jenkins.io/doc/book/pipeline/)_
+{{< figure src="/images/2018-09-20-ssh-steps-for-jenkins-pipeline/jenkins-pipeline.png" attr="Source of image" attrlink="https://jenkins.io/doc/book/pipeline/" >}}
 
 # Jenkins Pipelines
 
-[Jenkins](https://jenkins.io/) is a well-known open source continuous integration and continuous deployment automation tool. With the latest 2.0 release, Jenkins introduced the Workflow plugin that implements Pipeline-as-code. This plugin lets you define delivery pipelines using concise scripts which deal elegantly with jobs involving persistence and asynchrony. 
+[Jenkins](https://jenkins.io/) is a well-known open source continuous integration and continuous deployment automation tool. With the latest 2.0 release, Jenkins introduced the Workflow plugin that implements Pipeline-as-code. This plugin lets you define delivery pipelines using concise scripts which deal elegantly with jobs involving persistence and asynchrony.
 
-The Pipeline-as-code's script is also known as a _Jenkinsfile_. 
+The Pipeline-as-code's script is also known as a _Jenkinsfile_.
 
 Jenkinsfiles uses a domain specific language syntax based on the [Groovy](http://groovy-lang.org/) programming language. They are persistent files which can be checked in and version-controlled along with the rest of their project source code. This file can contain the complete set of encoded steps (steps, nodes, and stages) necessary to define the entire application life-cycle, becoming the intersecting point between development and operations.
 
-## Missing piece of the puzzle 
+## Missing piece of the puzzle
 
 One of the most common steps defined in a basic pipeline workflow is the _Deploy_ step. The deployment stage encompasses everything from publishing build artifacts to pushing code into pre-production and production environments. This deployment stage usually involves both development and operations teams logging onto various remote nodes to run commands and/or scripts to deploy code and configuration. While there are a couple of existing ssh plugins for Jenkins, they currently don't support the functionality such as logging into nodes for pipelines. Thus, there was a need for a plugin that supports these steps.
 
 # Introducing SSH Steps
 
-{% img center /assets/2018-09-20-ssh-steps-for-jenkins-pipeline/jenkins-ssh-steps-plugin.png %}
+<!-- TODO: Center -->
+{{< figure src="/images/2018-09-20-ssh-steps-for-jenkins-pipeline/jenkins-ssh-steps-plugin.png" >}}
 
 Recently, our team consisting of [Gabe Henkes](https://github.com/ghenkes), [Wuchen Wang](https://github.com/wuchenwang) and [myself](https://github.com/nrayapati) started working on a project to automate deployments through Jenkins pipelines to help facilitate running commands on over one thousand nodes. We looked at several options including existing plugins, internal shared Jenkins libraries, and others. In the end, we felt it was best to create and open source a plugin to fill this gap so that it can be used across Cerner and beyond.
 
-The initial version of this new plugin SSH Steps supports the following: 
+The initial version of this new plugin SSH Steps supports the following:
 
-* `sshCommand`: Executes the given command on a remote node. 
-* `sshScript`: Executes the given shell script on a remote node. 
-* `sshGet`: Gets a file/directory from the remote node to current workspace. 
-* `sshPut`: Puts a file/directory from the current workspace to remote node. 
+* `sshCommand`: Executes the given command on a remote node.
+* `sshScript`: Executes the given shell script on a remote node.
+* `sshGet`: Gets a file/directory from the remote node to current workspace.
+* `sshPut`: Puts a file/directory from the current workspace to remote node.
 * `sshRemove`: Removes a file/directory from the remote node.
 
-## Usage 
+## Usage
 
 Below is a simple demonstration on how to use above steps. More documentation can be found on [GitHub](https://github.com/jenkinsci/ssh-steps-plugin/blob/master/README.adoc).
 
@@ -49,7 +48,7 @@ remote.host = "node.abc.com"
 remote.allowAnyHosts = true
 
 node {
-    withCredentials([usernamePassword(credentialsId: 'sshUserAcct', passwordVariable: 'password', usernameVariable: 'userName')]) {    
+    withCredentials([usernamePassword(credentialsId: 'sshUserAcct', passwordVariable: 'password', usernameVariable: 'userName')]) {
         remote.user = userName
         remote.password = password
 
@@ -181,10 +180,10 @@ node {
 
 An example execution of the above pipeline code in Blue Ocean looks like this:
 
-{% img center /assets/2018-09-20-ssh-steps-for-jenkins-pipeline/jenkins-ssh-deploy.png 600px %}
+{{< figure src="/images/2018-09-20-ssh-steps-for-jenkins-pipeline/jenkins-ssh-deploy.png" >}}
 
 ## Wrapping up
 
-Steps from the [SSH Steps Plugin](https://github.com/jenkinsci/ssh-steps-plugin) are deliberately generic enough that they can be used for various other use-cases as well, not just for deploying code. Using SSH Steps has significantly reduced the time we spend on deployments and has given us the possibility of easily scaling our deployment workflows to various environments. 
+Steps from the [SSH Steps Plugin](https://github.com/jenkinsci/ssh-steps-plugin) are deliberately generic enough that they can be used for various other use-cases as well, not just for deploying code. Using SSH Steps has significantly reduced the time we spend on deployments and has given us the possibility of easily scaling our deployment workflows to various environments.
 
 Help us make this [plugin](https://github.com/jenkinsci/ssh-steps-plugin) better by contributing. Whether it is adding or suggesting a new feature, bug fixes, or simply improving documentation, contributions are always welcome.

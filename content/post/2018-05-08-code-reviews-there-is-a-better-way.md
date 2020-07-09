@@ -10,6 +10,7 @@ At Cerner, peer review of code is an important job. We have found it to greatly 
 
 ## Smaller code reviews are better code reviews
 
+<!-- TODO These are a unique format. Its basically an array/media using a fit right and fill left for the text -->
 <table cellpadding="5">
   <tr>
     <td>
@@ -18,7 +19,7 @@ At Cerner, peer review of code is an important job. We have found it to greatly 
       </div>
     </td>
     <td>
-      {% img center /assets/2018-05-08-code-reviews-there-is-a-better-way/code-review-size.png %}
+      {{< figure src="/images/2018-05-08-code-reviews-there-is-a-better-way/code-review-size.png" >}}
     </td>
   </tr>
 </table>
@@ -35,7 +36,7 @@ At Cerner, peer review of code is an important job. We have found it to greatly 
       </div>
     </td>
     <td>
-      {% img center /assets/2018-05-08-code-reviews-there-is-a-better-way/code-review-human-bot.png %}
+      {{< figure src="/images/2018-05-08-code-reviews-there-is-a-better-way/code-review-human-bot.png" >}}
     </td>
   </tr>
 </table>
@@ -50,7 +51,7 @@ At Cerner, peer review of code is an important job. We have found it to greatly 
       </div>
     </td>
     <td>
-      {% img center /assets/2018-05-08-code-reviews-there-is-a-better-way/code-review-conventions.png %}
+      {{< figure src="/images/2018-05-08-code-reviews-there-is-a-better-way/code-review-conventions.png" >}}
     </td>
   </tr>
 </table>

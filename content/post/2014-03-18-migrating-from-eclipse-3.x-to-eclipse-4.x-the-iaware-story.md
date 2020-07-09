@@ -14,9 +14,9 @@ It was from this first solution that we began the process of building the softwa
 
 We provide two different application types: Dashboard and Personalized. The dashboard application type is intended to be shown on large form factor displays, typically in patient rooms in an always-on operation mode. This type lacks personalization options, such as moving views around or adding or removing them as multiple users will be using the application and a consistent look needs to be maintained. The personalized application type is intended for multiple form factors, but it's primary use case is for laptops and mobile workstations with each user signing into the application with their own credentials. Because of this, we allow users to customize their perspectives by moving, adding or removing views. They can also add and remove perspectives and set preferences such as refresh time.
 
-{% img center /assets/2014-03-18-migrating-from-eclipse-3.x-to-eclipse-4.x-the-iaware-story/careaware-critical-care-dashboard.png Careaware Critical Care Dashboard %}
+{{< figure src="/images/2014-03-18-migrating-from-eclipse-3.x-to-eclipse-4.x-the-iaware-story/careaware-critical-care-dashboard.png" alt="Careaware Critical Care Dashboard" >}}
 
-{% img center /assets/2014-03-18-migrating-from-eclipse-3.x-to-eclipse-4.x-the-iaware-story/careaware-critical-care-personalized.png Careaware Critical Care Personalized %}
+{{< figure src="/images/2014-03-18-migrating-from-eclipse-3.x-to-eclipse-4.x-the-iaware-story/careaware-critical-care-personalized.png" alt="Careaware Critical Care Personalized" >}}
 
 At our core, we develop a reusable application platform built on top of the Eclipse Rich Client Platform to provide the ability to create targeted healthcare workflow applications with the goal of allowing other development teams to focus on solution specific development without worrying about the infrastructure. This means that our team can take on the responsibility and work effort of updating to new Eclipse versions as they become available without having to pass that cost down to those teams that build solutions on our platform.
  
@@ -56,7 +56,7 @@ We utilize the application model both statically and dynamically within our solu
 - Customized version of DnDAddon - disables detached views and forces the drop target to be a perspective
 - Customized version of MinMaxAddon - removed the minimize button from views
 
-{% img center /assets/2014-03-18-migrating-from-eclipse-3.x-to-eclipse-4.x-the-iaware-story/iaware-e4xmi.png iAware e4xmi %}
+{{< figure src="/images/2014-03-18-migrating-from-eclipse-3.x-to-eclipse-4.x-the-iaware-story/iaware-e4xmi.png" alt="iAware e4xmi" >}}
 
 The remaining UI elements, perspectives and parts, are contributed to the model dynamically through our application and gadget frameworks.
  
@@ -66,7 +66,7 @@ Our renderer factory also removes the QuickAccess search field, a piece of funct
 
 The following diagram represents our UI model:
 
-{% img center /assets/2014-03-18-migrating-from-eclipse-3.x-to-eclipse-4.x-the-iaware-story/iaware-ui-model.png iAware UI Model %}
+{{< figure src="/images/2014-03-18-migrating-from-eclipse-3.x-to-eclipse-4.x-the-iaware-story/iaware-ui-model.png" alt="iAware UI Model" >}}
 
 The top pane, generally holds our navigation bar and toolbar contributions including lock and refresh. The bottom pane, generally holds our notification tray and status line UI elements. The iAware teams solutions don't currently make use of the left or right pane in any of our solutions but leave those options open to others building their own solutions.
  
