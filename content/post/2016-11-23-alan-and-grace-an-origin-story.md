@@ -16,7 +16,6 @@ countless hours spent pondering these questions will be no more. Pull up a
 chair as we dive into the mystery behind the dynamic duo known as Alan and
 Grace.
 
-<!-- TODO: Center -->
 {{< figure src="/images/2016-11-23-alan-and-grace-an-origin-story/shirt-laptop.png" alt="Laptop and t-shirt" >}}
 
 Believe it or not, the enjoyable pair highlighted on a myriad of our engineering
@@ -26,7 +25,6 @@ that shaped the computer science innovations of today. These icons were chosen
 based on their contributions to computer science and the moxie they showed while
 doing it.
 
-<!-- TODO: Center -->
 {{< figure src="/images/2016-11-23-alan-and-grace-an-origin-story/alan-8bit.png" alt="Alan" >}}
 
 Alan, our spiky haired friend who embodies an 80’s meets hipster vibe, is named
@@ -80,5 +78,4 @@ encapsulate and promote a culture of innovation, forward thinking, and just
 plain fun. The creation of mascots Alan and Grace has been a big win for the
 passionate Cerner engineers dedicated to fostering Cerner’s Engineering culture.
 
-<!-- TODO: Center -->
 {{< figure src="/images/2016-11-23-alan-and-grace-an-origin-story/alan-grace-2.png" alt="Alan and Grace" >}}

@@ -24,7 +24,6 @@ One of the most common steps defined in a basic pipeline workflow is the _Deploy
 
 # Introducing SSH Steps
 
-<!-- TODO: Center -->
 {{< figure src="/images/2018-09-20-ssh-steps-for-jenkins-pipeline/jenkins-ssh-steps-plugin.png" >}}
 
 Recently, our team consisting of [Gabe Henkes](https://github.com/ghenkes), [Wuchen Wang](https://github.com/wuchenwang) and [myself](https://github.com/nrayapati) started working on a project to automate deployments through Jenkins pipelines to help facilitate running commands on over one thousand nodes. We looked at several options including existing plugins, internal shared Jenkins libraries, and others. In the end, we felt it was best to create and open source a plugin to fill this gap so that it can be used across Cerner and beyond.

@@ -97,7 +97,6 @@ Localization testing will likely focus on language changes and impacts to the UI
 
 If you are just starting down the road of internationalization, be sure you don't reinvent the wheel on how to do it. Programming languages usually have well-documented libraries that can be used. If you are already internationalizing and working with a localization team, make sure you are commenting your code to provide clarification to the translators. Below is an example of a popular localization tool:
 
-<!-- TODO: Center -->
 {{< figure src="/images/2017-07-11-you-may-not-be-a-polyglot-but-your-code-needs-to-be/polyglot.png" >}}
 
 Once you have incorporated all the steps for localization into your process, it is important to understand that your text changes will now have financial impact as they will affect translations. Translation memories are commonly used by translators, and any change to the source text will trigger a new translation to be required.

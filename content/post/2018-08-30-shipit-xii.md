@@ -6,7 +6,6 @@ date: 2018-08-30
 tags: [culture, engineering, hackathon, shipit]
 ---
 
-<!-- TODO: Center -->
 {{< figure src="/images/2018-08-30-shipit-xii/shipitxii-logo.png" width="400" >}}
 
 This month we held our quarterly hackathon event- called ShipIt Day. We would like to thank all the participants for making ShipIt Day XII a huge success. With 75 participants, we had associates representing 13 different organizations across Cerner. These associates were given 24-hours to meet the requirements of this hackathon which included making something that was innovative, usable, and value-adding. As the clock ticked down, our associates worked in their teams to complete a project while taking some time to enjoy the fun activities happening throughout ShipIt day.

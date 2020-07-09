@@ -8,7 +8,6 @@ tags: [culture, engineering, hackathon, shipit]
 
 ## What does it take to be awarded the ShipIt Day Golden Keyboard?
 
-<!-- TODO: Center -->
 {{< figure src="/images/2018-11-16-shipit-xiii/shipit-xiii-1.jpg" width="300" >}}
 
 ShipIt Day XIII concluded last week after an intense 24-hours of brainstorming, building, and presenting. Various projects were completed by Cerner associates across twelve diverse organizations. ShipIt Day XIII's projects were some of the most technically advanced this competition has ever seen.

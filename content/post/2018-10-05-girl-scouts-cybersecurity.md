@@ -24,7 +24,6 @@ To help illustrate the concept of how layers of security are important, the girl
 
 The subsequent area of emphasis was regarding how electronic devices communicate. It was interesting to break down networking concepts like TCP/IP, network topology, and firewalls to a group of 1<sup>st</sup> and 2<sup>nd</sup> graders, but I made these concepts relatable. IP packets were explained by building key chains using beads that spelled “brownies.” The activity involved the girls acting as senders, messengers and receivers, along with individual beads acting as packets with headers, contents, and other metadata.
 
-<!-- TODO Center this -->
 {{< figure src="/images/2018-10-05-girl-scouts-cybersecurity/girl-scouts-4.jpg" caption="One scout displays her finished IP packet keychain!" width="400" >}}
 
 Safety rules were an integral part of the badge; the Brownies formed groups and made posters to help others understand the importance of the following internet rules:

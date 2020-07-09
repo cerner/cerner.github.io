@@ -12,12 +12,10 @@ On March 8th and 9th, 17 teams of Cerner associates competed for the Golden Keyb
 
 With Shipit XI, we expanded upon a time-honored tradition of this event, the traveling trophy Golden Keyboard. This keyboard, adorned with symbolic trinkets from past winners, provides an opportunity for winning teams to defend the trophy and leave their mark in ShipIt history.
 
-<!-- TODO: Center -->
 {{< figure src="/images/2018-04-18-shipit-xi-spring-2018/shipit-xi-2.png" width="300" caption="Golden Keyboard" >}}
 
 However, we realized as ShipIt grew, the category for winning the "People's Choice Award" (the favorite as voted by the audience agnostic of the judges’ selection) needed to have something more special to symbolize its importance. As a result, we introduced the Golden Mouse! This trophy, while separate from the Golden Keyboard, is another peripheral that a team can win by vote of their peers. With ShipIt XI, the Golden Mouse is now added to the tradition.
 
-<!-- TODO: Center -->
 {{< figure src="/images/2018-04-18-shipit-xi-spring-2018/shipit-xi-3.png" width="300" caption="Golden Mouse" >}}
 
 This ShipIt featured Reliability as its theme. This theme highlighted the work that is continually done to improve the reliability our systems. Reliability, it is the most fundamental feature! By including this theme, we also introduced a new winning category for best project that improved reliability.
@@ -27,7 +25,6 @@ Like all ShipIts, signs of creativity, collaboration, and intense problem solvin
 {{< figure src="/images/2018-04-18-shipit-xi-spring-2018/shipit-xi-4.png" caption="Registration and kick-off" >}}
 {{< figure src="/images/2018-04-18-shipit-xi-spring-2018/shipit-xi-5.png" caption="Strategy planning" >}}
 {{< figure src="/images/2018-04-18-shipit-xi-spring-2018/shipit-xi-6.png" caption="Focused concentration" >}}
-<!-- TODO: Center -->
 {{< figure src="/images/2018-04-18-shipit-xi-spring-2018/shipit-xi-7.png" caption="Abundant caffeine" >}}
 
 In addition to café vouchers for breakfast and lunch, ShipIt XI featured a taco bar for dinner. Participants enjoyed unlimited tacos and delicious churros for dessert!
@@ -80,7 +77,6 @@ Winning the brand new Golden Mouse for people’s choice Best Project was team T
 
 {{< figure src="/images/2018-04-18-shipit-xi-spring-2018/shipit-xi-15.png" caption="Team Whalenado – People’s Choice: Best Presentation">}}
 
-<!-- TODO: Center -->
 Winning a glorious tub of cheeseballs is Team Whalenado (Mithun Singh, David Crowder, Nick Overfield, and Michael Rzepka) for people’s choice Best Presentation.
 
 {{< figure src="/images/2018-04-18-shipit-xi-spring-2018/shipit-xi-16.png" caption="Winning teams walked away with some awesome prizes such as wireless headphones, TileMates, Echo Dots, and drones.">}}

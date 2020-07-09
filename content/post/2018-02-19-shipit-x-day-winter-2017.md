@@ -17,7 +17,6 @@ On December 14th and 15th, 18 teams of Cerner associates competed for the Golden
 
 This was our third ShipIt Day hosted at our new Innovations campus. It continues to be a great location for ShipIt because of our awesome game rooms and collaboration spaces. As part of this ShipIt, we had a sponsored theme, which focused on building React applications using [Kaiju](https://github.com/cerner/kaiju) that are based on Cerner's consistent [Terra UI](http://terra-ui.herokuapp.com/home) theme. Team members that support these projects were available to help participants if they wished to use these technologies, helping to gain more feedback on the projects, and to expand the exposure of these projects to ShipIt teams. By including this theme, we also introduced a new category for someone to win by using these projects.
 
-<!-- TODO: Center -->
 {{< figure src="/images/2018-02-19-shipit-x-day-winter-2017/shipit-x-3.jpg" width="375" caption="Shirt for participants." >}}
 {{< figure src="/images/2018-02-19-shipit-x-day-winter-2017/shipit-x-8.png" width="672" caption="Whiteboard action happening bright and early." >}}
 

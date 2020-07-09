@@ -10,7 +10,6 @@ We are pleased to announce Carbon Graphs as an open source code project!
 
 *[Carbon](https://github.com/cerner/carbon-graphs)* is a lightweight, vanilla JavaScript visualization API built with [D3](https://d3js.org/) that integrates well with any consumer's tech stack. It provides a variety of graph types that are **framework agnostic** and **responsive** out of the box.
 
-<!-- TODO: Center -->
 {{< figure src="/images/2019-08-27-carbon-graphs-open-source-visualization-api/carbon-1.png" width="200">}}
 
 # Motivation
