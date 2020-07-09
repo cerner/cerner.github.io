@@ -6,6 +6,7 @@ images: ["/images/f-twelve-icon.png"]
 tags: [engineering, oss]
 ---
 
+<!-- TODO: Center -->
 {{< figure src="/images/f-twelve-icon.png" width="300">}}
 
 Many modern web browsers come with tools that can help developers debug their websites. If you are using Google Chrome or Firefox for example, try pressing F12. A new panel should open containing various tools. These tools provide a look “under the hood” for the current page. Common tools include a JavaScript console, JavaScript debugger, DOM explorer, network request viewer, performance profile, local storage manager, and more.

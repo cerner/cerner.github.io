@@ -14,9 +14,7 @@ The first DevCon had 600 attendees, all in Kansas City; now DevCon spans three l
 
 In addition to the keynotes and breakout sessions, attendees are given the opportunity to mingle and network with coworkers through trivia night, a social, lightning talks, and quick breaks for lunch and snacks throughout the day.  Also, DevCon is fun. It’s two days to step away from your desk and become immersed in a creative, accepting, and open environment.
 
-<div align="center">
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/8FR0tO1-1rk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+{{< youtube 8FR0tO1-1rk >}}
 
 DevCon is a great example of the work that can be done across a wide variety of groups collaborating, allowing us to create something amazing. Some of these groups include:
 

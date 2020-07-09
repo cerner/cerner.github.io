@@ -16,7 +16,7 @@ As usual, this year's 2^5 Coding Competition was kicked off alongside Programmer
 
 Even though each submission had to be 32 lines of code or less, it didn't stop the participants from brainstorming and executing great ideas ranging from [Jenkins Pipelines](https://jenkins.io/doc/book/pipeline/), creating shell commands, and automating tasks for the tools we use every day. The many entries received exemplified how easy it is to increase productivity in an engineer's daily life with just a few lines of code.
 
-{% img center /assets/2018-12-14-2-to-the-5th-coding-competition-2018/2-to-the-5th-2018-1.jpeg %}
+{{< figure src="/images/2018-12-14-2-to-the-5th-coding-competition-2018/2-to-the-5th-2018-1.jpeg" >}}
 
 ## My Experience
 
