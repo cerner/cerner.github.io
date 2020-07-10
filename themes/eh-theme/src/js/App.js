@@ -29,6 +29,7 @@ import {
     faStackOverflow,
     faTwitter,
     faWeibo,
+    faYoutube
 } from '@fortawesome/free-brands-svg-icons';
 
 library.add(
@@ -56,6 +57,7 @@ library.add(
     faTag,
     faTwitter,
     faWeibo,
+    faYoutube
 );
 
 export default {

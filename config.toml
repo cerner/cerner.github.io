@@ -37,6 +37,10 @@ tag = "tags"
 series = "series"
 author = "authors"
 
+# Maintaining the /blog directory for posts
+[permalinks]
+  post = "/blog/:slug"
+
 [params]
   author = "Cerner Engineering"
   description = "a blog by engineers, for engineers"
@@ -46,10 +50,11 @@ author = "authors"
 
   [params.social]
     rss = true
-    twitter = "https://twitter.com/CernerEng"
+    twitter = "https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fengineering.cerner.com%2F&screen_name=CernerEng"
     linkedin = "https://www.linkedin.com/company/cerner-corporation"
     instagram = "https://www.instagram.com/cernercorporation/"
     github = "https://github.com/cerner"
+    youtube = "https://www.youtube.com/user/cernereng?sub_confirmation=1"
 
   [params.prismJS]
     enable = true
