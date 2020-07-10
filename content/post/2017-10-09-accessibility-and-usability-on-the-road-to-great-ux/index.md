@@ -1,7 +1,6 @@
 ---
 title: "Accessibility and Usability: On the Road to Great UX"
-authors: []
-author:  Rebecca Green, Amber Wilks
+authors: ["Rebecca Green, Amber Wilks"]
 date: 2017-10-09
 tags: [accessibility, usability, midwestux]
 ---

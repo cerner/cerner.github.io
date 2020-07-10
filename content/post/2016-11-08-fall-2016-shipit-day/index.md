@@ -1,7 +1,6 @@
 ---
 title: Fall 2016 ShipIt Day
-authors: []
-author:  Melanie Carpenter
+authors: ["Melanie Carpenter"]
 date: 2016-11-08
 tags: [culture, engineering, hackathon, shipit]
 thumbnail: "shipit-sign.jpg"

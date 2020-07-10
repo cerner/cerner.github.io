@@ -1,7 +1,6 @@
 ---
 title: "You May Not Be a Polyglot, but Your Code Needs to Be"
-authors: []
-author:  Denisse Osorio de Large
+authors: ["Denisse Osorio de Large"]
 date: 2017-07-07
 tags: [engineering, polyglot, localization, internationalization, grace, hopper]
 thumbnail: "polyglot.png"

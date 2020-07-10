@@ -1,7 +1,6 @@
 ---
 title: "The Raft Protocol: A Better Paxos?"
-authors: []
-author:  David Edwards
+authors: ["David Edwards"]
 date: 2014-01-24
 tags: [big data, engineering]
 permalink: /2014/01/the-raft-protocol-a-better-paxos/

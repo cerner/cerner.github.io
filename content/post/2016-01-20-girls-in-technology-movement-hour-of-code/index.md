@@ -1,7 +1,6 @@
 ---
 title: "Girls in Technology Movement - Hour of Code"
-authors: []
-author:  Amanda Anderson
+authors: ["Amanda Anderson"]
 date: 2016-01-20
 tags: [engineering]
 thumbnail: "photo1.jpg"

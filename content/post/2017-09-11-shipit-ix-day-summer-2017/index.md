@@ -1,7 +1,6 @@
 ---
 title: "ShipIt IX Day: Summer 2017"
-authors: []
-author:  Isabella Kuzava and Ian Kottman
+authors: ["Isabella Kuzava and Ian Kottman"]
 date: 2017-09-11
 tags: [culture, engineering, hackathon, shipit]
 thumbnail: "shipit-day-ix-6.jpg"

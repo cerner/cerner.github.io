@@ -1,7 +1,6 @@
 ---
 title: "Identifying Network ACL Issues with Chef Locally"
-authors: []
-author:  Aaron Blythe and David Crowder
+authors: ["Aaron Blythe and David Crowder"]
 date: 2015-11-17
 tags: [engineering]
 ---

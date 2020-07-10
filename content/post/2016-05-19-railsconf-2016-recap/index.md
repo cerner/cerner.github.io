@@ -1,7 +1,6 @@
 ---
 title: RailsConf 2016 Recap
-authors: []
-author:  Sam Bao
+authors: ["Sam Bao"]
 date: 2016-05-19
 tags: [culture, engineering]
 thumbnail: "welcome.jpg"

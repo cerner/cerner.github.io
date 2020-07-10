@@ -1,7 +1,6 @@
 ---
 title: "Engineers Overseas for SMART and FHIR (FHIR DevDays 2016)"
-authors: []
-author:  Dennis Patterson
+authors: ["Dennis Patterson"]
 date: 2017-09-21
 tags: [engineering]
 thumbnail: "Devdays_2016.jpg"

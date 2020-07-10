@@ -1,7 +1,6 @@
 ---
 title: DevAcademy
-authors: []
-author:  Michelle Brush
+authors: ["Michelle Brush"]
 date: 2013-08-14
 tags: [culture, engineering]
 permalink: /2013/08/devacademy/

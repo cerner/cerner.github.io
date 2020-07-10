@@ -1,7 +1,6 @@
 ---
 title: "SREcon18 Recap"
-authors: []
-author:  Jared Moore
+authors: ["Jared Moore"]
 date: 2018-06-19
 tags: [srecon, conferences, engineering]
 ---

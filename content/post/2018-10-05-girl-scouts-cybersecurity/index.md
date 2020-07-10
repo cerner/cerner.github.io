@@ -1,7 +1,6 @@
 ---
 title: "Girl Scouts earn Cybersecurity Badge at Cerner"
-authors: []
-author:  "Denisse Osorio de Large"
+authors: ["Denisse Osorio de Large"]
 date: 2018-10-05
 tags: [engineering, cybersecurity, girlscouts, community]
 thumbnail: "girl-scouts-1.jpg"

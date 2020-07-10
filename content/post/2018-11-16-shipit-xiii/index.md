@@ -1,7 +1,6 @@
 ---
 title: "ShipIt XIII"
-authors: []
-author:  DevCulture Team
+authors: ["DevCulture Team"]
 date: 2018-11-16
 tags: [culture, engineering, hackathon, shipit]
 thumbnail: "shipit-xiii-1.jpg"

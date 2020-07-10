@@ -1,7 +1,6 @@
 ---
 title:  "Closures & Currying in JavaScript"
-authors: []
-author:  Rory Hardy
+authors: ["Rory Hardy"]
 date:   2014-09-29
 tags: [javascript, development, engineering, closures, currying, functional programming]
 thumbnail: "not_sure_if.jpg"

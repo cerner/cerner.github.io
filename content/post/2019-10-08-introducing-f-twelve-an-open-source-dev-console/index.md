@@ -2,12 +2,11 @@
 title: "Introducing F-Twelve, an Open Source Dev Console"
 authors: ["Patrick Gross"]
 date: 2019-10-08
-images: ["/images/f-twelve-icon.png"]
 tags: [engineering, oss]
 thumbnail: "f-twelve-icon.png"
 ---
 
-{{< figure src="/images/f-twelve-icon.png" width="300">}}
+{{< figure src="f-twelve-icon.png" width="300">}}
 
 Many modern web browsers come with tools that can help developers debug their websites. If you are using Google Chrome or Firefox for example, try pressing F12. A new panel should open containing various tools. These tools provide a look “under the hood” for the current page. Common tools include a JavaScript console, JavaScript debugger, DOM explorer, network request viewer, performance profile, local storage manager, and more.
 

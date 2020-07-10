@@ -1,7 +1,6 @@
 ---
 title: "Jwala Joins Cerner's Open Source"
-authors: []
-author:  Arvindo Kinny
+authors: ["Arvindo Kinny"]
 date: 2017-09-27
 tags: [engineering, oss]
 ---

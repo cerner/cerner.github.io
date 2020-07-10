@@ -1,7 +1,6 @@
 ---
 title: "Scalable Data Science with FHIR"
-authors: []
-author:  Ryan Brush
+authors: ["Ryan Brush"]
 date: 2018-07-02
 tags: [engineering, spark, FHIR, bunsen]
 thumbnail: "row-wise.png"

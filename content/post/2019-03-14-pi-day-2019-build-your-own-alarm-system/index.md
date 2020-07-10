@@ -1,7 +1,6 @@
 ---
 title: "Pi Day 2019: Build your own alarm system"
-authors: []
-author:  Carl Chesser
+authors: ["Carl Chesser"]
 date: 2019-03-14
 tags: [pi, raspberry_pi]
 thumbnail: "pi-alarm-gpio.jpg"

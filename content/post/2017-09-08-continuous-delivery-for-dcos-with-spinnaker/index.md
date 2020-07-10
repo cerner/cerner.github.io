@@ -1,7 +1,6 @@
 ---
 title: "Continuous Delivery for DC/OS with Spinnaker"
-authors: []
-author:  Will Gorman
+authors: ["Will Gorman"]
 date: 2017-09-08
 tags: [engineering]
 ---

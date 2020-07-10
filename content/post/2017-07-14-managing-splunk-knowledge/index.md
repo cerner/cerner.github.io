@@ -1,7 +1,6 @@
 ---
 title: "Managing Splunk's Knowledge"
-authors: []
-author:  Bryan Baugher
+authors: ["Bryan Baugher"]
 date: 2017-07-14
 tags: [engineering, splunk]
 ---

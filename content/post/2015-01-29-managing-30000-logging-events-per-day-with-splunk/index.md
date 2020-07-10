@@ -1,7 +1,6 @@
 ---
 title: "Managing 30,000 Logging Events per Day with Splunk"
-authors: []
-author:  Mike Hemesath and Rima Poddar
+authors: ["Mike Hemesath and Rima Poddar"]
 date: 2015-01-29
 tags: [engineering]
 thumbnail: "Log-Aggregator.png"

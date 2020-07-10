@@ -1,7 +1,6 @@
 ---
 title: "Cerner and iControl"
-authors: []
-author:  Jerrod Carpenter
+authors: ["Jerrod Carpenter"]
 date: 2018-03-13
 tags: [engineering, big-ip, f5]
 ---

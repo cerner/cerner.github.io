@@ -1,7 +1,6 @@
 ---
 title: "ShipIt XIV"
-authors: []
-author:  Caitie Oder
+authors: ["Caitie Oder"]
 date: 2019-03-08
 tags: [culture, engineering, hackathon, shipit]
 thumbnail: "shipit-xiv-1.jpg"

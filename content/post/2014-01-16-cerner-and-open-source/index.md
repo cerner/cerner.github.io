@@ -1,7 +1,6 @@
 ---
 title: Cerner and Open Source
-authors: []
-author:  Nathan Beyer
+authors: ["Nathan Beyer"]
 date: 2014-01-16
 tags: [culture, engineering, operations]
 permalink: /2014/01/cerner-and-open-source/

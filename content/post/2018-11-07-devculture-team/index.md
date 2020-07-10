@@ -1,7 +1,6 @@
 ---
 title: "Our DevCulture Team: Connecting Communities & Empowering Teams to Invent the Future"
-authors: []
-author:  "Brittni Kingston"
+authors: ["Brittni Kingston"]
 date: 2018-11-07
 tags: [engineering, culture, devcon]
 thumbnail: "culture-1.jpg"

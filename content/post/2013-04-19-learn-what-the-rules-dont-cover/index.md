@@ -1,7 +1,6 @@
 ---
 title: Learn what the rules don't cover
-authors: []
-author:  Paul Conklin
+authors: ["Paul Conklin"]
 date: 2013-04-19
 tags: [engineering, operations]
 permalink: /2013/04/learn-what-the-rules-dont-cover/

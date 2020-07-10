@@ -1,7 +1,6 @@
 ---
 title:  "Scaling People with Apache Crunch"
-authors: []
-author:  Micah Whitacre
+authors: ["Micah Whitacre"]
 date:   2014-05-09
 tags: [design, engineering, bigdata]
 thumbnail: "team_bigdata.png"

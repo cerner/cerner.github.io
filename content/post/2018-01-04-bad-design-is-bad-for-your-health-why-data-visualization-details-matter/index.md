@@ -1,7 +1,6 @@
 ---
 title: "Bad Design is Bad for Your Health: Why Data Visualization Details Matter"
-authors: []
-author:  Jody Butts
+authors: ["Jody Butts"]
 date: 2018-01-04
 tags: [ux, data, visualization]
 ---

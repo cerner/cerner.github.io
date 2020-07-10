@@ -1,7 +1,6 @@
 ---
 title: DevCon
-authors: []
-author:  Kevin Shekleton and Frank Rydzewski
+authors: ["Kevin Shekleton and Frank Rydzewski"]
 date: 2013-08-26
 tags: [culture, engineering]
 permalink: /2013/08/devcon/

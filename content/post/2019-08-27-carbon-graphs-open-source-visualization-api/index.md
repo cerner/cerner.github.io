@@ -1,7 +1,6 @@
 ---
 title: "Carbon Graphs: An Open Source Visualization API"
-authors: []
-author:  Abhijit Rao
+authors: ["Abhijit Rao"]
 date: 2019-08-27
 tags: [engineering, oss]
 thumbnail: "carbon-1.png"

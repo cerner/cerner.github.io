@@ -1,7 +1,6 @@
 ---
 title: "Intern HackFest 2014"
-authors: []
-author:  Makenzie Kalb
+authors: ["Makenzie Kalb"]
 date: 2014-09-08
 tags: [engineering]
 thumbnail: "Leap.png"

@@ -1,7 +1,6 @@
 ---
 title: Near Real-time Processing Over Hadoop and HBase
-authors: []
-author:  Ryan Brush
+authors: ["Ryan Brush"]
 date: 2013-02-27
 tags: [design, engineering]
 permalink: /2013/02/near-real-time-processing-over-hadoop-and-hbase/
@@ -10,7 +9,7 @@ thumbnail: "chart-search-screen.png"
 
 ## From MapReduce to realtime
 
-This post covers much of the [Near-Realtime Processing Over HBase](http://na.apachecon.com/schedule/presentation/161/) talk I’m giving at [ApacheCon NA 2013](http://na.apachecon.com/) in blog form. It also draws from the [Hadoop, HBase, and Healthcare](http://strataconf.com/stratany2012/public/schedule/detail/25387) talk from StrataConf/Hadoop World 2012. 
+This post covers much of the [Near-Realtime Processing Over HBase](http://na.apachecon.com/schedule/presentation/161/) talk I’m giving at [ApacheCon NA 2013](http://na.apachecon.com/) in blog form. It also draws from the [Hadoop, HBase, and Healthcare](http://strataconf.com/stratany2012/public/schedule/detail/25387) talk from StrataConf/Hadoop World 2012.
 
 The first significant use of Hadoop at Cerner came in building search indexes for patient charts. While creation of simple search indexes is almost commoditized, we wanted a better experience based on clinical semantics. For instance, if a user searches for "heart disease" and a patient has "myocardial infarction" documented, that document should be highly ranked in the results.
 
@@ -76,7 +75,7 @@ There are many good technologies for doing so. We generally use the [Metrics API
 
 ## Different models, same logic
 
-The same logic needs to be applied to both batch and stream processing despite the necessary differences in infrastructure. This is a challenge since the models speak very different languages: InputFormats describe an immutable and complete set of data, whereas event streams expose incremental changes without context. 
+The same logic needs to be applied to both batch and stream processing despite the necessary differences in infrastructure. This is a challenge since the models speak very different languages: InputFormats describe an immutable and complete set of data, whereas event streams expose incremental changes without context.
 
 It turns out the function is the only real commonality between them; simply taking a subset of input and returning useful output. So, our strategy is this:
 

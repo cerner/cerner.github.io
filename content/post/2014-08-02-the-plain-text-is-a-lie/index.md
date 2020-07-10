@@ -1,7 +1,6 @@
 ---
 title:  "The Plain Text is a Lie"
-authors: []
-author:  Elliott Hoffman
+authors: ["Elliott Hoffman"]
 date:   2014-08-02
 tags: [design, engineering, i18n, Unicode, text]
 thumbnail: "resume.jpeg"

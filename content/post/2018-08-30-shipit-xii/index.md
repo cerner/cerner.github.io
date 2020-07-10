@@ -1,7 +1,6 @@
 ---
 title: "ShipIt XII"
-authors: []
-author:  Caitie Oder
+authors: ["Caitie Oder"]
 date: 2018-08-30
 tags: [culture, engineering, hackathon, shipit]
 thumbnail: "shipitxii-logo.png"

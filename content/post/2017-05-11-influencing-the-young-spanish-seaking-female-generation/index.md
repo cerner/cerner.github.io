@@ -1,7 +1,6 @@
 ---
 title: "Influencing the Young, Spanish-speaking Female Generation"
-authors: []
-author:  Lindsay Ullyot
+authors: ["Lindsay Ullyot"]
 date: 2017-05-11
 tags: [engineering, awards, stem]
 thumbnail: "denisse-steven-award.jpg"

@@ -1,7 +1,6 @@
 ---
 title: "Cerner Open Sources its Kafka Utilities"
-authors: []
-author:  Bryan Baugher
+authors: ["Bryan Baugher"]
 date: 2018-02-06
 tags: [engineering, kafka, ingestion]
 ---

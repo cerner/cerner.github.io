@@ -1,7 +1,6 @@
 ---
 title: "Alan and Grace: An Origin Story"
-authors: []
-author:  Lauren Ammons
+authors: ["Lauren Ammons"]
 date: 2016-11-23
 tags: [engineering]
 thumbnail: "alan-grace.png"

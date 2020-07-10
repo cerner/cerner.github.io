@@ -1,7 +1,6 @@
 ---
 title: "Infusing a Culture of Cybersecurity within Cerner Engineering"
-authors: []
-author:  "Andy Nelson"
+authors: ["Andy Nelson"]
 date: 2018-10-29
 tags: [engineering, cybersecurity]
 thumbnail: "cybersecurity-1.jpg"

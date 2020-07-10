@@ -1,7 +1,6 @@
 ---
 title: Cerner and Tycho
-authors: []
-author:  Jonny Wright
+authors: ["Jonny Wright"]
 date: 2013-03-27
 tags: [engineering, operations]
 permalink: /2013/03/cerner-and-tycho/
@@ -22,16 +21,16 @@ When we first began RCP development, no tooling existed to help us with creating
 
 We use tycho generally to build the following set of PDE artifacts:
 
-* Products 
-* Features 
-* Mirrors + Targets 
-* Mirrors 
- 
+* Products
+* Features
+* Mirrors + Targets
+* Mirrors
+
 While the mirrors are not technically Eclipse artifacts, we use Tycho to mirror the Eclipse (for now Juno) repositories so that our builds are not hammering the Eclipse update site.  When you have 10's to 100's of users updating targets and running builds, it is just common courtesy to have your own mirror.
 
 ### Features
 
-We began our journey with Tycho by using it to generate P2 repositories from feature definitions.  The bulk of the heavy lifting is accomplished through the use of the tycho-packaging-plugin (as well as the base plugin, tycho-maven-plugin).  Since we deploy all of our plugins through maven, it is ideal to have Maven (Tycho in this case) do the dependency resolution for us and fill out the contents of our feature.  It also does all the work of turning that feature into a p2 repository.  
+We began our journey with Tycho by using it to generate P2 repositories from feature definitions.  The bulk of the heavy lifting is accomplished through the use of the tycho-packaging-plugin (as well as the base plugin, tycho-maven-plugin).  Since we deploy all of our plugins through maven, it is ideal to have Maven (Tycho in this case) do the dependency resolution for us and fill out the contents of our feature.  It also does all the work of turning that feature into a p2 repository.
 
 This was actually a nontrivial exercise for us.  While we could have used a single feature definition, we tightly controll the dependencies that are pulled into our assembly.  Therefore, as we looked to breakdown our feature definition it was more complicated than simply pulling in the Juno feature and heaping everything into a feature on top of that.  Since we only use a subset of the Eclipse platform, we only want to pull forward the pieces we use explicitly (we also ran into some rather strange behavior with the Eclipse Jetty features).  We wanted to define the features in such a way that consumers of our platform could select a single feature that represented our core platform + Eclipse (as well as layer in additional functionality related to building their application).  In the end, we defined a set of about 20 features that rolled into a single working repository.  This way, consumers only needed to know the location of a single repository and then could use the metadata in the features to determine which features they needed.
 
@@ -68,7 +67,7 @@ So I've mentioned throughout this blog post about how we moved from custom maven
 * Generating OSGi diff reports (on the manifests)
 * Accessing mirrored Eclipse instances
 * Generating target platforms based on POM configuration
- 
+
 This turned out to be a rather extensive amount of work.  The model worked relatively successfully until a consumer came along with a set of requirements that read an awful lot like: "we'd like P2 integration included if we move to the iAware platform".  This threw a wrench in our system, because while P2 can work (and does) work by simply using .product files to define content sets, we had no tooling to generate P2 repositories.  We also had no mechanisms that would allow us to update only parts of their application (since this was 5 development teams working in tandem to produce a single assembly).  When all of this converged, we realized our build system had become insufficient and it was time to explore alternatives.  As you can see from the path we took, we started with the least intrusive changes and scaled up from there.  As of this blog, iAware is preparing for the first release using features and products.
 
 ## How do we deploy?

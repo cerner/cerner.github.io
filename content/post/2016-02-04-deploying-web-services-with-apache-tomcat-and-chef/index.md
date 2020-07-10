@@ -1,7 +1,6 @@
 ---
 title: "Deploying Web Services with Apache Tomcat and Chef"
-authors: []
-author:  Bryan Baugher
+authors: ["Bryan Baugher"]
 date: 2016-02-04
 tags: [engineering]
 ---

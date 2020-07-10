@@ -1,7 +1,6 @@
 ---
 title: "Cerner and the SDLC"
-authors: []
-author:  Matt Anderson
+authors: ["Matt Anderson"]
 date: 2018-01-23
 tags: [engineering, agile, learning]
 ---

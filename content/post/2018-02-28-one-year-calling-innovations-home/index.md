@@ -1,7 +1,6 @@
 ---
 title: "One Year Calling Innovations Home"
-authors: []
-author:  Lindsey Bromberg
+authors: ["Lindsey Bromberg"]
 date: 2018-02-28
 tags: [culture, engineering]
 thumbnail: "anniversary-1.jpg"

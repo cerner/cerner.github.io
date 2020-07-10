@@ -1,7 +1,6 @@
 ---
 title: Migrating from Eclipse 3.X to Eclipse 4.X - The iAware Story
-authors: []
-author:  Andy Gifford
+authors: ["Andy Gifford"]
 date: 2014-03-18
 tags: [engineering]
 thumbnail: "careaware-critical-care-dashboard.png"

@@ -1,7 +1,6 @@
 ---
 title: Clara Rules joins Cerner's open source
-authors: []
-author:  Ryan Brush
+authors: ["Ryan Brush"]
 date: 2016-11-11
 tags: [engineering]
 ---

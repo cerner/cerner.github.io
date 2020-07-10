@@ -1,7 +1,6 @@
 ---
 title: "DevAcademy Six Years Later"
-authors: []
-author:  Jake Kramer, Brandy Poiry
+authors: ["Jake Kramer, Brandy Poiry"]
 date: 2019-06-14
 tags: [culture, engineering]
 thumbnail: "devacademy-1.png"

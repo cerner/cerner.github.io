@@ -1,7 +1,6 @@
 ---
 title: "Cerner's Open Source Contributions for Interoperability Developers"
-authors: []
-author:  Kevin Shekleton
+authors: ["Kevin Shekleton"]
 date: 2018-06-21
 tags: [engineering, open source, interoperability]
 ---

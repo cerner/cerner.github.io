@@ -1,7 +1,6 @@
 ---
 title: Modularity in Medical Imaging
-authors: []
-author:  Cerner Engineering
+authors: ["Cerner Engineering"]
 date: 2013-03-29
 tags: [operations]
 permalink: /2013/03/modularity-in-medical-imaging/
@@ -16,17 +15,17 @@ We decided to take this to heart in the development of our viewing solution by a
 
 The interface is the first application element the user encounters. If it feels intimidating and complex, before they even perform any functions, you have set a negative tone for your application and adoption will be low. In the case of imaging, Radiologists often spend more than 60 hours a week reading over 16,000 procedures per year, all in front of the same application. Imagine working with an application that causes frustration throughout your day.  The first impression can propel an application in the marketplace or stifle it.
 
-With the advent of open source software coming to the forefront, there are a variety of options for developing rich applications backed by a large community of contributors. One of those happens to be the Eclipse Rich Client Platform (RCP) and the corresponding Standard Widget Toolkit (SWT). RCP and SWT both provide a way for developers to rapidly develop a professional looking and stable application but are somewhat limiting when viewed from an imaging standpoint. Radiologists typically read on workstations that have three or more monitors and in environments that are dimly lit. Using an application that is primarily grey and white can not only cause eye strain for the user but it can be distracting from what the user is trying to accomplish. 
+With the advent of open source software coming to the forefront, there are a variety of options for developing rich applications backed by a large community of contributors. One of those happens to be the Eclipse Rich Client Platform (RCP) and the corresponding Standard Widget Toolkit (SWT). RCP and SWT both provide a way for developers to rapidly develop a professional looking and stable application but are somewhat limiting when viewed from an imaging standpoint. Radiologists typically read on workstations that have three or more monitors and in environments that are dimly lit. Using an application that is primarily grey and white can not only cause eye strain for the user but it can be distracting from what the user is trying to accomplish.
 
 {{< figure src="Figure-2.png" alt="Figure 2" >}}
 
-Our team addressed this by starting out with the native components and then closely working with radiologists and visual designers to plan a user interface that was not only visually pleasing but also functional. The end result was a set of skinnable SWT widgets that are reusable within any SWT based application and can be specifically themed to match a desired color scheme for an environment. 
+Our team addressed this by starting out with the native components and then closely working with radiologists and visual designers to plan a user interface that was not only visually pleasing but also functional. The end result was a set of skinnable SWT widgets that are reusable within any SWT based application and can be specifically themed to match a desired color scheme for an environment.
 
 {{< figure src="Figure-3.png" alt="Figure 3" >}})
 
 Another aspect of imaging that we needed to plan for was the wide array of uses (diagnostic versus distribution). In a diagnostic scenario, radiologists will use the solution to perform diagnosis and will use the application within a multi-monitor high-resolution environment. For purposes of distribution imaging, clinicians will view images for reference and often times will view these on a much lower resolution single screen device (such as a laptop). While these two scenarios have vastly different hardware environments, users want the same experience across both and do not want to have to learn a new application depending on the workflow they are targeting at the time. As developers, we can address this by using service APIs instead of hard implementations and then create different assemblies that are easily accessible based on what the user is trying to accomplish. This not only helps address production concerns but allows developers to code against mock data sources and stores using the same API that they would within a fully scaled production environment.
 
-Once we had the basics covered, we rethought how we approached the workflow, and sought to intentionally design for usability and responsiveness within the application. Users previously were constrained to grids and a limited amount of information while reading. With modular components designed to perform specific tasks and provide specific information, the user can now decide how they want to consume and view exams. 
+Once we had the basics covered, we rethought how we approached the workflow, and sought to intentionally design for usability and responsiveness within the application. Users previously were constrained to grids and a limited amount of information while reading. With modular components designed to perform specific tasks and provide specific information, the user can now decide how they want to consume and view exams.
 
 {{< figure src="Figure-4.png" alt="Figure 4" >}}
 
@@ -38,9 +37,9 @@ So now we have a solid application for use within diagnostic scenarios, but how 
 
 We needed a way to deliver the same high power application without requiring the high power hardware. Traditional IT solutions would use Citrix, VMWare, or some other type of commercially available virtualization solution. While these are all great solutions for certain scenarios, the requirement of plugin installation on the client device accessing the application the heavy graphics processing within an imaging solution does not play nicely in these environments.  We can build on what these other solutions use (MS Remote Desktop Services) but choose to marshal the end result in an entirely different way.
 
-If we want to deliver an application via a web browser, we have a limited selection of tools that we can depend on being available. IE has its own quirks and implementations, Chrome has some fancy extras on top of the WebKit rendering engine, and while Safari/Firefox use the same engine they still behave differently. Developing and deploying an application that must be focused on performance for the end user and still usable within a variety of environments has to take all of these constraints and challenges into consideration. 
+If we want to deliver an application via a web browser, we have a limited selection of tools that we can depend on being available. IE has its own quirks and implementations, Chrome has some fancy extras on top of the WebKit rendering engine, and while Safari/Firefox use the same engine they still behave differently. Developing and deploying an application that must be focused on performance for the end user and still usable within a variety of environments has to take all of these constraints and challenges into consideration.
 
-First, we needed a way to communicate between the client and server. The HTML5 WebSocket API is great for this, but only has minimal support and user adoption. Socket.IO has a great framework that allows for WebSocket emulation (or their native use if available) that provides great performance. We decided to use this for our real-time web app and it has proven to be invaluable throughout our development process.   
+First, we needed a way to communicate between the client and server. The HTML5 WebSocket API is great for this, but only has minimal support and user adoption. Socket.IO has a great framework that allows for WebSocket emulation (or their native use if available) that provides great performance. We decided to use this for our real-time web app and it has proven to be invaluable throughout our development process.
 
 {{< figure src="Figure-7.png" alt="Figure 7" >}}
 
@@ -48,7 +47,7 @@ Now that we can communicate to the server what the user wants to do, we need a w
 
 {{< figure src="Figure-8.png" alt="Figure 8" >}}
 
-With all of these tiers in place, we now have an application in the browser that looks identical to the desktop deployment with plugins or installation required. 
+With all of these tiers in place, we now have an application in the browser that looks identical to the desktop deployment with plugins or installation required.
 
 {{< figure src="Figure-9.png" alt="Figure 9" >}}
 

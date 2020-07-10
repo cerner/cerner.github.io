@@ -1,7 +1,6 @@
 ---
 title: "2^5 Coding Competition 2017: 32 lines or less"
-authors: []
-author:  Isabella Kuzava, Carl Chesser
+authors: ["Isabella Kuzava, Carl Chesser"]
 date: 2017-12-19
 tags: [culture, engineering]
 ---

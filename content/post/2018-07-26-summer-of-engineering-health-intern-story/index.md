@@ -1,7 +1,6 @@
 ---
 title: "Summer of Engineering Health: A Software Intern's Story"
-authors: []
-author:  Pratik Vaidya
+authors: ["Pratik Vaidya"]
 date: 2018-07-26
 tags: [engineering, internship]
 thumbnail: "summer-2018-intern-1.jpg"

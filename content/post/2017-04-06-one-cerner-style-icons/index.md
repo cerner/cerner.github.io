@@ -1,7 +1,6 @@
 ---
 title: "One Cerner Style Icons: The future of icons at Cerner"
-authors: []
-author:  Seth Claybrook, Bradley Scott
+authors: ["Seth Claybrook, Bradley Scott"]
 date: 2017-04-06
 tags: [engineering]
 thumbnail: "one-cerner-style-why.png"

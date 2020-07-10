@@ -1,7 +1,6 @@
 ---
 title: FIRST Robotics Championship Competition in St. Louis
-authors: []
-author:  Cerner Engineering
+authors: ["Cerner Engineering"]
 date: 2013-04-23
 tags: [culture, engineering]
 permalink: /2013/04/first-robotics-championship-competition-in-st-louis/

@@ -1,7 +1,6 @@
 ---
 title: "CCL Unit and CCL Testing released to open source"
-authors: []
-author:  Fred Eckertson
+authors: ["Fred Eckertson"]
 date: 2019-08-09
 tags: [engineering, oss]
 ---

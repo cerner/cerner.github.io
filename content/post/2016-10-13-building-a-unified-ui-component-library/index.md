@@ -1,7 +1,6 @@
 ---
 title: "Building a Unified UI Component Library: Lessons Learned"
-authors: []
-author:  Rory Hardy
+authors: ["Rory Hardy"]
 date: 2016-10-13
 tags: [UI, UX, library, development, programming, JavaScript, CSS]
 ---

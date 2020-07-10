@@ -1,7 +1,6 @@
 ---
 title: "JavaScript Logging: We can do better!"
-authors: []
-author:  Garry Polley
+authors: ["Garry Polley"]
 date: 2015-07-20
 tags: [engineering]
 thumbnail: "healthe_life_errors.png"

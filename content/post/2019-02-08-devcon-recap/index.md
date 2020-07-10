@@ -1,7 +1,6 @@
 ---
 title: "DevCon: A tech conference for engineering, by engineering"
-authors: []
-author:  Melanie Taylor, Brandy Poiry
+authors: ["Melanie Taylor, Brandy Poiry"]
 date: 2019-02-08
 tags: [culture, engineering, conference]
 ---

@@ -1,7 +1,6 @@
 ---
 title: "DevCon 2016 Word Cloud"
-authors: []
-author:  Ian Kottman
+authors: ["Ian Kottman"]
 date: 2016-09-28
 tags: [devcon, tech talks]
 thumbnail: "word_cloud.png"

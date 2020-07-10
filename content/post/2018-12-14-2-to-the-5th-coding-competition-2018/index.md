@@ -1,7 +1,6 @@
 ---
 title: "2^5 Coding Competition 2018"
-authors: []
-author:  Jenny Saqiurila
+authors: ["Jenny Saqiurila"]
 date: 2018-12-14
 tags: [culture, engineering]
 thumbnail: "2-to-the-5th-2018-1.jpeg"

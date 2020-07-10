@@ -4,5 +4,4 @@ date: {{ .Date }}
 thumnail: ""
 categories: []
 tags: []
-authors: []
 ---

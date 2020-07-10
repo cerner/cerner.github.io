@@ -1,7 +1,6 @@
 ---
 title: Ruby at Cerner
-authors: []
-author:  Cerner Engineering
+authors: ["Cerner Engineering"]
 date: 2013-04-05
 tags: [engineering]
 permalink: /2013/04/ruby-at-cerner/

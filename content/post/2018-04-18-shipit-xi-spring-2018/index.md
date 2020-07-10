@@ -1,7 +1,6 @@
 ---
 title: "ShipIt XI Day: Spring 2018"
-authors: []
-author:  Kyle Harper
+authors: ["Kyle Harper"]
 date: 2018-04-18
 tags: [culture, engineering, hackathon, shipit]
 thumbnail: "shipit-xi-1.png"

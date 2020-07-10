@@ -1,7 +1,6 @@
 ---
 title: "SSH Steps for Jenkins Pipeline"
-authors: []
-author:  "Naresh Rayapati"
+authors: ["Naresh Rayapati"]
 date: 2018-09-20
 tags: [engineering, jenkins]
 thumbnail: "jenkins-pipeline.png"

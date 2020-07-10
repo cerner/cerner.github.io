@@ -1,7 +1,6 @@
 ---
 title: "Celebrating World Usability Day at Cerner"
-authors: []
-author:  Lauren Bock
+authors: ["Lauren Bock"]
 date: 2017-11-14
 tags: [usability, ux]
 thumbnail: "ux-vr.jpg"

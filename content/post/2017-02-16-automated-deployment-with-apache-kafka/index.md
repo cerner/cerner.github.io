@@ -1,7 +1,6 @@
 ---
 title: "Automated Deployment with Apache Kafka"
-authors: []
-author:  Bryan Baugher
+authors: ["Bryan Baugher"]
 date: 2017-02-16
 tags: [engineering, kafka]
 ---

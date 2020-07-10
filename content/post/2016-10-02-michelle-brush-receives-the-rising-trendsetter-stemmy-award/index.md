@@ -1,7 +1,6 @@
 ---
 title: "Michelle Brush receives the Rising Trendsetter STEMMY award!"
-authors: []
-author:  Cerner Engineering
+authors: ["Cerner Engineering"]
 date: 2016-10-02
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: Cerner and the Apache Software Foundation
-authors: []
-author:  Kevin Shekleton
+authors: ["Kevin Shekleton"]
 date: 2014-10-28
 tags: [culture, engineering]
 thumbnail: "asf-sponsorship-silver-logo.jpg"

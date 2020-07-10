@@ -1,7 +1,6 @@
 ---
 title: "Version Databag - A Chef Release Process"
-authors: []
-author:  Mike Rzepka
+authors: ["Mike Rzepka"]
 date: 2017-04-04
 tags: [chef, engineering]
 ---

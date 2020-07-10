@@ -1,7 +1,6 @@
 ---
 title: Spring 2016 ShipIt Day
-authors: []
-author:  Melanie Carpenter
+authors: ["Melanie Carpenter"]
 date: 2016-04-18
 tags: [culture, engineering, hackathon, shipit]
 thumbnail: "shipit-start.png"

@@ -1,7 +1,6 @@
 ---
 title: "One Cerner Associate's Contributions in the Tech Industry"
-authors: []
-author:  Lindsay Ullyot
+authors: ["Lindsay Ullyot"]
 date: 2017-03-16
 tags: [apache, crunch, PMC, engineering]
 ---

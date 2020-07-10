@@ -1,7 +1,6 @@
 ---
 title: "Influyendo en una generación de jovencitas de habla hispana"
-authors: []
-author:  Lindsay Ullyot
+authors: ["Lindsay Ullyot"]
 date: 2017-05-11
 tags: [engineering, awards, stem]
 ---

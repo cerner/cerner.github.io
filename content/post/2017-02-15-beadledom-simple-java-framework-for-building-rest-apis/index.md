@@ -1,7 +1,6 @@
 ---
 title: "Beadledom - Simple Java framework for building REST APIs"
-authors: []
-author:  Sundeep Paruvu
+authors: ["Sundeep Paruvu"]
 date: 2017-02-15
 tags: [engineering, beadledom, java, REST, apis]
 thumbnail: "beadledom-01.png"

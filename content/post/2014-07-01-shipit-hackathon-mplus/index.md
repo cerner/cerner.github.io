@@ -1,7 +1,6 @@
 ---
 title: ShipIt - 24-hour hackathon for Millennium+ Platform Dev
-authors: []
-author:  Shahzad Zafar
+authors: ["Shahzad Zafar"]
 date: 2014-07-01
 tags: [culture, engineering, hackathon, shipit]
 thumbnail: "golden-keyboard.jpg"

@@ -1,7 +1,6 @@
 ---
 title: Project Lead the Way
-authors: []
-author:  Chris Finn
+authors: ["Chris Finn"]
 date: 2013-09-11
 tags: [culture, engineering]
 permalink: /2013/09/project-lead-the-way/

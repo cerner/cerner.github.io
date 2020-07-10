@@ -1,7 +1,6 @@
 ---
 title: "Announcing Bunsen: FHIR Data with Apache Spark"
-authors: []
-author:  Ryan Brush
+authors: ["Ryan Brush"]
 date: 2017-11-27
 tags: [engineering, spark, FHIR]
 ---
