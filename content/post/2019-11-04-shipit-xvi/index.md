@@ -2,8 +2,8 @@
 title: "ShipIt Day XVI"
 authors: [ "Matt Boveri" ]
 date: 2019-11-04
-thumbnail: "2019-11-04-shipit-xvi-1.png"
 tags: [engineering, shipit]
+thumbnail: "2019-11-04-shipit-xvi-1.png"
 ---
 
 Finishing our 16th occurrence of the series, our quarterly ShipIt Day hackathon invites the makers and innovators to come out and share new ways to think about our daily work here at Cerner. Whether it's experimenting with new features or improving our developer workflows, ShipIt Day gives our engineers a chance to try and learn new things. This ShipIt day in particular had some exciting projects that melded hardware and software. Here are the top teams.
