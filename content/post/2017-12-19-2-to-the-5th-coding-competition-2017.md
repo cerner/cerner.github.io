@@ -14,7 +14,6 @@ Part of Cerner's engineering culture is to celebrate technology. This past fall,
 {{< tweet 908102894574071808 >}}
 {{< tweet 908043961599754240 >}}
 
-
 With our celebrations, we also like to blend in challenges or activities that can mold desired behaviors. Therefore, as part of Programmers' Day, we also kicked off a programming competition (our third year of organizing the competition). For 32 days (September 13 - October 16), associates submitted small snippets of code (32 lines or less) in any language that represented the concept of engineering impact. After 32 days, our panel of judges sorted through the code and assigned a winner to each of the following categories:
 
 * **Best Representation**:  What captures the concept of "engineering impact" the best?
