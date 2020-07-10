@@ -16,11 +16,7 @@ These challenges often arise with Hadoop, simply because Hadoop is a popular too
 
 So how do we approach this? Let's look to an aphorism familiar to long-term users of Hadoop:
 
-<h2 align="center">
-<em>
-Start with the questions to be answered, then model the data to answer them.
-</em>
-</h2>
+> Start with the questions to be answered, then model the data to answer them.
 
 Related sets of applications and services tend to ask related questions. Applications doing interactive search queries against a medical record can use one data model, but detecting candidates for health management programs may need another. Both cases must have completely faithful representations of the original data.
 
