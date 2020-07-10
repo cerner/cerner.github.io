@@ -1,13 +1,11 @@
 <div class="card h-100">
     {{ $page := . }}
     <a href="{{ $page.RelPermalink }}" class="d-block">
-        {{- with $page.Params.images -}}
-            {{- $images := . -}}
-            {{- with $page.Site.GetPage "section" "images" -}}
-                {{- with .Resources.GetMatch (strings.TrimPrefix "/images/" (index $images 0)) -}}
-                    {{- $image := .Fill "700x350" -}}
-                    <img data-src="{{ $image.RelPermalink }}" class="card-img-top mx-auto d-block" alt="{{ $page.Title }}">
-                {{- end -}}
+        {{- with $page.Params.thumbnail -}}
+            {{- $thumbnail := . -}}
+            {{- with $.Resources.GetMatch $thumbnail -}}
+                {{- $thumbnail := .Fill "700x350" -}}
+                <img data-src="{{ $thumbnail.RelPermalink }}" class="card-img-top mx-auto d-block" alt="{{ $page.Title }}">
             {{- end -}}
         {{- end -}}
         <div class="card-body">
@@ -18,4 +16,4 @@
             </div>
         </div>
     </a>
-</div>
+  </div>

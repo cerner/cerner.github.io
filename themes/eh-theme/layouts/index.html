@@ -21,15 +21,11 @@
         {{ $page := . }}
         <div class="latest row py-lg-5">
             <div class="col-lg-6 mb-3">
-                {{- with $page.Params.images -}}
-                    {{- $images := . -}}
-                    {{- with $page.Site.GetPage "section" "images" -}}
-                        {{- with .Resources.GetMatch (strings.TrimPrefix "/images/" (index $images 0)) -}}
-                            {{- $image := .Fill "700x450" -}}
-                            <a href="{{ $page.RelPermalink }}" class="d-block">
-                                <img data-src="{{ $image.RelPermalink }}" class="img-fluid rounded" alt="{{ $page.Title }}">
-                            </a>
-                        {{- end -}}
+                {{- with $page.Params.thumbnail -}}
+                    {{- $thumbnail := . -}}
+                    {{- with $page.Resources.GetMatch $thumbnail -}}
+                        {{- $thumbnail := .Fill "700x450" -}}
+                        <img data-src="{{ $thumbnail.RelPermalink }}" class="card-img-top mx-auto d-block" alt="{{ $page.Title }}">
                     {{- end -}}
                 {{- end -}}
             </div>
