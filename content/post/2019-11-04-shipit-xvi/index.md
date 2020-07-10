@@ -2,7 +2,7 @@
 title: "ShipIt Day XVI"
 authors: [ "Matt Boveri" ]
 date: 2019-11-04
-images: [ "/images/2019-11-04-shipit-xvi-1.png" ]
+thumbnail: "2019-11-04-shipit-xvi-1.png"
 tags: [engineering, shipit]
 ---
 
@@ -10,13 +10,13 @@ Finishing our 16th occurrence of the series, our quarterly ShipIt Day hackathon 
 
 ## ShipIt Day XVI Winning Project
 
- {{< figure src="/images/2019-11-04-shipit-xvi-1.png" caption="Left to Right - Matt Boveri, David Crowder, Sam Livingston, Ian Kottman, Anthony Ross">}}
+ {{< figure src="2019-11-04-shipit-xvi-1.png" caption="Left to Right - Matt Boveri, David Crowder, Sam Livingston, Ian Kottman, Anthony Ross">}}
 
 During this 24-hour event, the team created a capacity meter for Cerner’s DC/OS cluster. The focus was to map out the potential for failure within a DC/OS cluster based on hardware constraints: CPU / Memory / Disk space. Every hour the meter will sample the usage and display the currently most used resource. During the live demo seen below, CPU is the most utilized at just under 70%. Colorful LEDs were used to signify which hardware type is currently displayed. As the DC/OS cluster hits 95% a trigger will flash the red LED to alert that the cluster is nearly at capacity.
 
 The code as well as additional notes on the project can be found in the public GitHub repository: https://github.com/mboveri/dcos_meter.
 
-{{< figure src="/images/2019-11-04-shipit-xvi/shipit-xvi-2.png" >}}
+{{< figure src="shipit-xvi-2.png" >}}
 
 ### Meter Metrics
 
@@ -27,9 +27,9 @@ The code as well as additional notes on the project can be found in the public G
 
 ### Raspberry Pi Configuration
 
-{{< figure src="/images/2019-11-04-shipit-xvi/shipit-xvi-3.png" >}}
+{{< figure src="shipit-xvi-3.png" >}}
 
-{{< figure src="/images/2019-11-04-shipit-xvi/shipit-xvi-4.png" >}}
+{{< figure src="shipit-xvi-4.png" >}}
 
 ## Other ShipIt Day Winners
 **2nd Place- Sparkling Darlings:** Aakash Pydi, Gunjan Kaphle, James Freeman, Jokongir Rikhsiboev, & Cory Tenbarge

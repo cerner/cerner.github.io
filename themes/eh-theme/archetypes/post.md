@@ -1,7 +1,7 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
-images: []
+thumnail: ""
 categories: []
 tags: []
 authors: []

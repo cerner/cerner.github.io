@@ -3,12 +3,12 @@ title: "ShipIt Day XVII"
 authors: [ "Sharynne Azhar", "Jordan Bush", "Harish Pendyala", "Vu Tran" ]
 date: 2020-02-24
 tags: [engineering, shipit]
-images: [ "/images/2020-02-24-shipit-xvii-z3ro_d4y-min.png" ]
+thumbnail: "2020-02-24-shipit-xvii-z3ro_d4y-min.png"
 ---
 
 ShipIt Day, Cerner Engineering’s 24-hour hackathon, provides associates an environment to be creative, work on new projects, and network with other associates. This event is one of the many things that sit at the core of our [Engineering Culture](https://engineering.cerner.com/blog/devculture-team) at Cerner, and is rapidly growing- now being hosted globally in Romania, Sweden, India, and the UK. In October, our team had the chance to participate in the seventeenth ShipIt Day at Kansas City’s [Innovations Campus](https://engineering.cerner.com/blog/one-year-calling-innovations-home/) and managed to take home the Golden Keyboard trophy as the first place team!
 
- {{< figure src="/images/2020-02-24-shipit-xvii-z3ro_d4y-min.png" caption="Left to Right - Sharynne Azhar, Vu Tran, Harish Pendyala, and Jordan Bush">}}
+ {{< figure src="2020-02-24-shipit-xvii-z3ro_d4y-min.png" caption="Left to Right - Sharynne Azhar, Vu Tran, Harish Pendyala, and Jordan Bush">}}
 
 ## Overview
 
@@ -24,11 +24,11 @@ But where can we get this data?
 
 We created the Z3R0 D4Y dashboard (shown below) to help solve this problem. The dashboard gives an overview of different CVEs and which products are affected.
 
- {{< figure src="/images/2020-02-24-shipit-xvii/Z3R0_D4Y_DASHBOARD_summary_view.png" >}}
+ {{< figure src="Z3R0_D4Y_DASHBOARD_summary_view.png" >}}
 
 It then allows you to drill in and see details about the affected products. Below is an example of a test app to show a vulnerability.
 
- {{< figure src="/images/2020-02-24-shipit-xvii/Z3R0_D4Y_DASHBOARD_detailed_view.png" >}}
+ {{< figure src="Z3R0_D4Y_DASHBOARD_detailed_view.png" >}}
 
 ## How It Works
 
@@ -44,11 +44,11 @@ The dashboard site is a simple Github page that displays all CVEs, their descrip
 
 The nudgers teamed up to create a ‘Nudge’ behavior-changing native iOS or Android application that can be quickly delivered to Cerner Associates to begin using. The app has users select a single behavior they’d like to improve upon (drink more water, less screen time, etc), they will manually enter their day’s total, and the app will begin ‘nudging’ them to make small changes based on their entries
 
-{{< figure src="/images/2020-02-24-shipit-xvii/runnerup1.jpg" caption="Left to Right - Pat Walsh, Anna Luckey, John Moses, Justin Eddings">}}
+{{< figure src="runnerup1.jpg" caption="Left to Right - Pat Walsh, Anna Luckey, John Moses, Justin Eddings">}}
 
 
 ### Third Place: Stop Trying To Make &lt;Cameras&gt; Happen
 
 This team worked on part two of a previous project they had worked on in a ShipIt Day, which is a virtual ICU Mobile Cart. In this hackathon they were able to implement device event listeners, encounter and location device association, conference calling integration, and data calls to the eHospital API.
 
-{{< figure src="/images/2020-02-24-shipit-xvii/runnerup2.jpg" caption="Left to Right - Taylor Clay, Bilal Ahmad, Duncan Dufva">}}
+{{< figure src="2020-02-24-shipit-xvii/runnerup2.jpg" caption="Left to Right - Taylor Clay, Bilal Ahmad, Duncan Dufva">}}
