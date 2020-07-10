@@ -67,6 +67,8 @@ img[data-src] {
 #navbar-main-menu {
     transition: top 0.2s ease;
 
+    border-bottom:2px solid $cerner-purple;
+
     .nav-item .nav-link {
         font-size: $navbar-brand-font-size;
     }
