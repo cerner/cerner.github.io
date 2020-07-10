@@ -11,7 +11,7 @@ In the dark ages of development, great software meant packing in the functionali
 
 _**On the bright side, things can only get better from here.**___
 
-{% img center /assets/2013-02-12-evangelizing-user-experience/roadNotes_before.png RoadNotes %}
+{{< figure src="/images/2013-02-12-evangelizing-user-experience/roadNotes_before.png" alt="RoadNotes" >}}
 
 Somewhere along the straight and narrow path to UI nirvana, we strayed. Distracted by the allure of "doing more," we forgot to question why more needed to be done in the first place. We overlooked the importance of designing how something should be done because we were busy discovering new things to do. And, most importantly, we failed to include the user in the development process. Instead, we used inaccurate perceptions and engineering constraints to dictate how users should interact with our solutions.
 
@@ -23,10 +23,10 @@ Interaction designers may be the instigators of software development’s Great A
 
 The creators of Paper by FiftyThree, Apple’s iOS App of the Year, understand the importance of working together to produce an awesome experience. The results of their work speak for themselves. Watch this short video to catch a glimpse of their development culture and ideals:
 
-<iframe width="560" height="315" class="aligncenter" frameborder="0" src="https://www.youtube-nocookie.com/embed/pCoIeqgQoJ4?rel=0"></iframe>
+{{< youtube pCoIeqgQoJ4 >}}
 
 We are about to make a big splash of our own in the world of iOS with the eminent release of a new iPad app for ambulatory physicians. Designing fast, smart, and easy workflows, and creating an elegantly robust and beautifully simple interface to go with them has helped foster the rapidly growing culture of flawless execution at Cerner. From the outset of the iOS initiative, user-centered design has been the main focus. We created simple and intuitive interactions for complex user processes. Then, when we thought we had it right, our team of user researchers ran our designs through extensive usability testing, which validated our concepts or helped us discover where we could improve. Based on their feedback, we tweaked the designs, and re-tested. We rinsed and repeated. We are confident that our clients will be pleased. Why? Because we’ve been talking to them throughout the entire process.
 
-{% img center /assets/2013-02-12-evangelizing-user-experience/pcTouch1.png PowerChart Touch Ambulatory %}
+{{< figure src="/images/2013-02-12-evangelizing-user-experience/pcTouch1.png" alt="PowerChart Touch Ambulatory" >}}
 
 For Paper by FiftyThree, success means getting their users in touch with their creative side. At Cerner, producing amazing software solutions ultimately means improving the workflows of clinicians across the world, which impacts the health and wellbeing of countless individuals. We have a mission, and that mission is to make our solutions intuitive enough so that they simply fade into the background, allowing clinicians to focus on what is truly important: their patients.

@@ -7,7 +7,7 @@ tags: [culture, engineering]
 permalink: /2013/04/first-robotics-championship-competition-in-st-louis/
 ---
 
-{% img center /assets/2013-04-23-first-robotics-championship-competition-in-st-louis/Ultimate-Ascent.jpg Ultimate Ascent %}
+{{< figure src="/images/2013-04-23-first-robotics-championship-competition-in-st-louis/Ultimate-Ascent.jpg" alt="Ultimate Ascent" >}}
 
 Cerner places a high value on talent development programs offering students the experience to build practical and tangible skills for the modern work environment. As part of this focus, Cerner supports FIRST Robotics, a competition providing experience in software engineering, where students learn to deal with complexity, time constraints, quality, and technical communications. Sound familiar? I wish they had this program when I was a kid!
 
@@ -39,7 +39,7 @@ Cerner is engaged in the Kansas City community at many levels. We are a sustaini
 
 Here is this year’s gameplay video:
 
-<iframe width="560" height="315" class="aligncenter" frameborder="0" src="https://www.youtube-nocookie.com/embed/wa5MGEZNrf0?rel=0" allowfullscreen></iframe>
+{{< youtube wa5MGEZNrf0 >}}
 
 For more information, check out the links below:
 

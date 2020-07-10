@@ -53,7 +53,7 @@ foo()(); //> true
 
 This is a function that returns a function which returns true.
 
-{% img center /assets/2014-09-29-closures-and-currying-in-javascript/not_sure_if.jpg Not sure if my function or a function from inside my function %}
+{{< figure src="/images/2014-09-29-closures-and-currying-in-javascript/not_sure_if.jpg" alt="Not sure if my function or a function from inside my function" >}}
 
 Functions take arguments and those arguments can be values or reference types, such as functions. If you return a function, it is that function you are returning, not a new one (even though it might have just been made to return).
 
@@ -78,7 +78,7 @@ Why is this important?
 
 Due to these strengths, and many more, closures are used everywhere. Many popular libraries utilize them internally.
 
-{% img center /assets/2014-09-29-closures-and-currying-in-javascript/closures_everywhere.jpg Closures! Closures everywhere! %}
+{{< figure src="/images/2014-09-29-closures-and-currying-in-javascript/closures_everywhere.jpg" alt="Closures! Closures everywhere!" >}}
 
 Let’s take a look at an example of closure in action:
 
@@ -98,7 +98,7 @@ The outer function (foo) takes a variable (x), which, which is bound to that fun
 
 The takeaway here is that bar can access foo’s variables because it was created within foo’s scope. A function can access variables in its scope and up the chain to the global scope. It cannot access other function’s scopes that are declared within it or parallel to it.
 
-{% img center /assets/2014-09-29-closures-and-currying-in-javascript/question.jpg Question, does a function inside a function mean you have a closure? %}
+{{< figure src="/images/2014-09-29-closures-and-currying-in-javascript/question.jpg" alt="Question, does a function inside a function mean you have a closure?" >}}
 
 No, a function inside of a function doesn't have to reference variables outside of its scope. Recall the example function which returned a function which evaluated to true:
 
@@ -147,7 +147,7 @@ bar(); //> [0, 1, 2]
 By utilizing closure here, our big imaginary data set only has to be created once. Given the way garbage collection (automatic memory freeing) works in JavaScript, the existence of the internal function (which is returned and set to the variable bar) keeps the private variable from being freed and thus available for subsequent calls. This is really advantageous when you consider large data sets that may be created via Ajax requests which have to go over the network.
 
 ## Currying
-{% img center /assets/2014-09-29-closures-and-currying-in-javascript/curry.jpg Mmmm Curry! %}
+{{< figure src="/images/2014-09-29-closures-and-currying-in-javascript/curry.jpg" alt="Mmmm Curry!" >}}
 
 Currying is the process of transforming a function with many arguments into the same function with less arguments.
 
@@ -174,11 +174,11 @@ By currying the msg function so the first variable is cached as “Hello,”, we
 
 In the discussion of functional programming concepts, there is often a sense of resistance.
 
-{% img center /assets/2014-09-29-closures-and-currying-in-javascript/not_going_to_happen.jpg Stop trying to make functional programming happen. It's not going to happen! %}
+{{< figure src="/images/2014-09-29-closures-and-currying-in-javascript/not_going_to_happen.jpg" alt="Stop trying to make functional programming happen. It's not going to happen!" >}}
 
 The thing is, you’ve probably already been functionally programming all along. If you use jQuery, you certainly already do.
 
-{% img center /assets/2014-09-29-closures-and-currying-in-javascript/what_if_functional.jpg What if I told you, you are already doing some functional programming. %}
+{{< figure src="/images/2014-09-29-closures-and-currying-in-javascript/what_if_functional.jpg" alt="What if I told you, you are already doing some functional programming." >}}
 
 
 ```js
@@ -188,7 +188,7 @@ $("some-selector").each(function () {
 });
 ```
 
-{% img center /assets/2014-09-29-closures-and-currying-in-javascript/hide_all_the_things.jpg HIDE ALL THE THINGS %}
+{{< figure src="/images/2014-09-29-closures-and-currying-in-javascript/hide_all_the_things.jpg" alt="HIDE ALL THE THINGS" >}}
 
 Another place you may have seen this is utilizing the map function for arrays.
 

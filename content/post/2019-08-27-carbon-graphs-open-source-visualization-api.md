@@ -10,15 +10,7 @@ We are pleased to announce Carbon Graphs as an open source code project!
 
 *[Carbon](https://github.com/cerner/carbon-graphs)* is a lightweight, vanilla JavaScript visualization API built with [D3](https://d3js.org/) that integrates well with any consumer's tech stack. It provides a variety of graph types that are **framework agnostic** and **responsive** out of the box.
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        {% img /assets/2019-08-27-carbon-graphs-open-source-visualization-api/carbon-1.png 200px %}<br>
-      </td>
-    </tr>
-  </table>
-</div>
+{{< figure src="/images/2019-08-27-carbon-graphs-open-source-visualization-api/carbon-1.png" width="200">}}
 
 # Motivation
 Over the past few years, we have gradually updated our user interface to use modern JavaScript libraries such as *mithril.js* and *React*. Our components needed a graphing solution that would work well with our current framework while providing visualizations based on leading industry solutions.
@@ -122,15 +114,7 @@ graph.loadContent(Carbon.api.line(dataset));
 
 That’s it!
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        {% img /assets/2019-08-27-carbon-graphs-open-source-visualization-api/carbon-2.png 600px %}<br>
-      </td>
-    </tr>
-  </table>
-</div>
+{{< figure src="/images/2019-08-27-carbon-graphs-open-source-visualization-api/carbon-2.png">}}
 
 # Contribute!
 We are continuously working on improving *Carbon* to support our ever-increasing clinical needs! Help us make it better by reporting issues using the GitHub [issues](https://github.com/cerner/carbon-graphs/issues) queue or feel free to contribute with [pull requests](https://github.com/cerner/carbon-graphs/pulls).

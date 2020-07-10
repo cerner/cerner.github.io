@@ -25,7 +25,7 @@ Related sets of applications and services tend to ask related questions. Applica
 
 Another challenge is leveraging common processing logic between these representations: there may be initial steps of data normalization and cleaning that are common to all needs, and other steps that are useful for some cases. One strategy is for each shared piece of logic to write output to its own data store, which can then be picked up by another job. Oversimplifying, it may look like this:
 
-{% img center /assets/2013-02-03-composable-mapreduce-with-hadoop-and-crunch/diagram1.png Diagram 1 %}
+{{< figure src="/images/2013-02-03-composable-mapreduce-with-hadoop-and-crunch/diagram1.png" alt="Diagram 1">}}
 
 Such a model can be coordinated with Hadoop-based tools like [Oozie](http://oozie.apache.org/). But this model of persisting every processing stage and using them downstream has some drawbacks:
 
@@ -36,7 +36,7 @@ Such a model can be coordinated with Hadoop-based tools like [Oozie](http://oozi
 
 So how do we solve this? Rather than making intermediate data stores as the point of reuse, let's reason about the system at a higher level: make abstract, distributed data collections our point of reuse for processing. A data collection is a set of data that can be persisted to an arbitrary store when it makes sense, or streamed between processing steps when no persistence is needed. One data collection can be converted to another by applying functions to it. So the above diagram may now look like this, where arrows are functions used to transform data collections:
 
-{% img center /assets/2013-02-03-composable-mapreduce-with-hadoop-and-crunch/diagram2.png Diagram 2 %}
+{{< figure src="/images/2013-02-03-composable-mapreduce-with-hadoop-and-crunch/diagram2.png" alt="Diagram 2">}}
 
 This has several advantages:
 

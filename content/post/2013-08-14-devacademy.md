@@ -45,17 +45,17 @@ The resumes of our newly hired engineers are full of languages and technologies.
 
 The scary thing is that sharing knowledge is easy, but changing people’s behavior is hard. Once I realized our problems were about software development behavior and not knowledge, I realized we would need to completely rebuild the way Cerner trains its new engineers. The result is DevAcademy.
 
-{% img center /assets/2013-08-14-devacademy/DevAcademy.png DevAcademy %}
+{{< figure src="/images/2013-08-14-devacademy/DevAcademy.png" alt="DevAcademy" >}}
 
 Imagine you are a new engineer starting at Cerner. In your first week at Cerner, you report to the DevAcademy. The first two weeks focus on in-class instruction and assessment. The goal here is to introduce core software development behaviors and then assess your skills.
 
 After completing the first two weeks of instruction, you join what we call the DevCenter and are assigned a real project. However, that project isn’t assigned by your team. You get to pick. The projects come from all over Cerner including web applications and services, tools to make engineers more productive, and even contributing to open source projects used by Cerner. In picking a project, you are telling Cerner the types of work you find interesting. This helps us determine the best place for you across our diverse range of solutions and technologies.
 
-{% img center /assets/2013-08-14-devacademy/ManagersTalkingToEngineer1.jpg Manager talking to engineer %}
+{{< figure src="/images/2013-08-14-devacademy/ManagersTalkingToEngineer1.jpg" alt="Manager talking to engineer" >}}
 
 While working on that first project, you have a dedicated mentor. You are expected to make progress on the project while receiving feedback. You also get just-in-time training on user stories, source code management, unit testing, and scrum. You get to use Cerner’s software development ecosystem in an isolated, safe environment.
 
-{% img center /assets/2013-08-14-devacademy/Mentoring.jpg Mentoring %}
+{{< figure src="/images/2013-08-14-devacademy/Mentoring.jpg" alt="Mentoring" >}}
 
 Once you show readiness to join a team, you are allowed to demo your work to the teams that have open positions. Those teams can then pick the engineer that best fits their team. In this way, Cerner makes sure you are assigned to the right team for both Cerner and you.
 
@@ -63,4 +63,4 @@ DevAcademy recognizes that you should never stop learning, so the program contin
 
 We’ve had 150 engineers join DevAcademy since it was launched. I’ve had the privilege of seeing the new engineers struggle and then succeed on their projects. I’ve seen the light come on when they realize the usefulness good development practices and apply them effectively. I’ve seen them get excited about git and other powerful tools that they didn’t have the opportunity to learn during their formal educations. The best part of my job is that I’ve seen many very good engineers start down the career-long path towards becoming really great ones.
 
-{% img center /assets/2013-08-14-devacademy/Staff.jpg Staff %}
+{{< figure src="/images/2013-08-14-devacademy/Staff.jpg" alt="Staff" >}}

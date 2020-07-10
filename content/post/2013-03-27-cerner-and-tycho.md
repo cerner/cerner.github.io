@@ -74,7 +74,7 @@ This turned out to be a rather extensive amount of work.  The model worked relat
 
 Get ready for one ugly POM configuration:
 
-{% img center /assets/2013-03-27-cerner-and-tycho/P2-PomConfiguration-Edit2.png P2 POM Configuration %}
+{{< figure src="/images/2013-03-27-cerner-and-tycho/P2-PomConfiguration-Edit2.png" alt="P2 POM Configuration" >}}
 
 If that isn't enough to scare you, I don't know what is.  I wrote it and it terrifies me.  What it really means though is that I haven't found a great way for deploying p2 repositories as part of the maven build process.  Options exist, such as deploying the zip file of the repository into the maven repo or writing shell scripts to automate the deployment, but neither of these sat well with me.  So I went for the least distasteful choice and wrote some basic ant scripts :).
 

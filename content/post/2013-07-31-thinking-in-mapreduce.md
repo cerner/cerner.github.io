@@ -31,7 +31,7 @@ In fact, these simple assertions form the foundation of MapReduce: we move compu
 
 * _Reduce_ -- Process the shuffled map output in the sorted order, emitting our final result.
 
-{% img center /assets/2013-07-31-thinking-in-mapreduce/MapReduce1.png MapReduce %}
+{{< figure src="/images/2013-07-31-thinking-in-mapreduce/MapReduce1.png" alt="MapReduce" >}}
 
 We have our building blocks: we can split data across many machines and apply simple functions against them. Hadoop and MapReduce support this pattern well.  Now we need to answer two questions: How do we use these building blocks effectively and how do we create higher-level value on top of them?
 

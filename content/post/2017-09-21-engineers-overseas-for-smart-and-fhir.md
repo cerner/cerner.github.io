@@ -10,20 +10,20 @@ In a [previous post](http://engineering.cerner.com/blog/engineers-on-the-road-fo
 
 FHIR DevDays is a conference put on by [Furore](http://fhir.furore.com/) in Amsterdam. This year, over 250 participants from all over the world gathered to attend tutorials given by FHIR community leaders in the mornings and participate in hands-on sessions in the afternoons.
 
-{% img center /assets/2017-09-21-engineers-overseas-for-smart-and-fhir/Devdays_2016.jpg %}
+{{< figure src="/images/2017-09-21-engineers-overseas-for-smart-and-fhir/Devdays_2016.jpg" >}}
 
 Cerner co-led the "Apps in the EHR" track. This track was comprised of roughly 20 people from across France, Germany, Ireland, Israel, Italy, Netherlands, Norway, Spain, Switzerland, the United Kingdom, and the United States. [Josh Mandel](https://twitter.com/JoshCMandel) kicked things off with a tutorial on [SMART](http://smarthealthit.org/) and how to [get started](http://docs.smarthealthit.org/) building cross-vendor applications. Afterward, we met with track participants to show them how to get plugged into Cerner's sandbox and ecosystem. We started out by covering our [documentation launchpoint](https://code.cerner.com/), registering applications in our [code console](https://code.cerner.com/developer/smart-on-fhir), and going over our [technical documentation](http://fhir.cerner.com/). For those who didn't come to the conference with an existing application to work on, we provided a [tutorial](http://engineering.cerner.com/smart-on-fhir-tutorial). With those tools in hand, they were ready to get to work!
 
-{% img center /assets/2017-09-21-engineers-overseas-for-smart-and-fhir/hands-on.jpg %}
+{{< figure src="/images/2017-09-21-engineers-overseas-for-smart-and-fhir/hands-on.jpg" >}}
 <br />
-{% img center /assets/2017-09-21-engineers-overseas-for-smart-and-fhir/hands-on2.png %}
+{{< figure src="/images/2017-09-21-engineers-overseas-for-smart-and-fhir/hands-on2.png" >}}
 
 Over the course of the three afternoons, we assisted people as they used SMART and FHIR for the first time, but also people with experience in FHIR who were looking to get their technical and business questions answered about integrating with Cerner.
 Several of the projects were plugged into multiple sandboxes. The developers shared that once their app was working in one sandbox, it was easy to plug into others, which is exactly how it should be!
 
 When we gave our closing presentation, we actually had some technical difficulties loading up the slides. Little did we know that [Grahame Grieve](https://twitter.com/grahamegrieve), the original architect of FHIR, snapped a picture and would use it shortly in his [closing keynote](https://vimeo.com/192190127) on FHIR’s future.
 
-{% img center /assets/2017-09-21-engineers-overseas-for-smart-and-fhir/closing-keynote.jpg %}
+{{< figure src="/images/2017-09-21-engineers-overseas-for-smart-and-fhir/closing-keynote.jpg" >}}
 
 [With this image on screen](https://twitter.com/fhir_furore/status/799626324927053824), he stated: "[to us:] Well done. [to the rest of the audience:] Next time somebody in your acquaintance tells you that certain vendors aren't invested in interoperability, I want you to think about this. That's part of what the FHIR community is about, alright? Cerner and Epic on the stage together. It's not special anymore, even. It's great!"
 

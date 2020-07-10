@@ -8,8 +8,7 @@ tags: [pi, raspberry_pi]
 
 At Cerner Engineering, we love to celebrate [Pi Day](https://en.wikipedia.org/wiki/Pi_Day). This day is not only a fun time to enjoy eating pie and reflecting on mathematical properties, but we also share big announcements internally for our developers conference, [DevCon](https://engineering.cerner.com/blog/devcon-recap/).
 
-<div align="center"><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Drew a crowd to celebrate Pi Day this afternoon with snacks, lightning talks, and our DevCon 2018 theme reveal! <a href="https://twitter.com/hashtag/314day?src=hash&amp;ref_src=twsrc%5Etfw">#314day</a> <a href="https://twitter.com/hashtag/cernerdevcon?src=hash&amp;ref_src=twsrc%5Etfw">#cernerdevcon</a> <a href="https://t.co/wyy5eLKHVl">pic.twitter.com/wyy5eLKHVl</a></p>&mdash; Cerner Engineering (@CernerEng) <a href="https://twitter.com/CernerEng/status/974023542504411136?ref_src=twsrc%5Etfw">March 14, 2018</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+{{< tweet 974023542504411136 >}}
 
 For this post, we thought it would be fun to share a simple example of how you can hook your existing monitoring system to a physical alarm system powered by a [Raspberry Pi](https://www.raspberrypi.org/). This alarm will be a red spinning light, the universal symbol of "something is going wrong." We will build a program that will integrate with New Relic to determine if there are issues in our environment. If there are any issues, it will trigger the alarm and your monitoring system will come alive!
 
@@ -225,13 +224,12 @@ scp nr-pi-alarm pi@INSERT_YOUR_RASPBERRY_PI_IP_ADDRESS:alarm
 
 For this example, we are using the physical pins #12 and #14 (GPIO18 and GND). We will use our jumper wires to then hook this to the AC switch:
 
-{% img center /assets/2019-03-14-pi-day-2019-build-your-own-alarm-system/pi-alarm-gpio.jpg 600px %}
-
-{% img center /assets/2019-03-14-pi-day-2019-build-your-own-alarm-system/pi-alarm-switch.jpg 600px %}
+{{< figure src="/images/2019-03-14-pi-day-2019-build-your-own-alarm-system/pi-alarm-gpio.jpg" >}}
+{{< figure src="/images/2019-03-14-pi-day-2019-build-your-own-alarm-system/pi-alarm-switch.jpg" >}}
 
 You will then hook your alarm light to the AC switch (PowerSwitch Tail). If the alarm light has its own on/off switch, turn it to on, as we don't want this manual switch to block what our Raspberry Pi is going to control based on the flow of power.
 
-{% img center /assets/2019-03-14-pi-day-2019-build-your-own-alarm-system/pi-alarm-setup.jpg 600px %}
+{{< figure src="/images/2019-03-14-pi-day-2019-build-your-own-alarm-system/pi-alarm-setup.jpg" >}}
 
 ### Run it
 
@@ -249,8 +247,7 @@ $ ./nr-pi-alarm
 2019/03/14 10:04:12 Opening GPIO
 2019/03/14 10:04:26 Incidents detected, setting alarm.
 ```
-
-{% img center /assets/2019-03-14-pi-day-2019-build-your-own-alarm-system/alarm.gif %}
+{{< figure src="/images/2019-03-14-pi-day-2019-build-your-own-alarm-system/alarm.gif" >}}
 
 ## Happy Pi Day
 

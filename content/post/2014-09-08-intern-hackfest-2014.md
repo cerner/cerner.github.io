@@ -8,7 +8,7 @@ tags: [engineering]
 
 Ten teams of two to four Cerner interns competed in a week-long HackFest this summer, working to solve any problem they put their minds to. This competition cumulated in a presentation and judging of projects, with prizes of Raspberry Pi Kits for each member of the second place team and Leap Motions for each member of the winning team. From mobile apps, to machine learning algorithms, to drones…this year’s Summer Intern HackFest has been one for the books.
 
-{% img center /assets/2014-09-08-intern-hackfest-2014/Leap.png %}
+{{< figure src="/images/2014-09-08-intern-hackfest-2014/Leap.png" >}}
 
 We called ourselves Team Rubber Duck Dynasty, and it was made up of Umer Khan (University of Notre Dame), Ryan Boccabella (University of Notre Dame), MaKenzie Kalb (Vanderbilt University), and Jake Gould (University of Kansas).
 
@@ -18,12 +18,12 @@ We ended up building an app called Encore. It is a musical turn-based game revol
 
 Over the week, we began to get to know our teammates even more than we probably wanted. Passion is the main word that comes to mind when we reminisce on this highlighting week of our summer. From the uncertainty when overhearing other groups huddled in a room talking excitedly about cutting-edge technologies, to the shrieks of excitement when a test finally passed that perhaps woke many a consulting intern roommate, this HackFest was filled with memories all around. As we went for a celebratory completion dinner the night before the presentations Monday morning, the satisfaction of completion was sweet in the air. Sitting there, playing our noisy pride and joy on our phones at the table, we agreed that the week was an excellent experience already…and we hadn’t even started the real judging yet.
 
-{% img center /assets/2014-09-08-intern-hackfest-2014/Auditorium.png %}
+{{< figure src="/images/2014-09-08-intern-hackfest-2014/Auditorium.png" >}}
 
 Sound checks were full of nerves and excitement the morning we presented our project. The knowledge that each team had a mere five minutes to “sell” what had been more time consuming than sleep over the past week was a challenge everyone was hoping to ace. Later on that afternoon, when the esteemed judges Chris Finn, Michelle Brush, and Jenni Syed were announced as the event began, the caliber of the resources Cerner provides for their many interns was standing right in front of us. We heard from many enthusiastic, impressive groups that afternoon. The presentations showcased many feats of great teamwork and skill: a recommendation engine, dashboard for developers, chatting website, facial recognition android app, iOS game, machine learning algorithm, twitter-controlled drone, and music website.
 
 After a delicious ice cream break while scores were deliberated and after judges provided valuable feedback for each team, the moment of anticipation was upon us. All teams certainly completed the day with the ultimate reward of new skills learned, friends made, and a fantastic project that some are undoubtedly still building off of. As the first and second place teams were called to the stage, Team Rubber Duck Dynasty was surprised and thrilled to be among them. And as the runner up, Team Marky Mark and the Funky Bunch, received their Raspberry Pi Kits, we were amazed to find out each of us was taking home our very own Leap Motion.
 
-{% img center /assets/2014-09-08-intern-hackfest-2014/group-photo.png %}
+{{< figure src="/images/2014-09-08-intern-hackfest-2014/group-photo.png" >}}
 
 We returned to our actual teams late that afternoon, proud of our accomplishments and brand new owners of a cutting-edge technology. We received the congratulations of our superiors and mentors, many of whom were our biggest encouragers to participate and supporters throughout the week. The numerous empowered associates that have guided us through this summer have been an unbelievable community - a community that all of us are incredibly grateful to have been a part of.

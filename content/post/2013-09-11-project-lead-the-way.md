@@ -9,7 +9,7 @@ permalink: /2013/09/project-lead-the-way/
 
 Improving the state of healthcare through innovation requires investing in others to join you on the journey; not just for today, but for the decades to come.
 
-{% img center /assets/2013-09-11-project-lead-the-way/PLTWlogo.jpeg Project Lead the Way %}
+{{< figure src="/images/2013-09-11-project-lead-the-way/PLTWlogo.jpeg" alt="Project Lead the Way" >}}
 
 Project Lead the Way has established the Computer Science and Software Enginering course that teaches computational thinking to high school students, and it will pilot in 60 schools across the country this fall. Providing exposure to a wide variety of computational and computer science concepts, students can program a story or game in Scratch, write a mobile application for Android, and learn about knowledge discovery and data mining, computer simulation, cybersecurity, GUI programming, web development, version control, and agile software development.
 
@@ -35,13 +35,13 @@ In addition to some great instruction over the course from Bennett Brown on a va
 
 [Vic Castillo](https://www-eng.llnl.gov/bios/bios_castillo.html), Group Leader in the Quantitative Risk Analysis at Lawrence Livermore National Laboratories with a PhD in computational physics gave a great three hour survey presentation on what he sees as the "big three" topics in the future of computing: computer simulation and modeling (a subject near and dear to my own origin stories in computing), 3-D printing and mobile robotics featuring almost a dozen demos of cases where modeling was used to learn something new about a real-world system or design. Using just the [NetLogo](http://ccl.northwestern.edu/netlogo/) multi-agent programmable modeling environment developed at Northwestern University, Vic showed a variety of models that could be built with just a basic knowledge of the Logo programming language: for instance, modeling the heat absorption of a home design and how different designs and window configurations affect the internal temperature of the living space), "solving" the game Lunar Lander, or how a First Robotics team modeled the software algorithms incorporated into their [TurtleBot](http://turtlebot.com) (think Roomba + netbook + Kinect sensor).
 
-{% img center /assets/2013-09-11-project-lead-the-way/Netlogo.png NetLogo %}
+{{< figure src="/images/2013-09-11-project-lead-the-way/Netlogo.png" alt="NetLogo" >}}
 
 [Joanne Cohoon](http://people.virginia.edu/~jlc6j/) talked about achieving diversity in STEM classrooms and the state of the job market--how 50% of the jobs available involve some need for computational thinking and the challenges and how teachers can create classroom environments that attract students who might otherwise rule themselves out from the start based on the stereotypes and environments commonly surrounding STEM in schools. With half the workforce needing some kind of computational skill, we can't drive anyone away.
 
 Peter Chapman, a PhD student at Carnegie Mellon University and Technical Leader of the [picoCTF](https://picoctf.com) project joined us via Skype to describe the program. Set up along the storyline of an interactive adventure called Toaster Wars, picoCTF is a competition among high school students to solve as many of 57 challenges as they can using whatever means necessary--hacking, decrypting, reverse engineering, breaking or whatever. The challenges force students to get their hands dirty, learning on their own via documentation and their browser the role of cookies in web security, how to use grep and tar to find a secret key in a file, and other examples designed to give students the experience of tackling unknown problems using the resources available to them.
 
-{% img center /assets/2013-09-11-project-lead-the-way/Toaster-War.png Toaster War %}
+{{< figure src="/images/2013-09-11-project-lead-the-way/Toaster-War.png" alt="Toaster War" >}}
 
 Cerner interns and former Lee's Summit High School Team Driven First Robotics team members Dakota Ewigman and Victoria Utter taught a condensed version of the [KC Power Source Android App Camp](http://kcpowersource.com/appcamp/) using [MIT App Inventor](http://appinventor.mit.edu) which set the stage for more advanced App Inventor instruction provided by Dave O'Larte around calling and integrating web services and open APIs. We had developed a simple ballot and question and answer database-backed web service that let students and teachers hack around independently. In the category of unintended learning, and no doubt inspired by their picoCTF hacking, some of the teachers quickly found out how to troll other schools' services by injecting funny questions and answers about the course material.
 

@@ -15,4 +15,4 @@ Cerner Tech Talks brings in great speakers for talks that would be of interest t
 
 Last week, we held our first tech talk, which you can view below. [Robert Binder](http://www.robertvbinder.com/), an accomplished software testing expert, presented on model-driven development.
 
-<iframe width="560" height="315" src="//www.youtube.com/embed/OSlm6F8YmKc" frameborder="0" allowfullscreen></iframe>
+{{< youtube OSlm6F8YmKc >}}

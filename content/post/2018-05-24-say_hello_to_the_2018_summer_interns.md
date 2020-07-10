@@ -19,16 +19,7 @@ The variety in projects interns will be working on allows for work in a robust d
 In addition to their work, interns will attend a variety of culture and networking events like our internal developers conference, [DevCon](https://engineering.cerner.com/2013/08/devcon), a bi-weekly Tech Speakers Series, an intern-only hackathon, and a family day where interns are encouraged to bring their families to see their work environment and projects.
 Cerner has welcomed three intern groups in Kansas City and one in Malvern, with one more group to start in Kansas City next week. Stay tuned this summer for an in-depth look at a few of the projects our interns work on.
 
-<table cellpadding="5">
-  <tr>
-    <td>
-      {% img center /assets/2018-05-24-say_hello_to_the_2018_summer_interns/interns_1.jpg 300x300px %}
-    </td>
-    <td>
-      {% img center /assets/2018-05-24-say_hello_to_the_2018_summer_interns/interns_2.jpg 300x300px %}
-    </td>
-    <td>
-      {% img center /assets/2018-05-24-say_hello_to_the_2018_summer_interns/interns_3.jpg 300x300px %}
-    </td>
-  </tr>
-</table>
+<!-- TODO Find a way to put 3 images next to each other in a good way -->
+{{< figure src="/images/2018-05-24-say_hello_to_the_2018_summer_interns/interns_1.jpg" >}}
+{{< figure src="/images/2018-05-24-say_hello_to_the_2018_summer_interns/interns_2.jpg" >}}
+{{< figure src="/images/2018-05-24-say_hello_to_the_2018_summer_interns/interns_3.jpg" >}}

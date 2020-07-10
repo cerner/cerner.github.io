@@ -15,10 +15,10 @@ Many of the features in the building were designed with input by associates, for
 >
 > We put together a group for ShipIt IX, where we used the MakerSpace to design and create a 3D printed notification template that hooked up with an Arduino and LED light strip we programmed to give the user notifications from their desired apps. ShipIt was a first for all of us, and we wouldn’t have had a project without the availability of the MakerSpace to do 3D printing and soldering. We all had a blast, learned a lot, and plan on doing another ShipIt in the future. Plus, now I have some great embarrassing photos of my team feeding each other ice cream and failing to properly use the outdoor exercise equipment because of the ShipIt scavenger hunt challenge. The funny thing is the MakerSpace is the one neighborhood node I did not vote for when the new Innovations was being built. I had never used a 3D printer, CNC, or laser cutter and, not knowing how, I wasn’t able to imagine a personal use for those tools. But the MakerSpace team put together great tutorials in their training and connected me to resources like Thingiverse and other associates co-using the space that now I am using the space at least once a month to create decorations or make utility pieces for around the house or office. The entire MakerSpace community has been a wonderful addition to my overall experience working here at Cerner. I’ve enjoyed the people, the projects, and the enthusiasm to help each other and share ideas.
 
-{% img center /assets/2018-02-28-one-year-calling-innovations-home/anniversary-1.jpg 500px %}
+{{< figure src="/images/2018-02-28-one-year-calling-innovations-home/anniversary-1.jpg" >}}
 <sub>The MakerSpace node serves as an associate space for innovation and exploration equipped with Ultimaker 3D printers, a soldering station, a CNC Carvey and an Epilog Laser.</sub>
 
-{% img center /assets/2018-02-28-one-year-calling-innovations-home/anniversary-2.jpg 500px %}
+{{< figure src="/images/2018-02-28-one-year-calling-innovations-home/anniversary-2.jpg" >}}
 <sub>A community of MakerSpace admins host regular workshops for associates to learn new skills or machinery such as this one featuring a laser project.</sub>
 
 #### Associate Reviewer: Caleb Meyer, Senior Software Engineer
@@ -26,37 +26,23 @@ Many of the features in the building were designed with input by associates, for
 >
 >My favorite feature of the campus is the Assembly. I’ve run the Python Developers’ Meetup since its inception across the road (at the former campus), and I remember how ill-suited the game room (8 byte café) was for it. The Assembly is perfect for meetups of any size, and the self-service microphones and projector rock. The DE Tech Talks we’ve had there have all been fantastic, and the external speakers’ Tech Talks are always good as well. When there’s not something going on, the furniture surrounding the Assembly is comfortable, and there’s plenty of outlets for working away from your desk without your battery dying.
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        {% img center /assets/2018-02-28-one-year-calling-innovations-home/anniversary-5.jpg 375x250px %}
-      </td>
-      <td align="center">
-        {% img center /assets/2018-02-28-one-year-calling-innovations-home/anniversary-6.jpg 375x250px %}
-      </td>
-    </tr>
-    <tr>
-      <td align="center" colspan="2">
-        <sub>Spanning two floors in the heart of Innovations, the Assembly is home to many cultural events such as meetups, Tech Talks (be sure to check out our YouTube channel for recordings of our impressive speakers), lightning talks, ShipIt presentations, and more!</sub>
-      </td>
-    </tr>
-  </table>
-</div>
+<!-- TODO Figure out a good way for side by side images where its a single caption -->
+{{< figure src="/images/2018-02-28-one-year-calling-innovations-home/anniversary-5.jpg" width="375" caption="Spanning two floors in the heart of Innovations, the Assembly is home to many cultural events such as meetups, Tech Talks (be sure to check out our YouTube channel for recordings of our impressive speakers), lightning talks, ShipIt presentations, and more!" >}}
+{{< figure src="/images/2018-02-28-one-year-calling-innovations-home/anniversary-6.jpg" width="375" >}}
 
 #### Associate Reviewer: Ryan Grass, Senior Software Engineer
 >In many ways I feel the new campus is a reflection of the cultural shift Cerner took over half a decade ago to create a fun, creative, and interactive development culture. The cafeteria is practically a food court, offering a range of diverse choices that reflect our many individual associates’ tastes. The work areas are open, and modular, allowing for easy communication between associates; and creativity in customizing your work environment. The many nodes on campus offer creative outlets for innovative minds. Revenue Cycle uses Bowser’s Castle for monthly after work board game meetups. These are not only fun, but great ways to network within our organization. My team has even decided a few times to stay on campus rather than going out for team lunches and play board games over lunch. These have been great opportunities to bond, and become more relaxed around each other.
 
-{% img center /assets/2018-02-28-one-year-calling-innovations-home/anniversary-7.jpg 500px %}
+{{< figure src="/images/2018-02-28-one-year-calling-innovations-home/anniversary-7.jpg" >}}
 <sub>Classic and Super Classic Nintendo stations are in both of our game rooms, Flynn’s Arcade and Bowser’s Castle. Associates gravitate to these retro games when they need a short break to look at problem differently. Additionally, you’ll find many associates huddled around our foosball tables during lunch.</sub>
 
-{% img center /assets/2018-02-28-one-year-calling-innovations-home/anniversary-4.jpg 500px %}
+{{< figure src="/images/2018-02-28-one-year-calling-innovations-home/anniversary-4.jpg" >}}
 <sub>Pinball is one of the many arcade games we have on-hand in our two game rooms at Innovations. Game of Thrones seems to be a crowd favorite as we wait in anticipation for the final season!</sub>
 
-{% img center /assets/2018-02-28-one-year-calling-innovations-home/anniversary-8.jpg 500px %}
+{{< figure src="/images/2018-02-28-one-year-calling-innovations-home/anniversary-8.jpg" >}}
 <sub>Table tennis is a necessity at Innovations. On a daily basis you can find these tables full of associates looking for some mid-day competition during lunch.</sub>
 
-{% img center /assets/2018-02-28-one-year-calling-innovations-home/anniversary-3.jpg 500px %}
+{{< figure src="/images/2018-02-28-one-year-calling-innovations-home/anniversary-3.jpg" >}}
 <sub>We have two quaint library nodes at Innovations each with a unique theme: Harry Potter and Lord of the Rings. These spaces are designed for associates who need to escape their desks for a change or want to check out the hundreds of books Cerner offers ranging from technical, UX, medical and management.</sub>
 
 Innovations has become an integral part of our development culture here in Kansas City. It has also become a showstopper in the Kansas City workplace architecture and development realm as it recently won the [Special Judges’ recognition for the Kansas City Business Journal’s 2018 Capstone Awards](https://www.bizjournals.com/kansascity/news/2018/01/26/2018-capstone-award-winners.html). We are very proud of our newest campus and can’t wait to see how it grows and transforms physically and culturally over the new few years!

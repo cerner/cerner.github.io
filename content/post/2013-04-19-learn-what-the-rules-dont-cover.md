@@ -17,13 +17,13 @@ Most people think that Printing is easy.  You hit a button or Ctrl + P and the p
 
 The more I worked with it, the more I saw its full potential.  CUPS had turned out to be the most useful "Swiss Army Knife" in my toolbox.  It is extremely robust and easy to integrate / stack with other solutions.  One great example of this is my "Coffee CUPS" demo.
 
-<iframe width="560" height="315" class="aligncenter" frameborder="0" src="https://www.youtube-nocookie.com/embed/WzEhKs_CvJc?rel=0" allowfullscreen></iframe>
+{{< youtube WzEhKs_CvJc >}}
 
 I picked CUPS as the underlying backbone for my new architecture for the same reason.  It had the maximum amount of possibilities with the least amount of rules.  With a minimum amount of rules, it allows for the maximum amount of creativity.  Sure, I could develop my own solution from the ground up where I get to make the rules and have unlimited creativity, and I have had to do that in the past.  In general, if you write your own software, you have the least amount of rules (constraints of the compiler).  OpenSource Software is a close second with few limitations.  Closed source 3rd party software usually has the most rules (ever read a EULA in your life?).  When selecting a solution to a problem, it’s also important to do a cost benefit analysis.  Is it really worth reinventing the wheel?  I’m often reminded of the below picture.  I’ve seen several variations of it over the years (Credit to the picture unknown, but it wasn’t me).
 
 CUPS handles a lot of the general architecture that doesn’t need to be re-invented on either end of the spectrum (managing print queues, accepting jobs, sending jobs to printers, etc) but allows for a lot of creativity in the middle (the middle being what is done to the print job in between getting it from the user and sending it to the printer).  A good example of this (filters) can be found [here](http://en.wikipedia.org/wiki/File:Cups_simple.svg).  CUPS gives you an overall framework of how it will call a filter, and what it expects as a return, but beyond that, it’s up to the programmer.  You can write in pretty much any language you want and alter the print job as much as you want.  I leveraged this to maximize the amount of devices I could talk to and input file types I could accept, while also being able to make business decisions based on the content of the print job.
 
-{% img center /assets/2013-04-19-learn-what-the-rules-dont-cover/HPRW2.jpg HPRW2 %}
+{{< figure src="/images/2013-04-19-learn-what-the-rules-dont-cover/HPRW2.jpg" alt="HPRW2" >}}
 
 _Source: www.projectcartoon.com_
 

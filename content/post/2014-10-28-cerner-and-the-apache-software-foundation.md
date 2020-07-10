@@ -12,4 +12,4 @@ We're happy to announce that [Cerner has now increased our sponsorship of the AS
 
 Further increasing our sponsorship of the ASF reaffirms our continued support for an organization that provides homes for numerous open source projects that are important not only to us, but the larger development community.
 
-[{% img center /assets/2014-10-28-cerner-and-the-apache-software-foundation/asf-sponsorship-silver-logo.jpg ASF Silver Sponsorship %}](http://sponsor.apache.org/)
+[{{< figure src="/images/2014-10-28-cerner-and-the-apache-software-foundation/asf-sponsorship-silver-logo.jpg" alt="ASF Silver Sponsorship" >}}](http://sponsor.apache.org/)

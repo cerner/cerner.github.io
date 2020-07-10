@@ -291,7 +291,7 @@ cause an end user impact, beyond eating processing time to handle an
 error on every page.
 
 
-{% img center /assets/2015-07-20-javascript-logging-we-can-do-better/healthe_life_errors.png %}
+{{< figure src="/images/2015-07-20-javascript-logging-we-can-do-better/healthe_life_errors.png" >}}
 
 However, it did mean that analytics were not getting tracked how
 the application intended. In fact, without this logger in place the
@@ -318,11 +318,11 @@ who has been copy pasting code around.
 Interestingly enough I found some random logs on our Splunk dashboard in dev.
 
 
-{% img center /assets/2015-07-20-javascript-logging-we-can-do-better/logs_for_cheat_sheet_app.png %}
+{{< figure src="/images/2015-07-20-javascript-logging-we-can-do-better/logs_for_cheat_sheet_app.png" >}}
 
 Which lead me to github, specifically a github pages site.
 
-{% img center /assets/2015-07-20-javascript-logging-we-can-do-better/cheet_sheets_app.png %}
+{{< figure src="/images/2015-07-20-javascript-logging-we-can-do-better/cheet_sheets_app.png" >}}
 
 Seeing the application and where the logs said the application lived I was able to find the source code.
 The code then lead me to the owner of the application. At that point I was able
@@ -354,9 +354,9 @@ It's when we combine those logs with the
 reporting capabilities of Splunk that we can see trends and
 identify areas we need to improve upon in our development.
 
-{% img center /assets/2015-07-20-javascript-logging-we-can-do-better/bar_errors.png %}
+{{< figure src="/images/2015-07-20-javascript-logging-we-can-do-better/bar_errors.png" >}}
 
-{% img center /assets/2015-07-20-javascript-logging-we-can-do-better/bar_errors_hover.png %}
+{{< figure src="/images/2015-07-20-javascript-logging-we-can-do-better/bar_errors_hover.png" >}}
 
 On our teams it has shown that we need to get better at defining
 our APIs for data visualizations. I've been able to see many errors
@@ -429,11 +429,11 @@ Here's what I did to get a quick setup working:
 After this setup it was pretty easy to get some graphs going. For example
 you can easily see what errors occurred by message in this pie chart:
 
-{% img center /assets/2015-07-20-javascript-logging-we-can-do-better/loggly_pie.png %}
+{{< figure src="/images/2015-07-20-javascript-logging-we-can-do-better/loggly_pie.png" >}}
 
 Even easier is getting to view the raw output of a given event message:
 
-{% img center /assets/2015-07-20-javascript-logging-we-can-do-better/loggly_raw_msg.png %}
+{{< figure src="/images/2015-07-20-javascript-logging-we-can-do-better/loggly_raw_msg.png" >}}
 
 Loggly is a great tool to use for large and small projects. A big bonus for
 anyone starting to use Loggly for their JavaScript logs it that they can

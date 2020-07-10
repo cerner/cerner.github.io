@@ -15,7 +15,7 @@ The first significant use of Hadoop at Cerner came in building search indexes fo
 
 Analyzing and semantically annotating can be computationally expensive, especially when building indexes that could grow into the billions. Algorithms in this space may be discussed in a future blog post, but for now we focus on creation of an infrastructure up to the computational demands. For this, Hadoop is a great fit. A search index is logically a function of a set of input data, and MapReduce allows us to apply such functions in parallel across an arbitrarily large data set.
 
-{% img center /assets/2013-02-27-near-real-time-processing-over-hadoop-and-hbase/chart-search-screen.png Chart Search %}
+{{< figure src="/images/2013-02-27-near-real-time-processing-over-hadoop-and-hbase/chart-search-screen.png" alt="Chart Search" >}}
 
 #### A trend towards competing needs
 
@@ -37,7 +37,7 @@ These significant differences mean different processing infrastructures. Nathan 
 
 Interestingly, [HBase](http://hbase.apache.org/") sits at a juncture between realtime and batch processing models. It offers aspects of batch processing; computation can be moved to the data via direct MapReduce support. It also supports realtime patterns with random access and fast
 
-{% img center /assets/2013-02-27-near-real-time-processing-over-hadoop-and-hbase/realtime-layer-batch-layer.png Realtime and Batch Layers %}
+{{< figure src="/images/2013-02-27-near-real-time-processing-over-hadoop-and-hbase/realtime-layer-batch-layer.png" alt="Realtime and Batch Layers" >}}
 
 reads and writes. So our realtime and batch layers can be viewed like this:
 
@@ -53,7 +53,7 @@ This is the general approach we have taken to initiate processing in Storm. Goog
 
 The result is processing infrastructure like this, with Storm Spouts and bolts complementing conventional MapReduce processing:
 
-{% img center /assets/2013-02-27-near-real-time-processing-over-hadoop-and-hbase/processing-diagram.png Processing Diagram %}
+{{< figure src="/images/2013-02-27-near-real-time-processing-over-hadoop-and-hbase/processing-diagram.png" alt="Processing Diagram" >}}
 
 The processed data model may be another set of HBase tables, a relational database, or some other data store. Its design should be centered on the needs of the applications and services, letting the processing infrastructure build data for those needs. It is important to note that MapReduce output should be done with a bulk load operation in order to avoid saturating the processed data store with individual updates.
 
@@ -71,7 +71,7 @@ There are a number of moving parts in this system, and good measurements are the
 
 There are many good technologies for doing so. We generally use the [Metrics API](https://github.com/codahale/metrics) by Coda Hale. Here is an example of HBase client throughput using an instrumented implementation of HTableInterface. The data is collected by the Metrics API and displayed with [Graphite](http://graphite.wikidot.com/):
 
-{% img center /assets/2013-02-27-near-real-time-processing-over-hadoop-and-hbase/measure-everything.png Measure Everything %}
+{{< figure src="/images/2013-02-27-near-real-time-processing-over-hadoop-and-hbase/measure-everything.png" alt="Measure Everything" >}}
 
 ## Different models, same logic
 
