@@ -4,3 +4,124 @@
 @import "~bootstrap/scss/bootstrap";
 @import '~ekko-lightbox/dist/ekko-lightbox.css';
 @import "eh";
+
+
+// Component sizing
+// --------------------------------------------------
+$paddingNormal: 20px;
+// Colors
+// --------------------------------------------------
+$lightGray:     #e3e3e3 !default;
+
+
+// Culture page
+// --------------------------------------------------
+.culture-text {
+  h2 {
+    text-align: center;
+    color: #000;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  div img {
+    display:block;
+    margin:auto;
+  }
+
+  div {
+    padding-bottom: $paddingNormal;
+  }
+
+  padding-top: $paddingNormal * 3;
+  padding-bottom: $paddingNormal;
+}
+
+.culture-back-image {
+  position: relative;
+
+  h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    transform: translate(-50%, -50%);
+    color: $white;
+    text-align: center;
+  }
+
+  background-size: cover;
+  width:100%;
+  height:500px;
+}
+
+.culture-lego-builder {
+  background-image: url("/culture/culture1.jpg");
+}
+
+.culture-hackathon {
+  background-image: url("/culture/culture2.jpg");
+}
+
+.culture-image-small-container{
+  height: 130px;
+}
+
+// Tech Talk page
+// --------------------------------------------------
+.tech-talk-featured {
+   background-color: $white;
+   padding: $paddingNormal;
+   border: 1px solid $lightGray;
+   margin-bottom: $paddingNormal;
+}
+
+.tech-talk {
+  background-color: $white;
+  padding: $paddingNormal;
+  border: 1px solid $lightGray;
+  margin-bottom: $paddingNormal;
+}
+
+// Open source
+// --------------------------------------------------
+.open-source-text {
+  h2 {
+    text-align: center;
+    color: #000;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  padding-left: $paddingNormal;
+  padding-right: $paddingNormal;
+}
+
+.open-source-text-projects {
+  h2 {
+    text-align: center;
+    color: #000;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  div img {
+    display:block;
+    margin:auto;
+    padding-top: $paddingNormal;
+    padding-bottom: $paddingNormal;
+  }
+
+  padding-left: $paddingNormal;
+  padding-right: $paddingNormal;
+}
+
+.heart-img {
+  display: inline;
+}
