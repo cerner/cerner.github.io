@@ -51,4 +51,4 @@ The nudgers teamed up to create a ‘Nudge’ behavior-changing native iOS or An
 
 This team worked on part two of a previous project they had worked on in a ShipIt Day, which is a virtual ICU Mobile Cart. In this hackathon they were able to implement device event listeners, encounter and location device association, conference calling integration, and data calls to the eHospital API.
 
-{{< figure src="2020-02-24-shipit-xvii/runnerup2.jpg" caption="Left to Right - Taylor Clay, Bilal Ahmad, Duncan Dufva">}}
+{{< figure src="runnerup2.jpg" caption="Left to Right - Taylor Clay, Bilal Ahmad, Duncan Dufva">}}
