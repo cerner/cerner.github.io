@@ -1,0 +1,14 @@
+{
+  "name": "cerner.github.io",
+  "description": "Heroku reviews app for terra-dev-site development",
+  "website": "https://engineering.cerner.com/",
+  "repository": "https://github.com/cerner/cerner.github.io",
+  "success_url": "/",
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "stack": "container"
+}
