@@ -16,7 +16,7 @@ group :development do
   gem 'liquid', '~> 2.3.0'
   gem 'directory_watcher', '1.4.1'
   gem 'therubyracer', '~> 0.12'
-  gem 'nokogiri', '~> 1.6'
+  gem 'nokogiri', '~> 1.10'
   gem 'json', '~> 1.8'
 end
 
