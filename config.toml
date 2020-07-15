@@ -1,7 +1,7 @@
 baseURL = "https://engineering.cerner.com"
 title = "Engineering Health"
 copyright = "Copyright © 2020"
-paginate = 4
+paginate = 10
 languageCode = "en"
 DefaultContentLanguage = "en"
 enableInlineShortcodes = true
