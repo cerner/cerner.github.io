@@ -16,7 +16,7 @@ The schema for every dataset you see here was generated from a [FHIR StructureDe
 ### Data Catalogs over Filesystems
 Organizing data in files and directories is convenient, but it becomes unwieldy when working with a large number of complex datasets. Data catalogs can meet this need -- and to offer a foundation for further data governance. The [Apache Hive metastore](https://hive.apache.org/) is the most common way to catalog data in Hadoop-based environments and has native integration with Spark, so we organize data as one FHIR resource per table. Here's an example from the [tutorial used at FHIR DevDays](https://github.com/cerner/bunsen-tutorial/blob/fhirdevdays2018/data_engineering_tutorial.ipynb):
 
-```python
+```python {linenos=table}
 spark.sql('use tutorial_small')
 spark.sql('show tables').toPandas()
 ```
@@ -35,7 +35,7 @@ Which prints a table like this:
 ### First-class ValueSet Support
 [FHIR ValueSets](https://www.hl7.org/fhir/stu3/valueset.html) -- collections of code values for a specific purpose -- are essential to querying or working with FHIR data. Therefore they should be a first-class construct in our healthcare data lake. Here's a look at using some FHIR valuesets in our queries as supported by [Bunsen](https://engineering.cerner.com/bunsen/0.4.0/).
 
-```python
+```python {linenos=table}
 from bunsen.stu3.valuesets import push_valuesets, valueset, isa_loinc, isa_snomed
 
 push_valuesets(spark,
@@ -48,7 +48,7 @@ push_valuesets(spark,
 
 Now we can use these valuesets in our SQL queries via the *in_valueset* user-defined function:
 
-```python
+```python {linenos=table}
 spark.sql("""
 select subject.reference,
        code.coding[0].system system,
@@ -85,7 +85,7 @@ So while users see the FHIR data model, it is encoded in a columnar file like Pa
 ### Creating For-Purpose Views
 These are the building blocks that simplify otherwise complex analysis. For instance, if we want to identify people with diabetes-related risks, we can create a collection of simple views of the underlying data customized for that purpose. You can see the full example in the [Bunsen data engineering tutorial](https://github.com/cerner/bunsen-tutorial/blob/fhirdevdays2018/data_engineering_tutorial.ipynb), but we'll start with a dataframe of people with diabetes-related conditions as defined by a provided ValueSet:
 
-```python
+```python {linenos=table}
 diabetes_conditions = spark.sql("""
 select id condition_id,
        subject.reference person_ref,
@@ -107,7 +107,7 @@ where in_valueset(code, 'diabetes_risks')
 
 We can inspect and validate this dataframe, and then move onto the next part of our analysis. Let's say we want to exclude anyone who has had a wellness visit in the last two years from our analysis. We just build a dataframe with them:
 
-```python
+```python {linenos=table}
 wellness_visits = spark.sql("""
 select subject.reference person_ref,
        period.start encounter_start,
@@ -127,7 +127,7 @@ where class.code = 'WELLNESS' and
 
 Now that we've loaded and analyzed our dataframes, we can simply exclude those with wellness visits by doing an anti join between them:
 
-```python
+```python {linenos=table}
 diabetes_without_wellness = diabetes_conditions.join(wellness_visits,
                                                      ['person_ref'],
                                                      'left_anti')

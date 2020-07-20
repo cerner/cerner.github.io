@@ -39,7 +39,7 @@ here is a query that builds a timeseries-like table directly from a collection o
 grouping items by the person and time period. This is just standard Spark SQL wrapped around
 our simple valueset-based function.
 
-```sql
+```sql {linenos=table}
 select subject.reference patient_id,
        year(effectiveDateTime) obs_year,
        month(effectiveDateTime) obs_month,
@@ -65,7 +65,7 @@ to build a more complete report. All of this can be done interactively over bill
 ### Java Usage
 Bunsen uses the [HAPI FHIR](http://hapifhir.io/) library to represent data in object form. Java users can convert their objects from the HAPI to Spark-native structures and back with a few lines of code. Here's an example:
 
-```java
+```java {linenos=table}
 FhirEncoders encoders = FhirEncoders.forStu3().getOrCreate();
 
 List<Condition> conditionList = // A list of org.hl7.fhir.dstu3.model.Condition objects.

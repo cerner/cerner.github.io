@@ -55,7 +55,3 @@ author = "authors"
     instagram = "https://www.instagram.com/cernercorporation/"
     github = "https://github.com/cerner"
     youtube = "https://www.youtube.com/user/cernereng?sub_confirmation=1"
-
-  [params.prismJS]
-    enable = true
-    theme = "okaidia"

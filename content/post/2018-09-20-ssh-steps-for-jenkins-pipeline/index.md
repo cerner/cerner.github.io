@@ -40,7 +40,7 @@ The initial version of this new plugin SSH Steps supports the following:
 
 Below is a simple demonstration on how to use above steps. More documentation can be found on [GitHub](https://github.com/jenkinsci/ssh-steps-plugin/blob/master/README.adoc).
 
-```groovy
+```groovy {linenos=table}
 def remote = [:]
 remote.name = "node"
 remote.host = "node.abc.com"
@@ -67,7 +67,7 @@ node {
 
 At Cerner, we always strive to have simple configuration files for CI/CD pipelines whenever possible. With that in mind, my team built a wrapper on top of these steps from this plugin. After some design and analysis, we came up with the following YAML structure to run commands across various remote groups:
 
-```yaml
+```yaml {linenos=table}
 config:
   credentials_id: sshUserAcct
 
@@ -116,7 +116,7 @@ The above example runs commands from `c_group_1` on remote nodes within `r_group
 
 We have created a shared pipeline library that contains a `sshDeploy` step to support the above mentioned YAML syntax. Below is the code snippet for the sshDeploy step from the library. The full version can be found [here](https://github.com/nrayapati/ssh-deploy-library) on Github.
 
-```groovy
+```groovy {linenos=table}
 #!/usr/bin/groovy
 def call(String yamlName) {
     def yaml = readYaml file: yamlName
@@ -168,7 +168,7 @@ def call(String yamlName) {
 
 By using the step (as described in the snippet above) from this shared pipeline library, a Jenkinsfile can be reduced to:
 
-```groovy
+```groovy {linenos=table}
 @Library('ssh_deploy') _
 
 node {

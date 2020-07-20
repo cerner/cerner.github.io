@@ -7,13 +7,14 @@ tags: [engineering, big-ip, f5]
 
 At Cerner, we manage our own infrastructure and a big part of that is managing F5 load balancers. If you are a Ruby developer or a network engineer and regularly work with F5s, then I have good news! I've created a gem that abstracts iControl's REST API. It makes working with the API easy to understand and eases the effort required to automate changes across many devices.
 
-```ruby
+```ruby {linenos=table}
 api = IcontrolRest::Client.new(host: '1.2.3.4', user: 'user', pass: 'pass', verify_cert: false)
 => <Icontrol::Client:0x007fb953ab7750 @options={ ... }>
 ```
 
 After logging in, one can build a query via an instance method:
-```ruby
+
+```ruby {linenos=table}
 api.get_sys_dns
 # returns an object like this:
 => { "kind"        => "tm:sys:dns:dnsstate",
@@ -30,7 +31,7 @@ For example, if you'd like to get the version of the F5, given this [iControl RE
 
 You'd call a method that looks like this:
 
-```ruby
+```ruby {linenos=table}
 api.get_sys_version
 # returns an object like this:
 => { "kind" => "tm:sys:version:versionstats",
@@ -53,7 +54,8 @@ api.get_sys_version
 ```
 
 So in practice you could put all this together to do something like audit the versions of F5s in a collection:
-```ruby
+
+```ruby {linenos=table}
 ['hostname1', 'hostname2', 'hostname3'].each do |host|
   api = IcontrolRest::Client.new(host: host, user: 'user', pass: 'pass', verify_cert: false)
   result = api.get_sys_version

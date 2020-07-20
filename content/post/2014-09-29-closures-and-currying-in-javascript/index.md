@@ -220,7 +220,7 @@ I ask you to:
 ### Bonus
 Check out how you can utilize closure and currying to manage state throughout a stateful function:
 
-```js
+```js {linenos=table}
 function setFoo(state) {
   if (state === "a") { // Specific state
       return function () {

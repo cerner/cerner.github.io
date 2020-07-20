@@ -103,7 +103,7 @@ A pipeline requires at least one collection of data to be persisted to a [target
 
 When constructing the processing pipline for the example problem we would end up with an executable program that looks like the following:
 
-```java
+```java {linenos=table}
 public void run(){
     Pipeline pipeline = new MRPipeline(Driver.class, conf);
 

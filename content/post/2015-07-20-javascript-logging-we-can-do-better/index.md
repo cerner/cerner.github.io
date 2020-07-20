@@ -119,7 +119,7 @@ will immediately invoke the function. If an error occurs, the error will be logg
 With `watch` you can watch a function once and every time it
 throws an error later during execution the error will be logged.
 
-```js
+```js {linenos=table}
 function fastMath() {
     var addedItems = 0, i;
 
@@ -159,7 +159,7 @@ here. `data` allows you to pass an extra object that will get its values passed
 to the appenders. The default appender included in Canadarm will log all these
 values for you as key-value pairs.
 
-```js
+```js {linenos=table}
 function addPositives() {
     var value;
 
@@ -197,7 +197,7 @@ only need to include the Canadarm code and then configure the logger. As
 seen on the Canadarm readme, you can do the following to get a working
 local logger:
 
-```js
+```js {linenos=table}
 Canadarm.init({
   onError: true,
   wrapEvents: true,

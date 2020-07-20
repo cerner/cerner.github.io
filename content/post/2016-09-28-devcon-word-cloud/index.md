@@ -11,7 +11,7 @@ we had 295 submissions for talks, ranging from a deep technical dive into the in
 
 The first step was some basic data cleaning so I could get a good set of words to visualize. I used Python to read in the submissions into a single string, lowercase all words, and then remove all common contractions.
 
-```python
+```python {linenos=table}
 # read all submissions into a single string
 text = open('./submissions.txt').read()
 
@@ -37,7 +37,7 @@ for char in set(string.punctuation):
 
 At this point I had 32,987 total words. A word cloud of this dataset was too noisy, predominated by common words like "the" and "talk". In natural language processing these unwanted common words are called "stop words". To remove them I made a list out of the submissions and then only kept words that were not in a list of common English words, supplemented by words specific to this data set, such as "Cerner" and "presentation".
 
-```python
+```python {linenos=table}
 # get list of all words
 submission_words = re.sub("[^\w]", " ", text).split()
 
@@ -49,7 +49,7 @@ filtered_word_list = [w for w in submission_words if w not in stopwords_set]
 
 This left me with a list of 14,291 words and 4,264 distinct words. When visualized I noticed many similar words were taking the highest spots, such as "team" and "teams" or "technology" and "technologies". To remove some of this noise I turned to lemmatization. Lemmatization is the process of finding a canonical representation of a word, i.e. its lemma. For example, the lemma for the words "runs" and "running" is run. I used the popular Python library Natural Language Toolkit for lemmatization.
 
-```python
+```python {linenos=table}
 lemmatizer = WordNetLemmatizer()
 reduced_list = []
 # find the lemma of each word
@@ -59,7 +59,7 @@ for word in filtered_word_list:
 
 This reduced the dataset to 3,834 distinct words. Now that the dataset was cleaned, common words filtered out, and similar words combined it was time to create the word cloud using a project called [word_cloud](https://github.com/amueller/word_cloud).
 
-```python
+```python {linenos=table}
 cloud = WordCloud(relative_scaling=.5, height=1024, width=760)
 cloud.generate(submissions)
 
@@ -74,8 +74,6 @@ plt.show()
 
 {{< figure src="word_cloud.png" alt="Word Cloud" >}}
 
-
 Success! It is obvious what some of the most common themes are, such as "data" and "team". Possible future steps for cleaning up the data would be grouping noun phrases, such as "software engineer" into single words or possibly removing common spelling mistakes using a spell checking library like [PyEnchant](https://pythonhosted.org/pyenchant/).
-
 
 You can checkout the full code on [Github](https://github.com/ikottman/devcon-word-cloud).

@@ -107,7 +107,7 @@ Let's discuss some quick principles that you should be able to apply regardless 
 
 Don't concatenate strings. Language order matters with translation. Instead of doing this:
 
-```javascript
+```js {linenos=table}
 <div style="font-family: monospace">function getDescription() {
   var color = getColor();
   var element = getElement();
@@ -117,7 +117,7 @@ Don't concatenate strings. Language order matters with translation. Instead of d
 
 Do something like this:
 
-```javascript
+```js {linenos=table}
 <div style="font-family: monospace">function getDescription() {
    	var color = getColor();
    	var element = getElement();
