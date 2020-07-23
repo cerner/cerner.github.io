@@ -28,7 +28,7 @@ theme = "eh-theme"
   [[menu.main]]
     identifier = "tech-talks"
     name = "Tech Talks"
-    url = "https://www.youtube.com/user/cernereng"
+    url = "/tech-talks/"
     weight = 4
 
 [taxonomies]
