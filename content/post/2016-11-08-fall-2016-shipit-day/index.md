@@ -63,7 +63,7 @@ consistent experience for teams across Vagrant, VMWare, OpenStack, EC2, Docker, 
 
 For the first time we had a unanimous winner for both the judges and the participant winners. The
 **206 Partial Content** team not only won two giant tubs of cheese balls, but also the all important
-[Golden Keyboard]({% post_url 2014-07-01-shipit-hackathon-mplus %}) and bragging rights 
+[Golden Keyboard]({{<ref "/post/2014-07-01-shipit-hackathon-mplus">}}) and bragging rights 
 until the next ShipIt Day. **206 Partial Content** decided to solve a problem to "enable solution designers, 
 engineers, and grandparents to easily create, stage, and process data for testing scenarios required for 
 verification without being dependent on upstream processing or rules."
