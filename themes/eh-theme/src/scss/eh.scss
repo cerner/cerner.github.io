@@ -12,6 +12,10 @@
     text-decoration: none;
 }
 
+.content-page a {
+    color: $cerner-blue;
+}
+
 blockquote {
     color: $gray-400;
     border-left: 6px solid $gray-400;
