@@ -1,6 +1,6 @@
 ---
 title: "Say Hello to the 2018 Summer Interns"
-authors: ["Joe Geris, Jennifer Lambert, Andie Young"]
+authors: ["Joe Geris", "Jennifer Lambert", "Andie Young"]
 date: 2018-05-24
 tags: [engineering, interns]
 thumbnail: "interns_1.jpg"

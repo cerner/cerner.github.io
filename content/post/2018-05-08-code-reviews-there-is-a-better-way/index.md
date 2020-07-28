@@ -1,6 +1,6 @@
 ---
 title: "Code Reviews: There is a Better Way"
-authors: ["Chris Fagyal, Carl Chesser"]
+authors: ["Chris Fagyal", "Carl Chesser"]
 date: 2018-05-08
 tags: [engineering, code review]
 thumbnail: "code-review-size.png"

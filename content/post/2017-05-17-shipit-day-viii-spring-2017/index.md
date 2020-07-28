@@ -1,6 +1,6 @@
 ---
 title: "ShipIt VIII Day: Spring 2017"
-authors: ["Isabella Kuzava and Shahzad Zafar"]
+authors: ["Isabella Kuzava", "Shahzad Zafar"]
 date: 2017-05-17
 tags: [culture, engineering, hackathon, shipit]
 thumbnail: "pic0.png"

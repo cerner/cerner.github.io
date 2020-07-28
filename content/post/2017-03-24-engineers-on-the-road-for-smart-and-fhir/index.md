@@ -1,6 +1,6 @@
 ---
 title: "Engineers on the Road for SMART and FHIR (CHC 2016)"
-authors: ["Dennis Patterson, Jenni Syed"]
+authors: ["Dennis Patterson", "Jenni Syed"]
 date: 2017-03-24
 tags: [SMART, FHIR, engineering]
 thumbnail: "smart-and-fhir-01.jpg"

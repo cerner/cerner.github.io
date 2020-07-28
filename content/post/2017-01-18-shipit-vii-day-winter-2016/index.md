@@ -1,6 +1,6 @@
 ---
 title: "ShipIt VII Day: Winter 2016"
-authors: ["Isabella Kuzava and Carl Chesser"]
+authors: ["Isabella Kuzava", "Carl Chesser"]
 date: 2017-01-18
 tags: [culture, engineering, hackathon, shipit]
 thumbnail: "shipit-01.jpg"

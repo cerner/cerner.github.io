@@ -1,6 +1,6 @@
 ---
 title: "Structure Matters: How Cerner Handled Too Much Health Data in HBase"
-authors: ["Michelle Brush and Vinay Koduri"]
+authors: ["Michelle Brush", "Vinay Koduri"]
 date: 2017-08-28
 tags: [engineering, hbase]
 ---
