@@ -17,7 +17,7 @@ group :development do
   gem 'directory_watcher', '1.4.1'
   gem 'therubyracer', '~> 0.12'
   gem 'nokogiri', '~> 1.6'
-  gem 'json', '~> 1.8'
+  gem 'json', '~> 2.3'
 end
 
 gem 'sinatra', '~> 1.4.2'
