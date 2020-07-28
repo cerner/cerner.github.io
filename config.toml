@@ -41,6 +41,9 @@ author = "authors"
 [permalinks]
   post = "/blog/:slug"
 
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
 [params]
   author = "Cerner Engineering"
   description = "a blog by engineers, for engineers"
