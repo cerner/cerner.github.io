@@ -21,19 +21,21 @@ git checkout source
 hugo server
 ```
 
-## Contributors
+# Contributing
 
 ## Writing a New Blog Post
 
-**Remember: Only make changes in the `source` branch!**
+When writing a blog post, all content is contained in the `source` branch. Content is then generated into the `master` branch for site generation.
 
 ### Blog Post
+
+First, create a folder: `/content/post/{yyyy-mm-dd}-{name}` where name is a short name delimited by dashes.
 
 First, add a new file in `/content/post/{yyyy-mm-dd}-{name}.md`
 
 The yyyy-mm-dd should be the day in which your blog post will go live. Copy one of the existing blog posts to ensure that you retain the proper metadata at the top of the post.
 
-If your blog post has images, place them in the /source/assets/{yyyy-mm-dd}-{name} folder (the name should match your blog post markdown file).
+If your blog post has images, you can place them in the folder
 
 ## Submitting a Change
 
