@@ -3,6 +3,7 @@
 import $ from 'jquery';
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import {
+    faAngleDoubleRight,
     faBookOpen,
     faChevronLeft,
     faChevronRight,
@@ -10,7 +11,7 @@ import {
     faClock,
     faEnvelope,
     faRss,
-    faTag,
+    faTag
 } from '@fortawesome/free-solid-svg-icons';
 import {
     faFacebook,
@@ -33,6 +34,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 
 library.add(
+    faAngleDoubleRight,
     faBookOpen,
     faChevronLeft,
     faChevronRight,

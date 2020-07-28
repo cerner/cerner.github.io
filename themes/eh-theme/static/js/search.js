@@ -80,8 +80,8 @@ $( document ).ready(function() {
                 'data-title="' + item.title + '" ' +
                 'data-uri="'+ item.uri + '" ' +
                 'data-context="' + item.context + '">' +
-                '» ' + item.title +
-                '<div class="context">' +
+                '<i class="fa fa-angle-double-right" aria-hidden="true"></i> ' + item.title +
+                '<div class="context text-muted">' +
                 (item.context || '') +'</div>' +
                 '</div>';
         },

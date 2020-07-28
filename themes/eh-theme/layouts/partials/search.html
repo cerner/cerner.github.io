@@ -1,9 +1,10 @@
-<div class="searchbox">
-    <input data-search-input id="search-by" type="search" placeholder="{{T "Search-placeholder"}}">
+<div class="form-inline my-2 my-lg-0 searchbox">
+    <input id="search-by" type="search" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
 </div>
+
 <script type="text/javascript" src="{{"js/lunr.min.js" | relURL}}"></script>
-<script type="text/javascript" src="{{"js/auto-complete.js" | relURL}}"></script>
+<script type="text/javascript" src="{{"js/auto-complete.min.js" | relURL}}"></script>
 <script type="text/javascript">
-    var baseurl = "{{.Site.BaseURL}}";
+    var baseurl =  "{{.Site.BaseURL}}";
 </script>
 <script type="text/javascript" src="{{"js/search.js" | relURL}}"></script>
