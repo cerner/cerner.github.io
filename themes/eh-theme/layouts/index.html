@@ -10,9 +10,9 @@
                 </div>
             {{- end -}}
 
-            <h1 class="display-4">{{ .Site.Title }}</h1>
+            <h1 class="display-4 font-weight-bold">{{ .Site.Title }}</h1>
             {{- with .Site.Params.description -}}
-                <h3 class="font-weight-normal">{{ . | safeHTML }}</h3>
+                <h3 class="font-weight-normal text-muted">{{ . | safeHTML }}</h3>
             {{- end -}}
         </div>
     </div>

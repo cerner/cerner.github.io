@@ -6,7 +6,7 @@ tags: [culture, engineering, tech talks]
 permalink: /2013/11/cerner-tech-talks/
 ---
 
-We are always looking for ways to share knowledge and learn new things within engineering at Cerner. Whether that be through meetups, lunch & learns, conferences, or [DevCon](http://engineering.cerner.com/2013/08/devcon/), we have a variety of outlets available to us.
+We are always looking for ways to share knowledge and learn new things within engineering at Cerner. Whether that be through meetups, lunch & learns, conferences, or [DevCon]({{<ref "/post/2013-08-26-devcon">}}), we have a variety of outlets available to us.
 
 Today, we’re announcing a new program we recently launched: Cerner Tech Talks.
 

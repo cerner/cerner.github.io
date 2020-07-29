@@ -11,6 +11,7 @@ import {
     faClock,
     faEnvelope,
     faRss,
+    faSearch,
     faTag
 } from '@fortawesome/free-solid-svg-icons';
 import {
@@ -55,6 +56,7 @@ library.add(
     faReddit,
     faRedditAlien,
     faRss,
+    faSearch,
     faStackOverflow,
     faTag,
     faTwitter,

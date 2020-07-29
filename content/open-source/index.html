@@ -6,26 +6,25 @@ aliases: ["open_source"]
 <div class="container" style="text-align: center;">
   <h2>Cerner Open Source</h2>
   <p>
-    At Cerner, we <img src="/images/heart-8bit.png" height="15" width="15" class="heart-img" /> open source.
+    At Cerner, we ❤️ open source.
     Open source software is an integral part of our software and is crucial to running and operating our
     applications and services globally. Our engineers contribute to open source projects and
-    <a href="http://engineering.cerner.com/blog/cerner-and-the-apache-software-foundation/">Cerner
-      is proud to provide financial support to organizations like the Apache Software Foundation</a>.
+    <a href="../post/cerner-and-the-apache-software-foundation/">Cerner is proud to provide financial support to organizations like the Apache Software Foundation</a>.
     Here are some of our own projects that we’ve released as open source.
   </p>
 
   <div class="row">
     <div class="col-sm">
-      <h2>Beadledom</h2>
-      <a href="https://github.com/cerner/beadledom">
-        <img src="beadledom.png" alt="Beadledom" />
+      <h2>Terra</h2>
+      <a href="https://github.com/cerner/terra-ui.com">
+        <img src="Terra.png" alt="Terra" />
       </a>
       <p>
-        Beadledom is a bundle of common components required for building JAX-RS web services.
-        It is the starting point for new services. The core of Beadledom provides health checks,
-        monitoring via Stagemonitor, API docs via Swagger, JSON serialization via Jackson, and
-        integration of these components with Guice.
-        <a href="https://github.com/cerner/beadledom">Learn More...</a>
+        Terra offers a set of configurable React components designed to help build scalable and modular
+        application UIs. The library easily integrates with webpack-based workflows and was created to solve
+        real-world issues in projects we work on day to day.
+        <a href="../blog/terra-ui-a-health-care-focused-ui-component-library/">Learn More...</a>
+        <br />
       </p>
     </div>
     <div class="col-sm">
@@ -37,9 +36,25 @@ aliases: ["open_source"]
         Bunsen integrates Apache Spark and FHIR, combining Spark's scalable processing advantages with
         FHIR's well-defined and curated data. This enables a number of deep analytic and machine learning
         workloads that can be ported across systems.
-        <a href="https://github.com/cerner/bunsen">Learn More...</a>
+        <br />
+        <a href="../blog/announcing-bunsen-fhir-data-with-apache-spark/">Learn More...</a>
       </p>
     </div>
+    <div class="col-sm">
+      <h2>Clara Rules</h2>
+      <a href="https://github.com/cerner/clara-rules">
+        <img src="clara-rules.png" alt="Clara Rules" />
+      </a>
+      <p>
+        Clara is a forward-chaining rules engine written in Clojure(Script) with Java interoperability. It
+        aims to simplify code with a developer-centric approach to expert systems.
+        <br />
+        <a href="../blog/clara-rules-joins-cerners-open-source/">Learn More...</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
     <div class="col-sm">
       <h2>Canadarm</h2>
       <a href="https://github.com/cerner/canadarm">
@@ -49,12 +64,10 @@ aliases: ["open_source"]
         Canadarm makes JavaScript logging easy and seamless, helping you figure out what went wrong
         with your scripts. Named for the <a href="https://en.wikipedia.org/wiki/Canadarm">Canadarm</a>
         we hope this too helps you piece together log information to figure out what went wrong with your scripts.
+        <br />
         <a href="https://github.com/cerner/canadarm">Learn More...</a>
       </p>
     </div>
-  </div>
-
-  <div class="row">
     <div class="col-sm">
       <h2>Carbon Graphs</h2>
       <a href="https://github.com/cerner/carbon-graphs">
@@ -64,6 +77,7 @@ aliases: ["open_source"]
         Carbon is a graphing library built using D3 visualization library. It provides an API
         for generating native graphs such as Line and Paired Result graphs based on design
         standards.
+        <br />
         <a href="https://github.com/cerner/carbon-graphs">Learn More...</a>
       </p>
     </div>
@@ -79,6 +93,22 @@ aliases: ["open_source"]
         <a href="https://github.com/cerner/gc_stats">Learn More...</a>
       </p>
     </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+      <h2>Beadledom</h2>
+      <a href="https://github.com/cerner/beadledom">
+        <img src="beadledom.png" alt="Beadledom" />
+      </a>
+      <p>
+        Beadledom is a bundle of common components required for building JAX-RS web services.
+        It is the starting point for new services. The core of Beadledom provides health checks,
+        monitoring via Stagemonitor, API docs via Swagger, JSON serialization via Jackson, and
+        integration of these components with Guice.
+        <a href="../blog/beadledom-simple-java-framework-for-building-rest-apis/">Learn More...</a>
+      </p>
+    </div>
     <div class="col-sm">
       <h2>Jwala</h2>
       <a href="https://github.com/cerner/jwala">
@@ -89,33 +119,6 @@ aliases: ["open_source"]
         creating and persisting definitions of Group instances, and exposes a RESTful interface to do so.
         The definition of a Group includes Web Apps, JVMs, Web Servers, and Resources.
         <a href="https://github.com/cerner/jwala">Learn More...</a>
-      </p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-sm">
-      <h2>Scrimp</h2>
-      <a href="https://github.com/cerner/scrimp">
-        <img src="scrimp.png" alt="Scrimp" />
-      </a>
-      <p>
-        This is a tool for testing Thrift services via a web browser (analogous to how you might
-        test web services using a browser-based REST client). Given the IDL files for the services,
-        it provides a UI to help construct requests, invoke services, and display formatted responses.
-        <a href="https://github.com/cerner/scrimp">Learn More...</a>
-      </p>
-    </div>
-    <div class="col-sm">
-      <h2>Terra</h2>
-      <a href="https://github.com/cerner/terra-ui.com">
-        <img src="Terra.png" alt="Terra" />
-      </a>
-      <p>
-        Terra offers a set of configurable React components designed to help build scalable and modular
-        application UIs. The library easily integrates with webpack-based workflows and was created to solve
-        real-world issues in projects we work on day to day.
-        <a href="https://github.com/cerner/terra-ui.com">Learn More...</a>
       </p>
     </div>
   </div>
