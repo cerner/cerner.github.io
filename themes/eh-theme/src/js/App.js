@@ -1,5 +1,6 @@
 'use strict';
 
+import 'bootstrap';
 import $ from 'jquery';
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import {
