@@ -8,9 +8,9 @@
                         {{- $term := . -}}
                         {{- if $term.Params.images -}}
                             {{- with .Resources.GetMatch (index $term.Params.images 0) -}}
-                                {{- $image := .Resize "300x" -}}
+                                {{- $image := .Resize "200x" -}}
                                 <p class="text-center my-5">
-                                    <img data-src="{{ $image.RelPermalink }}" class="img-thumbnail rounded-circle" alt="{{ $term.Params.name }}">
+                                    <img data-src="{{ $image.RelPermalink }}" class="img-thumbnail rounded-circle shadow-sm" alt="{{ $term.Params.name }}">
                                 </p>
                             {{- end -}}
                         {{- end -}}

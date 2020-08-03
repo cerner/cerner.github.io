@@ -30,7 +30,7 @@ Here is the code snippet of what we will implement. It is a Go program, which wi
 
 First, we will build something that can invoke the [New Relic Alerts API](https://rpm.newrelic.com/api/explore/alerts_incidents/list). This will offer a single function (`hasOpenIncidents`) that will dictate if there are any open incidents when checking with New Relic.
 
-```go {linenos=table}
+```go
 // New Relic Incident API type (just using including two of the fields as an example)
 type Incident struct {
 	Id       int   `json:"id"`
@@ -75,7 +75,7 @@ func hasOpenIncidents(apiKey string) bool {
 
 We will then manage the GPIO pin state in a simple loop which will check to see if there are any open incidents. If so, it will set the pin to _High_, which will trigger the light switch. Otherwise it will set it to low. We will also include a handler for setting the pin to low when we terminate the application (ex. via a SIGTERM). Example of managing the state:
 
-```go {linenos=table}
+```go
 		// If there are any open New Relic incidents, set the pin to high
 		if hasOpenIncidents(apiKey) {
 			log.Print("Incidents detected, setting alarm.")
@@ -88,7 +88,7 @@ We will then manage the GPIO pin state in a simple loop which will check to see 
 
 When you put it all together, the full picture of code looks like this (`alarm.go`):
 
-```go {linenos=table}
+```go
 package main
 
 import (
@@ -174,8 +174,8 @@ func main() {
 	}
 	defer rpio.Close()
 
-	// Mapping to BCM2835 pin 18, which is the physical 12 pin. For more information about pin mapping, you can see
-	// how these are being mapped: https://github.com/stianeikeland/go-rpio/blob/v4.4.0/rpio.go#L35-L59
+    // Mapping to BCM2835 pin 18, which is the physical 12 pin. For more information about pin mapping, you can see
+    // how these are being mapped: https://github.com/stianeikeland/go-rpio/blob/v4.4.0/rpio.go#L35-L59
 	pin := rpio.Pin(18)
 	pin.Output()
 	closeHandler(pin)
@@ -202,7 +202,6 @@ func main() {
 		time.Sleep(1 * time.Minute)
 	}
 }
-
 ```
 
 ### Building

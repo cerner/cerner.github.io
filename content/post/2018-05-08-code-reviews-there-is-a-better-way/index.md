@@ -10,51 +10,25 @@ At Cerner, peer review of code is an important job. We have found it to greatly 
 
 ## Smaller code reviews are better code reviews
 
-<!-- TODO These are a unique format. Its basically an array/media using a fit right and fill left for the text -->
-<table cellpadding="5">
-  <tr>
-    <td>
-      <div class='pull-left' markdown="1">
-        The first step of making a code review inviting for others to provide feedback, is by making the scope of the review small. This generally requires thought and planning on how to incrementally present code for review, allowing each review to be smaller in size which can be safely included into the codebase in isolation. This can ultimately help morale of a team by avoiding monster-size reviews from being stagnate, and never reaching a point of completion due to amount of work necessary to review or the length of feedback that exists. By having the review small, a laser set of focus can be achieved to promptly and effectively complete the review, providing a positive reinforcement of being able to also complete the work.
-      </div>
-    </td>
-    <td>
-      {{< figure src="code-review-size.png" >}}
-    </td>
-  </tr>
-</table>
+{{< figure src="code-review-size.png" width="200" class="float-right" >}}
+
+The first step of making a code review inviting for others to provide feedback, is by making the scope of the review small. This generally requires thought and planning on how to incrementally present code for review, allowing each review to be smaller in size which can be safely included into the codebase in isolation. This can ultimately help morale of a team by avoiding monster-size reviews from being stagnate, and never reaching a point of completion due to amount of work necessary to review or the length of feedback that exists. By having the review small, a laser set of focus can be achieved to promptly and effectively complete the review, providing a positive reinforcement of being able to also complete the work.
 
 ## Have machines filter what code qualifies for review
 
-<table cellpadding="5">
-  <tr>
-    <td>
-      <div class='pull-left' markdown="1">
-        We recently had a "GitHub Day" at our Innovations campus, where GitHub and other Cerner engineers shared how to improve your use of source code management. In these presentations, a quote was shared that rang true:
-        <blockquote><p>We are more receptive to feedback from pedantic robots than pedantic people.</p></blockquote>
-        When it comes to a code review, it is easy to point out simple flaws in the code which relates to formatting or basic anti-patterns in a given language. However, should humans be spending time on these types of issues in a code review? Machines are well suited for testing code through linters and static analysis, where formatting rules and known bad patterns can be quickly identified. By focusing on having your CI system do these types of tests on your code, and failing your build when formatting problems emerge, you now have a filter which blocks a large set of noise from entering into a code review. As a result, humans don’t engage in a code review until the code actually builds (which would encompass both static and dynamic forms of tests). Furthermore, it is easier to receive these minor points from a machine (a bot which is communicating the results of your build), versus having a team member spend time pointing out all the minor things you forgot to check or format correctly. In the end, humans apply their creative mind on discussing deeper topics on the design and intentions of the code, versus getting distracted with noise of simple things that can be addressed earlier by machines.
-      </div>
-    </td>
-    <td>
-      {{< figure src="code-review-human-bot.png" >}}
-    </td>
-  </tr>
-</table>
+We recently had a "GitHub Day" at our Innovations campus, where GitHub and other Cerner engineers shared how to improve your use of source code management. In these presentations, a quote was shared that rang true:
+
+> We are more receptive to feedback from pedantic robots than pedantic people.
+
+When it comes to a code review, it is easy to point out simple flaws in the code which relates to formatting or basic anti-patterns in a given language. However, should humans be spending time on these types of issues in a code review? Machines are well suited for testing code through linters and static analysis, where formatting rules and known bad patterns can be quickly identified. By focusing on having your CI system do these types of tests on your code, and failing your build when formatting problems emerge, you now have a filter which blocks a large set of noise from entering into a code review. As a result, humans don’t engage in a code review until the code actually builds (which would encompass both static and dynamic forms of tests). Furthermore, it is easier to receive these minor points from a machine (a bot which is communicating the results of your build), versus having a team member spend time pointing out all the minor things you forgot to check or format correctly. In the end, humans apply their creative mind on discussing deeper topics on the design and intentions of the code, versus getting distracted with noise of simple things that can be addressed earlier by machines.
+
+{{< figure src="code-review-human-bot.png" width="300" >}}
 
 ## Agreed upon conventions
 
-<table cellpadding="5">
-  <tr>
-    <td>
-      <div class='pull-left' markdown="1">
-        Building upon the previous point, teams should have agreed upon conventions on things like style and code formatting, so that those things can be automatically found (and even fixed with the proper tooling).  This eliminates the propensity for style/formatting comments in code reviews which detract from the actual purpose of finding substantive issues within the code. If you find code styling questions or debates are occurring in the code review, ensure the team comes to an agreement on the convention, and that styling rule gets fed into your linter (ex. CheckStyle, Rubocop, IDE formatters) to avoid it from entering into a code review again. Furthermore, this helps reinforce the “boy scout rule”: Always leave the campground cleaner than you found it. By having your linter now embrace this new formatting rule, existing codebases that you start changing in the future will be invited to be updated as well, versus allowing the drift to continue to occur.
-      </div>
-    </td>
-    <td>
-      {{< figure src="code-review-conventions.png" >}}
-    </td>
-  </tr>
-</table>
+Building upon the previous point, teams should have agreed upon conventions on things like style and code formatting, so that those things can be automatically found (and even fixed with the proper tooling).  This eliminates the propensity for style/formatting comments in code reviews which detract from the actual purpose of finding substantive issues within the code. If you find code styling questions or debates are occurring in the code review, ensure the team comes to an agreement on the convention, and that styling rule gets fed into your linter (ex. CheckStyle, Rubocop, IDE formatters) to avoid it from entering into a code review again. Furthermore, this helps reinforce the “boy scout rule”: Always leave the campground cleaner than you found it. By having your linter now embrace this new formatting rule, existing codebases that you start changing in the future will be invited to be updated as well, versus allowing the drift to continue to occur.
+
+{{< figure src="code-review-conventions.png" width="300" >}}
 
 ## "How I would have done it"
 

@@ -8,7 +8,7 @@
                     <div class="media author">
                         {{- if $term.Params.images -}}
                             {{- with .Resources.GetMatch (index $term.Params.images 0) -}}
-                                {{- $image := .Resize "64x" -}}
+                                {{- $image := .Resize "48x" -}}
                                 {{- $2ximage := .Resize "128x q100" -}}
                                 {{- $3ximage := .Resize "192x q100" -}}
                                 <a href="{{ $term.RelPermalink }}" class="mr-3">
@@ -18,24 +18,17 @@
                                     </picture>
                                 </a>
                             {{- end -}}
-
-                            
                         {{ else }}
                             👤&nbsp;
                         {{- end -}}
                         <div class="media-body">
-                            <h5 class="name my-0">
+                            <h5 class="name my-{{- if $term.Params.images -}}2{{ else }}0{{ end }} ">
                                 {{- .Scratch.Set "name" .Title -}}
                                 {{- if $term.Params.name -}}
                                     {{- .Scratch.Set "name" $term.Params.name -}}
                                 {{- end -}}
                                 <a href="{{ $term.RelPermalink }}" class="small">{{ .Scratch.Get "name" }}</a>
                             </h5>
-                            {{- with $term.Params.twitter -}}
-                                <p class="social small text-muted">
-                                    <a href="https://twitter.com/@{{ . | urlize }}">@{{ . }}</a>
-                                </p>
-                            {{- end -}}
                         </div>
                     </div>
                 </li>

@@ -56,7 +56,7 @@ To create a line graph, first create an HTML element that will hold the graph. H
 
 From there, we will initialize a JavaScript object that configures various aspects of the graph, including where the graph will be drawn and how the axes should appear.
 
-```js {linenos=table}
+```js
 const graphConfiguration = {
     bindTo: "#root",
     axis: {
@@ -73,12 +73,11 @@ const graphConfiguration = {
         }
     }
 };
-
 ```
 
 Next, we’ll configure the dataset we want to plot.
 
-```js {linenos=table}
+```js
 const dataset = {
     key: "uid_1",
     label: {
@@ -101,15 +100,13 @@ const dataset = {
         }
     ]
 };
-
 ```
 
 And to wrap it all up, we’ll call ***loadContent*** to draw the content.
 
-``` js
+```js
 const graph = Carbon.api.graph(graphConfiguration);
 graph.loadContent(Carbon.api.line(dataset));
-
 ```
 
 That’s it!

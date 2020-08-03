@@ -16,19 +16,19 @@ Check out the video below to hear from ShipIt Day participants and supporters as
 
 {{< figure src="shipit-xiv-1.jpg" >}}
 
- >“We created "HCCgle" (pronounced "WHO-gull"), a search application for looking up HCC information by [ICD-10](https://en.wikipedia.org/wiki/ICD-10) diagnosis code (e.g. - "E13.11") or by term (e.g. - "Diabetes mellitus"), including across physician-friendly terminologies like [IMO](https://en.wikipedia.org/wiki/Intelligent_Medical_Objects) and [SNOMED](https://en.wikipedia.org/wiki/Systematized_Nomenclature_of_Medicine) CT. The app presented which HCC categories the requested term belongs to (if any) and shows how its categorization in the HCC specification has changed over time between revisions. This was created using Java, React, and DropWizard as well as an Oracle database. Our primary use case for this project is for aiding support troubleshooting, as there was not a good way to find the HCC codes used in production.” – Bravo Avocado
+> “We created "HCCgle" (pronounced "WHO-gull"), a search application for looking up HCC information by [ICD-10](https://en.wikipedia.org/wiki/ICD-10) diagnosis code (e.g. - "E13.11") or by term (e.g. - "Diabetes mellitus"), including across physician-friendly terminologies like [IMO](https://en.wikipedia.org/wiki/Intelligent_Medical_Objects) and [SNOMED](https://en.wikipedia.org/wiki/Systematized_Nomenclature_of_Medicine) CT. The app presented which HCC categories the requested term belongs to (if any) and shows how its categorization in the HCC specification has changed over time between revisions. This was created using Java, React, and DropWizard as well as an Oracle database. Our primary use case for this project is for aiding support troubleshooting, as there was not a good way to find the HCC codes used in production.” – Bravo Avocado
 
 2nd Place- Risky Salt (Kevin Eilers, Ryan Rickard, Pepper Pancoast)
 
 {{< figure src="shipit-xiv-2.jpg" >}}
 
->“We created an innovation/strategic roadmap prototype for Cerner's clients that shows past, current and future projects, along with crucial data points for each. The data was directly from a Microsoft SQL server that houses all of our project management data, and the application was built on Ruby on Rails and React.”– Risky Salt
+> “We created an innovation/strategic roadmap prototype for Cerner's clients that shows past, current and future projects, along with crucial data points for each. The data was directly from a Microsoft SQL server that houses all of our project management data, and the application was built on Ruby on Rails and React.”– Risky Salt
 
 3rd Place- All the Data (Taylor Clay, Bilal Ahmad, Eric Ringle)
 
 {{< figure src="shipit-xiv-3.jpg" >}}
 
->“Our team worked on a prototype of a real-time flow sheet, that was a customizable data visualization tool for patient device data. In the real world, this would be used to view trends in a patient’s health to proactively identify risks. The goal of this project was to build a prototype UI support a dense flow sheet and graphical view of critical care data. This would include Cerner [CareAware iBus](https://www.cerner.com/pages/careaware) and [Cerner Millennium](https://www.cerner.com/solutions/health-systems) data sources, as well as, understand complexity to better gauge what functions to bring into the solution. This was created using [Node-RED](https://nodered.org/) (created a mock service that published data to the app) and React (the application UI).” – All the Data
+> “Our team worked on a prototype of a real-time flow sheet, that was a customizable data visualization tool for patient device data. In the real world, this would be used to view trends in a patient’s health to proactively identify risks. The goal of this project was to build a prototype UI support a dense flow sheet and graphical view of critical care data. This would include Cerner [CareAware iBus](https://www.cerner.com/pages/careaware) and [Cerner Millennium](https://www.cerner.com/solutions/health-systems) data sources, as well as, understand complexity to better gauge what functions to bring into the solution. This was created using [Node-RED](https://nodered.org/) (created a mock service that published data to the app) and React (the application UI).” – All the Data
 
 
 ## People’s Choice Award Winners

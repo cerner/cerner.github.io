@@ -4,12 +4,15 @@ authors: ["Brittni Kingston"]
 date: 2018-11-07
 tags: [engineering, culture, devcon]
 thumbnail: "culture-1.jpg"
+#aliases: [ "/blog/devculture-team" ]
+slug: [ "devculture-team" ]
 ---
 The tech industry is constantly evolving; for better or worse, there's no way around it. Now, more than ever, having a culture that fosters collaboration, empowers associates, and supports innovation is vital to a company's success in the face of such constant change. However, an effective culture must be grown organically while being supported by senior leadership. At Cerner, we recognize the challenges involved in growing an effective, rewarding, and fun culture.With this in mind, we've made intentional strategic investments to overcome them. We’ve taken a unique approach by establishing a team that focuses on growing our culture across dev and ops specifically. Our team is called the DevCulture Team.
 
 {{< figure src="culture-1.jpg" >}}
 
-#### Our Mission
+## Our Mission
+
 >We exist as a strategic lever to establish Cerner as a destination for top tech talent, helping shift workforce behavior to catalyze the change Cerner needs for the Next.
 
 Cerner associates consider themselves privileged to work on challenging problems in an important space, healthcare. In 2010-2011, associates across dev and ops began to realize how much more they could learn from and contribute to the broader tech industry. We started attending conferences and bringing back new insights on the opportunities available when companies focused on culture as a driver for hiring, retaining, and leveling up associates working on software.
@@ -20,13 +23,13 @@ This led to establishing [DevCon](https://engineering.cerner.com/2013/08/devcon)
 
 So who do we target and how do we develop our strategies? We focus our programs and work on both sides of the Dev/Ops equation, including user experience and product strategy. We also uniquely report through development executives which gives us the ability to advocate for their perspectives, represent engineering, and align strategies as we partner with other organizations (such as Recruiting, Talent Development, Learning, Finance, etc.) to implement our programs and values.
 
-**Culture Councils**
+### Culture Council
 
 In effort to have buy-in, perspectives, and engagement from all sides of the business, we established Culture Councils to help us define our strategic direction. Each year, members are selected from an open application process. These Councils around the globe meet regularly to discuss where we are, where we are going, and where we need to be in order to be successful culturally. From existing programs to identifying cultural gaps, the Councils’ support of our team makes all of our work possible.
 
 Curious about what type of programs we run? We thought you might be. Check out some of our favorites!
 
-**DevCon**
+### DevCon
 
 Embodying our values, DevCon is the foundation of our development culture. Providing opportunities to learn, share, network, and grow, DevCon is an internal conference and now takes place in three locations each year: Kansas City, Philadelphia, and Bangalore.
 
@@ -34,7 +37,7 @@ From industry leader keynote speakers to hours of associate led sessions and a g
 
 {{< figure src="culture-3.jpg" caption="Each year, the DevCulture team partners with associates from various organizations and roles to form the Core Planning Team that guides the overall direction of the conference, decides the theme, selects the talks, and plans engaging activities for associates to participate in at the conference." >}}
 
-**Engaging with the Industry**
+### Engaging with the Industry
 
 We believe we have a lot to learn from and share back with the industry and local tech community. From agile methodologies to big data processing, we bring in industry experts on a monthly basis in our Tech Talk Series to share their knowledge and perspectives that help our associates learn and grow. You can subscribe to our [YouTube Channel](https://www.youtube.com/user/CernerEng?sub_confirmation=1) to get notified anytime we post one!
 
@@ -44,13 +47,13 @@ While attending and sponsoring conferences helps us bring essential knowledge ba
 
 When we consume open source in our software, we have the opportunity to leverage the talent from a broad cross section of the industry to make our solutions better. We also encourage associates to contribute to open source software both internally and externally. Learn more about the work we’re doing in Open Source on our [Blog](http://bit.ly/2Oj5DeL).
 
-**ShipIt Day**
+### ShipIt Day
 
 Modeled after [Atlassian’s ShipIt Day](https://www.atlassian.com/company/shipit), we frequently host these 24 hour hackathons throughout the year in Kansas City, Malvern, Bangalore, and Brasov. We believe this encourages ingenuity and collaboration by promoting cross-pollination of ideas and teams as they solve problems together. Teams in KC compete for the coveted Golden Keyboard and Golden Mouse trophies that travel the campus, each winning team adding a trinket to the trophy representing their unique winning project. Learn about our most recent ShipIt Day winners on this [Engineering Health blog](http://bit.ly/2PQXprk).
 
 {{< figure src="culture-5.jpg" caption="Teams present their projects to a panel of judges at the conclusion of the hackathon to determine the winners." >}}
 
-**Our Work Can Sometimes Be Quite Odd.**
+### Our Work Can Sometimes Be Quite Odd.
 
 Amidst the strategic work in advancing our culture, we have found ourselves completing work for things most people would never consider to be a small part of their full time adult day job. Some of our favorite odd job memories from the past six years include:
 
@@ -60,8 +63,7 @@ Amidst the strategic work in advancing our culture, we have found ourselves comp
 * Building an elaborate patchwork of Lego shapes on a giant Lego board to serve as a background for an all company meeting
 Renting a uHaul to transport old couches, coffee tables, TV stands, and TV’s we purchased from thrift stores in order to create retro living room spaces at [DevCon 2013](https://www.youtube.com/watch?v=cE0YoFg-hkE) where associates played video games between sessions.
 
-<!-- TODO: Wasn't able to add bit.ly link to innovations. Tried the below but it just adds an extra link at the end  -->
-{{< figure src="culture-6.jpg" caption="Prior to moving into our brand new Kansas City Innovations Campus in 2017, our team made a video to demonstrate all the ways the desks can be configured to showcase the new setup. To avoid it being boring, we dressed up with various costumes we had on hand from other programs." attrlink="http://bit.ly/2GP1vuU" attr="Innovations Campus" >}}
+[{{< figure src="culture-6.jpg" caption="Prior to moving into our brand new Kansas City Innovations Campus in 2017, our team made a video to demonstrate all the ways the desks can be configured to showcase the new setup. To avoid it being boring, we dressed up with various costumes we had on hand from other programs." attrlink="http://bit.ly/2GP1vuU" attr="See: Innovations Campus" >}}]()
 
 We believe culture is a journey, not a destination, and something we will always have to invest in and improve upon. These programs and efforts mentioned just scratch the surface of what we’re working on, with other projects ranging from how we can increase manager effectiveness to influencing our growth in continuous delivery models. Culture doesn't change overnight, we're iterating over ours with new programs based on regular feedback, that must be supported from within, and/or that we feel it's important enough to truly invest in it.
 
