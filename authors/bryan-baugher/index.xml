@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bryan Baugher on Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/bryan-baugher/</link>
+    <description>Recent content in Bryan Baugher on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Tue, 06 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/authors/bryan-baugher/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cerner Open Sources its Kafka Utilities</title>
+      <link>https://engineering.cerner.com/blog/cerner-open-sources-its-kafka-utilities/</link>
+      <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/cerner-open-sources-its-kafka-utilities/</guid>
+      <description>At Cerner, we often make use of many open source projects in our infrastructure. I work on a team responsible for Cerner&amp;rsquo;s Ingestion Platform, a critical piece of infrastructure that takes in TBs of data and over a billion messages per day. The platform’s responsibility is then to make this data available for downstream teams to consume. When designing the Ingestion Platform, we felt Apache Kafka was perfect for ingesting and consuming these massive streams of data.</description>
+    </item>
+    
+    <item>
+      <title>Managing Splunk&#39;s Knowledge</title>
+      <link>https://engineering.cerner.com/blog/managing-splunk-knowledge/</link>
+      <pubDate>Fri, 14 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/managing-splunk-knowledge/</guid>
+      <description>When we first were given access to Splunk we were excited about all the functionality it could provide our team to help us monitor and debug our applications. We created alerts to email us if our applications are logging errors, dashboards to show health or metrics of our services, and field extractions as well as tags to make searching easier. As we created more and more of these Splunk knowledge objects we started to have issues.</description>
+    </item>
+    
+    <item>
+      <title>Automated Deployment with Apache Kafka</title>
+      <link>https://engineering.cerner.com/blog/automated-deployment-with-apache-kafka/</link>
+      <pubDate>Thu, 16 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/automated-deployment-with-apache-kafka/</guid>
+      <description>It&amp;rsquo;s likely not a surprise that Cerner would use Apache Kafka as we have used a number of related technologies like Apache Hadoop along with its Map/Reduce, HDFS and even Apache HBase. Our team first started using Apache Kafka in 2014 when Kafka 0.8 first came out. Since then we&amp;rsquo;ve expanded to using Kafka for a number of different use cases (1, 2) and it has become a core piece of Cerner&amp;rsquo;s infrastructure.</description>
+    </item>
+    
+    <item>
+      <title>Deploying Web Services with Apache Tomcat and Chef</title>
+      <link>https://engineering.cerner.com/blog/deploying-web-services-with-apache-tomcat-and-chef/</link>
+      <pubDate>Thu, 04 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/deploying-web-services-with-apache-tomcat-and-chef/</guid>
+      <description>Open source is an important part of our engineering culture and we love when we’re able to contribute back to the community. We recently open sourced our Tomcat Chef Cookbook, which we use to automate deploying many of our web services here at Cerner. The cookbook is meant to be simple, yet flexible enough to change most anything about Apache Tomcat to your liking. It supports installing any version of Tomcat, configuring any file within the Tomcat installation and deploying web applications.</description>
+    </item>
+    
+  </channel>
+</rss>

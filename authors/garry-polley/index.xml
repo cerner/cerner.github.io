@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Garry Polley on Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/garry-polley/</link>
+    <description>Recent content in Garry Polley on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Mon, 20 Jul 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/authors/garry-polley/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JavaScript Logging: We can do better!</title>
+      <link>https://engineering.cerner.com/blog/javascript-logging-we-can-do-better/</link>
+      <pubDate>Mon, 20 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/javascript-logging-we-can-do-better/</guid>
+      <description>Currently in the world of JavaScript these options are what we most commonly use to generate logs:
+ console.log console.info console.warn console.error  These are actually pretty good in most modern browsers. Even if you go back to Internet Explorer 8 console.log and friends work as long as you have the developer tools open.
+Given that we have these logging utilities what is the problem with using them? When in local development these are just fine for helping debug and speed up development.</description>
+    </item>
+    
+  </channel>
+</rss>

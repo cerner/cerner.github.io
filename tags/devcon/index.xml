@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>devcon on Engineering Health</title>
+    <link>https://engineering.cerner.com/tags/devcon/</link>
+    <description>Recent content in devcon on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Wed, 07 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/tags/devcon/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Our DevCulture Team: Connecting Communities &amp; Empowering Teams to Invent the Future</title>
+      <link>https://engineering.cerner.com/blog/devculture-team/</link>
+      <pubDate>Wed, 07 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/devculture-team/</guid>
+      <description>The tech industry is constantly evolving; for better or worse, there&amp;rsquo;s no way around it. Now, more than ever, having a culture that fosters collaboration, empowers associates, and supports innovation is vital to a company&amp;rsquo;s success in the face of such constant change. However, an effective culture must be grown organically while being supported by senior leadership. At Cerner, we recognize the challenges involved in growing an effective, rewarding, and fun culture.</description>
+    </item>
+    
+    <item>
+      <title>DevCon 2016 Word Cloud</title>
+      <link>https://engineering.cerner.com/blog/devcon-word-cloud/</link>
+      <pubDate>Wed, 28 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/devcon-word-cloud/</guid>
+      <description>Every year we hold an internal developers conference called DevCon. This year we had 295 submissions for talks, ranging from a deep technical dive into the inner workings of Kafka to a reflection on the power of office pranks.‌ I wondered what, if anything, do these submissions have in common? Are there any common themes/topics being discussed? To find out I decided to visualize the talk submissions in a word cloud to create an easily understandable (and hopefully aesthetically pleasing) view of what topics were most common.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kafka on Engineering Health</title>
+    <link>https://engineering.cerner.com/tags/kafka/</link>
+    <description>Recent content in kafka on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Tue, 06 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/tags/kafka/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cerner Open Sources its Kafka Utilities</title>
+      <link>https://engineering.cerner.com/blog/cerner-open-sources-its-kafka-utilities/</link>
+      <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/cerner-open-sources-its-kafka-utilities/</guid>
+      <description>At Cerner, we often make use of many open source projects in our infrastructure. I work on a team responsible for Cerner&amp;rsquo;s Ingestion Platform, a critical piece of infrastructure that takes in TBs of data and over a billion messages per day. The platform’s responsibility is then to make this data available for downstream teams to consume. When designing the Ingestion Platform, we felt Apache Kafka was perfect for ingesting and consuming these massive streams of data.</description>
+    </item>
+    
+    <item>
+      <title>Automated Deployment with Apache Kafka</title>
+      <link>https://engineering.cerner.com/blog/automated-deployment-with-apache-kafka/</link>
+      <pubDate>Thu, 16 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/automated-deployment-with-apache-kafka/</guid>
+      <description>It&amp;rsquo;s likely not a surprise that Cerner would use Apache Kafka as we have used a number of related technologies like Apache Hadoop along with its Map/Reduce, HDFS and even Apache HBase. Our team first started using Apache Kafka in 2014 when Kafka 0.8 first came out. Since then we&amp;rsquo;ve expanded to using Kafka for a number of different use cases (1, 2) and it has become a core piece of Cerner&amp;rsquo;s infrastructure.</description>
+    </item>
+    
+  </channel>
+</rss>

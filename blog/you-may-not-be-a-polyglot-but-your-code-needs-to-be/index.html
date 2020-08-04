@@ -1,186 +1,135 @@
-
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>You May Not Be a Polyglot, but Your Code Needs to Be - Engineering Health</title>
-  <meta name="author" content="Cerner">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+<title>
   
-  <meta name="description" content="">
+     You May Not Be a Polyglot, but Your Code Needs to Be | 
+    Engineering Health
   
+</title><meta name="description" content="a blog by engineers, for engineers"><meta name="author" content="Denisse Osorio de Large">
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.png">
 
-  
-  <link rel="canonical" href="http://engineering.cerner.com/blog/you-may-not-be-a-polyglot-but-your-code-needs-to-be">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/stylesheets/site/site.css" media="screen, projection" rel="stylesheet" type="text/css">
 
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <script src="/javascripts/libs/bootstrap.min.js"></script>
+    
+        
+            <link rel="stylesheet" href="/dist/main.8ddb5a998657440f326d.min.css">
+        
+    
 
-  <link href="/atom.xml" rel="alternate" title="Engineering Health" type="application/atom+xml">
-  <script src="/javascripts/search.min.js" type="text/javascript" charset="utf-8"></script>
-  
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-37701128-1']);
-    _gaq.push(['_trackPageview']);
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
 
+
+<link rel="canonical" href="https://engineering.cerner.com/blog/you-may-not-be-a-polyglot-but-your-code-needs-to-be/"><script src="/js/jquery-3.5.1.min.js"></script><meta property="og:title" content="You May Not Be a Polyglot, but Your Code Needs to Be" />
+<meta property="og:description" content="Last October, I had the privilege to speak at Grace Hopper, the world&rsquo;s largest gathering of women technologists. It was impressive to see 15,000 fellow female technologists gather together to share their experiences and technical expertise. To look into the audience, and see a room full of other female engineers was a great experience!
+My talk was titled, You May Not Be a Polyglot, but Your Code Needs to Be (previously presented at Midwest." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://engineering.cerner.com/blog/you-may-not-be-a-polyglot-but-your-code-needs-to-be/" />
+<meta property="article:published_time" content="2017-07-07T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-07-07T00:00:00+00:00" />
+<meta itemprop="name" content="You May Not Be a Polyglot, but Your Code Needs to Be">
+<meta itemprop="description" content="Last October, I had the privilege to speak at Grace Hopper, the world&rsquo;s largest gathering of women technologists. It was impressive to see 15,000 fellow female technologists gather together to share their experiences and technical expertise. To look into the audience, and see a room full of other female engineers was a great experience!
+My talk was titled, You May Not Be a Polyglot, but Your Code Needs to Be (previously presented at Midwest.">
+<meta itemprop="datePublished" content="2017-07-07T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2017-07-07T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2224">
+
+
+
+<meta itemprop="keywords" content="engineering,polyglot,localization,internationalization,grace,hopper," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="You May Not Be a Polyglot, but Your Code Needs to Be"/>
+<meta name="twitter:description" content="Last October, I had the privilege to speak at Grace Hopper, the world&rsquo;s largest gathering of women technologists. It was impressive to see 15,000 fellow female technologists gather together to share their experiences and technical expertise. To look into the audience, and see a room full of other female engineers was a great experience!
+My talk was titled, You May Not Be a Polyglot, but Your Code Needs to Be (previously presented at Midwest."/>
 
 </head>
-
-<body  class="top-navbar  ">
-  
-
-
-
-<header id="banner" role="banner" class="container-fluid banner-kc-background">
-
-  <div class="image">
-
+<body>
     
-      <img src="/images/KC.png" alt="Kansas City" />
-    
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-sm" id="navbar-main-menu">
+    <div class="container">
+        <a class="navbar-brand" href="/"><img src="/cerner-logo.png"/></a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="main-menu" class="collapse navbar-collapse" >
+            <ul class="nav navbar-nav ml-auto">
+                
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/culture/">Culture</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/open-source/">Open Source</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/tech-talks/">Tech Talks</a></li>
+                
+            
+            </ul>
+            
+            <div class="form-inline my-2 my-lg-0 searchbox">
+    <input id="search-by" type="search" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
+</div>
 
-    <div id="header1">Engineering Health<br/><span class="header2">A <b>Cerner</b> Blog</span></div>
-
-  </div>
-  <nav class="navbar navbar-inverse" role="navigation">
-  <div class="container">
-    <div class="navbar-inner">
-      <a class="brand" href="#">Engineering Health</a>
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li class="selected">
-            <a href="/">Blog</a>
-          </li>
-          <li >
-            <a href="/culture">Culture</a>
-          </li>
-          <li >
-            <a href="/tech_talks">Tech Talks</a>
-          </li>
-          <li >
-            <a href="/open_source">Open Source</a>
-          </li>
-          <li >
-            <a href="/blog/archives">Archives</a>
-          </li>
-        </ul>
-        <div id="search" class="pull-right">
-          <form action="/search" method="get" class="navbar-search">
-            <input type="text" id="search-query" name="q" class="search-query" placeholder="Search" autocomplete="off">
-            <img src="/images/MagnifyingGlass.png" alt="Search" width="16" height="16" />
-          </form>
+<script type="text/javascript" src="/js/lunr.min.js"></script>
+<script type="text/javascript" src="/js/auto-complete.min.js"></script>
+<script type="text/javascript">
+    var baseurl =  "https:\/\/engineering.cerner.com";
+</script>
+<script type="text/javascript" src="/js/search.js"></script>
         </div>
-      </div>
     </div>
-  </div>
 </nav>
 
-</header>
 
-
-  <div class="container-fluid post-container">
-    <div class="row-fluid">
-      <section class="span12" id="search-results" style="display: none;">
-  <h2>Search results</h2>
-  <div class="entries">
-  </div>
-</section>
-    </div>
-    <div class="row-fluid">
-      
-<article id="main" class="hentry span8" role="article">
-
-  <section class="post">
     
-  <header class="entry-header">
+<main class="content-page container pt-7 pb-5">
     
-      <h1 class="entry-title">You May Not Be a Polyglot, but Your Code Needs to Be</h1>
-    
-    
-      <div class="entry-meta meta">
-        
+    <div class="row">
+        <div class="col">
+            <article class="article-content">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="meta text-muted mb-3">
+                            <p class="created text-muted text-uppercase font-weight-bold mb-1">July 7, 2017</p>
+                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>2224 words</span>
+                            <span><i class="fas fa-clock mr-2"></i>11 mins read</span>
+                        </div>
 
+                        <h1>You May Not Be a Polyglot, but Your Code Needs to Be</h1>
 
+                        <ul class="authors list-inline">
+        By: &nbsp;<li class="list-inline-item mr-3">
+                    <div class="media author">
+                            👤&nbsp;<div class="media-body">
+                            <h5 class="name my-0 "><a href="/authors/denisse-osorio-de-large/" class="small">Denisse Osorio de Large</a>
+                            </h5>
+                        </div>
+                    </div>
+                </li></ul>
+                    </div>
+                </div>
 
-
-
-
-
-
-  
-
-
-<time datetime="2017-07-07T00:00:00-05:00" pubdate data-updated="true">Jul 7<span>th</span>, 2017</time> | 
-  
-
-
-  <span class="byline author vcard">
-    <span class="fn">Denisse Osorio de Large</span>
-  </span>
-
-
-        
-      </div>
-    
-  </header>
-
-
-<div class="entry-content"><p>Last October, I had the privilege to speak at <a href="https://ghc.anitaborg.org/">Grace Hopper</a>, the world&rsquo;s largest gathering of women technologists. It was impressive to see 15,000 fellow female technologists gather together to share their experiences and technical expertise. To look into the audience, and see a room full of other female engineers was a great experience!</p>
-
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="content">
+                            <p>Last October, I had the privilege to speak at <a href="https://ghc.anitaborg.org/">Grace Hopper</a>, the world&rsquo;s largest gathering of women technologists. It was impressive to see 15,000 fellow female technologists gather together to share their experiences and technical expertise. To look into the audience, and see a room full of other female engineers was a great experience!</p>
 <p>My talk was titled, You May Not Be a Polyglot, but Your Code Needs to Be (<a href="https://www.youtube.com/watch?v=923ac4CSqsw">previously presented at Midwest.io</a>).
 One definition of the term polyglot is &ldquo;composed in many languages.&rdquo; During my talk, I discussed common misconceptions about writing code for global audiences, and I provided tips to help position engineers for success in these types of projects.</p>
-
 <p>Having worked in engineering, translation, and localization for more than over a decade, I have seen first-hand how projects struggle through the globalization process. A properly globalized solution is generally achieved by ensuring the appropriate internationalization, localization, and translation steps have taken place; however, as developers, we have misconceptions that make this process more costly and less effective than it needs to be.</p>
-
 <p>To help set the stage, I began my talk by speaking in Spanish. I love watching the audience react to my comments, as I usually say something silly during the introduction, so those who understand react one way, while others in the audience tend to look puzzled.</p>
-
 <p>One of the most common misconceptions when coding for a global audience is the infamous statement: &ldquo;I&rsquo;ll NEVER need to do this.&rdquo; The most common rationalization for this misconception is that in the U.S., we only speak English, however, one in five U.S. residents speaks a foreign language at home. This is a record 61.8 million residents who speak languages other than English. Of these residents, 25.1 million (41 percent) told the Census Bureau that they speak English less than very well. Additionally, data from 2013 shows that there are seven languages with at least one million speakers in the US. These languages were Spanish (38.4 million), Chinese (three million), Tagalog (1.6 million), Vietnamese (1.4 million), French (1.3 million), and Korean and Arabic (1.1 million each). By only serving one audience, we are ignoring many customers and consumers of our solutions.  Even in my adopted hometown of Kansas City, 6% of the population speaks Spanish as their primary language.</p>
-
 <p>Another common misconception is that internationalization and  localization are the same. Here are some definitions according to the Word Wide Web Consortium (W3):</p>
-
-<blockquote><ul>
+<blockquote>
+<ul>
 <li>&ldquo;Internationalization is the design and development of a product, application, or document content that <strong>enables</strong> easy localization for target audiences that vary in culture, region, or language.&rdquo;</li>
 <li>&ldquo;Localization refers to the adaptation of a product, application or document content to meet the language, cultural and other requirements of a specific target market (a &lsquo;locale&rsquo;).&rdquo;</li>
 </ul>
 </blockquote>
-
-<p>I like to think of their relationship more like this: <strong>i18N + L10N == G11N</strong></p>
-
-<br />
-
-
-<p>While the W3 notes, &ldquo;some people use other terms, such as globalization to refer to the same concept&rdquo; as internationalization,&ldquo; I see the appropriate execution of internationalization and localization together as providing a globalized solution.</p>
-
+<p>I like to think of their relationship more like this: <strong>i18N + L10N == G11N</strong>
+<!-- raw HTML omitted -->
+While the W3 notes, &ldquo;some people use other terms, such as globalization to refer to the same concept&rdquo; as internationalization,&rdquo; I see the appropriate execution of internationalization and localization together as providing a globalized solution.</p>
 <p>Among examples of appropriately globalized solutions, TripAdvisor is one I like to highlight because it has a broad user base, and many of its users don&rsquo;t realize it is used by others around the world in their own language. The following Trip Advisor elements help provide a positive user experience:</p>
-
 <ul>
 <li>Flexing dates to show in the appropriate locale</li>
 <li>Removing content that is not available in the target language (newsletters are a good example)</li>
@@ -188,19 +137,15 @@ One definition of the term polyglot is &ldquo;composed in many languages.&rdquo;
 <li>Allowing for text expansion to avoid truncation</li>
 <li>Flexing logos and the brand to ensure that it is appropriate for the locale</li>
 </ul>
-
-
 <p>Another common misconception when creating globalized applications is that once something has been internationalized and translated, it can be shipped. The best way to highlight the folly of this perception is to look at some marketing mishaps. Below are some of my favorite ones:</p>
-
-<blockquote><ul>
+<blockquote>
+<ul>
 <li>A famous detergent from the Middle East, is white as snow, so it is called by the word for snow in Farsi. This doesn&rsquo;t work well when it is referenced in English-speaking countries. In Farsi, the word for snow is barf.</li>
 <li>I also have a personal story. I come from a tropical country, and my native language is Spanish. When I first moved to the United States, I realized that I was not genetically engineered to be in the cold, dry weather of a Kansas City winter. My skin was itchy, and I desperately need some good hydrating lotion. My friends at school recommended something called Sarna. I was convinced they were trolling me because in Spanish, Sarna means <em>Scabies</em>.
 I have endured more than a dozen Kansas City winters, and I still can&rsquo;t make myself use that lotion, because I can&rsquo;t get over the name.</li>
 </ul>
 </blockquote>
-
 <p>Translation alone is not a solution. The translator must be proficient. In a previous position I was frequently asked how long it takes to learn a language. I was fighting the misconception that anyone who has taken two years of a language could translate. After failing to articulate why that was a misconception, I found a wonderful tool, thanks to the Foreign Language Institute and the Interagency Language Roundtable (ILR), who created a scale that is a set of descriptions of abilities to communicate in a language. One important aspect of this scale is that it is accurate when the evaluations are done by native speakers. It was originally developed by the United States Foreign Service Institute (FSI), and is still widely known as the FSI scale. It consists of descriptions of five levels of language proficiency.</p>
-
 <ul>
 <li>Level 1: Elementary</li>
 <li>Level 2: Limited Working</li>
@@ -208,296 +153,268 @@ I have endured more than a dozen Kansas City winters, and I still can&rsquo;t ma
 <li>Level 4: Full Professional</li>
 <li>Level 5: Native or Bilingual</li>
 </ul>
-
-
 <p>Then the scale estimates how long it takes to achieve that level of proficiency when a student is immersed learning the language at least six hours a day and at least five days per week. It then breaks down the languages by groups based on their difficulty:</p>
-
 <p>&ldquo;Easy&rdquo; languages are French, German, Indonesian, Italian, Portuguese, Romanian, Spanish, and Swahili:</p>
-
 <ul>
 <li>8 weeks (240 hours) to achieve level 1/1+</li>
 <li>16 weeks (480 hours) to achieve level 2</li>
 <li>24 weeks (720 hours) to achieve level 2+</li>
 </ul>
-
-
 <p>&ldquo;Hard&rdquo; languages are divided into the following groups.</p>
-
 <ul>
 <li>Group 2: Bulgarian, Burmese, Greek, Hindi, Persian, Urdu.</li>
 <li>Group 3: Amharic, Cambodian, Czech, Finnish, Hebrew, Hungarian, Lao, Polish, Russian, Serbo-Croatian, Thai, Turkish, Vietnamese.</li>
 <li>Group 4: Arabic, Chinese, Japanese, Korean)</li>
 </ul>
-
-
 <p>To learn these languages, you must spend the following time:</p>
-
 <ul>
 <li>12 weeks (360 hours) to achieve level 1/1+</li>
 <li>24 weeks (720 hours) to achieve level 1+ /2</li>
 <li>44+ weeks (1320+ hours) to achieve level 2/2+</li>
 </ul>
-
-
 <p>Taking a language for two years (usually college or high-school) is simply not enough to achieve the appropriate level of proficiency needed to translate. Even native speakers are not effective at translation. Becoming proficient in a language is very challenging, and cultural aspects are important as well.</p>
-
 <p>Additionally, brain activation patterns identified by the University of Turku in Finland show extensive activation of the brain during non-native language use, specifically, the left dorsolateral frontal cortex, which is associated with lexical search, semantic processing and verbal working memory. Brain activation patterns were clearly modulated by direction of translation, with more extensive activation during translation into the non-native language, which is often considered to a be more demanding task. These are not the same patterns used when speaking a language, though, as different brain connections need to exist.</p>
-
 <p>Machine translation has become more effective in the last few years, but only language experts should leverage it as part of their toolset. Translating something into a language you don&rsquo;t understand is a recipe for disaster. Simply go to an online translation tool, put in a phrase, convert it to another language, then convert it back.  Chances are, the original does not match the twice-translated phrase.</p>
-
 <p>If you are relying on professional translators, another common misconception is that translation can simply happen overnight. The truth is it CAN happen, just NOT well. A professional translator can usually translate about 2000 words per-day. If they are doing localization testing as well, you have to budget about twice the time for the regression test plans to be completed, as words will iteratively need to be changed as context is understood within the software.</p>
-
 <p>Now that I have covered the most common misconceptions with internationalization, localization, and translation, the next portion of this blog will focus on practical tips.</p>
-
 <p>As a developer, it is imperative that you understand your global strategy and what outcome the business is trying to accomplish. You don&rsquo;t want to invest a lot of development time making sure you can handle Right-To-Left languages or those that are double-byte if your business isn&rsquo;t planning on going to those markets.</p>
-
 <p>Creating appropriate partnerships with language providers is key to successfully globalizing software, as they can help handle many aspects of the globalization process from translation to localization. Speaking to companies who are already globalizing their software is a good way to find good providers.</p>
-
 <p>If you have to use free online tools to translate something internally (where the quality doesn&rsquo;t need to be high), make sure you understand the licensing of the tool. Some free tools will own your content once you run it through their translation engine.</p>
-
 <p>Including internationalization as part of your development process is a key aspect to globalization success. This means it should be included in:</p>
-
 <ul>
 <li>Design, including user interface design (UX)</li>
 <li>Estimates</li>
 <li>Testing</li>
 <li>Deployment</li>
 </ul>
-
-
 <p>Localization testing is a new step that should be included in your process, which requires language experts to be involved. From a development perspective, there are a lot of existing artifacts that can be leveraged in this process, such as regression and feature test plans. It is always helpful if those artifacts can be separated into those that have UI changes or not.</p>
-
 <p>Localization testing will likely focus on language changes and impacts to the UI. A byproduct of localization testing is that other types of defects might surface. Having a good process so that bugs can be reported and tracked is key.</p>
-
 <p>If you are just starting down the road of internationalization, be sure you don&rsquo;t reinvent the wheel on how to do it. Programming languages usually have well-documented libraries that can be used. If you are already internationalizing and working with a localization team, make sure you are commenting your code to provide clarification to the translators. Below is an example of a popular localization tool:</p>
-
 <div align="center">
-<img src="/assets/2017-07-11-you-may-not-be-a-polyglot-but-your-code-needs-to-be/polyglot.png">
+    <figure class="figure">
+        <a href="polyglot.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="polyglot.png"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
 </div>
-
-
 <p>Once you have incorporated all the steps for localization into your process, it is important to understand that your text changes will now have financial impact as they will affect translations. Translation memories are commonly used by translators, and any change to the source text will trigger a new translation to be required.</p>
-
 <p>Translation companies typically charge per word. The average cost per word in 2012 Common Sense Advisory&rsquo;s 2012 survey of more than 3,700 suppliers in 114 countries, using 220 language pairs, found that the average per-word rate for translation for the 30 most commonly used languages on the web is around 13.4 cents. The more impactful implication to your process is that text changes will trigger your localization testing cycle as it will be important to verify the new translations are correct in context.</p>
-
 <p>Let&rsquo;s discuss some quick principles that you should be able to apply regardless of what programming language you use.</p>
-
 <p>Don&rsquo;t concatenate strings. Language order matters with translation. Instead of doing this:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">style</span><span class="o">=</span><span class="s2">&quot;font-family: monospace&quot;</span><span class="o">&gt;</span><span class="kd">function</span> <span class="nx">getDescription</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>  <span class="kd">var</span> <span class="nx">color</span> <span class="o">=</span> <span class="nx">getColor</span><span class="p">();</span>
-</span><span class='line'>  <span class="kd">var</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">getElement</span><span class="p">();</span>
-</span><span class='line'>  <span class="k">return</span> <span class="nx">color</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="nx">element</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span><span class="o">&lt;</span><span class="err">/div&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Do something like this:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">style</span><span class="o">=</span><span class="s2">&quot;font-family: monospace&quot;</span><span class="o">&gt;</span><span class="kd">function</span> <span class="nx">getDescription</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>      <span class="kd">var</span> <span class="nx">color</span> <span class="o">=</span> <span class="nx">getColor</span><span class="p">();</span>
-</span><span class='line'>      <span class="kd">var</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">getElement</span><span class="p">();</span>
-</span><span class='line'><span class="k">return</span> <span class="nx">getLocalizedString</span> <span class="p">(</span><span class="s1">&#39;elementDescription&#39;</span><span class="p">,</span> <span class="nx">color</span><span class="p">,</span> <span class="nx">element</span><span class="p">);</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="nx">elementDescription</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">}</span> <span class="p">{</span><span class="mi">0</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/div&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Refraining from concatenating strings allows lthe localization professional to ensure that grammar is appropriately represented in the language. If you concatenate strings you will be forcing someone to say something like:</p>
-
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;font-family: monospace&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getDescription</span>() {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">getColor</span>();
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">element</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">getElement</span>();
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">color</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">element</span>;
+}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Do something like this:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;font-family: monospace&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getDescription</span>() {
+   	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">getColor</span>();
+   	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">element</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">getElement</span>();
+<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">getLocalizedString</span> (<span style="color:#e6db74">&#39;elementDescription&#39;</span>, <span style="color:#a6e22e">color</span>, <span style="color:#a6e22e">element</span>);
+}
+<span style="color:#a6e22e">elementDescription</span> <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>} {<span style="color:#ae81ff">0</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Refraining from concatenating strings allows lthe localization professional to ensure that grammar is appropriately represented in the language. If you concatenate strings you will be forcing someone to say something like:</p>
 <p>&ldquo;House Red&rdquo; instead of &ldquo;Red House.&rdquo;</p>
-
 <p>Speaking of names, be mindful how you use them in an application. Build appropriate abstraction and flexibility. Names can cause headaches in localization because first names aren&rsquo;t always first, people can have multiple last names, and middle names might not be there at all.</p>
-
 <p>I have a personal story about this. When I went to file my marriage license, we had a very interesting conversation with the clerk. He asked me what was my middle name. When I said that I don&rsquo;t have a middle name, he said the system had it as a required field. I suggested that he enter a space&hellip;after about 15 tense seconds he confirmed it had worked. This was in early 2000, and I hope things have changed, but since government moves at the speed of snails, I doubt it has.</p>
-
 <p>My final tip to better handle localization is to always use the FULL locale, that is, both language and country code to allow for maximum flexibility and to budget more time than what you believe you will need for your project. This last tip sounds very lame, but experience has taught me that chances are you won&rsquo;t do it. Engineers tend to be very optimistic on their estimates, and generally fail to allocate sufficient time.</p>
-</div>
 
+                        </div><div class="tags my-3"><a class="badge badge-pill badge-light border mr-2" href="/tags/engineering">
+                                    <i class="fas fa-tag mr-2"></i>engineering
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/polyglot">
+                                    <i class="fas fa-tag mr-2"></i>polyglot
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/localization">
+                                    <i class="fas fa-tag mr-2"></i>localization
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/internationalization">
+                                    <i class="fas fa-tag mr-2"></i>internationalization
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/grace">
+                                    <i class="fas fa-tag mr-2"></i>grace
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/hopper">
+                                    <i class="fas fa-tag mr-2"></i>hopper
+                                </a></div><ul class="share nav my-3 justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://twitter.com/intent/tweet?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fyou-may-not-be-a-polyglot-but-your-code-needs-to-be%2f&text=You%20May%20Not%20Be%20a%20Polyglot%2c%20but%20Your%20Code%20Needs%20to%20Be">
+              <i class="fa-fw fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fyou-may-not-be-a-polyglot-but-your-code-needs-to-be%2f&title=You%20May%20Not%20Be%20a%20Polyglot%2c%20but%20Your%20Code%20Needs%20to%20Be">
+                <i class="fa-fw fab fa-linkedin-in"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fengineering.cerner.com%2fblog%2fyou-may-not-be-a-polyglot-but-your-code-needs-to-be%2f&t=You%20May%20Not%20Be%20a%20Polyglot%2c%20but%20Your%20Code%20Needs%20to%20Be">
+                <i class="fa-fw fab fa-facebook-f"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://reddit.com/submit?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fyou-may-not-be-a-polyglot-but-your-code-needs-to-be%2f&title=You%20May%20Not%20Be%20a%20Polyglot%2c%20but%20Your%20Code%20Needs%20to%20Be">
+                <i class="fa-fw fab fa-reddit-alien"></i>
+            </a>
+        </li>
+    </nav>
+                    </div>
+                </div>
 
-  </section>
-  <footer>
-    <p class="meta">
-      
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  
-  
-</div>
-
-    
-    
-    <ul class="pager">
-      
-      <li class="previous"><a class="basic-alignment left"
-        href="/blog/shipit-day-viii-spring-2017/" title="Previous Post:
-        ShipIt VIII Day: Spring 2017">&laquo; Previous Post</a></li>
-      
-      <li><a href="/blog/archives">Blog Archives</a></li>
-      
-      <li class="next"><a class="basic-alignment right" href="/blog/managing-splunk-knowledge/"
-        title="Next Post: Managing Splunk's Knowledge">Next Post &raquo;</a></li>
-      
-    </ul>
-  </footer>
-</article>
-
-<aside class="sidebar-nav span4">
-  
-    <section class="well">
-  <h2>Recent Posts</h2>
-  <ul id="recent_posts" class="nav nav-list">
-    
-      <li>
-        <a href="/blog/shipit-xvii/">ShipIt Day XVII</a>
-      </li>
-    
-      <li>
-        <a href="/blog/shipit-xvi/">ShipIt Day XVI</a>
-      </li>
-    
-      <li>
-        <a href="/blog/terra-ui/">Terra UI: A Health-Care Focused UI Component Library</a>
-      </li>
-    
-      <li>
-        <a href="/blog/introducing-f-twelve-an-open-source-dev-console/">Introducing F-Twelve, an Open Source Dev Console</a>
-      </li>
-    
-      <li>
-        <a href="/blog/carbon-graphs-open-source-visualization-api/">Carbon Graphs: An Open Source Visualization API</a>
-      </li>
-    
-  </ul>
-</section>
-<section class="divider">
-  <svg width="70" height="10">
-   <rect width="10" height="10" x="0" y="0" style="fill:rgb(20,124,193)" />
-   <rect width="10" height="10" x="20" y="0" style="fill:rgb(121,193,68)" />
-   <rect width="10" height="10" x="40" y="0" style="fill:rgb(20,124,193)" />
-   <rect width="10" height="10" x="60" y="0" style="fill:rgb(121,193,68)" />
-</svg>
-</section><section class="well">
-  <h2>Follow Us</h2>
-  <script src="https://apis.google.com/js/platform.js"></script>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-  <div class="g-ytsubscribe" data-channelid="UCYHiZDU0YLN0dWLWSCP1JYQ" data-layout="default" data-count="default"></div>
-  <a href="https://twitter.com/CernerEng?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-screen-name="false" data-show-count="false">Follow @CernerEng</a>
-</section>
-<section class="divider">
-  <svg width="70" height="10">
-   <rect width="10" height="10" x="0" y="0" style="fill:rgb(20,124,193)" />
-   <rect width="10" height="10" x="20" y="0" style="fill:rgb(121,193,68)" />
-   <rect width="10" height="10" x="40" y="0" style="fill:rgb(20,124,193)" />
-   <rect width="10" height="10" x="60" y="0" style="fill:rgb(121,193,68)" />
-</svg>
-</section>
-<section class="well">
-  <h2>GitHub Repos</h2>
-  <ul id="gh_repos" class="nav">
-    <li class="loading">Status updating...</li>
-  </ul>
-  
-  <a href="https://github.com/cerner">@cerner</a> on GitHub
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'cerner',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-  
-</aside>
-
-
-    </div>
-  </div>
-  
-<script id="search-results-template" type="text/mustache">
-  {{#entries}}
-    <article class="search-result">
-        <div class="search-meta meta">
-        {{#date}}<time datetime="{{pubdate}}" pubdate>{{displaydate}}</time>{{/date}} | {{author}}
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        
+                    </div>
+                </div></article>
         </div>
-        <a href="{{url}}">{{title}}</a>
-    </article>
-  {{/entries}}
-</script>
-
-<script type="text/javascript">
-  $(function() {
-    $('#search-query').lunrSearch({
-      indexUrl: '/javascripts/index.json',   // Url for the .json file containing search index data
-      results : '#search-results',  // selector for containing search results element
-      entries : '.entries',         // selector for search entries containing element (contained within results above)
-      template: '#search-results-template'  // selector for Mustache.js template
-    });
-    //Currently ignoring the "return/enter" keystroke when searching (as this would just result in a 404 for the page lookup).
-    $('#search-query').keydown(function(event){
-      if(event.keyCode == 13) {
-        event.preventDefault();
-        return false;
-      }
-    });
-  });
-</script>
-
-  <footer role="contentinfo" class="page-footer">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="span2">
-          <img src="/images/Cerner_White_Horizontal.png" alt="Cerner Logo" />
-      </div>
-      <div class="span10 pull-left">
-          <p>&copy; 2020</p>
-      </div>
     </div>
+
+    <div class="related-content row mt-5 row-cols-1 row-cols-lg-3"><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/shipit-day-viii-spring-2017/" class="d-block"><img data-src="/blog/shipit-day-viii-spring-2017/pic0_hu359c9cc63e2e114e5155f0fc9f0febee_148585_700x350_fill_box_smart1_2.png" class="card-img-top mx-auto d-block" alt="ShipIt VIII Day: Spring 2017"><div class="card-body">
+            <h4 class="card-title">ShipIt VIII Day: Spring 2017</h4>
+            <p class="card-text text-muted text-uppercase">May 17, 2017</p>
+            <div class="card-text">
+                ShipIt Day VIII was held on April 20 and 21st. Seventeen teams made up of internal associates had just 24 hours to create something innovative, usable, and value-adding. This quarter’s ShipIt Day was held at our new Innovations Campus in the Link Conference Center. We were excited to get to utilize the space for this event. Another awesome addition to this quarter’s ShipIt Day was our new game rooms.
+            </div>
+        </div>
+    </a>
   </div>
+            </div><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/influencing-the-young-spanish-seaking-female-generation/" class="d-block"><img data-src="/blog/influencing-the-young-spanish-seaking-female-generation/denisse-steven-award_huc65377f560e43cde0703c1887ed4761b_58594_700x350_fill_q75_box_smart1.jpg" class="card-img-top mx-auto d-block" alt="Influencing the Young, Spanish-speaking Female Generation"><div class="card-body">
+            <h4 class="card-title">Influencing the Young, Spanish-speaking Female Generation</h4>
+            <p class="card-text text-muted text-uppercase">May 11, 2017</p>
+            <div class="card-text">
+                Outside of work, married couple Denisse Osorio de Large, a Cerner Director in Population Health Development, and Steven Large, a Cerner Senior Director in IP Development, are passionate about creating a younger generation that is passionate about technology and introducing them to the vast world of opportunities in software development. In addition to volunteering in the STEM community, helping organize Cerner’s development conference (DevCon), and speaking at conferences, Denisse and Steven enjoy working with children in the spanish-speaking community.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/influyendo-en-una-generacion-de-jovencitas-de-habla-hispana/" class="d-block"><div class="card-body">
+            <h4 class="card-title">Influyendo en una generación de jovencitas de habla hispana</h4>
+            <p class="card-text text-muted text-uppercase">May 11, 2017</p>
+            <div class="card-text">
+                Cuando no están trabajando, Denisse Osorio de Large, Directora de Cerner en Desarrollo de Salud Poblacional y Steven Large, Director sénior de Desarrollo de IP, quienes están casados, tienen como pasión crear una generación joven motivada por la tecnología y mostrarle a la misma el amplio mundo de oportunidades existentes en el desarrollo de software. Además de dar su tiempo como voluntarios en la comunidad promotora del área de ciencias, tecnología, ingeniería y matemáticas (STEM), contribuyen a organizar la conferencia de desarrollo de Cerner (DevCon) y realizan presentaciones en conferencias, Denisse y Steven disfrutan trabajar con niños de la comunidad de habla hispana.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div></div>
+</main>
+
+
+    <footer class="footer text-center bg-dark py-6">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="https://engineering.cerner.com/index.xml" rel="alternate" type="application/rss+xml" class="icons d-block">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a></li><li class="list-inline-item">
+                            <a href="https://github.com/cerner" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.instagram.com/cernercorporation/" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.linkedin.com/company/cerner-corporation" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fengineering.cerner.com%2F&amp;screen_name=CernerEng" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.youtube.com/user/cernereng?sub_confirmation=1" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                </ul>
+
+                <p class="text-light">
+                    
+                        Copyright © 2020
+                    
+                </p>
+
+                <p class="text-light">
+                Made with ❤️ by Cerner engineers.
+                </p>
+            </div>
+        </div>
+    </div>
 </footer>
 
-
-  
-
-
-
-
-
-
+    
+    
+        
+            <script src="/dist/main.44c94dde179dd23bf3f1.min.js"></script>
+        
+    
 
 
 
+
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-37701128-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
 
 </body>
 </html>

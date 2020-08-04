@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+  
+     spark | 
+    Engineering Health
+  
+</title><meta name="description" content="a blog by engineers, for engineers"><meta name="author" content="Cerner Engineering">
+
+<link rel="icon" href="/favicon.png">
+
+
+    
+        
+            <link rel="stylesheet" href="/dist/main.8ddb5a998657440f326d.min.css">
+        
+    
+
+
+
+
+<link rel="canonical" href="https://engineering.cerner.com/tags/spark/">
+  <link href="https://engineering.cerner.com/tags/spark/index.xml" rel="alternate" type="application/rss+xml" title="Engineering Health">
+  <link href="https://engineering.cerner.com/tags/spark/index.xml" rel="feed" type="application/rss+xml" title="Engineering Health"><script src="/js/jquery-3.5.1.min.js"></script><meta property="og:title" content="spark" />
+<meta property="og:description" content="a blog by engineers, for engineers" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://engineering.cerner.com/tags/spark/" />
+<meta property="og:updated_time" content="2018-07-02T00:00:00+00:00" />
+<meta itemprop="name" content="spark">
+<meta itemprop="description" content="a blog by engineers, for engineers"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="spark"/>
+<meta name="twitter:description" content="a blog by engineers, for engineers"/>
+
+</head>
+<body>
+    
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-sm" id="navbar-main-menu">
+    <div class="container">
+        <a class="navbar-brand" href="/"><img src="/cerner-logo.png"/></a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="main-menu" class="collapse navbar-collapse" >
+            <ul class="nav navbar-nav ml-auto">
+                
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/culture/">Culture</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/open-source/">Open Source</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/tech-talks/">Tech Talks</a></li>
+                
+            
+            </ul>
+            
+            <div class="form-inline my-2 my-lg-0 searchbox">
+    <input id="search-by" type="search" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js"></script>
+<script type="text/javascript" src="/js/auto-complete.min.js"></script>
+<script type="text/javascript">
+    var baseurl =  "https:\/\/engineering.cerner.com";
+</script>
+<script type="text/javascript" src="/js/search.js"></script>
+        </div>
+    </div>
+</nav>
+
+
+    
+<main class="list container py-6"><div class="row py-3">
+        <div class="col">
+            <h3 class="display-4">spark</h3></div>
+    </div><div class="row row-cols-1 row-cols-lg-3">
+        
+            <div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/data-engineering-with-bunsen/" class="d-block"><img data-src="/blog/data-engineering-with-bunsen/row-wise_hu98dd1d17b9c1bcda37a687cc354e9831_39810_700x350_fill_box_smart1_2.png" class="card-img-top mx-auto d-block" alt="Scalable Data Science with FHIR"><div class="card-body">
+            <h4 class="card-title">Scalable Data Science with FHIR</h4>
+            <p class="card-text text-muted text-uppercase">July 2, 2018</p>
+            <div class="card-text">
+                The FHIR standard started as a better way to exchange healthcare data, but it also provides a solid basis for deep analytics and Machine Learning at scale. This post looks at an example from the recent FHIR DevDays conference that does just that. You can also run the interactive FHIR data engineering tutorial used in the conference yourself.
+Our first step is to bring FHIR data into a data lake – a computational environment where our analysis can easily and efficiently work through petabytes of data.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div>
+        
+            <div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/announcing-bunsen-fhir-data-with-apache-spark/" class="d-block"><div class="card-body">
+            <h4 class="card-title">Announcing Bunsen: FHIR Data with Apache Spark</h4>
+            <p class="card-text text-muted text-uppercase">November 27, 2017</p>
+            <div class="card-text">
+                We’re excited to open source Bunsen, a library to make analyzing FHIR data with Apache Spark simple and scalable. Bunsen encodes FHIR resources directly into Apache Spark’s native data structures. This lets users leverage well-defined FHIR data models directly within Spark SQL.
+Here’s a simple query against a table of FHIR observations that produces a table of heart rate values:
+spark.sql(&#34;&#34;&#34; select subject.reference person_id, effectiveDateTime date_time, valueQuantity.value value from observations where in_valueset(code, &#39;heart_rate&#39;) &#34;&#34;&#34;).
+            </div>
+        </div>
+    </a>
+  </div>
+            </div>
+        
+    </div>
+</main>
+
+
+    <footer class="footer text-center bg-dark py-6">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="https://engineering.cerner.com/index.xml" rel="alternate" type="application/rss+xml" class="icons d-block">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a></li><li class="list-inline-item">
+                            <a href="https://github.com/cerner" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.instagram.com/cernercorporation/" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.linkedin.com/company/cerner-corporation" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fengineering.cerner.com%2F&amp;screen_name=CernerEng" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.youtube.com/user/cernereng?sub_confirmation=1" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                </ul>
+
+                <p class="text-light">
+                    
+                        Copyright © 2020
+                    
+                </p>
+
+                <p class="text-light">
+                Made with ❤️ by Cerner engineers.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+    
+        
+            <script src="/dist/main.44c94dde179dd23bf3f1.min.js"></script>
+        
+    
+
+
+
+
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-37701128-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body>
+</html>

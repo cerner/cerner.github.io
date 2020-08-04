@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>operations on Engineering Health</title>
+    <link>https://engineering.cerner.com/tags/operations/</link>
+    <description>Recent content in operations on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Thu, 16 Jan 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/tags/operations/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cerner and Open Source</title>
+      <link>https://engineering.cerner.com/blog/cerner-and-open-source/</link>
+      <pubDate>Thu, 16 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/cerner-and-open-source/</guid>
+      <description>(This post was written by Nathan Beyer, Bryan Baugher and Jacob Williams.)
+The use of open source software has become nearly ubiquitous in contemporary software development and it is no different for us, here at Cerner. We have been using open source software, directly and indirectly, for decades. Over the past decade, we’ve grown in maturity both in our use of open source software as well as our participation in open source communities.</description>
+    </item>
+    
+    <item>
+      <title>Learn what the rules don&#39;t cover</title>
+      <link>https://engineering.cerner.com/blog/learn-what-the-rules-dont-cover/</link>
+      <pubDate>Fri, 19 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/learn-what-the-rules-dont-cover/</guid>
+      <description>Most technical problems are like games. All of them have a way to win and all of them have rules; the easiest way to ensure you always win is to learn the rules inside and out, and more importantly what the rules don’t cover! Paying attention to what the rules don’t cover is what leads to out of the box thinking. What sets the great players apart from the rest is learning what the rules don’t cover which allows for creativity and, sometimes, shortcuts.</description>
+    </item>
+    
+    <item>
+      <title>Modularity in Medical Imaging</title>
+      <link>https://engineering.cerner.com/blog/modularity-in-medical-imaging/</link>
+      <pubDate>Fri, 29 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/modularity-in-medical-imaging/</guid>
+      <description>Developers often take for granted the level of flexibility and customization that is available within the software they use every day. Consumers of imaging software have traditionally been completely confined to interpret exams a specific way, and frequently in ways that are unintuitive. Every physician, specialist, technologist, med student, and others across the continuum of care has a preference as to not only how exams are laid out, but what information is displayed with the images and what transformations would be applied or processed automatically.</description>
+    </item>
+    
+    <item>
+      <title>Cerner and Tycho</title>
+      <link>https://engineering.cerner.com/blog/cerner-and-tycho/</link>
+      <pubDate>Wed, 27 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/cerner-and-tycho/</guid>
+      <description>Introduction Tycho is a build tool for integration between PDE and Maven. Cerner has a long history of working with Eclipse RCP but P2 integration is something of a more recent phenomenon. This post is going to talk about how Cerner is using Tycho, what prompted our transition to Tycho and how we accomplished moving our build to using Tycho.
+Why we use Tycho The first question when evaluating any tool is asking yourself: &amp;ldquo;why would I use that&amp;rdquo;?</description>
+    </item>
+    
+  </channel>
+</rss>

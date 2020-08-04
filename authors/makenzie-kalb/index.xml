@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Makenzie Kalb on Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/makenzie-kalb/</link>
+    <description>Recent content in Makenzie Kalb on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Mon, 08 Sep 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/authors/makenzie-kalb/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Intern HackFest 2014</title>
+      <link>https://engineering.cerner.com/blog/intern-hackfest-2014/</link>
+      <pubDate>Mon, 08 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/intern-hackfest-2014/</guid>
+      <description>Ten teams of two to four Cerner interns competed in a week-long HackFest this summer, working to solve any problem they put their minds to. This competition cumulated in a presentation and judging of projects, with prizes of Raspberry Pi Kits for each member of the second place team and Leap Motions for each member of the winning team. From mobile apps, to machine learning algorithms, to drones…this year’s Summer Intern HackFest has been one for the books.</description>
+    </item>
+    
+  </channel>
+</rss>

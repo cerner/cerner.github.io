@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unicode on Engineering Health</title>
+    <link>https://engineering.cerner.com/tags/unicode/</link>
+    <description>Recent content in Unicode on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Sat, 02 Aug 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/tags/unicode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Plain Text is a Lie</title>
+      <link>https://engineering.cerner.com/blog/the-plain-text-is-a-lie/</link>
+      <pubDate>Sat, 02 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/the-plain-text-is-a-lie/</guid>
+      <description>There is no such thing as plain text &amp;ldquo;But I see .txt files all the time&amp;rdquo; you say. &amp;ldquo;My source code is plain text&amp;rdquo; you claim. &amp;ldquo;What about web pages?!&amp;rdquo; you frantically ask. True, each of those things is comprised of text. The plain part is the problem. Plain denotes default or normal. There is no such thing. Computers store and transmit data in a number of methods; each are anything but plain.</description>
+    </item>
+    
+  </channel>
+</rss>

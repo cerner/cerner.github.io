@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>stem on Engineering Health</title>
+    <link>https://engineering.cerner.com/tags/stem/</link>
+    <description>Recent content in stem on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Thu, 11 May 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/tags/stem/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Influencing the Young, Spanish-speaking Female Generation</title>
+      <link>https://engineering.cerner.com/blog/influencing-the-young-spanish-seaking-female-generation/</link>
+      <pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/influencing-the-young-spanish-seaking-female-generation/</guid>
+      <description>Outside of work, married couple Denisse Osorio de Large, a Cerner Director in Population Health Development, and Steven Large, a Cerner Senior Director in IP Development, are passionate about creating a younger generation that is passionate about technology and introducing them to the vast world of opportunities in software development. In addition to volunteering in the STEM community, helping organize Cerner’s development conference (DevCon), and speaking at conferences, Denisse and Steven enjoy working with children in the spanish-speaking community.</description>
+    </item>
+    
+    <item>
+      <title>Influyendo en una generación de jovencitas de habla hispana</title>
+      <link>https://engineering.cerner.com/blog/influyendo-en-una-generacion-de-jovencitas-de-habla-hispana/</link>
+      <pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/influyendo-en-una-generacion-de-jovencitas-de-habla-hispana/</guid>
+      <description>Cuando no están trabajando, Denisse Osorio de Large, Directora de Cerner en Desarrollo de Salud Poblacional y Steven Large, Director sénior de Desarrollo de IP, quienes están casados, tienen como pasión crear una generación joven motivada por la tecnología y mostrarle a la misma el amplio mundo de oportunidades existentes en el desarrollo de software. Además de dar su tiempo como voluntarios en la comunidad promotora del área de ciencias, tecnología, ingeniería y matemáticas (STEM), contribuyen a organizar la conferencia de desarrollo de Cerner (DevCon) y realizan presentaciones en conferencias, Denisse y Steven disfrutan trabajar con niños de la comunidad de habla hispana.</description>
+    </item>
+    
+  </channel>
+</rss>

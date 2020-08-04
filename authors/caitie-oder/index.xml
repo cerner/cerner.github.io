@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Caitie Oder on Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/caitie-oder/</link>
+    <description>Recent content in Caitie Oder on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Fri, 08 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/authors/caitie-oder/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ShipIt XIV</title>
+      <link>https://engineering.cerner.com/blog/shipit-xiv/</link>
+      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/shipit-xiv/</guid>
+      <description>It is winter time in Kansas City, which also included our fourteenth edition of ShipIt, our routine hackathon competition we host at Cerner Engineering. Although the snowy weather may have kept participants between the warm walls of our Innovations Campus, the winter storm did not disturb the initiative and enthusiasm of the fourteen participating teams. Check out the video below to hear from ShipIt Day participants and supporters as to why ShipIt Day has become an engineering-wide program that supports Cerner’s development culture.</description>
+    </item>
+    
+    <item>
+      <title>ShipIt XII</title>
+      <link>https://engineering.cerner.com/blog/shipit-xii/</link>
+      <pubDate>Thu, 30 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/shipit-xii/</guid>
+      <description>This month we held our quarterly hackathon event- called ShipIt Day. We would like to thank all the participants for making ShipIt Day XII a huge success. With 75 participants, we had associates representing 13 different organizations across Cerner. These associates were given 24-hours to meet the requirements of this hackathon which included making something that was innovative, usable, and value-adding. As the clock ticked down, our associates worked in their teams to complete a project while taking some time to enjoy the fun activities happening throughout ShipIt day.</description>
+    </item>
+    
+  </channel>
+</rss>

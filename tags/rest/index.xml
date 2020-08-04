@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>REST on Engineering Health</title>
+    <link>https://engineering.cerner.com/tags/rest/</link>
+    <description>Recent content in REST on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Wed, 15 Feb 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/tags/rest/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Beadledom - Simple Java framework for building REST APIs</title>
+      <link>https://engineering.cerner.com/blog/beadledom-simple-java-framework-for-building-rest-apis/</link>
+      <pubDate>Wed, 15 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/beadledom-simple-java-framework-for-building-rest-apis/</guid>
+      <description>Beadledom is a framework for building Java based web services. It bundles several open sourced components required for building JAX-RS services.
+Why? HealtheIntent, Cerner’s population health management platform, started 3.5 years ago. We went through the process of investigating different technologies for the platform. We decided on using Java for building services and arrived on a set of libraries that we believed work well together.
+The long history of Java has led to an ocean of libraries that are available to Java developers.</description>
+    </item>
+    
+  </channel>
+</rss>

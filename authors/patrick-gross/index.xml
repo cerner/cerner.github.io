@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Patrick Gross on Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/patrick-gross/</link>
+    <description>Recent content in Patrick Gross on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Tue, 08 Oct 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/authors/patrick-gross/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introducing F-Twelve, an Open Source Dev Console</title>
+      <link>https://engineering.cerner.com/blog/introducing-f-twelve-an-open-source-dev-console/</link>
+      <pubDate>Tue, 08 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/introducing-f-twelve-an-open-source-dev-console/</guid>
+      <description>Many modern web browsers come with tools that can help developers debug their websites. If you are using Google Chrome or Firefox for example, try pressing F12. A new panel should open containing various tools. These tools provide a look “under the hood” for the current page. Common tools include a JavaScript console, JavaScript debugger, DOM explorer, network request viewer, performance profile, local storage manager, and more.</description>
+    </item>
+    
+  </channel>
+</rss>

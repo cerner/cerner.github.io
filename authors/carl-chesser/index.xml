@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/carl-chesser/</link>
+    <description>Recent content on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Thu, 14 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/authors/carl-chesser/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pi Day 2019: Build your own alarm system</title>
+      <link>https://engineering.cerner.com/blog/pi-day-2019-build-your-own-alarm-system/</link>
+      <pubDate>Thu, 14 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/pi-day-2019-build-your-own-alarm-system/</guid>
+      <description>At Cerner Engineering, we love to celebrate Pi Day. This day is not only a fun time to enjoy eating pie and reflecting on mathematical properties, but we also share big announcements internally for our developers conference, DevCon.
+Drew a crowd to celebrate Pi Day this afternoon with snacks, lightning talks, and our DevCon 2018 theme reveal! #314day #cernerdevcon pic.twitter.com/wyy5eLKHVl
+&amp;mdash; Cerner Engineering (@CernerEng) March 14, 2018  For this post, we thought it would be fun to share a simple example of how you can hook your existing monitoring system to a physical alarm system powered by a Raspberry Pi.</description>
+    </item>
+    
+    <item>
+      <title>Code Reviews: There is a Better Way</title>
+      <link>https://engineering.cerner.com/blog/code-reviews-there-is-a-better-way/</link>
+      <pubDate>Tue, 08 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/code-reviews-there-is-a-better-way/</guid>
+      <description>At Cerner, peer review of code is an important job. We have found it to greatly improve the quality of code and improve a team’s knowledge of the codebase. Through code review discussions, newer engineers are able to learn on valuable areas to question or challenge when something is being changed. While we heavily embrace the practice of peer code review, we also recognize it can make an engineer’s life challenging when you are overwhelmed with code to review.</description>
+    </item>
+    
+    <item>
+      <title>ShipIt X Day: Winter 2017</title>
+      <link>https://engineering.cerner.com/blog/shipit-x-day-winter-2017/</link>
+      <pubDate>Mon, 19 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/shipit-x-day-winter-2017/</guid>
+      <description>On December 14th and 15th, 18 teams of Cerner associates competed for the Golden Trophy during our tenth ShipIt Day. Being this was our tenth, it was fun to reflect back on how this event started and how much it has grown.
+ It has been great to see ShipIt Days start from small hackathons organically run by individual teams to now an engineering-wide quarterly event that brings together engineers from disparate organizations, allowing for a better cross-pollination of ideas and team members.</description>
+    </item>
+    
+    <item>
+      <title>2^5 Coding Competition 2017: 32 lines or less</title>
+      <link>https://engineering.cerner.com/blog/2-to-the-5th-coding-competition-2017/</link>
+      <pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/2-to-the-5th-coding-competition-2017/</guid>
+      <description>The Competition Part of Cerner&amp;rsquo;s engineering culture is to celebrate technology. This past fall, we had our annual celebration for Programmers’ Day. We celebrated the day with great food (taco bar and ice cream) and an evening of trivia.
+Topping off Programmers&amp;#39; Day with a taco bar and trivia night with @geekswhodrink pic.twitter.com/pSjqBVBHxK
+&amp;mdash; Cerner Engineering (@CernerEng) September 13, 2017  Happy Programmers&amp;#39; Day! Celebrating with an ice cream social. pic.</description>
+    </item>
+    
+    <item>
+      <title>ShipIt VII Day: Winter 2016</title>
+      <link>https://engineering.cerner.com/blog/shipit-vii-day-winter-2016/</link>
+      <pubDate>Wed, 18 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/shipit-vii-day-winter-2016/</guid>
+      <description>Cerner’s 7th ShipIt Day took place on December 8th and 9th. ShipIt is a 24-hour hackathon with the goal of building something awesome, usable, and value-adding within a single day. The event was hosted at our DevCenter in the Realization Campus, a large open space that hosts our DevAcademy (to learn more about our DevAcademy, check out this earlier post). We had 18 teams made up of associates from different Cerner organizations.</description>
+    </item>
+    
+    <item>
+      <title>The 30 Days of Code Experiment</title>
+      <link>https://engineering.cerner.com/blog/the-30-days-of-code-experiment/</link>
+      <pubDate>Tue, 06 Aug 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/the-30-days-of-code-experiment/</guid>
+      <description>In software development, we solve problems. As we solve these problems, we build connections in our minds of how to look at a problem, relate it to previous problems and solutions, and re-apply past approaches and techniques.
+These behavior habits build dogmatic ways of thinking and limit design choices to selective technologies we’ve used in the past. As we all know, you have to continually learn new technologies and different ways of thinking to stay current in the ever-changing landscape of software development.</description>
+    </item>
+    
+  </channel>
+</rss>

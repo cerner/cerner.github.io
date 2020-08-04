@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kyle Harper on Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/kyle-harper/</link>
+    <description>Recent content in Kyle Harper on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Wed, 18 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/authors/kyle-harper/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ShipIt XI Day: Spring 2018</title>
+      <link>https://engineering.cerner.com/blog/shipit-xi-spring-2018/</link>
+      <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/shipit-xi-spring-2018/</guid>
+      <description>On March 8th and 9th, 17 teams of Cerner associates competed for the Golden Keyboard during our 11th ShipIt Day. During this 24-hour hackathon, associates were challenged to create something innovative, usable, and value-adding. This was the fourth ShipIt held at our new Innovations Campus, leveraging the wonderful collaborative spaces available.
+With Shipit XI, we expanded upon a time-honored tradition of this event, the traveling trophy Golden Keyboard.</description>
+    </item>
+    
+  </channel>
+</rss>

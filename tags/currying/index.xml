@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>currying on Engineering Health</title>
+    <link>https://engineering.cerner.com/tags/currying/</link>
+    <description>Recent content in currying on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Mon, 29 Sep 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/tags/currying/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Closures &amp; Currying in JavaScript</title>
+      <link>https://engineering.cerner.com/blog/closures-and-currying-in-javascript/</link>
+      <pubDate>Mon, 29 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/closures-and-currying-in-javascript/</guid>
+      <description>Preface I have been asked many times what closures are and how they work. There are many resources available to learn this concept, but they are not always clear to everyone. This has led me to put together my own approach to exchanging the information.
+I will supply code samples. //&amp;gt; denotes an output or return.
+Before discussing closures, it is important to review how functions work in JavaScript.
+Introduction to functions If a function does not have a return statement, it will implicitly return undefined, which brings us to the simplest functions.</description>
+    </item>
+    
+  </channel>
+</rss>

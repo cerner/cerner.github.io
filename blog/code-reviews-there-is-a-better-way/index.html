@@ -1,408 +1,340 @@
-
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Code Reviews: There Is a Better Way - Engineering Health</title>
-  <meta name="author" content="Cerner">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+<title>
   
-  <meta name="description" content="">
+     Code Reviews: There is a Better Way | 
+    Engineering Health
   
+</title><meta name="description" content="a blog by engineers, for engineers"><meta name="author" content="Chris Fagyal, Carl Chesser">
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.png">
 
-  
-  <link rel="canonical" href="http://engineering.cerner.com/blog/code-reviews-there-is-a-better-way">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/stylesheets/site/site.css" media="screen, projection" rel="stylesheet" type="text/css">
 
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <script src="/javascripts/libs/bootstrap.min.js"></script>
+    
+        
+            <link rel="stylesheet" href="/dist/main.8ddb5a998657440f326d.min.css">
+        
+    
 
-  <link href="/atom.xml" rel="alternate" title="Engineering Health" type="application/atom+xml">
-  <script src="/javascripts/search.min.js" type="text/javascript" charset="utf-8"></script>
-  
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-37701128-1']);
-    _gaq.push(['_trackPageview']);
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
 
+
+<link rel="canonical" href="https://engineering.cerner.com/blog/code-reviews-there-is-a-better-way/"><script src="/js/jquery-3.5.1.min.js"></script><meta property="og:title" content="Code Reviews: There is a Better Way" />
+<meta property="og:description" content="At Cerner, peer review of code is an important job. We have found it to greatly improve the quality of code and improve a team’s knowledge of the codebase. Through code review discussions, newer engineers are able to learn on valuable areas to question or challenge when something is being changed. While we heavily embrace the practice of peer code review, we also recognize it can make an engineer’s life challenging when you are overwhelmed with code to review." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://engineering.cerner.com/blog/code-reviews-there-is-a-better-way/" />
+<meta property="article:published_time" content="2018-05-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-05-08T00:00:00+00:00" />
+<meta itemprop="name" content="Code Reviews: There is a Better Way">
+<meta itemprop="description" content="At Cerner, peer review of code is an important job. We have found it to greatly improve the quality of code and improve a team’s knowledge of the codebase. Through code review discussions, newer engineers are able to learn on valuable areas to question or challenge when something is being changed. While we heavily embrace the practice of peer code review, we also recognize it can make an engineer’s life challenging when you are overwhelmed with code to review.">
+<meta itemprop="datePublished" content="2018-05-08T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-05-08T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1203">
+
+
+
+<meta itemprop="keywords" content="engineering,code review," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Code Reviews: There is a Better Way"/>
+<meta name="twitter:description" content="At Cerner, peer review of code is an important job. We have found it to greatly improve the quality of code and improve a team’s knowledge of the codebase. Through code review discussions, newer engineers are able to learn on valuable areas to question or challenge when something is being changed. While we heavily embrace the practice of peer code review, we also recognize it can make an engineer’s life challenging when you are overwhelmed with code to review."/>
 
 </head>
-
-<body  class="top-navbar  ">
-  
-
-
-
-<header id="banner" role="banner" class="container-fluid banner-kc-background">
-
-  <div class="image">
-
+<body>
     
-      <img src="/images/KC.png" alt="Kansas City" />
-    
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-sm" id="navbar-main-menu">
+    <div class="container">
+        <a class="navbar-brand" href="/"><img src="/cerner-logo.png"/></a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="main-menu" class="collapse navbar-collapse" >
+            <ul class="nav navbar-nav ml-auto">
+                
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/culture/">Culture</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/open-source/">Open Source</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/tech-talks/">Tech Talks</a></li>
+                
+            
+            </ul>
+            
+            <div class="form-inline my-2 my-lg-0 searchbox">
+    <input id="search-by" type="search" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
+</div>
 
-    <div id="header1">Engineering Health<br/><span class="header2">A <b>Cerner</b> Blog</span></div>
-
-  </div>
-  <nav class="navbar navbar-inverse" role="navigation">
-  <div class="container">
-    <div class="navbar-inner">
-      <a class="brand" href="#">Engineering Health</a>
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li class="selected">
-            <a href="/">Blog</a>
-          </li>
-          <li >
-            <a href="/culture">Culture</a>
-          </li>
-          <li >
-            <a href="/tech_talks">Tech Talks</a>
-          </li>
-          <li >
-            <a href="/open_source">Open Source</a>
-          </li>
-          <li >
-            <a href="/blog/archives">Archives</a>
-          </li>
-        </ul>
-        <div id="search" class="pull-right">
-          <form action="/search" method="get" class="navbar-search">
-            <input type="text" id="search-query" name="q" class="search-query" placeholder="Search" autocomplete="off">
-            <img src="/images/MagnifyingGlass.png" alt="Search" width="16" height="16" />
-          </form>
+<script type="text/javascript" src="/js/lunr.min.js"></script>
+<script type="text/javascript" src="/js/auto-complete.min.js"></script>
+<script type="text/javascript">
+    var baseurl =  "https:\/\/engineering.cerner.com";
+</script>
+<script type="text/javascript" src="/js/search.js"></script>
         </div>
-      </div>
     </div>
-  </div>
 </nav>
 
-</header>
-
-
-  <div class="container-fluid post-container">
-    <div class="row-fluid">
-      <section class="span12" id="search-results" style="display: none;">
-  <h2>Search results</h2>
-  <div class="entries">
-  </div>
-</section>
-    </div>
-    <div class="row-fluid">
-      
-<article id="main" class="hentry span8" role="article">
-
-  <section class="post">
-    
-  <header class="entry-header">
-    
-      <h1 class="entry-title">Code Reviews: There Is a Better Way</h1>
-    
-    
-      <div class="entry-meta meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2018-05-08T00:00:00-05:00" pubdate data-updated="true">May 8<span>th</span>, 2018</time> | 
-  
-
-
-  <span class="byline author vcard">
-    <span class="fn">Chris Fagyal, Carl Chesser</span>
-  </span>
-
-
-        
-      </div>
-    
-  </header>
-
-
-<div class="entry-content"><p>At Cerner, peer review of code is an important job. We have found it to greatly improve the quality of code and improve a team’s knowledge of the codebase. Through code review discussions, newer engineers are able to learn on valuable areas to question or challenge when something is being changed. While we heavily embrace the practice of peer code review, we also recognize it can make an engineer’s life challenging when you are overwhelmed with code to review. Furthermore, it can be large source of project delay when points of coordination are not managed well. In this blog, we will cover some tactics that you can apply to improve how you approach code reviews.</p>
-
-<h2>Smaller code reviews are better code reviews</h2>
-
-<table cellpadding="5">
-  <tr>
-    <td>
-      <div class='pull-left' markdown="1">
-        The first step of making a code review inviting for others to provide feedback, is by making the scope of the review small. This generally requires thought and planning on how to incrementally present code for review, allowing each review to be smaller in size which can be safely included into the codebase in isolation. This can ultimately help morale of a team by avoiding monster-size reviews from being stagnate, and never reaching a point of completion due to amount of work necessary to review or the length of feedback that exists. By having the review small, a laser set of focus can be achieved to promptly and effectively complete the review, providing a positive reinforcement of being able to also complete the work.
-      </div>
-    </td>
-    <td>
-      <img class="center" src="/assets/2018-05-08-code-reviews-there-is-a-better-way/code-review-size.png">
-    </td>
-  </tr>
-</table>
-
-
-<h2>Have machines filter what code qualifies for review</h2>
-
-<table cellpadding="5">
-  <tr>
-    <td>
-      <div class='pull-left' markdown="1">
-        We recently had a &#8220;GitHub Day&#8221; at our Innovations campus, where GitHub and other Cerner engineers shared how to improve your use of source code management. In these presentations, a quote was shared that rang true:
-        <blockquote><p>We are more receptive to feedback from pedantic robots than pedantic people.</p></blockquote>
-        When it comes to a code review, it is easy to point out simple flaws in the code which relates to formatting or basic anti-patterns in a given language. However, should humans be spending time on these types of issues in a code review? Machines are well suited for testing code through linters and static analysis, where formatting rules and known bad patterns can be quickly identified. By focusing on having your CI system do these types of tests on your code, and failing your build when formatting problems emerge, you now have a filter which blocks a large set of noise from entering into a code review. As a result, humans don’t engage in a code review until the code actually builds (which would encompass both static and dynamic forms of tests). Furthermore, it is easier to receive these minor points from a machine (a bot which is communicating the results of your build), versus having a team member spend time pointing out all the minor things you forgot to check or format correctly. In the end, humans apply their creative mind on discussing deeper topics on the design and intentions of the code, versus getting distracted with noise of simple things that can be addressed earlier by machines.
-      </div>
-    </td>
-    <td>
-      <img class="center" src="/assets/2018-05-08-code-reviews-there-is-a-better-way/code-review-human-bot.png">
-    </td>
-  </tr>
-</table>
-
-
-<h2>Agreed upon conventions</h2>
-
-<table cellpadding="5">
-  <tr>
-    <td>
-      <div class='pull-left' markdown="1">
-        Building upon the previous point, teams should have agreed upon conventions on things like style and code formatting, so that those things can be automatically found (and even fixed with the proper tooling).  This eliminates the propensity for style/formatting comments in code reviews which detract from the actual purpose of finding substantive issues within the code. If you find code styling questions or debates are occurring in the code review, ensure the team comes to an agreement on the convention, and that styling rule gets fed into your linter (ex. CheckStyle, Rubocop, IDE formatters) to avoid it from entering into a code review again. Furthermore, this helps reinforce the “boy scout rule”: Always leave the campground cleaner than you found it. By having your linter now embrace this new formatting rule, existing codebases that you start changing in the future will be invited to be updated as well, versus allowing the drift to continue to occur.
-      </div>
-    </td>
-    <td>
-      <img class="center" src="/assets/2018-05-08-code-reviews-there-is-a-better-way/code-review-conventions.png">
-    </td>
-  </tr>
-</table>
-
-
-<h2>&ldquo;How I would have done it&rdquo;</h2>
-
-<p>When comments emerge on a code review which are being conveyed as opinions, like “I’d have done it this way,” this can detract the focus of the code review away from correctness and more on personal preferences. In this section we will discuss two challenges when including personal preferences in code reviews: the distractions and how they can be interpreted.</p>
-
-<h3>Distraction on personal preferences</h3>
-
-<p>While personal preferences may help the readability of the code (based on the viewer), it is also important to provide the larger “why” when sharing opinions. When multiple opinions are being shared within the review, it may invite for a larger debate that might simply derail the ultimate focus of the code review. As a result, the code review may languish and not be completed due to the debate of opinions.</p>
-
-<h3>Accidental preference becoming &ldquo;law&rdquo;</h3>
-
-<p>When opinions like this are shared, especially when communicated from someone more senior on the team, their opinion may be viewed as “law”. In that, it is simply accepted by the engineer to apply the change because the source of the opinion carries a large amount of weight in the discussion. However, it is expected that no personal preference would simply be applied without additional thought and reason. When personal preferences are brought up in a review, it is best to capture and understand the “why” versus assuming the opinion is simply true or accepting it as its face value.</p>
-
-<h2>Moderator</h2>
-
-<p>All code reviews should have a moderator for the review to ensure the review doesn’t get off track (discussing items not applicable to the review, circular discussions, personal preference comments, etc).  The moderator isn’t necessarily an engineer reviewing the code, but could be the technical project manager for the project where the code resides.  The moderator is also responsible for ensuring comments are addressed and the review is closed when appropriate.</p>
-
-<h2>Review agility</h2>
-
-<p>Code reviews should be given priority, as the author is being blocked waiting for the review to be completed.  In order to achieve review agility, code reviews must be small (as mentioned above), so that reviewers are able to process the content of the review and provide substantive feedback easily. In order to give reviews priority, your team should actively work to ensure people are planning accordingly when they are assigned to reviews. Based on the expertise on the team, it is not uncommon for some team members to become a bottleneck on the team due to amount of code reviews that are assigned to them. It is important for the team to identify this issue, and ensure the team is growing other team members to shed the load of reviews by building up the expertise.</p>
-
-<h2>Conclusion</h2>
-
-<p>While peer code reviews are a crucial component of our software development process, they also require evaluation on how they can be improved. These are simply a few tactics that can be applied to help improve how you approach code reviews. As with the Agile process, we want to continuously improve how we build software, and by focusing on how to improve this process, you can ultimately improve the quality and delivery time of your software.</p>
-</div>
-
-
-  </section>
-  <footer>
-    <p class="meta">
-      
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  
-  
-</div>
 
     
+<main class="content-page container pt-7 pb-5">
     
-    <ul class="pager">
-      
-      <li class="previous"><a class="basic-alignment left"
-        href="/blog/shipit-xi-spring-2018/" title="Previous Post:
-        ShipIt XI Day: Spring 2018">&laquo; Previous Post</a></li>
-      
-      <li><a href="/blog/archives">Blog Archives</a></li>
-      
-      <li class="next"><a class="basic-alignment right" href="/blog/say_hello_to_the_2018_summer_interns/"
-        title="Next Post: Say Hello to the 2018 Summer Interns">Next Post &raquo;</a></li>
-      
-    </ul>
-  </footer>
-</article>
-
-<aside class="sidebar-nav span4">
-  
-    <section class="well">
-  <h2>Recent Posts</h2>
-  <ul id="recent_posts" class="nav nav-list">
-    
-      <li>
-        <a href="/blog/shipit-xvii/">ShipIt Day XVII</a>
-      </li>
-    
-      <li>
-        <a href="/blog/shipit-xvi/">ShipIt Day XVI</a>
-      </li>
-    
-      <li>
-        <a href="/blog/terra-ui/">Terra UI: A Health-Care Focused UI Component Library</a>
-      </li>
-    
-      <li>
-        <a href="/blog/introducing-f-twelve-an-open-source-dev-console/">Introducing F-Twelve, an Open Source Dev Console</a>
-      </li>
-    
-      <li>
-        <a href="/blog/carbon-graphs-open-source-visualization-api/">Carbon Graphs: An Open Source Visualization API</a>
-      </li>
-    
-  </ul>
-</section>
-<section class="divider">
-  <svg width="70" height="10">
-   <rect width="10" height="10" x="0" y="0" style="fill:rgb(20,124,193)" />
-   <rect width="10" height="10" x="20" y="0" style="fill:rgb(121,193,68)" />
-   <rect width="10" height="10" x="40" y="0" style="fill:rgb(20,124,193)" />
-   <rect width="10" height="10" x="60" y="0" style="fill:rgb(121,193,68)" />
-</svg>
-</section><section class="well">
-  <h2>Follow Us</h2>
-  <script src="https://apis.google.com/js/platform.js"></script>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-  <div class="g-ytsubscribe" data-channelid="UCYHiZDU0YLN0dWLWSCP1JYQ" data-layout="default" data-count="default"></div>
-  <a href="https://twitter.com/CernerEng?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-screen-name="false" data-show-count="false">Follow @CernerEng</a>
-</section>
-<section class="divider">
-  <svg width="70" height="10">
-   <rect width="10" height="10" x="0" y="0" style="fill:rgb(20,124,193)" />
-   <rect width="10" height="10" x="20" y="0" style="fill:rgb(121,193,68)" />
-   <rect width="10" height="10" x="40" y="0" style="fill:rgb(20,124,193)" />
-   <rect width="10" height="10" x="60" y="0" style="fill:rgb(121,193,68)" />
-</svg>
-</section>
-<section class="well">
-  <h2>GitHub Repos</h2>
-  <ul id="gh_repos" class="nav">
-    <li class="loading">Status updating...</li>
-  </ul>
-  
-  <a href="https://github.com/cerner">@cerner</a> on GitHub
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'cerner',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-  
-</aside>
-
-
-    </div>
-  </div>
-  
-<script id="search-results-template" type="text/mustache">
-  {{#entries}}
-    <article class="search-result">
-        <div class="search-meta meta">
-        {{#date}}<time datetime="{{pubdate}}" pubdate>{{displaydate}}</time>{{/date}} | {{author}}
-        </div>
-        <a href="{{url}}">{{title}}</a>
-    </article>
-  {{/entries}}
-</script>
-
-<script type="text/javascript">
-  $(function() {
-    $('#search-query').lunrSearch({
-      indexUrl: '/javascripts/index.json',   // Url for the .json file containing search index data
-      results : '#search-results',  // selector for containing search results element
-      entries : '.entries',         // selector for search entries containing element (contained within results above)
-      template: '#search-results-template'  // selector for Mustache.js template
-    });
-    //Currently ignoring the "return/enter" keystroke when searching (as this would just result in a 404 for the page lookup).
-    $('#search-query').keydown(function(event){
-      if(event.keyCode == 13) {
-        event.preventDefault();
-        return false;
-      }
-    });
-  });
-</script>
-
-  <footer role="contentinfo" class="page-footer">
-  <div class="container-fluid">
     <div class="row">
-      <div class="span2">
-          <img src="/images/Cerner_White_Horizontal.png" alt="Cerner Logo" />
-      </div>
-      <div class="span10 pull-left">
-          <p>&copy; 2020</p>
-      </div>
+        <div class="col">
+            <article class="article-content">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="meta text-muted mb-3">
+                            <p class="created text-muted text-uppercase font-weight-bold mb-1">May 8, 2018</p>
+                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>1203 words</span>
+                            <span><i class="fas fa-clock mr-2"></i>6 mins read</span>
+                        </div>
+
+                        <h1>Code Reviews: There is a Better Way</h1>
+
+                        <ul class="authors list-inline">
+        By: &nbsp;<li class="list-inline-item mr-3">
+                    <div class="media author">
+                            👤&nbsp;<div class="media-body">
+                            <h5 class="name my-0 "><a href="/authors/chris-fagyal/" class="small">Chris Fagyal</a>
+                            </h5>
+                        </div>
+                    </div>
+                </li><li class="list-inline-item mr-3">
+                    <div class="media author"><a href="/authors/carl-chesser/" class="mr-3">
+                                    <picture>
+                                        <source srcset="/authors/carl-chesser/carl_hubd5913bcf7f5ea3a5cc1974da9663281_38142_48x0_resize_q75_box.jpg 1x, /authors/carl-chesser/carl_hubd5913bcf7f5ea3a5cc1974da9663281_38142_128x0_resize_q100_box.jpg 2x, /authors/carl-chesser/carl_hubd5913bcf7f5ea3a5cc1974da9663281_38142_192x0_resize_q100_box.jpg 3x">
+                                        <img src="/authors/carl-chesser/carl_hubd5913bcf7f5ea3a5cc1974da9663281_38142_48x0_resize_q75_box.jpg" class="rounded-circle" alt="Carl Chesser">
+                                    </picture>
+                                </a><div class="media-body">
+                            <h5 class="name my-2 "><a href="/authors/carl-chesser/" class="small">Carl Chesser</a>
+                            </h5>
+                        </div>
+                    </div>
+                </li></ul>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="content">
+                            <p>At Cerner, peer review of code is an important job. We have found it to greatly improve the quality of code and improve a team’s knowledge of the codebase. Through code review discussions, newer engineers are able to learn on valuable areas to question or challenge when something is being changed. While we heavily embrace the practice of peer code review, we also recognize it can make an engineer’s life challenging when you are overwhelmed with code to review. Furthermore, it can be large source of project delay when points of coordination are not managed well. In this blog, we will cover some tactics that you can apply to improve how you approach code reviews.</p>
+<h2 id="smaller-code-reviews-are-better-code-reviews">Smaller code reviews are better code reviews</h2>
+<div align="center">
+    <figure class="figure float-right">
+        <a href="code-review-size.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="code-review-size.png" width="200"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
+<p>The first step of making a code review inviting for others to provide feedback, is by making the scope of the review small. This generally requires thought and planning on how to incrementally present code for review, allowing each review to be smaller in size which can be safely included into the codebase in isolation. This can ultimately help morale of a team by avoiding monster-size reviews from being stagnate, and never reaching a point of completion due to amount of work necessary to review or the length of feedback that exists. By having the review small, a laser set of focus can be achieved to promptly and effectively complete the review, providing a positive reinforcement of being able to also complete the work.</p>
+<h2 id="have-machines-filter-what-code-qualifies-for-review">Have machines filter what code qualifies for review</h2>
+<p>We recently had a &ldquo;GitHub Day&rdquo; at our Innovations campus, where GitHub and other Cerner engineers shared how to improve your use of source code management. In these presentations, a quote was shared that rang true:</p>
+<blockquote>
+<p>We are more receptive to feedback from pedantic robots than pedantic people.</p>
+</blockquote>
+<p>When it comes to a code review, it is easy to point out simple flaws in the code which relates to formatting or basic anti-patterns in a given language. However, should humans be spending time on these types of issues in a code review? Machines are well suited for testing code through linters and static analysis, where formatting rules and known bad patterns can be quickly identified. By focusing on having your CI system do these types of tests on your code, and failing your build when formatting problems emerge, you now have a filter which blocks a large set of noise from entering into a code review. As a result, humans don’t engage in a code review until the code actually builds (which would encompass both static and dynamic forms of tests). Furthermore, it is easier to receive these minor points from a machine (a bot which is communicating the results of your build), versus having a team member spend time pointing out all the minor things you forgot to check or format correctly. In the end, humans apply their creative mind on discussing deeper topics on the design and intentions of the code, versus getting distracted with noise of simple things that can be addressed earlier by machines.</p>
+<div align="center">
+    <figure class="figure">
+        <a href="code-review-human-bot.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="code-review-human-bot.png" width="300"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
+<h2 id="agreed-upon-conventions">Agreed upon conventions</h2>
+<p>Building upon the previous point, teams should have agreed upon conventions on things like style and code formatting, so that those things can be automatically found (and even fixed with the proper tooling).  This eliminates the propensity for style/formatting comments in code reviews which detract from the actual purpose of finding substantive issues within the code. If you find code styling questions or debates are occurring in the code review, ensure the team comes to an agreement on the convention, and that styling rule gets fed into your linter (ex. CheckStyle, Rubocop, IDE formatters) to avoid it from entering into a code review again. Furthermore, this helps reinforce the “boy scout rule”: Always leave the campground cleaner than you found it. By having your linter now embrace this new formatting rule, existing codebases that you start changing in the future will be invited to be updated as well, versus allowing the drift to continue to occur.</p>
+<div align="center">
+    <figure class="figure">
+        <a href="code-review-conventions.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="code-review-conventions.png" width="300"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
+<h2 id="how-i-would-have-done-it">&ldquo;How I would have done it&rdquo;</h2>
+<p>When comments emerge on a code review which are being conveyed as opinions, like “I’d have done it this way,” this can detract the focus of the code review away from correctness and more on personal preferences. In this section we will discuss two challenges when including personal preferences in code reviews: the distractions and how they can be interpreted.</p>
+<h3 id="distraction-on-personal-preferences">Distraction on personal preferences</h3>
+<p>While personal preferences may help the readability of the code (based on the viewer), it is also important to provide the larger “why” when sharing opinions. When multiple opinions are being shared within the review, it may invite for a larger debate that might simply derail the ultimate focus of the code review. As a result, the code review may languish and not be completed due to the debate of opinions.</p>
+<h3 id="accidental-preference-becoming-law">Accidental preference becoming &ldquo;law&rdquo;</h3>
+<p>When opinions like this are shared, especially when communicated from someone more senior on the team, their opinion may be viewed as “law”. In that, it is simply accepted by the engineer to apply the change because the source of the opinion carries a large amount of weight in the discussion. However, it is expected that no personal preference would simply be applied without additional thought and reason. When personal preferences are brought up in a review, it is best to capture and understand the “why” versus assuming the opinion is simply true or accepting it as its face value.</p>
+<h2 id="moderator">Moderator</h2>
+<p>All code reviews should have a moderator for the review to ensure the review doesn’t get off track (discussing items not applicable to the review, circular discussions, personal preference comments, etc).  The moderator isn’t necessarily an engineer reviewing the code, but could be the technical project manager for the project where the code resides.  The moderator is also responsible for ensuring comments are addressed and the review is closed when appropriate.</p>
+<h2 id="review-agility">Review agility</h2>
+<p>Code reviews should be given priority, as the author is being blocked waiting for the review to be completed.  In order to achieve review agility, code reviews must be small (as mentioned above), so that reviewers are able to process the content of the review and provide substantive feedback easily. In order to give reviews priority, your team should actively work to ensure people are planning accordingly when they are assigned to reviews. Based on the expertise on the team, it is not uncommon for some team members to become a bottleneck on the team due to amount of code reviews that are assigned to them. It is important for the team to identify this issue, and ensure the team is growing other team members to shed the load of reviews by building up the expertise.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>While peer code reviews are a crucial component of our software development process, they also require evaluation on how they can be improved. These are simply a few tactics that can be applied to help improve how you approach code reviews. As with the Agile process, we want to continuously improve how we build software, and by focusing on how to improve this process, you can ultimately improve the quality and delivery time of your software.</p>
+
+                        </div><div class="tags my-3"><a class="badge badge-pill badge-light border mr-2" href="/tags/engineering">
+                                    <i class="fas fa-tag mr-2"></i>engineering
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/code-review">
+                                    <i class="fas fa-tag mr-2"></i>code review
+                                </a></div><ul class="share nav my-3 justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://twitter.com/intent/tweet?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fcode-reviews-there-is-a-better-way%2f&text=Code%20Reviews%3a%20There%20is%20a%20Better%20Way">
+              <i class="fa-fw fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fcode-reviews-there-is-a-better-way%2f&title=Code%20Reviews%3a%20There%20is%20a%20Better%20Way">
+                <i class="fa-fw fab fa-linkedin-in"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fengineering.cerner.com%2fblog%2fcode-reviews-there-is-a-better-way%2f&t=Code%20Reviews%3a%20There%20is%20a%20Better%20Way">
+                <i class="fa-fw fab fa-facebook-f"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://reddit.com/submit?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fcode-reviews-there-is-a-better-way%2f&title=Code%20Reviews%3a%20There%20is%20a%20Better%20Way">
+                <i class="fa-fw fab fa-reddit-alien"></i>
+            </a>
+        </li>
+    </nav>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        
+                    </div>
+                </div></article>
+        </div>
     </div>
+
+    <div class="related-content row mt-5 row-cols-1 row-cols-lg-3"><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/shipit-xi-spring-2018/" class="d-block"><img data-src="/blog/shipit-xi-spring-2018/shipit-xi-1_huab35d17b39af6c4494fa6f1341d8f5cf_117690_700x350_fill_box_smart1_2.png" class="card-img-top mx-auto d-block" alt="ShipIt XI Day: Spring 2018"><div class="card-body">
+            <h4 class="card-title">ShipIt XI Day: Spring 2018</h4>
+            <p class="card-text text-muted text-uppercase">April 18, 2018</p>
+            <div class="card-text">
+                On March 8th and 9th, 17 teams of Cerner associates competed for the Golden Keyboard during our 11th ShipIt Day. During this 24-hour hackathon, associates were challenged to create something innovative, usable, and value-adding. This was the fourth ShipIt held at our new Innovations Campus, leveraging the wonderful collaborative spaces available.
+With Shipit XI, we expanded upon a time-honored tradition of this event, the traveling trophy Golden Keyboard.
+            </div>
+        </div>
+    </a>
   </div>
+            </div><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/cerner-and-icontrol/" class="d-block"><div class="card-body">
+            <h4 class="card-title">Cerner and iControl</h4>
+            <p class="card-text text-muted text-uppercase">March 13, 2018</p>
+            <div class="card-text">
+                At Cerner, we manage our own infrastructure and a big part of that is managing F5 load balancers. If you are a Ruby developer or a network engineer and regularly work with F5s, then I have good news! I’ve created a gem that abstracts iControl’s REST API. It makes working with the API easy to understand and eases the effort required to automate changes across many devices.
+1 2  api = IcontrolRest::Client.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/one-year-calling-innovations-home/" class="d-block"><img data-src="/blog/one-year-calling-innovations-home/anniversary-1_hu699fc1013c1ca3ae03247cde4a8aad3e_3640276_700x350_fill_q75_box_smart1.jpg" class="card-img-top mx-auto d-block" alt="One Year Calling Innovations Home"><div class="card-body">
+            <h4 class="card-title">One Year Calling Innovations Home</h4>
+            <p class="card-text text-muted text-uppercase">February 28, 2018</p>
+            <div class="card-text">
+                One year ago this month, Cerner development associates in Kansas City moved into a new place to call home for their workdays, Innovations Campus. The first two towers that stand on this campus provide 805,000 square feet of workspace for more than 3,000 associates. Eventually, the campus will grow larger, including 16 buildings and 16,000 Cerner associates. As that growth approaches, it is important to reflect on what these first two towers represent for associates and their development careers at Cerner.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div></div>
+</main>
+
+
+    <footer class="footer text-center bg-dark py-6">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="https://engineering.cerner.com/index.xml" rel="alternate" type="application/rss+xml" class="icons d-block">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a></li><li class="list-inline-item">
+                            <a href="https://github.com/cerner" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.instagram.com/cernercorporation/" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.linkedin.com/company/cerner-corporation" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fengineering.cerner.com%2F&amp;screen_name=CernerEng" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.youtube.com/user/cernereng?sub_confirmation=1" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                </ul>
+
+                <p class="text-light">
+                    
+                        Copyright © 2020
+                    
+                </p>
+
+                <p class="text-light">
+                Made with ❤️ by Cerner engineers.
+                </p>
+            </div>
+        </div>
+    </div>
 </footer>
 
-
-  
-
-
-
-
-
-
+    
+    
+        
+            <script src="/dist/main.44c94dde179dd23bf3f1.min.js"></script>
+        
+    
 
 
 
+
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-37701128-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
 
 </body>
 </html>

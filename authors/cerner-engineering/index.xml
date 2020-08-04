@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cerner Engineering on Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/cerner-engineering/</link>
+    <description>Recent content in Cerner Engineering on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Sun, 02 Oct 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/authors/cerner-engineering/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Michelle Brush receives the Rising Trendsetter STEMMY award!</title>
+      <link>https://engineering.cerner.com/blog/michelle-brush-receives-the-rising-trendsetter-stemmy-award/</link>
+      <pubDate>Sun, 02 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/michelle-brush-receives-the-rising-trendsetter-stemmy-award/</guid>
+      <description>We are excited to congratulate our own Michelle Brush for receiving the Rising Trendsetter STEMMY award. The Rising Trendsetter Award is given to a woman in STEMM areas with less than 20 years of experience and has demonstrated significant achievements early in their career.
+Michelle is a director at Cerner who manages an engineering team in population health as well as a team dedicated to improving Cerner’s development culture. One of Michelle’s most notable career accomplishments was her leadership role in reconstructing Cerner’s software engineer development program in 2013, which she personally oversaw until the end of 2014 (read about the details of this program in her blog).</description>
+    </item>
+    
+    <item>
+      <title>FIRST Robotics Championship Competition in St. Louis</title>
+      <link>https://engineering.cerner.com/blog/first-robotics-championship-competition-in-st-louis/</link>
+      <pubDate>Tue, 23 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/first-robotics-championship-competition-in-st-louis/</guid>
+      <description>Cerner places a high value on talent development programs offering students the experience to build practical and tangible skills for the modern work environment. As part of this focus, Cerner supports FIRST Robotics, a competition providing experience in software engineering, where students learn to deal with complexity, time constraints, quality, and technical communications. Sound familiar? I wish they had this program when I was a kid!
+High school students from Kansas City will be testing their minds, willpower, and teamwork in this global robotics championship competition April 24-27 in St Louis, Missouri.</description>
+    </item>
+    
+    <item>
+      <title>Ruby at Cerner</title>
+      <link>https://engineering.cerner.com/blog/ruby-at-cerner/</link>
+      <pubDate>Fri, 05 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/ruby-at-cerner/</guid>
+      <description>Cerner&amp;rsquo;s journey with Ruby started in the summer of 2009. We selected Ruby on Rails for rapid development of the Cerner Store to prepare for release at the Cerner Health Conference that year. In three months, with three engineers and a designer, we wrote and released the first version of an e-commerce web application. Two of those engineers, including me, had never worked with Ruby before but quickly realized the power and expressiveness of the language due to resources like Why&amp;rsquo;s (Poignant) Guide to Ruby.</description>
+    </item>
+    
+    <item>
+      <title>Modularity in Medical Imaging</title>
+      <link>https://engineering.cerner.com/blog/modularity-in-medical-imaging/</link>
+      <pubDate>Fri, 29 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/modularity-in-medical-imaging/</guid>
+      <description>Developers often take for granted the level of flexibility and customization that is available within the software they use every day. Consumers of imaging software have traditionally been completely confined to interpret exams a specific way, and frequently in ways that are unintuitive. Every physician, specialist, technologist, med student, and others across the continuum of care has a preference as to not only how exams are laid out, but what information is displayed with the images and what transformations would be applied or processed automatically.</description>
+    </item>
+    
+    <item>
+      <title>Evangelizing User Experience</title>
+      <link>https://engineering.cerner.com/blog/evangelizing-user-experience/</link>
+      <pubDate>Tue, 12 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/evangelizing-user-experience/</guid>
+      <description>In the dark ages of development, great software meant packing in the functionality. People began doing more and more with their software. Updates meant newer and more exciting functionality. Sounds great, right? Of course it does, but something went horribly wrong. Slowly we became inundated with cluttered screens as software developers struggled to find a place to put their latest innovative functionality. Buttons began adding up and before we knew it, we were inventing user interface controls like ribbons to hold all the buttons.</description>
+    </item>
+    
+  </channel>
+</rss>

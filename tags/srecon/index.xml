@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>srecon on Engineering Health</title>
+    <link>https://engineering.cerner.com/tags/srecon/</link>
+    <description>Recent content in srecon on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Tue, 19 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/tags/srecon/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SREcon18 Recap</title>
+      <link>https://engineering.cerner.com/blog/srecon18-recap/</link>
+      <pubDate>Tue, 19 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/srecon18-recap/</guid>
+      <description>This past spring, I had the pleasure of attending SREcon18 in Santa Clara, California. If you have never heard about SREcon or the term SRE then let me diverge for a moment to describe. SRE, or Site Reliability Engineer, was coined by Google employees back in 2003 when a team of software engineers were tasked with running a production environment. It&amp;rsquo;s the new hotness in the technology world, so an internet search will turn up a bunch of topics.</description>
+    </item>
+    
+  </channel>
+</rss>

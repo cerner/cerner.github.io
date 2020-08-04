@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Amanda Anderson on Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/amanda-anderson/</link>
+    <description>Recent content in Amanda Anderson on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Wed, 20 Jan 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/authors/amanda-anderson/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Girls in Technology Movement - Hour of Code</title>
+      <link>https://engineering.cerner.com/blog/girls-in-technology-movement-hour-of-code/</link>
+      <pubDate>Wed, 20 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/girls-in-technology-movement-hour-of-code/</guid>
+      <description>As a female Software Engineer, I know the benefits of having other females in the field to fellowship with as well as the benefits of early exposure to coding and the technology field. The Girls in Technology Movement Hour of Code event held December 9th, 2015 at Cerner’s Innovation Campus was a great opportunity for girls from nearby schools to gather and hear a little about the technology industry, the opportunities available for their future, meet some women in the industry, and get a hands-on introduction to coding.</description>
+    </item>
+    
+  </channel>
+</rss>

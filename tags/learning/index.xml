@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>learning on Engineering Health</title>
+    <link>https://engineering.cerner.com/tags/learning/</link>
+    <description>Recent content in learning on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Tue, 23 Jan 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/tags/learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cerner and the SDLC</title>
+      <link>https://engineering.cerner.com/blog/cerner-and-the-sdlc/</link>
+      <pubDate>Tue, 23 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/cerner-and-the-sdlc/</guid>
+      <description>Cerner has a very compelling story that many want to learn from. Cerner’s Agile Champions are regular presenters at local, national, and global conferences. We routinely host calls and site visits for interested companies around the world who want to figure out how we were able to adopt Agile so quickly and sustain it so successfully.
+Despite our success, there has been a general feeling at the engineering leadership and Agile Champion tiers that we aren’t getting the benefits from Agile that we once were.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>visualization on Engineering Health</title>
+    <link>https://engineering.cerner.com/tags/visualization/</link>
+    <description>Recent content in visualization on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Thu, 04 Jan 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/tags/visualization/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bad Design is Bad for Your Health: Why Data Visualization Details Matter</title>
+      <link>https://engineering.cerner.com/blog/bad-design-is-bad-for-your-health-why-data-visualization-details-matter/</link>
+      <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/bad-design-is-bad-for-your-health-why-data-visualization-details-matter/</guid>
+      <description>Presentation Abstract by Jody Butts, Sr. User Experience Designer Given on August 11, 2017 at the UX Australia Conference in Sydney
+Full presentation audio and slides are available here: http://www.uxaustralia.com.au/conferences/uxaustralia-2017/presentation/bad-design-is-bad-for-your-health-why-data-visualization-details-matter/
+The proper design of data visualization details is imperative for accurate and actionable data visualizations and dashboards. In the health care technology industry, even the smallest design detail on a graph of patient data can have a dramatic impact on patient safety and outcomes.</description>
+    </item>
+    
+  </channel>
+</rss>

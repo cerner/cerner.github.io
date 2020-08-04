@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Paul Conklin on Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/paul-conklin/</link>
+    <description>Recent content in Paul Conklin on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Fri, 19 Apr 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/authors/paul-conklin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Learn what the rules don&#39;t cover</title>
+      <link>https://engineering.cerner.com/blog/learn-what-the-rules-dont-cover/</link>
+      <pubDate>Fri, 19 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/learn-what-the-rules-dont-cover/</guid>
+      <description>Most technical problems are like games. All of them have a way to win and all of them have rules; the easiest way to ensure you always win is to learn the rules inside and out, and more importantly what the rules don’t cover! Paying attention to what the rules don’t cover is what leads to out of the box thinking. What sets the great players apart from the rest is learning what the rules don’t cover which allows for creativity and, sometimes, shortcuts.</description>
+    </item>
+    
+  </channel>
+</rss>

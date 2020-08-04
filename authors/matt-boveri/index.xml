@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Matt Boveri on Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/matt-boveri/</link>
+    <description>Recent content in Matt Boveri on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Mon, 04 Nov 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/authors/matt-boveri/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ShipIt Day XVI</title>
+      <link>https://engineering.cerner.com/blog/shipit-xvi/</link>
+      <pubDate>Mon, 04 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/shipit-xvi/</guid>
+      <description>Finishing our 16th occurrence of the series, our quarterly ShipIt Day hackathon invites the makers and innovators to come out and share new ways to think about our daily work here at Cerner. Whether it&amp;rsquo;s experimenting with new features or improving our developer workflows, ShipIt Day gives our engineers a chance to try and learn new things. This ShipIt day in particular had some exciting projects that melded hardware and software.</description>
+    </item>
+    
+  </channel>
+</rss>

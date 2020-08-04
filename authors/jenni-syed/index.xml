@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jenni Syed on Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/jenni-syed/</link>
+    <description>Recent content in Jenni Syed on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Fri, 24 Mar 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/authors/jenni-syed/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Engineers on the Road for SMART and FHIR (CHC 2016)</title>
+      <link>https://engineering.cerner.com/blog/engineers-on-the-road-for-smart-and-fhir/</link>
+      <pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/engineers-on-the-road-for-smart-and-fhir/</guid>
+      <description>Over the past few years, Cerner has been developing a standards-based platform on top of our Cerner Millennium® EHR. Rather than roll our own API, we’ve been using the HL7® FHIR® standard. For app integration, we’ve been using the SMART® on FHIR specification. If you’re not immediately familiar with those acronyms, you’re definitely not alone.
+As we were developing the services, we were also fielding questions from 3rd party developers, answering a lot of questions internally, and trying to keep up with the specifications themselves.</description>
+    </item>
+    
+  </channel>
+</rss>

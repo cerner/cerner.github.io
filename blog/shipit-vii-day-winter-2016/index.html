@@ -1,159 +1,127 @@
-
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>ShipIt VII Day: Winter 2016 - Engineering Health</title>
-  <meta name="author" content="Cerner">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+<title>
   
-  <meta name="description" content="">
+     ShipIt VII Day: Winter 2016 | 
+    Engineering Health
   
+</title><meta name="description" content="a blog by engineers, for engineers"><meta name="author" content="Isabella Kuzava, Carl Chesser">
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.png">
 
-  
-  <link rel="canonical" href="http://engineering.cerner.com/blog/shipit-vii-day-winter-2016">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/stylesheets/site/site.css" media="screen, projection" rel="stylesheet" type="text/css">
 
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <script src="/javascripts/libs/bootstrap.min.js"></script>
+    
+        
+            <link rel="stylesheet" href="/dist/main.8ddb5a998657440f326d.min.css">
+        
+    
 
-  <link href="/atom.xml" rel="alternate" title="Engineering Health" type="application/atom+xml">
-  <script src="/javascripts/search.min.js" type="text/javascript" charset="utf-8"></script>
-  
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-37701128-1']);
-    _gaq.push(['_trackPageview']);
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
 
+
+<link rel="canonical" href="https://engineering.cerner.com/blog/shipit-vii-day-winter-2016/"><script src="/js/jquery-3.5.1.min.js"></script><meta property="og:title" content="ShipIt VII Day: Winter 2016" />
+<meta property="og:description" content="Cerner’s 7th ShipIt Day took place on December 8th and 9th. ShipIt is a 24-hour hackathon with the goal of building something awesome, usable, and value-adding within a single day. The event was hosted at our DevCenter in the Realization Campus, a large open space that hosts our DevAcademy (to learn more about our DevAcademy, check out this earlier post). We had 18 teams made up of associates from different Cerner organizations." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://engineering.cerner.com/blog/shipit-vii-day-winter-2016/" />
+<meta property="article:published_time" content="2017-01-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-01-18T00:00:00+00:00" />
+<meta itemprop="name" content="ShipIt VII Day: Winter 2016">
+<meta itemprop="description" content="Cerner’s 7th ShipIt Day took place on December 8th and 9th. ShipIt is a 24-hour hackathon with the goal of building something awesome, usable, and value-adding within a single day. The event was hosted at our DevCenter in the Realization Campus, a large open space that hosts our DevAcademy (to learn more about our DevAcademy, check out this earlier post). We had 18 teams made up of associates from different Cerner organizations.">
+<meta itemprop="datePublished" content="2017-01-18T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2017-01-18T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1158">
+
+
+
+<meta itemprop="keywords" content="culture,engineering,hackathon,shipit," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ShipIt VII Day: Winter 2016"/>
+<meta name="twitter:description" content="Cerner’s 7th ShipIt Day took place on December 8th and 9th. ShipIt is a 24-hour hackathon with the goal of building something awesome, usable, and value-adding within a single day. The event was hosted at our DevCenter in the Realization Campus, a large open space that hosts our DevAcademy (to learn more about our DevAcademy, check out this earlier post). We had 18 teams made up of associates from different Cerner organizations."/>
 
 </head>
-
-<body  class="top-navbar  ">
-  
-
-
-
-<header id="banner" role="banner" class="container-fluid banner-kc-background">
-
-  <div class="image">
-
+<body>
     
-      <img src="/images/KC.png" alt="Kansas City" />
-    
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-sm" id="navbar-main-menu">
+    <div class="container">
+        <a class="navbar-brand" href="/"><img src="/cerner-logo.png"/></a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="main-menu" class="collapse navbar-collapse" >
+            <ul class="nav navbar-nav ml-auto">
+                
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/culture/">Culture</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/open-source/">Open Source</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/tech-talks/">Tech Talks</a></li>
+                
+            
+            </ul>
+            
+            <div class="form-inline my-2 my-lg-0 searchbox">
+    <input id="search-by" type="search" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
+</div>
 
-    <div id="header1">Engineering Health<br/><span class="header2">A <b>Cerner</b> Blog</span></div>
-
-  </div>
-  <nav class="navbar navbar-inverse" role="navigation">
-  <div class="container">
-    <div class="navbar-inner">
-      <a class="brand" href="#">Engineering Health</a>
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li class="selected">
-            <a href="/">Blog</a>
-          </li>
-          <li >
-            <a href="/culture">Culture</a>
-          </li>
-          <li >
-            <a href="/tech_talks">Tech Talks</a>
-          </li>
-          <li >
-            <a href="/open_source">Open Source</a>
-          </li>
-          <li >
-            <a href="/blog/archives">Archives</a>
-          </li>
-        </ul>
-        <div id="search" class="pull-right">
-          <form action="/search" method="get" class="navbar-search">
-            <input type="text" id="search-query" name="q" class="search-query" placeholder="Search" autocomplete="off">
-            <img src="/images/MagnifyingGlass.png" alt="Search" width="16" height="16" />
-          </form>
+<script type="text/javascript" src="/js/lunr.min.js"></script>
+<script type="text/javascript" src="/js/auto-complete.min.js"></script>
+<script type="text/javascript">
+    var baseurl =  "https:\/\/engineering.cerner.com";
+</script>
+<script type="text/javascript" src="/js/search.js"></script>
         </div>
-      </div>
     </div>
-  </div>
 </nav>
 
-</header>
 
-
-  <div class="container-fluid post-container">
-    <div class="row-fluid">
-      <section class="span12" id="search-results" style="display: none;">
-  <h2>Search results</h2>
-  <div class="entries">
-  </div>
-</section>
-    </div>
-    <div class="row-fluid">
-      
-<article id="main" class="hentry span8" role="article">
-
-  <section class="post">
     
-  <header class="entry-header">
+<main class="content-page container pt-7 pb-5">
     
-      <h1 class="entry-title">ShipIt VII Day: Winter 2016</h1>
-    
-    
-      <div class="entry-meta meta">
-        
+    <div class="row">
+        <div class="col">
+            <article class="article-content">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="meta text-muted mb-3">
+                            <p class="created text-muted text-uppercase font-weight-bold mb-1">January 18, 2017</p>
+                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>1158 words</span>
+                            <span><i class="fas fa-clock mr-2"></i>6 mins read</span>
+                        </div>
 
+                        <h1>ShipIt VII Day: Winter 2016</h1>
 
+                        <ul class="authors list-inline">
+        By: &nbsp;<li class="list-inline-item mr-3">
+                    <div class="media author">
+                            👤&nbsp;<div class="media-body">
+                            <h5 class="name my-0 "><a href="/authors/isabella-kuzava/" class="small">Isabella Kuzava</a>
+                            </h5>
+                        </div>
+                    </div>
+                </li><li class="list-inline-item mr-3">
+                    <div class="media author"><a href="/authors/carl-chesser/" class="mr-3">
+                                    <picture>
+                                        <source srcset="/authors/carl-chesser/carl_hubd5913bcf7f5ea3a5cc1974da9663281_38142_48x0_resize_q75_box.jpg 1x, /authors/carl-chesser/carl_hubd5913bcf7f5ea3a5cc1974da9663281_38142_128x0_resize_q100_box.jpg 2x, /authors/carl-chesser/carl_hubd5913bcf7f5ea3a5cc1974da9663281_38142_192x0_resize_q100_box.jpg 3x">
+                                        <img src="/authors/carl-chesser/carl_hubd5913bcf7f5ea3a5cc1974da9663281_38142_48x0_resize_q75_box.jpg" class="rounded-circle" alt="Carl Chesser">
+                                    </picture>
+                                </a><div class="media-body">
+                            <h5 class="name my-2 "><a href="/authors/carl-chesser/" class="small">Carl Chesser</a>
+                            </h5>
+                        </div>
+                    </div>
+                </li></ul>
+                    </div>
+                </div>
 
-
-
-
-
-
-  
-
-
-<time datetime="2017-01-18T00:00:00-06:00" pubdate data-updated="true">Jan 18<span>th</span>, 2017</time> | 
-  
-
-
-  <span class="byline author vcard">
-    <span class="fn">Isabella Kuzava and Carl Chesser</span>
-  </span>
-
-
-        
-      </div>
-    
-  </header>
-
-
-<div class="entry-content"><p>Cerner’s 7th ShipIt Day took place on December 8th and 9th. ShipIt is a 24-hour hackathon with the
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="content">
+                            <p>Cerner’s 7th ShipIt Day took place on December 8th and 9th. ShipIt is a 24-hour hackathon with the
 goal of building something awesome, usable, and value-adding within a single day.  The event was
 hosted at our DevCenter in the Realization Campus, a large open space that hosts our DevAcademy (to
 learn more about our DevAcademy, check out this
@@ -163,85 +131,104 @@ which of course included a traditional drink: Monster Energy. Participants worke
 and when dinner came around they were ready to dig in. Good thing we ordered 8 twenty-six inch
 pizzas and 40 breadsticks from a local Kansas City favorite, <a href="http://www.pizza51.com/">Pizza 51</a>.
 Look how big these pizzas were!</p>
-
-<div align="center">
-<table>
-  <tr>
-    <td><img src="/assets/2017-01-18-shipit-vii-day-winter-2016/shipit-01.jpg"></td>
-    <td><img src="/assets/2017-01-18-shipit-vii-day-winter-2016/shipit-03.jpg"></td>
-  </tr>
-</table>
+<p><div align="center">
+    <figure class="figure">
+        <a href="shipit-01.jpg" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-01.jpg"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
 </div>
-
-
+<div align="center">
+    <figure class="figure">
+        <a href="shipit-03.jpg" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-03.jpg"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div></p>
 <p>It was predicted we hit a record in Kansas City for the most pizza in an elevator at this time, but
 we were not able to get an official count!</p>
-
-<div style="float:left;" >
-<img src="/assets/2017-01-18-shipit-vii-day-winter-2016/shipit-04.png">
+<div align="center">
+    <figure class="figure">
+        <a href="shipit-04.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-04.png"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
 </div>
-
-
 <p>When getting pizzas of this size, there was a significant amount to fuel the innovation that was
 happening. To break it down:</p>
-
-<p>A = πr<sup>2</sup> = π x 132 ≈ 530.93 square inches = 3.68 square feet x 8 = 29.44 square feet of pizza. Which
+<p>A = πr<!-- raw HTML omitted -->2<!-- raw HTML omitted --> = π x 132 ≈ 530.93 square inches = 3.68 square feet x 8 = 29.44 square feet of pizza. Which
 is larger than a twin bed size of solid pizza, and slightly smaller than a queen bed. A perfect
 amount for a ShipIt event! Teams took a break from their work throughout the evening by playing
 Nintendo and cheering on the <a href="http://www.chiefs.com/">Chiefs</a>!</p>
-
-<div align="center">
-<table>
-  <tr>
-    <td><img src="/assets/2017-01-18-shipit-vii-day-winter-2016/shipit-00.jpg"></td>
-    <td><img src="/assets/2017-01-18-shipit-vii-day-winter-2016/shipit-07.jpg"></td>
-  </tr>
-</table>
+<p><div align="center">
+    <figure class="figure">
+        <a href="shipit-00.jpg" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-00.jpg"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
 </div>
-
-
+<div align="center">
+    <figure class="figure">
+        <a href="shipit-07.jpg" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-07.jpg"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div></p>
 <p>There were some impressive projects that came out of ShipIt Day VII. <em>Team GLADoS</em>, made up of Kyle
 Harper, Sarah Harper, Snehit Gajjar, and Andy Quangvan took first place, and the coveted Golden
 Keyboard, with their impressive idea.</p>
-
-<blockquote><p>This ShipIt, we created a new <a href="https://developer.amazon.com/alexa">Alexa skill</a> called Scribe.
+<blockquote>
+<p>This ShipIt, we created a new <a href="https://developer.amazon.com/alexa">Alexa skill</a> called Scribe.
 With our new skill we integrated the
 <a href="https://www.amazon.com/All-New-Echo-Dot-2nd-Generation/dp/B01DFKC2SO/ref=cp_aucc_ods">Amazon Echo and Echo Dot</a>
 smart speakers with <a href="https://code.cerner.com/">Cerner&rsquo;s FHIR implementation</a>. This integration allows
-a patient or care provider to access clinical data by simply speaking to the Echo.</p></blockquote>
-
+a patient or care provider to access clinical data by simply speaking to the Echo.</p>
+</blockquote>
 <p>Judge Sean Griffin was impressed. &ldquo;Really cool, awesome idea. Great innovation! The applicability
 towards data entry could definitely be useful.&rdquo;</p>
-
 <div align="center">
-<img src="/assets/2017-01-18-shipit-vii-day-winter-2016/shipit-08.jpg">
-<sub>Team GLADos with the Golden Keyboard</sub>
+    <figure class="figure">
+        <a href="shipit-08.jpg" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-08.jpg"
+                alt="Team GLADos with the Golden Keyboard"class="figure-img img-fluid"
+            /> 
+        </a><figcaption class="figure-caption text-center">
+                <p>Team GLADos with the Golden Keyboard</p>
+            </figcaption>
+    </figure>
 </div>
-
-
 <p>Second place went to <em>Team Trogdor</em> (Kyle Lipke, Derek Dobler, Nikki Justice, Mike Harrison,
 and Nimesh Subramanain).</p>
-
-<blockquote><p>Troubleshooting errors or misconfigurations in Millennium OAuth can be time consuming. Missing
+<blockquote>
+<p>Troubleshooting errors or misconfigurations in Millennium OAuth can be time consuming. Missing
 information or misconfiguration can lead to hours of checking various sources of information. This
 web page tool allows us to perform a quick and accurate diagnostic check for what pieces are
 available and not available. Built with Ruby on <a href="http://www.sinatrarb.com/">Sinatra framework</a>.
 Made to allow for easy additions to various checks that ETS (Emerging Technology Services group)
-needs to do.</p></blockquote>
-
+needs to do.</p>
+</blockquote>
 <p>Judge Jim Dwyer noted, &ldquo;This is a great tool to help drive down operational costs and reduce TCO.&rdquo;</p>
-
 <div align="center">
-<img src="/assets/2017-01-18-shipit-vii-day-winter-2016/shipit-05.jpg">
-<sub>Team Trogdor</sub>
+    <figure class="figure">
+        <a href="shipit-05.jpg" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-05.jpg"
+                alt="Team Trogdor"class="figure-img img-fluid"
+            /> 
+        </a><figcaption class="figure-caption text-center">
+                <p>Team Trogdor</p>
+            </figcaption>
+    </figure>
 </div>
-
-
 <p>Third place winners, <em>Team 402 Cheeseballs Required</em> (Andy Nelson, Venkatesh Sridharan, Ian Kottman,
 Nate Schile, and Anthony Ross) created an application for tracking running mileage for the
 <a href="https://www.youtube.com/watch?v=w18fgEcMi7w">Healthe Fitness Center</a>.</p>
-
-<blockquote><p>Our goal was to make the process of submitting running milestones for the Cerner Running Club
+<blockquote>
+<p>Our goal was to make the process of submitting running milestones for the Cerner Running Club
 easier. The current process involved writing down how far you ran in a binder, and then one of the
 gym staff checking that binder occasionally to see when you accomplished a milestone so they could
 send a prize. We decided to make a web application that would integrate with Strava that would
@@ -256,252 +243,256 @@ We used <a href="http://rubyonrails.org/">Rails</a> to create our web app since 
 we had the most experience in. First, we would ask a person to connect to their Strava account,
 and then we pulled their running data and totaled up their mileage. If a person had reached a
 milestone they could press a button to send an email to the gym staff that included their
-running log, their total mileage, and what milestones they had achieved.</p></blockquote>
-
+running log, their total mileage, and what milestones they had achieved.</p>
+</blockquote>
 <div align="center">
-<img class="center" src="/assets/2017-01-18-shipit-vii-day-winter-2016/shipit-06.jpg">
-<sub>Team 402 Cheeseballs Required</sub>
+    <figure class="figure">
+        <a href="shipit-06.jpg" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-06.jpg"
+                alt="Team 402 Cheeseballs Required"class="figure-img img-fluid"
+            /> 
+        </a><figcaption class="figure-caption text-center">
+                <p>Team 402 Cheeseballs Required</p>
+            </figcaption>
+    </figure>
 </div>
-
-
 <p>By Friday at 10 a.m. the participants were ready to present (for the most part). Cerner associates
 from different campuses watched the event via livestream and voted for People’s choice. Those
 results are as followed&hellip;</p>
-
-<p><strong>Favorite team name</strong>: <em>I Shipped My Pants</em> &ndash; Brandon Inman and Steven Goldberg</p>
-
-<blockquote><p>Improvements made to the existing
+<p><strong>Favorite team name</strong>: <em>I Shipped My Pants</em> - Brandon Inman and Steven Goldberg</p>
+<blockquote>
+<p>Improvements made to the existing
 <a href="http://techblog.netflix.com/2016/08/vizceral-open-source.html">Vizceral-based implementation</a>
 of HealtheIntent Intuition
 Engineering.  Improvements made by the team included features to make it easier to switch between
 streaming and batch processing, more timely updates of data, and several cosmetic features to
 improve user experience and differentiate the tool from other Vizceral apps.  Voice activation was
-added as a &ldquo;fun&rdquo; feature.</p></blockquote>
-
-<p><strong>Favorite Presentation</strong>: <em>Guys on FHIR</em> &ndash; Bhaumik Aniruddha, Bhagat Parthiv, Vetri Selvi Vairamutha,
+added as a &ldquo;fun&rdquo; feature.</p>
+</blockquote>
+<p><strong>Favorite Presentation</strong>: <em>Guys on FHIR</em> - Bhaumik Aniruddha, Bhagat Parthiv, Vetri Selvi Vairamutha,
 Neil Pfeiffer, Sai Praveen Gampa</p>
-
-<blockquote><p>Our ShipIt project was a NICU SMART App, intended for the NICU unit. The app will be used to get a
+<blockquote>
+<p>Our ShipIt project was a NICU SMART App, intended for the NICU unit. The app will be used to get a
 live video of the baby inside an incubator alongside the vitals of the baby. This will prevent
 anyone from disturbing the sleeping pattern of the newborn. The live feedback can also be viewed
 by the parents which will ease the mental tension. The future scope of this project is to hook up
-with an app, which can read the facial expression of the baby.</p></blockquote>
-
-<p><strong>Best Project</strong>: <em>RSA (Readmission Security Admission)</em> &ndash; Kristopher Williams, Karthik Nimmagadda, Sai
+with an app, which can read the facial expression of the baby.</p>
+</blockquote>
+<p><strong>Best Project</strong>: <em>RSA (Readmission Security Admission)</em> - Kristopher Williams, Karthik Nimmagadda, Sai
 Inampudi</p>
-
-<blockquote><p>Our project was to create an intuitive dashboard that lets the user visualize the network traffic
+<blockquote>
+<p>Our project was to create an intuitive dashboard that lets the user visualize the network traffic
 for readmission solution&rsquo;s services for a given time period (hour/day/week/month currently). This
 dashboard will allow the user to easily and quickly identify abnormal behavior (e.g. service goes
 down, or service experiencing a lot of errors) and is designed in such a way as to return results
-extremely fast for longer time spans, compared to ad-hoc splunk queries.</p></blockquote>
-
+extremely fast for longer time spans, compared to ad-hoc splunk queries.</p>
+</blockquote>
 <div align="center">
-<img src="/assets/2017-01-18-shipit-vii-day-winter-2016/shipit-02.jpg">
-<sub>People’s Choice Winners</sub>
+    <figure class="figure">
+        <a href="shipit-02.jpg" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-02.jpg"
+                alt="People’s Choice Winners"class="figure-img img-fluid"
+            /> 
+        </a><figcaption class="figure-caption text-center">
+                <p>People’s Choice Winners</p>
+            </figcaption>
+    </figure>
 </div>
-
-
 <p>ShipIt Day continues to be a great way for Cerner associates to work on projects they don’t normally
 have time for, meet people in different organizations and learn something new. Participant
 Kristopher Williams said:</p>
-
-<blockquote><p>My favorite part of ShipIt Day was being able to work on something entirely different, and in my
-case, with a different group of people. Just a fresh change of pace.</p></blockquote>
-
+<blockquote>
+<p>My favorite part of ShipIt Day was being able to work on something entirely different, and in my
+case, with a different group of people. Just a fresh change of pace.</p>
+</blockquote>
 <p>Thank you to all our participants and a special thanks to our judges Jenni Syed
 (<a href="https://twitter.com/JenniSyed">@JenniSyed</a>), Yegor Hanov, Sean Griffin
 (<a href="https://twitter.com/trenchguinea">@trenchguinea</a>), and Jim Dwyer
 (<a href="https://twitter.com/episodicdata">@episodicdata</a>).</p>
-
 <p>Check out some additional highlights of our event in this video:</p>
 
-<iframe width="560" height="315" src="//www.youtube.com/embed/iqTp0dmLgUk" frameborder="0" allowfullscreen></iframe>
-
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/iqTp0dmLgUk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
 
 <p>If you are interested in reading more about previous ShipIt Day events, see these earlier posts:</p>
-
 <ul>
 <li><a href="http://engineering.cerner.com/blog/fall-2016-shipit-day/">Fall 2016 ShipIt Day</a></li>
 <li><a href="http://engineering.cerner.com/blog/spring-2016-shipit-day/">Spring 2016 ShipIt Day</a></li>
-<li><a href="http://engineering.cerner.com/blog/shipit-hackathon-mplus/">ShipIt &ndash; 24-hour hackathon for Millennium+ Platform Dev</a></li>
+<li><a href="http://engineering.cerner.com/blog/shipit-hackathon-mplus/">ShipIt - 24-hour hackathon for Millennium+ Platform Dev</a></li>
 </ul>
 
-</div>
+                        </div><div class="tags my-3"><a class="badge badge-pill badge-light border mr-2" href="/tags/culture">
+                                    <i class="fas fa-tag mr-2"></i>culture
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/engineering">
+                                    <i class="fas fa-tag mr-2"></i>engineering
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/hackathon">
+                                    <i class="fas fa-tag mr-2"></i>hackathon
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/shipit">
+                                    <i class="fas fa-tag mr-2"></i>shipit
+                                </a></div><ul class="share nav my-3 justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://twitter.com/intent/tweet?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fshipit-vii-day-winter-2016%2f&text=ShipIt%20VII%20Day%3a%20Winter%202016">
+              <i class="fa-fw fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fshipit-vii-day-winter-2016%2f&title=ShipIt%20VII%20Day%3a%20Winter%202016">
+                <i class="fa-fw fab fa-linkedin-in"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fengineering.cerner.com%2fblog%2fshipit-vii-day-winter-2016%2f&t=ShipIt%20VII%20Day%3a%20Winter%202016">
+                <i class="fa-fw fab fa-facebook-f"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://reddit.com/submit?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fshipit-vii-day-winter-2016%2f&title=ShipIt%20VII%20Day%3a%20Winter%202016">
+                <i class="fa-fw fab fa-reddit-alien"></i>
+            </a>
+        </li>
+    </nav>
+                    </div>
+                </div>
 
-
-  </section>
-  <footer>
-    <p class="meta">
-      
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  
-  
-</div>
-
-    
-    
-    <ul class="pager">
-      
-      <li class="previous"><a class="basic-alignment left"
-        href="/blog/alan-and-grace-an-origin-story/" title="Previous Post:
-        Alan and Grace: An Origin Story">&laquo; Previous Post</a></li>
-      
-      <li><a href="/blog/archives">Blog Archives</a></li>
-      
-      <li class="next"><a class="basic-alignment right" href="/blog/beadledom-simple-java-framework-for-building-rest-apis/"
-        title="Next Post: Beadledom - Simple Java framework for building REST APIs">Next Post &raquo;</a></li>
-      
-    </ul>
-  </footer>
-</article>
-
-<aside class="sidebar-nav span4">
-  
-    <section class="well">
-  <h2>Recent Posts</h2>
-  <ul id="recent_posts" class="nav nav-list">
-    
-      <li>
-        <a href="/blog/shipit-xvii/">ShipIt Day XVII</a>
-      </li>
-    
-      <li>
-        <a href="/blog/shipit-xvi/">ShipIt Day XVI</a>
-      </li>
-    
-      <li>
-        <a href="/blog/terra-ui/">Terra UI: A Health-Care Focused UI Component Library</a>
-      </li>
-    
-      <li>
-        <a href="/blog/introducing-f-twelve-an-open-source-dev-console/">Introducing F-Twelve, an Open Source Dev Console</a>
-      </li>
-    
-      <li>
-        <a href="/blog/carbon-graphs-open-source-visualization-api/">Carbon Graphs: An Open Source Visualization API</a>
-      </li>
-    
-  </ul>
-</section>
-<section class="divider">
-  <svg width="70" height="10">
-   <rect width="10" height="10" x="0" y="0" style="fill:rgb(20,124,193)" />
-   <rect width="10" height="10" x="20" y="0" style="fill:rgb(121,193,68)" />
-   <rect width="10" height="10" x="40" y="0" style="fill:rgb(20,124,193)" />
-   <rect width="10" height="10" x="60" y="0" style="fill:rgb(121,193,68)" />
-</svg>
-</section><section class="well">
-  <h2>Follow Us</h2>
-  <script src="https://apis.google.com/js/platform.js"></script>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-  <div class="g-ytsubscribe" data-channelid="UCYHiZDU0YLN0dWLWSCP1JYQ" data-layout="default" data-count="default"></div>
-  <a href="https://twitter.com/CernerEng?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-screen-name="false" data-show-count="false">Follow @CernerEng</a>
-</section>
-<section class="divider">
-  <svg width="70" height="10">
-   <rect width="10" height="10" x="0" y="0" style="fill:rgb(20,124,193)" />
-   <rect width="10" height="10" x="20" y="0" style="fill:rgb(121,193,68)" />
-   <rect width="10" height="10" x="40" y="0" style="fill:rgb(20,124,193)" />
-   <rect width="10" height="10" x="60" y="0" style="fill:rgb(121,193,68)" />
-</svg>
-</section>
-<section class="well">
-  <h2>GitHub Repos</h2>
-  <ul id="gh_repos" class="nav">
-    <li class="loading">Status updating...</li>
-  </ul>
-  
-  <a href="https://github.com/cerner">@cerner</a> on GitHub
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'cerner',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-  
-</aside>
-
-
-    </div>
-  </div>
-  
-<script id="search-results-template" type="text/mustache">
-  {{#entries}}
-    <article class="search-result">
-        <div class="search-meta meta">
-        {{#date}}<time datetime="{{pubdate}}" pubdate>{{displaydate}}</time>{{/date}} | {{author}}
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        
+                    </div>
+                </div></article>
         </div>
-        <a href="{{url}}">{{title}}</a>
-    </article>
-  {{/entries}}
-</script>
-
-<script type="text/javascript">
-  $(function() {
-    $('#search-query').lunrSearch({
-      indexUrl: '/javascripts/index.json',   // Url for the .json file containing search index data
-      results : '#search-results',  // selector for containing search results element
-      entries : '.entries',         // selector for search entries containing element (contained within results above)
-      template: '#search-results-template'  // selector for Mustache.js template
-    });
-    //Currently ignoring the "return/enter" keystroke when searching (as this would just result in a 404 for the page lookup).
-    $('#search-query').keydown(function(event){
-      if(event.keyCode == 13) {
-        event.preventDefault();
-        return false;
-      }
-    });
-  });
-</script>
-
-  <footer role="contentinfo" class="page-footer">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="span2">
-          <img src="/images/Cerner_White_Horizontal.png" alt="Cerner Logo" />
-      </div>
-      <div class="span10 pull-left">
-          <p>&copy; 2020</p>
-      </div>
     </div>
+
+    <div class="related-content row mt-5 row-cols-1 row-cols-lg-3"><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/fall-2016-shipit-day/" class="d-block"><img data-src="/blog/fall-2016-shipit-day/shipit-sign_hu6300eb18e88c426cf9351c59b9a2e44f_101701_700x350_fill_q75_box_smart1.jpg" class="card-img-top mx-auto d-block" alt="Fall 2016 ShipIt Day"><div class="card-body">
+            <h4 class="card-title">Fall 2016 ShipIt Day</h4>
+            <p class="card-text text-muted text-uppercase">November 8, 2016</p>
+            <div class="card-text">
+                Another ShipIt Day was held on September 8th-9th at the Realization Campus at Cerner. ShipIt is a 24-hour hackathon with the goal of building something awesome, usable, and value-adding within a single day. This fall marked our sixth ShipIt, which has has grown significantly since our first event.
+   The event kicked off in the morning at the auditorium of our Realization campus. At this point, teams were already formed, instructions were given, and shirts were handed out.
+            </div>
+        </div>
+    </a>
   </div>
+            </div><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/spring-2016-shipit-day/" class="d-block"><img data-src="/blog/spring-2016-shipit-day/shipit-start_hu9eb376cee05abb095d2187dfb49d512d_728324_700x350_fill_box_smart1_2.png" class="card-img-top mx-auto d-block" alt="Spring 2016 ShipIt Day"><div class="card-body">
+            <h4 class="card-title">Spring 2016 ShipIt Day</h4>
+            <p class="card-text text-muted text-uppercase">April 18, 2016</p>
+            <div class="card-text">
+                ShipIt Day is an all day, all night hackathon with the goal of building something awesome, usable, and value-adding within the given 24 hours. This Spring marked our fifth ShipIt Day, with participation and reach growing with each event.
+We kicked off the event at 10 AM on Thursday, when teams broke out and got to work and stopped only for food and caffeine. Many stayed until a few hours after dinner arrived, several stayed all night and took naps in their workspace, and a few worked through the whole night.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/shipit-hackathon-mplus/" class="d-block"><img data-src="/blog/shipit-hackathon-mplus/golden-keyboard_hubf490adf2aa60e5e033387cc7b7a5edc_38084_700x350_fill_q75_box_smart1.jpg" class="card-img-top mx-auto d-block" alt="ShipIt - 24-hour hackathon for Millennium&#43; Platform Dev"><div class="card-body">
+            <h4 class="card-title">ShipIt - 24-hour hackathon for Millennium&#43; Platform Dev</h4>
+            <p class="card-text text-muted text-uppercase">July 1, 2014</p>
+            <div class="card-text">
+                At the end of March, some of our teams held their first 24-hour hackathon, titled ShipIt: Millennium&#43; Services FedEx Day. We had 41 participants, in 15 teams working on 15 unique projects. The idea was inspired by several teams spending a few hours every so often to work on different projects. After reading about Atlassian’s hack days, we decided to hold one.
+The event was initially announced early in February, to give teams time to work this into their project plans.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div></div>
+</main>
+
+
+    <footer class="footer text-center bg-dark py-6">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="https://engineering.cerner.com/index.xml" rel="alternate" type="application/rss+xml" class="icons d-block">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a></li><li class="list-inline-item">
+                            <a href="https://github.com/cerner" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.instagram.com/cernercorporation/" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.linkedin.com/company/cerner-corporation" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fengineering.cerner.com%2F&amp;screen_name=CernerEng" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.youtube.com/user/cernereng?sub_confirmation=1" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                </ul>
+
+                <p class="text-light">
+                    
+                        Copyright © 2020
+                    
+                </p>
+
+                <p class="text-light">
+                Made with ❤️ by Cerner engineers.
+                </p>
+            </div>
+        </div>
+    </div>
 </footer>
 
-
-  
-
-
-
-
-
-
+    
+    
+        
+            <script src="/dist/main.44c94dde179dd23bf3f1.min.js"></script>
+        
+    
 
 
 
+
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-37701128-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
 
 </body>
 </html>

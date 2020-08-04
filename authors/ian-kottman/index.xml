@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ian Kottman on Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/ian-kottman/</link>
+    <description>Recent content in Ian Kottman on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Mon, 11 Sep 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/authors/ian-kottman/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ShipIt IX Day: Summer 2017</title>
+      <link>https://engineering.cerner.com/blog/shipit-ix-day-summer-2017/</link>
+      <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/shipit-ix-day-summer-2017/</guid>
+      <description>There is no better way to end summer than with ShipIt Day! We kicked off our ninth ShipIt Day on August 10th, with more than 75 Cerner associates signed up. Nineteen different teams worked for 24 hours straight to complete their projects. For those unfamiliar with the event, ShipIt Day is a 24 hour hackathon for internal associates to create something innovative, usable, and value-adding. This was the second ShipIt held at our new Innovations Campus.</description>
+    </item>
+    
+    <item>
+      <title>DevCon 2016 Word Cloud</title>
+      <link>https://engineering.cerner.com/blog/devcon-word-cloud/</link>
+      <pubDate>Wed, 28 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/devcon-word-cloud/</guid>
+      <description>Every year we hold an internal developers conference called DevCon. This year we had 295 submissions for talks, ranging from a deep technical dive into the inner workings of Kafka to a reflection on the power of office pranks.‌ I wondered what, if anything, do these submissions have in common? Are there any common themes/topics being discussed? To find out I decided to visualize the talk submissions in a word cloud to create an easily understandable (and hopefully aesthetically pleasing) view of what topics were most common.</description>
+    </item>
+    
+  </channel>
+</rss>

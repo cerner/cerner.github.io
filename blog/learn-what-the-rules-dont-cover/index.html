@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+  
+     Learn what the rules don&#39;t cover | 
+    Engineering Health
+  
+</title><meta name="description" content="a blog by engineers, for engineers"><meta name="author" content="Paul Conklin">
+
+<link rel="icon" href="/favicon.png">
+
+
+    
+        
+            <link rel="stylesheet" href="/dist/main.8ddb5a998657440f326d.min.css">
+        
+    
+
+
+
+
+<link rel="canonical" href="https://engineering.cerner.com/blog/learn-what-the-rules-dont-cover/"><script src="/js/jquery-3.5.1.min.js"></script><meta property="og:title" content="Learn what the rules don&#39;t cover" />
+<meta property="og:description" content="Most technical problems are like games. All of them have a way to win and all of them have rules; the easiest way to ensure you always win is to learn the rules inside and out, and more importantly what the rules don’t cover! Paying attention to what the rules don’t cover is what leads to out of the box thinking. What sets the great players apart from the rest is learning what the rules don’t cover which allows for creativity and, sometimes, shortcuts." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://engineering.cerner.com/blog/learn-what-the-rules-dont-cover/" />
+<meta property="article:published_time" content="2013-04-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2013-04-19T00:00:00+00:00" />
+<meta itemprop="name" content="Learn what the rules don&#39;t cover">
+<meta itemprop="description" content="Most technical problems are like games. All of them have a way to win and all of them have rules; the easiest way to ensure you always win is to learn the rules inside and out, and more importantly what the rules don’t cover! Paying attention to what the rules don’t cover is what leads to out of the box thinking. What sets the great players apart from the rest is learning what the rules don’t cover which allows for creativity and, sometimes, shortcuts.">
+<meta itemprop="datePublished" content="2013-04-19T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2013-04-19T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="805">
+
+
+
+<meta itemprop="keywords" content="engineering,operations," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Learn what the rules don&#39;t cover"/>
+<meta name="twitter:description" content="Most technical problems are like games. All of them have a way to win and all of them have rules; the easiest way to ensure you always win is to learn the rules inside and out, and more importantly what the rules don’t cover! Paying attention to what the rules don’t cover is what leads to out of the box thinking. What sets the great players apart from the rest is learning what the rules don’t cover which allows for creativity and, sometimes, shortcuts."/>
+
+</head>
+<body>
+    
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-sm" id="navbar-main-menu">
+    <div class="container">
+        <a class="navbar-brand" href="/"><img src="/cerner-logo.png"/></a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="main-menu" class="collapse navbar-collapse" >
+            <ul class="nav navbar-nav ml-auto">
+                
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/culture/">Culture</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/open-source/">Open Source</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/tech-talks/">Tech Talks</a></li>
+                
+            
+            </ul>
+            
+            <div class="form-inline my-2 my-lg-0 searchbox">
+    <input id="search-by" type="search" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js"></script>
+<script type="text/javascript" src="/js/auto-complete.min.js"></script>
+<script type="text/javascript">
+    var baseurl =  "https:\/\/engineering.cerner.com";
+</script>
+<script type="text/javascript" src="/js/search.js"></script>
+        </div>
+    </div>
+</nav>
+
+
+    
+<main class="content-page container pt-7 pb-5">
+    
+    <div class="row">
+        <div class="col">
+            <article class="article-content">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="meta text-muted mb-3">
+                            <p class="created text-muted text-uppercase font-weight-bold mb-1">April 19, 2013</p>
+                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>805 words</span>
+                            <span><i class="fas fa-clock mr-2"></i>4 mins read</span>
+                        </div>
+
+                        <h1>Learn what the rules don&#39;t cover</h1>
+
+                        <ul class="authors list-inline">
+        By: &nbsp;<li class="list-inline-item mr-3">
+                    <div class="media author">
+                            👤&nbsp;<div class="media-body">
+                            <h5 class="name my-0 "><a href="/authors/paul-conklin/" class="small">Paul Conklin</a>
+                            </h5>
+                        </div>
+                    </div>
+                </li></ul>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="content">
+                            <p>Most technical problems are like games.  All of them have a way to win and all of them have rules; the easiest way to ensure you always win is to learn the rules inside and out, and more importantly what the rules don’t cover!  Paying attention to what the rules don’t cover is what leads to out of the box thinking.  What sets the great players apart from the rest is learning what the rules don’t cover which allows for creativity and, sometimes, shortcuts.</p>
+<p>Recently, I played a game similar to musical chairs. It was a game of diminishing resources (a management exercise) with about 12 of us and six large sheets of paper.  The only rules were: 1) Walk around while the music is playing and 2) Put your foot on a rectangle when the music stopped (he instructor pointed at one of the sheets as a visual queue).  When we first started, there was ample space for each of us to have a foot somewhere on one of the 2’ x 4’ paper.</p>
+<p>As the game continued, the instructor started cutting the sheets into smaller and smaller pieces until we got down to 3&rdquo; x 5&rdquo;.  Most of us were precariously trying to balance and keep a portion of a shoe touching the paper, a few just gave up, and two paid special attention to the rules and found an out.  One gentleman took at a business card and promptly stood on it.  Another just lifted his leg and put it up on the door.  We all were following the same rules but two found what the rules didn’t cover and won.</p>
+<p>Most people think that Printing is easy.  You hit a button or Ctrl + P and the paper comes out, right?  This seamless process appears so to users because of the hard work that goes in behind the scenes.  So when I started down this path, I knew a strong foundation would be important. I settled on <a href="http://www.cups.org">CUPS</a> as the basis for my brave new world of printing.  It is open source and has a pretty wide following.  It’s the basis for Apple printing, fairly hardened, and is the backbone of several educational systems printing making it enterprise ready.</p>
+<p>The more I worked with it, the more I saw its full potential.  CUPS had turned out to be the most useful &ldquo;Swiss Army Knife&rdquo; in my toolbox.  It is extremely robust and easy to integrate / stack with other solutions.  One great example of this is my &ldquo;Coffee CUPS&rdquo; demo.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/WzEhKs_CvJc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<p>I picked CUPS as the underlying backbone for my new architecture for the same reason.  It had the maximum amount of possibilities with the least amount of rules.  With a minimum amount of rules, it allows for the maximum amount of creativity.  Sure, I could develop my own solution from the ground up where I get to make the rules and have unlimited creativity, and I have had to do that in the past.  In general, if you write your own software, you have the least amount of rules (constraints of the compiler).  OpenSource Software is a close second with few limitations.  Closed source 3rd party software usually has the most rules (ever read a EULA in your life?).  When selecting a solution to a problem, it’s also important to do a cost benefit analysis.  Is it really worth reinventing the wheel?  I’m often reminded of the below picture.  I’ve seen several variations of it over the years (Credit to the picture unknown, but it wasn’t me).</p>
+<p>CUPS handles a lot of the general architecture that doesn’t need to be re-invented on either end of the spectrum (managing print queues, accepting jobs, sending jobs to printers, etc) but allows for a lot of creativity in the middle (the middle being what is done to the print job in between getting it from the user and sending it to the printer).  A good example of this (filters) can be found <a href="http://en.wikipedia.org/wiki/File:Cups_simple.svg">here</a>.  CUPS gives you an overall framework of how it will call a filter, and what it expects as a return, but beyond that, it’s up to the programmer.  You can write in pretty much any language you want and alter the print job as much as you want.  I leveraged this to maximize the amount of devices I could talk to and input file types I could accept, while also being able to make business decisions based on the content of the print job.</p>
+<div align="center">
+    <figure class="figure">
+        <a href="HPRW2.jpg" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="HPRW2.jpg"
+                alt="HPRW2"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
+<p><em>Source: <a href="http://www.projectcartoon.com">www.projectcartoon.com</a></em></p>
+<p>I think that picture aptly describes the disconnect in all of the processes that exist in problem solving.  So in addition to learning what the rules don’t cover, we need to be keenly aware of what you are trying to accomplish: what is the problem and the success criteria? How do we win the game?</p>
+
+                        </div><div class="tags my-3"><a class="badge badge-pill badge-light border mr-2" href="/tags/engineering">
+                                    <i class="fas fa-tag mr-2"></i>engineering
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/operations">
+                                    <i class="fas fa-tag mr-2"></i>operations
+                                </a></div><ul class="share nav my-3 justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://twitter.com/intent/tweet?url=https%3a%2f%2fengineering.cerner.com%2fblog%2flearn-what-the-rules-dont-cover%2f&text=Learn%20what%20the%20rules%20don%26%2339%3bt%20cover">
+              <i class="fa-fw fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.cerner.com%2fblog%2flearn-what-the-rules-dont-cover%2f&title=Learn%20what%20the%20rules%20don%26%2339%3bt%20cover">
+                <i class="fa-fw fab fa-linkedin-in"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fengineering.cerner.com%2fblog%2flearn-what-the-rules-dont-cover%2f&t=Learn%20what%20the%20rules%20don%26%2339%3bt%20cover">
+                <i class="fa-fw fab fa-facebook-f"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://reddit.com/submit?url=https%3a%2f%2fengineering.cerner.com%2fblog%2flearn-what-the-rules-dont-cover%2f&title=Learn%20what%20the%20rules%20don%26%2339%3bt%20cover">
+                <i class="fa-fw fab fa-reddit-alien"></i>
+            </a>
+        </li>
+    </nav>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        
+                    </div>
+                </div></article>
+        </div>
+    </div>
+
+    <div class="related-content row mt-5 row-cols-1 row-cols-lg-3"><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/cerner-and-tycho/" class="d-block"><img data-src="/blog/cerner-and-tycho/P2-PomConfiguration-Edit2_hu6cb5dac69225d3ce7157f41a275bdaad_200952_700x350_fill_box_smart1_2.png" class="card-img-top mx-auto d-block" alt="Cerner and Tycho"><div class="card-body">
+            <h4 class="card-title">Cerner and Tycho</h4>
+            <p class="card-text text-muted text-uppercase">March 27, 2013</p>
+            <div class="card-text">
+                Introduction Tycho is a build tool for integration between PDE and Maven. Cerner has a long history of working with Eclipse RCP but P2 integration is something of a more recent phenomenon. This post is going to talk about how Cerner is using Tycho, what prompted our transition to Tycho and how we accomplished moving our build to using Tycho.
+Why we use Tycho The first question when evaluating any tool is asking yourself: “why would I use that”?
+            </div>
+        </div>
+    </a>
+  </div>
+            </div><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/ruby-at-cerner/" class="d-block"><img data-src="/blog/ruby-at-cerner/the.foxes-4c_hu7547722a8b728f33654c008d07c5b5b0_7048_700x350_fill_box_smart1_2.png" class="card-img-top mx-auto d-block" alt="Ruby at Cerner"><div class="card-body">
+            <h4 class="card-title">Ruby at Cerner</h4>
+            <p class="card-text text-muted text-uppercase">April 5, 2013</p>
+            <div class="card-text">
+                Cerner’s journey with Ruby started in the summer of 2009. We selected Ruby on Rails for rapid development of the Cerner Store to prepare for release at the Cerner Health Conference that year. In three months, with three engineers and a designer, we wrote and released the first version of an e-commerce web application. Two of those engineers, including me, had never worked with Ruby before but quickly realized the power and expressiveness of the language due to resources like Why’s (Poignant) Guide to Ruby.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/modularity-in-medical-imaging/" class="d-block"><img data-src="/blog/modularity-in-medical-imaging/Figure-1_hu43e72fb6463dfb8adeedf9a412b2cb74_164619_700x350_fill_box_smart1_2.png" class="card-img-top mx-auto d-block" alt="Modularity in Medical Imaging"><div class="card-body">
+            <h4 class="card-title">Modularity in Medical Imaging</h4>
+            <p class="card-text text-muted text-uppercase">March 29, 2013</p>
+            <div class="card-text">
+                Developers often take for granted the level of flexibility and customization that is available within the software they use every day. Consumers of imaging software have traditionally been completely confined to interpret exams a specific way, and frequently in ways that are unintuitive. Every physician, specialist, technologist, med student, and others across the continuum of care has a preference as to not only how exams are laid out, but what information is displayed with the images and what transformations would be applied or processed automatically.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div></div>
+</main>
+
+
+    <footer class="footer text-center bg-dark py-6">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="https://engineering.cerner.com/index.xml" rel="alternate" type="application/rss+xml" class="icons d-block">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a></li><li class="list-inline-item">
+                            <a href="https://github.com/cerner" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.instagram.com/cernercorporation/" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.linkedin.com/company/cerner-corporation" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fengineering.cerner.com%2F&amp;screen_name=CernerEng" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.youtube.com/user/cernereng?sub_confirmation=1" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                </ul>
+
+                <p class="text-light">
+                    
+                        Copyright © 2020
+                    
+                </p>
+
+                <p class="text-light">
+                Made with ❤️ by Cerner engineers.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+    
+        
+            <script src="/dist/main.44c94dde179dd23bf3f1.min.js"></script>
+        
+    
+
+
+
+
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-37701128-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body>
+</html>

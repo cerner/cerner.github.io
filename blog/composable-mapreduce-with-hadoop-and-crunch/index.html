@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+  
+     Composable MapReduce with Hadoop and Crunch | 
+    Engineering Health
+  
+</title><meta name="description" content="a blog by engineers, for engineers"><meta name="author" content="Ryan Brush">
+
+<link rel="icon" href="/favicon.png">
+
+
+    
+        
+            <link rel="stylesheet" href="/dist/main.8ddb5a998657440f326d.min.css">
+        
+    
+
+
+
+
+<link rel="canonical" href="https://engineering.cerner.com/blog/composable-mapreduce-with-hadoop-and-crunch/"><script src="/js/jquery-3.5.1.min.js"></script><meta property="og:title" content="Composable MapReduce with Hadoop and Crunch" />
+<meta property="og:description" content="Most developers know this pattern well: we design a set of schemas to represent our data, and then work with that data via a query language. This works great in most cases, but becomes a challenge as data sets grow to an arbitrary size and complexity. Data sets can become too large to query and update with conventional means.
+These challenges often arise with Hadoop, simply because Hadoop is a popular tool to tackle such data sets." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://engineering.cerner.com/blog/composable-mapreduce-with-hadoop-and-crunch/" />
+<meta property="article:published_time" content="2013-02-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2013-02-03T00:00:00+00:00" />
+<meta itemprop="name" content="Composable MapReduce with Hadoop and Crunch">
+<meta itemprop="description" content="Most developers know this pattern well: we design a set of schemas to represent our data, and then work with that data via a query language. This works great in most cases, but becomes a challenge as data sets grow to an arbitrary size and complexity. Data sets can become too large to query and update with conventional means.
+These challenges often arise with Hadoop, simply because Hadoop is a popular tool to tackle such data sets.">
+<meta itemprop="datePublished" content="2013-02-03T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2013-02-03T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1064">
+
+
+
+<meta itemprop="keywords" content="design,engineering," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Composable MapReduce with Hadoop and Crunch"/>
+<meta name="twitter:description" content="Most developers know this pattern well: we design a set of schemas to represent our data, and then work with that data via a query language. This works great in most cases, but becomes a challenge as data sets grow to an arbitrary size and complexity. Data sets can become too large to query and update with conventional means.
+These challenges often arise with Hadoop, simply because Hadoop is a popular tool to tackle such data sets."/>
+
+</head>
+<body>
+    
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-sm" id="navbar-main-menu">
+    <div class="container">
+        <a class="navbar-brand" href="/"><img src="/cerner-logo.png"/></a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="main-menu" class="collapse navbar-collapse" >
+            <ul class="nav navbar-nav ml-auto">
+                
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/culture/">Culture</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/open-source/">Open Source</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/tech-talks/">Tech Talks</a></li>
+                
+            
+            </ul>
+            
+            <div class="form-inline my-2 my-lg-0 searchbox">
+    <input id="search-by" type="search" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js"></script>
+<script type="text/javascript" src="/js/auto-complete.min.js"></script>
+<script type="text/javascript">
+    var baseurl =  "https:\/\/engineering.cerner.com";
+</script>
+<script type="text/javascript" src="/js/search.js"></script>
+        </div>
+    </div>
+</nav>
+
+
+    
+<main class="content-page container pt-7 pb-5">
+    
+    <div class="row">
+        <div class="col">
+            <article class="article-content">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="meta text-muted mb-3">
+                            <p class="created text-muted text-uppercase font-weight-bold mb-1">February 3, 2013</p>
+                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>1064 words</span>
+                            <span><i class="fas fa-clock mr-2"></i>5 mins read</span>
+                        </div>
+
+                        <h1>Composable MapReduce with Hadoop and Crunch</h1>
+
+                        <ul class="authors list-inline">
+        By: &nbsp;<li class="list-inline-item mr-3">
+                    <div class="media author">
+                            👤&nbsp;<div class="media-body">
+                            <h5 class="name my-0 "><a href="/authors/ryan-brush/" class="small">Ryan Brush</a>
+                            </h5>
+                        </div>
+                    </div>
+                </li></ul>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="content">
+                            <p>Most developers know this pattern well: we design a set of schemas to represent our data, and then work with that data via a query language. This works great in most cases, but becomes a challenge as data sets grow to an arbitrary size and complexity. Data sets can become too large to query and update with conventional means.</p>
+<p>These challenges often arise with Hadoop, simply because Hadoop is a popular tool to tackle such data sets. It&rsquo;s tempting to apply our familiar patterns: design a data model in Hadoop and query it. Unfortunately, this breaks down for a couple of reasons:</p>
+<ol>
+<li>For a large and complex data set, no single data model can efficiently handle all queries against it.</li>
+<li>Even if such a model could be built, it would likely get bogged down in its own complexity and competing needs of different queries.</li>
+</ol>
+<p>So how do we approach this? Let&rsquo;s look to an aphorism familiar to long-term users of Hadoop:</p>
+<blockquote>
+<p>Start with the questions to be answered, then model the data to answer them.</p>
+</blockquote>
+<p>Related sets of applications and services tend to ask related questions. Applications doing interactive search queries against a medical record can use one data model, but detecting candidates for health management programs may need another. Both cases must have completely faithful representations of the original data.</p>
+<p>Another challenge is leveraging common processing logic between these representations: there may be initial steps of data normalization and cleaning that are common to all needs, and other steps that are useful for some cases. One strategy is for each shared piece of logic to write output to its own data store, which can then be picked up by another job. Oversimplifying, it may look like this:</p>
+<div align="center">
+    <figure class="figure">
+        <a href="diagram1.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="diagram1.png"
+                alt="Diagram 1"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
+<p>Such a model can be coordinated with Hadoop-based tools like <a href="http://oozie.apache.org/">Oozie</a>. But this model of persisting every processing stage and using them downstream has some drawbacks:</p>
+<ol>
+<li>The structure and location of each intermediate state must be externally defined, creating a barrier to easily leverage the output of one operation in another.</li>
+<li>Data is duplicated unnecessarily. If one of our processing steps requires intermediate data, we must persist it, even if it is used only by other processing steps. Ideally, we could just connect the processing steps without unnecessary persistence. (In some cases, Hadoop itself persists intermediate state for MapReduce jobs, but there are many useful jobs that don&rsquo;t need to do so.)</li>
+<li>Each step must be fully processed before the next step can run. Therefore, each processing step is only as fast as its slowest component.</li>
+<li>Each persistent state must use a data model that can be processed efficiently in bulk. This limits our options for the data store. We must choose something MapReduce friendly, rather than optimizing for the needs of application queries.</li>
+</ol>
+<p>So how do we solve this? Rather than making intermediate data stores as the point of reuse, let&rsquo;s reason about the system at a higher level: make abstract, distributed data collections our point of reuse for processing. A data collection is a set of data that can be persisted to an arbitrary store when it makes sense, or streamed between processing steps when no persistence is needed. One data collection can be converted to another by applying functions to it. So the above diagram may now look like this, where arrows are functions used to transform data collections:</p>
+<div align="center">
+    <figure class="figure">
+        <a href="diagram2.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="diagram2.png"
+                alt="Diagram 2"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
+<p>This has several advantages:</p>
+<ol>
+<li>Processing logic becomes reusable. By writing functions that consume and produce collections of data, we can efficiently share processing code as needed.</li>
+<li>Data no longer needs to be stored for processing purposes. We can choose to store it when there is some other benefit.</li>
+<li>The data models need not account for downstream processing; they can align to the needs of apps and services.</li>
+<li>Processing is significantly more efficient as it can stream from one collection to another.</li>
+</ol>
+<p>This model supports storing and launching processing from intermediate states, but it doesn&rsquo;t require it. Processing downstream items from a raw data set will probably be a regular occurrence, but that need not be the case for other collections.</p>
+<p>Perhaps the biggest advantage of this approach is that it makes MapReduce pipelines composable. Logic expressed as functions can be reused and chained together as necessary to solve a problem at hand. Any intermediate state can optionally be persisted, either as a cache of items expensive to process or an artifact useful to applications.</p>
+<h4 id="implementation-strategy">Implementation Strategy</h4>
+<p>So, how does this work?  Here are the key pieces:</p>
+<ul>
+<li>All processing input comes from a source. For Cerner, the source is typically data stored in Hadoop or HBase, but other implementations are possible.</li>
+<li>Each source is converted into a data collection, which is described above.</li>
+<li>One or more functions can be run against each data collection, converting it from one form to another. We&rsquo;ll discuss below how this be very efficient.</li>
+<li>Collections can be persisted at any point in the processing pipeline. The persisted collections could be used for external tooling, or simply as a means to cache the results of an expensive computation.</li>
+</ul>
+<p>Fortunately, a newer MapReduce framework supports this pattern well: <a href="http://incubator.apache.org/crunch/">Apache Crunch</a>, based on Google&rsquo;s <a href="http://dl.acm.org/citation.cfm?id=1806638">FlumeJava paper</a>, represents each data set as a sort of distributed collection, and allows them to be composed together with strongly-typed functions. The output of a Crunch pipeline may be a data model easily loaded into a RDBMs system, inverted index or queried via tools like Apache Hive.</p>
+<p>Crunch will also fuse steps in the processing pipeline whenever possible.  This means we can chain our functions together, and they&rsquo;ll automatically be run in the same process. This optimization is significant for many classes of jobs.  And although persisting intermediate state must be done by hand today, it will <a href="https://issues.apache.org/jira/browse/CRUNCH-145">likely be coming</a> in a future version of Crunch itself.</p>
+<h3 id="an-end-to-direct-mapreduce-jobs">An end to direct MapReduce jobs</h3>
+<p>We may have reached the end of direct implementation of MapReduce jobs. Tools like Cascading and Apache Crunch offer excellent higher-level libraries, and Domain-Specific Languages like Hive and Pig allow the simple creation of queries or processing logic. Here at Cerner, we tend to use Crunch for pipeline processing and Hive for ad hoc queries of data in Hadoop.</p>
+<p>MapReduce is a powerful tool, but it may be best viewed as a building block. Composing functions across distributed collections that use MapReduce as its basis lets us reason and leverage our processing logic more effectively.</p>
+
+                        </div><div class="tags my-3"><a class="badge badge-pill badge-light border mr-2" href="/tags/design">
+                                    <i class="fas fa-tag mr-2"></i>design
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/engineering">
+                                    <i class="fas fa-tag mr-2"></i>engineering
+                                </a></div><ul class="share nav my-3 justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://twitter.com/intent/tweet?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fcomposable-mapreduce-with-hadoop-and-crunch%2f&text=Composable%20MapReduce%20with%20Hadoop%20and%20Crunch">
+              <i class="fa-fw fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fcomposable-mapreduce-with-hadoop-and-crunch%2f&title=Composable%20MapReduce%20with%20Hadoop%20and%20Crunch">
+                <i class="fa-fw fab fa-linkedin-in"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fengineering.cerner.com%2fblog%2fcomposable-mapreduce-with-hadoop-and-crunch%2f&t=Composable%20MapReduce%20with%20Hadoop%20and%20Crunch">
+                <i class="fa-fw fab fa-facebook-f"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://reddit.com/submit?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fcomposable-mapreduce-with-hadoop-and-crunch%2f&title=Composable%20MapReduce%20with%20Hadoop%20and%20Crunch">
+                <i class="fa-fw fab fa-reddit-alien"></i>
+            </a>
+        </li>
+    </nav>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        
+                    </div>
+                </div></article>
+        </div>
+    </div>
+
+    
+</main>
+
+
+    <footer class="footer text-center bg-dark py-6">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="https://engineering.cerner.com/index.xml" rel="alternate" type="application/rss+xml" class="icons d-block">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a></li><li class="list-inline-item">
+                            <a href="https://github.com/cerner" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.instagram.com/cernercorporation/" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.linkedin.com/company/cerner-corporation" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fengineering.cerner.com%2F&amp;screen_name=CernerEng" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.youtube.com/user/cernereng?sub_confirmation=1" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                </ul>
+
+                <p class="text-light">
+                    
+                        Copyright © 2020
+                    
+                </p>
+
+                <p class="text-light">
+                Made with ❤️ by Cerner engineers.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+    
+        
+            <script src="/dist/main.44c94dde179dd23bf3f1.min.js"></script>
+        
+    
+
+
+
+
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-37701128-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body>
+</html>

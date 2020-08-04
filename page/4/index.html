@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="generator" content="Hugo 0.74.2" />
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+  
+    
+    Engineering Health
+  
+</title><meta name="description" content="a blog by engineers, for engineers"><meta name="author" content="Cerner Engineering">
+
+<link rel="icon" href="/favicon.png">
+
+
+    
+        
+            <link rel="stylesheet" href="/dist/main.8ddb5a998657440f326d.min.css">
+        
+    
+
+
+
+
+<link rel="canonical" href="https://engineering.cerner.com/">
+  <link href="https://engineering.cerner.com/index.xml" rel="alternate" type="application/rss+xml" title="Engineering Health">
+  <link href="https://engineering.cerner.com/index.xml" rel="feed" type="application/rss+xml" title="Engineering Health"><script src="/js/jquery-3.5.1.min.js"></script><meta property="og:title" content="Engineering Health" />
+<meta property="og:description" content="a blog by engineers, for engineers" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://engineering.cerner.com/" />
+<meta property="og:updated_time" content="2020-02-24T00:00:00+00:00" />
+<meta itemprop="name" content="Engineering Health">
+<meta itemprop="description" content="a blog by engineers, for engineers"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Engineering Health"/>
+<meta name="twitter:description" content="a blog by engineers, for engineers"/>
+
+</head>
+<body>
+    
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-sm" id="navbar-main-menu">
+    <div class="container">
+        <a class="navbar-brand" href="/"><img src="/cerner-logo.png"/></a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="main-menu" class="collapse navbar-collapse" >
+            <ul class="nav navbar-nav ml-auto">
+                
+                    <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/culture/">Culture</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/open-source/">Open Source</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/tech-talks/">Tech Talks</a></li>
+                
+            
+            </ul>
+            
+            <div class="form-inline my-2 my-lg-0 searchbox">
+    <input id="search-by" type="search" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js"></script>
+<script type="text/javascript" src="/js/auto-complete.min.js"></script>
+<script type="text/javascript">
+    var baseurl =  "https:\/\/engineering.cerner.com";
+</script>
+<script type="text/javascript" src="/js/search.js"></script>
+        </div>
+    </div>
+</nav>
+
+
+    
+<main class="homepage container py-6">
+
+    
+    <div class="hero row">
+        <div class="col position-relative py-lg-7 pb-5"><div class="homepage-image">
+                    <img src="/images/alan-grace.png" class="img-fluid">
+                </div><h1 class="display-4 font-weight-bold">Engineering Health</h1><h3 class="font-weight-normal text-muted">a blog by engineers, for engineers</h3></div>
+    </div>
+
+    
+    
+    
+    
+
+    
+    <div class="articles row row-cols-1 row-cols-lg-3">
+        
+            <div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/announcing-bunsen-fhir-data-with-apache-spark/" class="d-block"><div class="card-body">
+            <h4 class="card-title">Announcing Bunsen: FHIR Data with Apache Spark</h4>
+            <p class="card-text text-muted text-uppercase">November 27, 2017</p>
+            <div class="card-text">
+                We’re excited to open source Bunsen, a library to make analyzing FHIR data with Apache Spark simple and scalable. Bunsen encodes FHIR resources directly into Apache Spark’s native data structures. This lets users leverage well-defined FHIR data models directly within Spark SQL.
+Here’s a simple query against a table of FHIR observations that produces a table of heart rate values:
+spark.sql(&#34;&#34;&#34; select subject.reference person_id, effectiveDateTime date_time, valueQuantity.value value from observations where in_valueset(code, &#39;heart_rate&#39;) &#34;&#34;&#34;).
+            </div>
+        </div>
+    </a>
+  </div>
+            </div>
+        
+            <div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/celebrating-world-usability-day-at-cerner/" class="d-block"><img data-src="/blog/celebrating-world-usability-day-at-cerner/ux-vr_hu6dad872c1a28fe2b3b136568df66fa9a_347316_700x350_fill_q75_box_smart1.jpg" class="card-img-top mx-auto d-block" alt="Celebrating World Usability Day at Cerner"><div class="card-body">
+            <h4 class="card-title">Celebrating World Usability Day at Cerner</h4>
+            <p class="card-text text-muted text-uppercase">November 14, 2017</p>
+            <div class="card-text">
+                World Usability Day is celebrated worldwide on the second Thursday in November every year. Across the globe, organizations host events and use this day to provide education on how to make products easier to use and simpler to access, as well as to celebrate progress in this pursuit.
+The World Usability Day theme for 2017 was “Inclusion.” Inclusive design considers the range of abilities, language and other forms of human difference when creating a solution.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div>
+        
+            <div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/accessibility-and-usability-on-the-road-to-great-ux/" class="d-block"><div class="card-body">
+            <h4 class="card-title">Accessibility and Usability: On the Road to Great UX</h4>
+            <p class="card-text text-muted text-uppercase">October 9, 2017</p>
+            <div class="card-text">
+                In 2010, a group of designers from Columbus, Ohio set out to create a grassroots, cross-discipline, and creative conference. Since that first event, Midwest UX has been an ongoing tradition that attracts innovative ideas and provides an opportunity for regional professions to engage in discussion with other professionals. Last year, Amber Wilks and Dr. Becca Green were invited to take their talk from DevCon 2016 on the road to Midwest UX.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div>
+        
+            <div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/jwala-joins-cerner-open-source/" class="d-block"><div class="card-body">
+            <h4 class="card-title">Jwala Joins Cerner&#39;s Open Source</h4>
+            <p class="card-text text-muted text-uppercase">September 27, 2017</p>
+            <div class="card-text">
+                Introducing Jwala, a Resource Manager for the Apache Community Apache Tomcat and Apache httpd are hardened, scalable, and reliable open-source solutions. Widely adopted, these solutions are commonly used to host and load-balance Java applications.
+Configuring and managing a small set of elements is relatively easy, but once you start scaling out your application and platform, things get complicated. Questions such as “How do I update the heap or database pool-size across hundreds of Java Virtual Machines (JVMs)?
+            </div>
+        </div>
+    </a>
+  </div>
+            </div>
+        
+            <div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/engineers-overseas-for-smart-and-fhir/" class="d-block"><img data-src="/blog/engineers-overseas-for-smart-and-fhir/Devdays_2016_hu2be32fa4985239b5c898cccdaba11062_69468_700x350_fill_q75_box_smart1.jpg" class="card-img-top mx-auto d-block" alt="Engineers Overseas for SMART and FHIR (FHIR DevDays 2016)"><div class="card-body">
+            <h4 class="card-title">Engineers Overseas for SMART and FHIR (FHIR DevDays 2016)</h4>
+            <p class="card-text text-muted text-uppercase">September 21, 2017</p>
+            <div class="card-text">
+                In a previous post, we discussed the need to provide education around our ecosystem and implementation of the FHIRⓇ and SMARTⓇ standards for developers and how we did so at our annual Cerner Health Conference. That same week, we were also a part of FHIR DevDays, which included a track entitled “Apps in the EHR.” We worked alongside track participants who were seeking to integrate their apps in a variety of EHRs, including Cerner.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div>
+        
+            <div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/shipit-ix-day-summer-2017/" class="d-block"><img data-src="/blog/shipit-ix-day-summer-2017/shipit-day-ix-6_hu5ac02436c3948d4296e29eba7b3441a1_23674_700x350_fill_q75_box_smart1.jpg" class="card-img-top mx-auto d-block" alt="ShipIt IX Day: Summer 2017"><div class="card-body">
+            <h4 class="card-title">ShipIt IX Day: Summer 2017</h4>
+            <p class="card-text text-muted text-uppercase">September 11, 2017</p>
+            <div class="card-text">
+                There is no better way to end summer than with ShipIt Day! We kicked off our ninth ShipIt Day on August 10th, with more than 75 Cerner associates signed up. Nineteen different teams worked for 24 hours straight to complete their projects. For those unfamiliar with the event, ShipIt Day is a 24 hour hackathon for internal associates to create something innovative, usable, and value-adding. This was the second ShipIt held at our new Innovations Campus.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div>
+        
+            <div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/continuous-delivery-for-dcos-with-spinnaker/" class="d-block"><div class="card-body">
+            <h4 class="card-title">Continuous Delivery for DC/OS with Spinnaker</h4>
+            <p class="card-text text-muted text-uppercase">September 8, 2017</p>
+            <div class="card-text">
+                Last fall our team (Mike Tweten, Trevin Teacutter, and Zameer Sura) started working on the problem of automating DC/OS deployments in a way that wouldn’t require multiple teams to duplicate effort and tie themselves directly to DC/OS APIs. While DC/OS certainly makes the act of deploying an application much easier than anything we’ve used previously, there are still many different ways you could choose to layer on deployment strategies and integrate with continuous delivery systems.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div>
+        
+            <div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/structure-matters-how-cerner-handled-too-much-health-data-in-hbase/" class="d-block"><div class="card-body">
+            <h4 class="card-title">Structure Matters: How Cerner Handled Too Much Health Data in HBase</h4>
+            <p class="card-text text-muted text-uppercase">August 28, 2017</p>
+            <div class="card-text">
+                Background In order to manage the health of populations, Cerner builds data-driven solutions built on top of its HealtheIntent℠ platform. The platform transforms and standardizes data across disparate health systems. The data is then used in algorithms that aid healthcare providers and hospitals in managing and monitoring health both at a person and population level.
+The Reference Record is one of the core components of the HealtheIntent platform. It represents the data known about a person’s health from a particular source of healthcare information.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div>
+        
+            <div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/managing-splunk-knowledge/" class="d-block"><div class="card-body">
+            <h4 class="card-title">Managing Splunk&#39;s Knowledge</h4>
+            <p class="card-text text-muted text-uppercase">July 14, 2017</p>
+            <div class="card-text">
+                When we first were given access to Splunk we were excited about all the functionality it could provide our team to help us monitor and debug our applications. We created alerts to email us if our applications are logging errors, dashboards to show health or metrics of our services, and field extractions as well as tags to make searching easier. As we created more and more of these Splunk knowledge objects we started to have issues.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div>
+        
+    </div>
+
+    
+    <nav aria-label="Navigation">
+        <ul class="pagination justify-content-center">
+            
+            <li class="page-item"><a class="page-link" href="/page/3/" tabindex="-1">Previous</a></li>
+            
+        
+            
+            <li class="page-item"><a class="page-link" href="/">1</a></li>
+            
+            <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
+            
+            <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
+            
+            <li class="page-item"><a class="page-link" href="/page/4/">4</a></li>
+            
+            <li class="page-item"><a class="page-link" href="/page/5/">5</a></li>
+            
+            <li class="page-item"><a class="page-link" href="/page/6/">6</a></li>
+            
+            <li class="page-item"><a class="page-link" href="/page/7/">7</a></li>
+            
+            <li class="page-item"><a class="page-link" href="/page/8/">8</a></li>
+            
+            <li class="page-item"><a class="page-link" href="/page/9/">9</a></li>
+            
+            <li class="page-item"><a class="page-link" href="/page/10/">10</a></li>
+            
+
+            
+            <li class="page-item"><a class="page-link" href="/page/5/">Next</a></li>
+                
+        </ul>
+    </nav>
+    
+</main>
+
+
+    <footer class="footer text-center bg-dark py-6">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="https://engineering.cerner.com/index.xml" rel="alternate" type="application/rss+xml" class="icons d-block">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a></li><li class="list-inline-item">
+                            <a href="https://github.com/cerner" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.instagram.com/cernercorporation/" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.linkedin.com/company/cerner-corporation" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fengineering.cerner.com%2F&amp;screen_name=CernerEng" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.youtube.com/user/cernereng?sub_confirmation=1" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                </ul>
+
+                <p class="text-light">
+                    
+                        Copyright © 2020
+                    
+                </p>
+
+                <p class="text-light">
+                Made with ❤️ by Cerner engineers.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+    
+        
+            <script src="/dist/main.44c94dde179dd23bf3f1.min.js"></script>
+        
+    
+
+
+
+
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-37701128-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lindsey Bromberg on Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/lindsey-bromberg/</link>
+    <description>Recent content in Lindsey Bromberg on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Wed, 28 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/authors/lindsey-bromberg/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>One Year Calling Innovations Home</title>
+      <link>https://engineering.cerner.com/blog/one-year-calling-innovations-home/</link>
+      <pubDate>Wed, 28 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/one-year-calling-innovations-home/</guid>
+      <description>One year ago this month, Cerner development associates in Kansas City moved into a new place to call home for their workdays, Innovations Campus. The first two towers that stand on this campus provide 805,000 square feet of workspace for more than 3,000 associates. Eventually, the campus will grow larger, including 16 buildings and 16,000 Cerner associates. As that growth approaches, it is important to reflect on what these first two towers represent for associates and their development careers at Cerner.</description>
+    </item>
+    
+  </channel>
+</rss>

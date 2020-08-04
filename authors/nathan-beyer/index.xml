@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nathan Beyer on Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/nathan-beyer/</link>
+    <description>Recent content in Nathan Beyer on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Thu, 16 Jan 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/authors/nathan-beyer/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cerner and Open Source</title>
+      <link>https://engineering.cerner.com/blog/cerner-and-open-source/</link>
+      <pubDate>Thu, 16 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/cerner-and-open-source/</guid>
+      <description>(This post was written by Nathan Beyer, Bryan Baugher and Jacob Williams.)
+The use of open source software has become nearly ubiquitous in contemporary software development and it is no different for us, here at Cerner. We have been using open source software, directly and indirectly, for decades. Over the past decade, we’ve grown in maturity both in our use of open source software as well as our participation in open source communities.</description>
+    </item>
+    
+  </channel>
+</rss>

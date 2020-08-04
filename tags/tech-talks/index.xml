@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tech talks on Engineering Health</title>
+    <link>https://engineering.cerner.com/tags/tech-talks/</link>
+    <description>Recent content in tech talks on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Wed, 28 Sep 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/tags/tech-talks/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>DevCon 2016 Word Cloud</title>
+      <link>https://engineering.cerner.com/blog/devcon-word-cloud/</link>
+      <pubDate>Wed, 28 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/devcon-word-cloud/</guid>
+      <description>Every year we hold an internal developers conference called DevCon. This year we had 295 submissions for talks, ranging from a deep technical dive into the inner workings of Kafka to a reflection on the power of office pranks.‌ I wondered what, if anything, do these submissions have in common? Are there any common themes/topics being discussed? To find out I decided to visualize the talk submissions in a word cloud to create an easily understandable (and hopefully aesthetically pleasing) view of what topics were most common.</description>
+    </item>
+    
+    <item>
+      <title>Cerner Tech Talks</title>
+      <link>https://engineering.cerner.com/blog/cerner-tech-talks/</link>
+      <pubDate>Tue, 12 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/cerner-tech-talks/</guid>
+      <description>We are always looking for ways to share knowledge and learn new things within engineering at Cerner. Whether that be through meetups, lunch &amp;amp; learns, conferences, or DevCon, we have a variety of outlets available to us.
+Today, we’re announcing a new program we recently launched: Cerner Tech Talks.
+Cerner Tech Talks brings in great speakers for talks that would be of interest to engineers at Cerner. These talks will be held periodically and will vary widely in their content.</description>
+    </item>
+    
+  </channel>
+</rss>

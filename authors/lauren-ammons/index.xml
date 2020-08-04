@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lauren Ammons on Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/lauren-ammons/</link>
+    <description>Recent content in Lauren Ammons on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Wed, 23 Nov 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/authors/lauren-ammons/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Alan and Grace: An Origin Story</title>
+      <link>https://engineering.cerner.com/blog/alan-and-grace-an-origin-story/</link>
+      <pubDate>Wed, 23 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/alan-and-grace-an-origin-story/</guid>
+      <description>Meet Alan and Grace. These lighthearted, 8-bit characters were nominated in early 2014 to become the iconic mascots of Engineering at Cerner. Have you ever wondered who these 80’s video gaming inspired characters on our Engineering t-shirts are? Why were they chosen as mascots? What do they represent? The countless hours spent pondering these questions will be no more. Pull up a chair as we dive into the mystery behind the dynamic duo known as Alan and Grace.</description>
+    </item>
+    
+  </channel>
+</rss>

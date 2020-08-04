@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Isabella Kuzava on Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/isabella-kuzava/</link>
+    <description>Recent content in Isabella Kuzava on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Mon, 19 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/authors/isabella-kuzava/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ShipIt X Day: Winter 2017</title>
+      <link>https://engineering.cerner.com/blog/shipit-x-day-winter-2017/</link>
+      <pubDate>Mon, 19 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/shipit-x-day-winter-2017/</guid>
+      <description>On December 14th and 15th, 18 teams of Cerner associates competed for the Golden Trophy during our tenth ShipIt Day. Being this was our tenth, it was fun to reflect back on how this event started and how much it has grown.
+ It has been great to see ShipIt Days start from small hackathons organically run by individual teams to now an engineering-wide quarterly event that brings together engineers from disparate organizations, allowing for a better cross-pollination of ideas and team members.</description>
+    </item>
+    
+    <item>
+      <title>2^5 Coding Competition 2017: 32 lines or less</title>
+      <link>https://engineering.cerner.com/blog/2-to-the-5th-coding-competition-2017/</link>
+      <pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/2-to-the-5th-coding-competition-2017/</guid>
+      <description>The Competition Part of Cerner&amp;rsquo;s engineering culture is to celebrate technology. This past fall, we had our annual celebration for Programmers’ Day. We celebrated the day with great food (taco bar and ice cream) and an evening of trivia.
+Topping off Programmers&amp;#39; Day with a taco bar and trivia night with @geekswhodrink pic.twitter.com/pSjqBVBHxK
+&amp;mdash; Cerner Engineering (@CernerEng) September 13, 2017  Happy Programmers&amp;#39; Day! Celebrating with an ice cream social. pic.</description>
+    </item>
+    
+    <item>
+      <title>ShipIt IX Day: Summer 2017</title>
+      <link>https://engineering.cerner.com/blog/shipit-ix-day-summer-2017/</link>
+      <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/shipit-ix-day-summer-2017/</guid>
+      <description>There is no better way to end summer than with ShipIt Day! We kicked off our ninth ShipIt Day on August 10th, with more than 75 Cerner associates signed up. Nineteen different teams worked for 24 hours straight to complete their projects. For those unfamiliar with the event, ShipIt Day is a 24 hour hackathon for internal associates to create something innovative, usable, and value-adding. This was the second ShipIt held at our new Innovations Campus.</description>
+    </item>
+    
+    <item>
+      <title>ShipIt VIII Day: Spring 2017</title>
+      <link>https://engineering.cerner.com/blog/shipit-day-viii-spring-2017/</link>
+      <pubDate>Wed, 17 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/shipit-day-viii-spring-2017/</guid>
+      <description>ShipIt Day VIII was held on April 20 and 21st. Seventeen teams made up of internal associates had just 24 hours to create something innovative, usable, and value-adding. This quarter&amp;rsquo;s ShipIt Day was held at our new Innovations Campus in the Link Conference Center. We were excited to get to utilize the space for this event. Another awesome addition to this quarter&amp;rsquo;s ShipIt Day was our new game rooms.</description>
+    </item>
+    
+    <item>
+      <title>ShipIt VII Day: Winter 2016</title>
+      <link>https://engineering.cerner.com/blog/shipit-vii-day-winter-2016/</link>
+      <pubDate>Wed, 18 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/shipit-vii-day-winter-2016/</guid>
+      <description>Cerner’s 7th ShipIt Day took place on December 8th and 9th. ShipIt is a 24-hour hackathon with the goal of building something awesome, usable, and value-adding within a single day. The event was hosted at our DevCenter in the Realization Campus, a large open space that hosts our DevAcademy (to learn more about our DevAcademy, check out this earlier post). We had 18 teams made up of associates from different Cerner organizations.</description>
+    </item>
+    
+  </channel>
+</rss>

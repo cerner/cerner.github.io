@@ -1,367 +1,312 @@
-
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>ShipIt XI Day: Spring 2018 - Engineering Health</title>
-  <meta name="author" content="Cerner">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+<title>
   
-  <meta name="description" content="">
+     ShipIt XI Day: Spring 2018 | 
+    Engineering Health
   
+</title><meta name="description" content="a blog by engineers, for engineers"><meta name="author" content="Kyle Harper">
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.png">
 
-  
-  <link rel="canonical" href="http://engineering.cerner.com/blog/shipit-xi-spring-2018">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/stylesheets/site/site.css" media="screen, projection" rel="stylesheet" type="text/css">
 
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <script src="/javascripts/libs/bootstrap.min.js"></script>
+    
+        
+            <link rel="stylesheet" href="/dist/main.8ddb5a998657440f326d.min.css">
+        
+    
 
-  <link href="/atom.xml" rel="alternate" title="Engineering Health" type="application/atom+xml">
-  <script src="/javascripts/search.min.js" type="text/javascript" charset="utf-8"></script>
-  
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-37701128-1']);
-    _gaq.push(['_trackPageview']);
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
 
+
+<link rel="canonical" href="https://engineering.cerner.com/blog/shipit-xi-spring-2018/"><script src="/js/jquery-3.5.1.min.js"></script><meta property="og:title" content="ShipIt XI Day: Spring 2018" />
+<meta property="og:description" content="On March 8th and 9th, 17 teams of Cerner associates competed for the Golden Keyboard during our 11th ShipIt Day. During this 24-hour hackathon, associates were challenged to create something innovative, usable, and value-adding. This was the fourth ShipIt held at our new Innovations Campus, leveraging the wonderful collaborative spaces available.
+With Shipit XI, we expanded upon a time-honored tradition of this event, the traveling trophy Golden Keyboard." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://engineering.cerner.com/blog/shipit-xi-spring-2018/" />
+<meta property="article:published_time" content="2018-04-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-04-18T00:00:00+00:00" />
+<meta itemprop="name" content="ShipIt XI Day: Spring 2018">
+<meta itemprop="description" content="On March 8th and 9th, 17 teams of Cerner associates competed for the Golden Keyboard during our 11th ShipIt Day. During this 24-hour hackathon, associates were challenged to create something innovative, usable, and value-adding. This was the fourth ShipIt held at our new Innovations Campus, leveraging the wonderful collaborative spaces available.
+With Shipit XI, we expanded upon a time-honored tradition of this event, the traveling trophy Golden Keyboard.">
+<meta itemprop="datePublished" content="2018-04-18T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-04-18T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="960">
+
+
+
+<meta itemprop="keywords" content="culture,engineering,hackathon,shipit," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ShipIt XI Day: Spring 2018"/>
+<meta name="twitter:description" content="On March 8th and 9th, 17 teams of Cerner associates competed for the Golden Keyboard during our 11th ShipIt Day. During this 24-hour hackathon, associates were challenged to create something innovative, usable, and value-adding. This was the fourth ShipIt held at our new Innovations Campus, leveraging the wonderful collaborative spaces available.
+With Shipit XI, we expanded upon a time-honored tradition of this event, the traveling trophy Golden Keyboard."/>
 
 </head>
-
-<body  class="top-navbar  ">
-  
-
-
-
-<header id="banner" role="banner" class="container-fluid banner-kc-background">
-
-  <div class="image">
-
+<body>
     
-      <img src="/images/KC.png" alt="Kansas City" />
-    
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-sm" id="navbar-main-menu">
+    <div class="container">
+        <a class="navbar-brand" href="/"><img src="/cerner-logo.png"/></a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="main-menu" class="collapse navbar-collapse" >
+            <ul class="nav navbar-nav ml-auto">
+                
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/culture/">Culture</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/open-source/">Open Source</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/tech-talks/">Tech Talks</a></li>
+                
+            
+            </ul>
+            
+            <div class="form-inline my-2 my-lg-0 searchbox">
+    <input id="search-by" type="search" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
+</div>
 
-    <div id="header1">Engineering Health<br/><span class="header2">A <b>Cerner</b> Blog</span></div>
-
-  </div>
-  <nav class="navbar navbar-inverse" role="navigation">
-  <div class="container">
-    <div class="navbar-inner">
-      <a class="brand" href="#">Engineering Health</a>
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li class="selected">
-            <a href="/">Blog</a>
-          </li>
-          <li >
-            <a href="/culture">Culture</a>
-          </li>
-          <li >
-            <a href="/tech_talks">Tech Talks</a>
-          </li>
-          <li >
-            <a href="/open_source">Open Source</a>
-          </li>
-          <li >
-            <a href="/blog/archives">Archives</a>
-          </li>
-        </ul>
-        <div id="search" class="pull-right">
-          <form action="/search" method="get" class="navbar-search">
-            <input type="text" id="search-query" name="q" class="search-query" placeholder="Search" autocomplete="off">
-            <img src="/images/MagnifyingGlass.png" alt="Search" width="16" height="16" />
-          </form>
+<script type="text/javascript" src="/js/lunr.min.js"></script>
+<script type="text/javascript" src="/js/auto-complete.min.js"></script>
+<script type="text/javascript">
+    var baseurl =  "https:\/\/engineering.cerner.com";
+</script>
+<script type="text/javascript" src="/js/search.js"></script>
         </div>
-      </div>
     </div>
-  </div>
 </nav>
 
-</header>
 
-
-  <div class="container-fluid post-container">
-    <div class="row-fluid">
-      <section class="span12" id="search-results" style="display: none;">
-  <h2>Search results</h2>
-  <div class="entries">
-  </div>
-</section>
-    </div>
-    <div class="row-fluid">
-      
-<article id="main" class="hentry span8" role="article">
-
-  <section class="post">
     
-  <header class="entry-header">
+<main class="content-page container pt-7 pb-5">
     
-      <h1 class="entry-title">ShipIt XI Day: Spring 2018</h1>
-    
-    
-      <div class="entry-meta meta">
-        
+    <div class="row">
+        <div class="col">
+            <article class="article-content">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="meta text-muted mb-3">
+                            <p class="created text-muted text-uppercase font-weight-bold mb-1">April 18, 2018</p>
+                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>960 words</span>
+                            <span><i class="fas fa-clock mr-2"></i>5 mins read</span>
+                        </div>
 
+                        <h1>ShipIt XI Day: Spring 2018</h1>
 
+                        <ul class="authors list-inline">
+        By: &nbsp;<li class="list-inline-item mr-3">
+                    <div class="media author">
+                            👤&nbsp;<div class="media-body">
+                            <h5 class="name my-0 "><a href="/authors/kyle-harper/" class="small">Kyle Harper</a>
+                            </h5>
+                        </div>
+                    </div>
+                </li></ul>
+                    </div>
+                </div>
 
-
-
-
-
-
-  
-
-
-<time datetime="2018-04-18T00:00:00-05:00" pubdate data-updated="true">Apr 18<span>th</span>, 2018</time> | 
-  
-
-
-  <span class="byline author vcard">
-    <span class="fn">Kyle Harper</span>
-  </span>
-
-
-        
-      </div>
-    
-  </header>
-
-
-<div class="entry-content"><p><img class="center" src="/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-1.png" width="600"></p>
-
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="content">
+                            <div align="center">
+    <figure class="figure">
+        <a href="shipit-xi-1.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-xi-1.png"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
 <p>On March 8th and 9th, 17 teams of Cerner associates competed for the Golden Keyboard during our 11th ShipIt Day. During this 24-hour hackathon, associates were challenged to create something innovative, usable, and value-adding. This was the fourth ShipIt held at our new Innovations Campus, leveraging the wonderful collaborative spaces available.</p>
-
 <p>With Shipit XI, we expanded upon a time-honored tradition of this event, the traveling trophy Golden Keyboard. This keyboard, adorned with symbolic trinkets from past winners, provides an opportunity for winning teams to defend the trophy and leave their mark in ShipIt history.</p>
-
 <div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <img class="center" src="/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-2.png" width="300">
-        <sub>Golden Keyboard</sub>
-      </td>
-    </tr>
-  </table>
+    <figure class="figure">
+        <a href="shipit-xi-2.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-xi-2.png"
+                alt="Golden Keyboard" width="300"class="figure-img img-fluid"
+            /> 
+        </a><figcaption class="figure-caption text-center">
+                <p>Golden Keyboard</p>
+            </figcaption>
+    </figure>
 </div>
-
-
 <p>However, we realized as ShipIt grew, the category for winning the &ldquo;People&rsquo;s Choice Award&rdquo; (the favorite as voted by the audience agnostic of the judges’ selection) needed to have something more special to symbolize its importance. As a result, we introduced the Golden Mouse! This trophy, while separate from the Golden Keyboard, is another peripheral that a team can win by vote of their peers. With ShipIt XI, the Golden Mouse is now added to the tradition.</p>
-
 <div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <img class="center" src="/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-3.png" width="300">
-        <sub>Golden Mouse</sub>
-      </td>
-    </tr>
-  </table>
+    <figure class="figure">
+        <a href="shipit-xi-3.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-xi-3.png"
+                alt="Golden Mouse" width="300"class="figure-img img-fluid"
+            /> 
+        </a><figcaption class="figure-caption text-center">
+                <p>Golden Mouse</p>
+            </figcaption>
+    </figure>
 </div>
-
-
 <p>This ShipIt featured Reliability as its theme. This theme highlighted the work that is continually done to improve the reliability our systems. Reliability, it is the most fundamental feature! By including this theme, we also introduced a new winning category for best project that improved reliability.</p>
-
 <p>Like all ShipIts, signs of creativity, collaboration, and intense problem solving were abundant all night.</p>
-
-<div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <img class="center" src="/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-4.png" width="600">
-        <sub>Registration and kick-off</sub>
-      </td>
-    </tr>
-    <tr>
-      <td align="center">
-        <img class="center" src="/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-5.png" width="600">
-        <sub>Strategy planning</sub>
-      </td>
-    </tr>
-    <tr>
-      <td align="center">
-        <img class="center" src="/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-6.png" width="600">
-        <sub>Focused concentration</sub>
-      </td>
-    </tr>
-    <tr>
-      <td align="center">
-        <img class="center" src="/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-7.png" width="600">
-        <sub>Abundant caffeine</sub>
-      </td>
-    </tr>
-  </table>
+<p><div align="center">
+    <figure class="figure">
+        <a href="shipit-xi-4.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-xi-4.png"
+                alt="Registration and kick-off"class="figure-img img-fluid"
+            /> 
+        </a><figcaption class="figure-caption text-center">
+                <p>Registration and kick-off</p>
+            </figcaption>
+    </figure>
 </div>
-
-
+<div align="center">
+    <figure class="figure">
+        <a href="shipit-xi-5.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-xi-5.png"
+                alt="Strategy planning"class="figure-img img-fluid"
+            /> 
+        </a><figcaption class="figure-caption text-center">
+                <p>Strategy planning</p>
+            </figcaption>
+    </figure>
+</div>
+<div align="center">
+    <figure class="figure">
+        <a href="shipit-xi-6.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-xi-6.png"
+                alt="Focused concentration"class="figure-img img-fluid"
+            /> 
+        </a><figcaption class="figure-caption text-center">
+                <p>Focused concentration</p>
+            </figcaption>
+    </figure>
+</div>
+<div align="center">
+    <figure class="figure">
+        <a href="shipit-xi-7.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-xi-7.png"
+                alt="Abundant caffeine"class="figure-img img-fluid"
+            /> 
+        </a><figcaption class="figure-caption text-center">
+                <p>Abundant caffeine</p>
+            </figcaption>
+    </figure>
+</div></p>
 <p>In addition to café vouchers for breakfast and lunch, ShipIt XI featured a taco bar for dinner. Participants enjoyed unlimited tacos and delicious churros for dessert!</p>
-
 <div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <img class="center" src="/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-8.png" width="300">
-      </td>
-    </tr>
-  </table>
+    <figure class="figure">
+        <a href="shipit-xi-8.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-xi-8.png" width="300"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
 </div>
-
-
 <p>ShipIt XI also hosted a ping-pong “March Madness” tournament to provide an opportunity for the participants take a break and flaunt their athletic prowess.</p>
-
 <div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <img class="center" src="/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-9.png" width="600">
-        <sub>The dreaded Jake Kramer power serve</sub>
-      </td>
-    </tr>
-  </table>
+    <figure class="figure">
+        <a href="shipit-xi-9.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-xi-9.png"
+                alt="The dreaded Jake Kramer power serve"class="figure-img img-fluid"
+            /> 
+        </a><figcaption class="figure-caption text-center">
+                <p>The dreaded Jake Kramer power serve</p>
+            </figcaption>
+    </figure>
 </div>
-
-
 <p>Demos always arrive quicker than anticipated. Ready or not, 9am rolled around and demos were in full swing. Teams were given four minutes to present their projects to a panel of judges, consisting of Julie Schlabach, Kevin Shekleton, Jeff Dittmer, and Chad Todd.  Special thank you to those folks for spending their morning with us and supporting ShipIt Day!</p>
-
 <div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <img class="center" src="/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-10.png" width="600">
-        <sub>Team SPACES RUNNER – 1st Place</sub>
-      </td>
-    </tr>
-  </table>
+    <figure class="figure">
+        <a href="shipit-xi-10.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-xi-10.png"
+                alt="Team SPACES RUNNER – 1st Place"class="figure-img img-fluid"
+            /> 
+        </a><figcaption class="figure-caption text-center">
+                <p>Team SPACES RUNNER – 1st Place</p>
+            </figcaption>
+    </figure>
 </div>
-
-
 <p>Coming in first place was Team SPACES RUNNER (Ryan Scheidter, Darius Washington, Miguel Fernandez, Aarthi Gunda, and Sundeepa Godavarti).</p>
-
 <p>“Space Runner is a visualization tool to show previously run, currently running, and scheduled to run Apache Spark jobs. It also provides some color coding for jobs that take over the average amount of time of previous runs, along with links to the Spark UI where we can view more details about the job. This tool is being used as a visualization of my team’s (Spaces Platform) dev domain to see what ran at what time, what is running, and what is about to start. This is a huge asset in terms of seeing how the domain is running, when it has too many things scheduled, and when it has free time coming up to manually run a job. This tool takes far less time than manually looking at the frequency jobs are scheduled and determining if the domain is free or overbooked.”</p>
-
 <p>Congratulations SPACES RUNNER!</p>
-
 <div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <img class="center" src="/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-11.png" width="600">
-        <sub>Team PSA – 2nd Place</sub>
-      </td>
-    </tr>
-  </table>
+    <figure class="figure">
+        <a href="shipit-xi-11.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-xi-11.png"
+                alt="Team PSA – 2nd Place"class="figure-img img-fluid"
+            /> 
+        </a><figcaption class="figure-caption text-center">
+                <p>Team PSA – 2nd Place</p>
+            </figcaption>
+    </figure>
 </div>
-
-
 <p>Second place went to Team PSA (Aaron Noll, Bryce McDonald, Jesse Gilbert, Bennet Lovejoy, and Snehil Wakchaure).</p>
-
 <p>“Team Patient Safety Analytics (PSA) developed a SMART on FHIR app with the aim of making hospitals safer and more reliable. This goal of this app is to decrease the time required to report patient safety events while also increasing accuracy by 1) Populating basic demographic fields automatically for a report (currently manually entered) and 2) Embedding the app within PowerChart to reduce the number of clicks necessary to create a report. Over time, the app could also enable Cerner to add more value by helping hospitals improve through analysis of their data and comparison against peers while also providing reporting utilities for clients to monitor and improve their processes.”
  
 Way to go PSA!</p>
-
 <div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <img class="center" src="/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-12.png" width="600">
-        <sub>Team Pedantic Beasts – 3rd Place</sub>
-      </td>
-    </tr>
-  </table>
+    <figure class="figure">
+        <a href="shipit-xi-12.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-xi-12.png"
+                alt="Team Pedantic Beasts – 3rd Place"class="figure-img img-fluid"
+            /> 
+        </a><figcaption class="figure-caption text-center">
+                <p>Team Pedantic Beasts – 3rd Place</p>
+            </figcaption>
+    </figure>
 </div>
-
-
 <p>Team Pedantic Beasts (Robert Ryterski, Paul Dennis, Ian Kottman, and Anthony Ross) took third place.</p>
-
 <p>“MCop is a linter for Marathon app definitions. It statically analyzes definitions for problems such as syntax errors, unstable deployment configuration, and departures from best practices.”</p>
-
 <p>Great job Pedantic Beasts!</p>
-
 <div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <img class="center" src="/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-13.png" width="600">
-        <sub>Team Reliabilibuddies – Best Reliability Themed Project and People’s Choice: Best Team Name</sub>
-      </td>
-    </tr>
-  </table>
+    <figure class="figure">
+        <a href="shipit-xi-13.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-xi-13.png"
+                alt="Team Reliabilibuddies – Best Reliability Themed Project and People’s Choice: Best Team Name"class="figure-img img-fluid"
+            /> 
+        </a><figcaption class="figure-caption text-center">
+                <p>Team Reliabilibuddies – Best Reliability Themed Project and People’s Choice: Best Team Name</p>
+            </figcaption>
+    </figure>
 </div>
-
-
 <p>The winner of the sponsored project theme of “Reliability” was Team Reliabilibuddies (Siri Varma Vegiraju, Nathan Schile, Vu Tran, Lucas Chandler, and Venkatesh Sridharan). Reliabilibuddies also won the people’s choice Best Team Name!</p>
-
 <p>Nicely done Reliabilibuddies!</p>
-
 <div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <img class="center" src="/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-14.png" width="600">
-        <sub>Team The Centurions – People’s Choice: Best Project</sub>
-      </td>
-    </tr>
-  </table>
+    <figure class="figure">
+        <a href="shipit-xi-14.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-xi-14.png"
+                alt="Team The Centurions – People’s Choice: Best Project"class="figure-img img-fluid"
+            /> 
+        </a><figcaption class="figure-caption text-center">
+                <p>Team The Centurions – People’s Choice: Best Project</p>
+            </figcaption>
+    </figure>
 </div>
-
-
 <p>Winning the brand new Golden Mouse for people’s choice Best Project was team The Centurions (Mohan Chamarthy, Sanket Korgaonkar, Saranth Govindaraju, Vamsi Krishna Guntupalli, and Shyam Gopal Rajanna). Congratulations and enjoy your cheeseballs!</p>
-
 <div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <img class="center" src="/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-15.png" width="600">
-        <sub>Team Whalenado – People’s Choice: Best Presentation</sub>
-      </td>
-    </tr>
-  </table>
+    <figure class="figure">
+        <a href="shipit-xi-15.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-xi-15.png"
+                alt="Team Whalenado – People’s Choice: Best Presentation"class="figure-img img-fluid"
+            /> 
+        </a><figcaption class="figure-caption text-center">
+                <p>Team Whalenado – People’s Choice: Best Presentation</p>
+            </figcaption>
+    </figure>
 </div>
-
-
 <p>Winning a glorious tub of cheeseballs is Team Whalenado (Mithun Singh, David Crowder, Nick Overfield, and Michael Rzepka) for people’s choice Best Presentation.</p>
-
 <div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <img class="center" src="/assets/2018-04-18-shipit-xi-spring-2018/shipit-xi-16.png" width="600">
-        <sub>Winning teams walked away with some awesome prizes such as wireless headphones, TileMates, Echo Dots, and drones.</sub>
-      </td>
-    </tr>
-  </table>
+    <figure class="figure">
+        <a href="shipit-xi-16.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-xi-16.png"
+                alt="Winning teams walked away with some awesome prizes such as wireless headphones, TileMates, Echo Dots, and drones."class="figure-img img-fluid"
+            /> 
+        </a><figcaption class="figure-caption text-center">
+                <p>Winning teams walked away with some awesome prizes such as wireless headphones, TileMates, Echo Dots, and drones.</p>
+            </figcaption>
+    </figure>
 </div>
-
-
 <p>ShipIt continues to be a great way for associates to explore new solutions to problems, build relationships within different organizations, and most importantly, enjoy themselves. ShipIt Day XI was a great success. The projects were creative and have potential to bring value Cerner’s associates and clients.</p>
-
 <p>Save the Date: ShipIt Day returns August 9th and 10th! If you are interested in learning more about other ShipIt Days, see these earlier posts:</p>
-
 <ul>
 <li><a href="http://engineering.cerner.com/blog/shipit-x-day-winter-2017/">ShipIt Day X Winter 2017</a></li>
 <li><a href="http://engineering.cerner.com/blog/shipit-ix-day-summer-2017/">ShipIt Day IX Summer 2017</a></li>
@@ -372,181 +317,175 @@ Way to go PSA!</p>
 <li><a href="http://engineering.cerner.com/blog/spring-2016-shipit-day/">ShipIt Day Spring 2016</a></li>
 </ul>
 
-</div>
+                        </div><div class="tags my-3"><a class="badge badge-pill badge-light border mr-2" href="/tags/culture">
+                                    <i class="fas fa-tag mr-2"></i>culture
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/engineering">
+                                    <i class="fas fa-tag mr-2"></i>engineering
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/hackathon">
+                                    <i class="fas fa-tag mr-2"></i>hackathon
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/shipit">
+                                    <i class="fas fa-tag mr-2"></i>shipit
+                                </a></div><ul class="share nav my-3 justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://twitter.com/intent/tweet?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fshipit-xi-spring-2018%2f&text=ShipIt%20XI%20Day%3a%20Spring%202018">
+              <i class="fa-fw fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fshipit-xi-spring-2018%2f&title=ShipIt%20XI%20Day%3a%20Spring%202018">
+                <i class="fa-fw fab fa-linkedin-in"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fengineering.cerner.com%2fblog%2fshipit-xi-spring-2018%2f&t=ShipIt%20XI%20Day%3a%20Spring%202018">
+                <i class="fa-fw fab fa-facebook-f"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://reddit.com/submit?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fshipit-xi-spring-2018%2f&title=ShipIt%20XI%20Day%3a%20Spring%202018">
+                <i class="fa-fw fab fa-reddit-alien"></i>
+            </a>
+        </li>
+    </nav>
+                    </div>
+                </div>
 
-
-  </section>
-  <footer>
-    <p class="meta">
-      
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  
-  
-</div>
-
-    
-    
-    <ul class="pager">
-      
-      <li class="previous"><a class="basic-alignment left"
-        href="/blog/cerner-and-icontrol/" title="Previous Post:
-        Cerner and iControl">&laquo; Previous Post</a></li>
-      
-      <li><a href="/blog/archives">Blog Archives</a></li>
-      
-      <li class="next"><a class="basic-alignment right" href="/blog/code-reviews-there-is-a-better-way/"
-        title="Next Post: Code Reviews: There is a Better Way">Next Post &raquo;</a></li>
-      
-    </ul>
-  </footer>
-</article>
-
-<aside class="sidebar-nav span4">
-  
-    <section class="well">
-  <h2>Recent Posts</h2>
-  <ul id="recent_posts" class="nav nav-list">
-    
-      <li>
-        <a href="/blog/shipit-xvii/">ShipIt Day XVII</a>
-      </li>
-    
-      <li>
-        <a href="/blog/shipit-xvi/">ShipIt Day XVI</a>
-      </li>
-    
-      <li>
-        <a href="/blog/terra-ui/">Terra UI: A Health-Care Focused UI Component Library</a>
-      </li>
-    
-      <li>
-        <a href="/blog/introducing-f-twelve-an-open-source-dev-console/">Introducing F-Twelve, an Open Source Dev Console</a>
-      </li>
-    
-      <li>
-        <a href="/blog/carbon-graphs-open-source-visualization-api/">Carbon Graphs: An Open Source Visualization API</a>
-      </li>
-    
-  </ul>
-</section>
-<section class="divider">
-  <svg width="70" height="10">
-   <rect width="10" height="10" x="0" y="0" style="fill:rgb(20,124,193)" />
-   <rect width="10" height="10" x="20" y="0" style="fill:rgb(121,193,68)" />
-   <rect width="10" height="10" x="40" y="0" style="fill:rgb(20,124,193)" />
-   <rect width="10" height="10" x="60" y="0" style="fill:rgb(121,193,68)" />
-</svg>
-</section><section class="well">
-  <h2>Follow Us</h2>
-  <script src="https://apis.google.com/js/platform.js"></script>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-  <div class="g-ytsubscribe" data-channelid="UCYHiZDU0YLN0dWLWSCP1JYQ" data-layout="default" data-count="default"></div>
-  <a href="https://twitter.com/CernerEng?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-screen-name="false" data-show-count="false">Follow @CernerEng</a>
-</section>
-<section class="divider">
-  <svg width="70" height="10">
-   <rect width="10" height="10" x="0" y="0" style="fill:rgb(20,124,193)" />
-   <rect width="10" height="10" x="20" y="0" style="fill:rgb(121,193,68)" />
-   <rect width="10" height="10" x="40" y="0" style="fill:rgb(20,124,193)" />
-   <rect width="10" height="10" x="60" y="0" style="fill:rgb(121,193,68)" />
-</svg>
-</section>
-<section class="well">
-  <h2>GitHub Repos</h2>
-  <ul id="gh_repos" class="nav">
-    <li class="loading">Status updating...</li>
-  </ul>
-  
-  <a href="https://github.com/cerner">@cerner</a> on GitHub
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'cerner',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-  
-</aside>
-
-
-    </div>
-  </div>
-  
-<script id="search-results-template" type="text/mustache">
-  {{#entries}}
-    <article class="search-result">
-        <div class="search-meta meta">
-        {{#date}}<time datetime="{{pubdate}}" pubdate>{{displaydate}}</time>{{/date}} | {{author}}
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        
+                    </div>
+                </div></article>
         </div>
-        <a href="{{url}}">{{title}}</a>
-    </article>
-  {{/entries}}
-</script>
-
-<script type="text/javascript">
-  $(function() {
-    $('#search-query').lunrSearch({
-      indexUrl: '/javascripts/index.json',   // Url for the .json file containing search index data
-      results : '#search-results',  // selector for containing search results element
-      entries : '.entries',         // selector for search entries containing element (contained within results above)
-      template: '#search-results-template'  // selector for Mustache.js template
-    });
-    //Currently ignoring the "return/enter" keystroke when searching (as this would just result in a 404 for the page lookup).
-    $('#search-query').keydown(function(event){
-      if(event.keyCode == 13) {
-        event.preventDefault();
-        return false;
-      }
-    });
-  });
-</script>
-
-  <footer role="contentinfo" class="page-footer">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="span2">
-          <img src="/images/Cerner_White_Horizontal.png" alt="Cerner Logo" />
-      </div>
-      <div class="span10 pull-left">
-          <p>&copy; 2020</p>
-      </div>
     </div>
+
+    <div class="related-content row mt-5 row-cols-1 row-cols-lg-3"><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/shipit-x-day-winter-2017/" class="d-block"><img data-src="/blog/shipit-x-day-winter-2017/shipit-x-4_hu0042823a10fad71fa1899666bdc199b8_210578_700x350_fill_q75_box_smart1.jpg" class="card-img-top mx-auto d-block" alt="ShipIt X Day: Winter 2017"><div class="card-body">
+            <h4 class="card-title">ShipIt X Day: Winter 2017</h4>
+            <p class="card-text text-muted text-uppercase">February 19, 2018</p>
+            <div class="card-text">
+                On December 14th and 15th, 18 teams of Cerner associates competed for the Golden Trophy during our tenth ShipIt Day. Being this was our tenth, it was fun to reflect back on how this event started and how much it has grown.
+ It has been great to see ShipIt Days start from small hackathons organically run by individual teams to now an engineering-wide quarterly event that brings together engineers from disparate organizations, allowing for a better cross-pollination of ideas and team members.
+            </div>
+        </div>
+    </a>
   </div>
+            </div><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/shipit-ix-day-summer-2017/" class="d-block"><img data-src="/blog/shipit-ix-day-summer-2017/shipit-day-ix-6_hu5ac02436c3948d4296e29eba7b3441a1_23674_700x350_fill_q75_box_smart1.jpg" class="card-img-top mx-auto d-block" alt="ShipIt IX Day: Summer 2017"><div class="card-body">
+            <h4 class="card-title">ShipIt IX Day: Summer 2017</h4>
+            <p class="card-text text-muted text-uppercase">September 11, 2017</p>
+            <div class="card-text">
+                There is no better way to end summer than with ShipIt Day! We kicked off our ninth ShipIt Day on August 10th, with more than 75 Cerner associates signed up. Nineteen different teams worked for 24 hours straight to complete their projects. For those unfamiliar with the event, ShipIt Day is a 24 hour hackathon for internal associates to create something innovative, usable, and value-adding. This was the second ShipIt held at our new Innovations Campus.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/shipit-day-viii-spring-2017/" class="d-block"><img data-src="/blog/shipit-day-viii-spring-2017/pic0_hu359c9cc63e2e114e5155f0fc9f0febee_148585_700x350_fill_box_smart1_2.png" class="card-img-top mx-auto d-block" alt="ShipIt VIII Day: Spring 2017"><div class="card-body">
+            <h4 class="card-title">ShipIt VIII Day: Spring 2017</h4>
+            <p class="card-text text-muted text-uppercase">May 17, 2017</p>
+            <div class="card-text">
+                ShipIt Day VIII was held on April 20 and 21st. Seventeen teams made up of internal associates had just 24 hours to create something innovative, usable, and value-adding. This quarter’s ShipIt Day was held at our new Innovations Campus in the Link Conference Center. We were excited to get to utilize the space for this event. Another awesome addition to this quarter’s ShipIt Day was our new game rooms.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div></div>
+</main>
+
+
+    <footer class="footer text-center bg-dark py-6">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="https://engineering.cerner.com/index.xml" rel="alternate" type="application/rss+xml" class="icons d-block">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a></li><li class="list-inline-item">
+                            <a href="https://github.com/cerner" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.instagram.com/cernercorporation/" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.linkedin.com/company/cerner-corporation" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fengineering.cerner.com%2F&amp;screen_name=CernerEng" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.youtube.com/user/cernereng?sub_confirmation=1" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                </ul>
+
+                <p class="text-light">
+                    
+                        Copyright © 2020
+                    
+                </p>
+
+                <p class="text-light">
+                Made with ❤️ by Cerner engineers.
+                </p>
+            </div>
+        </div>
+    </div>
 </footer>
 
-
-  
-
-
-
-
-
-
+    
+    
+        
+            <script src="/dist/main.44c94dde179dd23bf3f1.min.js"></script>
+        
+    
 
 
 
+
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-37701128-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
 
 </body>
 </html>

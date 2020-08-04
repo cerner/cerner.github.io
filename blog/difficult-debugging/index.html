@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+  
+     Difficult Debugging: Learning From Utter Nonsense | 
+    Engineering Health
+  
+</title><meta name="description" content="a blog by engineers, for engineers"><meta name="author" content="Rory Hardy">
+
+<link rel="icon" href="/favicon.png">
+
+
+    
+        
+            <link rel="stylesheet" href="/dist/main.8ddb5a998657440f326d.min.css">
+        
+    
+
+
+
+
+<link rel="canonical" href="https://engineering.cerner.com/blog/difficult-debugging/"><script src="/js/jquery-3.5.1.min.js"></script><meta property="og:title" content="Difficult Debugging: Learning From Utter Nonsense" />
+<meta property="og:description" content="Preface As software engineers we invest time into thinking about the problems we are trying to solve every day. Sometimes the problems we face are small or simple. Other times they are large and complex. Either way, we can usually draw from our experience to find a path forward.
+While coding, we run into a lot of different bugs. Often, they are simple typos or a misuse of an API. These problems do not bog us down very much, and they are quick and easy to fix." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://engineering.cerner.com/blog/difficult-debugging/" />
+<meta property="article:published_time" content="2016-07-13T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-07-13T00:00:00+00:00" />
+<meta itemprop="name" content="Difficult Debugging: Learning From Utter Nonsense">
+<meta itemprop="description" content="Preface As software engineers we invest time into thinking about the problems we are trying to solve every day. Sometimes the problems we face are small or simple. Other times they are large and complex. Either way, we can usually draw from our experience to find a path forward.
+While coding, we run into a lot of different bugs. Often, they are simple typos or a misuse of an API. These problems do not bog us down very much, and they are quick and easy to fix.">
+<meta itemprop="datePublished" content="2016-07-13T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2016-07-13T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2519">
+
+
+
+<meta itemprop="keywords" content="debugging,development,programming,javascript,css,IE8," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Difficult Debugging: Learning From Utter Nonsense"/>
+<meta name="twitter:description" content="Preface As software engineers we invest time into thinking about the problems we are trying to solve every day. Sometimes the problems we face are small or simple. Other times they are large and complex. Either way, we can usually draw from our experience to find a path forward.
+While coding, we run into a lot of different bugs. Often, they are simple typos or a misuse of an API. These problems do not bog us down very much, and they are quick and easy to fix."/>
+
+</head>
+<body>
+    
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-sm" id="navbar-main-menu">
+    <div class="container">
+        <a class="navbar-brand" href="/"><img src="/cerner-logo.png"/></a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="main-menu" class="collapse navbar-collapse" >
+            <ul class="nav navbar-nav ml-auto">
+                
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/culture/">Culture</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/open-source/">Open Source</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/tech-talks/">Tech Talks</a></li>
+                
+            
+            </ul>
+            
+            <div class="form-inline my-2 my-lg-0 searchbox">
+    <input id="search-by" type="search" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js"></script>
+<script type="text/javascript" src="/js/auto-complete.min.js"></script>
+<script type="text/javascript">
+    var baseurl =  "https:\/\/engineering.cerner.com";
+</script>
+<script type="text/javascript" src="/js/search.js"></script>
+        </div>
+    </div>
+</nav>
+
+
+    
+<main class="content-page container pt-7 pb-5">
+    
+    <div class="row">
+        <div class="col">
+            <article class="article-content">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="meta text-muted mb-3">
+                            <p class="created text-muted text-uppercase font-weight-bold mb-1">July 13, 2016</p>
+                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>2519 words</span>
+                            <span><i class="fas fa-clock mr-2"></i>12 mins read</span>
+                        </div>
+
+                        <h1>Difficult Debugging: Learning From Utter Nonsense</h1>
+
+                        <ul class="authors list-inline">
+        By: &nbsp;<li class="list-inline-item mr-3">
+                    <div class="media author">
+                            👤&nbsp;<div class="media-body">
+                            <h5 class="name my-0 "><a href="/authors/rory-hardy/" class="small">Rory Hardy</a>
+                            </h5>
+                        </div>
+                    </div>
+                </li></ul>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="content">
+                            <h2 id="preface">Preface</h2>
+<p>As software engineers we invest time into thinking about the problems we are trying to solve every day. Sometimes the problems we face are small or simple. Other times they are large and complex. Either way, we can usually draw from our experience to find a path forward.</p>
+<p>While coding, we run into a lot of different bugs. Often, they are simple typos or a misuse of an API. These problems do not bog us down very much, and they are quick and easy to fix. Even complex bugs, while requiring investigation, often follow a familiar pattern(s) that help us identify a path to a solution.</p>
+<p>Given this experience, it’s easy for us to think that we are good at debugging.</p>
+<p>We are not. We are good at pattern recognition and recognizing similarities to problems we’ve faced in the past. Because we recognize the pattern, we can quickly debug most of the bugs we come across in our day-to-day work.</p>
+<p>Which is great. But today, we will be exploring the types of bugs that do not come up in our day-to-day work.</p>
+<div align="center">
+    <figure class="figure">
+        <a href="99-bugs-in-the-code.jpg" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="99-bugs-in-the-code.jpg"
+                alt="&#39;Grumpy Cat meme: fixed one bug added 28&#39;"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
+<!-- raw HTML omitted -->
+<h2 id="how-bugs-can-mislead-investigative-efforts">How Bugs Can Mislead Investigative Efforts</h2>
+<p>When a bug is brand new to us, we haven’t had the opportunity to derive a pattern from it yet because we have no experience to draw upon to create that pattern(s). Thus, we must investigate using a limited set of tools:</p>
+<ul>
+<li>Error messages</li>
+<li>Stack traces</li>
+<li>Guessing and check debugging</li>
+<li>Colleagues</li>
+<li>Google</li>
+</ul>
+<p>Often enough, that set of tools will guide you to a solution within a reasonable amount of time. Be warned, sometimes the solutions online solve a similar problem, but not your root problem. Testing is always in order with new bugs (or any bug more complex than a typo).</p>
+<p>Debugging gets even trickier and more time consuming when we encounter a bug that resembles a pattern that we’ve seen before. Once, I came across a bug which looked like two other things, but turned out to be a third unexpected thing.</p>
+<h3 id="treemaps-and-ie8-and-fonts-oh-my">Treemaps and IE8, and Fonts, Oh My</h3>
+<p>One of our teams created an interactive DOM based treemap which worked in Internet Explorer 8 (IE8) and above. It wasn’t lightning fast in IE8, but it worked sufficiently well with a reasonably complex dataset. That is until the browser started crashing intermittently for some of our users.</p>
+<div align="center">
+    <figure class="figure">
+        <a href="treemap.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="treemap.png"
+                alt="&#39;Example treemap&#39;"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
+<!-- raw HTML omitted -->
+<p>There were a few things that we (four engineers) noticed right away:</p>
+<ul>
+<li>It only crashed in IE8</li>
+<li>The presence of a treemap seemed to be a driving factor</li>
+<li>Crashing was intermittent</li>
+</ul>
+<p>Our initial investigation was good. We isolated the problem browser and determined that there was something wrong with the treemap, which was causing the issues, we were on our way to solving this problem - or so we thought.</p>
+<p>Given the intermittent nature of the problem, our experiences in the past, and the patterns we had observed, we assumed we had a memory leak, a race condition, or both. In an attempt to rule one of those options out, we tested with small and large datasets for the treemap.</p>
+<div align="center">
+    <figure class="figure">
+        <a href="15k_treemap.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="15k_treemap.png"
+                alt="&#39;Treemap with 15,000 cells&#39;"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
+<!-- raw HTML omitted -->
+<p>The above image serves as proof that modern browsers were unaffected by the bug we were experiencing.</p>
+<p>Convinced that the treemap was the issue and that it had to be a memory leak or a race condition, we created automated tooling using sIEve, virtual machines, and AutoIt scripts. The automation enabled us to test dozens of scenarios hundreds of times easily to gain metrics which might help illuminate where, in the code, we should look next.</p>
+<p>We chose different sized datasets thinking that smaller datasets would not trigger a memory leak while a large one would. Unfortunately, it crashed either way and we were no closer to figuring out what was wrong.</p>
+<p>After several more days of investigation we were just as perplexed as the day we started. We had a plethora of information which told us nothing. At this point our capacity had to be reduced down to just one developer - me. Frustrated with the resultless weeks spent investigating the issue, I decided step back and take a completely different approach.</p>
+<div align="center">
+    <figure class="figure">
+        <a href="500_treemap.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="500_treemap.png"
+                alt="&#39;Treemap with 500 cells&#39;"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
+<!-- raw HTML omitted -->
+<p>To re-evaluate everything we did, I removed all of the assets from our application to minimize moving parts; regardless of how unlikely a variable was, I wanted to remove it. I ran our test scripts against the application to find that, unsurprisingly, the browser did not crash. I then added JS and CSS assets separately to find that neither alone caused the browser to crash. As a sanity check, I added both back to the application and it would reliably crash. This implied that there was some interplay between CSS and JS which was causing the browser to crash.</p>
+<p>In our application, it was easier to add CSS file by file than it was for JS so I went that route. Along the way, I noticed that we were sending the wrong X-UA meta tag so I got sidetracked and fixed that to no avail. Eventually, I added back our Font Awesome CSS which caused the browser to crash. Thinking there was no way that a font could be the issue, I added and removed various pieces of our CSS to determine if it was the cause of the problem. I tried changing selectors, changing the load order, and everything else I could think of to no avail. After a while, frustrated, I commented out every line referencing Font Awesome and the browser stopped crashing. At this point, I just started adding code back line by line until the browser started crashing. What I found made no sense:</p>
+<pre><code>&amp;:before {
+  font-family: 'FontAwesome';
+}
+</code></pre><p>I looked over this for a while and eventually noticed that we were using single quotes when we referenced the font while the font declaration</p>
+<pre><code>@font-face {
+  font-family: &quot;FontAwesome&quot;;
+  src: url(@fontAwesomeEotPath);
+  font-weight: normal;
+  font-style: normal;
+}
+</code></pre><p>was using double quotes.</p>
+<p>Having exhausted most other options already, I tried making the quotes match to see if the browser would crash and, to my surprise, it wouldn’t. It didn’t matter whether I used double or single quotes as long as they matched. I added back all of the remaining assets and tested this again; sure enough, the app did not crash even after 200 tests.</p>
+<p><strong>Yes, it’s true. It wasn’t a race condition or a memory leak within the treemap, or anything else we thought it might be. It was mismatched quotes.</strong> I would never have guessed this in a million years.</p>
+<p>I did not stop here! Although I solved the problem, I needed to understand what was going on. I was also very curious which part of the JS was causing issues with Font Awesome. I reintroduced the old CSS and started testing the JavaScript. The application broke as soon as I re-introduced Modernizr. The treemap was, at this point, seemingly faultless as I was able to reproduce the crashes without it.</p>
+<p>I researched mismatched quotes and Modernizr online to try and get a better understanding of what was going on. I found several articles that detailed similar issues, but did not identify the root cause. Eventually I found a post on StackOverflow that enabled me to connect the dots.</p>
+<p>Browsers do a lot for developers under the hood and IE8 treats different types of quotes differently and kicks off an error handling subroutine to smooth it over. If that error handling subroutine occurs while Modernizr is attempting to shim the browser for HTML5 compatibility, the browser will crash.</p>
+<p>We weren’t wrong in that we were facing a race condition, but we were very wrong about our presumption about the treemap. The only interplay the treemap had was that it caused Modernizr to take longer to apply the shim thus widening the window of opportunity for the race condition to apply.</p>
+<p>We worked on this from December 20th to January 9th, a total of twenty days!</p>
+<div align="center">
+    <figure class="figure">
+        <a href="sad_panda.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="sad_panda.png"
+                alt="&#39;Meme: 20 days of debugging makes me a sad panda&#39;"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
+<!-- raw HTML omitted -->
+<h2 id="how-to-tackle-perplexing-bugs">How To Tackle Perplexing Bugs</h2>
+<p>Oftentimes, our ability to recognize coding patterns enables us to identify and solve bugs in a timely manner. As the example bug shows, however, following them can lead you down a rabbit hole. At face value, twenty days were spent working on that bug, but when you consider that there were up to four developers involved at a time, the lost time actually equates to one to three months. Once you factor in opportunity cost on top of that, you look at two to six months of time lost to debugging this issue.</p>
+<p>That is a disturbingly significant amount of time to have lost on a bug. It was a difficult bug to solve, but it could have been solved faster had we recognized that our past experience was insufficient to solve this problem. There are some key points to take away from debugging something perplexing like the example bug we looked at:</p>
+<ol>
+<li>Isolate the problem. Find a single way that the bug can be consistently replicated and remove any variance that can trip you up.</li>
+<li>Automate as much as you can. There are likely to be many tests; let the computer handle that work for you. While working on the example bug, we ran thousands of tests over those twenty days.</li>
+<li>Remove as many variables as possible and keep a list of what’s remaining.</li>
+<li>Change one variable at a time. If you change many things simultaneously, you won’t know what yielded which results.</li>
+<li>Test, document, and repeat. When you change a single variable, record all of your findings. How did the results change? Eventually new patterns will present themselves.</li>
+<li>Narrow the scope. As your testing reveals patterns, narrow down to a smaller area. In the example bug, we went from “somewhere in our static assets” to “something in our CSS and JS” to “something in this particular file” to “it’s this particular line”.</li>
+<li>Repeat and keep repeating. Be meticulous in recording your findings. Even if you don’t see a pattern, someone else studying your results might.</li>
+</ol>
+<p>When you find that past experience is not yielding results in a timely manner (you’ll have to define what that means for yourself), take a step back and follow the steps above. Doing this allows your past experience to help you when it applies and gets it out of the way when it doesn’t. Don’t see how far the rabbit hole goes when you can scientifically figure it out.</p>
+<p>Additionally, do not blindly trust answers found online. When working on the example bug, we found several examples of people correctly identifying a similar problems to ours, none of which correctly identified the underlying cause. Treat online resources as what they are - resources. Sometimes they have the answer you seek while other times they are the dots you must connect yourself.</p>
+<h2 id="tools-and-techniques-which-will-help-with-day-to-day-developing-and-debugging">Tools and Techniques Which Will Help With Day-to-Day Developing and Debugging</h2>
+<h3 id="linters">Linters</h3>
+<p>Static analysis, or linting, is a technique to catch common coding mistakes quickly. A linter will evaluate raw source code and give back a report detailing what needs to be fixed. Most languages have some form of linting software available for them. Since this post is front-end oriented, below are a few linters available for JS:</p>
+<ul>
+<li><a href="http://eslint.org/">ESLint</a></li>
+<li><a href="http://jshint.com/">JSHint</a></li>
+<li><a href="http://jscs.info/">JSCS</a></li>
+</ul>
+<p>All of these tools will notify you when you make typos, aren’t using variables, fail to follow a predefined set of coding styles, and more. They are very fast and are your first line of defense against day-to-day bugs. Linters will catch mistakes much faster than a human.</p>
+<h4 id="example">Example</h4>
+<p>I have a friend who is a very talented software engineer and mathematician. One day he called me to see if I could help him debug an issue he had been struggling with for about 19 hours. His Angular application kept spin locking (freezing up) and he couldn’t figure out why.  We scrolled through the code and luckily for him, a piece of it caught my eye:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+    <span style="color:#75715e">// logic
+</span><span style="color:#75715e"></span>  }
+}
+</code></pre></div><p>He had been working on C++ code prior to this project which features block scoping while JavaScript (ES5) only features function scoping. A linter would have immediately caught this mistake and informed him of it, saving 19 hours of debugging.</p>
+<div align="center">
+    <figure class="figure">
+        <a href="semi-colon.jpg" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="semi-colon.jpg"
+                alt="&#39;Meme: Semi-colons are the hide and seek champion since 1958&#39;"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
+<!-- raw HTML omitted -->
+<h3 id="automated-testing-frameworks">Automated Testing Frameworks</h3>
+<p>While static analysis is your first line of defense, tests for your code are your second line of defense. Tests should depict the behavior of your codebase and should fail if you deviate from that contract. Just like linters, most languages support automated testing. There are several frameworks that you can leverage for testing JS, a few are:</p>
+<ul>
+<li><a href="https://mochajs.org/">Mocha</a></li>
+<li><a href="http://jasmine.github.io/">Jasmine</a></li>
+<li><a href="https://qunitjs.com/">QUnit</a></li>
+</ul>
+<p>Defining a set of behaviors for your code helps to protect you from unintentional changes and side effects. Tests will take longer to run than a linter, but are still frequently quicker at catching mistakes than a human. Since automated unit tests are like a contract for behavior, they can also help keep developers unfamiliar with the behavioral contract from making mistakes.</p>
+<h3 id="debugging-tools">Debugging Tools</h3>
+<p>When automated approaches are insufficient, it’s time to start the manual debugging process. Every programming language has a debugging toolset that can be used to work through code with bugs. Since this post is front-end oriented, we’ll look at browser tools.</p>
+<p>You could use JS to alert variables at different times, but this is radically inefficient. Today’s modern browsers have a plethora of tools available to you starting with the debugger keyword for JS code. When the browser’s console is open, the debugger statement acts as a breakpoint; it does nothing otherwise. Although simple, it’s very powerful as it gives easy control of adding/removing breakpoints to step through the code.</p>
+<p>Atop the debugger keyword lay all of the browser tools. These enable you to step through code, inspect code, profile code runtimes, inject assertions, and even monitor the network traffic relating to the current page. Different browsers have different tools; below are some guides for debugging in different browsers:</p>
+<ul>
+<li><a href="https://developer.chrome.com/devtools">Chrome</a></li>
+<li><a href="https://developer.apple.com/safari/tools/">Safari</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Tools">Firefox</a></li>
+<li><a href="https://developer.microsoft.com/en-us/microsoft-edge/platform/documentation/f12-devtools-guide/">Edge</a></li>
+</ul>
+<h4 id="automated-robustness-testing">Automated Robustness Testing</h4>
+<p>When you are in the process of manually debugging code, it is useful to automate what you can. For example, when testing the IE8 crashes, we used virtual machines and an AutoIt script to recreate and test the scenario as well as to keep logs of what happened for future reference.</p>
+<p>Whenever possible, always automate recreating the scenario(s) for testing purposes as it:</p>
+<ul>
+<li>Speeds up the process</li>
+<li>Removes human error</li>
+<li>Ensures consistently gathered metrics</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>Many bugs will follow the pattern(s) of another bug and this can help you debug them quickly. However, this is not always the case; tools and automated tests will help you speed up your debugging time, but cannot keep you from chasing ghosts.</p>
+<p>Remember, the following steps are the key to solving difficult bugs without losing a lot of time and effort:</p>
+<ol>
+<li>Isolate the problem</li>
+<li>Automate</li>
+<li>Remove as many variables as possible</li>
+<li>Change one variable at a time</li>
+<li>Test, document, and repeat</li>
+<li>Narrow the scope</li>
+<li>Repeat</li>
+</ol>
+<p>When faced with a challenging bug watch how much time and effort you give to it. When it’s time to step back and re-evaluate your approach, do so and success will follow.</p>
+
+                        </div><div class="tags my-3"><a class="badge badge-pill badge-light border mr-2" href="/tags/debugging">
+                                    <i class="fas fa-tag mr-2"></i>debugging
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/development">
+                                    <i class="fas fa-tag mr-2"></i>development
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/programming">
+                                    <i class="fas fa-tag mr-2"></i>programming
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/javascript">
+                                    <i class="fas fa-tag mr-2"></i>javascript
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/css">
+                                    <i class="fas fa-tag mr-2"></i>css
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/ie8">
+                                    <i class="fas fa-tag mr-2"></i>IE8
+                                </a></div><ul class="share nav my-3 justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://twitter.com/intent/tweet?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fdifficult-debugging%2f&text=Difficult%20Debugging%3a%20Learning%20From%20Utter%20Nonsense">
+              <i class="fa-fw fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fdifficult-debugging%2f&title=Difficult%20Debugging%3a%20Learning%20From%20Utter%20Nonsense">
+                <i class="fa-fw fab fa-linkedin-in"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fengineering.cerner.com%2fblog%2fdifficult-debugging%2f&t=Difficult%20Debugging%3a%20Learning%20From%20Utter%20Nonsense">
+                <i class="fa-fw fab fa-facebook-f"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://reddit.com/submit?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fdifficult-debugging%2f&title=Difficult%20Debugging%3a%20Learning%20From%20Utter%20Nonsense">
+                <i class="fa-fw fab fa-reddit-alien"></i>
+            </a>
+        </li>
+    </nav>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        
+                    </div>
+                </div></article>
+        </div>
+    </div>
+
+    <div class="related-content row mt-5 row-cols-1 row-cols-lg-3"><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/closures-and-currying-in-javascript/" class="d-block"><img data-src="/blog/closures-and-currying-in-javascript/not_sure_if_hu97dbfb1fbb6f49a63a701f7b1634095b_22587_700x350_fill_q75_box_smart1.jpg" class="card-img-top mx-auto d-block" alt="Closures &amp; Currying in JavaScript"><div class="card-body">
+            <h4 class="card-title">Closures &amp; Currying in JavaScript</h4>
+            <p class="card-text text-muted text-uppercase">September 29, 2014</p>
+            <div class="card-text">
+                Preface I have been asked many times what closures are and how they work. There are many resources available to learn this concept, but they are not always clear to everyone. This has led me to put together my own approach to exchanging the information.
+I will supply code samples. //&gt; denotes an output or return.
+Before discussing closures, it is important to review how functions work in JavaScript.
+Introduction to functions If a function does not have a return statement, it will implicitly return undefined, which brings us to the simplest functions.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div></div>
+</main>
+
+
+    <footer class="footer text-center bg-dark py-6">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="https://engineering.cerner.com/index.xml" rel="alternate" type="application/rss+xml" class="icons d-block">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a></li><li class="list-inline-item">
+                            <a href="https://github.com/cerner" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.instagram.com/cernercorporation/" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.linkedin.com/company/cerner-corporation" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fengineering.cerner.com%2F&amp;screen_name=CernerEng" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.youtube.com/user/cernereng?sub_confirmation=1" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                </ul>
+
+                <p class="text-light">
+                    
+                        Copyright © 2020
+                    
+                </p>
+
+                <p class="text-light">
+                Made with ❤️ by Cerner engineers.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+    
+        
+            <script src="/dist/main.44c94dde179dd23bf3f1.min.js"></script>
+        
+    
+
+
+
+
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-37701128-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>interns on Engineering Health</title>
+    <link>https://engineering.cerner.com/tags/interns/</link>
+    <description>Recent content in interns on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Thu, 24 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/tags/interns/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Say Hello to the 2018 Summer Interns</title>
+      <link>https://engineering.cerner.com/blog/say_hello_to_the_2018_summer_interns/</link>
+      <pubDate>Thu, 24 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/say_hello_to_the_2018_summer_interns/</guid>
+      <description>Throughout the month of May, teams across Cerner’s Engineering space have welcomed 197 software interns to our campuses in Kansas City and Malvern. Ranging from rising seniors in high school to rising seniors in college, these interns will be working alongside Cerner’s full time engineers to enhance and expand upon their current skillsets.
+While interning at Cerner, these associates will experience firsthand the look and feel of a day in the life of a full time software engineer.</description>
+    </item>
+    
+  </channel>
+</rss>

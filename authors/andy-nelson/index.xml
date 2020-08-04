@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Andy Nelson on Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/andy-nelson/</link>
+    <description>Recent content in Andy Nelson on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Mon, 29 Oct 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/authors/andy-nelson/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Infusing a Culture of Cybersecurity within Cerner Engineering</title>
+      <link>https://engineering.cerner.com/blog/culture-of-cybersecurity/</link>
+      <pubDate>Mon, 29 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/culture-of-cybersecurity/</guid>
+      <description>With October being Cybersecurity Awareness month, we thought it would be a good time to reflect on some of the things we do in engineering to educate our associates and infuse security into our culture. We have over 28,000 associates worldwide supporting hundreds of solutions with millions of lines of code. Each associate has a specialization, such as software development, system support, and consulting. Keeping everyone up to date on the latest in security is a difficult task.</description>
+    </item>
+    
+  </channel>
+</rss>

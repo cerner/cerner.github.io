@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+  
+     Cerner and Open Source | 
+    Engineering Health
+  
+</title><meta name="description" content="a blog by engineers, for engineers"><meta name="author" content="Nathan Beyer">
+
+<link rel="icon" href="/favicon.png">
+
+
+    
+        
+            <link rel="stylesheet" href="/dist/main.8ddb5a998657440f326d.min.css">
+        
+    
+
+
+
+
+<link rel="canonical" href="https://engineering.cerner.com/blog/cerner-and-open-source/"><script src="/js/jquery-3.5.1.min.js"></script><meta property="og:title" content="Cerner and Open Source" />
+<meta property="og:description" content="(This post was written by Nathan Beyer, Bryan Baugher and Jacob Williams.)
+The use of open source software has become nearly ubiquitous in contemporary software development and it is no different for us, here at Cerner. We have been using open source software, directly and indirectly, for decades. Over the past decade, we’ve grown in maturity both in our use of open source software as well as our participation in open source communities." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://engineering.cerner.com/blog/cerner-and-open-source/" />
+<meta property="article:published_time" content="2014-01-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2014-01-16T00:00:00+00:00" />
+<meta itemprop="name" content="Cerner and Open Source">
+<meta itemprop="description" content="(This post was written by Nathan Beyer, Bryan Baugher and Jacob Williams.)
+The use of open source software has become nearly ubiquitous in contemporary software development and it is no different for us, here at Cerner. We have been using open source software, directly and indirectly, for decades. Over the past decade, we’ve grown in maturity both in our use of open source software as well as our participation in open source communities.">
+<meta itemprop="datePublished" content="2014-01-16T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2014-01-16T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="259">
+
+
+
+<meta itemprop="keywords" content="culture,engineering,operations," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Cerner and Open Source"/>
+<meta name="twitter:description" content="(This post was written by Nathan Beyer, Bryan Baugher and Jacob Williams.)
+The use of open source software has become nearly ubiquitous in contemporary software development and it is no different for us, here at Cerner. We have been using open source software, directly and indirectly, for decades. Over the past decade, we’ve grown in maturity both in our use of open source software as well as our participation in open source communities."/>
+
+</head>
+<body>
+    
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-sm" id="navbar-main-menu">
+    <div class="container">
+        <a class="navbar-brand" href="/"><img src="/cerner-logo.png"/></a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="main-menu" class="collapse navbar-collapse" >
+            <ul class="nav navbar-nav ml-auto">
+                
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/culture/">Culture</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/open-source/">Open Source</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/tech-talks/">Tech Talks</a></li>
+                
+            
+            </ul>
+            
+            <div class="form-inline my-2 my-lg-0 searchbox">
+    <input id="search-by" type="search" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js"></script>
+<script type="text/javascript" src="/js/auto-complete.min.js"></script>
+<script type="text/javascript">
+    var baseurl =  "https:\/\/engineering.cerner.com";
+</script>
+<script type="text/javascript" src="/js/search.js"></script>
+        </div>
+    </div>
+</nav>
+
+
+    
+<main class="content-page container pt-7 pb-5">
+    
+    <div class="row">
+        <div class="col">
+            <article class="article-content">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="meta text-muted mb-3">
+                            <p class="created text-muted text-uppercase font-weight-bold mb-1">January 16, 2014</p>
+                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>259 words</span>
+                            <span><i class="fas fa-clock mr-2"></i>2 mins read</span>
+                        </div>
+
+                        <h1>Cerner and Open Source</h1>
+
+                        <ul class="authors list-inline">
+        By: &nbsp;<li class="list-inline-item mr-3">
+                    <div class="media author">
+                            👤&nbsp;<div class="media-body">
+                            <h5 class="name my-0 "><a href="/authors/nathan-beyer/" class="small">Nathan Beyer</a>
+                            </h5>
+                        </div>
+                    </div>
+                </li></ul>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="content">
+                            <p>(This post was written by Nathan Beyer, Bryan Baugher and Jacob Williams.)</p>
+<p>The use of open source software has become nearly ubiquitous in contemporary software development and it is no different for us, here at Cerner. We have been using open source software, directly and indirectly, for decades. Over the past decade, we’ve grown in maturity both in our use of open source software as well as our participation in open source communities. Our associates have long been contributors to open source communities, including helping users, logging bugs and enhancements, and submitting patches. Cerner associates also spearheaded the development of the <a href="http://wiki.directproject.org/Java+Reference+Implementation">Java Reference Implementation of the Direct Project</a>.</p>
+<p>Recently, we’ve decided to take another step in the open source journey by releasing complete projects on our <a href="https://github.com/cerner">Github organization</a>. Although these projects seem small, they are a big step for us and just the beginning of what we hope to open up and share in the future. We hope you’ll check out these projects and participate in their development.</p>
+<h2 id="project-knife-tar">Project: knife-tar</h2>
+<p>Source: <a href="https://github.com/cerner/knife-tar">https://github.com/cerner/knife-tar</a></p>
+<p>Knife-tar is a <a href="http://www.getchef.com/chef/">Chef</a> tool for uploading and downloading Chef components from a tar file. It can be used for creating backups of your chef-server or for uploading released Chef artifacts from a repository.</p>
+<h2 id="project-scrimp">Project: scrimp</h2>
+<p>Source: <a href="https://github.com/cerner/scrimp">https://github.com/cerner/scrimp</a></p>
+<p>Scrimp is a tool for interactively testing <a href="http://thrift.apache.org/">Thrift</a> services in a web browser. It’s meant to fill the same role that browser-based REST clients fill for web services. Given the IDL files for the services, it provides a UI to help construct requests, invoke services, and display formatted responses.</p>
+
+                        </div><div class="tags my-3"><a class="badge badge-pill badge-light border mr-2" href="/tags/culture">
+                                    <i class="fas fa-tag mr-2"></i>culture
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/engineering">
+                                    <i class="fas fa-tag mr-2"></i>engineering
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/operations">
+                                    <i class="fas fa-tag mr-2"></i>operations
+                                </a></div><ul class="share nav my-3 justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://twitter.com/intent/tweet?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fcerner-and-open-source%2f&text=Cerner%20and%20Open%20Source">
+              <i class="fa-fw fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fcerner-and-open-source%2f&title=Cerner%20and%20Open%20Source">
+                <i class="fa-fw fab fa-linkedin-in"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fengineering.cerner.com%2fblog%2fcerner-and-open-source%2f&t=Cerner%20and%20Open%20Source">
+                <i class="fa-fw fab fa-facebook-f"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://reddit.com/submit?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fcerner-and-open-source%2f&title=Cerner%20and%20Open%20Source">
+                <i class="fa-fw fab fa-reddit-alien"></i>
+            </a>
+        </li>
+    </nav>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        
+                    </div>
+                </div></article>
+        </div>
+    </div>
+
+    <div class="related-content row mt-5 row-cols-1 row-cols-lg-3"><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/cerner-tech-talks/" class="d-block"><div class="card-body">
+            <h4 class="card-title">Cerner Tech Talks</h4>
+            <p class="card-text text-muted text-uppercase">November 12, 2013</p>
+            <div class="card-text">
+                We are always looking for ways to share knowledge and learn new things within engineering at Cerner. Whether that be through meetups, lunch &amp; learns, conferences, or DevCon, we have a variety of outlets available to us.
+Today, we’re announcing a new program we recently launched: Cerner Tech Talks.
+Cerner Tech Talks brings in great speakers for talks that would be of interest to engineers at Cerner. These talks will be held periodically and will vary widely in their content.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/software-intern-hackfest/" class="d-block"><div class="card-body">
+            <h4 class="card-title">2013 Software Intern Hackfest</h4>
+            <p class="card-text text-muted text-uppercase">November 11, 2013</p>
+            <div class="card-text">
+                Providing opportunities for students to gain experience in software development and grow the skills necessary to excel in their careers after graduation is a top priority for Cerner Engineering. Our annual Software Intern Program gives students insight into the design, implementation, testing, deployment, and maintenance of large-scale software projects, which are often beyond the scope of the typical academic experience.
+In 2013, we had a total of 224 interns across all business segments with 107 placed into the Software Intern Program to grow their experience as Software Engineers.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/project-lead-the-way/" class="d-block"><img data-src="/blog/project-lead-the-way/PLTWlogo_hue774bfe93e2767c383d3f65b498688ab_74796_700x350_fill_q75_box_smart1.jpeg" class="card-img-top mx-auto d-block" alt="Project Lead the Way"><div class="card-body">
+            <h4 class="card-title">Project Lead the Way</h4>
+            <p class="card-text text-muted text-uppercase">September 11, 2013</p>
+            <div class="card-text">
+                Improving the state of healthcare through innovation requires investing in others to join you on the journey; not just for today, but for the decades to come.
+   Project Lead the Way has established the Computer Science and Software Enginering course that teaches computational thinking to high school students, and it will pilot in 60 schools across the country this fall. Providing exposure to a wide variety of computational and computer science concepts, students can program a story or game in Scratch, write a mobile application for Android, and learn about knowledge discovery and data mining, computer simulation, cybersecurity, GUI programming, web development, version control, and agile software development.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div></div>
+</main>
+
+
+    <footer class="footer text-center bg-dark py-6">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="https://engineering.cerner.com/index.xml" rel="alternate" type="application/rss+xml" class="icons d-block">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a></li><li class="list-inline-item">
+                            <a href="https://github.com/cerner" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.instagram.com/cernercorporation/" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.linkedin.com/company/cerner-corporation" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fengineering.cerner.com%2F&amp;screen_name=CernerEng" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.youtube.com/user/cernereng?sub_confirmation=1" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                </ul>
+
+                <p class="text-light">
+                    
+                        Copyright © 2020
+                    
+                </p>
+
+                <p class="text-light">
+                Made with ❤️ by Cerner engineers.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+    
+        
+            <script src="/dist/main.44c94dde179dd23bf3f1.min.js"></script>
+        
+    
+
+
+
+
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-37701128-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body>
+</html>

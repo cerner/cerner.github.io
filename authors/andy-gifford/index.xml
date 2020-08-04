@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Andy Gifford on Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/andy-gifford/</link>
+    <description>Recent content in Andy Gifford on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Tue, 18 Mar 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/authors/andy-gifford/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Migrating from Eclipse 3.X to Eclipse 4.X - The iAware Story</title>
+      <link>https://engineering.cerner.com/blog/migrating-from-eclipse-3.x-to-eclipse-4.x-the-iaware-story/</link>
+      <pubDate>Tue, 18 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/migrating-from-eclipse-3.x-to-eclipse-4.x-the-iaware-story/</guid>
+      <description>This is the blog form of the talk Migrating from Eclipse 3.X to Eclipse 4.X - The iAware Story at EclipseCon 2014.
+The iAware development team was formed in late 2007 and in a little under six months we developed our first solution, CareAware CriticalCare, a dashboard application written using the Eclipse RCP targeted for use in ICU settings. The goal of this application was to provide clinicians with a complete picture of the patient’s status and to do it in a manner that was contextually relevant; meaning that related information was presented together.</description>
+    </item>
+    
+  </channel>
+</rss>

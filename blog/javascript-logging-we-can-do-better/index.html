@@ -1,185 +1,142 @@
-
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>JavaScript Logging: We Can Do Better! - Engineering Health</title>
-  <meta name="author" content="Cerner">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+<title>
   
-  <meta name="description" content="">
+     JavaScript Logging: We can do better! | 
+    Engineering Health
   
+</title><meta name="description" content="a blog by engineers, for engineers"><meta name="author" content="Garry Polley">
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.png">
 
-  
-  <link rel="canonical" href="http://engineering.cerner.com/blog/javascript-logging-we-can-do-better">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/stylesheets/site/site.css" media="screen, projection" rel="stylesheet" type="text/css">
 
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <script src="/javascripts/libs/bootstrap.min.js"></script>
+    
+        
+            <link rel="stylesheet" href="/dist/main.8ddb5a998657440f326d.min.css">
+        
+    
 
-  <link href="/atom.xml" rel="alternate" title="Engineering Health" type="application/atom+xml">
-  <script src="/javascripts/search.min.js" type="text/javascript" charset="utf-8"></script>
-  
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-37701128-1']);
-    _gaq.push(['_trackPageview']);
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
 
+
+<link rel="canonical" href="https://engineering.cerner.com/blog/javascript-logging-we-can-do-better/"><script src="/js/jquery-3.5.1.min.js"></script><meta property="og:title" content="JavaScript Logging: We can do better!" />
+<meta property="og:description" content="Currently in the world of JavaScript these options are what we most commonly use to generate logs:
+ console.log console.info console.warn console.error  These are actually pretty good in most modern browsers. Even if you go back to Internet Explorer 8 console.log and friends work as long as you have the developer tools open.
+Given that we have these logging utilities what is the problem with using them? When in local development these are just fine for helping debug and speed up development." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://engineering.cerner.com/blog/javascript-logging-we-can-do-better/" />
+<meta property="article:published_time" content="2015-07-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-07-20T00:00:00+00:00" />
+<meta itemprop="name" content="JavaScript Logging: We can do better!">
+<meta itemprop="description" content="Currently in the world of JavaScript these options are what we most commonly use to generate logs:
+ console.log console.info console.warn console.error  These are actually pretty good in most modern browsers. Even if you go back to Internet Explorer 8 console.log and friends work as long as you have the developer tools open.
+Given that we have these logging utilities what is the problem with using them? When in local development these are just fine for helping debug and speed up development.">
+<meta itemprop="datePublished" content="2015-07-20T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2015-07-20T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="3043">
+
+
+
+<meta itemprop="keywords" content="engineering," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JavaScript Logging: We can do better!"/>
+<meta name="twitter:description" content="Currently in the world of JavaScript these options are what we most commonly use to generate logs:
+ console.log console.info console.warn console.error  These are actually pretty good in most modern browsers. Even if you go back to Internet Explorer 8 console.log and friends work as long as you have the developer tools open.
+Given that we have these logging utilities what is the problem with using them? When in local development these are just fine for helping debug and speed up development."/>
 
 </head>
-
-<body  class="top-navbar  ">
-  
-
-
-
-<header id="banner" role="banner" class="container-fluid banner-kc-background">
-
-  <div class="image">
-
+<body>
     
-      <img src="/images/KC.png" alt="Kansas City" />
-    
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-sm" id="navbar-main-menu">
+    <div class="container">
+        <a class="navbar-brand" href="/"><img src="/cerner-logo.png"/></a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="main-menu" class="collapse navbar-collapse" >
+            <ul class="nav navbar-nav ml-auto">
+                
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/culture/">Culture</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/open-source/">Open Source</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/tech-talks/">Tech Talks</a></li>
+                
+            
+            </ul>
+            
+            <div class="form-inline my-2 my-lg-0 searchbox">
+    <input id="search-by" type="search" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
+</div>
 
-    <div id="header1">Engineering Health<br/><span class="header2">A <b>Cerner</b> Blog</span></div>
-
-  </div>
-  <nav class="navbar navbar-inverse" role="navigation">
-  <div class="container">
-    <div class="navbar-inner">
-      <a class="brand" href="#">Engineering Health</a>
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li class="selected">
-            <a href="/">Blog</a>
-          </li>
-          <li >
-            <a href="/culture">Culture</a>
-          </li>
-          <li >
-            <a href="/tech_talks">Tech Talks</a>
-          </li>
-          <li >
-            <a href="/open_source">Open Source</a>
-          </li>
-          <li >
-            <a href="/blog/archives">Archives</a>
-          </li>
-        </ul>
-        <div id="search" class="pull-right">
-          <form action="/search" method="get" class="navbar-search">
-            <input type="text" id="search-query" name="q" class="search-query" placeholder="Search" autocomplete="off">
-            <img src="/images/MagnifyingGlass.png" alt="Search" width="16" height="16" />
-          </form>
+<script type="text/javascript" src="/js/lunr.min.js"></script>
+<script type="text/javascript" src="/js/auto-complete.min.js"></script>
+<script type="text/javascript">
+    var baseurl =  "https:\/\/engineering.cerner.com";
+</script>
+<script type="text/javascript" src="/js/search.js"></script>
         </div>
-      </div>
     </div>
-  </div>
 </nav>
 
-</header>
 
-
-  <div class="container-fluid post-container">
-    <div class="row-fluid">
-      <section class="span12" id="search-results" style="display: none;">
-  <h2>Search results</h2>
-  <div class="entries">
-  </div>
-</section>
-    </div>
-    <div class="row-fluid">
-      
-<article id="main" class="hentry span8" role="article">
-
-  <section class="post">
     
-  <header class="entry-header">
+<main class="content-page container pt-7 pb-5">
     
-      <h1 class="entry-title">JavaScript Logging: We Can Do Better!</h1>
-    
-    
-      <div class="entry-meta meta">
-        
+    <div class="row">
+        <div class="col">
+            <article class="article-content">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="meta text-muted mb-3">
+                            <p class="created text-muted text-uppercase font-weight-bold mb-1">July 20, 2015</p>
+                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>3043 words</span>
+                            <span><i class="fas fa-clock mr-2"></i>15 mins read</span>
+                        </div>
 
+                        <h1>JavaScript Logging: We can do better!</h1>
 
+                        <ul class="authors list-inline">
+        By: &nbsp;<li class="list-inline-item mr-3">
+                    <div class="media author">
+                            👤&nbsp;<div class="media-body">
+                            <h5 class="name my-0 "><a href="/authors/garry-polley/" class="small">Garry Polley</a>
+                            </h5>
+                        </div>
+                    </div>
+                </li></ul>
+                    </div>
+                </div>
 
-
-
-
-
-
-  
-
-
-<time datetime="2015-07-20T00:00:00-05:00" pubdate data-updated="true">Jul 20<span>th</span>, 2015</time> | 
-  
-
-
-  <span class="byline author vcard">
-    <span class="fn">Garry Polley</span>
-  </span>
-
-
-        
-      </div>
-    
-  </header>
-
-
-<div class="entry-content"><p>Currently in the world of JavaScript these options
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="content">
+                            <p>Currently in the world of JavaScript these options
 are what we most commonly use to generate logs:</p>
-
 <ul>
 <li><code>console.log</code></li>
 <li><code>console.info</code></li>
 <li><code>console.warn</code></li>
 <li><code>console.error</code></li>
 </ul>
-
-
 <p>These are actually pretty good in most modern browsers. Even
 if you go back to Internet Explorer 8 <code>console.log</code> and friends
 work as long as you have the developer tools open.</p>
-
 <p>Given that we have these logging utilities what is the problem
 with using them? When in local development these are just fine
 for helping debug and speed up development. They can be used to help
 you quickly catch errors or see where you&rsquo;re starting to go astray
 when using a library.</p>
-
 <p><code>console.log</code> and friends allow you to see
 what&rsquo;s going on and leave notes for other developers in the
 future. This is okay for local development. However, what do
 you do once you move into production? Almost everyone removes
 <code>console</code> commands before code is served in production.</p>
-
 <p>Without console commands in production how do you have the same
 level of logging you&rsquo;re used to with standard applications?
 When using a web server you get to see most every error that
@@ -187,17 +144,13 @@ occurs. Each <code>500</code> is logged to an error log file for every
 error that occurs for every user. This is not something that
 really exist for JavaScript. By the nature of how web browsers
 work we do not get any errors that occur for the end user.</p>
-
 <p>Here are the issues with JavaScript logging today:</p>
-
 <ul>
 <li>Local development is the only way to see the errors.</li>
 <li>Logs are distributed across many clients.</li>
 <li>Errors usually lack local stack context.</li>
 <li>We do not know when a user sees an error.</li>
 </ul>
-
-
 <p>Given the problems listed above you may ask: &ldquo;Why should I care?&rdquo;
 We&rsquo;ve gotten along for years without getting JavaScript errors.
 Try not to follow this line of flawed reasoning. Despite spending years
@@ -208,18 +161,15 @@ server side errors you will view those logs as invaluable. Most
 importantly developers will finally be empowered to provide proactive fixes
 for JavaScript errors the same way we can fix server side errors
 in a proactive fashion.</p>
-
 <p>Imagine this scenario, you have an advanced search feature in your
 application.  This search feature works two fold: it has an
 AJAX call to fill out the search results as well as a two-layer UI
 with a drop down that shows the results. When a result is clicked, it
 opens a more detailed modal of those results.</p>
-
 <p>In most cases this kind of interaction is JavaScript heavy. How
 do you know when the searches fail due to a scripting error, instead
 of a network drop on the client? What can you do to be proactive
 about issues occurring here?</p>
-
 <p>We&rsquo;ve released a logging framework, <a href="https://github.com/cerner/canadarm/">Canadarm</a>,
 to make identifying and handling these kinds of situations
 easy. Now each time a script error occurs you&rsquo;ll get to see it. As
@@ -228,10 +178,8 @@ you&rsquo;ll get to see what went wrong. A common issue you may not realize
 in local testing is a Unicode search error. This logger will tell
 you what error occurred as well as the language and encoding used
 to read your page.</p>
-
 <p>Below are a some topics that are likely to cross your mind.
 This post will cover each of them in detail.</p>
-
 <ul>
 <li>What does Canadarm do?</li>
 <li>How does Canadarm work?</li>
@@ -239,86 +187,76 @@ This post will cover each of them in detail.</p>
 <li>Has Canadarm helped solve any problems?</li>
 <li>When can I use it?</li>
 </ul>
-
-
 <p>This post will cover all of these questions in detail.</p>
-
-<h2>What does Canadarm do?</h2>
-
+<h2 id="what-does-canadarm-do">What does Canadarm do?</h2>
 <p>Canadarm makes it easy to send logs to a remote server.
 This alone is nothing novel and isn&rsquo;t all that impressive. It&rsquo;s fairly easy
 to setup a <code>try/catch</code> around your code and send that error to
 a server via a <code>GET</code> request. The real advantage to Canadarm comes in
 what it does to catch the errors.</p>
-
 <p>Canadarm has three ways to gather errors:</p>
-
 <ul>
 <li>Automatically catch all <code>window.onerror</code> events (least useful due to lack of context)</li>
 <li>Automatically catch all errors that occur when events fire (most useful because it &ldquo;just works&rdquo;)</li>
 <li>Manually <code>watch</code> or <code>attempt</code> individual function calls</li>
 </ul>
-
-
 <p>These modes allow you to write your code and not have to worry about
 logging or catching errors yourself. Any global errors will be caught
 and more specifically <em>all</em> errors bound to events will be caught.
 The ability to catch errors related to events is the most useful feature of Canadarm.</p>
-
 <p>Most errors that will occur on your web pages happen when a user performs
 some sort of action. Canadarm is able to provide you with context specific
 error messages by automatically hooking into and monitoring functions
 bound to events.</p>
-
 <p>With the <code>Canadarm.watch</code> and <code>Canadarm.attempt</code> functions, you have the power to individually
 monitor specific functions. Let&rsquo;s say you have a function that gets
 called without an event being fired. You can call <code>attempt</code> on that function which
 will immediately invoke the function. If an error occurs, the error will be logged.
 With <code>watch</code> you can watch a function once and every time it
 throws an error later during execution the error will be logged.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">fastMath</span>() {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">addedItems</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">i</span>;
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">fastMath</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>    <span class="kd">var</span> <span class="nx">addedItems</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">i</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>        <span class="nx">addedItems</span> <span class="o">+=</span> <span class="nx">argument</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span> <span class="c1">// This typo will throw an error when called.</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">return</span> <span class="nx">addedItems</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">// Immediately attempt to execute fast math with the arguments 1,2,3</span>
-</span><span class='line'><span class="nx">Canadarm</span><span class="p">.</span><span class="nx">attempt</span><span class="p">(</span><span class="nx">fastMath</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">// Override fastMath with the watched version.</span>
-</span><span class='line'><span class="nx">fastMath</span> <span class="o">=</span> <span class="nx">Canadarm</span><span class="p">.</span><span class="nx">watch</span><span class="p">(</span><span class="nx">fastMath</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
+    <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">arguments</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+        <span style="color:#a6e22e">addedItems</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">argument</span>[<span style="color:#a6e22e">i</span>]; <span style="color:#75715e">// This typo will throw an error when called.
+</span><span style="color:#75715e"></span>    }
 
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">addedItems</span>;
+}
 
-<p>If you don&rsquo;t want Canadarm to automatically log global errors
+<span style="color:#75715e">// Immediately attempt to execute fast math with the arguments 1,2,3
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">Canadarm</span>.<span style="color:#a6e22e">attempt</span>(<span style="color:#a6e22e">fastMath</span>, <span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>);
+
+<span style="color:#75715e">// Override fastMath with the watched version.
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">fastMath</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Canadarm</span>.<span style="color:#a6e22e">watch</span>(<span style="color:#a6e22e">fastMath</span>);
+</code></pre></td></tr></table>
+</div>
+</div><p>If you don&rsquo;t want Canadarm to automatically log global errors
 and/or event based errors you can opt-out of this feature. With
 <code>watch</code> and <code>attempt</code> you can write your JavaScript how
 you want to and not worry about what is going on within Canadarm.</p>
-
 <p>Finally, you get out of Canadarm what you really wanted from <code>console</code> functions.
 You can log specific error messages at the point you want to via
 these logging commands:</p>
-
 <ul>
 <li><code>Canadarm.debug(msg, error)</code></li>
 <li><code>Canadarm.info(msg, error)</code></li>
@@ -326,151 +264,141 @@ these logging commands:</p>
 <li><code>Canadarm.error(msg, error)</code></li>
 <li><code>Canadarm.fatal(msg, error)</code></li>
 </ul>
-
-
 <p>Optionally, you can provide two more arguments after <code>msg</code> and <code>error</code>. <code>data</code>
 followed by <code>options</code>. You can see the usage of these arguments over in the
 <a href="https://github.com/cerner/canadarm/">Canadarm documentation</a>. Specifically, <code>data</code> is the most useful
 here. <code>data</code> allows you to pass an extra object that will get its values passed
 to the appenders. The default appender included in Canadarm will log all these
 values for you as key-value pairs.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">addPositives</span>() {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">value</span>;
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">addPositives</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>    <span class="kd">var</span> <span class="nx">value</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">try</span> <span class="p">{</span>
-</span><span class='line'>        <span class="kd">var</span> <span class="nx">addedItems</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">i</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="c1">// Add all values together.</span>
-</span><span class='line'>        <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>            <span class="nx">value</span> <span class="o">=</span> <span class="nx">arguments</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-</span><span class='line'>
-</span><span class='line'>            <span class="c1">// If the value is negative we throw an error.</span>
-</span><span class='line'>            <span class="k">if</span> <span class="p">(</span><span class="nx">value</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>                <span class="k">throw</span> <span class="nb">Error</span><span class="p">();</span>
-</span><span class='line'>            <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>            <span class="nx">addedItems</span> <span class="o">+=</span> <span class="nx">value</span><span class="p">;</span>
-</span><span class='line'>        <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="k">return</span> <span class="nx">addedItems</span><span class="p">;</span>
-</span><span class='line'>    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>        <span class="c1">// This gives a very specific error, likely relating to business logic of a</span>
-</span><span class='line'>        <span class="c1">// case that should not occur.</span>
-</span><span class='line'>        <span class="nx">Canadarm</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;A negative value &#39;</span> <span class="o">+</span> <span class="nx">value</span> <span class="o">+</span> <span class="s1">&#39; was given.&#39;</span><span class="p">,</span> <span class="nx">e</span><span class="p">)</span>
-</span><span class='line'>        <span class="k">return</span> <span class="kc">undefined</span><span class="p">;</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">// In the console (if the console handler is enabled) you will see the error message.</span>
-</span><span class='line'><span class="nx">addPositives</span><span class="p">();</span>
-</span></code></pre></td></tr></table></div></figure>
+    <span style="color:#66d9ef">try</span> {
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">addedItems</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">i</span>;
 
+        <span style="color:#75715e">// Add all values together.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">arguments</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+            <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">arguments</span>[<span style="color:#a6e22e">i</span>];
 
-<p>To find out more on how to configure and use Canadarm go and
+            <span style="color:#75715e">// If the value is negative we throw an error.
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">value</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) {
+                <span style="color:#66d9ef">throw</span> Error();
+            }
+
+            <span style="color:#a6e22e">addedItems</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">value</span>;
+        }
+
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">addedItems</span>;
+    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+        <span style="color:#75715e">// This gives a very specific error, likely relating to business logic of a
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// case that should not occur.
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">Canadarm</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#39;A negative value &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; was given.&#39;</span>, <span style="color:#a6e22e">e</span>)
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">undefined</span>;
+    }
+}
+
+<span style="color:#75715e">// In the console (if the console handler is enabled) you will see the error message.
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">addPositives</span>();
+</code></pre></td></tr></table>
+</div>
+</div><p>To find out more on how to configure and use Canadarm go and
 check out its <a href="https://github.com/cerner/canadarm/">documentation</a>. It&rsquo;s pretty easy though. You
 only need to include the Canadarm code and then configure the logger. As
 seen on the Canadarm readme, you can do the following to get a working
 local logger:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">Canadarm</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
-</span><span class='line'>  <span class="nx">onError</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-</span><span class='line'>  <span class="nx">wrapEvents</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-</span><span class='line'>  <span class="nx">logLevel</span><span class="o">:</span> <span class="nx">Canadarm</span><span class="p">.</span><span class="nx">level</span><span class="p">.</span><span class="nx">DEBUG</span><span class="p">,</span>
-</span><span class='line'>  <span class="nx">appenders</span><span class="o">:</span> <span class="p">[</span>
-</span><span class='line'>    <span class="nx">Canadarm</span><span class="p">.</span><span class="nx">Appender</span><span class="p">.</span><span class="nx">standardLogAppender</span>
-</span><span class='line'>  <span class="p">],</span>
-</span><span class='line'>  <span class="nx">handlers</span><span class="o">:</span> <span class="p">[</span>
-</span><span class='line'>    <span class="nx">Canadarm</span><span class="p">.</span><span class="nx">Handler</span><span class="p">.</span><span class="nx">consoleLogHandler</span><span class="p">,</span>
-</span><span class='line'>    <span class="nx">Canadarm</span><span class="p">.</span><span class="nx">Handler</span><span class="p">.</span><span class="nx">beaconLogHandler</span><span class="p">(</span><span class="s1">&#39;http://example.com/beacon_url&#39;</span><span class="p">)</span>
-</span><span class='line'>  <span class="p">]</span>
-</span><span class='line'><span class="p">});</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Now you&rsquo;ll see all logged errors in your console with all the information the
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">Canadarm</span>.<span style="color:#a6e22e">init</span>({
+  <span style="color:#a6e22e">onError</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+  <span style="color:#a6e22e">wrapEvents</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+  <span style="color:#a6e22e">logLevel</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Canadarm</span>.<span style="color:#a6e22e">level</span>.<span style="color:#a6e22e">DEBUG</span>,
+  <span style="color:#a6e22e">appenders</span><span style="color:#f92672">:</span> [
+    <span style="color:#a6e22e">Canadarm</span>.<span style="color:#a6e22e">Appender</span>.<span style="color:#a6e22e">standardLogAppender</span>
+  ],
+  <span style="color:#a6e22e">handlers</span><span style="color:#f92672">:</span> [
+    <span style="color:#a6e22e">Canadarm</span>.<span style="color:#a6e22e">Handler</span>.<span style="color:#a6e22e">consoleLogHandler</span>,
+    <span style="color:#a6e22e">Canadarm</span>.<span style="color:#a6e22e">Handler</span>.<span style="color:#a6e22e">beaconLogHandler</span>(<span style="color:#e6db74">&#39;http://example.com/beacon_url&#39;</span>)
+  ]
+});
+</code></pre></td></tr></table>
+</div>
+</div><p>Now you&rsquo;ll see all logged errors in your console with all the information the
 standardLogAppender provides. Obviously you want more than local logs. Next you&rsquo;ll
 see how our teams have used this logger.</p>
-
-<h2>How does this work?</h2>
-
+<h2 id="how-does-this-work">How does this work?</h2>
 <p>Canadarm is fairly simple. The logger catches an error and then
 sends that error to a central server. Under the
 covers it uses Appenders and Handlers as the mechanisms to achieve
 this result.</p>
-
-<h3>Appenders</h3>
-
+<h3 id="appenders">Appenders</h3>
 <p>An appender works as a way to process an error or log event that occurs.
 The appender has this signature: <code>appender(level, exception, message, data)</code>.</p>
-
 <ul>
-<li><code>level</code> &ndash; Level of the log, one of <code>DEBUG</code>, <code>INFO</code>, <code>WARN</code>, <code>ERROR</code>, <code>FATAL</code></li>
-<li><code>exception</code> &ndash; An actual JavaScript <code>Error</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">object</a>.</li>
-<li><code>message</code> &ndash; Text message of the logged error.</li>
-<li><code>data</code> &ndash; Extra information to provide to the appender, usually this is not used.</li>
+<li><code>level</code> - Level of the log, one of <code>DEBUG</code>, <code>INFO</code>, <code>WARN</code>, <code>ERROR</code>, <code>FATAL</code></li>
+<li><code>exception</code> - An actual JavaScript <code>Error</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">object</a>.</li>
+<li><code>message</code> - Text message of the logged error.</li>
+<li><code>data</code> - Extra information to provide to the appender, usually this is not used.</li>
 </ul>
-
-
 <p>An appender must return an object. The object should contain simple data types.
 They are single key/value pairs, usually strings. The return value of
 an appender is then passed to a handler.</p>
-
-<h3>Handlers</h3>
-
+<h3 id="handlers">Handlers</h3>
 <p>Handlers take action on the objects produces by the appenders. A handler&rsquo;s
 job is to send the results of the appenders somewhere. By default
 there are two handlers that come out of the box with Canadarm:
 a <a href="https://github.com/cerner/canadarm/#console-log-handler">console handler</a> that logs all errors
 to the console and a <a href="https://github.com/cerner/canadarm/#beacon-log-handler">beacon handler</a> that sends
 all errors to a given URL end point.</p>
-
-<h3>Appenders &amp; Handlers</h3>
-
+<h3 id="appenders--handlers">Appenders &amp; Handlers</h3>
 <p>Appenders and handlers work together to create your logs.
 Here&rsquo;s the break down of what happens during an error or logging event:</p>
-
 <ol>
 <li>Error or log event happens</li>
 <li><em>Every</em> appender is iterated over in order (duplicate keys will be replaced with the value of a later appender)</li>
@@ -478,34 +406,25 @@ Here&rsquo;s the break down of what happens during an error or logging event:</p
 <li>The final object is passed to <em>every</em> handler</li>
 <li>Each handler usually sends this information somewhere (e.g. console or remote server)</li>
 </ol>
-
-
 <p>That&rsquo;s it for how the logger works on the client. The real power comes when
-you combine this log gathering with the <code><a href="https://github.com/cerner/canadarm/blob/master/lib/handler/beacon.js">BeaconHandler</a></code>.
+you combine this log gathering with the <!-- raw HTML omitted --><a href="https://github.com/cerner/canadarm/blob/master/lib/handler/beacon.js">BeaconHandler</a><!-- raw HTML omitted -->.
 The logs gathered are then sent to a server. The server receiving these logs should
 be writing them out to a file that is then read into a logging system. We currently use a
 simple Apache server and treat its access logs as our JavaScript error logs. We then send
 the logs to a log aggregation tool, <a href="http://www.splunk.com/en_us/download.html">Splunk</a>.</p>
-
-<h2>Who has used it?</h2>
-
+<h2 id="who-has-used-it">Who has used it?</h2>
 <p>We have a few applications that have begun using Canadarm.</p>
-
 <ul>
-<li>HealtheLife &ndash; website for patients to manage their health</li>
-<li>Internal Sites &ndash; a few sites we use internally for a few things (e.g. code review, cheat sheets etc.)</li>
+<li>HealtheLife - website for patients to manage their health</li>
+<li>Internal Sites - a few sites we use internally for a few things (e.g. code review, cheat sheets etc.)</li>
 </ul>
-
-
-<h3>HealtheLife</h3>
-
+<h3 id="healthelife">HealtheLife</h3>
 <p>HealtheLife was the first client facing application to go into production
 using Canadarm. They have over 3 million users and at any given moment they
 usually have at least one thousand concurrent users. These metrics matter
 for two reasons: first, it shows us that Canadarm
 works at scale without causing issues to the application, second, we
 have been able to see trends in JavaScript errors occurring in this application.</p>
-
 <p>For those who thought &ldquo;why should I care?&rdquo; when it comes to JavaScript logs
 this go live was an interesting story. Within the first 20 minutes we
 noticed errors that occurred on every page load. Specifically this error
@@ -513,16 +432,20 @@ was a reference to <code>$</code> (jQuery) before it was defined. Since this was
 an analytics tracking snippet, and at the end of a script tag, it did not
 cause an end user impact, beyond eating processing time to handle an
 error on every page.</p>
-
-<p><img class="center" src="/assets/2015-07-20-javascript-logging-we-can-do-better/healthe_life_errors.png"></p>
-
+<div align="center">
+    <figure class="figure">
+        <a href="healthe_life_errors.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="healthe_life_errors.png"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
 <p>However, it did mean that analytics were not getting tracked how
 the application intended. In fact, without this logger in place the
 application would have happily continued along with no indication certain actions
 where never taking place. Since the analytics tool did not report the
 expected user interactions, it appeared as if features of the application
 where not getting used, or worse, that the analytics were faulty.</p>
-
 <p>The actual messages in the errors for this application are interesting. Since
 HealtheLife is used in many countries with many different
 locales, they support various languages. Because of the various
@@ -530,59 +453,71 @@ supported languages and users being able to use their browsers in any locale the
 had a few interesting logs messages. Specifically we have had a few logs
 come across in English, Spanish, German and more. It was kind of eye opening to know that errors are actually
 translated within a browser.</p>
-
-<h3>Internal Sites</h3>
-
+<h3 id="internal-sites">Internal Sites</h3>
 <p>Currently a few internal sites are
 using Canadarm for local development and integration environments.
 Most interesting so far for has been looking at the logs and seeing
 who has been copy pasting code around.</p>
-
 <p>Interestingly enough I found some random logs on our Splunk dashboard in dev.</p>
-
-<p><img class="center" src="/assets/2015-07-20-javascript-logging-we-can-do-better/logs_for_cheat_sheet_app.png"></p>
-
+<div align="center">
+    <figure class="figure">
+        <a href="logs_for_cheat_sheet_app.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="logs_for_cheat_sheet_app.png"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
 <p>Which lead me to github, specifically a github pages site.</p>
-
-<p><img class="center" src="/assets/2015-07-20-javascript-logging-we-can-do-better/cheet_sheets_app.png"></p>
-
+<div align="center">
+    <figure class="figure">
+        <a href="cheet_sheets_app.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="cheet_sheets_app.png"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
 <p>Seeing the application and where the logs said the application lived I was able to find the source code.
 The code then lead me to the owner of the application. At that point I was able
 to contact the owner and get the issue fixed. Finding another application&rsquo;s errors and
 letting the owner know about is an interesting experience. The whole interaction was
 cool because it was not a use case we had considered when building Canadarm.</p>
-
-<h2>Has it helped solve any problems?</h2>
-
+<h2 id="has-it-helped-solve-any-problems">Has it helped solve any problems?</h2>
 <p>As mentioned before this has helped to point out two issues:
 one for HealtheLife and another for an internal application.
 Pointing out issues is not enough to fix them though. Also, Canadarm
 does not solve problems on its own. You get the most
 out of logging when you use a tool to aggregate those logs. We&rsquo;ve
 been using Splunk to aggregate our logs.</p>
-
 <p>Combined with the searching and reporting of Splunk we&rsquo;ve
 been able to leverage the logs generated by Canadarm to see
 a few common trends in our code. Canadarm has helped
 us to see a few common problems we have:</p>
-
 <ol>
 <li>Locally we produce a lot of JavaScript errors</li>
 <li>We often introduce new errors when we write visualizations</li>
 <li>Referencing variables before they exist</li>
 <li>New frameworks are hard to get a handle on</li>
 </ol>
-
-
 <p>Using Canadarm to generate logs doesn’t solve problems on its own.
 It&rsquo;s when we combine those logs with the
 reporting capabilities of Splunk that we can see trends and
 identify areas we need to improve upon in our development.</p>
-
-<p><img class="center" src="/assets/2015-07-20-javascript-logging-we-can-do-better/bar_errors.png"></p>
-
-<p><img class="center" src="/assets/2015-07-20-javascript-logging-we-can-do-better/bar_errors_hover.png"></p>
-
+<div align="center">
+    <figure class="figure">
+        <a href="bar_errors.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="bar_errors.png"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
+<div align="center">
+    <figure class="figure">
+        <a href="bar_errors_hover.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="bar_errors_hover.png"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
 <p>On our teams it has shown that we need to get better at defining
 our APIs for data visualizations. I&rsquo;ve been able to see many errors
 from our developers when they first try to update or modify any of
@@ -592,7 +527,6 @@ This gives us empirical data that developers are having issues
 using our software. Without this data, we&rsquo;d have to rely on complaints
 and hope people reported the issues they encountered when using our
 code.</p>
-
 <p>As a more concrete example, recently one of our teams has begun to try and use react. By analyzing
 the logs it&rsquo;s easy to see that we have had some issues getting a handle
 on how react works. Over the few weeks of react work we could clearly
@@ -601,7 +535,6 @@ a lot more training on how to properly use react. Further it shows me
 that if we plan to adopt react as our frontend framework that we need
 to put together a &ldquo;gotcha&rdquo; or &ldquo;tips and tricks&rdquo; guide for getting
 started.</p>
-
 <p>While the logger is not directly &ldquo;solving&rdquo; problems it is helping
 to illuminate issues we are seeing in local development as well as
 in production. By shining a light on these issues we are able to
@@ -611,40 +544,29 @@ solved by code changes. Most importantly Canadarm is opening our
 eyes to the kinds of issues we&rsquo;ve had for years with JavaScript. We
 can no longer ignore these issue because we have solid empirical evidence
 showing us our problems.</p>
-
-<h2>When can I use it?</h2>
-
+<h2 id="when-can-i-use-it">When can I use it?</h2>
 <p>After reading along this far hopefully you&rsquo;re thinking: &ldquo;This
 all sounds great! When and how can I get started?&rdquo;. It&rsquo;s pretty easy:</p>
-
 <ol>
 <li>Include <a href="https://github.com/cerner/canadarm/">Canadarm</a> in your JavaScript (as early as possible)</li>
 <li>Configure Canadarm</li>
 <li>Have a server to handle logs</li>
 <li>Have a reporting tool on top of your logs</li>
 </ol>
-
-
-<h3>Standalone applications</h3>
-
+<h3 id="standalone-applications">Standalone applications</h3>
 <p>If you are a public facing Internet application or a small startup,
 Canadarm can still be a great investment. Ideally you do not need
 to worry about steps 3 and 4 above. Simple Log management solutions,
 such as <a href="http://loggly.com">Loggly</a> should be enough for your needs.</p>
-
 <p>Here&rsquo;s what I did to get a quick setup working:</p>
-
 <ol>
 <li>Setup a <a href="https://www.loggly.com/signup/">free account</a></li>
 <li>Fill out info in the pop up</li>
 <li>Go to <code>https://YOUR_SUB_DOMAIN_HERE.loggly.com/sources/setup/https</code></li>
 <li>See the &ldquo;step 2&rdquo; section you should have a URL to copy that looks something like:</li>
 </ol>
-
-
-<p>  <a href="http://logs-01.loggly.com/inputs/WWWWWWW-55555-5555555-55WW55-WWWWW55555/tag/http/">http://logs-01.loggly.com/inputs/WWWWWWW-55555-5555555-55WW55-WWWWW55555/tag/http/</a>
+<p><a href="http://logs-01.loggly.com/inputs/WWWWWWW-55555-5555555-55WW55-WWWWW55555/tag/http/">http://logs-01.loggly.com/inputs/WWWWWWW-55555-5555555-55WW55-WWWWW55555/tag/http/</a>
 5. Configure Canadarm with this end point to see the logs:</p>
-
 <pre><code>Canadarm.init({
   onError: true,
   wrapEvents: true,
@@ -657,211 +579,210 @@ such as <a href="http://loggly.com">Loggly</a> should be enough for your needs.<
   ]
 });
 </code></pre>
-
 <p>After this setup it was pretty easy to get some graphs going. For example
 you can easily see what errors occurred by message in this pie chart:</p>
-
-<p><img class="center" src="/assets/2015-07-20-javascript-logging-we-can-do-better/loggly_pie.png"></p>
-
+<div align="center">
+    <figure class="figure">
+        <a href="loggly_pie.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="loggly_pie.png"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
 <p>Even easier is getting to view the raw output of a given event message:</p>
-
-<p><img class="center" src="/assets/2015-07-20-javascript-logging-we-can-do-better/loggly_raw_msg.png"></p>
-
+<div align="center">
+    <figure class="figure">
+        <a href="loggly_raw_msg.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="loggly_raw_msg.png"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
 <p>Loggly is a great tool to use for large and small projects. A big bonus for
 anyone starting to use Loggly for their JavaScript logs it that they can
 begin to use Loggly for their other logs (if they are not already).
 While Loggly may not be ideal for every situation when it comes to logging,
 it is really handy when you do not have the resources, money, or time to
 setup your own log aggregation tool.</p>
-
-<h2>Summary</h2>
-
+<h2 id="summary">Summary</h2>
 <p>From desktop, to mobile, to embedded devices, web browsers can be seen
 everywhere. With the help of <a href="https://github.com/cerner/canadarm/">Canadarm</a> we can now see
 what exactly is happening within our applications. An entire world of
 client side errors and issues can now be properly managed and acted
 upon. Combine these logs with an aggregation tool such as <a href="http://www.splunk.com/en_us/download.html">Splunk</a> or
 <a href="http://loggly.com">Loggly</a> and you have enabled operational intelligence.</p>
-
 <p>The next time a user logs an issue for a JavaScript error you can
 respond by telling them you&rsquo;ve seen the error and are already working
 to correct it. Gone are the days of reactive fixes. Now you can worry
 about proactive solutions.</p>
-</div>
 
+                        </div><div class="tags my-3"><a class="badge badge-pill badge-light border mr-2" href="/tags/engineering">
+                                    <i class="fas fa-tag mr-2"></i>engineering
+                                </a></div><ul class="share nav my-3 justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://twitter.com/intent/tweet?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fjavascript-logging-we-can-do-better%2f&text=JavaScript%20Logging%3a%20We%20can%20do%20better%21">
+              <i class="fa-fw fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fjavascript-logging-we-can-do-better%2f&title=JavaScript%20Logging%3a%20We%20can%20do%20better%21">
+                <i class="fa-fw fab fa-linkedin-in"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fengineering.cerner.com%2fblog%2fjavascript-logging-we-can-do-better%2f&t=JavaScript%20Logging%3a%20We%20can%20do%20better%21">
+                <i class="fa-fw fab fa-facebook-f"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://reddit.com/submit?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fjavascript-logging-we-can-do-better%2f&title=JavaScript%20Logging%3a%20We%20can%20do%20better%21">
+                <i class="fa-fw fab fa-reddit-alien"></i>
+            </a>
+        </li>
+    </nav>
+                    </div>
+                </div>
 
-  </section>
-  <footer>
-    <p class="meta">
-      
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  
-  
-</div>
-
-    
-    
-    <ul class="pager">
-      
-      <li class="previous"><a class="basic-alignment left"
-        href="/blog/managing-30000-logging-events-per-day-with-splunk/" title="Previous Post:
-        Managing 30,000 Logging Events per Day with Splunk">&laquo; Previous Post</a></li>
-      
-      <li><a href="/blog/archives">Blog Archives</a></li>
-      
-      <li class="next"><a class="basic-alignment right" href="/blog/identifying-network-acl-issues-with-chef-locally/"
-        title="Next Post: Identifying Network ACL Issues with Chef Locally">Next Post &raquo;</a></li>
-      
-    </ul>
-  </footer>
-</article>
-
-<aside class="sidebar-nav span4">
-  
-    <section class="well">
-  <h2>Recent Posts</h2>
-  <ul id="recent_posts" class="nav nav-list">
-    
-      <li>
-        <a href="/blog/shipit-xvii/">ShipIt Day XVII</a>
-      </li>
-    
-      <li>
-        <a href="/blog/shipit-xvi/">ShipIt Day XVI</a>
-      </li>
-    
-      <li>
-        <a href="/blog/terra-ui/">Terra UI: A Health-Care Focused UI Component Library</a>
-      </li>
-    
-      <li>
-        <a href="/blog/introducing-f-twelve-an-open-source-dev-console/">Introducing F-Twelve, an Open Source Dev Console</a>
-      </li>
-    
-      <li>
-        <a href="/blog/carbon-graphs-open-source-visualization-api/">Carbon Graphs: An Open Source Visualization API</a>
-      </li>
-    
-  </ul>
-</section>
-<section class="divider">
-  <svg width="70" height="10">
-   <rect width="10" height="10" x="0" y="0" style="fill:rgb(20,124,193)" />
-   <rect width="10" height="10" x="20" y="0" style="fill:rgb(121,193,68)" />
-   <rect width="10" height="10" x="40" y="0" style="fill:rgb(20,124,193)" />
-   <rect width="10" height="10" x="60" y="0" style="fill:rgb(121,193,68)" />
-</svg>
-</section><section class="well">
-  <h2>Follow Us</h2>
-  <script src="https://apis.google.com/js/platform.js"></script>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-  <div class="g-ytsubscribe" data-channelid="UCYHiZDU0YLN0dWLWSCP1JYQ" data-layout="default" data-count="default"></div>
-  <a href="https://twitter.com/CernerEng?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-screen-name="false" data-show-count="false">Follow @CernerEng</a>
-</section>
-<section class="divider">
-  <svg width="70" height="10">
-   <rect width="10" height="10" x="0" y="0" style="fill:rgb(20,124,193)" />
-   <rect width="10" height="10" x="20" y="0" style="fill:rgb(121,193,68)" />
-   <rect width="10" height="10" x="40" y="0" style="fill:rgb(20,124,193)" />
-   <rect width="10" height="10" x="60" y="0" style="fill:rgb(121,193,68)" />
-</svg>
-</section>
-<section class="well">
-  <h2>GitHub Repos</h2>
-  <ul id="gh_repos" class="nav">
-    <li class="loading">Status updating...</li>
-  </ul>
-  
-  <a href="https://github.com/cerner">@cerner</a> on GitHub
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'cerner',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-  
-</aside>
-
-
-    </div>
-  </div>
-  
-<script id="search-results-template" type="text/mustache">
-  {{#entries}}
-    <article class="search-result">
-        <div class="search-meta meta">
-        {{#date}}<time datetime="{{pubdate}}" pubdate>{{displaydate}}</time>{{/date}} | {{author}}
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        
+                    </div>
+                </div></article>
         </div>
-        <a href="{{url}}">{{title}}</a>
-    </article>
-  {{/entries}}
-</script>
-
-<script type="text/javascript">
-  $(function() {
-    $('#search-query').lunrSearch({
-      indexUrl: '/javascripts/index.json',   // Url for the .json file containing search index data
-      results : '#search-results',  // selector for containing search results element
-      entries : '.entries',         // selector for search entries containing element (contained within results above)
-      template: '#search-results-template'  // selector for Mustache.js template
-    });
-    //Currently ignoring the "return/enter" keystroke when searching (as this would just result in a 404 for the page lookup).
-    $('#search-query').keydown(function(event){
-      if(event.keyCode == 13) {
-        event.preventDefault();
-        return false;
-      }
-    });
-  });
-</script>
-
-  <footer role="contentinfo" class="page-footer">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="span2">
-          <img src="/images/Cerner_White_Horizontal.png" alt="Cerner Logo" />
-      </div>
-      <div class="span10 pull-left">
-          <p>&copy; 2020</p>
-      </div>
     </div>
+
+    <div class="related-content row mt-5 row-cols-1 row-cols-lg-3"><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/managing-30000-logging-events-per-day-with-splunk/" class="d-block"><img data-src="/blog/managing-30000-logging-events-per-day-with-splunk/Log-Aggregator_hu250099d7c5651446aaf180f5da97c019_295357_700x350_fill_box_smart1_2.png" class="card-img-top mx-auto d-block" alt="Managing 30,000 Logging Events per Day with Splunk"><div class="card-body">
+            <h4 class="card-title">Managing 30,000 Logging Events per Day with Splunk</h4>
+            <p class="card-text text-muted text-uppercase">January 29, 2015</p>
+            <div class="card-text">
+                Our team works on a patient facing web application with a thousand live clients with 2,315,000&#43; users. On an average, the high traffic results into more than 40,000 visits and 300,000 page views daily generating about 30,000 logging events. A considerable portion of these events are of information and warning level in order to aid proactive monitoring or identify potential issues due to clients’ misconfiguration.
+Before Splunk To handle this large volume of logging, our team created a rotational support role to manually monitor the logs at regular intervals daily.
+            </div>
+        </div>
+    </a>
   </div>
+            </div><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/cerner-and-the-apache-software-foundation/" class="d-block"><img data-src="/blog/cerner-and-the-apache-software-foundation/asf-sponsorship-silver-logo_hu2eb046b3b5bed0960f6685a9ad844d22_52769_700x350_fill_q75_box_smart1.jpg" class="card-img-top mx-auto d-block" alt="Cerner and the Apache Software Foundation"><div class="card-body">
+            <h4 class="card-title">Cerner and the Apache Software Foundation</h4>
+            <p class="card-text text-muted text-uppercase">October 28, 2014</p>
+            <div class="card-text">
+                At the beginning of this year, [we announced that Cerner became a bronze-level sponsor]({%post_url 2014-01-28-sponsoring-the-apache-software-foundation%}) of the non-profit Apache Software Foundation (ASF). Many of the open source projects we use and contribute to are under the ASF umbrella, so supporting the mission and work of the ASF is important to us.
+We’re happy to announce that Cerner has now increased our sponsorship of the ASF to become a silver-level sponsor. Open source continues to play an integral role in both our architecture and engineering culture.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/closures-and-currying-in-javascript/" class="d-block"><img data-src="/blog/closures-and-currying-in-javascript/not_sure_if_hu97dbfb1fbb6f49a63a701f7b1634095b_22587_700x350_fill_q75_box_smart1.jpg" class="card-img-top mx-auto d-block" alt="Closures &amp; Currying in JavaScript"><div class="card-body">
+            <h4 class="card-title">Closures &amp; Currying in JavaScript</h4>
+            <p class="card-text text-muted text-uppercase">September 29, 2014</p>
+            <div class="card-text">
+                Preface I have been asked many times what closures are and how they work. There are many resources available to learn this concept, but they are not always clear to everyone. This has led me to put together my own approach to exchanging the information.
+I will supply code samples. //&gt; denotes an output or return.
+Before discussing closures, it is important to review how functions work in JavaScript.
+Introduction to functions If a function does not have a return statement, it will implicitly return undefined, which brings us to the simplest functions.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div></div>
+</main>
+
+
+    <footer class="footer text-center bg-dark py-6">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="https://engineering.cerner.com/index.xml" rel="alternate" type="application/rss+xml" class="icons d-block">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a></li><li class="list-inline-item">
+                            <a href="https://github.com/cerner" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.instagram.com/cernercorporation/" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.linkedin.com/company/cerner-corporation" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fengineering.cerner.com%2F&amp;screen_name=CernerEng" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.youtube.com/user/cernereng?sub_confirmation=1" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                </ul>
+
+                <p class="text-light">
+                    
+                        Copyright © 2020
+                    
+                </p>
+
+                <p class="text-light">
+                Made with ❤️ by Cerner engineers.
+                </p>
+            </div>
+        </div>
+    </div>
 </footer>
 
-
-  
-
-
-
-
-
-
+    
+    
+        
+            <script src="/dist/main.44c94dde179dd23bf3f1.min.js"></script>
+        
+    
 
 
 
+
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-37701128-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
 
 </body>
 </html>

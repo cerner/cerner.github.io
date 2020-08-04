@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>jenkins on Engineering Health</title>
+    <link>https://engineering.cerner.com/tags/jenkins/</link>
+    <description>Recent content in jenkins on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Thu, 20 Sep 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/tags/jenkins/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SSH Steps for Jenkins Pipeline</title>
+      <link>https://engineering.cerner.com/blog/ssh-steps-for-jenkins-pipeline/</link>
+      <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/ssh-steps-for-jenkins-pipeline/</guid>
+      <description>Pipeline-as-code or defining the deployment pipeline through code rather than manual job creation through UI, provides tremendous benefits for teams automating builds and deployment infrastructure across their environments.
+ Source of image
+   Jenkins Pipelines Jenkins is a well-known open source continuous integration and continuous deployment automation tool. With the latest 2.0 release, Jenkins introduced the Workflow plugin that implements Pipeline-as-code. This plugin lets you define delivery pipelines using concise scripts which deal elegantly with jobs involving persistence and asynchrony.</description>
+    </item>
+    
+  </channel>
+</rss>

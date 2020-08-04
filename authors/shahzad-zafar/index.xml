@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shahzad Zafar on Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/shahzad-zafar/</link>
+    <description>Recent content in Shahzad Zafar on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Wed, 17 May 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/authors/shahzad-zafar/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ShipIt VIII Day: Spring 2017</title>
+      <link>https://engineering.cerner.com/blog/shipit-day-viii-spring-2017/</link>
+      <pubDate>Wed, 17 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/shipit-day-viii-spring-2017/</guid>
+      <description>ShipIt Day VIII was held on April 20 and 21st. Seventeen teams made up of internal associates had just 24 hours to create something innovative, usable, and value-adding. This quarter&amp;rsquo;s ShipIt Day was held at our new Innovations Campus in the Link Conference Center. We were excited to get to utilize the space for this event. Another awesome addition to this quarter&amp;rsquo;s ShipIt Day was our new game rooms.</description>
+    </item>
+    
+    <item>
+      <title>ShipIt - 24-hour hackathon for Millennium&#43; Platform Dev</title>
+      <link>https://engineering.cerner.com/blog/shipit-hackathon-mplus/</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/shipit-hackathon-mplus/</guid>
+      <description>At the end of March, some of our teams held their first 24-hour hackathon, titled ShipIt: Millennium+ Services FedEx Day. We had 41 participants, in 15 teams working on 15 unique projects. The idea was inspired by several teams spending a few hours every so often to work on different projects. After reading about Atlassian’s hack days, we decided to hold one.
+The event was initially announced early in February, to give teams time to work this into their project plans.</description>
+    </item>
+    
+  </channel>
+</rss>

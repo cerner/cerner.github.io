@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>interoperability on Engineering Health</title>
+    <link>https://engineering.cerner.com/tags/interoperability/</link>
+    <description>Recent content in interoperability on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Thu, 21 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/tags/interoperability/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cerner&#39;s Open Source Contributions for Interoperability Developers</title>
+      <link>https://engineering.cerner.com/blog/cerners-open-source-contributions-for-interoperability-developers/</link>
+      <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/cerners-open-source-contributions-for-interoperability-developers/</guid>
+      <description>Open source and open standards encourage collaboration around innovation that advances the health care industry through improved interoperability. Developers across health care can come together and use open source code to share information, as well as develop and continually improve apps to support better health outcomes for patients.
+At Cerner, developing open platforms that support interoperability standards like SMART® and FHIR® is integral to our mission of transforming health care. In addition to implementing these standards in our platforms, we also participate in organizations like HL7 and the Argonaut Project to help shape and develop these standards.</description>
+    </item>
+    
+  </channel>
+</rss>

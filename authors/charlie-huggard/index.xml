@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Charlie Huggard on Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/charlie-huggard/</link>
+    <description>Recent content in Charlie Huggard on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Mon, 04 Feb 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/authors/charlie-huggard/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Why Engineering Health?</title>
+      <link>https://engineering.cerner.com/blog/why-engineering-health/</link>
+      <pubDate>Mon, 04 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/why-engineering-health/</guid>
+      <description>Hello and welcome to a public face for Cerner Engineering, by Cerner Engineering associates, to talk about engineering, technology, and all of the other awesome things we do.
+Cerner has been recognized as a visionary company, transforming the delivery of healthcare around the world. Improving the health of individuals and the delivery of care is an extremely large, complex, ever-changing problem. Along with the efforts of our strategists and consultant organizations, solving this problem takes a ton of smart folks in our Engineering and CernerWorks Hosting organizations, who are free to play with, adopt, and embrace new technologies and ways of working.</description>
+    </item>
+    
+  </channel>
+</rss>

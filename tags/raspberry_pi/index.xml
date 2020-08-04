@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>raspberry_pi on Engineering Health</title>
+    <link>https://engineering.cerner.com/tags/raspberry_pi/</link>
+    <description>Recent content in raspberry_pi on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Thu, 14 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/tags/raspberry_pi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pi Day 2019: Build your own alarm system</title>
+      <link>https://engineering.cerner.com/blog/pi-day-2019-build-your-own-alarm-system/</link>
+      <pubDate>Thu, 14 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/pi-day-2019-build-your-own-alarm-system/</guid>
+      <description>At Cerner Engineering, we love to celebrate Pi Day. This day is not only a fun time to enjoy eating pie and reflecting on mathematical properties, but we also share big announcements internally for our developers conference, DevCon.
+Drew a crowd to celebrate Pi Day this afternoon with snacks, lightning talks, and our DevCon 2018 theme reveal! #314day #cernerdevcon pic.twitter.com/wyy5eLKHVl
+&amp;mdash; Cerner Engineering (@CernerEng) March 14, 2018  For this post, we thought it would be fun to share a simple example of how you can hook your existing monitoring system to a physical alarm system powered by a Raspberry Pi.</description>
+    </item>
+    
+  </channel>
+</rss>

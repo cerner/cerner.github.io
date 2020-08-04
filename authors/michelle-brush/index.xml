@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Michelle Brush on Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/michelle-brush/</link>
+    <description>Recent content in Michelle Brush on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Mon, 28 Aug 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/authors/michelle-brush/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Structure Matters: How Cerner Handled Too Much Health Data in HBase</title>
+      <link>https://engineering.cerner.com/blog/structure-matters-how-cerner-handled-too-much-health-data-in-hbase/</link>
+      <pubDate>Mon, 28 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/structure-matters-how-cerner-handled-too-much-health-data-in-hbase/</guid>
+      <description>Background In order to manage the health of populations, Cerner builds data-driven solutions built on top of its HealtheIntent℠ platform. The platform transforms and standardizes data across disparate health systems. The data is then used in algorithms that aid healthcare providers and hospitals in managing and monitoring health both at a person and population level.
+The Reference Record is one of the core components of the HealtheIntent platform. It represents the data known about a person&amp;rsquo;s health from a particular source of healthcare information.</description>
+    </item>
+    
+    <item>
+      <title>DevAcademy</title>
+      <link>https://engineering.cerner.com/blog/devacademy/</link>
+      <pubDate>Wed, 14 Aug 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/devacademy/</guid>
+      <description>When I graduated from college, I thought I understood what it meant to develop software in the real world. It required process. It required troubleshooting. It required quality. However, to me, process meant waterfall. Troubleshooting meant trying a few things and then asking for help. Quality meant manual testing.
+Agile methods were not unheard of when I graduated in 2001. My professors noted that iterative development was better than waterfall; they just only taught waterfall.</description>
+    </item>
+    
+  </channel>
+</rss>

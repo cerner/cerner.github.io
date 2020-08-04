@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>engineering on Engineering Health</title>
+    <link>https://engineering.cerner.com/tags/engineering/</link>
+    <description>Recent content in engineering on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Mon, 24 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/tags/engineering/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ShipIt Day XVII</title>
+      <link>https://engineering.cerner.com/blog/shipit-xvii/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/shipit-xvii/</guid>
+      <description>ShipIt Day, Cerner Engineering’s 24-hour hackathon, provides associates an environment to be creative, work on new projects, and network with other associates. This event is one of the many things that sit at the core of our Engineering Culture at Cerner, and is rapidly growing- now being hosted globally in Romania, Sweden, India, and the UK. In October, our team had the chance to participate in the seventeenth ShipIt Day at Kansas City’s Innovations Campus and managed to take home the Golden Keyboard trophy as the first place team!</description>
+    </item>
+    
+    <item>
+      <title>ShipIt Day XVI</title>
+      <link>https://engineering.cerner.com/blog/shipit-xvi/</link>
+      <pubDate>Mon, 04 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/shipit-xvi/</guid>
+      <description>Finishing our 16th occurrence of the series, our quarterly ShipIt Day hackathon invites the makers and innovators to come out and share new ways to think about our daily work here at Cerner. Whether it&amp;rsquo;s experimenting with new features or improving our developer workflows, ShipIt Day gives our engineers a chance to try and learn new things. This ShipIt day in particular had some exciting projects that melded hardware and software.</description>
+    </item>
+    
+    <item>
+      <title>Terra UI: A Health-Care focused UI Component Library</title>
+      <link>https://engineering.cerner.com/blog/terra-ui/</link>
+      <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/terra-ui/</guid>
+      <description>Back in 2013, like most other companies, Cerner was heavily invested in building user interfaces with Twitter Bootstrap. Around that time, Dave Rupert wrote about the concept of Responsive Deliverables and touched on a key concept, creating “Tiny Bootstraps, for Every Client”. Along with this, Brad Frost had started promoting the idea of Atomic Design. We saw a lot of value in these ideas and saw that we needed to evolve how we were developing UI at Cerner.</description>
+    </item>
+    
+    <item>
+      <title>Introducing F-Twelve, an Open Source Dev Console</title>
+      <link>https://engineering.cerner.com/blog/introducing-f-twelve-an-open-source-dev-console/</link>
+      <pubDate>Tue, 08 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/introducing-f-twelve-an-open-source-dev-console/</guid>
+      <description>Many modern web browsers come with tools that can help developers debug their websites. If you are using Google Chrome or Firefox for example, try pressing F12. A new panel should open containing various tools. These tools provide a look “under the hood” for the current page. Common tools include a JavaScript console, JavaScript debugger, DOM explorer, network request viewer, performance profile, local storage manager, and more.</description>
+    </item>
+    
+    <item>
+      <title>Carbon Graphs: An Open Source Visualization API</title>
+      <link>https://engineering.cerner.com/blog/carbon-graphs-open-source-visualization-api/</link>
+      <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/carbon-graphs-open-source-visualization-api/</guid>
+      <description>We are pleased to announce Carbon Graphs as an open source code project!
+Carbon is a lightweight, vanilla JavaScript visualization API built with D3 that integrates well with any consumer&amp;rsquo;s tech stack. It provides a variety of graph types that are framework agnostic and responsive out of the box.
+   Motivation Over the past few years, we have gradually updated our user interface to use modern JavaScript libraries such as mithril.</description>
+    </item>
+    
+    <item>
+      <title>CCL Unit and CCL Testing released to open source</title>
+      <link>https://engineering.cerner.com/blog/ccl-unit-and-ccl-testing-released-to-open-source/</link>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/ccl-unit-and-ccl-testing-released-to-open-source/</guid>
+      <description>We are pleased to announce the release of CCL Unit and CCL Testing as open source code projects, as well as the release of the CCL Testing plugin artifacts to Maven Central.
+Cerner Command Language (CCL) is a database query and scripting language used with Cerner Millennium databases. CCL Unit is a unit testing framework for CCL written in CCL. The CCL Testing plugins generate reports for viewing the results of CCL Unit tests and static analyses of CCL programs and for generating code documentation from comments in the source code for CCL programs.</description>
+    </item>
+    
+    <item>
+      <title>DevAcademy Six Years Later</title>
+      <link>https://engineering.cerner.com/blog/devacademy-six-years-later/</link>
+      <pubDate>Fri, 14 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/devacademy-six-years-later/</guid>
+      <description>Cerner hires a lot of software engineers. In fact, we have hired over 1,600 engineers since our early career onboarding program, DevAcademy, went live almost six years ago. In particular, we use DevAcademy to onboard early career software engineers.
+DevAcademy is a three part onboarding program built by engineers for engineers. The first part of DevAcademy is DevEssentials which covers a lot of the basics new engineers need to know about development ecosystems in our development environment.</description>
+    </item>
+    
+    <item>
+      <title>ShipIt XIV</title>
+      <link>https://engineering.cerner.com/blog/shipit-xiv/</link>
+      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/shipit-xiv/</guid>
+      <description>It is winter time in Kansas City, which also included our fourteenth edition of ShipIt, our routine hackathon competition we host at Cerner Engineering. Although the snowy weather may have kept participants between the warm walls of our Innovations Campus, the winter storm did not disturb the initiative and enthusiasm of the fourteen participating teams. Check out the video below to hear from ShipIt Day participants and supporters as to why ShipIt Day has become an engineering-wide program that supports Cerner’s development culture.</description>
+    </item>
+    
+    <item>
+      <title>DevCon: A tech conference for engineering, by engineering</title>
+      <link>https://engineering.cerner.com/blog/devcon-recap/</link>
+      <pubDate>Fri, 08 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/devcon-recap/</guid>
+      <description>In 2010 a group of Cerner engineers went to their leadership with an idea: a Cerner tech conference just for the internal development community, built and run from the ground up. The idea for a conference like this had been brewing at Cerner for several years. It was seen as an opportunity to create a large scale, sharing and learning experience for associates in Cerner&amp;rsquo;s technical workforces.
+From the beginning, buy-in from leadership was essential for the conference to succeed.</description>
+    </item>
+    
+    <item>
+      <title>2^5 Coding Competition 2018</title>
+      <link>https://engineering.cerner.com/blog/2-to-the-5th-coding-competition-2018/</link>
+      <pubDate>Fri, 14 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/2-to-the-5th-coding-competition-2018/</guid>
+      <description>At Cerner, associates are always encouraged to develop tools and methods to improve their productivity. With this year&amp;rsquo;s theme being &amp;ldquo;Engineering Productivity,&amp;rdquo; Cerner&amp;rsquo;s fourth annual 2^5 Coding Competition provided associates another opportunity to dive into this subject and get involved in Cerner&amp;rsquo;s development culture.
+As usual, this year&amp;rsquo;s 2^5 Coding Competition was kicked off alongside Programmer&amp;rsquo;s Day festivities on September 13th. The competition lasts 32 days, and associates are encouraged to submit code every day.</description>
+    </item>
+    
+    <item>
+      <title>ShipIt XIII</title>
+      <link>https://engineering.cerner.com/blog/shipit-xiii/</link>
+      <pubDate>Fri, 16 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/shipit-xiii/</guid>
+      <description>What does it take to be awarded the ShipIt Day Golden Keyboard?    ShipIt Day XIII concluded last week after an intense 24-hours of brainstorming, building, and presenting. Various projects were completed by Cerner associates across twelve diverse organizations. ShipIt Day XIII&amp;rsquo;s projects were some of the most technically advanced this competition has ever seen.
+Awarding the Golden Keyboard is no easy job for our judges. Back in 2014, the trophy was created to provide the winning team with a memento that was unique and grew with the competition.</description>
+    </item>
+    
+    <item>
+      <title>Our DevCulture Team: Connecting Communities &amp; Empowering Teams to Invent the Future</title>
+      <link>https://engineering.cerner.com/blog/devculture-team/</link>
+      <pubDate>Wed, 07 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/devculture-team/</guid>
+      <description>The tech industry is constantly evolving; for better or worse, there&amp;rsquo;s no way around it. Now, more than ever, having a culture that fosters collaboration, empowers associates, and supports innovation is vital to a company&amp;rsquo;s success in the face of such constant change. However, an effective culture must be grown organically while being supported by senior leadership. At Cerner, we recognize the challenges involved in growing an effective, rewarding, and fun culture.</description>
+    </item>
+    
+    <item>
+      <title>Infusing a Culture of Cybersecurity within Cerner Engineering</title>
+      <link>https://engineering.cerner.com/blog/culture-of-cybersecurity/</link>
+      <pubDate>Mon, 29 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/culture-of-cybersecurity/</guid>
+      <description>With October being Cybersecurity Awareness month, we thought it would be a good time to reflect on some of the things we do in engineering to educate our associates and infuse security into our culture. We have over 28,000 associates worldwide supporting hundreds of solutions with millions of lines of code. Each associate has a specialization, such as software development, system support, and consulting. Keeping everyone up to date on the latest in security is a difficult task.</description>
+    </item>
+    
+    <item>
+      <title>Girl Scouts earn Cybersecurity Badge at Cerner</title>
+      <link>https://engineering.cerner.com/blog/girl-scouts-cybersecurity/</link>
+      <pubDate>Fri, 05 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/girl-scouts-cybersecurity/</guid>
+      <description>As a software engineering executive from Colombia, I thought that the best way to honor Hispanic Heritage Month (September 15-October 15) was to help the local Girl Scout Hispanic troops earn one of the new cybersecurity badges. October is Cybersecurity Awareness Month, having the activities nearing October seemed very fitting.
+Girl Scouts has been focusing on STEM badges for all ages with several new initiatives in the past couple of years.</description>
+    </item>
+    
+    <item>
+      <title>SSH Steps for Jenkins Pipeline</title>
+      <link>https://engineering.cerner.com/blog/ssh-steps-for-jenkins-pipeline/</link>
+      <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/ssh-steps-for-jenkins-pipeline/</guid>
+      <description>Pipeline-as-code or defining the deployment pipeline through code rather than manual job creation through UI, provides tremendous benefits for teams automating builds and deployment infrastructure across their environments.
+ Source of image
+   Jenkins Pipelines Jenkins is a well-known open source continuous integration and continuous deployment automation tool. With the latest 2.0 release, Jenkins introduced the Workflow plugin that implements Pipeline-as-code. This plugin lets you define delivery pipelines using concise scripts which deal elegantly with jobs involving persistence and asynchrony.</description>
+    </item>
+    
+    <item>
+      <title>ShipIt XII</title>
+      <link>https://engineering.cerner.com/blog/shipit-xii/</link>
+      <pubDate>Thu, 30 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/shipit-xii/</guid>
+      <description>This month we held our quarterly hackathon event- called ShipIt Day. We would like to thank all the participants for making ShipIt Day XII a huge success. With 75 participants, we had associates representing 13 different organizations across Cerner. These associates were given 24-hours to meet the requirements of this hackathon which included making something that was innovative, usable, and value-adding. As the clock ticked down, our associates worked in their teams to complete a project while taking some time to enjoy the fun activities happening throughout ShipIt day.</description>
+    </item>
+    
+    <item>
+      <title>Summer of Engineering Health: A Software Intern&#39;s Story</title>
+      <link>https://engineering.cerner.com/blog/summer-of-engineering-health-intern-story/</link>
+      <pubDate>Thu, 26 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/summer-of-engineering-health-intern-story/</guid>
+      <description>Pratik will be starting his Junior year at the University of Michigan this Fall studying Computer Science and Biomedical Engineering. This summer he’s a Software Intern on Cerner’s LightsOn Network team. This is the story of his summer experience:
+As a college student, it&amp;rsquo;s not every day that you get to work on cutting edge technology to transform healthcare as we know it. Every morning, I walk past a wall on the way to the elevator: &amp;ldquo;Health care is too important to stay the same.</description>
+    </item>
+    
+    <item>
+      <title>Scalable Data Science with FHIR</title>
+      <link>https://engineering.cerner.com/blog/data-engineering-with-bunsen/</link>
+      <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/data-engineering-with-bunsen/</guid>
+      <description>The FHIR standard started as a better way to exchange healthcare data, but it also provides a solid basis for deep analytics and Machine Learning at scale. This post looks at an example from the recent FHIR DevDays conference that does just that. You can also run the interactive FHIR data engineering tutorial used in the conference yourself.
+Our first step is to bring FHIR data into a data lake &amp;ndash; a computational environment where our analysis can easily and efficiently work through petabytes of data.</description>
+    </item>
+    
+    <item>
+      <title>Cerner&#39;s Open Source Contributions for Interoperability Developers</title>
+      <link>https://engineering.cerner.com/blog/cerners-open-source-contributions-for-interoperability-developers/</link>
+      <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/cerners-open-source-contributions-for-interoperability-developers/</guid>
+      <description>Open source and open standards encourage collaboration around innovation that advances the health care industry through improved interoperability. Developers across health care can come together and use open source code to share information, as well as develop and continually improve apps to support better health outcomes for patients.
+At Cerner, developing open platforms that support interoperability standards like SMART® and FHIR® is integral to our mission of transforming health care. In addition to implementing these standards in our platforms, we also participate in organizations like HL7 and the Argonaut Project to help shape and develop these standards.</description>
+    </item>
+    
+    <item>
+      <title>SREcon18 Recap</title>
+      <link>https://engineering.cerner.com/blog/srecon18-recap/</link>
+      <pubDate>Tue, 19 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/srecon18-recap/</guid>
+      <description>This past spring, I had the pleasure of attending SREcon18 in Santa Clara, California. If you have never heard about SREcon or the term SRE then let me diverge for a moment to describe. SRE, or Site Reliability Engineer, was coined by Google employees back in 2003 when a team of software engineers were tasked with running a production environment. It&amp;rsquo;s the new hotness in the technology world, so an internet search will turn up a bunch of topics.</description>
+    </item>
+    
+    <item>
+      <title>Say Hello to the 2018 Summer Interns</title>
+      <link>https://engineering.cerner.com/blog/say_hello_to_the_2018_summer_interns/</link>
+      <pubDate>Thu, 24 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/say_hello_to_the_2018_summer_interns/</guid>
+      <description>Throughout the month of May, teams across Cerner’s Engineering space have welcomed 197 software interns to our campuses in Kansas City and Malvern. Ranging from rising seniors in high school to rising seniors in college, these interns will be working alongside Cerner’s full time engineers to enhance and expand upon their current skillsets.
+While interning at Cerner, these associates will experience firsthand the look and feel of a day in the life of a full time software engineer.</description>
+    </item>
+    
+    <item>
+      <title>Code Reviews: There is a Better Way</title>
+      <link>https://engineering.cerner.com/blog/code-reviews-there-is-a-better-way/</link>
+      <pubDate>Tue, 08 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/code-reviews-there-is-a-better-way/</guid>
+      <description>At Cerner, peer review of code is an important job. We have found it to greatly improve the quality of code and improve a team’s knowledge of the codebase. Through code review discussions, newer engineers are able to learn on valuable areas to question or challenge when something is being changed. While we heavily embrace the practice of peer code review, we also recognize it can make an engineer’s life challenging when you are overwhelmed with code to review.</description>
+    </item>
+    
+    <item>
+      <title>ShipIt XI Day: Spring 2018</title>
+      <link>https://engineering.cerner.com/blog/shipit-xi-spring-2018/</link>
+      <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/shipit-xi-spring-2018/</guid>
+      <description>On March 8th and 9th, 17 teams of Cerner associates competed for the Golden Keyboard during our 11th ShipIt Day. During this 24-hour hackathon, associates were challenged to create something innovative, usable, and value-adding. This was the fourth ShipIt held at our new Innovations Campus, leveraging the wonderful collaborative spaces available.
+With Shipit XI, we expanded upon a time-honored tradition of this event, the traveling trophy Golden Keyboard.</description>
+    </item>
+    
+    <item>
+      <title>Cerner and iControl</title>
+      <link>https://engineering.cerner.com/blog/cerner-and-icontrol/</link>
+      <pubDate>Tue, 13 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/cerner-and-icontrol/</guid>
+      <description>At Cerner, we manage our own infrastructure and a big part of that is managing F5 load balancers. If you are a Ruby developer or a network engineer and regularly work with F5s, then I have good news! I&amp;rsquo;ve created a gem that abstracts iControl&amp;rsquo;s REST API. It makes working with the API easy to understand and eases the effort required to automate changes across many devices.
+1 2  api = IcontrolRest::Client.</description>
+    </item>
+    
+    <item>
+      <title>One Year Calling Innovations Home</title>
+      <link>https://engineering.cerner.com/blog/one-year-calling-innovations-home/</link>
+      <pubDate>Wed, 28 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/one-year-calling-innovations-home/</guid>
+      <description>One year ago this month, Cerner development associates in Kansas City moved into a new place to call home for their workdays, Innovations Campus. The first two towers that stand on this campus provide 805,000 square feet of workspace for more than 3,000 associates. Eventually, the campus will grow larger, including 16 buildings and 16,000 Cerner associates. As that growth approaches, it is important to reflect on what these first two towers represent for associates and their development careers at Cerner.</description>
+    </item>
+    
+    <item>
+      <title>ShipIt X Day: Winter 2017</title>
+      <link>https://engineering.cerner.com/blog/shipit-x-day-winter-2017/</link>
+      <pubDate>Mon, 19 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/shipit-x-day-winter-2017/</guid>
+      <description>On December 14th and 15th, 18 teams of Cerner associates competed for the Golden Trophy during our tenth ShipIt Day. Being this was our tenth, it was fun to reflect back on how this event started and how much it has grown.
+ It has been great to see ShipIt Days start from small hackathons organically run by individual teams to now an engineering-wide quarterly event that brings together engineers from disparate organizations, allowing for a better cross-pollination of ideas and team members.</description>
+    </item>
+    
+    <item>
+      <title>Cerner Open Sources its Kafka Utilities</title>
+      <link>https://engineering.cerner.com/blog/cerner-open-sources-its-kafka-utilities/</link>
+      <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/cerner-open-sources-its-kafka-utilities/</guid>
+      <description>At Cerner, we often make use of many open source projects in our infrastructure. I work on a team responsible for Cerner&amp;rsquo;s Ingestion Platform, a critical piece of infrastructure that takes in TBs of data and over a billion messages per day. The platform’s responsibility is then to make this data available for downstream teams to consume. When designing the Ingestion Platform, we felt Apache Kafka was perfect for ingesting and consuming these massive streams of data.</description>
+    </item>
+    
+    <item>
+      <title>Cerner and the SDLC</title>
+      <link>https://engineering.cerner.com/blog/cerner-and-the-sdlc/</link>
+      <pubDate>Tue, 23 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/cerner-and-the-sdlc/</guid>
+      <description>Cerner has a very compelling story that many want to learn from. Cerner’s Agile Champions are regular presenters at local, national, and global conferences. We routinely host calls and site visits for interested companies around the world who want to figure out how we were able to adopt Agile so quickly and sustain it so successfully.
+Despite our success, there has been a general feeling at the engineering leadership and Agile Champion tiers that we aren’t getting the benefits from Agile that we once were.</description>
+    </item>
+    
+    <item>
+      <title>2^5 Coding Competition 2017: 32 lines or less</title>
+      <link>https://engineering.cerner.com/blog/2-to-the-5th-coding-competition-2017/</link>
+      <pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/2-to-the-5th-coding-competition-2017/</guid>
+      <description>The Competition Part of Cerner&amp;rsquo;s engineering culture is to celebrate technology. This past fall, we had our annual celebration for Programmers’ Day. We celebrated the day with great food (taco bar and ice cream) and an evening of trivia.
+Topping off Programmers&amp;#39; Day with a taco bar and trivia night with @geekswhodrink pic.twitter.com/pSjqBVBHxK
+&amp;mdash; Cerner Engineering (@CernerEng) September 13, 2017  Happy Programmers&amp;#39; Day! Celebrating with an ice cream social. pic.</description>
+    </item>
+    
+    <item>
+      <title>Announcing Bunsen: FHIR Data with Apache Spark</title>
+      <link>https://engineering.cerner.com/blog/announcing-bunsen-fhir-data-with-apache-spark/</link>
+      <pubDate>Mon, 27 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/announcing-bunsen-fhir-data-with-apache-spark/</guid>
+      <description>We&amp;rsquo;re excited to open source Bunsen, a library to make analyzing FHIR data with Apache Spark simple and scalable. Bunsen encodes FHIR resources directly into Apache Spark&amp;rsquo;s native data structures. This lets users leverage well-defined FHIR data models directly within Spark SQL.
+Here&amp;rsquo;s a simple query against a table of FHIR observations that produces a table of heart rate values:
+spark.sql(&amp;#34;&amp;#34;&amp;#34; select subject.reference person_id, effectiveDateTime date_time, valueQuantity.value value from observations where in_valueset(code, &amp;#39;heart_rate&amp;#39;) &amp;#34;&amp;#34;&amp;#34;).</description>
+    </item>
+    
+    <item>
+      <title>Jwala Joins Cerner&#39;s Open Source</title>
+      <link>https://engineering.cerner.com/blog/jwala-joins-cerner-open-source/</link>
+      <pubDate>Wed, 27 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/jwala-joins-cerner-open-source/</guid>
+      <description>Introducing Jwala, a Resource Manager for the Apache Community Apache Tomcat and Apache httpd are hardened, scalable, and reliable open-source solutions. Widely adopted, these solutions are commonly used to host and load-balance Java applications.
+Configuring and managing a small set of elements is relatively easy, but once you start scaling out your application and platform, things get complicated. Questions such as &amp;ldquo;How do I update the heap or database pool-size across hundreds of Java Virtual Machines (JVMs)?</description>
+    </item>
+    
+    <item>
+      <title>Engineers Overseas for SMART and FHIR (FHIR DevDays 2016)</title>
+      <link>https://engineering.cerner.com/blog/engineers-overseas-for-smart-and-fhir/</link>
+      <pubDate>Thu, 21 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/engineers-overseas-for-smart-and-fhir/</guid>
+      <description>In a previous post, we discussed the need to provide education around our ecosystem and implementation of the FHIRⓇ and SMARTⓇ standards for developers and how we did so at our annual Cerner Health Conference. That same week, we were also a part of FHIR DevDays, which included a track entitled &amp;ldquo;Apps in the EHR.&amp;rdquo; We worked alongside track participants who were seeking to integrate their apps in a variety of EHRs, including Cerner.</description>
+    </item>
+    
+    <item>
+      <title>ShipIt IX Day: Summer 2017</title>
+      <link>https://engineering.cerner.com/blog/shipit-ix-day-summer-2017/</link>
+      <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/shipit-ix-day-summer-2017/</guid>
+      <description>There is no better way to end summer than with ShipIt Day! We kicked off our ninth ShipIt Day on August 10th, with more than 75 Cerner associates signed up. Nineteen different teams worked for 24 hours straight to complete their projects. For those unfamiliar with the event, ShipIt Day is a 24 hour hackathon for internal associates to create something innovative, usable, and value-adding. This was the second ShipIt held at our new Innovations Campus.</description>
+    </item>
+    
+    <item>
+      <title>Continuous Delivery for DC/OS with Spinnaker</title>
+      <link>https://engineering.cerner.com/blog/continuous-delivery-for-dcos-with-spinnaker/</link>
+      <pubDate>Fri, 08 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/continuous-delivery-for-dcos-with-spinnaker/</guid>
+      <description>Last fall our team (Mike Tweten, Trevin Teacutter, and Zameer Sura) started working on the problem of automating DC/OS deployments in a way that wouldn&amp;rsquo;t require multiple teams to duplicate effort and tie themselves directly to DC/OS APIs. While DC/OS certainly makes the act of deploying an application much easier than anything we&amp;rsquo;ve used previously, there are still many different ways you could choose to layer on deployment strategies and integrate with continuous delivery systems.</description>
+    </item>
+    
+    <item>
+      <title>Structure Matters: How Cerner Handled Too Much Health Data in HBase</title>
+      <link>https://engineering.cerner.com/blog/structure-matters-how-cerner-handled-too-much-health-data-in-hbase/</link>
+      <pubDate>Mon, 28 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/structure-matters-how-cerner-handled-too-much-health-data-in-hbase/</guid>
+      <description>Background In order to manage the health of populations, Cerner builds data-driven solutions built on top of its HealtheIntent℠ platform. The platform transforms and standardizes data across disparate health systems. The data is then used in algorithms that aid healthcare providers and hospitals in managing and monitoring health both at a person and population level.
+The Reference Record is one of the core components of the HealtheIntent platform. It represents the data known about a person&amp;rsquo;s health from a particular source of healthcare information.</description>
+    </item>
+    
+    <item>
+      <title>Managing Splunk&#39;s Knowledge</title>
+      <link>https://engineering.cerner.com/blog/managing-splunk-knowledge/</link>
+      <pubDate>Fri, 14 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/managing-splunk-knowledge/</guid>
+      <description>When we first were given access to Splunk we were excited about all the functionality it could provide our team to help us monitor and debug our applications. We created alerts to email us if our applications are logging errors, dashboards to show health or metrics of our services, and field extractions as well as tags to make searching easier. As we created more and more of these Splunk knowledge objects we started to have issues.</description>
+    </item>
+    
+    <item>
+      <title>You May Not Be a Polyglot, but Your Code Needs to Be</title>
+      <link>https://engineering.cerner.com/blog/you-may-not-be-a-polyglot-but-your-code-needs-to-be/</link>
+      <pubDate>Fri, 07 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/you-may-not-be-a-polyglot-but-your-code-needs-to-be/</guid>
+      <description>Last October, I had the privilege to speak at Grace Hopper, the world&amp;rsquo;s largest gathering of women technologists. It was impressive to see 15,000 fellow female technologists gather together to share their experiences and technical expertise. To look into the audience, and see a room full of other female engineers was a great experience!
+My talk was titled, You May Not Be a Polyglot, but Your Code Needs to Be (previously presented at Midwest.</description>
+    </item>
+    
+    <item>
+      <title>ShipIt VIII Day: Spring 2017</title>
+      <link>https://engineering.cerner.com/blog/shipit-day-viii-spring-2017/</link>
+      <pubDate>Wed, 17 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/shipit-day-viii-spring-2017/</guid>
+      <description>ShipIt Day VIII was held on April 20 and 21st. Seventeen teams made up of internal associates had just 24 hours to create something innovative, usable, and value-adding. This quarter&amp;rsquo;s ShipIt Day was held at our new Innovations Campus in the Link Conference Center. We were excited to get to utilize the space for this event. Another awesome addition to this quarter&amp;rsquo;s ShipIt Day was our new game rooms.</description>
+    </item>
+    
+    <item>
+      <title>Influencing the Young, Spanish-speaking Female Generation</title>
+      <link>https://engineering.cerner.com/blog/influencing-the-young-spanish-seaking-female-generation/</link>
+      <pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/influencing-the-young-spanish-seaking-female-generation/</guid>
+      <description>Outside of work, married couple Denisse Osorio de Large, a Cerner Director in Population Health Development, and Steven Large, a Cerner Senior Director in IP Development, are passionate about creating a younger generation that is passionate about technology and introducing them to the vast world of opportunities in software development. In addition to volunteering in the STEM community, helping organize Cerner’s development conference (DevCon), and speaking at conferences, Denisse and Steven enjoy working with children in the spanish-speaking community.</description>
+    </item>
+    
+    <item>
+      <title>Influyendo en una generación de jovencitas de habla hispana</title>
+      <link>https://engineering.cerner.com/blog/influyendo-en-una-generacion-de-jovencitas-de-habla-hispana/</link>
+      <pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/influyendo-en-una-generacion-de-jovencitas-de-habla-hispana/</guid>
+      <description>Cuando no están trabajando, Denisse Osorio de Large, Directora de Cerner en Desarrollo de Salud Poblacional y Steven Large, Director sénior de Desarrollo de IP, quienes están casados, tienen como pasión crear una generación joven motivada por la tecnología y mostrarle a la misma el amplio mundo de oportunidades existentes en el desarrollo de software. Además de dar su tiempo como voluntarios en la comunidad promotora del área de ciencias, tecnología, ingeniería y matemáticas (STEM), contribuyen a organizar la conferencia de desarrollo de Cerner (DevCon) y realizan presentaciones en conferencias, Denisse y Steven disfrutan trabajar con niños de la comunidad de habla hispana.</description>
+    </item>
+    
+    <item>
+      <title>One Cerner Style Icons: The future of icons at Cerner</title>
+      <link>https://engineering.cerner.com/blog/one-cerner-style-icons/</link>
+      <pubDate>Thu, 06 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/one-cerner-style-icons/</guid>
+      <description>One Cerner Style Icons (OCS Icons) are foundational UI elements required to produce a cohesive and consistent User Experience for Cerner Solutions. OCS Icons consist of a comprehensive icon library of platform agnostic assets which can be easily consumed by development teams.
+Why? The primary goal of this effort to elevate every aspect of the UI to create the best possible user experience. In order to do that, it is imperative to develop a system composed of strong design patterns and well-founded user research.</description>
+    </item>
+    
+    <item>
+      <title>Version Databag - A Chef Release Process</title>
+      <link>https://engineering.cerner.com/blog/version-databag-a-chef-release-process/</link>
+      <pubDate>Tue, 04 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/version-databag-a-chef-release-process/</guid>
+      <description>At Cerner, we use Chef. In fact, we&amp;rsquo;re heavily ingrained with Chef in our configuration management practices. We deploy services from Tomcat to Kafka with Chef. Even the first open source project we announced was a tool for Chef!
+With all of this integration with Chef, we need a simple way to manage all of those versions. This is where the Version Databag cookbook comes in. At a high level, this cookbook allows us to define our versions in a centralized data bag (grouped under conceptual units) and populates the corresponding node attributes required with those versions at runtime.</description>
+    </item>
+    
+    <item>
+      <title>Engineers on the Road for SMART and FHIR (CHC 2016)</title>
+      <link>https://engineering.cerner.com/blog/engineers-on-the-road-for-smart-and-fhir/</link>
+      <pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/engineers-on-the-road-for-smart-and-fhir/</guid>
+      <description>Over the past few years, Cerner has been developing a standards-based platform on top of our Cerner Millennium® EHR. Rather than roll our own API, we’ve been using the HL7® FHIR® standard. For app integration, we’ve been using the SMART® on FHIR specification. If you’re not immediately familiar with those acronyms, you’re definitely not alone.
+As we were developing the services, we were also fielding questions from 3rd party developers, answering a lot of questions internally, and trying to keep up with the specifications themselves.</description>
+    </item>
+    
+    <item>
+      <title>One Cerner Associate&#39;s Contributions in the Tech Industry</title>
+      <link>https://engineering.cerner.com/blog/micah-whitacre-recognition-blog/</link>
+      <pubDate>Thu, 16 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/micah-whitacre-recognition-blog/</guid>
+      <description>Background: Micah is currently a software architect in Population Health Development in Healthe Intent Development at Cerner. In 2013, Micah Whitacre received committer status on the Apache Crunch project, and is now a Project Management Committee (PMC) member of the project.
+How has Cerner been been involved in Apache Crunch? In 2012 and 2013, Cerner started using this project within several solutions. We also wanted to give back to the community and decided to invest time in helping answer questions and concerns, and overall project needs.</description>
+    </item>
+    
+    <item>
+      <title>Automated Deployment with Apache Kafka</title>
+      <link>https://engineering.cerner.com/blog/automated-deployment-with-apache-kafka/</link>
+      <pubDate>Thu, 16 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/automated-deployment-with-apache-kafka/</guid>
+      <description>It&amp;rsquo;s likely not a surprise that Cerner would use Apache Kafka as we have used a number of related technologies like Apache Hadoop along with its Map/Reduce, HDFS and even Apache HBase. Our team first started using Apache Kafka in 2014 when Kafka 0.8 first came out. Since then we&amp;rsquo;ve expanded to using Kafka for a number of different use cases (1, 2) and it has become a core piece of Cerner&amp;rsquo;s infrastructure.</description>
+    </item>
+    
+    <item>
+      <title>Beadledom - Simple Java framework for building REST APIs</title>
+      <link>https://engineering.cerner.com/blog/beadledom-simple-java-framework-for-building-rest-apis/</link>
+      <pubDate>Wed, 15 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/beadledom-simple-java-framework-for-building-rest-apis/</guid>
+      <description>Beadledom is a framework for building Java based web services. It bundles several open sourced components required for building JAX-RS services.
+Why? HealtheIntent, Cerner’s population health management platform, started 3.5 years ago. We went through the process of investigating different technologies for the platform. We decided on using Java for building services and arrived on a set of libraries that we believed work well together.
+The long history of Java has led to an ocean of libraries that are available to Java developers.</description>
+    </item>
+    
+    <item>
+      <title>ShipIt VII Day: Winter 2016</title>
+      <link>https://engineering.cerner.com/blog/shipit-vii-day-winter-2016/</link>
+      <pubDate>Wed, 18 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/shipit-vii-day-winter-2016/</guid>
+      <description>Cerner’s 7th ShipIt Day took place on December 8th and 9th. ShipIt is a 24-hour hackathon with the goal of building something awesome, usable, and value-adding within a single day. The event was hosted at our DevCenter in the Realization Campus, a large open space that hosts our DevAcademy (to learn more about our DevAcademy, check out this earlier post). We had 18 teams made up of associates from different Cerner organizations.</description>
+    </item>
+    
+    <item>
+      <title>Alan and Grace: An Origin Story</title>
+      <link>https://engineering.cerner.com/blog/alan-and-grace-an-origin-story/</link>
+      <pubDate>Wed, 23 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/alan-and-grace-an-origin-story/</guid>
+      <description>Meet Alan and Grace. These lighthearted, 8-bit characters were nominated in early 2014 to become the iconic mascots of Engineering at Cerner. Have you ever wondered who these 80’s video gaming inspired characters on our Engineering t-shirts are? Why were they chosen as mascots? What do they represent? The countless hours spent pondering these questions will be no more. Pull up a chair as we dive into the mystery behind the dynamic duo known as Alan and Grace.</description>
+    </item>
+    
+    <item>
+      <title>Clara Rules joins Cerner&#39;s open source</title>
+      <link>https://engineering.cerner.com/blog/clara-rules-joins-cerner-open-source/</link>
+      <pubDate>Fri, 11 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/clara-rules-joins-cerner-open-source/</guid>
+      <description>Sometimes a small experiment on the side can grow into something valuable. We at Cerner have long used forward-chaining rules engines to express and execute clinical knowledge, but we’ve also had to extend or work around the capabilities of such engines. Engines targeting business users just weren’t expressive enough to model some of our logic. To meet this need we are making Clara Rules an open source project driven by Cerner Engineering.</description>
+    </item>
+    
+    <item>
+      <title>Fall 2016 ShipIt Day</title>
+      <link>https://engineering.cerner.com/blog/fall-2016-shipit-day/</link>
+      <pubDate>Tue, 08 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/fall-2016-shipit-day/</guid>
+      <description>Another ShipIt Day was held on September 8th-9th at the Realization Campus at Cerner. ShipIt is a 24-hour hackathon with the goal of building something awesome, usable, and value-adding within a single day. This fall marked our sixth ShipIt, which has has grown significantly since our first event.
+   The event kicked off in the morning at the auditorium of our Realization campus. At this point, teams were already formed, instructions were given, and shirts were handed out.</description>
+    </item>
+    
+    <item>
+      <title>RailsConf 2016 Recap</title>
+      <link>https://engineering.cerner.com/blog/railsconf-2016-recap/</link>
+      <pubDate>Thu, 19 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/railsconf-2016-recap/</guid>
+      <description>At Cerner, we love Ruby and Rails and use it prominently in our cloud based solutions. When we found out RailsConf 2016 was going to be held in the hometown of Cerner&amp;rsquo;s headquarters in Kansas City, Missouri, we were excited for the opportunity to support the conference by attending as well as being a sponsor and hosting one of the official after parties.
+   RailsConf 2016 took place in the heart of downtown Kansas City.</description>
+    </item>
+    
+    <item>
+      <title>Spring 2016 ShipIt Day</title>
+      <link>https://engineering.cerner.com/blog/spring-2016-shipit-day/</link>
+      <pubDate>Mon, 18 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/spring-2016-shipit-day/</guid>
+      <description>ShipIt Day is an all day, all night hackathon with the goal of building something awesome, usable, and value-adding within the given 24 hours. This Spring marked our fifth ShipIt Day, with participation and reach growing with each event.
+We kicked off the event at 10 AM on Thursday, when teams broke out and got to work and stopped only for food and caffeine. Many stayed until a few hours after dinner arrived, several stayed all night and took naps in their workspace, and a few worked through the whole night.</description>
+    </item>
+    
+    <item>
+      <title>Deploying Web Services with Apache Tomcat and Chef</title>
+      <link>https://engineering.cerner.com/blog/deploying-web-services-with-apache-tomcat-and-chef/</link>
+      <pubDate>Thu, 04 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/deploying-web-services-with-apache-tomcat-and-chef/</guid>
+      <description>Open source is an important part of our engineering culture and we love when we’re able to contribute back to the community. We recently open sourced our Tomcat Chef Cookbook, which we use to automate deploying many of our web services here at Cerner. The cookbook is meant to be simple, yet flexible enough to change most anything about Apache Tomcat to your liking. It supports installing any version of Tomcat, configuring any file within the Tomcat installation and deploying web applications.</description>
+    </item>
+    
+    <item>
+      <title>Girls in Technology Movement - Hour of Code</title>
+      <link>https://engineering.cerner.com/blog/girls-in-technology-movement-hour-of-code/</link>
+      <pubDate>Wed, 20 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/girls-in-technology-movement-hour-of-code/</guid>
+      <description>As a female Software Engineer, I know the benefits of having other females in the field to fellowship with as well as the benefits of early exposure to coding and the technology field. The Girls in Technology Movement Hour of Code event held December 9th, 2015 at Cerner’s Innovation Campus was a great opportunity for girls from nearby schools to gather and hear a little about the technology industry, the opportunities available for their future, meet some women in the industry, and get a hands-on introduction to coding.</description>
+    </item>
+    
+    <item>
+      <title>Identifying Network ACL Issues with Chef Locally</title>
+      <link>https://engineering.cerner.com/blog/identifying-network-acl-issues-with-chef-locally/</link>
+      <pubDate>Tue, 17 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/identifying-network-acl-issues-with-chef-locally/</guid>
+      <description>At Cerner, we use Chef to automate our deployments across a very large distributed system comprised of many thousands of nodes. While we employ ServerSpec and Test Kitchen extensively to test our Chef recipes, this still doesn&amp;rsquo;t identify all possible failure scenarios. In a large distributed system such as ours, we occasionally run into connectivity failures between machines due to network ACL issues. This could be due to a variety of reasons.</description>
+    </item>
+    
+    <item>
+      <title>JavaScript Logging: We can do better!</title>
+      <link>https://engineering.cerner.com/blog/javascript-logging-we-can-do-better/</link>
+      <pubDate>Mon, 20 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/javascript-logging-we-can-do-better/</guid>
+      <description>Currently in the world of JavaScript these options are what we most commonly use to generate logs:
+ console.log console.info console.warn console.error  These are actually pretty good in most modern browsers. Even if you go back to Internet Explorer 8 console.log and friends work as long as you have the developer tools open.
+Given that we have these logging utilities what is the problem with using them? When in local development these are just fine for helping debug and speed up development.</description>
+    </item>
+    
+    <item>
+      <title>Managing 30,000 Logging Events per Day with Splunk</title>
+      <link>https://engineering.cerner.com/blog/managing-30000-logging-events-per-day-with-splunk/</link>
+      <pubDate>Thu, 29 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/managing-30000-logging-events-per-day-with-splunk/</guid>
+      <description>Our team works on a patient facing web application with a thousand live clients with 2,315,000+ users. On an average, the high traffic results into more than 40,000 visits and 300,000 page views daily generating about 30,000 logging events. A considerable portion of these events are of information and warning level in order to aid proactive monitoring or identify potential issues due to clients’ misconfiguration.
+Before Splunk To handle this large volume of logging, our team created a rotational support role to manually monitor the logs at regular intervals daily.</description>
+    </item>
+    
+    <item>
+      <title>Cerner and the Apache Software Foundation</title>
+      <link>https://engineering.cerner.com/blog/cerner-and-the-apache-software-foundation/</link>
+      <pubDate>Tue, 28 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/cerner-and-the-apache-software-foundation/</guid>
+      <description>At the beginning of this year, [we announced that Cerner became a bronze-level sponsor]({%post_url 2014-01-28-sponsoring-the-apache-software-foundation%}) of the non-profit Apache Software Foundation (ASF). Many of the open source projects we use and contribute to are under the ASF umbrella, so supporting the mission and work of the ASF is important to us.
+We&amp;rsquo;re happy to announce that Cerner has now increased our sponsorship of the ASF to become a silver-level sponsor. Open source continues to play an integral role in both our architecture and engineering culture.</description>
+    </item>
+    
+    <item>
+      <title>Closures &amp; Currying in JavaScript</title>
+      <link>https://engineering.cerner.com/blog/closures-and-currying-in-javascript/</link>
+      <pubDate>Mon, 29 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/closures-and-currying-in-javascript/</guid>
+      <description>Preface I have been asked many times what closures are and how they work. There are many resources available to learn this concept, but they are not always clear to everyone. This has led me to put together my own approach to exchanging the information.
+I will supply code samples. //&amp;gt; denotes an output or return.
+Before discussing closures, it is important to review how functions work in JavaScript.
+Introduction to functions If a function does not have a return statement, it will implicitly return undefined, which brings us to the simplest functions.</description>
+    </item>
+    
+    <item>
+      <title>Intern HackFest 2014</title>
+      <link>https://engineering.cerner.com/blog/intern-hackfest-2014/</link>
+      <pubDate>Mon, 08 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/intern-hackfest-2014/</guid>
+      <description>Ten teams of two to four Cerner interns competed in a week-long HackFest this summer, working to solve any problem they put their minds to. This competition cumulated in a presentation and judging of projects, with prizes of Raspberry Pi Kits for each member of the second place team and Leap Motions for each member of the winning team. From mobile apps, to machine learning algorithms, to drones…this year’s Summer Intern HackFest has been one for the books.</description>
+    </item>
+    
+    <item>
+      <title>The Plain Text is a Lie</title>
+      <link>https://engineering.cerner.com/blog/the-plain-text-is-a-lie/</link>
+      <pubDate>Sat, 02 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/the-plain-text-is-a-lie/</guid>
+      <description>There is no such thing as plain text &amp;ldquo;But I see .txt files all the time&amp;rdquo; you say. &amp;ldquo;My source code is plain text&amp;rdquo; you claim. &amp;ldquo;What about web pages?!&amp;rdquo; you frantically ask. True, each of those things is comprised of text. The plain part is the problem. Plain denotes default or normal. There is no such thing. Computers store and transmit data in a number of methods; each are anything but plain.</description>
+    </item>
+    
+    <item>
+      <title>ShipIt - 24-hour hackathon for Millennium&#43; Platform Dev</title>
+      <link>https://engineering.cerner.com/blog/shipit-hackathon-mplus/</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/shipit-hackathon-mplus/</guid>
+      <description>At the end of March, some of our teams held their first 24-hour hackathon, titled ShipIt: Millennium+ Services FedEx Day. We had 41 participants, in 15 teams working on 15 unique projects. The idea was inspired by several teams spending a few hours every so often to work on different projects. After reading about Atlassian’s hack days, we decided to hold one.
+The event was initially announced early in February, to give teams time to work this into their project plans.</description>
+    </item>
+    
+    <item>
+      <title>Scaling People with Apache Crunch</title>
+      <link>https://engineering.cerner.com/blog/scaling-people-with-apache-crunch/</link>
+      <pubDate>Fri, 09 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/scaling-people-with-apache-crunch/</guid>
+      <description>Starting the Big Data Journey When a company first starts to play with Big Data it typically involves a small team of engineers trying to solve a specific problem. The team decides to experiment with scalable technologies either due to outside guidance or research which makes it applicable to their problem. The team begins with the basics of Big Data spending time learning and prototyping. They learn about HDFS, flirt with HBase or other NoSQL, write the required WordCount example, and start to figure out how the technologies can fit their needs.</description>
+    </item>
+    
+    <item>
+      <title>Migrating from Eclipse 3.X to Eclipse 4.X - The iAware Story</title>
+      <link>https://engineering.cerner.com/blog/migrating-from-eclipse-3.x-to-eclipse-4.x-the-iaware-story/</link>
+      <pubDate>Tue, 18 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/migrating-from-eclipse-3.x-to-eclipse-4.x-the-iaware-story/</guid>
+      <description>This is the blog form of the talk Migrating from Eclipse 3.X to Eclipse 4.X - The iAware Story at EclipseCon 2014.
+The iAware development team was formed in late 2007 and in a little under six months we developed our first solution, CareAware CriticalCare, a dashboard application written using the Eclipse RCP targeted for use in ICU settings. The goal of this application was to provide clinicians with a complete picture of the patient’s status and to do it in a manner that was contextually relevant; meaning that related information was presented together.</description>
+    </item>
+    
+    <item>
+      <title>Sponsoring the Apache Software Foundation</title>
+      <link>https://engineering.cerner.com/blog/sponsoring-the-apache-software-foundation/</link>
+      <pubDate>Tue, 28 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/sponsoring-the-apache-software-foundation/</guid>
+      <description>Open source plays an integral role within engineering at Cerner. In addition to using open source software throughout our architecture, we recently released a few projects back to the community via our Github organization.
+Today, we’re happy to announce that Cerner is now a sponsor of the non-profit Apache Software Foundation (ASF). The ASF is home to several projects that are essential components in many of our systems. We’ve blogged previously about several of these projects: Hadoop, HBase, Crunch, Maven, and Storm.</description>
+    </item>
+    
+    <item>
+      <title>The Raft Protocol: A Better Paxos?</title>
+      <link>https://engineering.cerner.com/blog/the-raft-protocol-a-better-paxos/</link>
+      <pubDate>Fri, 24 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/the-raft-protocol-a-better-paxos/</guid>
+      <description>Among the many compelling talks that attendees come to expect every year at the Strange Loop conference was a session given by Ben Johnson that provided an overview of a new distributed consensus protocol originating from research at Stanford University, named Raft.
+What is distributed consensus? Distributed consensus can be described as the act of reaching agreement among a collection of machines cooperating to solve a problem. With the rise of open source distributed computing and storage platforms, consensus algorithms have become essential tools for replication, and thus, serve to enhance resiliency by eliminating single points of failure.</description>
+    </item>
+    
+    <item>
+      <title>Cerner and Open Source</title>
+      <link>https://engineering.cerner.com/blog/cerner-and-open-source/</link>
+      <pubDate>Thu, 16 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/cerner-and-open-source/</guid>
+      <description>(This post was written by Nathan Beyer, Bryan Baugher and Jacob Williams.)
+The use of open source software has become nearly ubiquitous in contemporary software development and it is no different for us, here at Cerner. We have been using open source software, directly and indirectly, for decades. Over the past decade, we’ve grown in maturity both in our use of open source software as well as our participation in open source communities.</description>
+    </item>
+    
+    <item>
+      <title>Cerner Tech Talks</title>
+      <link>https://engineering.cerner.com/blog/cerner-tech-talks/</link>
+      <pubDate>Tue, 12 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/cerner-tech-talks/</guid>
+      <description>We are always looking for ways to share knowledge and learn new things within engineering at Cerner. Whether that be through meetups, lunch &amp;amp; learns, conferences, or DevCon, we have a variety of outlets available to us.
+Today, we’re announcing a new program we recently launched: Cerner Tech Talks.
+Cerner Tech Talks brings in great speakers for talks that would be of interest to engineers at Cerner. These talks will be held periodically and will vary widely in their content.</description>
+    </item>
+    
+    <item>
+      <title>2013 Software Intern Hackfest</title>
+      <link>https://engineering.cerner.com/blog/software-intern-hackfest/</link>
+      <pubDate>Mon, 11 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/software-intern-hackfest/</guid>
+      <description>Providing opportunities for students to gain experience in software development and grow the skills necessary to excel in their careers after graduation is a top priority for Cerner Engineering. Our annual Software Intern Program gives students insight into the design, implementation, testing, deployment, and maintenance of large-scale software projects, which are often beyond the scope of the typical academic experience.
+In 2013, we had a total of 224 interns across all business segments with 107 placed into the Software Intern Program to grow their experience as Software Engineers.</description>
+    </item>
+    
+    <item>
+      <title>Project Lead the Way</title>
+      <link>https://engineering.cerner.com/blog/project-lead-the-way/</link>
+      <pubDate>Wed, 11 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/project-lead-the-way/</guid>
+      <description>Improving the state of healthcare through innovation requires investing in others to join you on the journey; not just for today, but for the decades to come.
+   Project Lead the Way has established the Computer Science and Software Enginering course that teaches computational thinking to high school students, and it will pilot in 60 schools across the country this fall. Providing exposure to a wide variety of computational and computer science concepts, students can program a story or game in Scratch, write a mobile application for Android, and learn about knowledge discovery and data mining, computer simulation, cybersecurity, GUI programming, web development, version control, and agile software development.</description>
+    </item>
+    
+    <item>
+      <title>DevCon</title>
+      <link>https://engineering.cerner.com/blog/devcon/</link>
+      <pubDate>Mon, 26 Aug 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/devcon/</guid>
+      <description>This past June, 2,500 associates from across Cerner came together for DevCon, our internal developers conference. Now in its 3rd year, DevCon is a two-day, engineering-led conference that was created to bring together Cerner associates involved in all aspects of development and technology. DevCon is organized and run like many other developer conferences, complete with a call for papers and a talk selection committee. This year, we had 80 talks covering a wide array of topics such as big data, user experience and design, DevOps, and mobile development.</description>
+    </item>
+    
+    <item>
+      <title>DevAcademy</title>
+      <link>https://engineering.cerner.com/blog/devacademy/</link>
+      <pubDate>Wed, 14 Aug 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/devacademy/</guid>
+      <description>When I graduated from college, I thought I understood what it meant to develop software in the real world. It required process. It required troubleshooting. It required quality. However, to me, process meant waterfall. Troubleshooting meant trying a few things and then asking for help. Quality meant manual testing.
+Agile methods were not unheard of when I graduated in 2001. My professors noted that iterative development was better than waterfall; they just only taught waterfall.</description>
+    </item>
+    
+    <item>
+      <title>The 30 Days of Code Experiment</title>
+      <link>https://engineering.cerner.com/blog/the-30-days-of-code-experiment/</link>
+      <pubDate>Tue, 06 Aug 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/the-30-days-of-code-experiment/</guid>
+      <description>In software development, we solve problems. As we solve these problems, we build connections in our minds of how to look at a problem, relate it to previous problems and solutions, and re-apply past approaches and techniques.
+These behavior habits build dogmatic ways of thinking and limit design choices to selective technologies we’ve used in the past. As we all know, you have to continually learn new technologies and different ways of thinking to stay current in the ever-changing landscape of software development.</description>
+    </item>
+    
+    <item>
+      <title>Thinking in MapReduce</title>
+      <link>https://engineering.cerner.com/blog/thinking-in-mapreduce/</link>
+      <pubDate>Wed, 31 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/thinking-in-mapreduce/</guid>
+      <description>This is the blog form of the Thinking in MapReduce talk at StampedeCon 2013. I’ve linked to existing resources for some items discussed in the talk, but the structure and major points are here.
+We programmers have had it pretty good over the years. In almost all cases, hardware scaled up faster than data size and complexity. Unfortunately, this is changing for many of us. Moore&amp;rsquo;s Law has taken on a new direction; we gain power with parallel processing rather than faster clock cycles.</description>
+    </item>
+    
+    <item>
+      <title>FIRST Robotics Championship Competition in St. Louis</title>
+      <link>https://engineering.cerner.com/blog/first-robotics-championship-competition-in-st-louis/</link>
+      <pubDate>Tue, 23 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/first-robotics-championship-competition-in-st-louis/</guid>
+      <description>Cerner places a high value on talent development programs offering students the experience to build practical and tangible skills for the modern work environment. As part of this focus, Cerner supports FIRST Robotics, a competition providing experience in software engineering, where students learn to deal with complexity, time constraints, quality, and technical communications. Sound familiar? I wish they had this program when I was a kid!
+High school students from Kansas City will be testing their minds, willpower, and teamwork in this global robotics championship competition April 24-27 in St Louis, Missouri.</description>
+    </item>
+    
+    <item>
+      <title>Learn what the rules don&#39;t cover</title>
+      <link>https://engineering.cerner.com/blog/learn-what-the-rules-dont-cover/</link>
+      <pubDate>Fri, 19 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/learn-what-the-rules-dont-cover/</guid>
+      <description>Most technical problems are like games. All of them have a way to win and all of them have rules; the easiest way to ensure you always win is to learn the rules inside and out, and more importantly what the rules don’t cover! Paying attention to what the rules don’t cover is what leads to out of the box thinking. What sets the great players apart from the rest is learning what the rules don’t cover which allows for creativity and, sometimes, shortcuts.</description>
+    </item>
+    
+    <item>
+      <title>Ruby at Cerner</title>
+      <link>https://engineering.cerner.com/blog/ruby-at-cerner/</link>
+      <pubDate>Fri, 05 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/ruby-at-cerner/</guid>
+      <description>Cerner&amp;rsquo;s journey with Ruby started in the summer of 2009. We selected Ruby on Rails for rapid development of the Cerner Store to prepare for release at the Cerner Health Conference that year. In three months, with three engineers and a designer, we wrote and released the first version of an e-commerce web application. Two of those engineers, including me, had never worked with Ruby before but quickly realized the power and expressiveness of the language due to resources like Why&amp;rsquo;s (Poignant) Guide to Ruby.</description>
+    </item>
+    
+    <item>
+      <title>Cerner and Tycho</title>
+      <link>https://engineering.cerner.com/blog/cerner-and-tycho/</link>
+      <pubDate>Wed, 27 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/cerner-and-tycho/</guid>
+      <description>Introduction Tycho is a build tool for integration between PDE and Maven. Cerner has a long history of working with Eclipse RCP but P2 integration is something of a more recent phenomenon. This post is going to talk about how Cerner is using Tycho, what prompted our transition to Tycho and how we accomplished moving our build to using Tycho.
+Why we use Tycho The first question when evaluating any tool is asking yourself: &amp;ldquo;why would I use that&amp;rdquo;?</description>
+    </item>
+    
+    <item>
+      <title>Near Real-time Processing Over Hadoop and HBase</title>
+      <link>https://engineering.cerner.com/blog/near-real-time-processing-over-hadoop-and-hbase/</link>
+      <pubDate>Wed, 27 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/near-real-time-processing-over-hadoop-and-hbase/</guid>
+      <description>From MapReduce to realtime This post covers much of the Near-Realtime Processing Over HBase talk I’m giving at ApacheCon NA 2013 in blog form. It also draws from the Hadoop, HBase, and Healthcare talk from StrataConf/Hadoop World 2012.
+The first significant use of Hadoop at Cerner came in building search indexes for patient charts. While creation of simple search indexes is almost commoditized, we wanted a better experience based on clinical semantics.</description>
+    </item>
+    
+    <item>
+      <title>Composable MapReduce with Hadoop and Crunch</title>
+      <link>https://engineering.cerner.com/blog/composable-mapreduce-with-hadoop-and-crunch/</link>
+      <pubDate>Sun, 03 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/composable-mapreduce-with-hadoop-and-crunch/</guid>
+      <description>Most developers know this pattern well: we design a set of schemas to represent our data, and then work with that data via a query language. This works great in most cases, but becomes a challenge as data sets grow to an arbitrary size and complexity. Data sets can become too large to query and update with conventional means.
+These challenges often arise with Hadoop, simply because Hadoop is a popular tool to tackle such data sets.</description>
+    </item>
+    
+  </channel>
+</rss>

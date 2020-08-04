@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>splunk on Engineering Health</title>
+    <link>https://engineering.cerner.com/tags/splunk/</link>
+    <description>Recent content in splunk on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Fri, 14 Jul 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/tags/splunk/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Managing Splunk&#39;s Knowledge</title>
+      <link>https://engineering.cerner.com/blog/managing-splunk-knowledge/</link>
+      <pubDate>Fri, 14 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/managing-splunk-knowledge/</guid>
+      <description>When we first were given access to Splunk we were excited about all the functionality it could provide our team to help us monitor and debug our applications. We created alerts to email us if our applications are logging errors, dashboards to show health or metrics of our services, and field extractions as well as tags to make searching easier. As we created more and more of these Splunk knowledge objects we started to have issues.</description>
+    </item>
+    
+  </channel>
+</rss>

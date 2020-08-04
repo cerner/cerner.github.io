@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ingestion on Engineering Health</title>
+    <link>https://engineering.cerner.com/tags/ingestion/</link>
+    <description>Recent content in ingestion on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Tue, 06 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/tags/ingestion/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cerner Open Sources its Kafka Utilities</title>
+      <link>https://engineering.cerner.com/blog/cerner-open-sources-its-kafka-utilities/</link>
+      <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/cerner-open-sources-its-kafka-utilities/</guid>
+      <description>At Cerner, we often make use of many open source projects in our infrastructure. I work on a team responsible for Cerner&amp;rsquo;s Ingestion Platform, a critical piece of infrastructure that takes in TBs of data and over a billion messages per day. The platform’s responsibility is then to make this data available for downstream teams to consume. When designing the Ingestion Platform, we felt Apache Kafka was perfect for ingesting and consuming these massive streams of data.</description>
+    </item>
+    
+  </channel>
+</rss>

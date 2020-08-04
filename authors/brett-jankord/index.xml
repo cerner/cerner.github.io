@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Brett Jankord on Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/brett-jankord/</link>
+    <description>Recent content in Brett Jankord on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Fri, 25 Oct 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/authors/brett-jankord/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Terra UI: A Health-Care focused UI Component Library</title>
+      <link>https://engineering.cerner.com/blog/terra-ui/</link>
+      <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/terra-ui/</guid>
+      <description>Back in 2013, like most other companies, Cerner was heavily invested in building user interfaces with Twitter Bootstrap. Around that time, Dave Rupert wrote about the concept of Responsive Deliverables and touched on a key concept, creating “Tiny Bootstraps, for Every Client”. Along with this, Brad Frost had started promoting the idea of Atomic Design. We saw a lot of value in these ideas and saw that we needed to evolve how we were developing UI at Cerner.</description>
+    </item>
+    
+  </channel>
+</rss>

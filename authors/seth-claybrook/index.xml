@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Seth Claybrook on Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/seth-claybrook/</link>
+    <description>Recent content in Seth Claybrook on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Thu, 06 Apr 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/authors/seth-claybrook/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>One Cerner Style Icons: The future of icons at Cerner</title>
+      <link>https://engineering.cerner.com/blog/one-cerner-style-icons/</link>
+      <pubDate>Thu, 06 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/one-cerner-style-icons/</guid>
+      <description>One Cerner Style Icons (OCS Icons) are foundational UI elements required to produce a cohesive and consistent User Experience for Cerner Solutions. OCS Icons consist of a comprehensive icon library of platform agnostic assets which can be easily consumed by development teams.
+Why? The primary goal of this effort to elevate every aspect of the UI to create the best possible user experience. In order to do that, it is imperative to develop a system composed of strong design patterns and well-founded user research.</description>
+    </item>
+    
+  </channel>
+</rss>

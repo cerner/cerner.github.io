@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jake Kramer on Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/jake-kramer/</link>
+    <description>Recent content in Jake Kramer on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Fri, 14 Jun 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/authors/jake-kramer/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>DevAcademy Six Years Later</title>
+      <link>https://engineering.cerner.com/blog/devacademy-six-years-later/</link>
+      <pubDate>Fri, 14 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/devacademy-six-years-later/</guid>
+      <description>Cerner hires a lot of software engineers. In fact, we have hired over 1,600 engineers since our early career onboarding program, DevAcademy, went live almost six years ago. In particular, we use DevAcademy to onboard early career software engineers.
+DevAcademy is a three part onboarding program built by engineers for engineers. The first part of DevAcademy is DevEssentials which covers a lot of the basics new engineers need to know about development ecosystems in our development environment.</description>
+    </item>
+    
+  </channel>
+</rss>

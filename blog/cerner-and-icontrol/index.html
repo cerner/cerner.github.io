@@ -1,428 +1,387 @@
-
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Cerner and iControl - Engineering Health</title>
-  <meta name="author" content="Cerner">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+<title>
   
-  <meta name="description" content="">
+     Cerner and iControl | 
+    Engineering Health
   
+</title><meta name="description" content="a blog by engineers, for engineers"><meta name="author" content="Jerrod Carpenter">
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.png">
 
-  
-  <link rel="canonical" href="http://engineering.cerner.com/blog/cerner-and-icontrol">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/stylesheets/site/site.css" media="screen, projection" rel="stylesheet" type="text/css">
 
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <script src="/javascripts/libs/bootstrap.min.js"></script>
+    
+        
+            <link rel="stylesheet" href="/dist/main.8ddb5a998657440f326d.min.css">
+        
+    
 
-  <link href="/atom.xml" rel="alternate" title="Engineering Health" type="application/atom+xml">
-  <script src="/javascripts/search.min.js" type="text/javascript" charset="utf-8"></script>
-  
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-37701128-1']);
-    _gaq.push(['_trackPageview']);
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
 
+
+<link rel="canonical" href="https://engineering.cerner.com/blog/cerner-and-icontrol/"><script src="/js/jquery-3.5.1.min.js"></script><meta property="og:title" content="Cerner and iControl" />
+<meta property="og:description" content="At Cerner, we manage our own infrastructure and a big part of that is managing F5 load balancers. If you are a Ruby developer or a network engineer and regularly work with F5s, then I have good news! I&rsquo;ve created a gem that abstracts iControl&rsquo;s REST API. It makes working with the API easy to understand and eases the effort required to automate changes across many devices.
+1 2  api = IcontrolRest::Client." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://engineering.cerner.com/blog/cerner-and-icontrol/" />
+<meta property="article:published_time" content="2018-03-13T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-03-13T00:00:00+00:00" />
+<meta itemprop="name" content="Cerner and iControl">
+<meta itemprop="description" content="At Cerner, we manage our own infrastructure and a big part of that is managing F5 load balancers. If you are a Ruby developer or a network engineer and regularly work with F5s, then I have good news! I&rsquo;ve created a gem that abstracts iControl&rsquo;s REST API. It makes working with the API easy to understand and eases the effort required to automate changes across many devices.
+1 2  api = IcontrolRest::Client.">
+<meta itemprop="datePublished" content="2018-03-13T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-03-13T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="373">
+
+
+
+<meta itemprop="keywords" content="engineering,big-ip,f5," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Cerner and iControl"/>
+<meta name="twitter:description" content="At Cerner, we manage our own infrastructure and a big part of that is managing F5 load balancers. If you are a Ruby developer or a network engineer and regularly work with F5s, then I have good news! I&rsquo;ve created a gem that abstracts iControl&rsquo;s REST API. It makes working with the API easy to understand and eases the effort required to automate changes across many devices.
+1 2  api = IcontrolRest::Client."/>
 
 </head>
-
-<body  class="top-navbar  ">
-  
-
-
-
-<header id="banner" role="banner" class="container-fluid banner-kc-background">
-
-  <div class="image">
-
+<body>
     
-      <img src="/images/KC.png" alt="Kansas City" />
-    
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-sm" id="navbar-main-menu">
+    <div class="container">
+        <a class="navbar-brand" href="/"><img src="/cerner-logo.png"/></a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="main-menu" class="collapse navbar-collapse" >
+            <ul class="nav navbar-nav ml-auto">
+                
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/culture/">Culture</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/open-source/">Open Source</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/tech-talks/">Tech Talks</a></li>
+                
+            
+            </ul>
+            
+            <div class="form-inline my-2 my-lg-0 searchbox">
+    <input id="search-by" type="search" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
+</div>
 
-    <div id="header1">Engineering Health<br/><span class="header2">A <b>Cerner</b> Blog</span></div>
-
-  </div>
-  <nav class="navbar navbar-inverse" role="navigation">
-  <div class="container">
-    <div class="navbar-inner">
-      <a class="brand" href="#">Engineering Health</a>
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li class="selected">
-            <a href="/">Blog</a>
-          </li>
-          <li >
-            <a href="/culture">Culture</a>
-          </li>
-          <li >
-            <a href="/tech_talks">Tech Talks</a>
-          </li>
-          <li >
-            <a href="/open_source">Open Source</a>
-          </li>
-          <li >
-            <a href="/blog/archives">Archives</a>
-          </li>
-        </ul>
-        <div id="search" class="pull-right">
-          <form action="/search" method="get" class="navbar-search">
-            <input type="text" id="search-query" name="q" class="search-query" placeholder="Search" autocomplete="off">
-            <img src="/images/MagnifyingGlass.png" alt="Search" width="16" height="16" />
-          </form>
+<script type="text/javascript" src="/js/lunr.min.js"></script>
+<script type="text/javascript" src="/js/auto-complete.min.js"></script>
+<script type="text/javascript">
+    var baseurl =  "https:\/\/engineering.cerner.com";
+</script>
+<script type="text/javascript" src="/js/search.js"></script>
         </div>
-      </div>
     </div>
-  </div>
 </nav>
 
-</header>
-
-
-  <div class="container-fluid post-container">
-    <div class="row-fluid">
-      <section class="span12" id="search-results" style="display: none;">
-  <h2>Search results</h2>
-  <div class="entries">
-  </div>
-</section>
-    </div>
-    <div class="row-fluid">
-      
-<article id="main" class="hentry span8" role="article">
-
-  <section class="post">
-    
-  <header class="entry-header">
-    
-      <h1 class="entry-title">Cerner and iControl</h1>
-    
-    
-      <div class="entry-meta meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2018-03-13T00:00:00-05:00" pubdate data-updated="true">Mar 13<span>th</span>, 2018</time> | 
-  
-
-
-  <span class="byline author vcard">
-    <span class="fn">Jerrod Carpenter</span>
-  </span>
-
-
-        
-      </div>
-    
-  </header>
-
-
-<div class="entry-content"><p>At Cerner, we manage our own infrastructure and a big part of that is managing F5 load balancers. If you are a Ruby developer or a network engineer and regularly work with F5s, then I have good news! I&rsquo;ve created a gem that abstracts iControl&rsquo;s REST API. It makes working with the API easy to understand and eases the effort required to automate changes across many devices.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">api</span> <span class="o">=</span> <span class="ss">IcontrolRest</span><span class="p">:</span><span class="ss">:Client</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">host</span><span class="p">:</span> <span class="s1">&#39;1.2.3.4&#39;</span><span class="p">,</span> <span class="ss">user</span><span class="p">:</span> <span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="ss">pass</span><span class="p">:</span> <span class="s1">&#39;pass&#39;</span><span class="p">,</span> <span class="n">verify_cert</span><span class="p">:</span> <span class="kp">false</span><span class="p">)</span>
-</span><span class='line'><span class="o">=&gt;</span> <span class="o">&lt;</span><span class="ss">Icontrol</span><span class="p">:</span><span class="ss">:Client</span><span class="p">:</span><span class="mh">0x007fb953ab7750</span> <span class="vi">@options</span><span class="o">=</span><span class="p">{</span> <span class="o">.</span><span class="n">.</span><span class="o">.</span> <span class="p">}</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>After logging in, one can build a query via an instance method:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">api</span><span class="o">.</span><span class="n">get_sys_dns</span>
-</span><span class='line'><span class="c1"># returns an object like this:</span>
-</span><span class='line'><span class="o">=&gt;</span> <span class="p">{</span> <span class="s2">&quot;kind&quot;</span>        <span class="o">=&gt;</span> <span class="s2">&quot;tm:sys:dns:dnsstate&quot;</span><span class="p">,</span>
-</span><span class='line'>     <span class="s2">&quot;selfLink&quot;</span>    <span class="o">=&gt;</span> <span class="s2">&quot;https://localhost/mgmt/tm/sys/dns?ver=11.5.4&quot;</span><span class="p">,</span>
-</span><span class='line'>     <span class="s2">&quot;description&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;configured-by-dhcp&quot;</span><span class="p">,</span>
-</span><span class='line'>     <span class="s2">&quot;nameServers&quot;</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="s2">&quot;1.2.3.72&quot;</span><span class="p">,</span> <span class="s2">&quot;1.2.3.73&quot;</span><span class="o">]</span><span class="p">,</span>
-</span><span class='line'>     <span class="s2">&quot;search&quot;</span>      <span class="o">=&gt;</span> <span class="o">[</span><span class="s2">&quot;domain.com&quot;</span><span class="o">]</span>
-</span><span class='line'>   <span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The gem builds REST queries given a method delimited by underscores. The first word is the REST method and the following words are the path you&rsquo;d like to send your request to.</p>
-
-<p>For example, if you&rsquo;d like to get the version of the F5, given this <a href="https://devcentral.f5.com/d/icontrol-rest-api-reference-version-120">iControl REST API doc</a></p>
-
-<p>You&rsquo;d call a method that looks like this:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">api</span><span class="o">.</span><span class="n">get_sys_version</span>
-</span><span class='line'><span class="c1"># returns an object like this:</span>
-</span><span class='line'><span class="o">=&gt;</span> <span class="p">{</span> <span class="s2">&quot;kind&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;tm:sys:version:versionstats&quot;</span><span class="p">,</span>
-</span><span class='line'>     <span class="s2">&quot;selfLink&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;https://localhost/mgmt/tm/sys/version?ver=12.1.2&quot;</span><span class="p">,</span>
-</span><span class='line'>     <span class="s2">&quot;entries&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span>
-</span><span class='line'>      <span class="s2">&quot;https://localhost/mgmt/tm/sys/version/0&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span>
-</span><span class='line'>        <span class="s2">&quot;nestedStats&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span>
-</span><span class='line'>          <span class="s2">&quot;entries&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span>
-</span><span class='line'>            <span class="s2">&quot;Build&quot;</span>   <span class="o">=&gt;</span> <span class="p">{</span> <span class="s2">&quot;description&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;0.0.249&quot;</span> <span class="p">},</span>
-</span><span class='line'>            <span class="s2">&quot;Date&quot;</span>    <span class="o">=&gt;</span> <span class="p">{</span> <span class="s2">&quot;description&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;Wed Nov 30 16:04:00 PST 2016&quot;</span> <span class="p">},</span>
-</span><span class='line'>            <span class="s2">&quot;Edition&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s2">&quot;description&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;Final&quot;</span> <span class="p">},</span>
-</span><span class='line'>            <span class="s2">&quot;Product&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s2">&quot;description&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;BIG-IP&quot;</span> <span class="p">},</span>
-</span><span class='line'>            <span class="s2">&quot;Title&quot;</span>   <span class="o">=&gt;</span> <span class="p">{</span> <span class="s2">&quot;description&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;Main Package&quot;</span> <span class="p">},</span>
-</span><span class='line'>            <span class="s2">&quot;Version&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s2">&quot;description&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;12.1.2&quot;</span> <span class="p">}</span>
-</span><span class='line'>          <span class="p">}</span>
-</span><span class='line'>        <span class="p">}</span>
-</span><span class='line'>      <span class="p">}</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>  <span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>So in practice you could put all this together to do something like audit the versions of F5s in a collection:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">[</span><span class="s1">&#39;hostname1&#39;</span><span class="p">,</span> <span class="s1">&#39;hostname2&#39;</span><span class="p">,</span> <span class="s1">&#39;hostname3&#39;</span><span class="o">].</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">host</span><span class="o">|</span>
-</span><span class='line'>  <span class="n">api</span> <span class="o">=</span> <span class="ss">IcontrolRest</span><span class="p">:</span><span class="ss">:Client</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">host</span><span class="p">:</span> <span class="n">host</span><span class="p">,</span> <span class="ss">user</span><span class="p">:</span> <span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="ss">pass</span><span class="p">:</span> <span class="s1">&#39;pass&#39;</span><span class="p">,</span> <span class="n">verify_cert</span><span class="p">:</span> <span class="kp">false</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">result</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_sys_version</span>
-</span><span class='line'>  <span class="n">version</span> <span class="o">=</span> <span class="n">result</span><span class="o">[</span><span class="s1">&#39;entries&#39;</span><span class="o">][</span><span class="err">‘</span><span class="ss">https</span><span class="p">:</span><span class="sr">//</span><span class="n">localhost</span><span class="o">/</span><span class="n">mgmt</span><span class="o">/</span><span class="n">tm</span><span class="o">/</span><span class="n">sys</span><span class="o">/</span><span class="n">version</span><span class="o">/</span><span class="mi">0</span><span class="err">’</span><span class="o">][</span><span class="s1">&#39;nestedStats&#39;</span><span class="o">][</span><span class="s1">&#39;entries&#39;</span><span class="o">][</span><span class="s1">&#39;Version&#39;</span><span class="o">][</span><span class="s1">&#39;description&#39;</span><span class="o">]</span>
-</span><span class='line'>  <span class="nb">puts</span> <span class="s2">&quot;host: </span><span class="si">#{</span><span class="n">host</span><span class="si">}</span><span class="s2"> | version: </span><span class="si">#{</span><span class="n">version</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">unless</span> <span class="n">version</span> <span class="o">==</span> <span class="err">‘</span><span class="mi">12</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="err">’</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This would print out the hostname and version of any F5s that aren&rsquo;t on version 12.0.0. This is just one example, I encourage you to look through the iControl REST API docs to get a feeling for what&rsquo;s really possible.</p>
-</div>
-
-
-  </section>
-  <footer>
-    <p class="meta">
-      
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  
-  
-</div>
 
     
+<main class="content-page container pt-7 pb-5">
     
-    <ul class="pager">
-      
-      <li class="previous"><a class="basic-alignment left"
-        href="/blog/one-year-calling-innovations-home/" title="Previous Post:
-        One Year Calling Innovations Home">&laquo; Previous Post</a></li>
-      
-      <li><a href="/blog/archives">Blog Archives</a></li>
-      
-      <li class="next"><a class="basic-alignment right" href="/blog/shipit-xi-spring-2018/"
-        title="Next Post: ShipIt XI Day: Spring 2018">Next Post &raquo;</a></li>
-      
-    </ul>
-  </footer>
-</article>
-
-<aside class="sidebar-nav span4">
-  
-    <section class="well">
-  <h2>Recent Posts</h2>
-  <ul id="recent_posts" class="nav nav-list">
-    
-      <li>
-        <a href="/blog/shipit-xvii/">ShipIt Day XVII</a>
-      </li>
-    
-      <li>
-        <a href="/blog/shipit-xvi/">ShipIt Day XVI</a>
-      </li>
-    
-      <li>
-        <a href="/blog/terra-ui/">Terra UI: A Health-Care Focused UI Component Library</a>
-      </li>
-    
-      <li>
-        <a href="/blog/introducing-f-twelve-an-open-source-dev-console/">Introducing F-Twelve, an Open Source Dev Console</a>
-      </li>
-    
-      <li>
-        <a href="/blog/carbon-graphs-open-source-visualization-api/">Carbon Graphs: An Open Source Visualization API</a>
-      </li>
-    
-  </ul>
-</section>
-<section class="divider">
-  <svg width="70" height="10">
-   <rect width="10" height="10" x="0" y="0" style="fill:rgb(20,124,193)" />
-   <rect width="10" height="10" x="20" y="0" style="fill:rgb(121,193,68)" />
-   <rect width="10" height="10" x="40" y="0" style="fill:rgb(20,124,193)" />
-   <rect width="10" height="10" x="60" y="0" style="fill:rgb(121,193,68)" />
-</svg>
-</section><section class="well">
-  <h2>Follow Us</h2>
-  <script src="https://apis.google.com/js/platform.js"></script>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-  <div class="g-ytsubscribe" data-channelid="UCYHiZDU0YLN0dWLWSCP1JYQ" data-layout="default" data-count="default"></div>
-  <a href="https://twitter.com/CernerEng?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-screen-name="false" data-show-count="false">Follow @CernerEng</a>
-</section>
-<section class="divider">
-  <svg width="70" height="10">
-   <rect width="10" height="10" x="0" y="0" style="fill:rgb(20,124,193)" />
-   <rect width="10" height="10" x="20" y="0" style="fill:rgb(121,193,68)" />
-   <rect width="10" height="10" x="40" y="0" style="fill:rgb(20,124,193)" />
-   <rect width="10" height="10" x="60" y="0" style="fill:rgb(121,193,68)" />
-</svg>
-</section>
-<section class="well">
-  <h2>GitHub Repos</h2>
-  <ul id="gh_repos" class="nav">
-    <li class="loading">Status updating...</li>
-  </ul>
-  
-  <a href="https://github.com/cerner">@cerner</a> on GitHub
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'cerner',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-  
-</aside>
-
-
-    </div>
-  </div>
-  
-<script id="search-results-template" type="text/mustache">
-  {{#entries}}
-    <article class="search-result">
-        <div class="search-meta meta">
-        {{#date}}<time datetime="{{pubdate}}" pubdate>{{displaydate}}</time>{{/date}} | {{author}}
-        </div>
-        <a href="{{url}}">{{title}}</a>
-    </article>
-  {{/entries}}
-</script>
-
-<script type="text/javascript">
-  $(function() {
-    $('#search-query').lunrSearch({
-      indexUrl: '/javascripts/index.json',   // Url for the .json file containing search index data
-      results : '#search-results',  // selector for containing search results element
-      entries : '.entries',         // selector for search entries containing element (contained within results above)
-      template: '#search-results-template'  // selector for Mustache.js template
-    });
-    //Currently ignoring the "return/enter" keystroke when searching (as this would just result in a 404 for the page lookup).
-    $('#search-query').keydown(function(event){
-      if(event.keyCode == 13) {
-        event.preventDefault();
-        return false;
-      }
-    });
-  });
-</script>
-
-  <footer role="contentinfo" class="page-footer">
-  <div class="container-fluid">
     <div class="row">
-      <div class="span2">
-          <img src="/images/Cerner_White_Horizontal.png" alt="Cerner Logo" />
-      </div>
-      <div class="span10 pull-left">
-          <p>&copy; 2020</p>
-      </div>
+        <div class="col">
+            <article class="article-content">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="meta text-muted mb-3">
+                            <p class="created text-muted text-uppercase font-weight-bold mb-1">March 13, 2018</p>
+                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>373 words</span>
+                            <span><i class="fas fa-clock mr-2"></i>2 mins read</span>
+                        </div>
+
+                        <h1>Cerner and iControl</h1>
+
+                        <ul class="authors list-inline">
+        By: &nbsp;<li class="list-inline-item mr-3">
+                    <div class="media author">
+                            👤&nbsp;<div class="media-body">
+                            <h5 class="name my-0 "><a href="/authors/jerrod-carpenter/" class="small">Jerrod Carpenter</a>
+                            </h5>
+                        </div>
+                    </div>
+                </li></ul>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="content">
+                            <p>At Cerner, we manage our own infrastructure and a big part of that is managing F5 load balancers. If you are a Ruby developer or a network engineer and regularly work with F5s, then I have good news! I&rsquo;ve created a gem that abstracts iControl&rsquo;s REST API. It makes working with the API easy to understand and eases the effort required to automate changes across many devices.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">api <span style="color:#f92672">=</span> <span style="color:#66d9ef">IcontrolRest</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Client</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">host</span>: <span style="color:#e6db74">&#39;1.2.3.4&#39;</span>, <span style="color:#e6db74">user</span>: <span style="color:#e6db74">&#39;user&#39;</span>, <span style="color:#e6db74">pass</span>: <span style="color:#e6db74">&#39;pass&#39;</span>, <span style="color:#e6db74">verify_cert</span>: <span style="color:#66d9ef">false</span>)
+<span style="color:#f92672">=&gt;</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">Icontrol</span><span style="color:#f92672">::</span><span style="color:#e6db74">Client</span>:<span style="color:#ae81ff">0x007fb953ab7750</span> @options<span style="color:#f92672">=</span>{ <span style="color:#f92672">...</span> }<span style="color:#f92672">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>After logging in, one can build a query via an instance method:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">api<span style="color:#f92672">.</span>get_sys_dns
+<span style="color:#75715e"># returns an object like this:</span>
+<span style="color:#f92672">=&gt;</span> { <span style="color:#e6db74">&#34;kind&#34;</span>        <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;tm:sys:dns:dnsstate&#34;</span>,
+     <span style="color:#e6db74">&#34;selfLink&#34;</span>    <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;https://localhost/mgmt/tm/sys/dns?ver=11.5.4&#34;</span>,
+     <span style="color:#e6db74">&#34;description&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;configured-by-dhcp&#34;</span>,
+     <span style="color:#e6db74">&#34;nameServers&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;1.2.3.72&#34;</span>, <span style="color:#e6db74">&#34;1.2.3.73&#34;</span><span style="color:#f92672">]</span>,
+     <span style="color:#e6db74">&#34;search&#34;</span>      <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;domain.com&#34;</span><span style="color:#f92672">]</span>
+   }
+</code></pre></td></tr></table>
+</div>
+</div><p>The gem builds REST queries given a method delimited by underscores. The first word is the REST method and the following words are the path you&rsquo;d like to send your request to.</p>
+<p>For example, if you&rsquo;d like to get the version of the F5, given this <a href="https://devcentral.f5.com/d/icontrol-rest-api-reference-version-120">iControl REST API doc</a></p>
+<p>You&rsquo;d call a method that looks like this:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">api<span style="color:#f92672">.</span>get_sys_version
+<span style="color:#75715e"># returns an object like this:</span>
+<span style="color:#f92672">=&gt;</span> { <span style="color:#e6db74">&#34;kind&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;tm:sys:version:versionstats&#34;</span>,
+     <span style="color:#e6db74">&#34;selfLink&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;https://localhost/mgmt/tm/sys/version?ver=12.1.2&#34;</span>,
+     <span style="color:#e6db74">&#34;entries&#34;</span> <span style="color:#f92672">=&gt;</span> {
+      <span style="color:#e6db74">&#34;https://localhost/mgmt/tm/sys/version/0&#34;</span> <span style="color:#f92672">=&gt;</span> {
+        <span style="color:#e6db74">&#34;nestedStats&#34;</span> <span style="color:#f92672">=&gt;</span> {
+          <span style="color:#e6db74">&#34;entries&#34;</span> <span style="color:#f92672">=&gt;</span> {
+            <span style="color:#e6db74">&#34;Build&#34;</span>   <span style="color:#f92672">=&gt;</span> { <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;0.0.249&#34;</span> },
+            <span style="color:#e6db74">&#34;Date&#34;</span>    <span style="color:#f92672">=&gt;</span> { <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;Wed Nov 30 16:04:00 PST 2016&#34;</span> },
+            <span style="color:#e6db74">&#34;Edition&#34;</span> <span style="color:#f92672">=&gt;</span> { <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;Final&#34;</span> },
+            <span style="color:#e6db74">&#34;Product&#34;</span> <span style="color:#f92672">=&gt;</span> { <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;BIG-IP&#34;</span> },
+            <span style="color:#e6db74">&#34;Title&#34;</span>   <span style="color:#f92672">=&gt;</span> { <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;Main Package&#34;</span> },
+            <span style="color:#e6db74">&#34;Version&#34;</span> <span style="color:#f92672">=&gt;</span> { <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;12.1.2&#34;</span> }
+          }
+        }
+      }
+    }
+  }
+</code></pre></td></tr></table>
+</div>
+</div><p>So in practice you could put all this together to do something like audit the versions of F5s in a collection:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">[</span><span style="color:#e6db74">&#39;hostname1&#39;</span>, <span style="color:#e6db74">&#39;hostname2&#39;</span>, <span style="color:#e6db74">&#39;hostname3&#39;</span><span style="color:#f92672">].</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>host<span style="color:#f92672">|</span>
+  api <span style="color:#f92672">=</span> <span style="color:#66d9ef">IcontrolRest</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Client</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">host</span>: host, <span style="color:#e6db74">user</span>: <span style="color:#e6db74">&#39;user&#39;</span>, <span style="color:#e6db74">pass</span>: <span style="color:#e6db74">&#39;pass&#39;</span>, <span style="color:#e6db74">verify_cert</span>: <span style="color:#66d9ef">false</span>)
+  result <span style="color:#f92672">=</span> api<span style="color:#f92672">.</span>get_sys_version
+  version <span style="color:#f92672">=</span> result<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;entries&#39;</span><span style="color:#f92672">][</span><span style="color:#960050;background-color:#1e0010">‘</span><span style="color:#e6db74">https</span>:<span style="color:#e6db74">//</span>localhost<span style="color:#f92672">/</span>mgmt<span style="color:#f92672">/</span>tm<span style="color:#f92672">/</span>sys<span style="color:#f92672">/</span>version<span style="color:#f92672">/</span><span style="color:#ae81ff">0</span><span style="color:#960050;background-color:#1e0010">’</span><span style="color:#f92672">][</span><span style="color:#e6db74">&#39;nestedStats&#39;</span><span style="color:#f92672">][</span><span style="color:#e6db74">&#39;entries&#39;</span><span style="color:#f92672">][</span><span style="color:#e6db74">&#39;Version&#39;</span><span style="color:#f92672">][</span><span style="color:#e6db74">&#39;description&#39;</span><span style="color:#f92672">]</span>
+  puts <span style="color:#e6db74">&#34;host: </span><span style="color:#e6db74">#{</span>host<span style="color:#e6db74">}</span><span style="color:#e6db74"> | version: </span><span style="color:#e6db74">#{</span>version<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#66d9ef">unless</span> version <span style="color:#f92672">==</span> <span style="color:#960050;background-color:#1e0010">‘</span><span style="color:#ae81ff">12</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0</span><span style="color:#960050;background-color:#1e0010">’</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>This would print out the hostname and version of any F5s that aren&rsquo;t on version 12.0.0. This is just one example, I encourage you to look through the iControl REST API docs to get a feeling for what&rsquo;s really possible.</p>
+
+                        </div><div class="tags my-3"><a class="badge badge-pill badge-light border mr-2" href="/tags/engineering">
+                                    <i class="fas fa-tag mr-2"></i>engineering
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/big-ip">
+                                    <i class="fas fa-tag mr-2"></i>big-ip
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/f5">
+                                    <i class="fas fa-tag mr-2"></i>f5
+                                </a></div><ul class="share nav my-3 justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://twitter.com/intent/tweet?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fcerner-and-icontrol%2f&text=Cerner%20and%20iControl">
+              <i class="fa-fw fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fcerner-and-icontrol%2f&title=Cerner%20and%20iControl">
+                <i class="fa-fw fab fa-linkedin-in"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fengineering.cerner.com%2fblog%2fcerner-and-icontrol%2f&t=Cerner%20and%20iControl">
+                <i class="fa-fw fab fa-facebook-f"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://reddit.com/submit?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fcerner-and-icontrol%2f&title=Cerner%20and%20iControl">
+                <i class="fa-fw fab fa-reddit-alien"></i>
+            </a>
+        </li>
+    </nav>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        
+                    </div>
+                </div></article>
+        </div>
     </div>
+
+    <div class="related-content row mt-5 row-cols-1 row-cols-lg-3"><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/one-year-calling-innovations-home/" class="d-block"><img data-src="/blog/one-year-calling-innovations-home/anniversary-1_hu699fc1013c1ca3ae03247cde4a8aad3e_3640276_700x350_fill_q75_box_smart1.jpg" class="card-img-top mx-auto d-block" alt="One Year Calling Innovations Home"><div class="card-body">
+            <h4 class="card-title">One Year Calling Innovations Home</h4>
+            <p class="card-text text-muted text-uppercase">February 28, 2018</p>
+            <div class="card-text">
+                One year ago this month, Cerner development associates in Kansas City moved into a new place to call home for their workdays, Innovations Campus. The first two towers that stand on this campus provide 805,000 square feet of workspace for more than 3,000 associates. Eventually, the campus will grow larger, including 16 buildings and 16,000 Cerner associates. As that growth approaches, it is important to reflect on what these first two towers represent for associates and their development careers at Cerner.
+            </div>
+        </div>
+    </a>
   </div>
+            </div><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/shipit-x-day-winter-2017/" class="d-block"><img data-src="/blog/shipit-x-day-winter-2017/shipit-x-4_hu0042823a10fad71fa1899666bdc199b8_210578_700x350_fill_q75_box_smart1.jpg" class="card-img-top mx-auto d-block" alt="ShipIt X Day: Winter 2017"><div class="card-body">
+            <h4 class="card-title">ShipIt X Day: Winter 2017</h4>
+            <p class="card-text text-muted text-uppercase">February 19, 2018</p>
+            <div class="card-text">
+                On December 14th and 15th, 18 teams of Cerner associates competed for the Golden Trophy during our tenth ShipIt Day. Being this was our tenth, it was fun to reflect back on how this event started and how much it has grown.
+ It has been great to see ShipIt Days start from small hackathons organically run by individual teams to now an engineering-wide quarterly event that brings together engineers from disparate organizations, allowing for a better cross-pollination of ideas and team members.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/cerner-open-sources-its-kafka-utilities/" class="d-block"><div class="card-body">
+            <h4 class="card-title">Cerner Open Sources its Kafka Utilities</h4>
+            <p class="card-text text-muted text-uppercase">February 6, 2018</p>
+            <div class="card-text">
+                At Cerner, we often make use of many open source projects in our infrastructure. I work on a team responsible for Cerner’s Ingestion Platform, a critical piece of infrastructure that takes in TBs of data and over a billion messages per day. The platform’s responsibility is then to make this data available for downstream teams to consume. When designing the Ingestion Platform, we felt Apache Kafka was perfect for ingesting and consuming these massive streams of data.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div></div>
+</main>
+
+
+    <footer class="footer text-center bg-dark py-6">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="https://engineering.cerner.com/index.xml" rel="alternate" type="application/rss+xml" class="icons d-block">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a></li><li class="list-inline-item">
+                            <a href="https://github.com/cerner" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.instagram.com/cernercorporation/" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.linkedin.com/company/cerner-corporation" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fengineering.cerner.com%2F&amp;screen_name=CernerEng" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.youtube.com/user/cernereng?sub_confirmation=1" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                </ul>
+
+                <p class="text-light">
+                    
+                        Copyright © 2020
+                    
+                </p>
+
+                <p class="text-light">
+                Made with ❤️ by Cerner engineers.
+                </p>
+            </div>
+        </div>
+    </div>
 </footer>
 
-
-  
-
-
-
-
-
-
+    
+    
+        
+            <script src="/dist/main.44c94dde179dd23bf3f1.min.js"></script>
+        
+    
 
 
 
+
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-37701128-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
 
 </body>
 </html>

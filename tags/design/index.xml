@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>design on Engineering Health</title>
+    <link>https://engineering.cerner.com/tags/design/</link>
+    <description>Recent content in design on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Sat, 02 Aug 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/tags/design/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Plain Text is a Lie</title>
+      <link>https://engineering.cerner.com/blog/the-plain-text-is-a-lie/</link>
+      <pubDate>Sat, 02 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/the-plain-text-is-a-lie/</guid>
+      <description>There is no such thing as plain text &amp;ldquo;But I see .txt files all the time&amp;rdquo; you say. &amp;ldquo;My source code is plain text&amp;rdquo; you claim. &amp;ldquo;What about web pages?!&amp;rdquo; you frantically ask. True, each of those things is comprised of text. The plain part is the problem. Plain denotes default or normal. There is no such thing. Computers store and transmit data in a number of methods; each are anything but plain.</description>
+    </item>
+    
+    <item>
+      <title>Scaling People with Apache Crunch</title>
+      <link>https://engineering.cerner.com/blog/scaling-people-with-apache-crunch/</link>
+      <pubDate>Fri, 09 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/scaling-people-with-apache-crunch/</guid>
+      <description>Starting the Big Data Journey When a company first starts to play with Big Data it typically involves a small team of engineers trying to solve a specific problem. The team decides to experiment with scalable technologies either due to outside guidance or research which makes it applicable to their problem. The team begins with the basics of Big Data spending time learning and prototyping. They learn about HDFS, flirt with HBase or other NoSQL, write the required WordCount example, and start to figure out how the technologies can fit their needs.</description>
+    </item>
+    
+    <item>
+      <title>Thinking in MapReduce</title>
+      <link>https://engineering.cerner.com/blog/thinking-in-mapreduce/</link>
+      <pubDate>Wed, 31 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/thinking-in-mapreduce/</guid>
+      <description>This is the blog form of the Thinking in MapReduce talk at StampedeCon 2013. I’ve linked to existing resources for some items discussed in the talk, but the structure and major points are here.
+We programmers have had it pretty good over the years. In almost all cases, hardware scaled up faster than data size and complexity. Unfortunately, this is changing for many of us. Moore&amp;rsquo;s Law has taken on a new direction; we gain power with parallel processing rather than faster clock cycles.</description>
+    </item>
+    
+    <item>
+      <title>Near Real-time Processing Over Hadoop and HBase</title>
+      <link>https://engineering.cerner.com/blog/near-real-time-processing-over-hadoop-and-hbase/</link>
+      <pubDate>Wed, 27 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/near-real-time-processing-over-hadoop-and-hbase/</guid>
+      <description>From MapReduce to realtime This post covers much of the Near-Realtime Processing Over HBase talk I’m giving at ApacheCon NA 2013 in blog form. It also draws from the Hadoop, HBase, and Healthcare talk from StrataConf/Hadoop World 2012.
+The first significant use of Hadoop at Cerner came in building search indexes for patient charts. While creation of simple search indexes is almost commoditized, we wanted a better experience based on clinical semantics.</description>
+    </item>
+    
+    <item>
+      <title>Evangelizing User Experience</title>
+      <link>https://engineering.cerner.com/blog/evangelizing-user-experience/</link>
+      <pubDate>Tue, 12 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/evangelizing-user-experience/</guid>
+      <description>In the dark ages of development, great software meant packing in the functionality. People began doing more and more with their software. Updates meant newer and more exciting functionality. Sounds great, right? Of course it does, but something went horribly wrong. Slowly we became inundated with cluttered screens as software developers struggled to find a place to put their latest innovative functionality. Buttons began adding up and before we knew it, we were inventing user interface controls like ribbons to hold all the buttons.</description>
+    </item>
+    
+    <item>
+      <title>Composable MapReduce with Hadoop and Crunch</title>
+      <link>https://engineering.cerner.com/blog/composable-mapreduce-with-hadoop-and-crunch/</link>
+      <pubDate>Sun, 03 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/composable-mapreduce-with-hadoop-and-crunch/</guid>
+      <description>Most developers know this pattern well: we design a set of schemas to represent our data, and then work with that data via a query language. This works great in most cases, but becomes a challenge as data sets grow to an arbitrary size and complexity. Data sets can become too large to query and update with conventional means.
+These challenges often arise with Hadoop, simply because Hadoop is a popular tool to tackle such data sets.</description>
+    </item>
+    
+  </channel>
+</rss>

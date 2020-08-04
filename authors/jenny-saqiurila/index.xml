@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jenny Saqiurila on Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/jenny-saqiurila/</link>
+    <description>Recent content in Jenny Saqiurila on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Fri, 14 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/authors/jenny-saqiurila/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2^5 Coding Competition 2018</title>
+      <link>https://engineering.cerner.com/blog/2-to-the-5th-coding-competition-2018/</link>
+      <pubDate>Fri, 14 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/2-to-the-5th-coding-competition-2018/</guid>
+      <description>At Cerner, associates are always encouraged to develop tools and methods to improve their productivity. With this year&amp;rsquo;s theme being &amp;ldquo;Engineering Productivity,&amp;rdquo; Cerner&amp;rsquo;s fourth annual 2^5 Coding Competition provided associates another opportunity to dive into this subject and get involved in Cerner&amp;rsquo;s development culture.
+As usual, this year&amp;rsquo;s 2^5 Coding Competition was kicked off alongside Programmer&amp;rsquo;s Day festivities on September 13th. The competition lasts 32 days, and associates are encouraged to submit code every day.</description>
+    </item>
+    
+  </channel>
+</rss>

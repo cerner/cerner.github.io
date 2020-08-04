@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ryan Brush on Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/ryan-brush/</link>
+    <description>Recent content in Ryan Brush on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Mon, 02 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/authors/ryan-brush/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Scalable Data Science with FHIR</title>
+      <link>https://engineering.cerner.com/blog/data-engineering-with-bunsen/</link>
+      <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/data-engineering-with-bunsen/</guid>
+      <description>The FHIR standard started as a better way to exchange healthcare data, but it also provides a solid basis for deep analytics and Machine Learning at scale. This post looks at an example from the recent FHIR DevDays conference that does just that. You can also run the interactive FHIR data engineering tutorial used in the conference yourself.
+Our first step is to bring FHIR data into a data lake &amp;ndash; a computational environment where our analysis can easily and efficiently work through petabytes of data.</description>
+    </item>
+    
+    <item>
+      <title>Announcing Bunsen: FHIR Data with Apache Spark</title>
+      <link>https://engineering.cerner.com/blog/announcing-bunsen-fhir-data-with-apache-spark/</link>
+      <pubDate>Mon, 27 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/announcing-bunsen-fhir-data-with-apache-spark/</guid>
+      <description>We&amp;rsquo;re excited to open source Bunsen, a library to make analyzing FHIR data with Apache Spark simple and scalable. Bunsen encodes FHIR resources directly into Apache Spark&amp;rsquo;s native data structures. This lets users leverage well-defined FHIR data models directly within Spark SQL.
+Here&amp;rsquo;s a simple query against a table of FHIR observations that produces a table of heart rate values:
+spark.sql(&amp;#34;&amp;#34;&amp;#34; select subject.reference person_id, effectiveDateTime date_time, valueQuantity.value value from observations where in_valueset(code, &amp;#39;heart_rate&amp;#39;) &amp;#34;&amp;#34;&amp;#34;).</description>
+    </item>
+    
+    <item>
+      <title>Clara Rules joins Cerner&#39;s open source</title>
+      <link>https://engineering.cerner.com/blog/clara-rules-joins-cerner-open-source/</link>
+      <pubDate>Fri, 11 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/clara-rules-joins-cerner-open-source/</guid>
+      <description>Sometimes a small experiment on the side can grow into something valuable. We at Cerner have long used forward-chaining rules engines to express and execute clinical knowledge, but we’ve also had to extend or work around the capabilities of such engines. Engines targeting business users just weren’t expressive enough to model some of our logic. To meet this need we are making Clara Rules an open source project driven by Cerner Engineering.</description>
+    </item>
+    
+    <item>
+      <title>Thinking in MapReduce</title>
+      <link>https://engineering.cerner.com/blog/thinking-in-mapreduce/</link>
+      <pubDate>Wed, 31 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/thinking-in-mapreduce/</guid>
+      <description>This is the blog form of the Thinking in MapReduce talk at StampedeCon 2013. I’ve linked to existing resources for some items discussed in the talk, but the structure and major points are here.
+We programmers have had it pretty good over the years. In almost all cases, hardware scaled up faster than data size and complexity. Unfortunately, this is changing for many of us. Moore&amp;rsquo;s Law has taken on a new direction; we gain power with parallel processing rather than faster clock cycles.</description>
+    </item>
+    
+    <item>
+      <title>Near Real-time Processing Over Hadoop and HBase</title>
+      <link>https://engineering.cerner.com/blog/near-real-time-processing-over-hadoop-and-hbase/</link>
+      <pubDate>Wed, 27 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/near-real-time-processing-over-hadoop-and-hbase/</guid>
+      <description>From MapReduce to realtime This post covers much of the Near-Realtime Processing Over HBase talk I’m giving at ApacheCon NA 2013 in blog form. It also draws from the Hadoop, HBase, and Healthcare talk from StrataConf/Hadoop World 2012.
+The first significant use of Hadoop at Cerner came in building search indexes for patient charts. While creation of simple search indexes is almost commoditized, we wanted a better experience based on clinical semantics.</description>
+    </item>
+    
+    <item>
+      <title>Composable MapReduce with Hadoop and Crunch</title>
+      <link>https://engineering.cerner.com/blog/composable-mapreduce-with-hadoop-and-crunch/</link>
+      <pubDate>Sun, 03 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/composable-mapreduce-with-hadoop-and-crunch/</guid>
+      <description>Most developers know this pattern well: we design a set of schemas to represent our data, and then work with that data via a query language. This works great in most cases, but becomes a challenge as data sets grow to an arbitrary size and complexity. Data sets can become too large to query and update with conventional means.
+These challenges often arise with Hadoop, simply because Hadoop is a popular tool to tackle such data sets.</description>
+    </item>
+    
+  </channel>
+</rss>

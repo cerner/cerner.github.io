@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Engineering Health</title>
+    <link>https://engineering.cerner.com/tags/</link>
+    <description>Recent content in Tags on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Mon, 24 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>engineering</title>
+      <link>https://engineering.cerner.com/tags/engineering/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shipit</title>
+      <link>https://engineering.cerner.com/tags/shipit/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/shipit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>oss</title>
+      <link>https://engineering.cerner.com/tags/oss/</link>
+      <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/oss/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>culture</title>
+      <link>https://engineering.cerner.com/tags/culture/</link>
+      <pubDate>Fri, 14 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/culture/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pi</title>
+      <link>https://engineering.cerner.com/tags/pi/</link>
+      <pubDate>Thu, 14 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/pi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>raspberry_pi</title>
+      <link>https://engineering.cerner.com/tags/raspberry_pi/</link>
+      <pubDate>Thu, 14 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/raspberry_pi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hackathon</title>
+      <link>https://engineering.cerner.com/tags/hackathon/</link>
+      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/hackathon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>conference</title>
+      <link>https://engineering.cerner.com/tags/conference/</link>
+      <pubDate>Fri, 08 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/conference/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>devcon</title>
+      <link>https://engineering.cerner.com/tags/devcon/</link>
+      <pubDate>Wed, 07 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/devcon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cybersecurity</title>
+      <link>https://engineering.cerner.com/tags/cybersecurity/</link>
+      <pubDate>Mon, 29 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/cybersecurity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>community</title>
+      <link>https://engineering.cerner.com/tags/community/</link>
+      <pubDate>Fri, 05 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/community/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>girlscouts</title>
+      <link>https://engineering.cerner.com/tags/girlscouts/</link>
+      <pubDate>Fri, 05 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/girlscouts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jenkins</title>
+      <link>https://engineering.cerner.com/tags/jenkins/</link>
+      <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/jenkins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>internship</title>
+      <link>https://engineering.cerner.com/tags/internship/</link>
+      <pubDate>Thu, 26 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/internship/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bunsen</title>
+      <link>https://engineering.cerner.com/tags/bunsen/</link>
+      <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/bunsen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FHIR</title>
+      <link>https://engineering.cerner.com/tags/fhir/</link>
+      <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/fhir/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spark</title>
+      <link>https://engineering.cerner.com/tags/spark/</link>
+      <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/spark/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>interoperability</title>
+      <link>https://engineering.cerner.com/tags/interoperability/</link>
+      <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/interoperability/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>open source</title>
+      <link>https://engineering.cerner.com/tags/open-source/</link>
+      <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/open-source/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>conferences</title>
+      <link>https://engineering.cerner.com/tags/conferences/</link>
+      <pubDate>Tue, 19 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/conferences/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>srecon</title>
+      <link>https://engineering.cerner.com/tags/srecon/</link>
+      <pubDate>Tue, 19 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/srecon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>interns</title>
+      <link>https://engineering.cerner.com/tags/interns/</link>
+      <pubDate>Thu, 24 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/interns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>code review</title>
+      <link>https://engineering.cerner.com/tags/code-review/</link>
+      <pubDate>Tue, 08 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/code-review/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>big-ip</title>
+      <link>https://engineering.cerner.com/tags/big-ip/</link>
+      <pubDate>Tue, 13 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/big-ip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>f5</title>
+      <link>https://engineering.cerner.com/tags/f5/</link>
+      <pubDate>Tue, 13 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/f5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ingestion</title>
+      <link>https://engineering.cerner.com/tags/ingestion/</link>
+      <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/ingestion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kafka</title>
+      <link>https://engineering.cerner.com/tags/kafka/</link>
+      <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/kafka/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>agile</title>
+      <link>https://engineering.cerner.com/tags/agile/</link>
+      <pubDate>Tue, 23 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/agile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>learning</title>
+      <link>https://engineering.cerner.com/tags/learning/</link>
+      <pubDate>Tue, 23 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data</title>
+      <link>https://engineering.cerner.com/tags/data/</link>
+      <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ux</title>
+      <link>https://engineering.cerner.com/tags/ux/</link>
+      <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/ux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>visualization</title>
+      <link>https://engineering.cerner.com/tags/visualization/</link>
+      <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/visualization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>usability</title>
+      <link>https://engineering.cerner.com/tags/usability/</link>
+      <pubDate>Tue, 14 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/usability/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>accessibility</title>
+      <link>https://engineering.cerner.com/tags/accessibility/</link>
+      <pubDate>Mon, 09 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/accessibility/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>midwestux</title>
+      <link>https://engineering.cerner.com/tags/midwestux/</link>
+      <pubDate>Mon, 09 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/midwestux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hbase</title>
+      <link>https://engineering.cerner.com/tags/hbase/</link>
+      <pubDate>Mon, 28 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/hbase/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>splunk</title>
+      <link>https://engineering.cerner.com/tags/splunk/</link>
+      <pubDate>Fri, 14 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/splunk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>grace</title>
+      <link>https://engineering.cerner.com/tags/grace/</link>
+      <pubDate>Fri, 07 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/grace/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hopper</title>
+      <link>https://engineering.cerner.com/tags/hopper/</link>
+      <pubDate>Fri, 07 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/hopper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>internationalization</title>
+      <link>https://engineering.cerner.com/tags/internationalization/</link>
+      <pubDate>Fri, 07 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/internationalization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>localization</title>
+      <link>https://engineering.cerner.com/tags/localization/</link>
+      <pubDate>Fri, 07 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/localization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>polyglot</title>
+      <link>https://engineering.cerner.com/tags/polyglot/</link>
+      <pubDate>Fri, 07 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/polyglot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>awards</title>
+      <link>https://engineering.cerner.com/tags/awards/</link>
+      <pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/awards/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stem</title>
+      <link>https://engineering.cerner.com/tags/stem/</link>
+      <pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/stem/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>chef</title>
+      <link>https://engineering.cerner.com/tags/chef/</link>
+      <pubDate>Tue, 04 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/chef/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SMART</title>
+      <link>https://engineering.cerner.com/tags/smart/</link>
+      <pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/smart/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>apache</title>
+      <link>https://engineering.cerner.com/tags/apache/</link>
+      <pubDate>Thu, 16 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/apache/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>crunch</title>
+      <link>https://engineering.cerner.com/tags/crunch/</link>
+      <pubDate>Thu, 16 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/crunch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PMC</title>
+      <link>https://engineering.cerner.com/tags/pmc/</link>
+      <pubDate>Thu, 16 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/pmc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>apis</title>
+      <link>https://engineering.cerner.com/tags/apis/</link>
+      <pubDate>Wed, 15 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/apis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>beadledom</title>
+      <link>https://engineering.cerner.com/tags/beadledom/</link>
+      <pubDate>Wed, 15 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/beadledom/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>java</title>
+      <link>https://engineering.cerner.com/tags/java/</link>
+      <pubDate>Wed, 15 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>REST</title>
+      <link>https://engineering.cerner.com/tags/rest/</link>
+      <pubDate>Wed, 15 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/rest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CSS</title>
+      <link>https://engineering.cerner.com/tags/css/</link>
+      <pubDate>Thu, 13 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>development</title>
+      <link>https://engineering.cerner.com/tags/development/</link>
+      <pubDate>Thu, 13 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JavaScript</title>
+      <link>https://engineering.cerner.com/tags/javascript/</link>
+      <pubDate>Thu, 13 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>library</title>
+      <link>https://engineering.cerner.com/tags/library/</link>
+      <pubDate>Thu, 13 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/library/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>https://engineering.cerner.com/tags/programming/</link>
+      <pubDate>Thu, 13 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UI</title>
+      <link>https://engineering.cerner.com/tags/ui/</link>
+      <pubDate>Thu, 13 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/ui/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tech talks</title>
+      <link>https://engineering.cerner.com/tags/tech-talks/</link>
+      <pubDate>Wed, 28 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/tech-talks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>debugging</title>
+      <link>https://engineering.cerner.com/tags/debugging/</link>
+      <pubDate>Wed, 13 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/debugging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IE8</title>
+      <link>https://engineering.cerner.com/tags/ie8/</link>
+      <pubDate>Wed, 13 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/ie8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>closures</title>
+      <link>https://engineering.cerner.com/tags/closures/</link>
+      <pubDate>Mon, 29 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/closures/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>currying</title>
+      <link>https://engineering.cerner.com/tags/currying/</link>
+      <pubDate>Mon, 29 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/currying/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>functional programming</title>
+      <link>https://engineering.cerner.com/tags/functional-programming/</link>
+      <pubDate>Mon, 29 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/functional-programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>design</title>
+      <link>https://engineering.cerner.com/tags/design/</link>
+      <pubDate>Sat, 02 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>i18n</title>
+      <link>https://engineering.cerner.com/tags/i18n/</link>
+      <pubDate>Sat, 02 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/i18n/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>text</title>
+      <link>https://engineering.cerner.com/tags/text/</link>
+      <pubDate>Sat, 02 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/text/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unicode</title>
+      <link>https://engineering.cerner.com/tags/unicode/</link>
+      <pubDate>Sat, 02 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/unicode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bigdata</title>
+      <link>https://engineering.cerner.com/tags/bigdata/</link>
+      <pubDate>Fri, 09 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/bigdata/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>big data</title>
+      <link>https://engineering.cerner.com/tags/big-data/</link>
+      <pubDate>Fri, 24 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/big-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>operations</title>
+      <link>https://engineering.cerner.com/tags/operations/</link>
+      <pubDate>Thu, 16 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/tags/operations/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

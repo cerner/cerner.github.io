@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>oss on Engineering Health</title>
+    <link>https://engineering.cerner.com/tags/oss/</link>
+    <description>Recent content in oss on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Fri, 25 Oct 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/tags/oss/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Terra UI: A Health-Care focused UI Component Library</title>
+      <link>https://engineering.cerner.com/blog/terra-ui/</link>
+      <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/terra-ui/</guid>
+      <description>Back in 2013, like most other companies, Cerner was heavily invested in building user interfaces with Twitter Bootstrap. Around that time, Dave Rupert wrote about the concept of Responsive Deliverables and touched on a key concept, creating “Tiny Bootstraps, for Every Client”. Along with this, Brad Frost had started promoting the idea of Atomic Design. We saw a lot of value in these ideas and saw that we needed to evolve how we were developing UI at Cerner.</description>
+    </item>
+    
+    <item>
+      <title>Introducing F-Twelve, an Open Source Dev Console</title>
+      <link>https://engineering.cerner.com/blog/introducing-f-twelve-an-open-source-dev-console/</link>
+      <pubDate>Tue, 08 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/introducing-f-twelve-an-open-source-dev-console/</guid>
+      <description>Many modern web browsers come with tools that can help developers debug their websites. If you are using Google Chrome or Firefox for example, try pressing F12. A new panel should open containing various tools. These tools provide a look “under the hood” for the current page. Common tools include a JavaScript console, JavaScript debugger, DOM explorer, network request viewer, performance profile, local storage manager, and more.</description>
+    </item>
+    
+    <item>
+      <title>Carbon Graphs: An Open Source Visualization API</title>
+      <link>https://engineering.cerner.com/blog/carbon-graphs-open-source-visualization-api/</link>
+      <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/carbon-graphs-open-source-visualization-api/</guid>
+      <description>We are pleased to announce Carbon Graphs as an open source code project!
+Carbon is a lightweight, vanilla JavaScript visualization API built with D3 that integrates well with any consumer&amp;rsquo;s tech stack. It provides a variety of graph types that are framework agnostic and responsive out of the box.
+   Motivation Over the past few years, we have gradually updated our user interface to use modern JavaScript libraries such as mithril.</description>
+    </item>
+    
+    <item>
+      <title>CCL Unit and CCL Testing released to open source</title>
+      <link>https://engineering.cerner.com/blog/ccl-unit-and-ccl-testing-released-to-open-source/</link>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/ccl-unit-and-ccl-testing-released-to-open-source/</guid>
+      <description>We are pleased to announce the release of CCL Unit and CCL Testing as open source code projects, as well as the release of the CCL Testing plugin artifacts to Maven Central.
+Cerner Command Language (CCL) is a database query and scripting language used with Cerner Millennium databases. CCL Unit is a unit testing framework for CCL written in CCL. The CCL Testing plugins generate reports for viewing the results of CCL Unit tests and static analyses of CCL programs and for generating code documentation from comments in the source code for CCL programs.</description>
+    </item>
+    
+    <item>
+      <title>Jwala Joins Cerner&#39;s Open Source</title>
+      <link>https://engineering.cerner.com/blog/jwala-joins-cerner-open-source/</link>
+      <pubDate>Wed, 27 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/jwala-joins-cerner-open-source/</guid>
+      <description>Introducing Jwala, a Resource Manager for the Apache Community Apache Tomcat and Apache httpd are hardened, scalable, and reliable open-source solutions. Widely adopted, these solutions are commonly used to host and load-balance Java applications.
+Configuring and managing a small set of elements is relatively easy, but once you start scaling out your application and platform, things get complicated. Questions such as &amp;ldquo;How do I update the heap or database pool-size across hundreds of Java Virtual Machines (JVMs)?</description>
+    </item>
+    
+  </channel>
+</rss>

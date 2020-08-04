@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rima Poddar on Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/rima-poddar/</link>
+    <description>Recent content in Rima Poddar on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Thu, 29 Jan 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/authors/rima-poddar/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Managing 30,000 Logging Events per Day with Splunk</title>
+      <link>https://engineering.cerner.com/blog/managing-30000-logging-events-per-day-with-splunk/</link>
+      <pubDate>Thu, 29 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/managing-30000-logging-events-per-day-with-splunk/</guid>
+      <description>Our team works on a patient facing web application with a thousand live clients with 2,315,000+ users. On an average, the high traffic results into more than 40,000 visits and 300,000 page views daily generating about 30,000 logging events. A considerable portion of these events are of information and warning level in order to aid proactive monitoring or identify potential issues due to clients’ misconfiguration.
+Before Splunk To handle this large volume of logging, our team created a rotational support role to manually monitor the logs at regular intervals daily.</description>
+    </item>
+    
+  </channel>
+</rss>

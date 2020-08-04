@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+  
+     Thinking in MapReduce | 
+    Engineering Health
+  
+</title><meta name="description" content="a blog by engineers, for engineers"><meta name="author" content="Ryan Brush">
+
+<link rel="icon" href="/favicon.png">
+
+
+    
+        
+            <link rel="stylesheet" href="/dist/main.8ddb5a998657440f326d.min.css">
+        
+    
+
+
+
+
+<link rel="canonical" href="https://engineering.cerner.com/blog/thinking-in-mapreduce/"><script src="/js/jquery-3.5.1.min.js"></script><meta property="og:title" content="Thinking in MapReduce" />
+<meta property="og:description" content="This is the blog form of the Thinking in MapReduce talk at StampedeCon 2013. I’ve linked to existing resources for some items discussed in the talk, but the structure and major points are here.
+We programmers have had it pretty good over the years. In almost all cases, hardware scaled up faster than data size and complexity. Unfortunately, this is changing for many of us. Moore&rsquo;s Law has taken on a new direction; we gain power with parallel processing rather than faster clock cycles." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://engineering.cerner.com/blog/thinking-in-mapreduce/" />
+<meta property="article:published_time" content="2013-07-31T00:00:00+00:00" />
+<meta property="article:modified_time" content="2013-07-31T00:00:00+00:00" />
+<meta itemprop="name" content="Thinking in MapReduce">
+<meta itemprop="description" content="This is the blog form of the Thinking in MapReduce talk at StampedeCon 2013. I’ve linked to existing resources for some items discussed in the talk, but the structure and major points are here.
+We programmers have had it pretty good over the years. In almost all cases, hardware scaled up faster than data size and complexity. Unfortunately, this is changing for many of us. Moore&rsquo;s Law has taken on a new direction; we gain power with parallel processing rather than faster clock cycles.">
+<meta itemprop="datePublished" content="2013-07-31T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2013-07-31T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1209">
+
+
+
+<meta itemprop="keywords" content="big data,design,engineering," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Thinking in MapReduce"/>
+<meta name="twitter:description" content="This is the blog form of the Thinking in MapReduce talk at StampedeCon 2013. I’ve linked to existing resources for some items discussed in the talk, but the structure and major points are here.
+We programmers have had it pretty good over the years. In almost all cases, hardware scaled up faster than data size and complexity. Unfortunately, this is changing for many of us. Moore&rsquo;s Law has taken on a new direction; we gain power with parallel processing rather than faster clock cycles."/>
+
+</head>
+<body>
+    
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-sm" id="navbar-main-menu">
+    <div class="container">
+        <a class="navbar-brand" href="/"><img src="/cerner-logo.png"/></a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="main-menu" class="collapse navbar-collapse" >
+            <ul class="nav navbar-nav ml-auto">
+                
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/culture/">Culture</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/open-source/">Open Source</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/tech-talks/">Tech Talks</a></li>
+                
+            
+            </ul>
+            
+            <div class="form-inline my-2 my-lg-0 searchbox">
+    <input id="search-by" type="search" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js"></script>
+<script type="text/javascript" src="/js/auto-complete.min.js"></script>
+<script type="text/javascript">
+    var baseurl =  "https:\/\/engineering.cerner.com";
+</script>
+<script type="text/javascript" src="/js/search.js"></script>
+        </div>
+    </div>
+</nav>
+
+
+    
+<main class="content-page container pt-7 pb-5">
+    
+    <div class="row">
+        <div class="col">
+            <article class="article-content">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="meta text-muted mb-3">
+                            <p class="created text-muted text-uppercase font-weight-bold mb-1">July 31, 2013</p>
+                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>1209 words</span>
+                            <span><i class="fas fa-clock mr-2"></i>6 mins read</span>
+                        </div>
+
+                        <h1>Thinking in MapReduce</h1>
+
+                        <ul class="authors list-inline">
+        By: &nbsp;<li class="list-inline-item mr-3">
+                    <div class="media author">
+                            👤&nbsp;<div class="media-body">
+                            <h5 class="name my-0 "><a href="/authors/ryan-brush/" class="small">Ryan Brush</a>
+                            </h5>
+                        </div>
+                    </div>
+                </li></ul>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="content">
+                            <p><em>This is the blog form of the Thinking in MapReduce talk at StampedeCon 2013. I’ve linked to existing resources for some items discussed in the talk, but the structure and major points are here.</em></p>
+<p>We programmers have had it pretty good over the years. In almost all cases, hardware scaled up faster than data size and complexity. Unfortunately, this is changing for many of us. Moore&rsquo;s Law has taken on a new direction; we gain power with parallel processing rather than faster clock cycles. More importantly, the volume of data we need to work with has grown exponentially.</p>
+<p>Tackling this problem is tremendously important in healthcare. At the most basic level, healthcare data is too often fragmented and incomplete: an individual’s medical data is spread across multiple systems for different venues of care. Such fragmentation means no one has the complete picture of a person’s health and that means decisions are made with incomplete information. One thing we’re doing at Cerner is securely bringing together this information to enable a number of improvements, ranging from better-informed decisions to understanding and improving the health of entire populations of people. This is only possible with data at huge scale.</p>
+<p>This is also opening new opportunities; Peter Norvig shows in the <a href="http://www.youtube.com/watch?v=yvDCzhbjYWs">Unreasonable Effectiveness of Data</a> how simple models over many data points can perform better than complex models with fewer points. Our challenge is to apply this to some of the most complicated and most important data sets that exist.</p>
+<h2 id="new-problems-and-new-solutions">New problems and new solutions</h2>
+<p>Our first thought may be to tackle such problems using the proven, successful strategy of relational databases. This has lots of advantages, especially the <a href="http://en.wikipedia.org/wiki/ACID">ACID semantics</a> that are easy to reason about and make strong guarantees about correctness. The downside is such guarantees require strong coordination between machines involved and in many cases the cost of that coordination grows as the square of data size.  Such models should be used whenever they can, but to reason about huge data sets holistically means we have to consider different tradeoffs.</p>
+<p>So we need new approaches for these problems. Some are clear upfront: as data becomes too large to scale up on single machines, we must scale out across many. Going further, we reach a point where we have too much data to move across a network &ndash; so rather than moving data to our computation, we must move computation to data.</p>
+<p>In fact, these simple assertions form the foundation of MapReduce: we move computation to data by running map functions across individual records without moving them over the network and merge and combine, or reduce, the output of those functions into a meaningful result. <a href="http://wiki.apache.org/hadoop/WordCount">Word count</a> is the prototypical example of this pattern in action. MapReduce implementations as offered by Hadoop actually offer a bit more than this, with the following phases:</p>
+<ul>
+<li>
+<p><em>Map</em> &ndash; transform or filter individual input records</p>
+</li>
+<li>
+<p><em>Combine</em> &ndash; optional partial merge of map outputs in the mapping process, usually for efficiency</p>
+</li>
+<li>
+<p><em>Shuffle and Sort</em> &ndash; Sort the output of map operations by an arbitrary key and partition map output across reducers</p>
+</li>
+<li>
+<p><em>Reduce</em> &ndash; Process the shuffled map output in the sorted order, emitting our final result.</p>
+</li>
+</ul>
+<div align="center">
+    <figure class="figure">
+        <a href="MapReduce1.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="MapReduce1.png"
+                alt="MapReduce"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
+<p>We have our building blocks: we can split data across many machines and apply simple functions against them. Hadoop and MapReduce support this pattern well.  Now we need to answer two questions: How do we use these building blocks effectively and how do we create higher-level value on top of them?</p>
+<p>The first step is to maximize parallelism. The most efficient MapReduce jobs shift as much work into the map phase as possible, even to the point where there is little or no data that needs to be sent across the network to the reducer. We can gauge the gains made by scaling out by applying <a href="http://en.wikipedia.org/wiki/Amdahl's_law">Amdahl’s Law</a> where the parallelism is the amount of work we can do in map tasks versus more serial reduce-side operations.</p>
+<p>The second step is to compose our <em>map, combine, shuffle, sort, and reduce</em> primitives into higher-level operations. For example:</p>
+<ul>
+<li>
+<p><em>Join</em> &ndash; Send distinct inputs to map tasks, and combine them with a common key in the reducers.</p>
+</li>
+<li>
+<p><em>Map-Side Join</em> &ndash; When one data set is much smaller than another, it may be more efficient to simply load it in each map task, eliminating the reduce phase overhead outright.</p>
+</li>
+<li>
+<p><em>Aggregation</em> &ndash; Summarizes big data to be easily computed.</p>
+</li>
+<li>
+<p><em>Loading into external systems</em> &ndash; The output of the above operations can be exported to dedicated tools like R to do further analysis.</p>
+</li>
+</ul>
+<p>Beyond that, the above operations can be composed into sophisticated process flows to take data from several complex sources, join it together, and distill it down into useful knowledge. The book <a href="http://shop.oreilly.com/product/0636920025122.do">MapReduce Design Patterns</a> discusses all of these patterns and more.</p>
+<h2 id="higher-level-apis">Higher-Level APIs</h2>
+<p>Understanding the above patterns is important but much like how higher-level languages have grown dominant, higher-level libraries have replaced direct MapReduce jobs. At Cerner, we make extensive use of <a href="http://crunch.apache.org">Apache Crunch</a> for our processing infrastructure and of <a href="http://hive.apache.org">Apache Hive</a> for querying data sitting in Hadoop.</p>
+<h2 id="reasoning-about-the-system">Reasoning About the System</h2>
+<p>Most of development history has focused on variations on <a href="http://www.infoq.com/presentations/Value-Values">Place-Oriented Programming</a>, where we have data in objects or database rows and we apply change by updating our data in place.  Yet such a model doesn’t align with MapReduce; when dealing with mass processing of very large data sets, the complexity and inefficiency involved in individual updates becomes overwhelming. The system would become too complicated to perform or reason about. The result is a simple axiom for processing pipelines: <em>start with the questions you want to ask and then transform the data to answer them.</em> Re-processing huge data sets at any time is what Hadoop does best and we can leverage that to view the world as pure functions of our data, rather than trying to juggle in-place updates.</p>
+<p>In short, the MapReduce view of the world is a holistic function of your raw data. There are techniques for processing incremental change and persisting processing steps for efficiency but these are optimizations. Start by processing all data holistically and adjust from there.</p>
+<h2 id="beyond-mapreduce">Beyond MapReduce</h2>
+<p>The paper <a href="http://homes.cs.washington.edu/~alon/files/dataspacesDec05.pdf">From Databases to Dataspaces</a> discusses a new view of integrating and leveraging data. A similar idea has entered the lexicon under the label &ldquo;Data Lake&rdquo; but the principles align: securely bring structured and unstructured data together and apply massive computation to it at any time for any new need. Existing systems are good at efficiently executing known query paths but require a lot of up-front work, either by creating new data models or building out infrastructure for the immediate need. Conversely, Hadoop and MapReduce allow us to ask questions about our data in parallel at massive scale without prior build.</p>
+<p>This becomes more powerful as Hadoop becomes a more general fabric for computation. Projects like <a href="http://spark-project.org">Spark</a> can be layered on top of Hadoop to significantly improve processing time for many jobs. SQL- and search-based systems allow faster interrogation of data directly in Hadoop to a wider set of users and domain-specific data models can be quickly computed for new needs.</p>
+<p>Ultimately, the gap between the discovery of a novel question and our ability to answer it is shrinking dramatically. The rate of innovation is increasing.</p>
+
+                        </div><div class="tags my-3"><a class="badge badge-pill badge-light border mr-2" href="/tags/big-data">
+                                    <i class="fas fa-tag mr-2"></i>big data
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/design">
+                                    <i class="fas fa-tag mr-2"></i>design
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/engineering">
+                                    <i class="fas fa-tag mr-2"></i>engineering
+                                </a></div><ul class="share nav my-3 justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://twitter.com/intent/tweet?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fthinking-in-mapreduce%2f&text=Thinking%20in%20MapReduce">
+              <i class="fa-fw fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fthinking-in-mapreduce%2f&title=Thinking%20in%20MapReduce">
+                <i class="fa-fw fab fa-linkedin-in"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fengineering.cerner.com%2fblog%2fthinking-in-mapreduce%2f&t=Thinking%20in%20MapReduce">
+                <i class="fa-fw fab fa-facebook-f"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://reddit.com/submit?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fthinking-in-mapreduce%2f&title=Thinking%20in%20MapReduce">
+                <i class="fa-fw fab fa-reddit-alien"></i>
+            </a>
+        </li>
+    </nav>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        
+                    </div>
+                </div></article>
+        </div>
+    </div>
+
+    <div class="related-content row mt-5 row-cols-1 row-cols-lg-3"><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/near-real-time-processing-over-hadoop-and-hbase/" class="d-block"><img data-src="/blog/near-real-time-processing-over-hadoop-and-hbase/chart-search-screen_hu26ee20457c5aa986f1cc23f95c01380d_648930_700x350_fill_box_smart1_2.png" class="card-img-top mx-auto d-block" alt="Near Real-time Processing Over Hadoop and HBase"><div class="card-body">
+            <h4 class="card-title">Near Real-time Processing Over Hadoop and HBase</h4>
+            <p class="card-text text-muted text-uppercase">February 27, 2013</p>
+            <div class="card-text">
+                From MapReduce to realtime This post covers much of the Near-Realtime Processing Over HBase talk I’m giving at ApacheCon NA 2013 in blog form. It also draws from the Hadoop, HBase, and Healthcare talk from StrataConf/Hadoop World 2012.
+The first significant use of Hadoop at Cerner came in building search indexes for patient charts. While creation of simple search indexes is almost commoditized, we wanted a better experience based on clinical semantics.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/composable-mapreduce-with-hadoop-and-crunch/" class="d-block"><img data-src="/blog/composable-mapreduce-with-hadoop-and-crunch/diagram1_hu7094931f5df834b55429a2ec082916c6_53870_700x350_fill_box_smart1_2.png" class="card-img-top mx-auto d-block" alt="Composable MapReduce with Hadoop and Crunch"><div class="card-body">
+            <h4 class="card-title">Composable MapReduce with Hadoop and Crunch</h4>
+            <p class="card-text text-muted text-uppercase">February 3, 2013</p>
+            <div class="card-text">
+                Most developers know this pattern well: we design a set of schemas to represent our data, and then work with that data via a query language. This works great in most cases, but becomes a challenge as data sets grow to an arbitrary size and complexity. Data sets can become too large to query and update with conventional means.
+These challenges often arise with Hadoop, simply because Hadoop is a popular tool to tackle such data sets.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/first-robotics-championship-competition-in-st-louis/" class="d-block"><img data-src="/blog/first-robotics-championship-competition-in-st-louis/Ultimate-Ascent_hu0852bc36159d465f268203bad1ff15da_15121_700x350_fill_q75_box_smart1.jpg" class="card-img-top mx-auto d-block" alt="FIRST Robotics Championship Competition in St. Louis"><div class="card-body">
+            <h4 class="card-title">FIRST Robotics Championship Competition in St. Louis</h4>
+            <p class="card-text text-muted text-uppercase">April 23, 2013</p>
+            <div class="card-text">
+                Cerner places a high value on talent development programs offering students the experience to build practical and tangible skills for the modern work environment. As part of this focus, Cerner supports FIRST Robotics, a competition providing experience in software engineering, where students learn to deal with complexity, time constraints, quality, and technical communications. Sound familiar? I wish they had this program when I was a kid!
+High school students from Kansas City will be testing their minds, willpower, and teamwork in this global robotics championship competition April 24-27 in St Louis, Missouri.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div></div>
+</main>
+
+
+    <footer class="footer text-center bg-dark py-6">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="https://engineering.cerner.com/index.xml" rel="alternate" type="application/rss+xml" class="icons d-block">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a></li><li class="list-inline-item">
+                            <a href="https://github.com/cerner" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.instagram.com/cernercorporation/" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.linkedin.com/company/cerner-corporation" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fengineering.cerner.com%2F&amp;screen_name=CernerEng" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.youtube.com/user/cernereng?sub_confirmation=1" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                </ul>
+
+                <p class="text-light">
+                    
+                        Copyright © 2020
+                    
+                </p>
+
+                <p class="text-light">
+                Made with ❤️ by Cerner engineers.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+    
+        
+            <script src="/dist/main.44c94dde179dd23bf3f1.min.js"></script>
+        
+    
+
+
+
+
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-37701128-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>internationalization on Engineering Health</title>
+    <link>https://engineering.cerner.com/tags/internationalization/</link>
+    <description>Recent content in internationalization on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Fri, 07 Jul 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/tags/internationalization/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>You May Not Be a Polyglot, but Your Code Needs to Be</title>
+      <link>https://engineering.cerner.com/blog/you-may-not-be-a-polyglot-but-your-code-needs-to-be/</link>
+      <pubDate>Fri, 07 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/you-may-not-be-a-polyglot-but-your-code-needs-to-be/</guid>
+      <description>Last October, I had the privilege to speak at Grace Hopper, the world&amp;rsquo;s largest gathering of women technologists. It was impressive to see 15,000 fellow female technologists gather together to share their experiences and technical expertise. To look into the audience, and see a room full of other female engineers was a great experience!
+My talk was titled, You May Not Be a Polyglot, but Your Code Needs to Be (previously presented at Midwest.</description>
+    </item>
+    
+  </channel>
+</rss>

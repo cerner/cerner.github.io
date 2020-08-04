@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>big data on Engineering Health</title>
+    <link>https://engineering.cerner.com/tags/big-data/</link>
+    <description>Recent content in big data on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Fri, 24 Jan 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/tags/big-data/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Raft Protocol: A Better Paxos?</title>
+      <link>https://engineering.cerner.com/blog/the-raft-protocol-a-better-paxos/</link>
+      <pubDate>Fri, 24 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/the-raft-protocol-a-better-paxos/</guid>
+      <description>Among the many compelling talks that attendees come to expect every year at the Strange Loop conference was a session given by Ben Johnson that provided an overview of a new distributed consensus protocol originating from research at Stanford University, named Raft.
+What is distributed consensus? Distributed consensus can be described as the act of reaching agreement among a collection of machines cooperating to solve a problem. With the rise of open source distributed computing and storage platforms, consensus algorithms have become essential tools for replication, and thus, serve to enhance resiliency by eliminating single points of failure.</description>
+    </item>
+    
+    <item>
+      <title>Thinking in MapReduce</title>
+      <link>https://engineering.cerner.com/blog/thinking-in-mapreduce/</link>
+      <pubDate>Wed, 31 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/thinking-in-mapreduce/</guid>
+      <description>This is the blog form of the Thinking in MapReduce talk at StampedeCon 2013. I’ve linked to existing resources for some items discussed in the talk, but the structure and major points are here.
+We programmers have had it pretty good over the years. In almost all cases, hardware scaled up faster than data size and complexity. Unfortunately, this is changing for many of us. Moore&amp;rsquo;s Law has taken on a new direction; we gain power with parallel processing rather than faster clock cycles.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kevin Shekleton on Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/kevin-shekleton/</link>
+    <description>Recent content in Kevin Shekleton on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Thu, 21 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/authors/kevin-shekleton/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cerner&#39;s Open Source Contributions for Interoperability Developers</title>
+      <link>https://engineering.cerner.com/blog/cerners-open-source-contributions-for-interoperability-developers/</link>
+      <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/cerners-open-source-contributions-for-interoperability-developers/</guid>
+      <description>Open source and open standards encourage collaboration around innovation that advances the health care industry through improved interoperability. Developers across health care can come together and use open source code to share information, as well as develop and continually improve apps to support better health outcomes for patients.
+At Cerner, developing open platforms that support interoperability standards like SMART® and FHIR® is integral to our mission of transforming health care. In addition to implementing these standards in our platforms, we also participate in organizations like HL7 and the Argonaut Project to help shape and develop these standards.</description>
+    </item>
+    
+    <item>
+      <title>Cerner and the Apache Software Foundation</title>
+      <link>https://engineering.cerner.com/blog/cerner-and-the-apache-software-foundation/</link>
+      <pubDate>Tue, 28 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/cerner-and-the-apache-software-foundation/</guid>
+      <description>At the beginning of this year, [we announced that Cerner became a bronze-level sponsor]({%post_url 2014-01-28-sponsoring-the-apache-software-foundation%}) of the non-profit Apache Software Foundation (ASF). Many of the open source projects we use and contribute to are under the ASF umbrella, so supporting the mission and work of the ASF is important to us.
+We&amp;rsquo;re happy to announce that Cerner has now increased our sponsorship of the ASF to become a silver-level sponsor. Open source continues to play an integral role in both our architecture and engineering culture.</description>
+    </item>
+    
+    <item>
+      <title>Sponsoring the Apache Software Foundation</title>
+      <link>https://engineering.cerner.com/blog/sponsoring-the-apache-software-foundation/</link>
+      <pubDate>Tue, 28 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/sponsoring-the-apache-software-foundation/</guid>
+      <description>Open source plays an integral role within engineering at Cerner. In addition to using open source software throughout our architecture, we recently released a few projects back to the community via our Github organization.
+Today, we’re happy to announce that Cerner is now a sponsor of the non-profit Apache Software Foundation (ASF). The ASF is home to several projects that are essential components in many of our systems. We’ve blogged previously about several of these projects: Hadoop, HBase, Crunch, Maven, and Storm.</description>
+    </item>
+    
+    <item>
+      <title>Cerner Tech Talks</title>
+      <link>https://engineering.cerner.com/blog/cerner-tech-talks/</link>
+      <pubDate>Tue, 12 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/cerner-tech-talks/</guid>
+      <description>We are always looking for ways to share knowledge and learn new things within engineering at Cerner. Whether that be through meetups, lunch &amp;amp; learns, conferences, or DevCon, we have a variety of outlets available to us.
+Today, we’re announcing a new program we recently launched: Cerner Tech Talks.
+Cerner Tech Talks brings in great speakers for talks that would be of interest to engineers at Cerner. These talks will be held periodically and will vary widely in their content.</description>
+    </item>
+    
+    <item>
+      <title>DevCon</title>
+      <link>https://engineering.cerner.com/blog/devcon/</link>
+      <pubDate>Mon, 26 Aug 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/devcon/</guid>
+      <description>This past June, 2,500 associates from across Cerner came together for DevCon, our internal developers conference. Now in its 3rd year, DevCon is a two-day, engineering-led conference that was created to bring together Cerner associates involved in all aspects of development and technology. DevCon is organized and run like many other developer conferences, complete with a call for papers and a talk selection committee. This year, we had 80 talks covering a wide array of topics such as big data, user experience and design, DevOps, and mobile development.</description>
+    </item>
+    
+  </channel>
+</rss>

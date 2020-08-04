@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bigdata on Engineering Health</title>
+    <link>https://engineering.cerner.com/tags/bigdata/</link>
+    <description>Recent content in bigdata on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Fri, 09 May 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/tags/bigdata/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Scaling People with Apache Crunch</title>
+      <link>https://engineering.cerner.com/blog/scaling-people-with-apache-crunch/</link>
+      <pubDate>Fri, 09 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/scaling-people-with-apache-crunch/</guid>
+      <description>Starting the Big Data Journey When a company first starts to play with Big Data it typically involves a small team of engineers trying to solve a specific problem. The team decides to experiment with scalable technologies either due to outside guidance or research which makes it applicable to their problem. The team begins with the basics of Big Data spending time learning and prototyping. They learn about HDFS, flirt with HBase or other NoSQL, write the required WordCount example, and start to figure out how the technologies can fit their needs.</description>
+    </item>
+    
+  </channel>
+</rss>

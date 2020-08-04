@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>spark on Engineering Health</title>
+    <link>https://engineering.cerner.com/tags/spark/</link>
+    <description>Recent content in spark on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Mon, 02 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/tags/spark/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Scalable Data Science with FHIR</title>
+      <link>https://engineering.cerner.com/blog/data-engineering-with-bunsen/</link>
+      <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/data-engineering-with-bunsen/</guid>
+      <description>The FHIR standard started as a better way to exchange healthcare data, but it also provides a solid basis for deep analytics and Machine Learning at scale. This post looks at an example from the recent FHIR DevDays conference that does just that. You can also run the interactive FHIR data engineering tutorial used in the conference yourself.
+Our first step is to bring FHIR data into a data lake &amp;ndash; a computational environment where our analysis can easily and efficiently work through petabytes of data.</description>
+    </item>
+    
+    <item>
+      <title>Announcing Bunsen: FHIR Data with Apache Spark</title>
+      <link>https://engineering.cerner.com/blog/announcing-bunsen-fhir-data-with-apache-spark/</link>
+      <pubDate>Mon, 27 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/announcing-bunsen-fhir-data-with-apache-spark/</guid>
+      <description>We&amp;rsquo;re excited to open source Bunsen, a library to make analyzing FHIR data with Apache Spark simple and scalable. Bunsen encodes FHIR resources directly into Apache Spark&amp;rsquo;s native data structures. This lets users leverage well-defined FHIR data models directly within Spark SQL.
+Here&amp;rsquo;s a simple query against a table of FHIR observations that produces a table of heart rate values:
+spark.sql(&amp;#34;&amp;#34;&amp;#34; select subject.reference person_id, effectiveDateTime date_time, valueQuantity.value value from observations where in_valueset(code, &amp;#39;heart_rate&amp;#39;) &amp;#34;&amp;#34;&amp;#34;).</description>
+    </item>
+    
+  </channel>
+</rss>

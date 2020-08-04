@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Melanie Carpenter on Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/melanie-carpenter/</link>
+    <description>Recent content in Melanie Carpenter on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Tue, 08 Nov 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.cerner.com/authors/melanie-carpenter/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fall 2016 ShipIt Day</title>
+      <link>https://engineering.cerner.com/blog/fall-2016-shipit-day/</link>
+      <pubDate>Tue, 08 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/fall-2016-shipit-day/</guid>
+      <description>Another ShipIt Day was held on September 8th-9th at the Realization Campus at Cerner. ShipIt is a 24-hour hackathon with the goal of building something awesome, usable, and value-adding within a single day. This fall marked our sixth ShipIt, which has has grown significantly since our first event.
+   The event kicked off in the morning at the auditorium of our Realization campus. At this point, teams were already formed, instructions were given, and shirts were handed out.</description>
+    </item>
+    
+    <item>
+      <title>Spring 2016 ShipIt Day</title>
+      <link>https://engineering.cerner.com/blog/spring-2016-shipit-day/</link>
+      <pubDate>Mon, 18 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/spring-2016-shipit-day/</guid>
+      <description>ShipIt Day is an all day, all night hackathon with the goal of building something awesome, usable, and value-adding within the given 24 hours. This Spring marked our fifth ShipIt Day, with participation and reach growing with each event.
+We kicked off the event at 10 AM on Thursday, when teams broke out and got to work and stopped only for food and caffeine. Many stayed until a few hours after dinner arrived, several stayed all night and took naps in their workspace, and a few worked through the whole night.</description>
+    </item>
+    
+  </channel>
+</rss>

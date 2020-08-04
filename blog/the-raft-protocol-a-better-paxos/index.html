@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+  
+     The Raft Protocol: A Better Paxos? | 
+    Engineering Health
+  
+</title><meta name="description" content="a blog by engineers, for engineers"><meta name="author" content="David Edwards">
+
+<link rel="icon" href="/favicon.png">
+
+
+    
+        
+            <link rel="stylesheet" href="/dist/main.8ddb5a998657440f326d.min.css">
+        
+    
+
+
+
+
+<link rel="canonical" href="https://engineering.cerner.com/blog/the-raft-protocol-a-better-paxos/"><script src="/js/jquery-3.5.1.min.js"></script><meta property="og:title" content="The Raft Protocol: A Better Paxos?" />
+<meta property="og:description" content="Among the many compelling talks that attendees come to expect every year at the Strange Loop conference was a session given by Ben Johnson that provided an overview of a new distributed consensus protocol originating from research at Stanford University, named Raft.
+What is distributed consensus? Distributed consensus can be described as the act of reaching agreement among a collection of machines cooperating to solve a problem. With the rise of open source distributed computing and storage platforms, consensus algorithms have become essential tools for replication, and thus, serve to enhance resiliency by eliminating single points of failure." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://engineering.cerner.com/blog/the-raft-protocol-a-better-paxos/" />
+<meta property="article:published_time" content="2014-01-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2014-01-24T00:00:00+00:00" />
+<meta itemprop="name" content="The Raft Protocol: A Better Paxos?">
+<meta itemprop="description" content="Among the many compelling talks that attendees come to expect every year at the Strange Loop conference was a session given by Ben Johnson that provided an overview of a new distributed consensus protocol originating from research at Stanford University, named Raft.
+What is distributed consensus? Distributed consensus can be described as the act of reaching agreement among a collection of machines cooperating to solve a problem. With the rise of open source distributed computing and storage platforms, consensus algorithms have become essential tools for replication, and thus, serve to enhance resiliency by eliminating single points of failure.">
+<meta itemprop="datePublished" content="2014-01-24T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2014-01-24T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="916">
+
+
+
+<meta itemprop="keywords" content="big data,engineering," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The Raft Protocol: A Better Paxos?"/>
+<meta name="twitter:description" content="Among the many compelling talks that attendees come to expect every year at the Strange Loop conference was a session given by Ben Johnson that provided an overview of a new distributed consensus protocol originating from research at Stanford University, named Raft.
+What is distributed consensus? Distributed consensus can be described as the act of reaching agreement among a collection of machines cooperating to solve a problem. With the rise of open source distributed computing and storage platforms, consensus algorithms have become essential tools for replication, and thus, serve to enhance resiliency by eliminating single points of failure."/>
+
+</head>
+<body>
+    
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-sm" id="navbar-main-menu">
+    <div class="container">
+        <a class="navbar-brand" href="/"><img src="/cerner-logo.png"/></a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="main-menu" class="collapse navbar-collapse" >
+            <ul class="nav navbar-nav ml-auto">
+                
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/culture/">Culture</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/open-source/">Open Source</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/tech-talks/">Tech Talks</a></li>
+                
+            
+            </ul>
+            
+            <div class="form-inline my-2 my-lg-0 searchbox">
+    <input id="search-by" type="search" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js"></script>
+<script type="text/javascript" src="/js/auto-complete.min.js"></script>
+<script type="text/javascript">
+    var baseurl =  "https:\/\/engineering.cerner.com";
+</script>
+<script type="text/javascript" src="/js/search.js"></script>
+        </div>
+    </div>
+</nav>
+
+
+    
+<main class="content-page container pt-7 pb-5">
+    
+    <div class="row">
+        <div class="col">
+            <article class="article-content">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="meta text-muted mb-3">
+                            <p class="created text-muted text-uppercase font-weight-bold mb-1">January 24, 2014</p>
+                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>916 words</span>
+                            <span><i class="fas fa-clock mr-2"></i>5 mins read</span>
+                        </div>
+
+                        <h1>The Raft Protocol: A Better Paxos?</h1>
+
+                        <ul class="authors list-inline">
+        By: &nbsp;<li class="list-inline-item mr-3">
+                    <div class="media author">
+                            👤&nbsp;<div class="media-body">
+                            <h5 class="name my-0 "><a href="/authors/david-edwards/" class="small">David Edwards</a>
+                            </h5>
+                        </div>
+                    </div>
+                </li></ul>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="content">
+                            <p>Among the many compelling talks that attendees come to expect every year at the Strange Loop conference was a <a href="https://thestrangeloop.com/sessions/raft-the-understandable-distributed-protocol">session</a> given by Ben Johnson that provided an overview of a new distributed consensus protocol originating from research at Stanford University, named <a href="http://raftconsensus.github.io/">Raft</a>.</p>
+<h2 id="what-is-distributed-consensus">What is distributed consensus?</h2>
+<p>Distributed consensus can be described as the act of reaching agreement among a collection of machines cooperating to solve a problem. With the rise of open source distributed computing and storage platforms, consensus algorithms have become essential tools for replication, and thus, serve to enhance resiliency by eliminating single points of failure.</p>
+<p>Examples of distributed consensus in action can often be elusive because such protocols are ordinarily buried inside core systems, and consequently, are largely invisible to application developers. For example, a relational database in a clustered configuration would typically employ a consensus algorithm to coordinate commits with other replicas. And similarly, Apache ZooKeeper, a popular distributed synchronization service used in projects such as HBase and Solr, utilizes a consensus protocol to achieve fault-tolerance by replicating its configuration repository across many servers.</p>
+<h2 id="raft-is-about-understandability-and-practicality">Raft is about understandability and practicality</h2>
+<p>The current Raft <a href="https://ramcloud.stanford.edu/wiki/download/attachments/11370504/raft.pdf">paper</a> argues that while <a href="http://en.wikipedia.org/wiki/Paxos_%28computer_science%29">Paxos</a> has historically dominated both academic and commercial discourse with respect to distributed consensus, the protocol itself is too complicated to reason about and that a more understandable algorithm was needed, not only for educational purposes, but also to serve as a foundation for building practical systems.</p>
+<p>An obvious question instinctively arises for the inquisitive reader: what makes Raft better than Paxos? Having personally implemented a replicated log using the Paxos algorithm, there was a natural curiosity in understanding how Raft approached the problem of solving consensus. It is worth noting, however, that comparing Raft and Paxos can be a bit misleading. Even though both address the fundamental problem of reaching consensus among a network of connected machines, Paxos is more academic in nature and primarily concerned with the mechanics of consensus, whereas Raft is oriented around the practical challenges of implementing a replicated log.</p>
+<h2 id="paxos-is-about-theory">Paxos is about theory</h2>
+<p>The seminal work done by Leslie Lamport in 1989 with the design of the Paxos protocol was an important step forward in establishing a theoretical foundation for achieving consensus in asynchronous distributed systems. His contributions were largely academic and centered around reaching agreement on a single value, thus relying on software engineers to translate these ideas into practical solutions, such as replicated databases, which must decide on many values. However, the actual requirements necessary to build a real system, including areas such as leader election, failure detection, and log management, are not present in the Paxos specification, yet add a degree of complexity that almost always significantly alters the original protocol. This is precisely where the Raft designers correctly argue that the absence of specificity leads to great difficulty in applying Paxos to real world problems. A subsequent <a href="http://research.microsoft.com/en-us/um/people/lamport/pubs/paxos-simple.pdf">paper</a> by Lamport in 2001 does an excellent job of making the original protocol accessible to practitioners, and to some degree, proposes techniques for designing a replicated log, but it stops short of being prescriptive in the way that Raft does.</p>
+<h2 id="you-say-tomāto-i-say-tomäto">You say tomāto, I say tomäto</h2>
+<p>Raft is unique in many ways compared to typical Paxos implementations, but despite those differences, both are grounded in a similar set of core principles. For example, Raft requires leader election to occur strictly before any new values can be appended to the log, whereas a Paxos implementation would make the election process an implicit outcome of reaching agreement. The Raft designers claim that doing so has the consequence of simplifying log management, particularly with respect to edge cases in which a succession of leadership changes can result in log discrepancies, but the tradeoff is that leader election in Raft is more complicated than its counterpart in Paxos.</p>
+<p>What both protocols acknowledge, though, is that leader election is imperative if systems want to ensure progress. The notion of progress simply means that a system eventually does something useful. An important discovery in 1985, called the <a href="http://cs-www.cs.yale.edu/homes/arvind/cs425/doc/fischer.pdf">FLP Impossibility Result</a>, proved that consensus was impossible in asynchronous distributed systems with the presence of only one faulty process. The practical implication follows: a system that cannot reach consensus is a system that cannot make progress. To be clear, the finding did not state that consensus was unreachable, just that some executions cannot reach consensus in bounded time. As a consequence, leader election, combined with timeouts, is often used as a technique for eliminating a class of conditions under which reaching agreement could take an arbitrarily long period of time. Interestingly, the Paxos algorithm as originally described by Lamport, makes no guarantees about progress, so implementations are compelled to incorporate timeouts as a compensatory measure. Raft, on the other hand, is prescriptive about the use of timeouts.</p>
+<h2 id="raft-wins-on-accessibility">Raft wins on accessibility</h2>
+<p>One especially interesting component of the Raft specification is the mechanism for coordinating changes to cluster membership. The protocol employs a novel approach in which joint consensus is reached using two overlapping majorities, i.e. quorums defined by both the old and new cluster configuration, thereby supporting dynamic elasticity without disruption to operations.</p>
+<p>The emergence of Raft has clearly seen a positive embrace by the software development community as evidenced by nearly 40 <a href="http://raftconsensus.github.io/#implementations">open source implementations</a> in a variety of different languages. Even though Paxos is beautifully elegant in describing the essence of distributed consensus, the absence of a comprehensive and prescriptive specification has rendered it inaccessible and notoriously difficult to implement in practical systems.</p>
+
+                        </div><div class="tags my-3"><a class="badge badge-pill badge-light border mr-2" href="/tags/big-data">
+                                    <i class="fas fa-tag mr-2"></i>big data
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/engineering">
+                                    <i class="fas fa-tag mr-2"></i>engineering
+                                </a></div><ul class="share nav my-3 justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://twitter.com/intent/tweet?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fthe-raft-protocol-a-better-paxos%2f&text=The%20Raft%20Protocol%3a%20A%20Better%20Paxos%3f">
+              <i class="fa-fw fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fthe-raft-protocol-a-better-paxos%2f&title=The%20Raft%20Protocol%3a%20A%20Better%20Paxos%3f">
+                <i class="fa-fw fab fa-linkedin-in"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fengineering.cerner.com%2fblog%2fthe-raft-protocol-a-better-paxos%2f&t=The%20Raft%20Protocol%3a%20A%20Better%20Paxos%3f">
+                <i class="fa-fw fab fa-facebook-f"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://reddit.com/submit?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fthe-raft-protocol-a-better-paxos%2f&title=The%20Raft%20Protocol%3a%20A%20Better%20Paxos%3f">
+                <i class="fa-fw fab fa-reddit-alien"></i>
+            </a>
+        </li>
+    </nav>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        
+                    </div>
+                </div></article>
+        </div>
+    </div>
+
+    <div class="related-content row mt-5 row-cols-1 row-cols-lg-3"><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/thinking-in-mapreduce/" class="d-block"><img data-src="/blog/thinking-in-mapreduce/MapReduce1_hu436bc019973155fe9855a21e1b676571_45310_700x350_fill_box_smart1_2.png" class="card-img-top mx-auto d-block" alt="Thinking in MapReduce"><div class="card-body">
+            <h4 class="card-title">Thinking in MapReduce</h4>
+            <p class="card-text text-muted text-uppercase">July 31, 2013</p>
+            <div class="card-text">
+                This is the blog form of the Thinking in MapReduce talk at StampedeCon 2013. I’ve linked to existing resources for some items discussed in the talk, but the structure and major points are here.
+We programmers have had it pretty good over the years. In almost all cases, hardware scaled up faster than data size and complexity. Unfortunately, this is changing for many of us. Moore’s Law has taken on a new direction; we gain power with parallel processing rather than faster clock cycles.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/cerner-and-open-source/" class="d-block"><div class="card-body">
+            <h4 class="card-title">Cerner and Open Source</h4>
+            <p class="card-text text-muted text-uppercase">January 16, 2014</p>
+            <div class="card-text">
+                (This post was written by Nathan Beyer, Bryan Baugher and Jacob Williams.)
+The use of open source software has become nearly ubiquitous in contemporary software development and it is no different for us, here at Cerner. We have been using open source software, directly and indirectly, for decades. Over the past decade, we’ve grown in maturity both in our use of open source software as well as our participation in open source communities.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/cerner-tech-talks/" class="d-block"><div class="card-body">
+            <h4 class="card-title">Cerner Tech Talks</h4>
+            <p class="card-text text-muted text-uppercase">November 12, 2013</p>
+            <div class="card-text">
+                We are always looking for ways to share knowledge and learn new things within engineering at Cerner. Whether that be through meetups, lunch &amp; learns, conferences, or DevCon, we have a variety of outlets available to us.
+Today, we’re announcing a new program we recently launched: Cerner Tech Talks.
+Cerner Tech Talks brings in great speakers for talks that would be of interest to engineers at Cerner. These talks will be held periodically and will vary widely in their content.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div></div>
+</main>
+
+
+    <footer class="footer text-center bg-dark py-6">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="https://engineering.cerner.com/index.xml" rel="alternate" type="application/rss+xml" class="icons d-block">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a></li><li class="list-inline-item">
+                            <a href="https://github.com/cerner" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.instagram.com/cernercorporation/" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.linkedin.com/company/cerner-corporation" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fengineering.cerner.com%2F&amp;screen_name=CernerEng" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.youtube.com/user/cernereng?sub_confirmation=1" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                </ul>
+
+                <p class="text-light">
+                    
+                        Copyright © 2020
+                    
+                </p>
+
+                <p class="text-light">
+                Made with ❤️ by Cerner engineers.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+    
+        
+            <script src="/dist/main.44c94dde179dd23bf3f1.min.js"></script>
+        
+    
+
+
+
+
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-37701128-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body>
+</html>
