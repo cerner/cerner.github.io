@@ -5,7 +5,7 @@ This site is built with [Hugo](https://gohugo.io/). You will need to have it ins
 This project contain two branches:
 
 * `source`: This contains the source code of the site. This is the only branch you should modify.
-* `master`: This is generated from the source branch and is what is deployed to http://engineering.cerner.com. This should never be modified manually.
+* `main`: This is generated from the source branch and is what is deployed to http://engineering.cerner.com. This should never be modified manually.
 
 ## Setup
 
@@ -25,7 +25,7 @@ hugo server
 
 ## Writing a New Blog Post
 
-When writing a blog post, all content is contained in the `source` branch. Content is then generated into the `master` branch for site generation.
+When writing a blog post, all content is contained in the `source` branch. Content is then generated into the `main` branch for site generation.
 
 To create your new post, you can use Hugo's archetype for the new post:
 
@@ -78,4 +78,4 @@ You can add your `twitter` handle if you want, but that is an optional field.
 2. Test your changes locally
 3. Submit a pull request to the source branch with your changes
 
-Once your pull request is accepted, someone with commit privileges will regenerate the master branch and push to Github. Your changes will then be live.
+Once your pull request is accepted, someone with commit privileges will regenerate the `main` branch and push to Github. Your changes will then be live.
