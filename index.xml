@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2020</copyright>
-    <lastBuildDate>Mon, 24 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.cerner.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>We’re Back with a New Look</title>
+      <link>https://engineering.cerner.com/blog/we-are-back-w-new-look/</link>
+      <pubDate>Tue, 04 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/we-are-back-w-new-look/</guid>
+      <description>If you have been to our blog before, you might notice that it has a new look. Our past version of the site was one that we had used for several years. It utilized Jekyll for the static site generation, which is a popular project that leverages the Ruby ecosystem. Over the last few months, we recognized that our site needed an update. This change wasn’t only with its look and feel, but also with what we used in building the site.</description>
+    </item>
     
     <item>
       <title>ShipIt Day XVII</title>

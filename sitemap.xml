@@ -3,17 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://engineering.cerner.com/authors/</loc>
-    <lastmod>2020-02-24T00:00:00+00:00</lastmod>
+    <loc>https://engineering.cerner.com/authors/carl-chesser/</loc>
+    <lastmod>2020-08-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://engineering.cerner.com/tags/engineering/</loc>
-    <lastmod>2020-02-24T00:00:00+00:00</lastmod>
+    <loc>https://engineering.cerner.com/authors/</loc>
+    <lastmod>2020-08-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://engineering.cerner.com/</loc>
+    <lastmod>2020-08-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.cerner.com/post/</loc>
+    <lastmod>2020-08-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.cerner.com/blog/we-are-back-w-new-look/</loc>
+    <lastmod>2020-08-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.cerner.com/tags/engineering/</loc>
     <lastmod>2020-02-24T00:00:00+00:00</lastmod>
   </url>
   
@@ -24,11 +39,6 @@
   
   <url>
     <loc>https://engineering.cerner.com/authors/jordan-bush/</loc>
-    <lastmod>2020-02-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.cerner.com/post/</loc>
     <lastmod>2020-02-24T00:00:00+00:00</lastmod>
   </url>
   
@@ -130,11 +140,6 @@
   <url>
     <loc>https://engineering.cerner.com/authors/jake-kramer/</loc>
     <lastmod>2019-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.cerner.com/authors/carl-chesser/</loc>
-    <lastmod>2019-03-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
