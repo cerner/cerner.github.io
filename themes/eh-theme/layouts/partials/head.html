@@ -1,0 +1,44 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+  {{ block "title" . }}
+    {{ with .Params.Title }} {{ . }} | {{ end }}
+    {{ .Site.Title }}
+  {{ end }}
+</title>
+
+{{- if .Description -}}
+  <meta name="description" content="{{ .Description }}">
+{{- else if .Site.Params.description -}}
+  <meta name="description" content="{{ .Site.Params.description }}">
+{{- end -}}
+
+<meta name="author" content="{{ if .Params.authors }}{{ delimit .Params.authors ", " }}{{ else }}{{ .Site.Params.author }}{{ end }}">
+
+<link rel="icon" href="{{ "favicon.png" | relURL }}">
+
+{{ with index .Site.Data "eh" }}
+    {{ range $vendor := .assets }}
+        {{ if $vendor.css }}
+            <link rel="stylesheet" href="{{ print "dist/" $vendor.css | relURL }}">
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ range .Site.Params.customCSS -}}
+    <link rel="stylesheet" href="{{ "css/" | relURL }}{{ . }}">
+{{ end }}
+
+<link rel="canonical" href="{{ .Permalink }}">
+{{- with .OutputFormats.Get "RSS" }}
+  <link href="{{ .Permalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}">
+  <link href="{{ .Permalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}">
+{{- end -}}
+
+<script src="{{"js/jquery-3.5.1.min.js"| relURL}}"></script>
+
+{{- template "_internal/opengraph.html" . -}}
+{{- template "_internal/google_news.html" . -}}
+{{- template "_internal/schema.html" . -}}
+{{- template "_internal/twitter_cards.html" . -}}

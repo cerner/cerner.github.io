@@ -1,0 +1,12 @@
+{{ with index .Site.Data "eh" }}
+    {{ range $vendor := .assets }}
+        {{ if $vendor.js }}
+            <script src="{{ print "dist/" $vendor.js | relURL }}"></script>
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ range .Site.Params.customJS -}}
+    <script src="{{ "js/" | relURL }}{{ . }}"></script>
+{{ end }}
+

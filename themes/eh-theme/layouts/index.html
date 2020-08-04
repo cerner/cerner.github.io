@@ -1,0 +1,75 @@
+{{ define "main" }}
+<main class="homepage container py-6">
+
+    <!-- Hero -->
+    <div class="hero row">
+        <div class="col position-relative py-lg-7{{ if not .Site.Params.homepageImage }} py-7{{ else }} pb-5{{ end }}">
+            {{- with .Site.Params.homepageImage -}}
+                <div class="homepage-image">
+                    <img src="{{ . | relURL }}" class="img-fluid">
+                </div>
+            {{- end -}}
+
+            <h1 class="display-4 font-weight-bold">{{ .Site.Title }}</h1>
+            {{- with .Site.Params.description -}}
+                <h3 class="font-weight-normal text-muted">{{ . | safeHTML }}</h3>
+            {{- end -}}
+        </div>
+    </div>
+
+    {{ $pages := where site.RegularPages "Type" "post" }}
+    {{ $paginator := .Paginate $pages }}
+    <!-- Latest article -->
+    {{ if eq $paginator.PageNumber 1}}
+    {{- range first 1 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) -}}
+        {{ $page := . }}
+        <div class="latest row py-lg-5">
+            <div class="col-lg-6 mb-3">
+                {{- with $page.Params.thumbnail -}}
+                    {{- $thumbnail := . -}}
+                    {{- with $page.Resources.GetMatch $thumbnail -}}
+                        {{- $thumbnail := .Fill "700x450" -}}
+                        <img data-src="{{ $thumbnail.RelPermalink }}" class="card-img-top mx-auto d-block" alt="{{ $page.Title }}">
+                    {{- end -}}
+                {{- end -}}
+            </div>
+            <div class="col-lg-6 mb-3">
+                <h5 class="created text-muted text-uppercase font-weight-bold">{{ $page.Date.Format "January 2, 2006" }}</h5>
+                <h2><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h2>
+
+                <div class="content">
+                    {{ $page.Summary }}
+                </div>
+            </div>
+        </div>
+    {{- end -}}
+    {{ end }}
+
+    <!-- Articles -->
+    <div class="articles row row-cols-1 row-cols-lg-3">
+        {{ range after 1 $paginator.Pages }}
+            <div class="col mb-3">
+                {{ .Render "card" }}
+            </div>
+        {{ end }}
+    </div>
+
+    {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+    <nav aria-label="Navigation">
+        <ul class="pagination justify-content-center">
+            {{ if $paginator.HasPrev }}
+            <li class="page-item"><a class="page-link" href="{{ $paginator.Prev.URL }}" tabindex="-1">Previous</a></li>
+            {{ end }}
+        
+            {{ range $paginator.Pagers }}
+            <li class="page-item"><a class="page-link" href="{{ .URL }}">{{ .PageNumber }}</a></li>
+            {{ end }}
+
+            {{ if $paginator.HasNext }}
+            <li class="page-item"><a class="page-link" href="{{ $paginator.Next.URL }}">Next</a></li>
+            {{ end }}    
+        </ul>
+    </nav>
+    {{ end }}
+</main>
+{{ end }}

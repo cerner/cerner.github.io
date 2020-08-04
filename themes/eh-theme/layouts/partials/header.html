@@ -1,0 +1,23 @@
+{{ $current := . }}
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-sm" id="navbar-main-menu">
+    <div class="container">
+        <a class="navbar-brand" href="/"><img src="/cerner-logo.png"/></a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="main-menu" class="collapse navbar-collapse" >
+            <ul class="nav navbar-nav ml-auto">
+            {{- if .Site.Params.showLanguageSwitcher -}}
+                {{ partial "i18nlist.html" . }}
+            {{- end -}}
+            {{ with .Site.Menus.main }}
+                {{ range . }}
+                    <li class="nav-item{{ if $current.IsMenuCurrent "main" . }} active{{ end }}"><a class="nav-link" href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
+                {{ end }}
+            {{ end }}
+            </ul>
+            
+            {{ partial "search.html" . }}
+        </div>
+    </div>
+</nav>

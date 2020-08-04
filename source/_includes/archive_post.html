@@ -1,9 +1,0 @@
-{% capture category %}{{ post.categories | size }}{% endcapture %}
-<div class="archive-meta meta">{% include post/date.html %}{{ time }} | {% include post/author.html %}</div>
-<h2 class="archive-title"><a href="{{ root_url }}{{ post.url }}">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a></h2>
-
-{% if category != '0' %}
-<footer>
-  <span class="categories">posted in {{ post.categories | category_links }}</span>
-</footer>
-{% endif %}
