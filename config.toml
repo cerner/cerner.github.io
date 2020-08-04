@@ -39,7 +39,7 @@ author = "authors"
 
 # Maintaining the /blog directory for posts
 [permalinks]
-  post = "/blog/:slug"
+  post = "/blog/:filename"
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
