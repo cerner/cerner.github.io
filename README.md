@@ -27,15 +27,50 @@ hugo server
 
 When writing a blog post, all content is contained in the `source` branch. Content is then generated into the `master` branch for site generation.
 
-### Blog Post
+To create your new post, you can use Hugo's archetype for the new post:
 
-First, create a folder: `/content/post/{yyyy-mm-dd}-{name}` where name is a short name delimited by dashes.
+```bash
+# Replace {name} with the short name of your post
+hugo new post/{name}/index.md
+```
 
-First, add a new file in `/content/post/{yyyy-mm-dd}-{name}.md`
+This file will then be created with the following examples if we used "hello-world" for the `{name}`.
 
-The yyyy-mm-dd should be the day in which your blog post will go live. Copy one of the existing blog posts to ensure that you retain the proper metadata at the top of the post.
+```markdown
+---
+title: "Hello World"
+date: 2020-08-03
+authors: [""]
+thumbnail: ""
+tags: []
+---
 
-If your blog post has images, you can place them in the folder
+```
+
+* Update the `title` to match what you are wanting specifically for your title.
+* Update the `date` to be the planned publish date for your blog post. 
+* Add the names of the authors to the `authors` array.
+* Add any images you want to use for your blog post to this created directory. You will want to assign the `thumbnail` attribute with the filename of the image you want on the preview of the post.
+* You may add strings to the `tags` array; however, this is an optional field and should only use it if it makes sense to tag for a common set of posts (like "devcon" or "shipit").
+
+### Authors
+
+When adding authors, it is recommended that you add information about the author, which would include a profile photo. This can created with the following archetype:
+
+```bash
+hugo new authors/{first}-{last}/_index.md
+```
+
+You will want to add a photo of you to this directory. You can then edit the `_index.md` with the basic metadata. Here is an example:
+
+```markdown
+---
+name: "Jane Doe"
+images: ["jane.jpg"]
+---
+```
+
+You can add your `twitter` handle if you want, but that is an optional field.
 
 ## Submitting a Change
 

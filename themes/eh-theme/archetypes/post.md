@@ -1,7 +1,7 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
-thumnail: ""
-categories: []
+date: {{ dateFormat "2006-01-02" .Date }}
+authors: [""]
+thumbnail: ""
 tags: []
 ---
