@@ -1,5 +1,5 @@
 ---
-title: "Creating the Giant Litebrite"
+title: "Creating the Giant LiteBrite"
 date: 2020-08-26
 authors: ["Paul Sites"]
 thumbnail: "image13.jpg"
