@@ -3,7 +3,7 @@ title: "Creating the Giant LiteBrite"
 date: 2020-08-26
 authors: ["Paul Sites"]
 thumbnail: "image13.jpg"
-tags: [makerspace, dyi]
+tags: [makerspace, diy]
 ---
 
 Have you ever wondered what happens when you let two engineers loose on a project with a broad vision and little direction? In our case, LiteBrite happens.
