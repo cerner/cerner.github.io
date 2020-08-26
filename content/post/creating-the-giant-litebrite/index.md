@@ -158,3 +158,5 @@ LiteBrite was invited to [Cerner Health Conference](https://cernerhealthconferen
 {{< figure src="image11.jpg" >}}
 
 Today, when LiteBrite isn't traveling it lives at the entrance to Cerner's Innovations Campus. It greets associates every morning with a hot cup of coffee, plays back select LiteBrite creations, and encourages associates to take some time to create.
+
+_This article includes contributions from Aaron Kaplan._
