@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+  
+     Creating the Giant Litebrite | 
+    Engineering Health
+  
+</title><meta name="description" content="a blog by engineers, for engineers"><meta name="author" content="Paul Sites">
+
+<link rel="icon" href="/favicon.png">
+
+
+    
+        
+            <link rel="stylesheet" href="/dist/main.8ddb5a998657440f326d.min.css">
+        
+    
+
+
+
+
+<link rel="canonical" href="https://engineering.cerner.com/blog/creating-the-giant-litebrite/"><script src="/js/jquery-3.5.1.min.js"></script><meta property="og:title" content="Creating the Giant Litebrite" />
+<meta property="og:description" content="Have you ever wondered what happens when you let two engineers loose on a project with a broad vision and little direction? In our case, LiteBrite happens.
+Every year Cerner hosts DevCon, an internal 2-day conference for all of Cerner engineering to come together, give talks about technologies, processes, and ideas - all with a little fun sprinkled in. DevCon always has a theme, for 2019 that was set to be “The 80s." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://engineering.cerner.com/blog/creating-the-giant-litebrite/" />
+<meta property="article:published_time" content="2020-08-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-08-26T00:00:00+00:00" />
+<meta itemprop="name" content="Creating the Giant Litebrite">
+<meta itemprop="description" content="Have you ever wondered what happens when you let two engineers loose on a project with a broad vision and little direction? In our case, LiteBrite happens.
+Every year Cerner hosts DevCon, an internal 2-day conference for all of Cerner engineering to come together, give talks about technologies, processes, and ideas - all with a little fun sprinkled in. DevCon always has a theme, for 2019 that was set to be “The 80s.">
+<meta itemprop="datePublished" content="2020-08-26T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-08-26T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1941">
+
+
+
+<meta itemprop="keywords" content="makerspace,dyi," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Creating the Giant Litebrite"/>
+<meta name="twitter:description" content="Have you ever wondered what happens when you let two engineers loose on a project with a broad vision and little direction? In our case, LiteBrite happens.
+Every year Cerner hosts DevCon, an internal 2-day conference for all of Cerner engineering to come together, give talks about technologies, processes, and ideas - all with a little fun sprinkled in. DevCon always has a theme, for 2019 that was set to be “The 80s."/>
+
+</head>
+<body>
+    
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-sm" id="navbar-main-menu">
+    <div class="container">
+        <a class="navbar-brand" href="/"><img src="/cerner-logo.png"/></a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="main-menu" class="collapse navbar-collapse" >
+            <ul class="nav navbar-nav ml-auto">
+                
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/culture/">Culture</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/open-source/">Open Source</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/tech-talks/">Tech Talks</a></li>
+                
+            
+            </ul>
+            
+            <div class="form-inline my-2 my-lg-0 searchbox">
+    <input id="search-by" type="search" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js"></script>
+<script type="text/javascript" src="/js/auto-complete.min.js"></script>
+<script type="text/javascript">
+    var baseurl =  "https:\/\/engineering.cerner.com";
+</script>
+<script type="text/javascript" src="/js/search.js"></script>
+        </div>
+    </div>
+</nav>
+
+
+    
+<main class="content-page container pt-7 pb-5">
+    
+    <div class="row">
+        <div class="col">
+            <article class="article-content">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="meta text-muted mb-3">
+                            <p class="created text-muted text-uppercase font-weight-bold mb-1">August 26, 2020</p>
+                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>1941 words</span>
+                            <span><i class="fas fa-clock mr-2"></i>10 mins read</span>
+                        </div>
+
+                        <h1>Creating the Giant Litebrite</h1>
+
+                        <ul class="authors list-inline">
+        By: &nbsp;<li class="list-inline-item mr-3">
+                    <div class="media author"><a href="/authors/paul-sites/" class="mr-3">
+                                    <picture>
+                                        <source srcset="/authors/paul-sites/paul_hu70bccaed74f38f247a5751ee94fc135a_18500_48x0_resize_q75_box.jpeg 1x, /authors/paul-sites/paul_hu70bccaed74f38f247a5751ee94fc135a_18500_128x0_resize_q100_box.jpeg 2x, /authors/paul-sites/paul_hu70bccaed74f38f247a5751ee94fc135a_18500_192x0_resize_q100_box.jpeg 3x">
+                                        <img src="/authors/paul-sites/paul_hu70bccaed74f38f247a5751ee94fc135a_18500_48x0_resize_q75_box.jpeg" class="rounded-circle" alt="Paul Sites">
+                                    </picture>
+                                </a><div class="media-body">
+                            <h5 class="name my-2 "><a href="/authors/paul-sites/" class="small">Paul Sites</a>
+                            </h5>
+                        </div>
+                    </div>
+                </li></ul>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="content">
+                            <p>Have you ever wondered what happens when you let two engineers loose on a project with a broad vision and little direction? In our case, LiteBrite happens.</p>
+<p>Every year Cerner hosts <a href="https://engineering.cerner.com/blog/devcon/">DevCon</a>, an internal 2-day conference for all of Cerner engineering to come together, give talks about technologies, processes, and ideas - all with a little fun sprinkled in. DevCon always has a theme, for 2019 that was set to be “The 80s.” Along with many other decorations, the Engineering Culture team had a dream of having a giant LiteBrite for attendees to interact with at the conference.</p>
+<h2 id="the-request">The Request</h2>
+<p>In the Fall of 2018 the Engineering Culture team approached us, Aaron Kaplan and Paul Sites, with their idea. Both of us are Cerner associates who are involved in Cerner’s MakerSpace administration, heavily involved in mentoring FIRST Robotics, and are known to be quite handy. We were asked if we could create a giant LiteBrite for DevCon to match the 80s theme. Culture team showed us a few examples, the primary one being the following <a href="https://youtu.be/oLiNdsdbZRE?t=77">YouTube video</a>. With a few vague hints and videos, a budget of a few thousand dollars, and the goal of making something cool that lit up with pixel art, we got to work.</p>
+<h2 id="research">Research</h2>
+<h3 id="what-is-giant">What is &ldquo;Giant&rdquo;?</h3>
+<p>Talking with the Culture Team we established “giant” to be somewhere around 8 feet wide and 6ft tall. We knew we wanted it to be big enough that multiple people could play with it and that any adult could comfortably reach all the pegs. We ran with that and started to think about peg density. We wanted to have enough pegs in the board so that fairly complex images could be created.</p>
+<p>Consulting with Cerner UX designer Jordan Lawrence, we experimented with different grid layouts and peg spacings to determine what is possible for resolution and content.</p>
+<div align="center">
+    <figure class="figure">
+        <a href="image22.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="image22.png"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
+<p>While the staggered layout gave a better result on curved designs, we ultimately decided it was less intuitive for the users, and increased our design complexity, so we settled on a square grid pattern.
+At this point we also decided for ease of construction that we would keep the board within the confines of a 8 ft x 4 ft sheet - a size many materials are readily available in. To balance cost with resolution, we settled on using 912 pegs total -  38 wide by 24 tall.</p>
+<h3 id="design-route-1---classic-litebrite">Design Route #1 - Classic LiteBrite</h3>
+<p>We began by exploring the most simple route to creation: a white lit background, a bunch of holes, and a variety of colored pegs. After looking at the costs of colored acrylic rods we determined that to recreate the same spectrum as the original LiteBrite, while having enough pegs of each color, would cost over $8,000 dollars, just for the pegs. This design was quickly shelved based on the cost.</p>
+<h3 id="design-route-2---modern-litebrite">Design Route #2 - Modern LiteBrite</h3>
+<p>Knowing that the &ldquo;classic&rdquo; option wasn&rsquo;t going to work we thought back to that initial video. Pegs that are fixed, but that are interactive and respond to users pressing them.</p>
+<p>Paul contacted the owner of the YouTube video to find out additional details of his build. We learned that his version had 225 pegs, each peg was independent (they couldn&rsquo;t be remote controlled or modified), and the project cost more than $10,000.</p>
+<h2 id="choosing-a-path----modern-litebrite">Choosing a path -  Modern LiteBrite</h2>
+<p>Knowing we could build something more advanced than a “standard” LiteBrite within our budget, we started building upon the &ldquo;modern&rdquo; LiteBrite concept.</p>
+<p>We needed to ensure the following components were accounted for:</p>
+<ul>
+<li>Pegs to simulate the look of a real LiteBrite</li>
+<li>A way to cycle through colors</li>
+<li>Support multiple users tapping pegs at once.</li>
+<li>Overall packaging of the LiteBrite (frame, wheels, etc)</li>
+</ul>
+<p>We explored countless concepts and configurations until we finally landed on the following concept:</p>
+<ul>
+<li>1.5 inch diameter acrylic pegs</li>
+<li>An addressable RGB LED behind each peg for illumination</li>
+<li>A 3D-printed cap that retained the LED and prevented the peg from falling out</li>
+<li>An arcade button for receiving input</li>
+</ul>
+<h2 id="prototyping">Prototyping</h2>
+<p>At this point we were excited. We demonstrated we can have an interactive peg. Excellent. Then it dawned on us we want to have nine-hundred and twelve of these. We began to realize that what was easy for one was going to become very challenging to scale.</p>
+<div align="center">
+    <figure class="figure">
+        <a href="image19.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="image19.png"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
+<p>Luckily, Adafruit sells an amazing product, the <a href="https://www.adafruit.com/product/1689">FadeCandy</a>. This board is capable of controlling 512 LED&rsquo;s, supports daisy-chaining, and it has great libraries to make displaying content moderately easy.</p>
+<p>The next challenge to solve was reading the 912 user inputs. Microcontrollers and other devices that are designed to handle large numbers of inputs still do not come close to meeting our needs, plus, they are expensive.</p>
+<p>Instead of creating one monolithic controller, we decided to use Arduino Nanos as addressable units of inputs. Each row of 38 inputs would be wired to a networked Nano with 5 shift registers allowing us to &ldquo;expand&rdquo; their inputs to 40 each.</p>
+<p>After the design was established Hans Perera, a fellow Makerspace Admin, suggested that to get all 24 of these done, a custom printed circuit board (PCB) would be our best option. Hans then stepped up and did the development on the PCBs while we forged ahead with the rest of the project.</p>
+<div align="center">
+    <figure class="figure">
+        <a href="image3.jpg" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="image3.jpg"
+                alt="Custom printed circuit board (PCB)"class="figure-img img-fluid"
+            /> 
+        </a><figcaption class="figure-caption text-center">
+                <p>Custom printed circuit board (PCB)</p>
+            </figcaption>
+    </figure>
+</div>
+<div align="center">
+    <figure class="figure">
+        <a href="image18.jpg" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="image18.jpg"
+                alt="Hans placing components on the custom PCBs."class="figure-img img-fluid"
+            /> 
+        </a><figcaption class="figure-caption text-center">
+                <p>Hans placing components on the custom PCBs.</p>
+            </figcaption>
+    </figure>
+</div>
+<h2 id="construction">Construction</h2>
+<h3 id="taking-over-the-robotics-shop">Taking Over the Robotics Shop</h3>
+<p>The Culture team was unable to provide the space or equipment needed to create the LiteBrite. Fortunately, the FIRST Robotics team we mentor (Team #1987, The Broncobots), has a full machine shop that they allowed us to use for the project.</p>
+<h3 id="a-strong-frame">A Strong Frame</h3>
+<p>With an estimated weight of close to 500 pounds, the LiteBrite was going to need a sturdy and stable frame. Joshua Wentworth, a Broncobots team mentor, volunteered the solution of a welded steel H-frame to hold the grid. This would allow for a compact, strong, and relatively low cost solution for the frame.</p>
+<div align="center">
+    <figure class="figure">
+        <a href="image10.jpg" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="image10.jpg"
+                alt="The frame pieces prior to being welded together."class="figure-img img-fluid"
+            /> 
+        </a><figcaption class="figure-caption text-center">
+                <p>The frame pieces prior to being welded together.</p>
+            </figcaption>
+    </figure>
+</div>
+<p>Paul used the team&rsquo;s CNC router to cut the 912 holes in the main board. Pre-cut acrylic pegs are expensive, instead we purchased 4ft sticks of raw acrylic and cut them to length ourselves.</p>
+<div align="center">
+    <figure class="figure">
+        <a href="image21.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="image21.png"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
+<h3 id="led-strands">LED Strands</h3>
+<p>Each of the 912 pegs required an RGB LED, and due to the spacing of the pegs, off-the-shelf LED strips wouldn&rsquo;t work. Instead, we used individual RGB LED chips, which required 6 soldered connections each, meaning 2,736 wires cut to length and stripped. Early estimates showed that we would need over 36 hours of just stripping the wires. Given our impending deadline we purchased an automatic wire stripper. Over 36 hours of wire stripping, reduced to about 2 with the automatic wire stripper.</p>
+<p>With Aaron&rsquo;s soldering jig, a soldering pot for wire tinning, our LED testing controller, plus help from Cerner associates and several robotics members, we got to work mass producing our LED strands.</p>
+<div align="center">
+    <figure class="figure">
+        <a href="image20.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="image20.png"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
+<h3 id="buttons">Buttons</h3>
+<p>Once we had a handle on the LEDs we turned to the buttons. Each button needed power and a discrete signal wire running back to the control board. With some forethought towards service and troubleshooting significant thought was put into wire management. Buttons were distributed among 6 separate panels that were able to be disconnected and removed, simplifying assembly and troubleshooting.</p>
+<p>We calculated the lengths of wire required to each button to prevent excess wire.  Using the automatic wire stripper we precisely cut staggered lengths of wire and created a wiring harness for each row of buttons.</p>
+<div align="center">
+    <figure class="figure">
+        <a href="image9.jpg" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="image9.jpg"
+                alt="Precision cut staggered wires to use for making wiring harnesses for buttons."class="figure-img img-fluid"
+            /> 
+        </a><figcaption class="figure-caption text-center">
+                <p>Precision cut staggered wires to use for making wiring harnesses for buttons.</p>
+            </figcaption>
+    </figure>
+</div>
+<div align="center">
+    <figure class="figure">
+        <a href="image8.jpg" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="image8.jpg"
+                alt="Starting to install the button panels behind the LED pegs."class="figure-img img-fluid"
+            /> 
+        </a><figcaption class="figure-caption text-center">
+                <p>Starting to install the button panels behind the LED pegs.</p>
+            </figcaption>
+    </figure>
+</div>
+<h2 id="software">Software</h2>
+<p>Time was of the essence and we could not wait for the physical hardware to be complete to develop the software. Our technology choices allowed for software development to happen in parallel to the physical construction.</p>
+<p>We needed the color of a peg to change the instant a user pressed it to give the best possible user experience and encourage interaction. This necessitated that certain software components be optimized to minimize input lag.</p>
+<h3 id="arduino">Arduino</h3>
+<p>Each Arduino is responsible for the 38 buttons attached to it, and because of the multi user need, extra care was taken to ensure there were no double presses or miss counting occurring. Every Arduino is assigned a static IP address that correlates to the row it is listening to. Whenever a button in its charge is pressed, the Arduino broadcasts a UDP packet containing the state of the entire row in the form of a binary string.</p>
+<pre><code>01000000000000000000000000000000000000
+</code></pre><p>Using the IP and the index in the string one could know the (X,Y) position of  the button that was pressed. Bitwise operators were leveraged to ensure buttons were only registered once per press. With 38 buttons to connect to one tiny Arduino, all with white wires there was a high risk of connecting a button to an incorrect input.</p>
+<div align="center">
+    <figure class="figure">
+        <a href="image17.jpg" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="image17.jpg"
+                alt="Starting to install the button panels behind the LED pegs."class="figure-img img-fluid"
+            /> 
+        </a><figcaption class="figure-caption text-center">
+                <p>Starting to install the button panels behind the LED pegs.</p>
+            </figcaption>
+    </figure>
+</div>
+<p>We considered labelling each wire, but that was expensive, time consuming and still error prone. Then it hit us, lets plug in buttons at random and make the controller do the hard work. From this the Arduino &ldquo;training&rsquo;&rsquo; mode was created. In training mode each peg is pressed in order. The Arduino records the presses and creates a map to correlate expected input index to the physical input pin. Doing this added minimal processing overhead but streamlined assembly and will aid in troubleshooting.</p>
+<h3 id="litebrite-controller">LiteBrite Controller</h3>
+<p>This is the main control software, it receives the UDP packets sent from the Arduinos and sets the LEDs through the FadeCandy board. When a peg is pressed the packet is sent that contains the (X,Y) coordinate for that button. The computer then updates the corresponding LED pixel at the matching coordinate. Each tap of a peg cycles a pixel through a list of available colors.</p>
+<p>Although we set out to create a LiteBrite, what we really created is better described as an interactive dot matrix display. This has several advantages, the largest of which being able to display premade static, and dynamic content. A good example of this in practice is our clear functionality. When the clear button is pressed Pac-Man will chomp across the display eating peoples designs and resetting all pegs to black.</p>
+<p>A big question we knew would come up is, &ldquo;Is my work lost?&rdquo; As the LiteBrite records ever press, we can state that no work is lost. We can even recall unique designs and play them back as a timelapse to showcase people&rsquo;s work.</p>
+<p>By collecting this data we also know exactly how many presses the LiteBrite has had. As of the time of this writing, we&rsquo;ve had 443,449 presses and counting!</p>
+<h2 id="lighting-it-up">Lighting it Up</h2>
+<div align="center">
+    <figure class="figure">
+        <a href="image16.jpg" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="image16.jpg"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
+<p>Ultimately, LiteBrite was completed at about 1:10 a.m. the first day of the DevCon event. It was loaded into a trailer and delivered hours before the event started that morning.</p>
+<p>LiteBrite was a whirlwind of a project that involved at least 1,100 people-hours over the course of around a month and a half. Although we led the primary design and construction, over a dozen people volunteered their time to help us light up DevCon.</p>
+<div align="center">
+    <figure class="figure">
+        <a href="image13.jpg" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="image13.jpg"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
+<h2 id="post-devcon">Post-DevCon</h2>
+<p>LiteBrite has occasionally made appearances around Kansas City, appearing front and center at <a href="https://makerfaire.com/">MakeFaire</a> for over 17,000 attendees to interact with.</p>
+<div align="center">
+    <figure class="figure">
+        <a href="image12.jpg" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="image12.jpg"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
+<p>LiteBrite was invited to <a href="https://cernerhealthconference.com/">Cerner Health Conference</a> in October 2019.</p>
+<div align="center">
+    <figure class="figure">
+        <a href="image11.jpg" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="image11.jpg"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
+<p>Today, when LiteBrite isn&rsquo;t traveling it lives at the entrance to Cerner&rsquo;s Innovations Campus. It greets associates every morning with a hot cup of coffee, plays back select LiteBrite creations, and encourages associates to take some time to create.</p>
+<p><em>This article includes contributions from Aaron Kaplan.</em></p>
+
+                        </div><div class="tags my-3"><a class="badge badge-pill badge-light border mr-2" href="/tags/makerspace">
+                                    <i class="fas fa-tag mr-2"></i>makerspace
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/dyi">
+                                    <i class="fas fa-tag mr-2"></i>dyi
+                                </a></div><ul class="share nav my-3 justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://twitter.com/intent/tweet?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fcreating-the-giant-litebrite%2f&text=Creating%20the%20Giant%20Litebrite">
+              <i class="fa-fw fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fcreating-the-giant-litebrite%2f&title=Creating%20the%20Giant%20Litebrite">
+                <i class="fa-fw fab fa-linkedin-in"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fengineering.cerner.com%2fblog%2fcreating-the-giant-litebrite%2f&t=Creating%20the%20Giant%20Litebrite">
+                <i class="fa-fw fab fa-facebook-f"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://reddit.com/submit?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fcreating-the-giant-litebrite%2f&title=Creating%20the%20Giant%20Litebrite">
+                <i class="fa-fw fab fa-reddit-alien"></i>
+            </a>
+        </li>
+    </nav>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        
+                    </div>
+                </div></article>
+        </div>
+    </div>
+
+    
+</main>
+
+
+    <footer class="footer text-center bg-dark py-6">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="https://engineering.cerner.com/index.xml" rel="alternate" type="application/rss+xml" class="icons d-block">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a></li><li class="list-inline-item">
+                            <a href="https://github.com/cerner" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.instagram.com/cernercorporation/" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.linkedin.com/company/cerner-corporation" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fengineering.cerner.com%2F&amp;screen_name=CernerEng" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.youtube.com/user/cernereng?sub_confirmation=1" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                </ul>
+
+                <p class="text-light">
+                    
+                        Copyright © 2020
+                    
+                </p>
+
+                <p class="text-light">
+                Made with ❤️ by Cerner engineers.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+    
+        
+            <script src="/dist/main.44c94dde179dd23bf3f1.min.js"></script>
+        
+    
+
+
+
+
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-37701128-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body>
+</html>

@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2020</copyright>
-    <lastBuildDate>Tue, 04 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.cerner.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Creating the Giant Litebrite</title>
+      <link>https://engineering.cerner.com/blog/creating-the-giant-litebrite/</link>
+      <pubDate>Wed, 26 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/creating-the-giant-litebrite/</guid>
+      <description>Have you ever wondered what happens when you let two engineers loose on a project with a broad vision and little direction? In our case, LiteBrite happens.
+Every year Cerner hosts DevCon, an internal 2-day conference for all of Cerner engineering to come together, give talks about technologies, processes, and ideas - all with a little fun sprinkled in. DevCon always has a theme, for 2019 that was set to be “The 80s.</description>
+    </item>
     
     <item>
       <title>We’re Back with a New Look</title>
