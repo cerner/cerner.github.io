@@ -1,4 +1,4 @@
 ---
-name: "Paul Sites"
-images: ["paul.jpeg"]
+name: "Matt Henkes"
+images: ["matt.jpg"]
 ---
