@@ -2,6 +2,7 @@
 title: "Lessons learned building an accessible web application framework"
 authors: ["Matt Henkes"]
 date: 2020-09-21
+thumbnail: "terra-no-title.png"
 tags: [accessibility, terra, engineering, oss]
 ---
 
