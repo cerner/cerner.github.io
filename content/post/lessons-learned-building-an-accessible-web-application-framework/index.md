@@ -5,45 +5,45 @@ date: 2020-09-21
 tags: [accessibility, terra, engineering, oss]
 ---
 
-Since 2017, We at Cerner have been building Terra, a single page web application framework, and accessibility has always been a primary goal. Over the years we've learned a lot about how to build and test accessible websites, as well as the diverse group of people we're serving. With this blog post, we'd like to take a moment to share what we've learned so far.
+Since 2017, We at Cerner have been building [Terra]({{<ref "/post/terra-ui">}}), a single page web application framework, and accessibility has always been a primary goal. Over the years we've learned a lot about how to build and test accessible websites, as well as the diverse group of people we're serving. With this blog post, we'd like to take a moment to share what we've learned so far.
 
 ## Why accessibility matters
 
-At Cerner, we build software for many different users in many different roles. Doctors and nurses may first come to mind as the primary users for our EHR, but hospitals aren't made up of providers alone and neither are our users. We also provide applications for administrative users and with the Healthe portal app, our users are the general patient population. Naturally, with such a broad user base a percentage will require assistive technologies to be able to use our applications. To be as inclusive as possible, Cerner applications must be as accessible as possible, and the Terra Application Framework is one way we are working towards that goal.
+At Cerner, we build software for many different users in many different roles. Doctors and nurses may first come to mind as the primary users for our EHR, but hospitals aren't made up of providers alone and neither are our users. We also provide applications for administrative users and with our patient portal application ([HealtheLife](https://www.cerner.com/solutions/patient-engagement)), our users are the general patient population. Naturally, with such a broad user base a percentage will require assistive technologies to be able to use our applications. To be as inclusive as possible, Cerner applications must be as accessible as possible, and the Terra Application Framework is one way we are working towards that goal.
 
 ## What does it mean for a site to be accessible
 
-I'll be honest, when we started in 2017, I thought creating an accessible website simply meant appropriately applying ARIA labels to DOM elements. In the last few years, we've learned, with the help of our accessibility researchers, that creating an accessible site is so much more than that. So, let's hop in our time machine and discuss how we should have approached accessibility with appropriate hindsight (foresight? Time travel is confusing).
+I'll be honest, when we started in 2017, I thought creating an accessible website simply meant appropriately applying [ARIA](https://w3c.github.io/using-aria/#aria-states-and-properties-aria-attributes) labels to DOM elements. In the last few years, we've learned, with the help of our accessibility researchers, that creating an accessible site is so much more than that. So, let's hop in our time machine and discuss how we should have approached accessibility with appropriate hindsight (foresight? Time travel is confusing).
 
 ### Identify how users interact with our site with accessible technologies
 
-As we discussed above, our broad user base includes a diverse array of people and an equally diverse array of accessibility needs. When discussing web accessibility, it's easy to assume that means ensuring a screen reader appropriately can navigate and read your site. Screen reader compatibility is important but if your user has impaired mobility, but fine eyesight, you're not really helping them. We've compiled the following use cases to ensure we are covering all expected interactions and needs.
+As we discussed above, our broad user base includes a diverse array of people and an equally diverse array of accessibility needs. When discussing web accessibility, it's common to assume that means ensuring a screen reader appropriately can navigate and read your site. Screen reader compatibility is an important aspect of accessibility, it assists users with impaired vision. However, a screen reader won't help users with impaired mobility. To help us cover a wider array of expected interactions and needs, we've compiled the following use cases.
 
 * Impaired vision
 * Impaired mobility
 * Impaired cognition
 
-Additionally, individuals could temporarily fall into any of the above categories through injury, device capability, location, or conditions.
+These categories may also be experienced temporarily, where individuals may need improved accessibility due to an injury, limited device capability, or location.
 
 ### Create areas of focus for each use case
 
-For each of the above use cases we've identified the appropriate assistive technologies to focus on.
+For each of the above use cases, we've identified the appropriate assistive technologies to apply.
 
 #### Impaired vision
 
-* Focus on helping the user access the site content by ensuring appropriate contrast ratios, font sizing, spacing, color usage, and screen reader support. A good way to get a feel for this user's experience is to enable a screen reader (all Macs have voice-over), close your eyes, and navigate your site. Does it make sense?
+Focus on helping the user access the site content by ensuring appropriate contrast ratios, font sizing, spacing, color usage, and screen reader support. A good way to get a feel for this user's experience is to enable a screen reader (all Macs have voice-over), close your eyes, and navigate your site. Does it make sense?
 
 #### Impaired mobility
 
-* Focus on helping the user navigate the site using devices other than a cursor by enabling keyboard navigation and supplying redundant information access. For example, providing alternative methods to take actions that require gestures on mobile.
+Focus on helping the user navigate the site using devices other than a cursor by enabling keyboard navigation and supplying redundant information access. For example, providing alternative methods to take actions that require gestures on mobile.
 
 #### Impaired cognition
 
-* Focus on applying layout simplicity to our workflows and components as well as improving keyword comprehension by emphasizing common design patterns and expected behaviors. For example, buttons should not navigate a user to a new page, that is the role of Links.
+Focus on applying layout simplicity to our workflows and components as well as improving keyword comprehension by emphasizing common design patterns and expected behaviors. For example, buttons should not navigate a user to a new page, that is the role of links.
 
 #### All impairments
 
-* Provide a consistent semantic layout and access to information regardless of form factor (desktop, mobile).
+Provide a consistent semantic layout and access to information regardless of form factor (desktop, mobile). Tooltips are a good example of this. On desktop tooltips are accessed via hover, where as on mobile, the hover event doesn't exist. The information contained in the tooltip has to be offered in a way that can be accessed on both devices.
 
 ### Design for accessibility
 
