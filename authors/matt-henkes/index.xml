@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>accessibility on Engineering Health</title>
-    <link>https://engineering.cerner.com/tags/accessibility/</link>
-    <description>Recent content in accessibility on Engineering Health</description>
+    <title>Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/matt-henkes/</link>
+    <description>Recent content on Engineering Health</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2020</copyright>
     <lastBuildDate>Thu, 24 Sep 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://engineering.cerner.com/tags/accessibility/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://engineering.cerner.com/authors/matt-henkes/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,15 +20,6 @@
       <guid>https://engineering.cerner.com/blog/lessons-learned-building-an-accessible-web-application-framework/</guid>
       <description>Since 2017, we at Cerner have been building Terra, a single page web application framework, and accessibility has always been a primary goal. Over the years we&amp;rsquo;ve learned a lot about how to build and test accessible websites, as well as the diverse group of people we&amp;rsquo;re serving. With this blog post, we&amp;rsquo;d like to take a moment to share what we&amp;rsquo;ve learned so far.
 Why accessibility matters At Cerner, we build software for many different users in many different roles.</description>
-    </item>
-    
-    <item>
-      <title>Accessibility and Usability: On the Road to Great UX</title>
-      <link>https://engineering.cerner.com/blog/accessibility-and-usability-on-the-road-to-great-ux/</link>
-      <pubDate>Mon, 09 Oct 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.cerner.com/blog/accessibility-and-usability-on-the-road-to-great-ux/</guid>
-      <description>In 2010, a group of designers from Columbus, Ohio set out to create a grassroots, cross-discipline, and creative conference. Since that first event, Midwest UX has been an ongoing tradition that attracts innovative ideas and provides an opportunity for regional professions to engage in discussion with other professionals. Last year, Amber Wilks and Dr. Becca Green were invited to take their talk from DevCon 2016 on the road to Midwest UX.</description>
     </item>
     
   </channel>

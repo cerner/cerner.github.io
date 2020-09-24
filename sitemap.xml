@@ -3,12 +3,57 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://engineering.cerner.com/authors/paul-sites/</loc>
-    <lastmod>2020-08-26T00:00:00+00:00</lastmod>
+    <loc>https://engineering.cerner.com/authors/matt-henkes/</loc>
+    <lastmod>2020-09-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.cerner.com/tags/accessibility/</loc>
+    <lastmod>2020-09-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://engineering.cerner.com/authors/</loc>
+    <lastmod>2020-09-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.cerner.com/tags/engineering/</loc>
+    <lastmod>2020-09-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.cerner.com/</loc>
+    <lastmod>2020-09-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.cerner.com/blog/lessons-learned-building-an-accessible-web-application-framework/</loc>
+    <lastmod>2020-09-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.cerner.com/tags/oss/</loc>
+    <lastmod>2020-09-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.cerner.com/post/</loc>
+    <lastmod>2020-09-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.cerner.com/tags/</loc>
+    <lastmod>2020-09-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.cerner.com/tags/terra/</loc>
+    <lastmod>2020-09-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.cerner.com/authors/paul-sites/</loc>
     <lastmod>2020-08-26T00:00:00+00:00</lastmod>
   </url>
   
@@ -23,22 +68,7 @@
   </url>
   
   <url>
-    <loc>https://engineering.cerner.com/</loc>
-    <lastmod>2020-08-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://engineering.cerner.com/tags/makerspace/</loc>
-    <lastmod>2020-08-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.cerner.com/post/</loc>
-    <lastmod>2020-08-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.cerner.com/tags/</loc>
     <lastmod>2020-08-26T00:00:00+00:00</lastmod>
   </url>
   
@@ -50,11 +80,6 @@
   <url>
     <loc>https://engineering.cerner.com/blog/we-are-back-w-new-look/</loc>
     <lastmod>2020-08-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.cerner.com/tags/engineering/</loc>
-    <lastmod>2020-02-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -99,11 +124,6 @@
   
   <url>
     <loc>https://engineering.cerner.com/authors/brett-jankord/</loc>
-    <lastmod>2019-10-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.cerner.com/tags/oss/</loc>
     <lastmod>2019-10-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -555,11 +575,6 @@
   <url>
     <loc>https://engineering.cerner.com/tags/usability/</loc>
     <lastmod>2017-11-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.cerner.com/tags/accessibility/</loc>
-    <lastmod>2017-10-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>

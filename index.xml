@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2020</copyright>
-    <lastBuildDate>Wed, 26 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.cerner.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lessons learned building an accessible web application framework</title>
+      <link>https://engineering.cerner.com/blog/lessons-learned-building-an-accessible-web-application-framework/</link>
+      <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/lessons-learned-building-an-accessible-web-application-framework/</guid>
+      <description>Since 2017, we at Cerner have been building Terra, a single page web application framework, and accessibility has always been a primary goal. Over the years we&amp;rsquo;ve learned a lot about how to build and test accessible websites, as well as the diverse group of people we&amp;rsquo;re serving. With this blog post, we&amp;rsquo;d like to take a moment to share what we&amp;rsquo;ve learned so far.
+Why accessibility matters At Cerner, we build software for many different users in many different roles.</description>
+    </item>
     
     <item>
       <title>Creating the Giant LiteBrite</title>
