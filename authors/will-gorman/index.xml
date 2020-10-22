@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2020</copyright>
-    <lastBuildDate>Fri, 08 Sep 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.cerner.com/authors/will-gorman/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 08 Sep 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://engineering.cerner.com/authors/will-gorman/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Continuous Delivery for DC/OS with Spinnaker</title>
       <link>https://engineering.cerner.com/blog/continuous-delivery-for-dcos-with-spinnaker/</link>

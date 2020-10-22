@@ -35,13 +35,14 @@
 <meta itemprop="description" content="Pipeline-as-code or defining the deployment pipeline through code rather than manual job creation through UI, provides tremendous benefits for teams automating builds and deployment infrastructure across their environments.
  Source of image
    Jenkins Pipelines Jenkins is a well-known open source continuous integration and continuous deployment automation tool. With the latest 2.0 release, Jenkins introduced the Workflow plugin that implements Pipeline-as-code. This plugin lets you define delivery pipelines using concise scripts which deal elegantly with jobs involving persistence and asynchrony.">
-<meta itemprop="datePublished" content="2018-09-20T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2018-09-20T00:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2018-09-20T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2018-09-20T00:00:00+00:00" />
 <meta itemprop="wordCount" content="1065">
 
 
 
-<meta itemprop="keywords" content="engineering,jenkins," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="engineering,jenkins," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="SSH Steps for Jenkins Pipeline"/>
 <meta name="twitter:description" content="Pipeline-as-code or defining the deployment pipeline through code rather than manual job creation through UI, provides tremendous benefits for teams automating builds and deployment infrastructure across their environments.
  Source of image
@@ -246,46 +247,46 @@ node <span style="color:#f92672">{</span>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">config</span>:
-  <span style="color:#66d9ef">credentials_id</span>: sshUserAcct
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">config</span>:
+  <span style="color:#f92672">credentials_id</span>: <span style="color:#ae81ff">sshUserAcct</span>
 
-<span style="color:#66d9ef">remote_groups</span>:
-  <span style="color:#66d9ef">r_group_1</span>:
-    - <span style="color:#66d9ef">name</span>: node01
-      <span style="color:#66d9ef">host</span>: node01.abc.net
-    - <span style="color:#66d9ef">name</span>: node02
-      <span style="color:#66d9ef">host</span>: node02.abc.net
-  <span style="color:#66d9ef">r_group_2</span>:
-    - <span style="color:#66d9ef">name</span>: node03
-      <span style="color:#66d9ef">host</span>: node03.abc.net
+<span style="color:#f92672">remote_groups</span>:
+  <span style="color:#f92672">r_group_1</span>:
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">node01</span>
+      <span style="color:#f92672">host</span>: <span style="color:#ae81ff">node01.abc.net</span>
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">node02</span>
+      <span style="color:#f92672">host</span>: <span style="color:#ae81ff">node02.abc.net</span>
+  <span style="color:#f92672">r_group_2</span>:
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">node03</span>
+      <span style="color:#f92672">host</span>: <span style="color:#ae81ff">node03.abc.net</span>
 
-<span style="color:#66d9ef">command_groups</span>:
-  <span style="color:#66d9ef">c_group_1</span>:
-    - <span style="color:#66d9ef">commands</span>:
+<span style="color:#f92672">command_groups</span>:
+  <span style="color:#f92672">c_group_1</span>:
+    - <span style="color:#f92672">commands</span>:
         - <span style="color:#e6db74">&#39;ls -lrt&#39;</span>
         - <span style="color:#e6db74">&#39;whoami&#39;</span>
-    - <span style="color:#66d9ef">scripts</span>:
+    - <span style="color:#f92672">scripts</span>:
         - <span style="color:#e6db74">&#39;test.sh&#39;</span>
-  <span style="color:#66d9ef">c_group_2</span>:
-    - <span style="color:#66d9ef">gets</span>:
-        - <span style="color:#66d9ef">from</span>: <span style="color:#e6db74">&#39;test.sh&#39;</span>
-          <span style="color:#66d9ef">to</span>: <span style="color:#e6db74">&#39;test_new.sh&#39;</span>
-    - <span style="color:#66d9ef">puts</span>:
-        - <span style="color:#66d9ef">from</span>: <span style="color:#e6db74">&#39;test.sh&#39;</span>
-          <span style="color:#66d9ef">to</span>: <span style="color:#e6db74">&#39;.&#39;</span>
-    - <span style="color:#66d9ef">removes</span>:
+  <span style="color:#f92672">c_group_2</span>:
+    - <span style="color:#f92672">gets</span>:
+        - <span style="color:#f92672">from</span>: <span style="color:#e6db74">&#39;test.sh&#39;</span>
+          <span style="color:#f92672">to</span>: <span style="color:#e6db74">&#39;test_new.sh&#39;</span>
+    - <span style="color:#f92672">puts</span>:
+        - <span style="color:#f92672">from</span>: <span style="color:#e6db74">&#39;test.sh&#39;</span>
+          <span style="color:#f92672">to</span>: <span style="color:#e6db74">&#39;.&#39;</span>
+    - <span style="color:#f92672">removes</span>:
         - <span style="color:#e6db74">&#39;test.sh&#39;</span>
 
-<span style="color:#66d9ef">steps</span>:
-  <span style="color:#66d9ef">deploy</span>:
-    - <span style="color:#66d9ef">remote_groups</span>:
-        - r_group_1
-      <span style="color:#66d9ef">command_groups</span>:
-        - c_group_1
-    - <span style="color:#66d9ef">remote_groups</span>:
-        - r_group_2
-      <span style="color:#66d9ef">command_groups</span>:
-        - c_group_2
+<span style="color:#f92672">steps</span>:
+  <span style="color:#f92672">deploy</span>:
+    - <span style="color:#f92672">remote_groups</span>:
+        - <span style="color:#ae81ff">r_group_1</span>
+      <span style="color:#f92672">command_groups</span>:
+        - <span style="color:#ae81ff">c_group_1</span>
+    - <span style="color:#f92672">remote_groups</span>:
+        - <span style="color:#ae81ff">r_group_2</span>
+      <span style="color:#f92672">command_groups</span>:
+        - <span style="color:#ae81ff">c_group_2</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>The above example runs commands from <code>c_group_1</code> on remote nodes within <code>r_group_1</code> in parallel before it moves on to the next group using <code>sshUserAcct</code> (from the <a href="https://jenkins.io/doc/book/using/using-credentials/">Jenkins Credentials</a> store) to logon to nodes.</p>

@@ -33,13 +33,14 @@ Before Splunk To handle this large volume of logging, our team created a rotatio
 <meta itemprop="name" content="Managing 30,000 Logging Events per Day with Splunk">
 <meta itemprop="description" content="Our team works on a patient facing web application with a thousand live clients with 2,315,000&#43; users. On an average, the high traffic results into more than 40,000 visits and 300,000 page views daily generating about 30,000 logging events. A considerable portion of these events are of information and warning level in order to aid proactive monitoring or identify potential issues due to clients’ misconfiguration.
 Before Splunk To handle this large volume of logging, our team created a rotational support role to manually monitor the logs at regular intervals daily.">
-<meta itemprop="datePublished" content="2015-01-29T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2015-01-29T00:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2015-01-29T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2015-01-29T00:00:00+00:00" />
 <meta itemprop="wordCount" content="1105">
 
 
 
-<meta itemprop="keywords" content="engineering," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="engineering," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Managing 30,000 Logging Events per Day with Splunk"/>
 <meta name="twitter:description" content="Our team works on a patient facing web application with a thousand live clients with 2,315,000&#43; users. On an average, the high traffic results into more than 40,000 visits and 300,000 page views daily generating about 30,000 logging events. A considerable portion of these events are of information and warning level in order to aid proactive monitoring or identify potential issues due to clients’ misconfiguration.
 Before Splunk To handle this large volume of logging, our team created a rotational support role to manually monitor the logs at regular intervals daily."/>
@@ -158,7 +159,7 @@ Before Splunk To handle this large volume of logging, our team created a rotatio
 <p>Eventtypes are applied at search time and allow you to create events to tag search results with. Because they are applied at search time, we were able to add new event types and have them applied historically throughout our logs. This also gave us the ability to tweak our event types to add more known issues as we continued identifying them. Once we successfully gauged a way to take advantage of eventtypes, we came up with a query that created a stacked timechart of eventtypes where eventtypes represented known issues. Once we reached the improved level of production monitoring, the following had to be done:</p>
 <ol>
 <li>Create an eventtype with least priority that catches all problems and label it &ldquo;Unknown Issue.&rdquo;</li>
-<li>Go through “Unknown Issues&rdquo; and create prioritized eventtypes that describe the problem in english. Once an issue is logged in our bug tracking system, tag the eventtype with that id for easy tracking.</li>
+<li>Go through “Unknown Issues&quot; and create prioritized eventtypes that describe the problem in english. Once an issue is logged in our bug tracking system, tag the eventtype with that id for easy tracking.</li>
 <li>Repeat daily.</li>
 </ol>
 <p><strong>Below: Eventtypes give us the ability to see known problems that happen over time. We can even see known problems broken down by client.</strong></p>

@@ -35,13 +35,14 @@ spark.sql(&#34;&#34;&#34; select subject.reference person_id, effectiveDateTime 
 <meta itemprop="description" content="We&rsquo;re excited to open source Bunsen, a library to make analyzing FHIR data with Apache Spark simple and scalable. Bunsen encodes FHIR resources directly into Apache Spark&rsquo;s native data structures. This lets users leverage well-defined FHIR data models directly within Spark SQL.
 Here&rsquo;s a simple query against a table of FHIR observations that produces a table of heart rate values:
 spark.sql(&#34;&#34;&#34; select subject.reference person_id, effectiveDateTime date_time, valueQuantity.value value from observations where in_valueset(code, &#39;heart_rate&#39;) &#34;&#34;&#34;).">
-<meta itemprop="datePublished" content="2017-11-27T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2017-11-27T00:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2017-11-27T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2017-11-27T00:00:00+00:00" />
 <meta itemprop="wordCount" content="539">
 
 
 
-<meta itemprop="keywords" content="engineering,spark,FHIR," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="engineering,spark,FHIR," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Announcing Bunsen: FHIR Data with Apache Spark"/>
 <meta name="twitter:description" content="We&rsquo;re excited to open source Bunsen, a library to make analyzing FHIR data with Apache Spark simple and scalable. Bunsen encodes FHIR resources directly into Apache Spark&rsquo;s native data structures. This lets users leverage well-defined FHIR data models directly within Spark SQL.
 Here&rsquo;s a simple query against a table of FHIR observations that produces a table of heart rate values:
@@ -130,21 +131,21 @@ heart rate values:</p>
 <table>
 <thead>
 <tr>
-<th align="left">person_id</th>
-<th align="left">date_time</th>
-<th align="left">value</th>
+<th style="text-align:left">person_id</th>
+<th style="text-align:left">date_time</th>
+<th style="text-align:left">value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">Patient/123</td>
-<td align="left">2016-12-27</td>
-<td align="left">54.0000</td>
+<td style="text-align:left">Patient/123</td>
+<td style="text-align:left">2016-12-27</td>
+<td style="text-align:left">54.0000</td>
 </tr>
 <tr>
-<td align="left">Patient/123</td>
-<td align="left">2017-04-18</td>
-<td align="left">60.0000</td>
+<td style="text-align:left">Patient/123</td>
+<td style="text-align:left">2017-04-18</td>
+<td style="text-align:left">60.0000</td>
 </tr>
 </tbody>
 </table>

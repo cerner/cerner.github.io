@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2020</copyright>
-    <lastBuildDate>Wed, 26 Aug 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.cerner.com/tags/makerspace/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 26 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://engineering.cerner.com/tags/makerspace/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Creating the Giant LiteBrite</title>
       <link>https://engineering.cerner.com/blog/creating-the-giant-litebrite/</link>

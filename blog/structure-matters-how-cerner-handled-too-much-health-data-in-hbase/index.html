@@ -33,13 +33,14 @@ The Reference Record is one of the core components of the HealtheIntent platform
 <meta itemprop="name" content="Structure Matters: How Cerner Handled Too Much Health Data in HBase">
 <meta itemprop="description" content="Background In order to manage the health of populations, Cerner builds data-driven solutions built on top of its HealtheIntent℠ platform. The platform transforms and standardizes data across disparate health systems. The data is then used in algorithms that aid healthcare providers and hospitals in managing and monitoring health both at a person and population level.
 The Reference Record is one of the core components of the HealtheIntent platform. It represents the data known about a person&rsquo;s health from a particular source of healthcare information.">
-<meta itemprop="datePublished" content="2017-08-28T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2017-08-28T00:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2017-08-28T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2017-08-28T00:00:00+00:00" />
 <meta itemprop="wordCount" content="1301">
 
 
 
-<meta itemprop="keywords" content="engineering,hbase," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="engineering,hbase," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Structure Matters: How Cerner Handled Too Much Health Data in HBase"/>
 <meta name="twitter:description" content="Background In order to manage the health of populations, Cerner builds data-driven solutions built on top of its HealtheIntent℠ platform. The platform transforms and standardizes data across disparate health systems. The data is then used in algorithms that aid healthcare providers and hospitals in managing and monitoring health both at a person and population level.
 The Reference Record is one of the core components of the HealtheIntent platform. It represents the data known about a person&rsquo;s health from a particular source of healthcare information."/>
@@ -148,7 +149,7 @@ The Reference Record is one of the core components of the HealtheIntent platform
 <p>When we stopped all the jobs loading into that table, we had a stale data period for downstream processing. Reports that needed the data showed old information during the length of the incident investigation and mitigation. The good news is that our near real-time algorithms such as our Sepsis alerts and readmissions risk assessments were built on top of the stream processing system which was not impacted by this incident.</p>
 <h3 id="prevention">Prevention</h3>
 <p>In our postmortem for the incident, we reviewed what we could have done better before, during, and immediately following the situation. A quick win for us was to add HBase region size monitoring &amp; alerting. It is still reactive, but would help us react faster and minimize the duration of the event.</p>
-<p>Ultimately, the root of the problem is that we have an approach that encourages a lot of data to accumulate in a single row. We had a design flaw. While this patient was outside the realm of anything we&rsquo;d seen before, it wasn&rsquo;t outside the realm of possibility. To quote an oldie, but goodie from Frederick Brooks, &ldquo;Our first response should be to reorganize the modules&rsquo; data structures.&rdquo;</p>
+<p>Ultimately, the root of the problem is that we have an approach that encourages a lot of data to accumulate in a single row. We had a design flaw. While this patient was outside the realm of anything we&rsquo;d seen before, it wasn&rsquo;t outside the realm of possibility. To quote an oldie, but goodie from Frederick Brooks, &ldquo;Our first response should be to reorganize the modules' data structures.&rdquo;</p>
 <p>This event made us realize our batch and streaming representations of the data need to converge. That is the path we&rsquo;re now taking which will introduce its own set of challenges, but we&rsquo;re confident this will land us in a more stable, scalable place.</p>
 
                         </div><div class="tags my-3"><a class="badge badge-pill badge-light border mr-2" href="/tags/engineering">

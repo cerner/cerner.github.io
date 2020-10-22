@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2020</copyright>
-    <lastBuildDate>Wed, 15 Feb 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.cerner.com/tags/beadledom/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 15 Feb 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://engineering.cerner.com/tags/beadledom/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Beadledom - Simple Java framework for building REST APIs</title>
       <link>https://engineering.cerner.com/blog/beadledom-simple-java-framework-for-building-rest-apis/</link>

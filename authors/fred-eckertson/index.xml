@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2020</copyright>
-    <lastBuildDate>Fri, 09 Aug 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.cerner.com/authors/fred-eckertson/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 09 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://engineering.cerner.com/authors/fred-eckertson/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CCL Unit and CCL Testing released to open source</title>
       <link>https://engineering.cerner.com/blog/ccl-unit-and-ccl-testing-released-to-open-source/</link>

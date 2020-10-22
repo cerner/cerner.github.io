@@ -33,13 +33,14 @@ Our first step is to bring FHIR data into a data lake &ndash; a computational en
 <meta itemprop="name" content="Scalable Data Science with FHIR">
 <meta itemprop="description" content="The FHIR standard started as a better way to exchange healthcare data, but it also provides a solid basis for deep analytics and Machine Learning at scale. This post looks at an example from the recent FHIR DevDays conference that does just that. You can also run the interactive FHIR data engineering tutorial used in the conference yourself.
 Our first step is to bring FHIR data into a data lake &ndash; a computational environment where our analysis can easily and efficiently work through petabytes of data.">
-<meta itemprop="datePublished" content="2018-07-02T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2018-07-02T00:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2018-07-02T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2018-07-02T00:00:00+00:00" />
 <meta itemprop="wordCount" content="1115">
 
 
 
-<meta itemprop="keywords" content="engineering,spark,FHIR,bunsen," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="engineering,spark,FHIR,bunsen," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Scalable Data Science with FHIR"/>
 <meta name="twitter:description" content="The FHIR standard started as a better way to exchange healthcare data, but it also provides a solid basis for deep analytics and Machine Learning at scale. This post looks at an example from the recent FHIR DevDays conference that does just that. You can also run the interactive FHIR data engineering tutorial used in the conference yourself.
 Our first step is to bring FHIR data into a data lake &ndash; a computational environment where our analysis can easily and efficiently work through petabytes of data."/>
@@ -133,31 +134,31 @@ spark<span style="color:#f92672">.</span>sql(<span style="color:#e6db74">&#39;sh
 <table>
 <thead>
 <tr>
-<th align="left">database</th>
-<th align="left">tableName</th>
-<th align="left">isTemporary</th>
+<th style="text-align:left">database</th>
+<th style="text-align:left">tableName</th>
+<th style="text-align:left">isTemporary</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">tutorial_small</td>
-<td align="left">allergyintolerance</td>
-<td align="left">false</td>
+<td style="text-align:left">tutorial_small</td>
+<td style="text-align:left">allergyintolerance</td>
+<td style="text-align:left">false</td>
 </tr>
 <tr>
-<td align="left">tutorial_small</td>
-<td align="left">careplan</td>
-<td align="left">false</td>
+<td style="text-align:left">tutorial_small</td>
+<td style="text-align:left">careplan</td>
+<td style="text-align:left">false</td>
 </tr>
 <tr>
-<td align="left">tutorial_small</td>
-<td align="left">claim</td>
-<td align="left">false</td>
+<td style="text-align:left">tutorial_small</td>
+<td style="text-align:left">claim</td>
+<td style="text-align:left">false</td>
 </tr>
 <tr>
-<td align="left">tutorial_small</td>
-<td align="left">condition</td>
-<td align="left">false</td>
+<td style="text-align:left">tutorial_small</td>
+<td style="text-align:left">condition</td>
+<td style="text-align:left">false</td>
 </tr>
 </tbody>
 </table>
@@ -212,36 +213,36 @@ push_valuesets(spark,
 </div><table>
 <thead>
 <tr>
-<th align="left">reference</th>
-<th align="left">system</th>
-<th align="left">code</th>
-<th align="left">onsetDateTime</th>
+<th style="text-align:left">reference</th>
+<th style="text-align:left">system</th>
+<th style="text-align:left">code</th>
+<th style="text-align:left">onsetDateTime</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">urn:uuid:f88c&hellip;</td>
-<td align="left"><a href="http://snomed.info/sct">http://snomed.info/sct</a></td>
-<td align="left">53741008</td>
-<td align="left">2014-09-14T07:45:47</td>
+<td style="text-align:left">urn:uuid:f88c&hellip;</td>
+<td style="text-align:left"><a href="http://snomed.info/sct">http://snomed.info/sct</a></td>
+<td style="text-align:left">53741008</td>
+<td style="text-align:left">2014-09-14T07:45:47</td>
 </tr>
 <tr>
-<td align="left">urn:uuid:d9ac&hellip;</td>
-<td align="left"><a href="http://snomed.info/sct">http://snomed.info/sct</a></td>
-<td align="left">53741008</td>
-<td align="left">2017-05-22T06:56:19</td>
+<td style="text-align:left">urn:uuid:d9ac&hellip;</td>
+<td style="text-align:left"><a href="http://snomed.info/sct">http://snomed.info/sct</a></td>
+<td style="text-align:left">53741008</td>
+<td style="text-align:left">2017-05-22T06:56:19</td>
 </tr>
 <tr>
-<td align="left">urn:uuid:7460&hellip;</td>
-<td align="left"><a href="http://snomed.info/sct">http://snomed.info/sct</a></td>
-<td align="left">53741008</td>
-<td align="left">1974-08-06T06:50:32</td>
+<td style="text-align:left">urn:uuid:7460&hellip;</td>
+<td style="text-align:left"><a href="http://snomed.info/sct">http://snomed.info/sct</a></td>
+<td style="text-align:left">53741008</td>
+<td style="text-align:left">1974-08-06T06:50:32</td>
 </tr>
 <tr>
-<td align="left">urn:uuid:5a28&hellip;</td>
-<td align="left"><a href="http://snomed.info/sct">http://snomed.info/sct</a></td>
-<td align="left">53741008</td>
-<td align="left">2015-08-28T01:17:20</td>
+<td style="text-align:left">urn:uuid:5a28&hellip;</td>
+<td style="text-align:left"><a href="http://snomed.info/sct">http://snomed.info/sct</a></td>
+<td style="text-align:left">53741008</td>
+<td style="text-align:left">2015-08-28T01:17:20</td>
 </tr>
 </tbody>
 </table>
@@ -298,34 +299,34 @@ push_valuesets(spark,
 </div><table>
 <thead>
 <tr>
-<th align="left">condition_id</th>
-<th align="left">person_ref</th>
-<th align="left">system</th>
-<th align="left">code</th>
-<th align="left">display</th>
+<th style="text-align:left">condition_id</th>
+<th style="text-align:left">person_ref</th>
+<th style="text-align:left">system</th>
+<th style="text-align:left">code</th>
+<th style="text-align:left">display</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">urn:uuid:9c72&hellip;</td>
-<td align="left">urn:uuid:5a28&hellip;</td>
-<td align="left"><a href="http://snomed.info/sct">http://snomed.info/sct</a></td>
-<td align="left">44054006</td>
-<td align="left">Diabetes</td>
+<td style="text-align:left">urn:uuid:9c72&hellip;</td>
+<td style="text-align:left">urn:uuid:5a28&hellip;</td>
+<td style="text-align:left"><a href="http://snomed.info/sct">http://snomed.info/sct</a></td>
+<td style="text-align:left">44054006</td>
+<td style="text-align:left">Diabetes</td>
 </tr>
 <tr>
-<td align="left">urn:uuid:56d5&hellip;</td>
-<td align="left">urn:uuid:214f&hellip;</td>
-<td align="left"><a href="http://snomed.info/sct">http://snomed.info/sct</a></td>
-<td align="left">15777000</td>
-<td align="left">Prediabetes</td>
+<td style="text-align:left">urn:uuid:56d5&hellip;</td>
+<td style="text-align:left">urn:uuid:214f&hellip;</td>
+<td style="text-align:left"><a href="http://snomed.info/sct">http://snomed.info/sct</a></td>
+<td style="text-align:left">15777000</td>
+<td style="text-align:left">Prediabetes</td>
 </tr>
 <tr>
-<td align="left">urn:uuid:69de&hellip;</td>
-<td align="left">urn:uuid:7f4d&hellip;</td>
-<td align="left"><a href="http://snomed.info/sct">http://snomed.info/sct</a></td>
-<td align="left">15777000</td>
-<td align="left">Prediabetes</td>
+<td style="text-align:left">urn:uuid:69de&hellip;</td>
+<td style="text-align:left">urn:uuid:7f4d&hellip;</td>
+<td style="text-align:left"><a href="http://snomed.info/sct">http://snomed.info/sct</a></td>
+<td style="text-align:left">15777000</td>
+<td style="text-align:left">Prediabetes</td>
 </tr>
 </tbody>
 </table>
@@ -355,26 +356,26 @@ push_valuesets(spark,
 </div><table>
 <thead>
 <tr>
-<th align="left">person_ref</th>
-<th align="left">encounter_start</th>
-<th align="left">encounter_end</th>
+<th style="text-align:left">person_ref</th>
+<th style="text-align:left">encounter_start</th>
+<th style="text-align:left">encounter_end</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">urn:uuid:f88c&hellip;</td>
-<td align="left">2016-08-21T07:45:47</td>
-<td align="left">2016-08-21T07:45:47</td>
+<td style="text-align:left">urn:uuid:f88c&hellip;</td>
+<td style="text-align:left">2016-08-21T07:45:47</td>
+<td style="text-align:left">2016-08-21T07:45:47</td>
 </tr>
 <tr>
-<td align="left">urn:uuid:f88c&hellip;</td>
-<td align="left">2017-08-27T07:45:47</td>
-<td align="left">2017-08-27T07:45:47</td>
+<td style="text-align:left">urn:uuid:f88c&hellip;</td>
+<td style="text-align:left">2017-08-27T07:45:47</td>
+<td style="text-align:left">2017-08-27T07:45:47</td>
 </tr>
 <tr>
-<td align="left">urn:uuid:d9ac&hellip;</td>
-<td align="left">2016-05-16T06:56:19</td>
-<td align="left">2016-05-16T06:56:19</td>
+<td style="text-align:left">urn:uuid:d9ac&hellip;</td>
+<td style="text-align:left">2016-05-16T06:56:19</td>
+<td style="text-align:left">2016-05-16T06:56:19</td>
 </tr>
 </tbody>
 </table>

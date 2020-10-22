@@ -33,13 +33,14 @@ Every year Cerner hosts DevCon, an internal 2-day conference for all of Cerner e
 <meta itemprop="name" content="Creating the Giant LiteBrite">
 <meta itemprop="description" content="Have you ever wondered what happens when you let two engineers loose on a project with a broad vision and little direction? In our case, LiteBrite happens.
 Every year Cerner hosts DevCon, an internal 2-day conference for all of Cerner engineering to come together, give talks about technologies, processes, and ideas - all with a little fun sprinkled in. DevCon always has a theme, for 2019 that was set to be “The 80s.">
-<meta itemprop="datePublished" content="2020-08-26T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-08-26T00:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2020-08-26T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-08-26T00:00:00+00:00" />
 <meta itemprop="wordCount" content="1941">
 
 
 
-<meta itemprop="keywords" content="makerspace,diy," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="makerspace,diy," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Creating the Giant LiteBrite"/>
 <meta name="twitter:description" content="Have you ever wondered what happens when you let two engineers loose on a project with a broad vision and little direction? In our case, LiteBrite happens.
 Every year Cerner hosts DevCon, an internal 2-day conference for all of Cerner engineering to come together, give talks about technologies, processes, and ideas - all with a little fun sprinkled in. DevCon always has a theme, for 2019 that was set to be “The 80s."/>
@@ -271,7 +272,7 @@ At this point we also decided for ease of construction that we would keep the bo
             </figcaption>
     </figure>
 </div>
-<p>We considered labelling each wire, but that was expensive, time consuming and still error prone. Then it hit us, lets plug in buttons at random and make the controller do the hard work. From this the Arduino &ldquo;training&rsquo;&rsquo; mode was created. In training mode each peg is pressed in order. The Arduino records the presses and creates a map to correlate expected input index to the physical input pin. Doing this added minimal processing overhead but streamlined assembly and will aid in troubleshooting.</p>
+<p>We considered labelling each wire, but that was expensive, time consuming and still error prone. Then it hit us, lets plug in buttons at random and make the controller do the hard work. From this the Arduino &ldquo;training'' mode was created. In training mode each peg is pressed in order. The Arduino records the presses and creates a map to correlate expected input index to the physical input pin. Doing this added minimal processing overhead but streamlined assembly and will aid in troubleshooting.</p>
 <h3 id="litebrite-controller">LiteBrite Controller</h3>
 <p>This is the main control software, it receives the UDP packets sent from the Arduinos and sets the LEDs through the FadeCandy board. When a peg is pressed the packet is sent that contains the (X,Y) coordinate for that button. The computer then updates the corresponding LED pixel at the matching coordinate. Each tap of a peg cycles a pixel through a list of available colors.</p>
 <p>Although we set out to create a LiteBrite, what we really created is better described as an interactive dot matrix display. This has several advantages, the largest of which being able to display premade static, and dynamic content. A good example of this in practice is our clear functionality. When the clear button is pressed Pac-Man will chomp across the display eating peoples designs and resetting all pegs to black.</p>

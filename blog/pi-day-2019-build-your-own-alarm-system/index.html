@@ -35,13 +35,14 @@ Drew a crowd to celebrate Pi Day this afternoon with snacks, lightning talks, an
 <meta itemprop="description" content="At Cerner Engineering, we love to celebrate Pi Day. This day is not only a fun time to enjoy eating pie and reflecting on mathematical properties, but we also share big announcements internally for our developers conference, DevCon.
 Drew a crowd to celebrate Pi Day this afternoon with snacks, lightning talks, and our DevCon 2018 theme reveal! #314day #cernerdevcon pic.twitter.com/wyy5eLKHVl
 &mdash; Cerner Engineering (@CernerEng) March 14, 2018  For this post, we thought it would be fun to share a simple example of how you can hook your existing monitoring system to a physical alarm system powered by a Raspberry Pi.">
-<meta itemprop="datePublished" content="2019-03-14T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-03-14T00:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2019-03-14T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2019-03-14T00:00:00+00:00" />
 <meta itemprop="wordCount" content="1546">
 
 
 
-<meta itemprop="keywords" content="pi,raspberry_pi," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="pi,raspberry_pi," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Pi Day 2019: Build your own alarm system"/>
 <meta name="twitter:description" content="At Cerner Engineering, we love to celebrate Pi Day. This day is not only a fun time to enjoy eating pie and reflecting on mathematical properties, but we also share big announcements internally for our developers conference, DevCon.
 Drew a crowd to celebrate Pi Day this afternoon with snacks, lightning talks, and our DevCon 2018 theme reveal! #314day #cernerdevcon pic.twitter.com/wyy5eLKHVl
@@ -336,8 +337,8 @@ scp nr-pi-alarm pi@INSERT_YOUR_RASPBERRY_PI_IP_ADDRESS:alarm
 </div>
 <h3 id="run-it">Run it</h3>
 <p>After you have transferred the build to your pi, you can then configure the alarm to use your New Relic account. This is achieved by creating a <code>config.yml</code> file in your <code>alarm</code> directory which currently hosts the <code>nr-pi-alarm</code> program (set to <code>600</code> for file permissions):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#66d9ef">new_relic</span>:
-  <span style="color:#66d9ef">api_key</span>: INSERT_NEW_RELIC_API_KEY_HERE
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#f92672">new_relic</span>:
+  <span style="color:#f92672">api_key</span>: <span style="color:#ae81ff">INSERT_NEW_RELIC_API_KEY_HERE</span>
 </code></pre></div><p>After you have configured it, simply invoke this to run the alarm:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ./nr-pi-alarm
 2019/03/14 10:04:12 Opening GPIO

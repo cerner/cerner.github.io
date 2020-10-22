@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2020</copyright>
-    <lastBuildDate>Thu, 14 Mar 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.cerner.com/tags/raspberry_pi/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 14 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://engineering.cerner.com/tags/raspberry_pi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pi Day 2019: Build your own alarm system</title>
       <link>https://engineering.cerner.com/blog/pi-day-2019-build-your-own-alarm-system/</link>
