@@ -79,3 +79,12 @@ You can add your `twitter` handle if you want, but that is an optional field.
 3. Submit a pull request to the source branch with your changes
 
 Once your pull request is accepted, someone with commit privileges will regenerate the `main` branch and push to Github. Your changes will then be live.
+
+# Publishing
+
+Publishing is automated at the point of merging to the `source` branch through [GitHub
+Actions](https://github.com/features/actions). The workflow will use a [GitHub token scoped to the workflow
+action](https://docs.github.com/en/free-pro-team@latest/actions/reference/authentication-in-a-workflow) for deploying the content
+to the `main` branch. At the point of merge, you will see the GitHub Action begin in the
+[Actions view](https://github.com/cerner/cerner.github.io/actions). Once the deployment is completed, a new commit will be created
+which links to the commit on the `source` branch that triggered the deployment.
