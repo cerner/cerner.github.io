@@ -149,7 +149,7 @@ LiteBrite was a whirlwind of a project that involved at least 1,100 people-hours
 
 ## Post-DevCon
 
-LiteBrite has occasionally made appearances around Kansas City, appearing front and center at [MakeFaire](https://makerfaire.com/) for over 17,000 attendees to interact with. 
+LiteBrite has occasionally made appearances around Kansas City, appearing front and center at [Maker Faire](https://makerfaire.com/) for over 17,000 attendees to interact with. 
 
 {{< figure src="image12.jpg" >}}
 
