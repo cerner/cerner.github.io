@@ -50,6 +50,8 @@ home = [ "HTML", "RSS", "JSON"]
   homepageImage = "/images/alan-grace.png"
   share = true
   showLanguageSwitcher = false
+  title = "Cerner Engineering"
+  images = ["/images/alan-grace.png"]
 
   [params.social]
     rss = true
