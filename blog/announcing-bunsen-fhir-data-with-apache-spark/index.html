@@ -29,8 +29,9 @@ Here&rsquo;s a simple query against a table of FHIR observations that produces a
 spark.sql(&#34;&#34;&#34; select subject.reference person_id, effectiveDateTime date_time, valueQuantity.value value from observations where in_valueset(code, &#39;heart_rate&#39;) &#34;&#34;&#34;)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.cerner.com/blog/announcing-bunsen-fhir-data-with-apache-spark/" />
+<meta property="og:image" content="https://engineering.cerner.com/images/alan-grace.png"/>
 <meta property="article:published_time" content="2017-11-27T00:00:00+00:00" />
-<meta property="article:modified_time" content="2017-11-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-11-27T00:00:00+00:00" /><meta property="og:site_name" content="Cerner Engineering" />
 <meta itemprop="name" content="Announcing Bunsen: FHIR Data with Apache Spark">
 <meta itemprop="description" content="We&rsquo;re excited to open source Bunsen, a library to make analyzing FHIR data with Apache Spark simple and scalable. Bunsen encodes FHIR resources directly into Apache Spark&rsquo;s native data structures. This lets users leverage well-defined FHIR data models directly within Spark SQL.
 Here&rsquo;s a simple query against a table of FHIR observations that produces a table of heart rate values:
@@ -38,11 +39,14 @@ spark.sql(&#34;&#34;&#34; select subject.reference person_id, effectiveDateTime 
 <meta itemprop="datePublished" content="2017-11-27T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2017-11-27T00:00:00+00:00" />
 <meta itemprop="wordCount" content="539">
+<meta itemprop="image" content="https://engineering.cerner.com/images/alan-grace.png"/>
 
 
 
 <meta itemprop="keywords" content="engineering,spark,FHIR," />
-<meta name="twitter:card" content="summary"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://engineering.cerner.com/images/alan-grace.png"/>
+
 <meta name="twitter:title" content="Announcing Bunsen: FHIR Data with Apache Spark"/>
 <meta name="twitter:description" content="We&rsquo;re excited to open source Bunsen, a library to make analyzing FHIR data with Apache Spark simple and scalable. Bunsen encodes FHIR resources directly into Apache Spark&rsquo;s native data structures. This lets users leverage well-defined FHIR data models directly within Spark SQL.
 Here&rsquo;s a simple query against a table of FHIR observations that produces a table of heart rate values:
