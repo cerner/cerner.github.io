@@ -26,7 +26,7 @@ Naresh Rayapati, Scott Buchholz, Matt Nelson
 
 ### Overview
 
-The SquirrelOps team wanted to increase the speed that we would go from commit to deployment in our development environments, as well as provide a more holistic view of the state of the system across our various tools, which included GitHub, Spinnaker, New Relic, Artifactory, and Jenkins.  
+The SquirrelOps team wanted to increase the speed that we would go from commit to deployment in our development environments, as well as provide a more holistic view of the state of the system across our various tools, which included [GitHub](https://github.com/), [Spinnaker](https://spinnaker.io/), [New Relic](https://newrelic.com/), [Artifactory](https://jfrog.com/artifactory/), and [Jenkins](https://www.jenkins.io/).  
 
 ### The Problem
 
@@ -50,11 +50,11 @@ Ryan Lokugamage, Kyle Berkley, Juzer Zarif
 
 ### The Problem
 
-As working at Cerner became 100% virtual, our ShipIt team looked for ways to fast-track parts of the software engineering process. Every developer (and every associate) knows keeping up with their email can be tedious, often relentless. Because GitHub sends an email for all activity on every pull request an engineer is involved in, our team realized we could organize this information in a user interface that was easier to access and more concise. Thus, we decided to use Google Chrome’s API to develop a browser extension with a simple, meaningful UI that organizes all activity related to a developer’s active Pull Requests. We decided we would call the extension "Git Selfish."
+As working at Cerner became 100% virtual, our ShipIt team looked for ways to fast-track parts of the software engineering process. Every developer (and every associate) knows keeping up with their email can be tedious, often relentless. Because GitHub sends an email for all activity on every pull request an engineer is involved in, our team realized we could organize this information in a user interface that was easier to access and more concise. Thus, we decided to use Google Chrome's API to develop a browser extension with a simple, meaningful UI that organizes all activity related to a developer's active pull requests. We decided we would call the extension _Git Selfish_.
 
 ### The Solution
 
-We utilized the React library to quickly construct a pop-over style user interface. We also leveraged GitHub’s GraphQL API to select specific pieces of information that felt most relevant to a developer in order to keep them up-to-date on a Pull Request’s state. Using GitHub’s GraphQL API also allows us to create a subscription-style listener for updates to each active Pull Request that a user might be interested in. 
+We utilized the React library to quickly construct a pop-over style user interface. We also leveraged [GitHub's GraphQL API](https://docs.github.com/en/free-pro-team@latest/graphql) to select specific pieces of information that felt most relevant to a developer in order to keep them up-to-date on a pull request's state. Using GitHub's GraphQL API also allows us to create a subscription-style listener for updates to each active pull request that a user might be interested in. 
 
 {{< figure src="shipit-xx.png" width="500px" >}}
 
@@ -74,7 +74,7 @@ Services on existing infrastructure can be impacted from several different cause
 
 ### The Solution  
 
-We tackled the problem by starting with the code base we inherited. The existing code supported monitoring and identifying issues with other system dependencies. This evolved into becoming our on-call tool which could then take actions. At a high level the automation would have to take alerts (in this case from Zabbix), apply good mitigations to resolve (ex. restarting a process), and then inspect that it is resolved (ex. run commands to verify system state). Given this view, a basic workflow is represented below:   
+We tackled the problem by starting with the code base we inherited. The existing code supported monitoring and identifying issues with other system dependencies. This evolved into becoming our on-call tool which could then take actions. At a high level the automation would have to take alerts (in this case from [Zabbix](https://www.zabbix.com/)), apply good mitigations to resolve (ex. restarting a process), and then inspect that it is resolved (ex. run commands to verify system state). Given this view, a basic workflow is represented below:   
 
 {{< figure src="shipit-xxi.png" >}}
 
