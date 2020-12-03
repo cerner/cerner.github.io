@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+  
+     ShipIt from Anywhere: Our Lessons on Going Virtual | 
+    Engineering Health
+  
+</title><meta name="description" content="a blog by engineers, for engineers"><meta name="author" content="Whitney Roark">
+
+<link rel="icon" href="/favicon.png">
+
+
+    
+        
+            <link rel="stylesheet" href="/dist/main.8ddb5a998657440f326d.min.css">
+        
+    
+
+
+
+
+<link rel="canonical" href="https://engineering.cerner.com/blog/shipit-from-anywhere-lessons-learned/"><script src="/js/jquery-3.5.1.min.js"></script><meta property="og:title" content="ShipIt from Anywhere: Our Lessons on Going Virtual" />
+<meta property="og:description" content="ShipIt Days are Cerner Engineering&rsquo;s 24-hour hackathons where associates are empowered to brainstorm, plan, build, and present a project of their choice. This quarterly event is something associates enjoy by taking a break from their normal routine and focusing on a problem that they seek to achieve within a short time period (one day). The enjoyment of these projects often come from just working on something different, working with other colleagues, and applying their passions to an area they have been desiring to solve." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://engineering.cerner.com/blog/shipit-from-anywhere-lessons-learned/" />
+<meta property="og:image" content="https://engineering.cerner.com/images/alan-grace.png"/>
+<meta property="article:published_time" content="2020-12-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-12-03T00:00:00+00:00" /><meta property="og:site_name" content="Cerner Engineering" />
+<meta itemprop="name" content="ShipIt from Anywhere: Our Lessons on Going Virtual">
+<meta itemprop="description" content="ShipIt Days are Cerner Engineering&rsquo;s 24-hour hackathons where associates are empowered to brainstorm, plan, build, and present a project of their choice. This quarterly event is something associates enjoy by taking a break from their normal routine and focusing on a problem that they seek to achieve within a short time period (one day). The enjoyment of these projects often come from just working on something different, working with other colleagues, and applying their passions to an area they have been desiring to solve.">
+<meta itemprop="datePublished" content="2020-12-03T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-12-03T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1578">
+<meta itemprop="image" content="https://engineering.cerner.com/images/alan-grace.png"/>
+
+
+
+<meta itemprop="keywords" content="culture,engineering,hackathon,shipit," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://engineering.cerner.com/images/alan-grace.png"/>
+
+<meta name="twitter:title" content="ShipIt from Anywhere: Our Lessons on Going Virtual"/>
+<meta name="twitter:description" content="ShipIt Days are Cerner Engineering&rsquo;s 24-hour hackathons where associates are empowered to brainstorm, plan, build, and present a project of their choice. This quarterly event is something associates enjoy by taking a break from their normal routine and focusing on a problem that they seek to achieve within a short time period (one day). The enjoyment of these projects often come from just working on something different, working with other colleagues, and applying their passions to an area they have been desiring to solve."/>
+
+</head>
+<body>
+    
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-sm" id="navbar-main-menu">
+    <div class="container">
+        <a class="navbar-brand" href="/"><img src="/logo.png" style='width: 100px;' /></a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="main-menu" class="collapse navbar-collapse" >
+            <ul class="nav navbar-nav ml-auto">
+                
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/culture/">Culture</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/open-source/">Open Source</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/tech-talks/">Tech Talks</a></li>
+                
+            
+            </ul>
+            
+            <div class="form-inline my-2 my-lg-0 searchbox">
+    <input id="search-by" type="search" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js"></script>
+<script type="text/javascript" src="/js/auto-complete.min.js"></script>
+<script type="text/javascript">
+    var baseurl =  "https:\/\/engineering.cerner.com";
+</script>
+<script type="text/javascript" src="/js/search.js"></script>
+        </div>
+    </div>
+</nav>
+
+
+    
+<main class="content-page container pt-7 pb-5">
+    
+    <div class="row">
+        <div class="col">
+            <article class="article-content">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="meta text-muted mb-3">
+                            <p class="created text-muted text-uppercase font-weight-bold mb-1">December 3, 2020</p>
+                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>1578 words</span>
+                            <span><i class="fas fa-clock mr-2"></i>8 mins read</span>
+                        </div>
+
+                        <h1>ShipIt from Anywhere: Our Lessons on Going Virtual</h1>
+
+                        <ul class="authors list-inline">
+        By: &nbsp;<li class="list-inline-item mr-3">
+                    <div class="media author"><a href="/authors/whitney-roark/" class="mr-3">
+                                    <picture>
+                                        <source srcset="/authors/whitney-roark/whitney_hu6f12eef8fbd2fba5a932f6ca36908c5c_29930_48x0_resize_q75_box.jpg 1x, /authors/whitney-roark/whitney_hu6f12eef8fbd2fba5a932f6ca36908c5c_29930_128x0_resize_q100_box.jpg 2x, /authors/whitney-roark/whitney_hu6f12eef8fbd2fba5a932f6ca36908c5c_29930_192x0_resize_q100_box.jpg 3x">
+                                        <img src="/authors/whitney-roark/whitney_hu6f12eef8fbd2fba5a932f6ca36908c5c_29930_48x0_resize_q75_box.jpg" class="rounded-circle" alt="Whitney Roark">
+                                    </picture>
+                                </a><div class="media-body">
+                            <h5 class="name my-2 "><a href="/authors/whitney-roark/" class="small">Whitney Roark</a>
+                            </h5>
+                        </div>
+                    </div>
+                </li></ul>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="content">
+                            <p>ShipIt Days are Cerner Engineering&rsquo;s 24-hour hackathons where associates are empowered to brainstorm, plan, build, and present a project of their choice. This quarterly event is something associates enjoy by taking a break from their normal routine and focusing on a problem that they seek to achieve within a short time period (one day). The enjoyment of these projects often come from just working on something different, working with other colleagues, and applying their passions to an area they have been desiring to solve. With the pandemic this year, we had to rethink how can we continue to achieve this same associate enjoyment and fulfillment while only being in a virtual format.</p>
+<p>Moving this event to a virtual format has created a lot of challenges! During a typical in-person ShipIt event, all participating teams would gather in one room to collaborate on their projects. Participating teams would be provided with awesome swag, a fully loaded snack bar and an evening movie to give a fun atmosphere for those who enjoyed to be attending in the evening (<a href="https://www.youtube.com/watch?v=uNo5666TPaA">check out our recap video</a> for what it was like on our campus). Another very anticipated part of the event is the live demo portion where each participating team shares what they created in the last 24 hours. At the end of the presentations, the judges and people-choice winners get announced in our assembly, where each team then gets to pick from a line-up of prizes, with the 1st place team receiving the traveling trophy: the golden keyboard. It was a fun moment to wrap up the event and capture photos of all the teams.</p>
+<p>Our goal for the virtual format was to keep the core aspects of the event the same. ShipIt participants enjoy collecting our signature t-shirts quarter-over-quarter, building a variety of colors into their wardrobes. We knew we had to keep this tradition alive! To get our associates excited for the event, we mail a swag box directly to each participant&rsquo;s home. During the actual event, we utilize <a href="https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software">Microsoft Teams</a> to communicate and collaborate with our participating teams. To keep our teams engaged with each other during the event we host several virtual activities throughout the day and night. Our most popular activities have been <a href="https://trello.com/b/Z07yg0BA/gif-battle-game">Trello&rsquo;s GIF battles</a>, virtual bingo and a <a href="https://www.jackboxgames.com/">JackBox</a> game hour! The live demo portion is streamed using Microsoft Teams as well and is available for all associates within the company to tune in.</p>
+<div align="center">
+    <figure class="figure">
+        <a href="shipit-swag.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-swag.png"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
+<p>While moving this event to a virtual format has been challenging, it has also created some new opportunities and growth! When ShipIt Days were hosted in person, participation was limited to local associates. Now that the event is virtual, participation is open to all associates in any location. Associates from different parts of the world can now team up and compete together. We have been able to bring associates together from the US, Brasov, London and India to all compete in the same competition!</p>
+<p>Even in this new virtual world our associates continue to turn their creative ideas into reality during these hackathon competitions. Continue reading to learn about some of the new things our associates have developed during our virtual ShipIt days and how we are filling the void of the golden keyboard trophy!</p>
+<div align="center">
+    <figure class="figure">
+        <a href="shipit-bingo-trophy.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-bingo-trophy.png"
+                alt="One of our favorite activities to do with our virtual ShipIt participants is virtual bingo! The traveling golden keyboard trophy is safely locked up on campus. Our virtual winners receive a custom 3D printed version of the trophy that is mailed directly to them. These trophies are made by one of our own associates, Kyle Harper!"class="figure-img img-fluid"
+            /> 
+        </a><figcaption class="figure-caption text-center">
+                <p>One of our favorite activities to do with our virtual ShipIt participants is virtual bingo! The traveling golden keyboard trophy is safely locked up on campus. Our virtual winners receive a custom 3D printed version of the trophy that is mailed directly to them. These trophies are made by one of our own associates, Kyle Harper!</p>
+            </figcaption>
+    </figure>
+</div>
+<h2 id="shipit-xix-winners--squirrelops">ShipIt XIX Winners – SquirrelOps</h2>
+<p>Naresh Rayapati, Scott Buchholz, Matt Nelson</p>
+<h3 id="overview">Overview</h3>
+<p>The SquirrelOps team wanted to increase the speed that we would go from commit to deployment in our development environments, as well as provide a more holistic view of the state of the system across our various tools, which included <a href="https://github.com/">GitHub</a>, <a href="https://spinnaker.io/">Spinnaker</a>, <a href="https://newrelic.com/">New Relic</a>, <a href="https://jfrog.com/artifactory/">Artifactory</a>, and <a href="https://www.jenkins.io/">Jenkins</a>. </p>
+<h3 id="the-problem">The Problem</h3>
+<p>Previously we had some automation however there were gaps and missing signals that kept the process from being as seamless or as face up as we&rsquo;d like. While a commit to GitHub would trigger a Jenkins build and publish the new artifacts to Artifactory, human intervention was then required to in turn get these artifacts deployed where they could be consumed. By integrating these existing automation tools we were able to use the various APIs to not only go from commit to deployment, but to push additional facts to New Relic and GitHub allowing for improved observability into the system. </p>
+<h3 id="the-solution">The Solution</h3>
+<p>The existing GitHub webhook and Jenkins CI flow was enhanced to invoke the Spinnaker API to kick off the appropriate pipelines to deploy the artifacts in the Kubernetes cluster. </p>
+<p>The Spinnaker pipelines were in turn enhanced to pull the docker tag information Artifactory and to then publish that information to both GitHub and New Relic using their deployment APIs. This allows the state of the system to be reflected in those tools in a way that provides additional context to the developer.</p>
+<div align="center">
+    <figure class="figure">
+        <a href="shipit-xix.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-xix.png"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
+<p>Upon completion of the deployment, the pipeline would also then report the state on the deployment to GitHub, allowing quick visibility of the deployment history and status of a given change for that specific commit. </p>
+<div align="center">
+    <figure class="figure">
+        <a href="shipit-xix-2.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-xix-2.png"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
+<h2 id="shipit-xx-winners--team-rkj">ShipIt XX Winners – Team RKJ</h2>
+<p>Ryan Lokugamage, Kyle Berkley, Juzer Zarif</p>
+<h3 id="the-problem-1">The Problem</h3>
+<p>As working at Cerner became 100% virtual, our ShipIt team looked for ways to fast-track parts of the software engineering process. Every developer (and every associate) knows keeping up with their email can be tedious, often relentless. Because GitHub sends an email for all activity on every pull request an engineer is involved in, our team realized we could organize this information in a user interface that was easier to access and more concise. Thus, we decided to use Google Chrome&rsquo;s API to develop a browser extension with a simple, meaningful UI that organizes all activity related to a developer&rsquo;s active pull requests. We decided we would call the extension <em>Git Selfish</em>.</p>
+<h3 id="the-solution-1">The Solution</h3>
+<p>We utilized the React library to quickly construct a pop-over style user interface. We also leveraged <a href="https://docs.github.com/en/free-pro-team@latest/graphql">GitHub&rsquo;s GraphQL API</a> to select specific pieces of information that felt most relevant to a developer in order to keep them up-to-date on a pull request&rsquo;s state. Using GitHub&rsquo;s GraphQL API also allows us to create a subscription-style listener for updates to each active pull request that a user might be interested in.</p>
+<div align="center">
+    <figure class="figure">
+        <a href="shipit-xx.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-xx.png" width="500px"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
+<p>The team was particularly excited about this project because of all the possibilities it presented. As with all ShipIt projects, there is so much room for creativity and inspiration that it is difficult to know where to start, as well as where to end - after all, we only have 24 hours!</p>
+<h2 id="shipit-xxi-winners--super-smash-bros">ShipIt XXI Winners – Super SMASH. Bros</h2>
+<p>David White, Evan Rauner, Garrett Atwell, Max Alvarez, Rahul Joshi</p>
+<h3 id="overview-1">Overview</h3>
+<p>On-call can be a stressful time for any engineer, no matter their experience or what technology they are supporting. A typical shift can largely be consumed by alerts that take manual, repetitive actions to resolve. We wanted to enhance our support automation tooling to apply good mitigations when it proactively detects issues with the system and avoid engineers from having to be initially engaged to apply these actions. We found this automation could greatly reduce the number of hours a week that is spent on first engaging on alerts, which can reduce on-call fatigue and continue on our path in building a self-healing architecture that requires minimum human engagement.</p>
+<h3 id="the-problem-2">The Problem</h3>
+<p>Services on existing infrastructure can be impacted from several different causes. This can be from a lack of system resources (memory, swap space) or just network segmentations with other service dependencies. Often, there are <a href="https://youtu.be/W5SgJzl3eiE?t=1138">good mitigations</a> that can be first applied to these services the point of alerting. We wanted to make sure these mitigations are automatically applied before any human operators are involved.</p>
+<h3 id="the-solution-2">The Solution</h3>
+<p>We tackled the problem by starting with the code base we inherited. The existing code supported monitoring and identifying issues with other system dependencies. This evolved into becoming our on-call tool which could then take actions. At a high level the automation would have to take alerts (in this case from <a href="https://www.zabbix.com/">Zabbix</a>), apply good mitigations to resolve (ex. restarting a process), and then inspect that it is resolved (ex. run commands to verify system state). Given this view, a basic workflow is represented below:</p>
+<div align="center">
+    <figure class="figure">
+        <a href="shipit-xxi.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="shipit-xxi.png"class="figure-img img-fluid"
+            /> 
+        </a>
+    </figure>
+</div>
+<p>The project is comprised of a client-side library implemented in Go and a Redis database. The client performs three operations: poll alerts from the Zabbix API at regular intervals, run a workflow for each alert from the poll, and reports the automation outcome. The workflow for an alert first checks if the dependencies of the services running on the node are healthy, documents services failing based on their health checks, and attempts good mitigations to resolve the service issue. If they return healthy, the workflow captures the results and terminates. The Redis database is used to track the state of the automation across the different parts of infrastructure.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Our transformation of ShipIt in becoming a virtual offering required rethinking some of our traditions. As we made this transition, we found this event continued to live on through teams participating and even had an increased in audience participation to see the presentations. We are excited to see how our ShipIt event continues to grow as we adapt in this ever changing world.</p>
+
+                        </div><div class="tags my-3"><a class="badge badge-pill badge-light border mr-2" href="/tags/culture">
+                                    <i class="fas fa-tag mr-2"></i>culture
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/engineering">
+                                    <i class="fas fa-tag mr-2"></i>engineering
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/hackathon">
+                                    <i class="fas fa-tag mr-2"></i>hackathon
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/shipit">
+                                    <i class="fas fa-tag mr-2"></i>shipit
+                                </a></div><ul class="share nav my-3 justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://twitter.com/intent/tweet?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fshipit-from-anywhere-lessons-learned%2f&text=ShipIt%20from%20Anywhere%3a%20Our%20Lessons%20on%20Going%20Virtual">
+              <i class="fa-fw fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fshipit-from-anywhere-lessons-learned%2f&title=ShipIt%20from%20Anywhere%3a%20Our%20Lessons%20on%20Going%20Virtual">
+                <i class="fa-fw fab fa-linkedin-in"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fengineering.cerner.com%2fblog%2fshipit-from-anywhere-lessons-learned%2f&t=ShipIt%20from%20Anywhere%3a%20Our%20Lessons%20on%20Going%20Virtual">
+                <i class="fa-fw fab fa-facebook-f"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://reddit.com/submit?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fshipit-from-anywhere-lessons-learned%2f&title=ShipIt%20from%20Anywhere%3a%20Our%20Lessons%20on%20Going%20Virtual">
+                <i class="fa-fw fab fa-reddit-alien"></i>
+            </a>
+        </li>
+    </nav>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        
+                    </div>
+                </div></article>
+        </div>
+    </div>
+
+    <div class="related-content row mt-5 row-cols-1 row-cols-lg-3"><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/shipit-xiv/" class="d-block"><img data-src="/blog/shipit-xiv/shipit-xiv-1_hu14f9913125801453fa979037c2f72d16_2787471_700x350_fill_q75_box_smart1.jpg" class="card-img-top mx-auto d-block" alt="ShipIt XIV"><div class="card-body">
+            <h4 class="card-title">ShipIt XIV</h4>
+            <p class="card-text text-muted text-uppercase">March 8, 2019</p>
+            <div class="card-text">
+                It is winter time in Kansas City, which also included our fourteenth edition of ShipIt, our routine hackathon competition we host at Cerner Engineering. Although the snowy weather may have kept participants between the warm walls of our Innovations Campus, the winter storm did not disturb the initiative and enthusiasm of the fourteen participating teams. Check out the video below to hear from ShipIt Day participants and supporters as to why ShipIt Day has become an engineering-wide program that supports Cerner’s development culture.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/shipit-xiii/" class="d-block"><img data-src="/blog/shipit-xiii/shipit-xiii-1_hu34eca9f323d1b9f3e4f09939e83fdd8b_3588831_700x350_fill_q75_box_smart1.jpg" class="card-img-top mx-auto d-block" alt="ShipIt XIII"><div class="card-body">
+            <h4 class="card-title">ShipIt XIII</h4>
+            <p class="card-text text-muted text-uppercase">November 16, 2018</p>
+            <div class="card-text">
+                What does it take to be awarded the ShipIt Day Golden Keyboard?    ShipIt Day XIII concluded last week after an intense 24-hours of brainstorming, building, and presenting. Various projects were completed by Cerner associates across twelve diverse organizations. ShipIt Day XIII’s projects were some of the most technically advanced this competition has ever seen.
+Awarding the Golden Keyboard is no easy job for our judges. Back in 2014, the trophy was created to provide the winning team with a memento that was unique and grew with the competition.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/blog/shipit-xii/" class="d-block"><img data-src="/blog/shipit-xii/shipitxii-logo_hu69a777460ddf5fc5f9af9d6b9d443421_352614_700x350_fill_box_smart1_2.png" class="card-img-top mx-auto d-block" alt="ShipIt XII"><div class="card-body">
+            <h4 class="card-title">ShipIt XII</h4>
+            <p class="card-text text-muted text-uppercase">August 30, 2018</p>
+            <div class="card-text">
+                This month we held our quarterly hackathon event- called ShipIt Day. We would like to thank all the participants for making ShipIt Day XII a huge success. With 75 participants, we had associates representing 13 different organizations across Cerner. These associates were given 24-hours to meet the requirements of this hackathon which included making something that was innovative, usable, and value-adding. As the clock ticked down, our associates worked in their teams to complete a project while taking some time to enjoy the fun activities happening throughout ShipIt day.
+            </div>
+        </div>
+    </a>
+  </div>
+            </div></div>
+</main>
+
+
+    <footer class="footer text-center bg-dark py-6">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="https://engineering.cerner.com/index.xml" rel="alternate" type="application/rss+xml" class="icons d-block">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a></li><li class="list-inline-item">
+                            <a href="https://github.com/cerner" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.instagram.com/cernercorporation/" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.linkedin.com/company/cerner-corporation" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fengineering.cerner.com%2F&amp;screen_name=CernerEng" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://www.youtube.com/user/cernereng?sub_confirmation=1" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                </ul>
+
+                <p class="text-light">
+                    
+                        Copyright © 2020
+                    
+                </p>
+
+                <p class="text-light">
+                Made with ❤️ by Cerner engineers.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+    
+        
+            <script src="/dist/main.44c94dde179dd23bf3f1.min.js"></script>
+        
+    
+
+
+
+
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-37701128-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body>
+</html>

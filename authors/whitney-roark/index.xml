@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/whitney-roark/</link>
+    <description>Recent content on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Thu, 03 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://engineering.cerner.com/authors/whitney-roark/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ShipIt from Anywhere: Our Lessons on Going Virtual</title>
+      <link>https://engineering.cerner.com/blog/shipit-from-anywhere-lessons-learned/</link>
+      <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/shipit-from-anywhere-lessons-learned/</guid>
+      <description>ShipIt Days are Cerner Engineering&amp;rsquo;s 24-hour hackathons where associates are empowered to brainstorm, plan, build, and present a project of their choice. This quarterly event is something associates enjoy by taking a break from their normal routine and focusing on a problem that they seek to achieve within a short time period (one day). The enjoyment of these projects often come from just working on something different, working with other colleagues, and applying their passions to an area they have been desiring to solve.</description>
+    </item>
+    
+  </channel>
+</rss>

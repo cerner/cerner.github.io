@@ -3,6 +3,56 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://engineering.cerner.com/authors/whitney-roark/</loc>
+    <lastmod>2020-12-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.cerner.com/authors/</loc>
+    <lastmod>2020-12-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.cerner.com/tags/culture/</loc>
+    <lastmod>2020-12-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.cerner.com/tags/engineering/</loc>
+    <lastmod>2020-12-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.cerner.com/</loc>
+    <lastmod>2020-12-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.cerner.com/tags/hackathon/</loc>
+    <lastmod>2020-12-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.cerner.com/post/</loc>
+    <lastmod>2020-12-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.cerner.com/tags/shipit/</loc>
+    <lastmod>2020-12-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.cerner.com/blog/shipit-from-anywhere-lessons-learned/</loc>
+    <lastmod>2020-12-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.cerner.com/tags/</loc>
+    <lastmod>2020-12-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://engineering.cerner.com/authors/matt-henkes/</loc>
     <lastmod>2020-09-24T00:00:00+00:00</lastmod>
   </url>
@@ -13,37 +63,12 @@
   </url>
   
   <url>
-    <loc>https://engineering.cerner.com/authors/</loc>
-    <lastmod>2020-09-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.cerner.com/tags/engineering/</loc>
-    <lastmod>2020-09-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.cerner.com/</loc>
-    <lastmod>2020-09-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://engineering.cerner.com/blog/lessons-learned-building-an-accessible-web-application-framework/</loc>
     <lastmod>2020-09-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://engineering.cerner.com/tags/oss/</loc>
-    <lastmod>2020-09-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.cerner.com/post/</loc>
-    <lastmod>2020-09-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.cerner.com/tags/</loc>
     <lastmod>2020-09-24T00:00:00+00:00</lastmod>
   </url>
   
@@ -94,11 +119,6 @@
   
   <url>
     <loc>https://engineering.cerner.com/authors/sharynne-azhar/</loc>
-    <lastmod>2020-02-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.cerner.com/tags/shipit/</loc>
     <lastmod>2020-02-24T00:00:00+00:00</lastmod>
   </url>
   
@@ -168,11 +188,6 @@
   </url>
   
   <url>
-    <loc>https://engineering.cerner.com/tags/culture/</loc>
-    <lastmod>2019-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://engineering.cerner.com/blog/devacademy-six-years-later/</loc>
     <lastmod>2019-06-14T00:00:00+00:00</lastmod>
   </url>
@@ -199,11 +214,6 @@
   
   <url>
     <loc>https://engineering.cerner.com/authors/caitie-oder/</loc>
-    <lastmod>2019-03-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.cerner.com/tags/hackathon/</loc>
     <lastmod>2019-03-08T00:00:00+00:00</lastmod>
   </url>
   

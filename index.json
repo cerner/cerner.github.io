@@ -1,14 +1,7 @@
 [
     {
-        "uri": "https://engineering.cerner.com/authors/matt-henkes/",
+        "uri": "https://engineering.cerner.com/authors/whitney-roark/",
         "title": "",
-        "tags": [],
-        "description": "",
-        "content": ""
-    },
-    {
-        "uri": "https://engineering.cerner.com/tags/accessibility/",
-        "title": "accessibility",
         "tags": [],
         "description": "",
         "content": ""
@@ -16,6 +9,13 @@
     {
         "uri": "https://engineering.cerner.com/authors/",
         "title": "Authors",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
+        "uri": "https://engineering.cerner.com/tags/culture/",
+        "title": "culture",
         "tags": [],
         "description": "",
         "content": ""
@@ -35,15 +35,8 @@
         "content": ""
     },
     {
-        "uri": "https://engineering.cerner.com/blog/lessons-learned-building-an-accessible-web-application-framework/",
-        "title": "Lessons learned building an accessible web application framework",
-        "tags": ["accessibility", "terra", "engineering", "oss"],
-        "description": "",
-        "content": "Since 2017, we at Cerner have been building Terra, a single page web application framework, and accessibility has always been a primary goal. Over the years we\u0026rsquo;ve learned a lot about how to build and test accessible websites, as well as the diverse group of people we\u0026rsquo;re serving. With this blog post, we\u0026rsquo;d like to take a moment to share what we\u0026rsquo;ve learned so far.\nWhy accessibility matters At Cerner, we build software for many different users in many different roles. Doctors and nurses may first come to mind as the primary users for our EHR, but hospitals aren\u0026rsquo;t made up of providers alone and neither are our users. We also provide applications for administrative users and with our patient portal application (HealtheLife), our users are the general patient population. Naturally, with such a broad user base a percentage will require assistive technologies to be able to use our applications. To be as inclusive as possible, Cerner applications must be as accessible as possible, and the Terra Application Framework is one way we are working towards that goal.\nWhat does it mean for a site to be accessible I\u0026rsquo;ll be honest, when we started in 2017, I thought creating an accessible website simply meant appropriately applying ARIA labels to DOM elements. In the last few years, we\u0026rsquo;ve learned, with the help of our accessibility researchers, that creating an accessible site is so much more than that. So, let\u0026rsquo;s hop in our time machine and discuss how we should have approached accessibility with appropriate hindsight (foresight? Time travel is confusing).\nIdentify how users interact with our site with accessible technologies As we discussed above, our broad user base includes a diverse array of people and an equally diverse array of accessibility needs. When discussing web accessibility, it\u0026rsquo;s common to assume that means ensuring a screen reader appropriately can navigate and read your site. Screen reader compatibility is an important aspect of accessibility, it assists users with impaired vision. However, a screen reader won\u0026rsquo;t help users with impaired mobility. To help us cover a wider array of expected interactions and needs, we\u0026rsquo;ve compiled the following use cases.\n Impaired vision Impaired mobility Impaired cognition  These categories may also be experienced temporarily, where individuals may need improved accessibility due to an injury, limited device capability, or location.\nCreate areas of focus for each use case For each of the above use cases, we\u0026rsquo;ve identified the appropriate assistive technologies to apply.\nImpaired vision Focus on helping the user access the site content by ensuring appropriate contrast ratios, font sizing, spacing, color usage, and screen reader support. A good way to get a feel for this user\u0026rsquo;s experience is to enable a screen reader (all Macs have VoiceOver), close your eyes, and navigate your site. Does it make sense?\nImpaired mobility Focus on helping the user navigate the site using devices other than a cursor by enabling keyboard navigation and supplying redundant information access. For example, providing alternative methods to take actions that require gestures on mobile devices.\nImpaired cognition Focus on applying layout simplicity to our workflows and components as well as improving keyword comprehension by emphasizing common design patterns and expected behaviors. For example, buttons should not navigate a user to a new page, that is the role of links.\nAll impairments Provide a consistent semantic layout and access to information regardless of form factor (desktop, mobile). Tooltips are a good example of this. On the desktop, tooltips are accessed when hovering over the element; where as on a mobile devices touch screen you cannot hover. The information contained in the tooltip has to be offered in a way that can be accessed on both devices.\nDesign for accessibility Accessibility cannot simply be layered on any component as an afterthought. This was a mistake we made early on. We’d work through designing and building a complex component, only to test the screen reader compatibility at the end. Unsurprisingly, the component would fail, and we’d have to repeat the process again to correct the issues, sometimes with a complete redesign. Just as engineering constraints inform a design, so to do accessibility constraints. Designing for them up front will reduce expensive re-work late in a project.\nAs you can see, there is far more about accessibility to consider than ARIA labels. We understand that implementing accessibility on the web is a complex and difficult task and we\u0026rsquo;ve built the Terra application framework to help.\nWhat does Terra offer for accessibility Terra provides a stable base on which to build accessible applications. The Terra application framework and each Terra component are designed and built to meet our accessibility standards. To help ensure that our components meet these standards, we perform manual testing, as well as, automated testing using axe-core.\nWhile using Terra gives you a good head start on building an accessible application, you cannot assume your application is fully accessible. The way Terra components are assembled and labeled in an application have a large impact on its accessibility. Any custom components need to be vetted with the same care as Terra components to ensure accessibility. Application owners should make sure to test their apps using a screen reader.\nDeveloping applications for the web is inherently complex. Adding accessibility does not simplify development. By ensuring accessibility is applied to the Terra application framework and components, we are making the right thing, the easy thing to do for applications utilizing Terra. Furthermore, this has made our products more predictable in how users access their functionality since it is being consistently applied. It has been our experience that implementing a consistent semantic layout and a sensible keyboard navigation order lead directly to a logically organized information architecture.\nIf you would like to learn more about Terra, check out its documentation. It’s all open source and we’d love to hear what you think.\nIn closing, I\u0026rsquo;d like to provide a quote from my friend, Neil Pfeiffer, UX Designer, that I think sums up our mission nicely.\n Our job is to help all users better understand their surroundings, providing them not only with clear and direct informational context, but also what choices and actions they can make based on that information, and always put them in control.\n Thanks for reading, and remember, we\u0026rsquo;re all in this together :)\n"
-    },
-    {
-        "uri": "https://engineering.cerner.com/tags/oss/",
-        "title": "oss",
+        "uri": "https://engineering.cerner.com/tags/hackathon/",
+        "title": "hackathon",
         "tags": [],
         "description": "",
         "content": ""
@@ -56,8 +49,50 @@
         "content": ""
     },
     {
+        "uri": "https://engineering.cerner.com/tags/shipit/",
+        "title": "shipit",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
+        "uri": "https://engineering.cerner.com/blog/shipit-from-anywhere-lessons-learned/",
+        "title": "ShipIt from Anywhere: Our Lessons on Going Virtual",
+        "tags": ["culture", "engineering", "hackathon", "shipit"],
+        "description": "",
+        "content": "ShipIt Days are Cerner Engineering\u0026rsquo;s 24-hour hackathons where associates are empowered to brainstorm, plan, build, and present a project of their choice. This quarterly event is something associates enjoy by taking a break from their normal routine and focusing on a problem that they seek to achieve within a short time period (one day). The enjoyment of these projects often come from just working on something different, working with other colleagues, and applying their passions to an area they have been desiring to solve. With the pandemic this year, we had to rethink how can we continue to achieve this same associate enjoyment and fulfillment while only being in a virtual format.\nMoving this event to a virtual format has created a lot of challenges! During a typical in-person ShipIt event, all participating teams would gather in one room to collaborate on their projects. Participating teams would be provided with awesome swag, a fully loaded snack bar and an evening movie to give a fun atmosphere for those who enjoyed to be attending in the evening (check out our recap video for what it was like on our campus). Another very anticipated part of the event is the live demo portion where each participating team shares what they created in the last 24 hours. At the end of the presentations, the judges and people-choice winners get announced in our assembly, where each team then gets to pick from a line-up of prizes, with the 1st place team receiving the traveling trophy: the golden keyboard. It was a fun moment to wrap up the event and capture photos of all the teams.\nOur goal for the virtual format was to keep the core aspects of the event the same. ShipIt participants enjoy collecting our signature t-shirts quarter-over-quarter, building a variety of colors into their wardrobes. We knew we had to keep this tradition alive! To get our associates excited for the event, we mail a swag box directly to each participant\u0026rsquo;s home. During the actual event, we utilize Microsoft Teams to communicate and collaborate with our participating teams. To keep our teams engaged with each other during the event we host several virtual activities throughout the day and night. Our most popular activities have been Trello\u0026rsquo;s GIF battles, virtual bingo and a JackBox game hour! The live demo portion is streamed using Microsoft Teams as well and is available for all associates within the company to tune in.\n   While moving this event to a virtual format has been challenging, it has also created some new opportunities and growth! When ShipIt Days were hosted in person, participation was limited to local associates. Now that the event is virtual, participation is open to all associates in any location. Associates from different parts of the world can now team up and compete together. We have been able to bring associates together from the US, Brasov, London and India to all compete in the same competition!\nEven in this new virtual world our associates continue to turn their creative ideas into reality during these hackathon competitions. Continue reading to learn about some of the new things our associates have developed during our virtual ShipIt days and how we are filling the void of the golden keyboard trophy!\nOne of our favorite activities to do with our virtual ShipIt participants is virtual bingo! The traveling golden keyboard trophy is safely locked up on campus. Our virtual winners receive a custom 3D printed version of the trophy that is mailed directly to them. These trophies are made by one of our own associates, Kyle Harper!\n   ShipIt XIX Winners – SquirrelOps Naresh Rayapati, Scott Buchholz, Matt Nelson\nOverview The SquirrelOps team wanted to increase the speed that we would go from commit to deployment in our development environments, as well as provide a more holistic view of the state of the system across our various tools, which included GitHub, Spinnaker, New Relic, Artifactory, and Jenkins. The Problem Previously we had some automation however there were gaps and missing signals that kept the process from being as seamless or as face up as we\u0026rsquo;d like. While a commit to GitHub would trigger a Jenkins build and publish the new artifacts to Artifactory, human intervention was then required to in turn get these artifacts deployed where they could be consumed. By integrating these existing automation tools we were able to use the various APIs to not only go from commit to deployment, but to push additional facts to New Relic and GitHub allowing for improved observability into the system. The Solution The existing GitHub webhook and Jenkins CI flow was enhanced to invoke the Spinnaker API to kick off the appropriate pipelines to deploy the artifacts in the Kubernetes cluster. The Spinnaker pipelines were in turn enhanced to pull the docker tag information Artifactory and to then publish that information to both GitHub and New Relic using their deployment APIs. This allows the state of the system to be reflected in those tools in a way that provides additional context to the developer.\n   Upon completion of the deployment, the pipeline would also then report the state on the deployment to GitHub, allowing quick visibility of the deployment history and status of a given change for that specific commit.    ShipIt XX Winners – Team RKJ Ryan Lokugamage, Kyle Berkley, Juzer Zarif\nThe Problem As working at Cerner became 100% virtual, our ShipIt team looked for ways to fast-track parts of the software engineering process. Every developer (and every associate) knows keeping up with their email can be tedious, often relentless. Because GitHub sends an email for all activity on every pull request an engineer is involved in, our team realized we could organize this information in a user interface that was easier to access and more concise. Thus, we decided to use Google Chrome\u0026rsquo;s API to develop a browser extension with a simple, meaningful UI that organizes all activity related to a developer\u0026rsquo;s active pull requests. We decided we would call the extension Git Selfish.\nThe Solution We utilized the React library to quickly construct a pop-over style user interface. We also leveraged GitHub\u0026rsquo;s GraphQL API to select specific pieces of information that felt most relevant to a developer in order to keep them up-to-date on a pull request\u0026rsquo;s state. Using GitHub\u0026rsquo;s GraphQL API also allows us to create a subscription-style listener for updates to each active pull request that a user might be interested in.\n   The team was particularly excited about this project because of all the possibilities it presented. As with all ShipIt projects, there is so much room for creativity and inspiration that it is difficult to know where to start, as well as where to end - after all, we only have 24 hours!\nShipIt XXI Winners – Super SMASH. Bros David White, Evan Rauner, Garrett Atwell, Max Alvarez, Rahul Joshi\nOverview On-call can be a stressful time for any engineer, no matter their experience or what technology they are supporting. A typical shift can largely be consumed by alerts that take manual, repetitive actions to resolve. We wanted to enhance our support automation tooling to apply good mitigations when it proactively detects issues with the system and avoid engineers from having to be initially engaged to apply these actions. We found this automation could greatly reduce the number of hours a week that is spent on first engaging on alerts, which can reduce on-call fatigue and continue on our path in building a self-healing architecture that requires minimum human engagement.\nThe Problem Services on existing infrastructure can be impacted from several different causes. This can be from a lack of system resources (memory, swap space) or just network segmentations with other service dependencies. Often, there are good mitigations that can be first applied to these services the point of alerting. We wanted to make sure these mitigations are automatically applied before any human operators are involved.\nThe Solution We tackled the problem by starting with the code base we inherited. The existing code supported monitoring and identifying issues with other system dependencies. This evolved into becoming our on-call tool which could then take actions. At a high level the automation would have to take alerts (in this case from Zabbix), apply good mitigations to resolve (ex. restarting a process), and then inspect that it is resolved (ex. run commands to verify system state). Given this view, a basic workflow is represented below:\n   The project is comprised of a client-side library implemented in Go and a Redis database. The client performs three operations: poll alerts from the Zabbix API at regular intervals, run a workflow for each alert from the poll, and reports the automation outcome. The workflow for an alert first checks if the dependencies of the services running on the node are healthy, documents services failing based on their health checks, and attempts good mitigations to resolve the service issue. If they return healthy, the workflow captures the results and terminates. The Redis database is used to track the state of the automation across the different parts of infrastructure.\nConclusion Our transformation of ShipIt in becoming a virtual offering required rethinking some of our traditions. As we made this transition, we found this event continued to live on through teams participating and even had an increased in audience participation to see the presentations. We are excited to see how our ShipIt event continues to grow as we adapt in this ever changing world.\n"
+    },
+    {
         "uri": "https://engineering.cerner.com/tags/",
         "title": "Tags",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
+        "uri": "https://engineering.cerner.com/authors/matt-henkes/",
+        "title": "",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
+        "uri": "https://engineering.cerner.com/tags/accessibility/",
+        "title": "accessibility",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
+        "uri": "https://engineering.cerner.com/blog/lessons-learned-building-an-accessible-web-application-framework/",
+        "title": "Lessons learned building an accessible web application framework",
+        "tags": ["accessibility", "terra", "engineering", "oss"],
+        "description": "",
+        "content": "Since 2017, we at Cerner have been building Terra, a single page web application framework, and accessibility has always been a primary goal. Over the years we\u0026rsquo;ve learned a lot about how to build and test accessible websites, as well as the diverse group of people we\u0026rsquo;re serving. With this blog post, we\u0026rsquo;d like to take a moment to share what we\u0026rsquo;ve learned so far.\nWhy accessibility matters At Cerner, we build software for many different users in many different roles. Doctors and nurses may first come to mind as the primary users for our EHR, but hospitals aren\u0026rsquo;t made up of providers alone and neither are our users. We also provide applications for administrative users and with our patient portal application (HealtheLife), our users are the general patient population. Naturally, with such a broad user base a percentage will require assistive technologies to be able to use our applications. To be as inclusive as possible, Cerner applications must be as accessible as possible, and the Terra Application Framework is one way we are working towards that goal.\nWhat does it mean for a site to be accessible I\u0026rsquo;ll be honest, when we started in 2017, I thought creating an accessible website simply meant appropriately applying ARIA labels to DOM elements. In the last few years, we\u0026rsquo;ve learned, with the help of our accessibility researchers, that creating an accessible site is so much more than that. So, let\u0026rsquo;s hop in our time machine and discuss how we should have approached accessibility with appropriate hindsight (foresight? Time travel is confusing).\nIdentify how users interact with our site with accessible technologies As we discussed above, our broad user base includes a diverse array of people and an equally diverse array of accessibility needs. When discussing web accessibility, it\u0026rsquo;s common to assume that means ensuring a screen reader appropriately can navigate and read your site. Screen reader compatibility is an important aspect of accessibility, it assists users with impaired vision. However, a screen reader won\u0026rsquo;t help users with impaired mobility. To help us cover a wider array of expected interactions and needs, we\u0026rsquo;ve compiled the following use cases.\n Impaired vision Impaired mobility Impaired cognition  These categories may also be experienced temporarily, where individuals may need improved accessibility due to an injury, limited device capability, or location.\nCreate areas of focus for each use case For each of the above use cases, we\u0026rsquo;ve identified the appropriate assistive technologies to apply.\nImpaired vision Focus on helping the user access the site content by ensuring appropriate contrast ratios, font sizing, spacing, color usage, and screen reader support. A good way to get a feel for this user\u0026rsquo;s experience is to enable a screen reader (all Macs have VoiceOver), close your eyes, and navigate your site. Does it make sense?\nImpaired mobility Focus on helping the user navigate the site using devices other than a cursor by enabling keyboard navigation and supplying redundant information access. For example, providing alternative methods to take actions that require gestures on mobile devices.\nImpaired cognition Focus on applying layout simplicity to our workflows and components as well as improving keyword comprehension by emphasizing common design patterns and expected behaviors. For example, buttons should not navigate a user to a new page, that is the role of links.\nAll impairments Provide a consistent semantic layout and access to information regardless of form factor (desktop, mobile). Tooltips are a good example of this. On the desktop, tooltips are accessed when hovering over the element; where as on a mobile devices touch screen you cannot hover. The information contained in the tooltip has to be offered in a way that can be accessed on both devices.\nDesign for accessibility Accessibility cannot simply be layered on any component as an afterthought. This was a mistake we made early on. We’d work through designing and building a complex component, only to test the screen reader compatibility at the end. Unsurprisingly, the component would fail, and we’d have to repeat the process again to correct the issues, sometimes with a complete redesign. Just as engineering constraints inform a design, so to do accessibility constraints. Designing for them up front will reduce expensive re-work late in a project.\nAs you can see, there is far more about accessibility to consider than ARIA labels. We understand that implementing accessibility on the web is a complex and difficult task and we\u0026rsquo;ve built the Terra application framework to help.\nWhat does Terra offer for accessibility Terra provides a stable base on which to build accessible applications. The Terra application framework and each Terra component are designed and built to meet our accessibility standards. To help ensure that our components meet these standards, we perform manual testing, as well as, automated testing using axe-core.\nWhile using Terra gives you a good head start on building an accessible application, you cannot assume your application is fully accessible. The way Terra components are assembled and labeled in an application have a large impact on its accessibility. Any custom components need to be vetted with the same care as Terra components to ensure accessibility. Application owners should make sure to test their apps using a screen reader.\nDeveloping applications for the web is inherently complex. Adding accessibility does not simplify development. By ensuring accessibility is applied to the Terra application framework and components, we are making the right thing, the easy thing to do for applications utilizing Terra. Furthermore, this has made our products more predictable in how users access their functionality since it is being consistently applied. It has been our experience that implementing a consistent semantic layout and a sensible keyboard navigation order lead directly to a logically organized information architecture.\nIf you would like to learn more about Terra, check out its documentation. It’s all open source and we’d love to hear what you think.\nIn closing, I\u0026rsquo;d like to provide a quote from my friend, Neil Pfeiffer, UX Designer, that I think sums up our mission nicely.\n Our job is to help all users better understand their surroundings, providing them not only with clear and direct informational context, but also what choices and actions they can make based on that information, and always put them in control.\n Thanks for reading, and remember, we\u0026rsquo;re all in this together :)\n"
+    },
+    {
+        "uri": "https://engineering.cerner.com/tags/oss/",
+        "title": "oss",
         "tags": [],
         "description": "",
         "content": ""
@@ -128,13 +163,6 @@
     {
         "uri": "https://engineering.cerner.com/authors/sharynne-azhar/",
         "title": "Sharynne Azhar",
-        "tags": [],
-        "description": "",
-        "content": ""
-    },
-    {
-        "uri": "https://engineering.cerner.com/tags/shipit/",
-        "title": "shipit",
         "tags": [],
         "description": "",
         "content": ""
@@ -231,13 +259,6 @@
         "content": ""
     },
     {
-        "uri": "https://engineering.cerner.com/tags/culture/",
-        "title": "culture",
-        "tags": [],
-        "description": "",
-        "content": ""
-    },
-    {
         "uri": "https://engineering.cerner.com/blog/devacademy-six-years-later/",
         "title": "DevAcademy Six Years Later",
         "tags": ["culture", "engineering"],
@@ -275,13 +296,6 @@
     {
         "uri": "https://engineering.cerner.com/authors/caitie-oder/",
         "title": "Caitie Oder",
-        "tags": [],
-        "description": "",
-        "content": ""
-    },
-    {
-        "uri": "https://engineering.cerner.com/tags/hackathon/",
-        "title": "hackathon",
         "tags": [],
         "description": "",
         "content": ""
