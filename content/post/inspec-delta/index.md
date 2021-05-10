@@ -8,8 +8,6 @@ thumbnail: "inspec-delta-bg.png"
 
 {{< figure src="inspec-delta-icon.png" width="300">}}
 
-## Problem
-
 As security standards continuously evolve, the [Defense Information Systems Agency (DISA)](https://disa.mil/) releases a new revision to their [STIG (Security Technical Implementation Guide)](https://en.wikipedia.org/wiki/Security_Technical_Implementation_Guide) for each Operating System major version, as well as certain applications. These updates can range from minor metadata-only changes to a bevy of new, highly technical, system configuration assertions. To maintain the highest security posture, systems need to implement and validate compliance quickly after new standards are released.
  
 Compounded with the above is the complexity of altering so many profiles and profile controls at once with accuracy. The metadata provided by DISA for tools [like Inspec](https://github.com/inspec/inspec) are delimited by architecture, but as humans, we have to break this down even further into manageable chunks. However, even with stringent organization into separate profiles and controls using a compliance tool like Inspec, the sheer volume of the data can be overwhelming when handling the process manually. 
