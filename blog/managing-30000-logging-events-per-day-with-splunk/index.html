@@ -152,8 +152,8 @@ Before Splunk To handle this large volume of logging, our team created a rotatio
 <p><strong>Below: Reports like these weren&rsquo;t very helpful. Clients with more users tend to have more errors, so this trend doesn&rsquo;t necessarily indicate a client is experiencing a downtime.</strong></p>
 <div align="center">
     <figure class="figure">
-        <a href="/images/2015-01-29-managing-30000-logging-events-per-day/Report-users.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
-            <img src="/images/2015-01-29-managing-30000-logging-events-per-day/Report-users.png"class="figure-img img-fluid"
+        <a href="Report-users.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="Report-users.png"class="figure-img img-fluid"
             /> 
         </a>
     </figure>
@@ -169,16 +169,16 @@ Before Splunk To handle this large volume of logging, our team created a rotatio
 <p><strong>Below: Eventtypes give us the ability to see known problems that happen over time. We can even see known problems broken down by client.</strong></p>
 <div align="center">
     <figure class="figure">
-        <a href="/images/2015-01-29-managing-30000-logging-events-per-day/Eventtype-1.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
-            <img src="/images/2015-01-29-managing-30000-logging-events-per-day/Eventtype-1.png"class="figure-img img-fluid"
+        <a href="Eventtype-1.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="Eventtype-1.png"class="figure-img img-fluid"
             /> 
         </a>
     </figure>
 </div>
 <div align="center">
     <figure class="figure">
-        <a href="/images/2015-01-29-managing-30000-logging-events-per-day/Eventtype-2.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
-            <img src="/images/2015-01-29-managing-30000-logging-events-per-day/Eventtype-2.png"class="figure-img img-fluid"
+        <a href="Eventtype-2.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="Eventtype-2.png"class="figure-img img-fluid"
             /> 
         </a>
     </figure>
@@ -187,21 +187,21 @@ Before Splunk To handle this large volume of logging, our team created a rotatio
 <p><strong>Below: We now have the ability to track impact to users from clients not taking a service package [left], or from improper Service Configuration [right].</strong></p>
 <div align="center">
     <figure class="figure">
-        <a href="/images/2015-01-29-managing-30000-logging-events-per-day/Impact-to-users-from-clients-1.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
-            <img src="/images/2015-01-29-managing-30000-logging-events-per-day/Impact-to-users-from-clients-1.png"class="figure-img img-fluid"
+        <a href="Impact-to-users-from-clients-1.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="Impact-to-users-from-clients-1.png"class="figure-img img-fluid"
             /> 
         </a>
     </figure>
 </div>
 <div align="center">
     <figure class="figure">
-        <a href="/images/2015-01-29-managing-30000-logging-events-per-day/Impact-to-users-from-clients-2.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
-            <img src="/images/2015-01-29-managing-30000-logging-events-per-day/Impact-to-users-from-clients-2.png"class="figure-img img-fluid"
+        <a href="Impact-to-users-from-clients-2.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+            <img src="Impact-to-users-from-clients-2.png"class="figure-img img-fluid"
             /> 
         </a>
     </figure>
 </div>
-<p>###Alerting</p>
+<h3 id="alerting">Alerting</h3>
 <p>We&rsquo;ve also started taking advantage of Splunk&rsquo;s alerting. With its powerful searching abilities, we have scheduled searches that trigger an alert when a particular condition is met. For example, when a client has misconfigured certain credentials that cause authentication errors all over the site, we can engage support immediately to get it resolved.</p>
 <h2 id="whats-next">What&rsquo;s Next?</h2>
 <p>Although we have a better understanding of our logs now, it can get even better. We plan on continually categorizing our logs so that monitoring our system becomes really simple for everyone. Once all of our known issues are categorized, we wish to have a scheduled search that can identify anomalies in the logs. This would be highly beneficial to find out if a release introduces issues.</p>
