@@ -6,7 +6,13 @@ tags: [security, oss]
 thumbnail: "inspec-delta-bg.png"
 ---
 
+Today, we are excited to announce our newest addition in our open-source family, [Inspec Delta](https://github.com/cerner/inspec_delta)! In this blog post, we will explain how this is utilized at Cerner to reduce the time in comparing updated infrastructure security benchmarks. Whether you are new to automating your security compliance or have had to deal with maintaining updates to existing benchmarks, this blog post is for you!
+
+<!--more-->
+
 {{< figure src="inspec-delta-icon.png" width="300">}}
+
+## Background
 
 As security standards continuously evolve, the [Defense Information Systems Agency (DISA)](https://disa.mil/) releases a new revision to their [STIG (Security Technical Implementation Guide)](https://en.wikipedia.org/wiki/Security_Technical_Implementation_Guide) for each Operating System major version, as well as certain applications. These updates can range from minor metadata-only changes to a bevy of new, highly technical, system configuration assertions. To maintain the highest security posture, systems need to implement and validate compliance quickly after new standards are released.
  
@@ -39,7 +45,7 @@ The following steps are the way a profile would need to be updated without the h
 
 ## Inspec Delta Workflow
 
-The following steps are the way we internally update a profile utilizing inspec_delta. This ultimately arrives at the same outcome as the manual steps.
+The following steps are the way we internally update a profile utilizing inspec_delta (a command-line utility). This ultimately arrives at the same outcome as the manual steps.
  
 1. A new STIG is announced on the DISA website.
 2. Developers download the STIG.
@@ -65,7 +71,7 @@ inspec_delta profile update --profile_path ~/inspec/RHEL_7_STIG_inspec \
 
 ## Conclusion
 
-If we compare the workflow between the manual steps and the steps we use with inspec_delta, we can see many improvements in not just efficiency, but also accuracy.
+If we compare the workflow between the manual steps and the steps we use with Inspec Delta, we can see many improvements in not just efficiency, but also accuracy.
 
 1. No need to parse the STIG manually
 2. No need to compare the profile to the STIG manually
@@ -73,4 +79,4 @@ If we compare the workflow between the manual steps and the steps we use with in
 4. Ability to see all changes within a few seconds
 5. Leverage [Rubocop](https://rubocop.org/) to provide syntax standardization
 
-inspect_delta has helped us save time in staying current on technology guidelines from DISA. We are excited to open-source this project so that it can help others like you! If you would like to learn more, check out [inspect_delta](https://github.com/cerner/inspec_delta).
+Inspec Delta has helped us save time in staying current on technology guidelines from DISA. We are excited to open-source this project so that it can help others like you! If you would like to learn more, check out [Inspec Delta](https://github.com/cerner/inspec_delta).
