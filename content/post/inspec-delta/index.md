@@ -45,7 +45,7 @@ The following steps are the way we internally update a profile utilizing inspec_
  
 1. A new STIG is announced on the DISA website.
 2. Developers download the STIG.
-3. Utilizing inspec_delta, developers will feed the previous STIG, the new STIG, and the profile, into the tool.
+3. Utilizing inspec_delta, developers will feed the new STIG and the profile into the tool.
 
 ```bash
 inspec_delta profile update --profile_path ~/inspec/RHEL_7_STIG_inspec \ 
@@ -63,7 +63,7 @@ inspec_delta profile update --profile_path ~/inspec/RHEL_7_STIG_inspec \
 
 {{< figure src="inspec-delta-github-2.png" >}}
 
-1. Once all changes are complete, the feature branch is then compared against the dev branch where code owners and applicable tech experts will then plus +1 the changes.
+9. Once all changes are complete, the feature branch is then compared against the dev branch where code owners and applicable tech experts will then plus +1 the changes.
 
 ## Conclusion
 
