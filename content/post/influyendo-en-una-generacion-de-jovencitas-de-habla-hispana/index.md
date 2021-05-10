@@ -13,4 +13,4 @@ El año pasado, Denisse, originaria de Colombia y cuya lengua materna es el espa
 
 Como reconocimiento por su pasión por desarrollar a futuros innovadores en STEM, las _Girl Scouts_, honraron a Denisse y a Steven Large por conducir el evento Pastelitos y Programación, _Coding and Cupcakes_ que se llevó a cabo en Cerner. El Premio de Innovador de las _Girl Scouts_, reconoce a los voluntarios que perciben un problema y desarrollan una solución innovadora para fomentar las actividades de escultismo para las chicas, _Girl Scouting_. Estos eventos familiares contribuyen a favorecer la comunicación entre padres e hijas al participar en eventos de _Girl Scouts_. Por su pasión y dedicación como voluntarios, Denisse y Steven alientan a cada vez más niñas a participar en las actividades de STEM. ¡Enhorabuena, Denisse y Steven!
 
-{{< figure src="/images/2017-05-11-influencing-the-young-spanish-seaking-female-generation/denisse-steven-award.jpg" alt="Denisse and Steven" >}}
+{{< figure src="../influencing-the-young-spanish-seaking-female-generation/denisse-steven-award.jpg" alt="Denisse and Steven" >}}

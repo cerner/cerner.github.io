@@ -30,7 +30,7 @@ Although we had crossed some of the hurdles which made log monitoring difficult 
 
 **Below: Reports like these weren't very helpful. Clients with more users tend to have more errors, so this trend doesn't necessarily indicate a client is experiencing a downtime.**
 
-{{< figure src="/images/2015-01-29-managing-30000-logging-events-per-day/Report-users.png" >}}
+{{< figure src="Report-users.png" >}}
 
 Splunk Round 2
 ---------------
@@ -45,19 +45,19 @@ Eventtypes are applied at search time and allow you to create events to tag sear
 
 **Below: Eventtypes give us the ability to see known problems that happen over time. We can even see known problems broken down by client.**
 
-{{< figure src="/images/2015-01-29-managing-30000-logging-events-per-day/Eventtype-1.png" >}}
+{{< figure src="Eventtype-1.png" >}}
 
-{{< figure src="/images/2015-01-29-managing-30000-logging-events-per-day/Eventtype-2.png" >}}
+{{< figure src="Eventtype-2.png" >}}
 
 Once we had our frequently occurring problems categorized, we were able to break it down even further. We could identify problems caused by configuration in our application layer, problems that required escalation or if client side contacts needed to be engaged.
 
 **Below: We now have the ability to track impact to users from clients not taking a service package [left], or from improper Service Configuration [right].**
 
-{{< figure src="/images/2015-01-29-managing-30000-logging-events-per-day/Impact-to-users-from-clients-1.png" >}}
+{{< figure src="Impact-to-users-from-clients-1.png" >}}
 
-{{< figure src="/images/2015-01-29-managing-30000-logging-events-per-day/Impact-to-users-from-clients-2.png" >}}
+{{< figure src="Impact-to-users-from-clients-2.png" >}}
 
-###Alerting
+### Alerting
 
 We've also started taking advantage of Splunk's alerting. With its powerful searching abilities, we have scheduled searches that trigger an alert when a particular condition is met. For example, when a client has misconfigured certain credentials that cause authentication errors all over the site, we can engage support immediately to get it resolved.
 
