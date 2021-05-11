@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/jeremy-perron/</link>
+    <description>Recent content on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020</copyright>
+    <lastBuildDate>Tue, 11 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://engineering.cerner.com/authors/jeremy-perron/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introducing Inspec Delta</title>
+      <link>https://engineering.cerner.com/blog/inspec-delta/</link>
+      <pubDate>Tue, 11 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/inspec-delta/</guid>
+      <description>&lt;p&gt;Today, we are excited to announce our newest addition in our open-source family, &lt;a href=&#34;https://github.com/cerner/inspec_delta&#34;&gt;Inspec Delta&lt;/a&gt;! In this blog post, we will explain how this is utilized at Cerner to reduce the time in comparing updated infrastructure security benchmarks. Whether you are new to automating your security compliance or have had to deal with maintaining updates to existing benchmarks, this blog post is for you!&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
