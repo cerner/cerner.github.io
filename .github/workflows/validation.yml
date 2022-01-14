@@ -27,3 +27,4 @@ jobs:
         name: Check links in markdown files
         with:
           folder-path: 'content'
+          config-file: '.github/mlc_config.json'
