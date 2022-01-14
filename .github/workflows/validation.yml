@@ -1,0 +1,29 @@
+name: validation
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  spell-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: Check out the code
+      - uses: actions/setup-node@v1
+        name: Run spell check
+        with:
+          node-version: "12"
+      - run: npm install -g cspell
+      - run: cspell --config .github/cspell.json "content/**/*.md"
+  markdown-link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: Check out the code
+      - uses: gaurav-nelson/github-action-markdown-link-check@v1
+        name: Check links in markdown files
+        with:
+          folder-path: 'content'
