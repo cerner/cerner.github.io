@@ -9,7 +9,7 @@ thumbnail: "chart-search-screen.png"
 
 ## From MapReduce to realtime
 
-This post covers much of the [Near-Realtime Processing Over HBase](http://na.apachecon.com/schedule/presentation/161/) talk I’m giving at [ApacheCon NA 2013](http://na.apachecon.com/) in blog form. It also draws from the [Hadoop, HBase, and Healthcare](http://strataconf.com/stratany2012/public/schedule/detail/25387) talk from StrataConf/Hadoop World 2012.
+This post covers much of the [Near-Realtime Processing Over HBase](https://www.youtube.com/watch?v=MecziNEsg20) talk I’m giving at [ApacheCon NA 2013](https://www.apachecon.com/history.html) in blog form. It also draws from the [Hadoop, HBase, and Healthcare](https://cdn.oreillystatic.com/en/assets/1/event/85/Hadoop,%20HBase,%20and%20Healthcare%20Presentation.pptx) talk from StrataConf/Hadoop World 2012.
 
 The first significant use of Hadoop at Cerner came in building search indexes for patient charts. While creation of simple search indexes is almost commoditized, we wanted a better experience based on clinical semantics. For instance, if a user searches for "heart disease" and a patient has "myocardial infarction" documented, that document should be highly ranked in the results.
 
@@ -35,7 +35,7 @@ And despite these differences, our processing output must be the identical; we n
 
 These significant differences mean different processing infrastructures. Nathan Marz described this well in his [How to Beat the CAP Theorem](http://nathanmarz.com/blog/how-to-beat-the-cap-theorem.html) post. The result is a system that uses complementary technologies: stream-based processing with [Storm](http://storm-project.net/") and batch processing with Hadoop.
 
-Interestingly, [HBase](http://hbase.apache.org/") sits at a juncture between realtime and batch processing models. It offers aspects of batch processing; computation can be moved to the data via direct MapReduce support. It also supports realtime patterns with random access and fast
+Interestingly, [HBase](http://hbase.apache.org/) sits at a juncture between realtime and batch processing models. It offers aspects of batch processing; computation can be moved to the data via direct MapReduce support. It also supports realtime patterns with random access and fast
 
 {{< figure src="realtime-layer-batch-layer.png" alt="Realtime and Batch Layers" >}}
 

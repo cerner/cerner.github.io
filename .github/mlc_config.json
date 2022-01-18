@@ -3,5 +3,11 @@
     {
       "pattern": "^http://example.net"
     }
+  ],
+  "replacementPatterns": [
+    {
+      "pattern": "^/",
+      "replacement": "https://engineering.cerner.com/"
+    }
   ]
 }
