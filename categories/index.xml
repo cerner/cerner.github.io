@@ -5,7 +5,6 @@
     <link>https://engineering.cerner.com/categories/</link>
     <description>Recent content in Categories on Engineering Health</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>Copyright © 2021</copyright><atom:link href="https://engineering.cerner.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language><atom:link href="https://engineering.cerner.com/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
