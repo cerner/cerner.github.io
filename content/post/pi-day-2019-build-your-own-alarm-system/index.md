@@ -8,7 +8,7 @@ thumbnail: "pi-alarm-gpio.jpg"
 
 At Cerner Engineering, we love to celebrate [Pi Day](https://en.wikipedia.org/wiki/Pi_Day). This day is not only a fun time to enjoy eating pie and reflecting on mathematical properties, but we also share big announcements internally for our developers conference, [DevCon](https://engineering.cerner.com/blog/devcon-recap/).
 
-{{< tweet 974023542504411136 >}}
+{{< tweet user="CernerEng" id="974023542504411136" >}}
 
 For this post, we thought it would be fun to share a simple example of how you can hook your existing monitoring system to a physical alarm system powered by a [Raspberry Pi](https://www.raspberrypi.org/). This alarm will be a red spinning light, the universal symbol of "something is going wrong." We will build a program that will integrate with New Relic to determine if there are issues in our environment. If there are any issues, it will trigger the alarm and your monitoring system will come alive!
 
