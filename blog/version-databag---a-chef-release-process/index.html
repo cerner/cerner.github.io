@@ -23,26 +23,20 @@
 
 
 
-<link rel="canonical" href="https://engineering.cerner.com/blog/version-databag-a-chef-release-process/"><script src="/js/jquery-3.5.1.min.js"></script><meta property="og:title" content="Version Databag - A Chef Release Process" />
+<link rel="canonical" href="https://engineering.cerner.com/blog/version-databag---a-chef-release-process/"><script src="/js/jquery-3.5.1.min.js"></script><meta property="og:title" content="Version Databag - A Chef Release Process" />
 <meta property="og:description" content="At Cerner, we use Chef. In fact, we&rsquo;re heavily ingrained with Chef in our configuration management practices. We deploy services from Tomcat to Kafka with Chef. Even the first open source project we announced was a tool for Chef!
 With all of this integration with Chef, we need a simple way to manage all of those versions. This is where the Version Databag cookbook comes in. At a high level, this cookbook allows us to define our versions in a centralized data bag (grouped under conceptual units) and populates the corresponding node attributes required with those versions at runtime." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://engineering.cerner.com/blog/version-databag-a-chef-release-process/" />
-<meta property="og:image" content="https://engineering.cerner.com/images/alan-grace.png"/>
+<meta property="og:url" content="https://engineering.cerner.com/blog/version-databag---a-chef-release-process/" /><meta property="og:image" content="https://engineering.cerner.com/images/alan-grace.png"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2017-04-04T00:00:00+00:00" />
 <meta property="article:modified_time" content="2017-04-04T00:00:00+00:00" /><meta property="og:site_name" content="Cerner Engineering" />
+
 <meta itemprop="name" content="Version Databag - A Chef Release Process">
 <meta itemprop="description" content="At Cerner, we use Chef. In fact, we&rsquo;re heavily ingrained with Chef in our configuration management practices. We deploy services from Tomcat to Kafka with Chef. Even the first open source project we announced was a tool for Chef!
-With all of this integration with Chef, we need a simple way to manage all of those versions. This is where the Version Databag cookbook comes in. At a high level, this cookbook allows us to define our versions in a centralized data bag (grouped under conceptual units) and populates the corresponding node attributes required with those versions at runtime.">
-<meta itemprop="datePublished" content="2017-04-04T00:00:00+00:00" />
+With all of this integration with Chef, we need a simple way to manage all of those versions. This is where the Version Databag cookbook comes in. At a high level, this cookbook allows us to define our versions in a centralized data bag (grouped under conceptual units) and populates the corresponding node attributes required with those versions at runtime."><meta itemprop="datePublished" content="2017-04-04T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2017-04-04T00:00:00+00:00" />
-<meta itemprop="wordCount" content="181">
-<meta itemprop="image" content="https://engineering.cerner.com/images/alan-grace.png"/>
-
-
-
-<meta itemprop="keywords" content="chef,engineering," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="wordCount" content="181"><meta itemprop="image" content="https://engineering.cerner.com/images/alan-grace.png"/>
+<meta itemprop="keywords" content="chef,engineering," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://engineering.cerner.com/images/alan-grace.png"/>
 
 <meta name="twitter:title" content="Version Databag - A Chef Release Process"/>
@@ -130,22 +124,22 @@ With all of this integration with Chef, we need a simple way to manage all of th
                                     <i class="fas fa-tag mr-2"></i>engineering
                                 </a></div><ul class="share nav my-3 justify-content-end">
         <li class="nav-item">
-            <a class="nav-link" target="_blank" href="https://twitter.com/intent/tweet?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fversion-databag-a-chef-release-process%2f&text=Version%20Databag%20-%20A%20Chef%20Release%20Process">
+            <a class="nav-link" target="_blank" href="https://twitter.com/intent/tweet?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fversion-databag---a-chef-release-process%2f&text=Version%20Databag%20-%20A%20Chef%20Release%20Process">
               <i class="fa-fw fab fa-twitter"></i>
           </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" target="_blank" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fversion-databag-a-chef-release-process%2f&title=Version%20Databag%20-%20A%20Chef%20Release%20Process">
+            <a class="nav-link" target="_blank" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fversion-databag---a-chef-release-process%2f&title=Version%20Databag%20-%20A%20Chef%20Release%20Process">
                 <i class="fa-fw fab fa-linkedin-in"></i>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" target="_blank" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fengineering.cerner.com%2fblog%2fversion-databag-a-chef-release-process%2f&t=Version%20Databag%20-%20A%20Chef%20Release%20Process">
+            <a class="nav-link" target="_blank" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fengineering.cerner.com%2fblog%2fversion-databag---a-chef-release-process%2f&t=Version%20Databag%20-%20A%20Chef%20Release%20Process">
                 <i class="fa-fw fab fa-facebook-f"></i>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" target="_blank" href="https://reddit.com/submit?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fversion-databag-a-chef-release-process%2f&title=Version%20Databag%20-%20A%20Chef%20Release%20Process">
+            <a class="nav-link" target="_blank" href="https://reddit.com/submit?url=https%3a%2f%2fengineering.cerner.com%2fblog%2fversion-databag---a-chef-release-process%2f&title=Version%20Databag%20-%20A%20Chef%20Release%20Process">
                 <i class="fa-fw fab fa-reddit-alien"></i>
             </a>
         </li>
@@ -290,6 +284,5 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 </body>
 </html>

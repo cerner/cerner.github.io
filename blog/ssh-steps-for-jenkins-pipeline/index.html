@@ -28,23 +28,17 @@
  Source of image
    Jenkins Pipelines Jenkins is a well-known open source continuous integration and continuous deployment automation tool. With the latest 2.0 release, Jenkins introduced the Workflow plugin that implements Pipeline-as-code. This plugin lets you define delivery pipelines using concise scripts which deal elegantly with jobs involving persistence and asynchrony." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://engineering.cerner.com/blog/ssh-steps-for-jenkins-pipeline/" />
-<meta property="og:image" content="https://engineering.cerner.com/images/alan-grace.png"/>
+<meta property="og:url" content="https://engineering.cerner.com/blog/ssh-steps-for-jenkins-pipeline/" /><meta property="og:image" content="https://engineering.cerner.com/images/alan-grace.png"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2018-09-20T00:00:00+00:00" />
 <meta property="article:modified_time" content="2018-09-20T00:00:00+00:00" /><meta property="og:site_name" content="Cerner Engineering" />
+
 <meta itemprop="name" content="SSH Steps for Jenkins Pipeline">
 <meta itemprop="description" content="Pipeline-as-code or defining the deployment pipeline through code rather than manual job creation through UI, provides tremendous benefits for teams automating builds and deployment infrastructure across their environments.
  Source of image
-   Jenkins Pipelines Jenkins is a well-known open source continuous integration and continuous deployment automation tool. With the latest 2.0 release, Jenkins introduced the Workflow plugin that implements Pipeline-as-code. This plugin lets you define delivery pipelines using concise scripts which deal elegantly with jobs involving persistence and asynchrony.">
-<meta itemprop="datePublished" content="2018-09-20T00:00:00+00:00" />
+   Jenkins Pipelines Jenkins is a well-known open source continuous integration and continuous deployment automation tool. With the latest 2.0 release, Jenkins introduced the Workflow plugin that implements Pipeline-as-code. This plugin lets you define delivery pipelines using concise scripts which deal elegantly with jobs involving persistence and asynchrony."><meta itemprop="datePublished" content="2018-09-20T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2018-09-20T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1065">
-<meta itemprop="image" content="https://engineering.cerner.com/images/alan-grace.png"/>
-
-
-
-<meta itemprop="keywords" content="engineering,jenkins," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="wordCount" content="1065"><meta itemprop="image" content="https://engineering.cerner.com/images/alan-grace.png"/>
+<meta itemprop="keywords" content="engineering,jenkins," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://engineering.cerner.com/images/alan-grace.png"/>
 
 <meta name="twitter:title" content="SSH Steps for Jenkins Pipeline"/>
@@ -161,261 +155,261 @@
 </ul>
 <h2 id="usage">Usage</h2>
 <p>Below is a simple demonstration on how to use above steps. More documentation can be found on <a href="https://github.com/jenkinsci/ssh-steps-plugin/blob/master/README.adoc">GitHub</a>.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy"><span style="color:#66d9ef">def</span> remote <span style="color:#f92672">=</span> <span style="color:#f92672">[:]</span>
-remote<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;node&#34;</span>
-remote<span style="color:#f92672">.</span><span style="color:#a6e22e">host</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;node.abc.com&#34;</span>
-remote<span style="color:#f92672">.</span><span style="color:#a6e22e">allowAnyHosts</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
-
-node <span style="color:#f92672">{</span>
-    withCredentials<span style="color:#f92672">([</span>usernamePassword<span style="color:#f92672">(</span>credentialsId: <span style="color:#e6db74">&#39;sshUserAcct&#39;</span><span style="color:#f92672">,</span> passwordVariable: <span style="color:#e6db74">&#39;password&#39;</span><span style="color:#f92672">,</span> usernameVariable: <span style="color:#e6db74">&#39;userName&#39;</span><span style="color:#f92672">)])</span> <span style="color:#f92672">{</span>
-        remote<span style="color:#f92672">.</span><span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> userName
-        remote<span style="color:#f92672">.</span><span style="color:#a6e22e">password</span> <span style="color:#f92672">=</span> password
-
-        stage<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;SSH Steps Rocks!&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            writeFile file: <span style="color:#e6db74">&#39;test.sh&#39;</span><span style="color:#f92672">,</span> text: <span style="color:#e6db74">&#39;ls&#39;</span>
-            sshCommand remote: remote<span style="color:#f92672">,</span> command: <span style="color:#e6db74">&#39;for i in {1..5}; do echo -n \&#34;Loop \$i \&#34;; date ; sleep 1; done&#39;</span>
-            sshScript remote: remote<span style="color:#f92672">,</span> script: <span style="color:#e6db74">&#39;test.sh&#39;</span>
-            sshPut remote: remote<span style="color:#f92672">,</span> from: <span style="color:#e6db74">&#39;test.sh&#39;</span><span style="color:#f92672">,</span> into: <span style="color:#e6db74">&#39;.&#39;</span>
-            sshGet remote: remote<span style="color:#f92672">,</span> from: <span style="color:#e6db74">&#39;test.sh&#39;</span><span style="color:#f92672">,</span> into: <span style="color:#e6db74">&#39;test_new.sh&#39;</span><span style="color:#f92672">,</span> override: <span style="color:#66d9ef">true</span>
-            sshRemove remote: remote<span style="color:#f92672">,</span> path: <span style="color:#e6db74">&#39;test.sh&#39;</span>
-        <span style="color:#f92672">}</span>
-    <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> remote <span style="color:#f92672">=</span> <span style="color:#f92672">[:]</span>
+</span></span><span style="display:flex;"><span>remote<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;node&#34;</span>
+</span></span><span style="display:flex;"><span>remote<span style="color:#f92672">.</span><span style="color:#a6e22e">host</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;node.abc.com&#34;</span>
+</span></span><span style="display:flex;"><span>remote<span style="color:#f92672">.</span><span style="color:#a6e22e">allowAnyHosts</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>node <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    withCredentials<span style="color:#f92672">([</span>usernamePassword<span style="color:#f92672">(</span>credentialsId: <span style="color:#e6db74">&#39;sshUserAcct&#39;</span><span style="color:#f92672">,</span> passwordVariable: <span style="color:#e6db74">&#39;password&#39;</span><span style="color:#f92672">,</span> usernameVariable: <span style="color:#e6db74">&#39;userName&#39;</span><span style="color:#f92672">)])</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        remote<span style="color:#f92672">.</span><span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> userName
+</span></span><span style="display:flex;"><span>        remote<span style="color:#f92672">.</span><span style="color:#a6e22e">password</span> <span style="color:#f92672">=</span> password
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        stage<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;SSH Steps Rocks!&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            writeFile file: <span style="color:#e6db74">&#39;test.sh&#39;</span><span style="color:#f92672">,</span> text: <span style="color:#e6db74">&#39;ls&#39;</span>
+</span></span><span style="display:flex;"><span>            sshCommand remote: remote<span style="color:#f92672">,</span> command: <span style="color:#e6db74">&#39;for i in {1..5}; do echo -n \&#34;Loop \$i \&#34;; date ; sleep 1; done&#39;</span>
+</span></span><span style="display:flex;"><span>            sshScript remote: remote<span style="color:#f92672">,</span> script: <span style="color:#e6db74">&#39;test.sh&#39;</span>
+</span></span><span style="display:flex;"><span>            sshPut remote: remote<span style="color:#f92672">,</span> from: <span style="color:#e6db74">&#39;test.sh&#39;</span><span style="color:#f92672">,</span> into: <span style="color:#e6db74">&#39;.&#39;</span>
+</span></span><span style="display:flex;"><span>            sshGet remote: remote<span style="color:#f92672">,</span> from: <span style="color:#e6db74">&#39;test.sh&#39;</span><span style="color:#f92672">,</span> into: <span style="color:#e6db74">&#39;test_new.sh&#39;</span><span style="color:#f92672">,</span> override: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>            sshRemove remote: remote<span style="color:#f92672">,</span> path: <span style="color:#e6db74">&#39;test.sh&#39;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="configuring-via-yaml">Configuring via YAML</h2>
 <p>At Cerner, we always strive to have simple configuration files for CI/CD pipelines whenever possible. With that in mind, my team built a wrapper on top of these steps from this plugin. After some design and analysis, we came up with the following YAML structure to run commands across various remote groups:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">config</span>:
-  <span style="color:#f92672">credentials_id</span>: <span style="color:#ae81ff">sshUserAcct</span>
-
-<span style="color:#f92672">remote_groups</span>:
-  <span style="color:#f92672">r_group_1</span>:
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">node01</span>
-      <span style="color:#f92672">host</span>: <span style="color:#ae81ff">node01.abc.net</span>
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">node02</span>
-      <span style="color:#f92672">host</span>: <span style="color:#ae81ff">node02.abc.net</span>
-  <span style="color:#f92672">r_group_2</span>:
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">node03</span>
-      <span style="color:#f92672">host</span>: <span style="color:#ae81ff">node03.abc.net</span>
-
-<span style="color:#f92672">command_groups</span>:
-  <span style="color:#f92672">c_group_1</span>:
-    - <span style="color:#f92672">commands</span>:
-        - <span style="color:#e6db74">&#39;ls -lrt&#39;</span>
-        - <span style="color:#e6db74">&#39;whoami&#39;</span>
-    - <span style="color:#f92672">scripts</span>:
-        - <span style="color:#e6db74">&#39;test.sh&#39;</span>
-  <span style="color:#f92672">c_group_2</span>:
-    - <span style="color:#f92672">gets</span>:
-        - <span style="color:#f92672">from</span>: <span style="color:#e6db74">&#39;test.sh&#39;</span>
-          <span style="color:#f92672">to</span>: <span style="color:#e6db74">&#39;test_new.sh&#39;</span>
-    - <span style="color:#f92672">puts</span>:
-        - <span style="color:#f92672">from</span>: <span style="color:#e6db74">&#39;test.sh&#39;</span>
-          <span style="color:#f92672">to</span>: <span style="color:#e6db74">&#39;.&#39;</span>
-    - <span style="color:#f92672">removes</span>:
-        - <span style="color:#e6db74">&#39;test.sh&#39;</span>
-
-<span style="color:#f92672">steps</span>:
-  <span style="color:#f92672">deploy</span>:
-    - <span style="color:#f92672">remote_groups</span>:
-        - <span style="color:#ae81ff">r_group_1</span>
-      <span style="color:#f92672">command_groups</span>:
-        - <span style="color:#ae81ff">c_group_1</span>
-    - <span style="color:#f92672">remote_groups</span>:
-        - <span style="color:#ae81ff">r_group_2</span>
-      <span style="color:#f92672">command_groups</span>:
-        - <span style="color:#ae81ff">c_group_2</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">config</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">credentials_id</span>: <span style="color:#ae81ff">sshUserAcct</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">remote_groups</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">r_group_1</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">node01</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">host</span>: <span style="color:#ae81ff">node01.abc.net</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">node02</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">host</span>: <span style="color:#ae81ff">node02.abc.net</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">r_group_2</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">node03</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">host</span>: <span style="color:#ae81ff">node03.abc.net</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">command_groups</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">c_group_1</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">commands</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#e6db74">&#39;ls -lrt&#39;</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#e6db74">&#39;whoami&#39;</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">scripts</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#e6db74">&#39;test.sh&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">c_group_2</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">gets</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">from</span>: <span style="color:#e6db74">&#39;test.sh&#39;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">to</span>: <span style="color:#e6db74">&#39;test_new.sh&#39;</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">puts</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">from</span>: <span style="color:#e6db74">&#39;test.sh&#39;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">to</span>: <span style="color:#e6db74">&#39;.&#39;</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">removes</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#e6db74">&#39;test.sh&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">deploy</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">remote_groups</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">r_group_1</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">command_groups</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">c_group_1</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">remote_groups</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">r_group_2</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">command_groups</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">c_group_2</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>The above example runs commands from <code>c_group_1</code> on remote nodes within <code>r_group_1</code> in parallel before it moves on to the next group using <code>sshUserAcct</code> (from the <a href="https://jenkins.io/doc/book/using/using-credentials/">Jenkins Credentials</a> store) to logon to nodes.</p>
 <h2 id="shared-pipeline-library">Shared Pipeline Library</h2>
 <p>We have created a shared pipeline library that contains a <code>sshDeploy</code> step to support the above mentioned YAML syntax. Below is the code snippet for the sshDeploy step from the library. The full version can be found <a href="https://github.com/nrayapati/ssh-deploy-library">here</a> on Github.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy"><span style="color:#75715e">#!/usr/bin/groovy</span>
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">call</span><span style="color:#f92672">(</span>String yamlName<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">def</span> yaml <span style="color:#f92672">=</span> readYaml file: yamlName
-    withCredentials<span style="color:#f92672">([</span>usernamePassword<span style="color:#f92672">(</span>credentialsId: yaml<span style="color:#f92672">.</span><span style="color:#a6e22e">config</span><span style="color:#f92672">.</span><span style="color:#a6e22e">credentials_id</span><span style="color:#f92672">,</span> passwordVariable: <span style="color:#e6db74">&#39;password&#39;</span><span style="color:#f92672">,</span> usernameVariable: <span style="color:#e6db74">&#39;userName&#39;</span><span style="color:#f92672">)])</span> <span style="color:#f92672">{</span>
-        yaml<span style="color:#f92672">.</span><span style="color:#a6e22e">steps</span><span style="color:#f92672">.</span><span style="color:#a6e22e">each</span> <span style="color:#f92672">{</span> stageName<span style="color:#f92672">,</span> step <span style="color:#f92672">-&gt;</span>
-            step<span style="color:#f92672">.</span><span style="color:#a6e22e">each</span> <span style="color:#f92672">{</span>
-                <span style="color:#66d9ef">def</span> remoteGroups <span style="color:#f92672">=</span> <span style="color:#f92672">[:]</span>
-                <span style="color:#66d9ef">def</span> allRemotes <span style="color:#f92672">=</span> <span style="color:#f92672">[]</span>
-                it<span style="color:#f92672">.</span><span style="color:#a6e22e">remote_groups</span><span style="color:#f92672">.</span><span style="color:#a6e22e">each</span> <span style="color:#f92672">{</span>
-                    remoteGroups<span style="color:#f92672">[</span>it<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> yaml<span style="color:#f92672">.</span><span style="color:#a6e22e">remotes</span><span style="color:#f92672">.</span><span style="color:#e6db74">&#34;$it&#34;</span>
-                <span style="color:#f92672">}</span>
-
-                <span style="color:#66d9ef">def</span> commandGroups <span style="color:#f92672">=</span> <span style="color:#f92672">[:]</span>
-                it<span style="color:#f92672">.</span><span style="color:#a6e22e">command_groups</span><span style="color:#f92672">.</span><span style="color:#a6e22e">each</span> <span style="color:#f92672">{</span>
-                    commandGroups<span style="color:#f92672">[</span>it<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> yaml<span style="color:#f92672">.</span><span style="color:#a6e22e">commands</span><span style="color:#f92672">.</span><span style="color:#e6db74">&#34;$it&#34;</span>
-                <span style="color:#f92672">}</span>
-                <span style="color:#66d9ef">def</span> isSudo <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
-                remoteGroups<span style="color:#f92672">.</span><span style="color:#a6e22e">each</span> <span style="color:#f92672">{</span> remoteGroupName<span style="color:#f92672">,</span> remotes <span style="color:#f92672">-&gt;</span>
-                    allRemotes <span style="color:#f92672">+=</span> remotes<span style="color:#f92672">.</span><span style="color:#a6e22e">collect</span> <span style="color:#f92672">{</span> remote <span style="color:#f92672">-&gt;</span>
-                        <span style="color:#66d9ef">if</span><span style="color:#f92672">(!</span>remote<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span><span style="color:#f92672">)</span>
-                            remote<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> remote<span style="color:#f92672">.</span><span style="color:#a6e22e">host</span>
-                        remote<span style="color:#f92672">.</span><span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> userName
-                        remote<span style="color:#f92672">.</span><span style="color:#a6e22e">password</span> <span style="color:#f92672">=</span> password
-                        remote<span style="color:#f92672">.</span><span style="color:#a6e22e">allowAnyHosts</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
-                        remote<span style="color:#f92672">.</span><span style="color:#a6e22e">groupName</span> <span style="color:#f92672">=</span> remoteGroupName
-                        remote
-                    <span style="color:#f92672">}</span>
-                <span style="color:#f92672">}</span>
-                <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>allRemotes<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-                    <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>allRemotes<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">()</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-                        <span style="color:#66d9ef">def</span> stepsForParallel <span style="color:#f92672">=</span> allRemotes<span style="color:#f92672">.</span><span style="color:#a6e22e">collectEntries</span> <span style="color:#f92672">{</span> remote <span style="color:#f92672">-&gt;</span>
-                            <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;${remote.groupName}-${remote.name}&#34;</span> <span style="color:#f92672">:</span> transformIntoStep<span style="color:#f92672">(</span>stageName<span style="color:#f92672">,</span> remote<span style="color:#f92672">.</span><span style="color:#a6e22e">groupName</span><span style="color:#f92672">,</span> remote<span style="color:#f92672">,</span> commandGroups<span style="color:#f92672">)]</span>
-                        <span style="color:#f92672">}</span>
-                        stage<span style="color:#f92672">(</span>stageName<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-                            parallel stepsForParallel
-                        <span style="color:#f92672">}</span>
-                    <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
-                        <span style="color:#66d9ef">def</span> remote <span style="color:#f92672">=</span> allRemotes<span style="color:#f92672">.</span><span style="color:#a6e22e">first</span><span style="color:#f92672">()</span>
-                        stage<span style="color:#f92672">(</span>stageName <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\n&#34;</span> <span style="color:#f92672">+</span> remote<span style="color:#f92672">.</span><span style="color:#a6e22e">groupName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;-&#34;</span> <span style="color:#f92672">+</span> remote<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-                            transformIntoStep<span style="color:#f92672">(</span>stageName<span style="color:#f92672">,</span> remote<span style="color:#f92672">.</span><span style="color:#a6e22e">groupName</span><span style="color:#f92672">,</span> remote<span style="color:#f92672">,</span> commandGroups<span style="color:#f92672">).</span><span style="color:#a6e22e">call</span><span style="color:#f92672">()</span>
-                        <span style="color:#f92672">}</span>
-                    <span style="color:#f92672">}</span>
-                <span style="color:#f92672">}</span>
-            <span style="color:#f92672">}</span>
-        <span style="color:#f92672">}</span>
-    <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/groovy</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">call</span><span style="color:#f92672">(</span>String yamlName<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> yaml <span style="color:#f92672">=</span> readYaml file: yamlName
+</span></span><span style="display:flex;"><span>    withCredentials<span style="color:#f92672">([</span>usernamePassword<span style="color:#f92672">(</span>credentialsId: yaml<span style="color:#f92672">.</span><span style="color:#a6e22e">config</span><span style="color:#f92672">.</span><span style="color:#a6e22e">credentials_id</span><span style="color:#f92672">,</span> passwordVariable: <span style="color:#e6db74">&#39;password&#39;</span><span style="color:#f92672">,</span> usernameVariable: <span style="color:#e6db74">&#39;userName&#39;</span><span style="color:#f92672">)])</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        yaml<span style="color:#f92672">.</span><span style="color:#a6e22e">steps</span><span style="color:#f92672">.</span><span style="color:#a6e22e">each</span> <span style="color:#f92672">{</span> stageName<span style="color:#f92672">,</span> step <span style="color:#f92672">-&gt;</span>
+</span></span><span style="display:flex;"><span>            step<span style="color:#f92672">.</span><span style="color:#a6e22e">each</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">def</span> remoteGroups <span style="color:#f92672">=</span> <span style="color:#f92672">[:]</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">def</span> allRemotes <span style="color:#f92672">=</span> <span style="color:#f92672">[]</span>
+</span></span><span style="display:flex;"><span>                it<span style="color:#f92672">.</span><span style="color:#a6e22e">remote_groups</span><span style="color:#f92672">.</span><span style="color:#a6e22e">each</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                    remoteGroups<span style="color:#f92672">[</span>it<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> yaml<span style="color:#f92672">.</span><span style="color:#a6e22e">remotes</span><span style="color:#f92672">.</span><span style="color:#e6db74">&#34;$it&#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">def</span> commandGroups <span style="color:#f92672">=</span> <span style="color:#f92672">[:]</span>
+</span></span><span style="display:flex;"><span>                it<span style="color:#f92672">.</span><span style="color:#a6e22e">command_groups</span><span style="color:#f92672">.</span><span style="color:#a6e22e">each</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                    commandGroups<span style="color:#f92672">[</span>it<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> yaml<span style="color:#f92672">.</span><span style="color:#a6e22e">commands</span><span style="color:#f92672">.</span><span style="color:#e6db74">&#34;$it&#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">def</span> isSudo <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>                remoteGroups<span style="color:#f92672">.</span><span style="color:#a6e22e">each</span> <span style="color:#f92672">{</span> remoteGroupName<span style="color:#f92672">,</span> remotes <span style="color:#f92672">-&gt;</span>
+</span></span><span style="display:flex;"><span>                    allRemotes <span style="color:#f92672">+=</span> remotes<span style="color:#f92672">.</span><span style="color:#a6e22e">collect</span> <span style="color:#f92672">{</span> remote <span style="color:#f92672">-&gt;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">if</span><span style="color:#f92672">(!</span>remote<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                            remote<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> remote<span style="color:#f92672">.</span><span style="color:#a6e22e">host</span>
+</span></span><span style="display:flex;"><span>                        remote<span style="color:#f92672">.</span><span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> userName
+</span></span><span style="display:flex;"><span>                        remote<span style="color:#f92672">.</span><span style="color:#a6e22e">password</span> <span style="color:#f92672">=</span> password
+</span></span><span style="display:flex;"><span>                        remote<span style="color:#f92672">.</span><span style="color:#a6e22e">allowAnyHosts</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>                        remote<span style="color:#f92672">.</span><span style="color:#a6e22e">groupName</span> <span style="color:#f92672">=</span> remoteGroupName
+</span></span><span style="display:flex;"><span>                        remote
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>allRemotes<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>allRemotes<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">()</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">def</span> stepsForParallel <span style="color:#f92672">=</span> allRemotes<span style="color:#f92672">.</span><span style="color:#a6e22e">collectEntries</span> <span style="color:#f92672">{</span> remote <span style="color:#f92672">-&gt;</span>
+</span></span><span style="display:flex;"><span>                            <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;${remote.groupName}-${remote.name}&#34;</span> <span style="color:#f92672">:</span> transformIntoStep<span style="color:#f92672">(</span>stageName<span style="color:#f92672">,</span> remote<span style="color:#f92672">.</span><span style="color:#a6e22e">groupName</span><span style="color:#f92672">,</span> remote<span style="color:#f92672">,</span> commandGroups<span style="color:#f92672">)]</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>                        stage<span style="color:#f92672">(</span>stageName<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                            parallel stepsForParallel
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">def</span> remote <span style="color:#f92672">=</span> allRemotes<span style="color:#f92672">.</span><span style="color:#a6e22e">first</span><span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>                        stage<span style="color:#f92672">(</span>stageName <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\n&#34;</span> <span style="color:#f92672">+</span> remote<span style="color:#f92672">.</span><span style="color:#a6e22e">groupName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;-&#34;</span> <span style="color:#f92672">+</span> remote<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                            transformIntoStep<span style="color:#f92672">(</span>stageName<span style="color:#f92672">,</span> remote<span style="color:#f92672">.</span><span style="color:#a6e22e">groupName</span><span style="color:#f92672">,</span> remote<span style="color:#f92672">,</span> commandGroups<span style="color:#f92672">).</span><span style="color:#a6e22e">call</span><span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>By using the step (as described in the snippet above) from this shared pipeline library, a Jenkinsfile can be reduced to:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy"><span style="color:#a6e22e">@Library</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#39;ssh_deploy&#39;</span><span style="color:#f92672">)</span> _
-
-node <span style="color:#f92672">{</span>
-  checkout scm
-  <span style="color:#a6e22e">sshDeploy</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#39;dev/deploy.yml&#39;</span><span style="color:#f92672">);</span>
-<span style="color:#f92672">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#a6e22e">@Library</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#39;ssh_deploy&#39;</span><span style="color:#f92672">)</span> _
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>node <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  checkout scm
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">sshDeploy</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#39;dev/deploy.yml&#39;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>An example execution of the above pipeline code in Blue Ocean looks like this:</p>
 <div align="center">
@@ -470,7 +464,7 @@ node <span style="color:#f92672">{</span>
     <div class="related-content row mt-5 row-cols-1 row-cols-lg-3"><div class="col mb-3">
                 <div class="card h-100">
     
-    <a href="/blog/shipit-xii/" class="d-block"><img data-src="/blog/shipit-xii/shipitxii-logo_hu69a777460ddf5fc5f9af9d6b9d443421_352614_700x350_fill_box_smart1_2.png" class="card-img-top mx-auto d-block" alt="ShipIt XII"><div class="card-body">
+    <a href="/blog/shipit-xii/" class="d-block"><img data-src="/blog/shipit-xii/shipitxii-logo_hu69a777460ddf5fc5f9af9d6b9d443421_352614_700x350_fill_box_smart1_3.png" class="card-img-top mx-auto d-block" alt="ShipIt XII"><div class="card-body">
             <h4 class="card-title">ShipIt XII</h4>
             <p class="card-text text-muted text-uppercase">August 30, 2018</p>
             <div class="card-text">
@@ -495,7 +489,7 @@ As a college student, it’s not every day that you get to work on cutting edge 
             </div><div class="col mb-3">
                 <div class="card h-100">
     
-    <a href="/blog/data-engineering-with-bunsen/" class="d-block"><img data-src="/blog/data-engineering-with-bunsen/row-wise_hu98dd1d17b9c1bcda37a687cc354e9831_39810_700x350_fill_box_smart1_2.png" class="card-img-top mx-auto d-block" alt="Scalable Data Science with FHIR"><div class="card-body">
+    <a href="/blog/data-engineering-with-bunsen/" class="d-block"><img data-src="/blog/data-engineering-with-bunsen/row-wise_hu98dd1d17b9c1bcda37a687cc354e9831_39810_700x350_fill_box_smart1_3.png" class="card-img-top mx-auto d-block" alt="Scalable Data Science with FHIR"><div class="card-body">
             <h4 class="card-title">Scalable Data Science with FHIR</h4>
             <p class="card-text text-muted text-uppercase">July 2, 2018</p>
             <div class="card-text">
@@ -596,6 +590,5 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 </body>
 </html>

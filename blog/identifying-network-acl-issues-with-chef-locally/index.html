@@ -26,21 +26,15 @@
 <link rel="canonical" href="https://engineering.cerner.com/blog/identifying-network-acl-issues-with-chef-locally/"><script src="/js/jquery-3.5.1.min.js"></script><meta property="og:title" content="Identifying Network ACL Issues with Chef Locally" />
 <meta property="og:description" content="At Cerner, we use Chef to automate our deployments across a very large distributed system comprised of many thousands of nodes. While we employ ServerSpec and Test Kitchen extensively to test our Chef recipes, this still doesn&rsquo;t identify all possible failure scenarios. In a large distributed system such as ours, we occasionally run into connectivity failures between machines due to network ACL issues. This could be due to a variety of reasons." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://engineering.cerner.com/blog/identifying-network-acl-issues-with-chef-locally/" />
-<meta property="og:image" content="https://engineering.cerner.com/images/alan-grace.png"/>
+<meta property="og:url" content="https://engineering.cerner.com/blog/identifying-network-acl-issues-with-chef-locally/" /><meta property="og:image" content="https://engineering.cerner.com/images/alan-grace.png"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2015-11-17T00:00:00+00:00" />
 <meta property="article:modified_time" content="2015-11-17T00:00:00+00:00" /><meta property="og:site_name" content="Cerner Engineering" />
+
 <meta itemprop="name" content="Identifying Network ACL Issues with Chef Locally">
-<meta itemprop="description" content="At Cerner, we use Chef to automate our deployments across a very large distributed system comprised of many thousands of nodes. While we employ ServerSpec and Test Kitchen extensively to test our Chef recipes, this still doesn&rsquo;t identify all possible failure scenarios. In a large distributed system such as ours, we occasionally run into connectivity failures between machines due to network ACL issues. This could be due to a variety of reasons.">
-<meta itemprop="datePublished" content="2015-11-17T00:00:00+00:00" />
+<meta itemprop="description" content="At Cerner, we use Chef to automate our deployments across a very large distributed system comprised of many thousands of nodes. While we employ ServerSpec and Test Kitchen extensively to test our Chef recipes, this still doesn&rsquo;t identify all possible failure scenarios. In a large distributed system such as ours, we occasionally run into connectivity failures between machines due to network ACL issues. This could be due to a variety of reasons."><meta itemprop="datePublished" content="2015-11-17T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2015-11-17T00:00:00+00:00" />
-<meta itemprop="wordCount" content="371">
-<meta itemprop="image" content="https://engineering.cerner.com/images/alan-grace.png"/>
-
-
-
-<meta itemprop="keywords" content="engineering," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="wordCount" content="371"><meta itemprop="image" content="https://engineering.cerner.com/images/alan-grace.png"/>
+<meta itemprop="keywords" content="engineering," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://engineering.cerner.com/images/alan-grace.png"/>
 
 <meta name="twitter:title" content="Identifying Network ACL Issues with Chef Locally"/>
@@ -127,7 +121,7 @@
                             <p>At Cerner, we use <a href="https://www.chef.io/">Chef</a> to automate our deployments across a very large distributed system comprised of many thousands of nodes. While we employ <a href="http://serverspec.org/">ServerSpec</a> and <a href="http://kitchen.ci/">Test Kitchen</a> extensively to test our Chef recipes, this still doesn&rsquo;t identify all possible failure scenarios. In a large distributed system such as ours, we occasionally run into connectivity failures between machines due to network ACL issues. This could be due to a variety of reasons. The simplest being that you didn’t know what all you were connecting to. The second being that you didn’t ask for the ACLs to be opened early enough, or at all. And finally (and most frustrating), you asked and were granted an ACL change but there still exists an issue (like an unfollowed redirect). When we took a look at these issues, we saw an opportunity for improvement in our Chef testing.</p>
 <p>This is why we created <a href="https://github.com/cerner/ops_tcpdump_handler">ops_tcpdump_handler</a>, an open source Chef cookbook that is helping us identify network connectivity issues during Chef test runs.</p>
 <p>As explained in the project README, when you add this cookbook into a Test Kitchen or <a href="https://www.vagrantup.com/">Vagrant</a> run list, you&rsquo;ll see an output similar to below that shows connection attempts between nodes. This will not only help you understand what nodes you&rsquo;re connecting to in a Chef run, but also diagnose any connectivity issues that arise.</p>
-<pre><code>==&gt; node01: attempted to connect to: proxy06.fedoraproject.org using http
+<pre tabindex="0"><code>==&gt; node01: attempted to connect to: proxy06.fedoraproject.org using http
 ==&gt; node01: attempted to connect to: mirror.sfo12.us.leaseweb.net using http
 ==&gt; node01: attempted to connect to: li63-48.members.linode.com using https
 ==&gt; node01: attempted to connect to: 23.235.40.133 using https
@@ -174,7 +168,7 @@
     <div class="related-content row mt-5 row-cols-1 row-cols-lg-3"><div class="col mb-3">
                 <div class="card h-100">
     
-    <a href="/blog/javascript-logging-we-can-do-better/" class="d-block"><img data-src="/blog/javascript-logging-we-can-do-better/healthe_life_errors_hu931f198abeccd066091d328e34a5ab65_124433_700x350_fill_box_smart1_2.png" class="card-img-top mx-auto d-block" alt="JavaScript Logging: We can do better!"><div class="card-body">
+    <a href="/blog/javascript-logging-we-can-do-better/" class="d-block"><img data-src="/blog/javascript-logging-we-can-do-better/healthe_life_errors_hu931f198abeccd066091d328e34a5ab65_124433_700x350_fill_box_smart1_3.png" class="card-img-top mx-auto d-block" alt="JavaScript Logging: We can do better!"><div class="card-body">
             <h4 class="card-title">JavaScript Logging: We can do better!</h4>
             <p class="card-text text-muted text-uppercase">July 20, 2015</p>
             <div class="card-text">
@@ -188,7 +182,7 @@ Given that we have these logging utilities what is the problem with using them? 
             </div><div class="col mb-3">
                 <div class="card h-100">
     
-    <a href="/blog/managing-30000-logging-events-per-day-with-splunk/" class="d-block"><img data-src="/blog/managing-30000-logging-events-per-day-with-splunk/Log-Aggregator_hu250099d7c5651446aaf180f5da97c019_295357_700x350_fill_box_smart1_2.png" class="card-img-top mx-auto d-block" alt="Managing 30,000 Logging Events per Day with Splunk"><div class="card-body">
+    <a href="/blog/managing-30000-logging-events-per-day-with-splunk/" class="d-block"><img data-src="/blog/managing-30000-logging-events-per-day-with-splunk/Log-Aggregator_hu250099d7c5651446aaf180f5da97c019_295357_700x350_fill_box_smart1_3.png" class="card-img-top mx-auto d-block" alt="Managing 30,000 Logging Events per Day with Splunk"><div class="card-body">
             <h4 class="card-title">Managing 30,000 Logging Events per Day with Splunk</h4>
             <p class="card-text text-muted text-uppercase">January 29, 2015</p>
             <div class="card-text">
@@ -302,6 +296,5 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 </body>
 </html>

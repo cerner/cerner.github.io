@@ -26,21 +26,15 @@
 <link rel="canonical" href="https://engineering.cerner.com/blog/inspec-delta/"><script src="/js/jquery-3.5.1.min.js"></script><meta property="og:title" content="Introducing Inspec Delta" />
 <meta property="og:description" content="Today, we are excited to announce our newest addition in our open-source family, Inspec Delta! In this blog post, we will explain how this is utilized at Cerner to reduce the time in comparing updated infrastructure security benchmarks. Whether you are new to automating your security compliance or have had to deal with maintaining updates to existing benchmarks, this blog post is for you!" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://engineering.cerner.com/blog/inspec-delta/" />
-<meta property="og:image" content="https://engineering.cerner.com/images/alan-grace.png"/>
+<meta property="og:url" content="https://engineering.cerner.com/blog/inspec-delta/" /><meta property="og:image" content="https://engineering.cerner.com/images/alan-grace.png"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-05-11T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-05-11T00:00:00+00:00" /><meta property="og:site_name" content="Cerner Engineering" />
+
 <meta itemprop="name" content="Introducing Inspec Delta">
-<meta itemprop="description" content="Today, we are excited to announce our newest addition in our open-source family, Inspec Delta! In this blog post, we will explain how this is utilized at Cerner to reduce the time in comparing updated infrastructure security benchmarks. Whether you are new to automating your security compliance or have had to deal with maintaining updates to existing benchmarks, this blog post is for you!">
-<meta itemprop="datePublished" content="2021-05-11T00:00:00+00:00" />
+<meta itemprop="description" content="Today, we are excited to announce our newest addition in our open-source family, Inspec Delta! In this blog post, we will explain how this is utilized at Cerner to reduce the time in comparing updated infrastructure security benchmarks. Whether you are new to automating your security compliance or have had to deal with maintaining updates to existing benchmarks, this blog post is for you!"><meta itemprop="datePublished" content="2021-05-11T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-05-11T00:00:00+00:00" />
-<meta itemprop="wordCount" content="849">
-<meta itemprop="image" content="https://engineering.cerner.com/images/alan-grace.png"/>
-
-
-
-<meta itemprop="keywords" content="security,oss," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="wordCount" content="849"><meta itemprop="image" content="https://engineering.cerner.com/images/alan-grace.png"/>
+<meta itemprop="keywords" content="security,oss," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://engineering.cerner.com/images/alan-grace.png"/>
 
 <meta name="twitter:title" content="Introducing Inspec Delta"/>
@@ -106,8 +100,8 @@
         By: &nbsp;<li class="list-inline-item mr-3">
                     <div class="media author"><a href="/authors/jeremy-perron/" class="mr-3">
                                     <picture>
-                                        <source srcset="/authors/jeremy-perron/jeremy_hu37e56f70e6fb5e3c9bcd86543c46ed7d_212986_48x0_resize_box_2.png 1x, /authors/jeremy-perron/jeremy_hu37e56f70e6fb5e3c9bcd86543c46ed7d_212986_128x0_resize_q100_box_2.png 2x, /authors/jeremy-perron/jeremy_hu37e56f70e6fb5e3c9bcd86543c46ed7d_212986_192x0_resize_q100_box_2.png 3x">
-                                        <img src="/authors/jeremy-perron/jeremy_hu37e56f70e6fb5e3c9bcd86543c46ed7d_212986_48x0_resize_box_2.png" class="rounded-circle" alt="Jeremy Perron">
+                                        <source srcset="/authors/jeremy-perron/jeremy_hu37e56f70e6fb5e3c9bcd86543c46ed7d_212986_48x0_resize_box_3.png 1x, /authors/jeremy-perron/jeremy_hu37e56f70e6fb5e3c9bcd86543c46ed7d_212986_128x0_resize_q100_box_3.png 2x, /authors/jeremy-perron/jeremy_hu37e56f70e6fb5e3c9bcd86543c46ed7d_212986_192x0_resize_q100_box_3.png 3x">
+                                        <img src="/authors/jeremy-perron/jeremy_hu37e56f70e6fb5e3c9bcd86543c46ed7d_212986_48x0_resize_box_3.png" class="rounded-circle" alt="Jeremy Perron">
                                     </picture>
                                 </a><div class="media-body">
                             <h5 class="name my-2 "><a href="/authors/jeremy-perron/" class="small">Jeremy Perron</a>
@@ -161,9 +155,9 @@
 <li>Developers download the STIG.</li>
 <li>Utilizing inspec_delta, developers will feed the new STIG and the profile into the tool.</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">inspec_delta profile update --profile_path ~/inspec/RHEL_7_STIG_inspec <span style="color:#ae81ff">\ </span>
-  --stig_file_path ~/inspec/U_RHEL_7_STIG_V3R1_Manual-xccdf.xml
-</code></pre></div><ol start="4">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>inspec_delta profile update --profile_path ~/inspec/RHEL_7_STIG_inspec <span style="color:#ae81ff">\ </span>
+</span></span><span style="display:flex;"><span>  --stig_file_path ~/inspec/U_RHEL_7_STIG_V3R1_Manual-xccdf.xml
+</span></span></code></pre></div><ol start="4">
 <li>The tool will update the existing profile with the metadata changes from the new STIG.</li>
 <li>The updated profile is then used to create a feature branch.</li>
 <li>In this new feature branch, changes are examined and discussed by the code owners and applicable technology experts.</li>
@@ -241,7 +235,7 @@
     <div class="related-content row mt-5 row-cols-1 row-cols-lg-3"><div class="col mb-3">
                 <div class="card h-100">
     
-    <a href="/blog/lessons-learned-building-an-accessible-web-application-framework/" class="d-block"><img data-src="/blog/lessons-learned-building-an-accessible-web-application-framework/terra-no-title_huec7f06ca106c9ab435c60e78d9cdcd40_256228_700x350_fill_box_smart1_2.png" class="card-img-top mx-auto d-block" alt="Lessons learned building an accessible web application framework"><div class="card-body">
+    <a href="/blog/lessons-learned-building-an-accessible-web-application-framework/" class="d-block"><img data-src="/blog/lessons-learned-building-an-accessible-web-application-framework/terra-no-title_huec7f06ca106c9ab435c60e78d9cdcd40_256228_700x350_fill_box_smart1_3.png" class="card-img-top mx-auto d-block" alt="Lessons learned building an accessible web application framework"><div class="card-body">
             <h4 class="card-title">Lessons learned building an accessible web application framework</h4>
             <p class="card-text text-muted text-uppercase">September 24, 2020</p>
             <div class="card-text">
@@ -254,7 +248,7 @@ Why accessibility matters At Cerner, we build software for many different users 
             </div><div class="col mb-3">
                 <div class="card h-100">
     
-    <a href="/blog/terra-ui/" class="d-block"><img data-src="/blog/terra-ui/2019-10-24-terra-ui-1_huf293bd12df1f82b7820f66c8505b40b6_19411_700x350_fill_box_smart1_2.png" class="card-img-top mx-auto d-block" alt="Terra UI: A Health-Care focused UI Component Library"><div class="card-body">
+    <a href="/blog/terra-ui/" class="d-block"><img data-src="/blog/terra-ui/2019-10-24-terra-ui-1_huf293bd12df1f82b7820f66c8505b40b6_19411_700x350_fill_box_smart1_3.png" class="card-img-top mx-auto d-block" alt="Terra UI: A Health-Care focused UI Component Library"><div class="card-body">
             <h4 class="card-title">Terra UI: A Health-Care focused UI Component Library</h4>
             <p class="card-text text-muted text-uppercase">October 25, 2019</p>
             <div class="card-text">
@@ -266,7 +260,7 @@ Why accessibility matters At Cerner, we build software for many different users 
             </div><div class="col mb-3">
                 <div class="card h-100">
     
-    <a href="/blog/introducing-f-twelve-an-open-source-dev-console/" class="d-block"><img data-src="/blog/introducing-f-twelve-an-open-source-dev-console/f-twelve-icon_hu444ee1f0a282d15142a169b29823a235_8982_700x350_fill_box_smart1_2.png" class="card-img-top mx-auto d-block" alt="Introducing F-Twelve, an Open Source Dev Console"><div class="card-body">
+    <a href="/blog/introducing-f-twelve-an-open-source-dev-console/" class="d-block"><img data-src="/blog/introducing-f-twelve-an-open-source-dev-console/f-twelve-icon_hu444ee1f0a282d15142a169b29823a235_8982_700x350_fill_box_smart1_3.png" class="card-img-top mx-auto d-block" alt="Introducing F-Twelve, an Open Source Dev Console"><div class="card-body">
             <h4 class="card-title">Introducing F-Twelve, an Open Source Dev Console</h4>
             <p class="card-text text-muted text-uppercase">October 8, 2019</p>
             <div class="card-text">
@@ -366,6 +360,5 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 </body>
 </html>

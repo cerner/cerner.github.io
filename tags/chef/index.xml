@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 04 Apr 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://engineering.cerner.com/tags/chef/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Version Databag - A Chef Release Process</title>
-      <link>https://engineering.cerner.com/blog/version-databag-a-chef-release-process/</link>
+      <link>https://engineering.cerner.com/blog/version-databag---a-chef-release-process/</link>
       <pubDate>Tue, 04 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://engineering.cerner.com/blog/version-databag-a-chef-release-process/</guid>
+      <guid>https://engineering.cerner.com/blog/version-databag---a-chef-release-process/</guid>
       <description>At Cerner, we use Chef. In fact, we&amp;rsquo;re heavily ingrained with Chef in our configuration management practices. We deploy services from Tomcat to Kafka with Chef. Even the first open source project we announced was a tool for Chef!
 With all of this integration with Chef, we need a simple way to manage all of those versions. This is where the Version Databag cookbook comes in. At a high level, this cookbook allows us to define our versions in a centralized data bag (grouped under conceptual units) and populates the corresponding node attributes required with those versions at runtime.</description>
     </item>

@@ -27,22 +27,16 @@
 <meta property="og:description" content="At Cerner, we manage our own infrastructure and a big part of that is managing F5 load balancers. If you are a Ruby developer or a network engineer and regularly work with F5s, then I have good news! I&rsquo;ve created a gem that abstracts iControl&rsquo;s REST API. It makes working with the API easy to understand and eases the effort required to automate changes across many devices.
 1 2  api = IcontrolRest::Client." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://engineering.cerner.com/blog/cerner-and-icontrol/" />
-<meta property="og:image" content="https://engineering.cerner.com/images/alan-grace.png"/>
+<meta property="og:url" content="https://engineering.cerner.com/blog/cerner-and-icontrol/" /><meta property="og:image" content="https://engineering.cerner.com/images/alan-grace.png"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2018-03-13T00:00:00+00:00" />
 <meta property="article:modified_time" content="2018-03-13T00:00:00+00:00" /><meta property="og:site_name" content="Cerner Engineering" />
+
 <meta itemprop="name" content="Cerner and iControl">
 <meta itemprop="description" content="At Cerner, we manage our own infrastructure and a big part of that is managing F5 load balancers. If you are a Ruby developer or a network engineer and regularly work with F5s, then I have good news! I&rsquo;ve created a gem that abstracts iControl&rsquo;s REST API. It makes working with the API easy to understand and eases the effort required to automate changes across many devices.
-1 2  api = IcontrolRest::Client.">
-<meta itemprop="datePublished" content="2018-03-13T00:00:00+00:00" />
+1 2  api = IcontrolRest::Client."><meta itemprop="datePublished" content="2018-03-13T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2018-03-13T00:00:00+00:00" />
-<meta itemprop="wordCount" content="373">
-<meta itemprop="image" content="https://engineering.cerner.com/images/alan-grace.png"/>
-
-
-
-<meta itemprop="keywords" content="engineering,big-ip,f5," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="wordCount" content="373"><meta itemprop="image" content="https://engineering.cerner.com/images/alan-grace.png"/>
+<meta itemprop="keywords" content="engineering,big-ip,f5," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://engineering.cerner.com/images/alan-grace.png"/>
 
 <meta name="twitter:title" content="Cerner and iControl"/>
@@ -121,104 +115,104 @@
                     <div class="col-lg-8">
                         <div class="content">
                             <p>At Cerner, we manage our own infrastructure and a big part of that is managing F5 load balancers. If you are a Ruby developer or a network engineer and regularly work with F5s, then I have good news! I&rsquo;ve created a gem that abstracts iControl&rsquo;s REST API. It makes working with the API easy to understand and eases the effort required to automate changes across many devices.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">api <span style="color:#f92672">=</span> <span style="color:#66d9ef">IcontrolRest</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Client</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">host</span>: <span style="color:#e6db74">&#39;1.2.3.4&#39;</span>, <span style="color:#e6db74">user</span>: <span style="color:#e6db74">&#39;user&#39;</span>, <span style="color:#e6db74">pass</span>: <span style="color:#e6db74">&#39;pass&#39;</span>, <span style="color:#e6db74">verify_cert</span>: <span style="color:#66d9ef">false</span>)
-<span style="color:#f92672">=&gt;</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">Icontrol</span><span style="color:#f92672">::</span><span style="color:#e6db74">Client</span>:<span style="color:#ae81ff">0x007fb953ab7750</span> @options<span style="color:#f92672">=</span>{ <span style="color:#f92672">...</span> }<span style="color:#f92672">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>api <span style="color:#f92672">=</span> <span style="color:#66d9ef">IcontrolRest</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Client</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">host</span>: <span style="color:#e6db74">&#39;1.2.3.4&#39;</span>, <span style="color:#e6db74">user</span>: <span style="color:#e6db74">&#39;user&#39;</span>, <span style="color:#e6db74">pass</span>: <span style="color:#e6db74">&#39;pass&#39;</span>, <span style="color:#e6db74">verify_cert</span>: <span style="color:#66d9ef">false</span>)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">=&gt;</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">Icontrol</span><span style="color:#f92672">::</span><span style="color:#e6db74">Client</span>:<span style="color:#ae81ff">0x007fb953ab7750</span> @options<span style="color:#f92672">=</span>{ <span style="color:#f92672">...</span> }<span style="color:#f92672">&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>After logging in, one can build a query via an instance method:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">api<span style="color:#f92672">.</span>get_sys_dns
-<span style="color:#75715e"># returns an object like this:</span>
-<span style="color:#f92672">=&gt;</span> { <span style="color:#e6db74">&#34;kind&#34;</span>        <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;tm:sys:dns:dnsstate&#34;</span>,
-     <span style="color:#e6db74">&#34;selfLink&#34;</span>    <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;https://localhost/mgmt/tm/sys/dns?ver=11.5.4&#34;</span>,
-     <span style="color:#e6db74">&#34;description&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;configured-by-dhcp&#34;</span>,
-     <span style="color:#e6db74">&#34;nameServers&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;1.2.3.72&#34;</span>, <span style="color:#e6db74">&#34;1.2.3.73&#34;</span><span style="color:#f92672">]</span>,
-     <span style="color:#e6db74">&#34;search&#34;</span>      <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;domain.com&#34;</span><span style="color:#f92672">]</span>
-   }
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>api<span style="color:#f92672">.</span>get_sys_dns
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># returns an object like this:</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">=&gt;</span> { <span style="color:#e6db74">&#34;kind&#34;</span>        <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;tm:sys:dns:dnsstate&#34;</span>,
+</span></span><span style="display:flex;"><span>     <span style="color:#e6db74">&#34;selfLink&#34;</span>    <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;https://localhost/mgmt/tm/sys/dns?ver=11.5.4&#34;</span>,
+</span></span><span style="display:flex;"><span>     <span style="color:#e6db74">&#34;description&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;configured-by-dhcp&#34;</span>,
+</span></span><span style="display:flex;"><span>     <span style="color:#e6db74">&#34;nameServers&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;1.2.3.72&#34;</span>, <span style="color:#e6db74">&#34;1.2.3.73&#34;</span><span style="color:#f92672">]</span>,
+</span></span><span style="display:flex;"><span>     <span style="color:#e6db74">&#34;search&#34;</span>      <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;domain.com&#34;</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>   }
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>The gem builds REST queries given a method delimited by underscores. The first word is the REST method and the following words are the path you&rsquo;d like to send your request to.</p>
 <p>For example, if you&rsquo;d like to get the version of the F5, given this <a href="https://devcentral.f5.com/d/icontrol-rest-api-reference-version-120">iControl REST API doc</a></p>
 <p>You&rsquo;d call a method that looks like this:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">api<span style="color:#f92672">.</span>get_sys_version
-<span style="color:#75715e"># returns an object like this:</span>
-<span style="color:#f92672">=&gt;</span> { <span style="color:#e6db74">&#34;kind&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;tm:sys:version:versionstats&#34;</span>,
-     <span style="color:#e6db74">&#34;selfLink&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;https://localhost/mgmt/tm/sys/version?ver=12.1.2&#34;</span>,
-     <span style="color:#e6db74">&#34;entries&#34;</span> <span style="color:#f92672">=&gt;</span> {
-      <span style="color:#e6db74">&#34;https://localhost/mgmt/tm/sys/version/0&#34;</span> <span style="color:#f92672">=&gt;</span> {
-        <span style="color:#e6db74">&#34;nestedStats&#34;</span> <span style="color:#f92672">=&gt;</span> {
-          <span style="color:#e6db74">&#34;entries&#34;</span> <span style="color:#f92672">=&gt;</span> {
-            <span style="color:#e6db74">&#34;Build&#34;</span>   <span style="color:#f92672">=&gt;</span> { <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;0.0.249&#34;</span> },
-            <span style="color:#e6db74">&#34;Date&#34;</span>    <span style="color:#f92672">=&gt;</span> { <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;Wed Nov 30 16:04:00 PST 2016&#34;</span> },
-            <span style="color:#e6db74">&#34;Edition&#34;</span> <span style="color:#f92672">=&gt;</span> { <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;Final&#34;</span> },
-            <span style="color:#e6db74">&#34;Product&#34;</span> <span style="color:#f92672">=&gt;</span> { <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;BIG-IP&#34;</span> },
-            <span style="color:#e6db74">&#34;Title&#34;</span>   <span style="color:#f92672">=&gt;</span> { <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;Main Package&#34;</span> },
-            <span style="color:#e6db74">&#34;Version&#34;</span> <span style="color:#f92672">=&gt;</span> { <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;12.1.2&#34;</span> }
-          }
-        }
-      }
-    }
-  }
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>api<span style="color:#f92672">.</span>get_sys_version
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># returns an object like this:</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">=&gt;</span> { <span style="color:#e6db74">&#34;kind&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;tm:sys:version:versionstats&#34;</span>,
+</span></span><span style="display:flex;"><span>     <span style="color:#e6db74">&#34;selfLink&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;https://localhost/mgmt/tm/sys/version?ver=12.1.2&#34;</span>,
+</span></span><span style="display:flex;"><span>     <span style="color:#e6db74">&#34;entries&#34;</span> <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;https://localhost/mgmt/tm/sys/version/0&#34;</span> <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;nestedStats&#34;</span> <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>          <span style="color:#e6db74">&#34;entries&#34;</span> <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Build&#34;</span>   <span style="color:#f92672">=&gt;</span> { <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;0.0.249&#34;</span> },
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Date&#34;</span>    <span style="color:#f92672">=&gt;</span> { <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;Wed Nov 30 16:04:00 PST 2016&#34;</span> },
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Edition&#34;</span> <span style="color:#f92672">=&gt;</span> { <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;Final&#34;</span> },
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Product&#34;</span> <span style="color:#f92672">=&gt;</span> { <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;BIG-IP&#34;</span> },
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Title&#34;</span>   <span style="color:#f92672">=&gt;</span> { <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;Main Package&#34;</span> },
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Version&#34;</span> <span style="color:#f92672">=&gt;</span> { <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;12.1.2&#34;</span> }
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>So in practice you could put all this together to do something like audit the versions of F5s in a collection:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">[</span><span style="color:#e6db74">&#39;hostname1&#39;</span>, <span style="color:#e6db74">&#39;hostname2&#39;</span>, <span style="color:#e6db74">&#39;hostname3&#39;</span><span style="color:#f92672">].</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>host<span style="color:#f92672">|</span>
-  api <span style="color:#f92672">=</span> <span style="color:#66d9ef">IcontrolRest</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Client</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">host</span>: host, <span style="color:#e6db74">user</span>: <span style="color:#e6db74">&#39;user&#39;</span>, <span style="color:#e6db74">pass</span>: <span style="color:#e6db74">&#39;pass&#39;</span>, <span style="color:#e6db74">verify_cert</span>: <span style="color:#66d9ef">false</span>)
-  result <span style="color:#f92672">=</span> api<span style="color:#f92672">.</span>get_sys_version
-  version <span style="color:#f92672">=</span> result<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;entries&#39;</span><span style="color:#f92672">][</span><span style="color:#960050;background-color:#1e0010">‘</span><span style="color:#e6db74">https</span>:<span style="color:#e6db74">//</span>localhost<span style="color:#f92672">/</span>mgmt<span style="color:#f92672">/</span>tm<span style="color:#f92672">/</span>sys<span style="color:#f92672">/</span>version<span style="color:#f92672">/</span><span style="color:#ae81ff">0</span><span style="color:#960050;background-color:#1e0010">’</span><span style="color:#f92672">][</span><span style="color:#e6db74">&#39;nestedStats&#39;</span><span style="color:#f92672">][</span><span style="color:#e6db74">&#39;entries&#39;</span><span style="color:#f92672">][</span><span style="color:#e6db74">&#39;Version&#39;</span><span style="color:#f92672">][</span><span style="color:#e6db74">&#39;description&#39;</span><span style="color:#f92672">]</span>
-  puts <span style="color:#e6db74">&#34;host: </span><span style="color:#e6db74">#{</span>host<span style="color:#e6db74">}</span><span style="color:#e6db74"> | version: </span><span style="color:#e6db74">#{</span>version<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#66d9ef">unless</span> version <span style="color:#f92672">==</span> <span style="color:#960050;background-color:#1e0010">‘</span><span style="color:#ae81ff">12</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0</span><span style="color:#960050;background-color:#1e0010">’</span>
-<span style="color:#66d9ef">end</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#f92672">[</span><span style="color:#e6db74">&#39;hostname1&#39;</span>, <span style="color:#e6db74">&#39;hostname2&#39;</span>, <span style="color:#e6db74">&#39;hostname3&#39;</span><span style="color:#f92672">].</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>host<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>  api <span style="color:#f92672">=</span> <span style="color:#66d9ef">IcontrolRest</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Client</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">host</span>: host, <span style="color:#e6db74">user</span>: <span style="color:#e6db74">&#39;user&#39;</span>, <span style="color:#e6db74">pass</span>: <span style="color:#e6db74">&#39;pass&#39;</span>, <span style="color:#e6db74">verify_cert</span>: <span style="color:#66d9ef">false</span>)
+</span></span><span style="display:flex;"><span>  result <span style="color:#f92672">=</span> api<span style="color:#f92672">.</span>get_sys_version
+</span></span><span style="display:flex;"><span>  version <span style="color:#f92672">=</span> result<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;entries&#39;</span><span style="color:#f92672">][</span><span style="color:#960050;background-color:#1e0010">‘</span><span style="color:#e6db74">https</span>:<span style="color:#e6db74">//</span>localhost<span style="color:#f92672">/</span>mgmt<span style="color:#f92672">/</span>tm<span style="color:#f92672">/</span>sys<span style="color:#f92672">/</span>version<span style="color:#f92672">/</span><span style="color:#ae81ff">0</span><span style="color:#960050;background-color:#1e0010">’</span><span style="color:#f92672">][</span><span style="color:#e6db74">&#39;nestedStats&#39;</span><span style="color:#f92672">][</span><span style="color:#e6db74">&#39;entries&#39;</span><span style="color:#f92672">][</span><span style="color:#e6db74">&#39;Version&#39;</span><span style="color:#f92672">][</span><span style="color:#e6db74">&#39;description&#39;</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>  puts <span style="color:#e6db74">&#34;host: </span><span style="color:#e6db74">#{</span>host<span style="color:#e6db74">}</span><span style="color:#e6db74"> | version: </span><span style="color:#e6db74">#{</span>version<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#66d9ef">unless</span> version <span style="color:#f92672">==</span> <span style="color:#960050;background-color:#1e0010">‘</span><span style="color:#ae81ff">12</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0</span><span style="color:#960050;background-color:#1e0010">’</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>This would print out the hostname and version of any F5s that aren&rsquo;t on version 12.0.0. This is just one example, I encourage you to look through the iControl REST API docs to get a feeling for what&rsquo;s really possible.</p>
 
@@ -389,6 +383,5 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 </body>
 </html>

@@ -28,23 +28,17 @@
 Carbon is a lightweight, vanilla JavaScript visualization API built with D3 that integrates well with any consumer&rsquo;s tech stack. It provides a variety of graph types that are framework agnostic and responsive out of the box.
    Motivation Over the past few years, we have gradually updated our user interface to use modern JavaScript libraries such as mithril." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://engineering.cerner.com/blog/carbon-graphs-open-source-visualization-api/" />
-<meta property="og:image" content="https://engineering.cerner.com/images/alan-grace.png"/>
+<meta property="og:url" content="https://engineering.cerner.com/blog/carbon-graphs-open-source-visualization-api/" /><meta property="og:image" content="https://engineering.cerner.com/images/alan-grace.png"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2019-08-27T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-08-27T00:00:00+00:00" /><meta property="og:site_name" content="Cerner Engineering" />
+
 <meta itemprop="name" content="Carbon Graphs: An Open Source Visualization API">
 <meta itemprop="description" content="We are pleased to announce Carbon Graphs as an open source code project!
 Carbon is a lightweight, vanilla JavaScript visualization API built with D3 that integrates well with any consumer&rsquo;s tech stack. It provides a variety of graph types that are framework agnostic and responsive out of the box.
-   Motivation Over the past few years, we have gradually updated our user interface to use modern JavaScript libraries such as mithril.">
-<meta itemprop="datePublished" content="2019-08-27T00:00:00+00:00" />
+   Motivation Over the past few years, we have gradually updated our user interface to use modern JavaScript libraries such as mithril."><meta itemprop="datePublished" content="2019-08-27T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2019-08-27T00:00:00+00:00" />
-<meta itemprop="wordCount" content="531">
-<meta itemprop="image" content="https://engineering.cerner.com/images/alan-grace.png"/>
-
-
-
-<meta itemprop="keywords" content="engineering,oss," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="wordCount" content="531"><meta itemprop="image" content="https://engineering.cerner.com/images/alan-grace.png"/>
+<meta itemprop="keywords" content="engineering,oss," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://engineering.cerner.com/images/alan-grace.png"/>
 
 <meta name="twitter:title" content="Carbon Graphs: An Open Source Visualization API"/>
@@ -166,51 +160,51 @@ Carbon is a lightweight, vanilla JavaScript visualization API built with D3 that
 <h1 id="drawing-a-line-graph">Drawing a Line Graph</h1>
 <p>Let’s see how easy it can be to get started!</p>
 <p>To create a line graph, first create an HTML element that will hold the graph. Here, we are specifying a main element with an <strong>id</strong> of <strong>root</strong>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">main</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;root&#34;</span>&gt;&lt;/<span style="color:#f92672">main</span>&gt;
-</code></pre></div><p>From there, we will initialize a JavaScript object that configures various aspects of the graph, including where the graph will be drawn and how the axes should appear.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">graphConfiguration</span> <span style="color:#f92672">=</span> {
-    <span style="color:#a6e22e">bindTo</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;#root&#34;</span>,
-    <span style="color:#a6e22e">axis</span><span style="color:#f92672">:</span> {
-        <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> {
-            <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Carbon</span>.<span style="color:#a6e22e">helpers</span>.<span style="color:#a6e22e">AXIS_TYPE</span>.<span style="color:#a6e22e">TIME_SERIES</span>,
-            <span style="color:#a6e22e">label</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Datetime&#34;</span>,
-            <span style="color:#a6e22e">lowerLimit</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#ae81ff">2016</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">0</span>).<span style="color:#a6e22e">toISOString</span>(),
-            <span style="color:#a6e22e">upperLimit</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#ae81ff">2016</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">59</span>).<span style="color:#a6e22e">toISOString</span>()
-        },
-        <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> {
-            <span style="color:#a6e22e">label</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Temperature (degF)&#34;</span>,
-            <span style="color:#a6e22e">lowerLimit</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">90</span>,
-            <span style="color:#a6e22e">upperLimit</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">106</span>
-        }
-    }
-};
-</code></pre></div><p>Next, we’ll configure the dataset we want to plot.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">dataset</span> <span style="color:#f92672">=</span> {
-    <span style="color:#a6e22e">key</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;uid_1&#34;</span>,
-    <span style="color:#a6e22e">label</span><span style="color:#f92672">:</span> {
-        <span style="color:#a6e22e">display</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Oral Temperature&#34;</span>
-    },
-    <span style="color:#a6e22e">shape</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Carbon</span>.<span style="color:#a6e22e">helpers</span>.<span style="color:#a6e22e">SHAPES</span>.<span style="color:#a6e22e">RHOMBUS</span>,
-    <span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Carbon</span>.<span style="color:#a6e22e">helpers</span>.<span style="color:#a6e22e">COLORS</span>.<span style="color:#a6e22e">BLUE</span>,
-    <span style="color:#a6e22e">values</span><span style="color:#f92672">:</span> [
-       {
-            <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#ae81ff">2016</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">5</span>).<span style="color:#a6e22e">toISOString</span>(),
-            <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">96.5</span>
-       },
-       {
-            <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#ae81ff">2016</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">15</span>).<span style="color:#a6e22e">toISOString</span>(),
-            <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">98.7</span>
-       },
-       {
-            <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#ae81ff">2016</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">14</span>, <span style="color:#ae81ff">15</span>).<span style="color:#a6e22e">toISOString</span>(),
-            <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">97.4</span>
-        }
-    ]
-};
-</code></pre></div><p>And to wrap it all up, we’ll call <em><strong>loadContent</strong></em> to draw the content.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">graph</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Carbon</span>.<span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">graph</span>(<span style="color:#a6e22e">graphConfiguration</span>);
-<span style="color:#a6e22e">graph</span>.<span style="color:#a6e22e">loadContent</span>(<span style="color:#a6e22e">Carbon</span>.<span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">line</span>(<span style="color:#a6e22e">dataset</span>));
-</code></pre></div><p>That’s it!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">main</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;root&#34;</span>&gt;&lt;/<span style="color:#f92672">main</span>&gt;
+</span></span></code></pre></div><p>From there, we will initialize a JavaScript object that configures various aspects of the graph, including where the graph will be drawn and how the axes should appear.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">graphConfiguration</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">bindTo</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;#root&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">axis</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Carbon</span>.<span style="color:#a6e22e">helpers</span>.<span style="color:#a6e22e">AXIS_TYPE</span>.<span style="color:#a6e22e">TIME_SERIES</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">label</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Datetime&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">lowerLimit</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#ae81ff">2016</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">0</span>).<span style="color:#a6e22e">toISOString</span>(),
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">upperLimit</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#ae81ff">2016</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">59</span>).<span style="color:#a6e22e">toISOString</span>()
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">label</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Temperature (degF)&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">lowerLimit</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">90</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">upperLimit</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">106</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>Next, we’ll configure the dataset we want to plot.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">dataset</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">key</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;uid_1&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">label</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">display</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Oral Temperature&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">shape</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Carbon</span>.<span style="color:#a6e22e">helpers</span>.<span style="color:#a6e22e">SHAPES</span>.<span style="color:#a6e22e">RHOMBUS</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Carbon</span>.<span style="color:#a6e22e">helpers</span>.<span style="color:#a6e22e">COLORS</span>.<span style="color:#a6e22e">BLUE</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">values</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>       {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#ae81ff">2016</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">5</span>).<span style="color:#a6e22e">toISOString</span>(),
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">96.5</span>
+</span></span><span style="display:flex;"><span>       },
+</span></span><span style="display:flex;"><span>       {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#ae81ff">2016</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">15</span>).<span style="color:#a6e22e">toISOString</span>(),
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">98.7</span>
+</span></span><span style="display:flex;"><span>       },
+</span></span><span style="display:flex;"><span>       {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#ae81ff">2016</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">14</span>, <span style="color:#ae81ff">15</span>).<span style="color:#a6e22e">toISOString</span>(),
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">97.4</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>And to wrap it all up, we’ll call <em><strong>loadContent</strong></em> to draw the content.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">graph</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Carbon</span>.<span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">graph</span>(<span style="color:#a6e22e">graphConfiguration</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">graph</span>.<span style="color:#a6e22e">loadContent</span>(<span style="color:#a6e22e">Carbon</span>.<span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">line</span>(<span style="color:#a6e22e">dataset</span>));
+</span></span></code></pre></div><p>That’s it!</p>
 <div align="center">
     <figure class="figure">
         <a href="carbon-2.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
@@ -290,7 +284,7 @@ Configuring and managing a small set of elements is relatively easy, but once yo
             </div><div class="col mb-3">
                 <div class="card h-100">
     
-    <a href="/blog/devacademy-six-years-later/" class="d-block"><img data-src="/blog/devacademy-six-years-later/devacademy-1_hue179b4688a0a6a243e22f88b08091ce4_1111998_700x350_fill_box_smart1_2.png" class="card-img-top mx-auto d-block" alt="DevAcademy Six Years Later"><div class="card-body">
+    <a href="/blog/devacademy-six-years-later/" class="d-block"><img data-src="/blog/devacademy-six-years-later/devacademy-1_hue179b4688a0a6a243e22f88b08091ce4_1111998_700x350_fill_box_smart1_3.png" class="card-img-top mx-auto d-block" alt="DevAcademy Six Years Later"><div class="card-body">
             <h4 class="card-title">DevAcademy Six Years Later</h4>
             <p class="card-text text-muted text-uppercase">June 14, 2019</p>
             <div class="card-text">
@@ -391,6 +385,5 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 </body>
 </html>

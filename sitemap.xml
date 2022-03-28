@@ -1,1298 +1,778 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://engineering.cerner.com/authors/jeremy-perron/</loc>
     <lastmod>2021-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/</loc>
     <lastmod>2021-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/</loc>
     <lastmod>2021-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/inspec-delta/</loc>
     <lastmod>2021-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/oss/</loc>
     <lastmod>2021-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/post/</loc>
     <lastmod>2021-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/security/</loc>
     <lastmod>2021-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/</loc>
     <lastmod>2021-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/whitney-roark/</loc>
     <lastmod>2020-12-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/culture/</loc>
     <lastmod>2020-12-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/engineering/</loc>
     <lastmod>2020-12-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/hackathon/</loc>
     <lastmod>2020-12-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/shipit/</loc>
     <lastmod>2020-12-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/shipit-from-anywhere-lessons-learned/</loc>
     <lastmod>2020-12-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/matt-henkes/</loc>
     <lastmod>2020-09-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/accessibility/</loc>
     <lastmod>2020-09-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/lessons-learned-building-an-accessible-web-application-framework/</loc>
     <lastmod>2020-09-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/terra/</loc>
     <lastmod>2020-09-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/paul-sites/</loc>
     <lastmod>2020-08-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/creating-the-giant-litebrite/</loc>
     <lastmod>2020-08-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/diy/</loc>
     <lastmod>2020-08-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/makerspace/</loc>
     <lastmod>2020-08-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/carl-chesser/</loc>
     <lastmod>2020-08-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/we-are-back-w-new-look/</loc>
     <lastmod>2020-08-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/harish-pendyala/</loc>
     <lastmod>2020-02-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/jordan-bush/</loc>
     <lastmod>2020-02-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/sharynne-azhar/</loc>
     <lastmod>2020-02-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/shipit-xvii/</loc>
     <lastmod>2020-02-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/vu-tran/</loc>
     <lastmod>2020-02-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/matt-boveri/</loc>
     <lastmod>2019-11-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/shipit-xvi/</loc>
     <lastmod>2019-11-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/brett-jankord/</loc>
     <lastmod>2019-10-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/terra-ui/</loc>
     <lastmod>2019-10-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/introducing-f-twelve-an-open-source-dev-console/</loc>
     <lastmod>2019-10-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/patrick-gross/</loc>
     <lastmod>2019-10-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/abhijit-rao/</loc>
     <lastmod>2019-08-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/carbon-graphs-open-source-visualization-api/</loc>
     <lastmod>2019-08-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/ccl-unit-and-ccl-testing-released-to-open-source/</loc>
     <lastmod>2019-08-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/fred-eckertson/</loc>
     <lastmod>2019-08-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/brandy-poiry/</loc>
     <lastmod>2019-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/devacademy-six-years-later/</loc>
     <lastmod>2019-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/jake-kramer/</loc>
     <lastmod>2019-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/pi/</loc>
     <lastmod>2019-03-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/pi-day-2019-build-your-own-alarm-system/</loc>
     <lastmod>2019-03-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/raspberry_pi/</loc>
     <lastmod>2019-03-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/caitie-oder/</loc>
     <lastmod>2019-03-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/shipit-xiv/</loc>
     <lastmod>2019-03-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/conference/</loc>
     <lastmod>2019-02-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/devcon-recap/</loc>
     <lastmod>2019-02-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/melanie-taylor/</loc>
     <lastmod>2019-02-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/2-to-the-5th-coding-competition-2018/</loc>
     <lastmod>2018-12-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/jenny-saqiurila/</loc>
     <lastmod>2018-12-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/devculture-team/</loc>
     <lastmod>2018-11-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/shipit-xiii/</loc>
     <lastmod>2018-11-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/brittni-kingston/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/devcon/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/devculture-team/</loc>
     <lastmod>2018-11-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/andy-nelson/</loc>
     <lastmod>2018-10-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/cybersecurity/</loc>
     <lastmod>2018-10-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/culture-of-cybersecurity/</loc>
     <lastmod>2018-10-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/community/</loc>
     <lastmod>2018-10-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/denisse-osorio-de-large/</loc>
     <lastmod>2018-10-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/girl-scouts-cybersecurity/</loc>
     <lastmod>2018-10-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/girlscouts/</loc>
     <lastmod>2018-10-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/jenkins/</loc>
     <lastmod>2018-09-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/naresh-rayapati/</loc>
     <lastmod>2018-09-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/ssh-steps-for-jenkins-pipeline/</loc>
     <lastmod>2018-09-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/shipit-xii/</loc>
     <lastmod>2018-08-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/internship/</loc>
     <lastmod>2018-07-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/pratik-vaidya/</loc>
     <lastmod>2018-07-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/summer-of-engineering-health-intern-story/</loc>
     <lastmod>2018-07-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/bunsen/</loc>
     <lastmod>2018-07-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/fhir/</loc>
     <lastmod>2018-07-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/ryan-brush/</loc>
     <lastmod>2018-07-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/data-engineering-with-bunsen/</loc>
     <lastmod>2018-07-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/spark/</loc>
     <lastmod>2018-07-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/cerners-open-source-contributions-for-interoperability-developers/</loc>
     <lastmod>2018-06-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/interoperability/</loc>
     <lastmod>2018-06-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/kevin-shekleton/</loc>
     <lastmod>2018-06-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/open-source/</loc>
     <lastmod>2018-06-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/conferences/</loc>
     <lastmod>2018-06-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/jared-moore/</loc>
     <lastmod>2018-06-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/srecon/</loc>
     <lastmod>2018-06-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/srecon18-recap/</loc>
     <lastmod>2018-06-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/andie-young/</loc>
     <lastmod>2018-05-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/interns/</loc>
     <lastmod>2018-05-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/jennifer-lambert/</loc>
     <lastmod>2018-05-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/joe-geris/</loc>
     <lastmod>2018-05-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/say_hello_to_the_2018_summer_interns/</loc>
     <lastmod>2018-05-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/chris-fagyal/</loc>
     <lastmod>2018-05-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/code-review/</loc>
     <lastmod>2018-05-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/code-reviews-there-is-a-better-way/</loc>
     <lastmod>2018-05-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/kyle-harper/</loc>
     <lastmod>2018-04-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/shipit-xi-spring-2018/</loc>
     <lastmod>2018-04-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/big-ip/</loc>
     <lastmod>2018-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/cerner-and-icontrol/</loc>
     <lastmod>2018-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/f5/</loc>
     <lastmod>2018-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/jerrod-carpenter/</loc>
     <lastmod>2018-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/lindsey-bromberg/</loc>
     <lastmod>2018-02-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/one-year-calling-innovations-home/</loc>
     <lastmod>2018-02-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/isabella-kuzava/</loc>
     <lastmod>2018-02-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/shipit-x-day-winter-2017/</loc>
     <lastmod>2018-02-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/bryan-baugher/</loc>
     <lastmod>2018-02-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/cerner-open-sources-its-kafka-utilities/</loc>
     <lastmod>2018-02-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/ingestion/</loc>
     <lastmod>2018-02-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/kafka/</loc>
     <lastmod>2018-02-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/agile/</loc>
     <lastmod>2018-01-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/cerner-and-the-sdlc/</loc>
     <lastmod>2018-01-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/learning/</loc>
     <lastmod>2018-01-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/matt-anderson/</loc>
     <lastmod>2018-01-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/bad-design-is-bad-for-your-health-why-data-visualization-details-matter/</loc>
     <lastmod>2018-01-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/data/</loc>
     <lastmod>2018-01-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/jody-butts/</loc>
     <lastmod>2018-01-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/ux/</loc>
     <lastmod>2018-01-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/visualization/</loc>
     <lastmod>2018-01-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/2-to-the-5th-coding-competition-2017/</loc>
     <lastmod>2017-12-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/announcing-bunsen-fhir-data-with-apache-spark/</loc>
     <lastmod>2017-11-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/celebrating-world-usability-day-at-cerner/</loc>
     <lastmod>2017-11-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/lauren-bock/</loc>
     <lastmod>2017-11-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/usability/</loc>
     <lastmod>2017-11-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/accessibility-and-usability-on-the-road-to-great-ux/</loc>
     <lastmod>2017-10-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/amber-wilks/</loc>
     <lastmod>2017-10-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/midwestux/</loc>
     <lastmod>2017-10-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/rebecca-green/</loc>
     <lastmod>2017-10-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/arvindo-kinny/</loc>
     <lastmod>2017-09-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/jwala-joins-cerner-open-source/</loc>
     <lastmod>2017-09-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/dennis-patterson/</loc>
     <lastmod>2017-09-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/engineers-overseas-for-smart-and-fhir/</loc>
     <lastmod>2017-09-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/ian-kottman/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/shipit-ix-day-summer-2017/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/continuous-delivery-for-dcos-with-spinnaker/</loc>
     <lastmod>2017-09-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/will-gorman/</loc>
     <lastmod>2017-09-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/hbase/</loc>
     <lastmod>2017-08-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/michelle-brush/</loc>
     <lastmod>2017-08-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/structure-matters-how-cerner-handled-too-much-health-data-in-hbase/</loc>
     <lastmod>2017-08-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/vinay-koduri/</loc>
     <lastmod>2017-08-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/managing-splunk-knowledge/</loc>
     <lastmod>2017-07-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/splunk/</loc>
     <lastmod>2017-07-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/grace/</loc>
     <lastmod>2017-07-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/hopper/</loc>
     <lastmod>2017-07-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/internationalization/</loc>
     <lastmod>2017-07-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/localization/</loc>
     <lastmod>2017-07-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/polyglot/</loc>
     <lastmod>2017-07-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/you-may-not-be-a-polyglot-but-your-code-needs-to-be/</loc>
     <lastmod>2017-07-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/shahzad-zafar/</loc>
     <lastmod>2017-05-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/shipit-day-viii-spring-2017/</loc>
     <lastmod>2017-05-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/awards/</loc>
     <lastmod>2017-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/influencing-the-young-spanish-seaking-female-generation/</loc>
     <lastmod>2017-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/influyendo-en-una-generacion-de-jovencitas-de-habla-hispana/</loc>
     <lastmod>2017-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/lindsay-ullyot/</loc>
     <lastmod>2017-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/stem/</loc>
     <lastmod>2017-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/bradley-scott/</loc>
     <lastmod>2017-04-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/one-cerner-style-icons/</loc>
     <lastmod>2017-04-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/seth-claybrook/</loc>
     <lastmod>2017-04-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/chef/</loc>
     <lastmod>2017-04-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/mike-rzepka/</loc>
     <lastmod>2017-04-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.cerner.com/blog/version-databag-a-chef-release-process/</loc>
+  </url><url>
+    <loc>https://engineering.cerner.com/blog/version-databag---a-chef-release-process/</loc>
     <lastmod>2017-04-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/engineers-on-the-road-for-smart-and-fhir/</loc>
     <lastmod>2017-03-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/jenni-syed/</loc>
     <lastmod>2017-03-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/smart/</loc>
     <lastmod>2017-03-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/apache/</loc>
     <lastmod>2017-03-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/crunch/</loc>
     <lastmod>2017-03-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/micah-whitacre-recognition-blog/</loc>
     <lastmod>2017-03-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/pmc/</loc>
     <lastmod>2017-03-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/automated-deployment-with-apache-kafka/</loc>
     <lastmod>2017-02-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/apis/</loc>
     <lastmod>2017-02-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/beadledom/</loc>
     <lastmod>2017-02-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/beadledom-simple-java-framework-for-building-rest-apis/</loc>
     <lastmod>2017-02-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/java/</loc>
     <lastmod>2017-02-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/rest/</loc>
     <lastmod>2017-02-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/sundeep-paruvu/</loc>
     <lastmod>2017-02-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/shipit-vii-day-winter-2016/</loc>
     <lastmod>2017-01-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/alan-and-grace-an-origin-story/</loc>
     <lastmod>2016-11-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/lauren-ammons/</loc>
     <lastmod>2016-11-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/clara-rules-joins-cerner-open-source/</loc>
     <lastmod>2016-11-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/fall-2016-shipit-day/</loc>
     <lastmod>2016-11-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/melanie-carpenter/</loc>
     <lastmod>2016-11-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/building-a-unified-ui-component-library/</loc>
     <lastmod>2016-10-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/css/</loc>
     <lastmod>2016-10-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/development/</loc>
     <lastmod>2016-10-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/javascript/</loc>
     <lastmod>2016-10-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/library/</loc>
     <lastmod>2016-10-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/programming/</loc>
     <lastmod>2016-10-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/rory-hardy/</loc>
     <lastmod>2016-10-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/ui/</loc>
     <lastmod>2016-10-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/cerner-engineering/</loc>
     <lastmod>2016-10-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/michelle-brush-receives-the-rising-trendsetter-stemmy-award/</loc>
     <lastmod>2016-10-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/devcon-word-cloud/</loc>
     <lastmod>2016-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/tech-talks/</loc>
     <lastmod>2016-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/debugging/</loc>
     <lastmod>2016-07-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/difficult-debugging/</loc>
     <lastmod>2016-07-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/ie8/</loc>
     <lastmod>2016-07-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/railsconf-2016-recap/</loc>
     <lastmod>2016-05-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/sam-bao/</loc>
     <lastmod>2016-05-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/spring-2016-shipit-day/</loc>
     <lastmod>2016-04-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/deploying-web-services-with-apache-tomcat-and-chef/</loc>
     <lastmod>2016-02-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/amanda-anderson/</loc>
     <lastmod>2016-01-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/girls-in-technology-movement-hour-of-code/</loc>
     <lastmod>2016-01-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/aaron-blythe/</loc>
     <lastmod>2015-11-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/david-crowder/</loc>
     <lastmod>2015-11-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/identifying-network-acl-issues-with-chef-locally/</loc>
     <lastmod>2015-11-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/garry-polley/</loc>
     <lastmod>2015-07-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/javascript-logging-we-can-do-better/</loc>
     <lastmod>2015-07-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/managing-30000-logging-events-per-day-with-splunk/</loc>
     <lastmod>2015-01-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/mike-hemesath/</loc>
     <lastmod>2015-01-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/rima-poddar/</loc>
     <lastmod>2015-01-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/cerner-and-the-apache-software-foundation/</loc>
     <lastmod>2014-10-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/closures/</loc>
     <lastmod>2014-09-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/closures-and-currying-in-javascript/</loc>
     <lastmod>2014-09-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/currying/</loc>
     <lastmod>2014-09-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/functional-programming/</loc>
     <lastmod>2014-09-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/intern-hackfest-2014/</loc>
     <lastmod>2014-09-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/makenzie-kalb/</loc>
     <lastmod>2014-09-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/design/</loc>
     <lastmod>2014-08-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/elliott-hoffman/</loc>
     <lastmod>2014-08-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/i18n/</loc>
     <lastmod>2014-08-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/text/</loc>
     <lastmod>2014-08-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/the-plain-text-is-a-lie/</loc>
     <lastmod>2014-08-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/unicode/</loc>
     <lastmod>2014-08-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/shipit-hackathon-mplus/</loc>
     <lastmod>2014-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/bigdata/</loc>
     <lastmod>2014-05-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/micah-whitacre/</loc>
     <lastmod>2014-05-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/scaling-people-with-apache-crunch/</loc>
     <lastmod>2014-05-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/andy-gifford/</loc>
     <lastmod>2014-03-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/migrating-from-eclipse-3.x-to-eclipse-4.x-the-iaware-story/</loc>
     <lastmod>2014-03-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/sponsoring-the-apache-software-foundation/</loc>
     <lastmod>2014-01-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/big-data/</loc>
     <lastmod>2014-01-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/david-edwards/</loc>
     <lastmod>2014-01-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/the-raft-protocol-a-better-paxos/</loc>
     <lastmod>2014-01-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/cerner-and-open-source/</loc>
     <lastmod>2014-01-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/nathan-beyer/</loc>
     <lastmod>2014-01-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tags/operations/</loc>
     <lastmod>2014-01-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/cerner-tech-talks/</loc>
     <lastmod>2013-11-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/software-intern-hackfest/</loc>
     <lastmod>2013-11-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/frank-rydzewski/</loc>
     <lastmod>2013-11-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/chris-finn/</loc>
     <lastmod>2013-09-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/project-lead-the-way/</loc>
     <lastmod>2013-09-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/devcon/</loc>
     <lastmod>2013-08-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/devacademy/</loc>
     <lastmod>2013-08-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/the-30-days-of-code-experiment/</loc>
     <lastmod>2013-08-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/thinking-in-mapreduce/</loc>
     <lastmod>2013-07-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/first-robotics-championship-competition-in-st-louis/</loc>
     <lastmod>2013-04-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/learn-what-the-rules-dont-cover/</loc>
     <lastmod>2013-04-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/paul-conklin/</loc>
     <lastmod>2013-04-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/ruby-at-cerner/</loc>
     <lastmod>2013-04-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/modularity-in-medical-imaging/</loc>
     <lastmod>2013-03-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/cerner-and-tycho/</loc>
     <lastmod>2013-03-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/jonny-wright/</loc>
     <lastmod>2013-03-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/near-real-time-processing-over-hadoop-and-hbase/</loc>
     <lastmod>2013-02-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/evangelizing-user-experience/</loc>
     <lastmod>2013-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/authors/charlie-huggard/</loc>
     <lastmod>2013-02-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/why-engineering-health/</loc>
     <lastmod>2013-02-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/blog/composable-mapreduce-with-hadoop-and-crunch/</loc>
     <lastmod>2013-02-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/culture/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/images/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/open-source/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/tech-talks/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/careers/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/categories/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.cerner.com/series/</loc>
   </url>
-  
 </urlset>

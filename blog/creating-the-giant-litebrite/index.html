@@ -27,22 +27,16 @@
 <meta property="og:description" content="Have you ever wondered what happens when you let two engineers loose on a project with a broad vision and little direction? In our case, LiteBrite happens.
 Every year Cerner hosts DevCon, an internal 2-day conference for all of Cerner engineering to come together, give talks about technologies, processes, and ideas - all with a little fun sprinkled in. DevCon always has a theme, for 2019 that was set to be “The 80s." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://engineering.cerner.com/blog/creating-the-giant-litebrite/" />
-<meta property="og:image" content="https://engineering.cerner.com/images/alan-grace.png"/>
+<meta property="og:url" content="https://engineering.cerner.com/blog/creating-the-giant-litebrite/" /><meta property="og:image" content="https://engineering.cerner.com/images/alan-grace.png"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-08-26T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-08-26T00:00:00+00:00" /><meta property="og:site_name" content="Cerner Engineering" />
+
 <meta itemprop="name" content="Creating the Giant LiteBrite">
 <meta itemprop="description" content="Have you ever wondered what happens when you let two engineers loose on a project with a broad vision and little direction? In our case, LiteBrite happens.
-Every year Cerner hosts DevCon, an internal 2-day conference for all of Cerner engineering to come together, give talks about technologies, processes, and ideas - all with a little fun sprinkled in. DevCon always has a theme, for 2019 that was set to be “The 80s.">
-<meta itemprop="datePublished" content="2020-08-26T00:00:00+00:00" />
+Every year Cerner hosts DevCon, an internal 2-day conference for all of Cerner engineering to come together, give talks about technologies, processes, and ideas - all with a little fun sprinkled in. DevCon always has a theme, for 2019 that was set to be “The 80s."><meta itemprop="datePublished" content="2020-08-26T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-08-26T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1942">
-<meta itemprop="image" content="https://engineering.cerner.com/images/alan-grace.png"/>
-
-
-
-<meta itemprop="keywords" content="makerspace,diy," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="wordCount" content="1942"><meta itemprop="image" content="https://engineering.cerner.com/images/alan-grace.png"/>
+<meta itemprop="keywords" content="makerspace,diy," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://engineering.cerner.com/images/alan-grace.png"/>
 
 <meta name="twitter:title" content="Creating the Giant LiteBrite"/>
@@ -265,7 +259,7 @@ At this point we also decided for ease of construction that we would keep the bo
 <p>We needed the color of a peg to change the instant a user pressed it to give the best possible user experience and encourage interaction. This necessitated that certain software components be optimized to minimize input lag.</p>
 <h3 id="arduino">Arduino</h3>
 <p>Each Arduino is responsible for the 38 buttons attached to it, and because of the multi user need, extra care was taken to ensure there were no double presses or miss counting occurring. Every Arduino is assigned a static IP address that correlates to the row it is listening to. Whenever a button in its charge is pressed, the Arduino broadcasts a UDP packet containing the state of the entire row in the form of a binary string.</p>
-<pre><code>01000000000000000000000000000000000000
+<pre tabindex="0"><code>01000000000000000000000000000000000000
 </code></pre><p>Using the IP and the index in the string one could know the (X,Y) position of  the button that was pressed. Bitwise operators were leveraged to ensure buttons were only registered once per press. With 38 buttons to connect to one tiny Arduino, all with white wires there was a high risk of connecting a button to an incorrect input.</p>
 <div align="center">
     <figure class="figure">
@@ -278,7 +272,7 @@ At this point we also decided for ease of construction that we would keep the bo
             </figcaption>
     </figure>
 </div>
-<p>We considered labelling each wire, but that was expensive, time consuming and still error prone. Then it hit us, lets plug in buttons at random and make the controller do the hard work. From this the Arduino &ldquo;training'' mode was created. In training mode each peg is pressed in order. The Arduino records the presses and creates a map to correlate expected input index to the physical input pin. Doing this added minimal processing overhead but streamlined assembly and will aid in troubleshooting.</p>
+<p>We considered labelling each wire, but that was expensive, time consuming and still error prone. Then it hit us, lets plug in buttons at random and make the controller do the hard work. From this the Arduino &ldquo;training&rsquo;&rsquo; mode was created. In training mode each peg is pressed in order. The Arduino records the presses and creates a map to correlate expected input index to the physical input pin. Doing this added minimal processing overhead but streamlined assembly and will aid in troubleshooting.</p>
 <h3 id="litebrite-controller">LiteBrite Controller</h3>
 <p>This is the main control software, it receives the UDP packets sent from the Arduinos and sets the LEDs through the FadeCandy board. When a peg is pressed the packet is sent that contains the (X,Y) coordinate for that button. The computer then updates the corresponding LED pixel at the matching coordinate. Each tap of a peg cycles a pixel through a list of available colors.</p>
 <p>Although we set out to create a LiteBrite, what we really created is better described as an interactive dot matrix display. This has several advantages, the largest of which being able to display premade static, and dynamic content. A good example of this in practice is our clear functionality. When the clear button is pressed Pac-Man will chomp across the display eating peoples designs and resetting all pegs to black.</p>
@@ -453,6 +447,5 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 </body>
 </html>

@@ -26,21 +26,15 @@
 <link rel="canonical" href="https://engineering.cerner.com/blog/devcon-word-cloud/"><script src="/js/jquery-3.5.1.min.js"></script><meta property="og:title" content="DevCon 2016 Word Cloud" />
 <meta property="og:description" content="Every year we hold an internal developers conference called DevCon. This year we had 295 submissions for talks, ranging from a deep technical dive into the inner workings of Kafka to a reflection on the power of office pranks.‌ I wondered what, if anything, do these submissions have in common? Are there any common themes/topics being discussed? To find out I decided to visualize the talk submissions in a word cloud to create an easily understandable (and hopefully aesthetically pleasing) view of what topics were most common." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://engineering.cerner.com/blog/devcon-word-cloud/" />
-<meta property="og:image" content="https://engineering.cerner.com/images/alan-grace.png"/>
+<meta property="og:url" content="https://engineering.cerner.com/blog/devcon-word-cloud/" /><meta property="og:image" content="https://engineering.cerner.com/images/alan-grace.png"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2016-09-28T00:00:00+00:00" />
 <meta property="article:modified_time" content="2016-09-28T00:00:00+00:00" /><meta property="og:site_name" content="Cerner Engineering" />
+
 <meta itemprop="name" content="DevCon 2016 Word Cloud">
-<meta itemprop="description" content="Every year we hold an internal developers conference called DevCon. This year we had 295 submissions for talks, ranging from a deep technical dive into the inner workings of Kafka to a reflection on the power of office pranks.‌ I wondered what, if anything, do these submissions have in common? Are there any common themes/topics being discussed? To find out I decided to visualize the talk submissions in a word cloud to create an easily understandable (and hopefully aesthetically pleasing) view of what topics were most common.">
-<meta itemprop="datePublished" content="2016-09-28T00:00:00+00:00" />
+<meta itemprop="description" content="Every year we hold an internal developers conference called DevCon. This year we had 295 submissions for talks, ranging from a deep technical dive into the inner workings of Kafka to a reflection on the power of office pranks.‌ I wondered what, if anything, do these submissions have in common? Are there any common themes/topics being discussed? To find out I decided to visualize the talk submissions in a word cloud to create an easily understandable (and hopefully aesthetically pleasing) view of what topics were most common."><meta itemprop="datePublished" content="2016-09-28T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2016-09-28T00:00:00+00:00" />
-<meta itemprop="wordCount" content="613">
-<meta itemprop="image" content="https://engineering.cerner.com/images/alan-grace.png"/>
-
-
-
-<meta itemprop="keywords" content="devcon,tech talks," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="wordCount" content="613"><meta itemprop="image" content="https://engineering.cerner.com/images/alan-grace.png"/>
+<meta itemprop="keywords" content="devcon,tech talks," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://engineering.cerner.com/images/alan-grace.png"/>
 
 <meta name="twitter:title" content="DevCon 2016 Word Cloud"/>
@@ -120,118 +114,118 @@
                             <p>Every year we hold an internal developers conference called <a href="http://engineering.cerner.com/2013/08/devcon/">DevCon</a>. This year
 we had 295 submissions for talks, ranging from a deep technical dive into the inner workings of Kafka to a reflection on the power of office pranks.‌ I wondered what, if anything, do these submissions have in common? Are there any common themes/topics being discussed? To find out I decided to visualize the talk submissions in a word cloud to create an easily understandable (and hopefully aesthetically pleasing) view of what topics were most common.</p>
 <p>The first step was some basic data cleaning so I could get a good set of words to visualize. I used Python to read in the submissions into a single string, lowercase all words, and then remove all common contractions.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># read all submissions into a single string</span>
-text <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#39;./submissions.txt&#39;</span>)<span style="color:#f92672">.</span>read()
-
-<span style="color:#75715e"># lower case</span>
-text <span style="color:#f92672">=</span> text<span style="color:#f92672">.</span>lower()
-
-<span style="color:#75715e"># remove all contractions to prevent situations like &#34;we&#39;ll&#34; becoming &#34;well&#34; once punctuation is removed</span>
-<span style="color:#75715e"># normally a regex tokenizer could be used for this but that assumes single quote is only ever used</span>
-<span style="color:#75715e"># in contractions</span>
-<span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#34;./resources/contractions.txt&#34;</span>, <span style="color:#e6db74">&#34;r&#34;</span>) <span style="color:#66d9ef">as</span> file:
-    contractions <span style="color:#f92672">=</span> file<span style="color:#f92672">.</span>read()<span style="color:#f92672">.</span>splitlines()
-    <span style="color:#66d9ef">for</span> contraction <span style="color:#f92672">in</span> contractions:
-        text <span style="color:#f92672">=</span> text<span style="color:#f92672">.</span>replace(contraction, <span style="color:#e6db74">&#34;&#34;</span>)
-
-
-
-Next I replaced all punctuation <span style="color:#66d9ef">with</span> spaces<span style="color:#f92672">.</span> I did <span style="color:#f92672">not</span> just remove the punctuation so special cases such <span style="color:#66d9ef">as</span> hyphenated<span style="color:#f92672">-</span>words <span style="color:#f92672">and</span> the phrase <span style="color:#e6db74">&#34;and/or&#34;</span> are preserved<span style="color:#f92672">.</span>
-
-<span style="color:#75715e"># replace all punctuation with spaces.</span>
-<span style="color:#66d9ef">for</span> char <span style="color:#f92672">in</span> set(string<span style="color:#f92672">.</span>punctuation):
-    text <span style="color:#f92672">=</span> text<span style="color:#f92672">.</span>replace(char, <span style="color:#e6db74">&#34; &#34;</span>)
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># read all submissions into a single string</span>
+</span></span><span style="display:flex;"><span>text <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#39;./submissions.txt&#39;</span>)<span style="color:#f92672">.</span>read()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># lower case</span>
+</span></span><span style="display:flex;"><span>text <span style="color:#f92672">=</span> text<span style="color:#f92672">.</span>lower()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># remove all contractions to prevent situations like &#34;we&#39;ll&#34; becoming &#34;well&#34; once punctuation is removed</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># normally a regex tokenizer could be used for this but that assumes single quote is only ever used</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># in contractions</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#34;./resources/contractions.txt&#34;</span>, <span style="color:#e6db74">&#34;r&#34;</span>) <span style="color:#66d9ef">as</span> file:
+</span></span><span style="display:flex;"><span>    contractions <span style="color:#f92672">=</span> file<span style="color:#f92672">.</span>read()<span style="color:#f92672">.</span>splitlines()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> contraction <span style="color:#f92672">in</span> contractions:
+</span></span><span style="display:flex;"><span>        text <span style="color:#f92672">=</span> text<span style="color:#f92672">.</span>replace(contraction, <span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Next I replaced all punctuation <span style="color:#66d9ef">with</span> spaces<span style="color:#f92672">.</span> I did <span style="color:#f92672">not</span> just remove the punctuation so special cases such <span style="color:#66d9ef">as</span> hyphenated<span style="color:#f92672">-</span>words <span style="color:#f92672">and</span> the phrase <span style="color:#e6db74">&#34;and/or&#34;</span> are preserved<span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># replace all punctuation with spaces.</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> char <span style="color:#f92672">in</span> set(string<span style="color:#f92672">.</span>punctuation):
+</span></span><span style="display:flex;"><span>    text <span style="color:#f92672">=</span> text<span style="color:#f92672">.</span>replace(char, <span style="color:#e6db74">&#34; &#34;</span>)
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>At this point I had 32,987 total words. A word cloud of this dataset was too noisy, predominated by common words like &ldquo;the&rdquo; and &ldquo;talk&rdquo;. In natural language processing these unwanted common words are called &ldquo;stop words&rdquo;. To remove them I made a list out of the submissions and then only kept words that were not in a list of common English words, supplemented by words specific to this data set, such as &ldquo;Cerner&rdquo; and &ldquo;presentation&rdquo;.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># get list of all words</span>
-submission_words <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>sub(<span style="color:#e6db74">&#34;[^\w]&#34;</span>, <span style="color:#e6db74">&#34; &#34;</span>, text)<span style="color:#f92672">.</span>split()
-
-<span style="color:#75715e"># only keep words that are not in the stop words set</span>
-stopwords <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#39;./resources/stopwords.txt&#39;</span>)<span style="color:#f92672">.</span>read()
-stopwords_set <span style="color:#f92672">=</span> set(stopwords<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>))
-filtered_word_list <span style="color:#f92672">=</span> [w <span style="color:#66d9ef">for</span> w <span style="color:#f92672">in</span> submission_words <span style="color:#66d9ef">if</span> w <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> stopwords_set]
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># get list of all words</span>
+</span></span><span style="display:flex;"><span>submission_words <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>sub(<span style="color:#e6db74">&#34;[^\w]&#34;</span>, <span style="color:#e6db74">&#34; &#34;</span>, text)<span style="color:#f92672">.</span>split()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># only keep words that are not in the stop words set</span>
+</span></span><span style="display:flex;"><span>stopwords <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#39;./resources/stopwords.txt&#39;</span>)<span style="color:#f92672">.</span>read()
+</span></span><span style="display:flex;"><span>stopwords_set <span style="color:#f92672">=</span> set(stopwords<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>))
+</span></span><span style="display:flex;"><span>filtered_word_list <span style="color:#f92672">=</span> [w <span style="color:#66d9ef">for</span> w <span style="color:#f92672">in</span> submission_words <span style="color:#66d9ef">if</span> w <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> stopwords_set]
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>This left me with a list of 14,291 words and 4,264 distinct words. When visualized I noticed many similar words were taking the highest spots, such as &ldquo;team&rdquo; and &ldquo;teams&rdquo; or &ldquo;technology&rdquo; and &ldquo;technologies&rdquo;. To remove some of this noise I turned to lemmatization. Lemmatization is the process of finding a canonical representation of a word, i.e. its lemma. For example, the lemma for the words &ldquo;runs&rdquo; and &ldquo;running&rdquo; is run. I used the popular Python library Natural Language Toolkit for lemmatization.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">lemmatizer <span style="color:#f92672">=</span> WordNetLemmatizer()
-reduced_list <span style="color:#f92672">=</span> []
-<span style="color:#75715e"># find the lemma of each word</span>
-<span style="color:#66d9ef">for</span> word <span style="color:#f92672">in</span> filtered_word_list:
-  reduced_list<span style="color:#f92672">.</span>append(lemmatizer<span style="color:#f92672">.</span>lemmatize(word))
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>lemmatizer <span style="color:#f92672">=</span> WordNetLemmatizer()
+</span></span><span style="display:flex;"><span>reduced_list <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># find the lemma of each word</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> word <span style="color:#f92672">in</span> filtered_word_list:
+</span></span><span style="display:flex;"><span>  reduced_list<span style="color:#f92672">.</span>append(lemmatizer<span style="color:#f92672">.</span>lemmatize(word))
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>This reduced the dataset to 3,834 distinct words. Now that the dataset was cleaned, common words filtered out, and similar words combined it was time to create the word cloud using a project called <a href="https://github.com/amueller/word_cloud">word_cloud</a>.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">cloud <span style="color:#f92672">=</span> WordCloud(relative_scaling<span style="color:#f92672">=.</span><span style="color:#ae81ff">5</span>, height<span style="color:#f92672">=</span><span style="color:#ae81ff">1024</span>, width<span style="color:#f92672">=</span><span style="color:#ae81ff">760</span>)
-cloud<span style="color:#f92672">.</span>generate(submissions)
-
-<span style="color:#75715e"># write to file</span>
-cloud<span style="color:#f92672">.</span>to_file(path<span style="color:#f92672">.</span>join(path<span style="color:#f92672">.</span>dirname(__file__), <span style="color:#e6db74">&#34;cloud.png&#34;</span>))
-
-<span style="color:#75715e"># show word cloud using matplotlib</span>
-plt<span style="color:#f92672">.</span>imshow(cloud)
-plt<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#34;off&#34;</span>)
-plt<span style="color:#f92672">.</span>show()
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>cloud <span style="color:#f92672">=</span> WordCloud(relative_scaling<span style="color:#f92672">=</span><span style="color:#ae81ff">.5</span>, height<span style="color:#f92672">=</span><span style="color:#ae81ff">1024</span>, width<span style="color:#f92672">=</span><span style="color:#ae81ff">760</span>)
+</span></span><span style="display:flex;"><span>cloud<span style="color:#f92672">.</span>generate(submissions)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># write to file</span>
+</span></span><span style="display:flex;"><span>cloud<span style="color:#f92672">.</span>to_file(path<span style="color:#f92672">.</span>join(path<span style="color:#f92672">.</span>dirname(__file__), <span style="color:#e6db74">&#34;cloud.png&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># show word cloud using matplotlib</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>imshow(cloud)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#34;off&#34;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div align="center">
     <figure class="figure">
@@ -387,6 +381,5 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
 </body>
 </html>
