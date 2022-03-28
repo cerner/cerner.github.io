@@ -29,6 +29,11 @@ theme = "eh-theme"
     name = "Tech Talks"
     url = "/tech-talks/"
     weight = 4
+  [[menu.main]]
+    identifier = "careers"
+    name = "Careers"
+    url = "/careers/"
+    weight = 5
 
 [taxonomies]
 category = "categories"
