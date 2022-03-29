@@ -2,12 +2,120 @@
   "ignorePatterns": [
     {
       "pattern": "^http://example.net"
+    },
+    {
+      "_comment": "The following links have been added as a backlog for clean-up.",
+      "pattern": "^https://github.com/joehuck/bash_projects"
+    },
+    {
+      "pattern": "^https://www.confluent.io/kafka-summit-2016-users-ingesting-complex-healthcare-data-with-apache-kafka"
+    },
+    {
+      "pattern": "^http://engineering.cerner.com/bunsen/introduction.html#bring-your-own-value-sets"
+    },
+    {
+      "pattern": "^http://www.usfirst.org/roboticsprograms/first-championship"
+    },
+    {
+      "pattern": "^https://hadoop.apache.org/docs/r2.2.0/api/org/apache/hadoop/conf/Configuration.html"
+    },
+    {
+      "pattern": "^http://hadoop.apache.org/docs/r2.3.0/api/org/apache/hadoop/mapreduce/Job.html#setJarByClass(java.lang.Class)"
+    },
+    {
+      "pattern": "^http://events.linuxfoundation.org/sites/events/files/slides/Simplifying%20Big%20Data%20with%20Apache%20Crunch.pdf"
+    },
+    {
+      "pattern": "^https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#accessibility-a11y"
+    },
+    {
+      "pattern": "^https://engineering.cerner.com/terra-ui/home/terra-ui/index"
+    },
+    {
+      "pattern": "^http://www.sdlearningconsortium.org/who-we-are/"
+    },
+    {
+      "pattern": "^http://www.sdlearningconsortium.org/what-we-have-learned/"
+    },
+    {
+      "pattern": "^https://www.monsterenergy.com/ "
+    },
+    {
+      "pattern": "^http://www.cerner.com/about_cerner/partnerships/operational_system_management/"
+    },
+    {
+      "pattern": "^https://www.girldevelopit.com/chapters/kansas-city"
+    },
+    {
+      "pattern": "^https://ghc.anitaborg.org/"
+    },
+    {
+      "pattern": "^http://wiki.directproject.org/Java+Reference+Implementation"
+    },
+    {
+      "pattern": "^http://logs-01.loggly.com/inputs/WWWWWWW-55555-5555555-55WW55-WWWWW55555/tag/http/"
+    },
+    {
+      "pattern": "^http://kcpowersource.com/appcamp/"
+    },
+    {
+      "pattern": "^https://store.cerner.com/"
+    },
+    {
+      "pattern": "^http://argonautwiki.hl7.org/index.php?title=Main_Page"
+    },
+    {
+      "pattern": "^https://www.fhirdevdays.com/boston/"
+    },
+    {
+      "pattern": "^https://devcentral.f5.com/d/icontrol-rest-api-reference-version-120"
+    },
+    {
+      "pattern": "^https://pythonhosted.org/pyenchant/"
+    },
+    {
+      "pattern": "^http://wiki.opscode.com/display/chef/Home"
+    },
+    {
+      "pattern": "^https://github.com/wuchenwang"
+    },
+    {
+      "pattern": "^https://engineering.cerner.com/terra-ui/getting-started/terra-ui/installing-components"
+    },
+    {
+      "pattern": "^https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+archived%3Afalse+repo%3Acerner%2Fduplicate-package-checker-webpack-plugin+repo%3Acerner%2Fterra-aggregate-translations+repo%3Acerner%2Fterra-clinical+repo%3Acerner%2Fterra-core+repo%3Acerner%2Fterra-dev-site+repo%3Acerner%2Fterra-enzyme-intl+repo%3Acerner%2Fterra-framework+repo%3Acerner%2Fterra-toolkit+repo%3Acerner%2Fgenerator-terra-module+repo%3Acerner%2Feslint-config-terra+repo%3Acerner%2Fstylelint-config-terra+repo%3Acerner%2Fbrowserslist-config-terra+repo%3Acerner%2Fterra-ui"
+    },
+    {
+      "pattern": "^https://engineering.cerner.com/terra-ui/contributing/terra-ui/prerequisites"
+    },
+    {
+      "pattern": "^http://www.jewell.edu/tucker"
+    },
+    {
+      "pattern": "^http://www.cerner.com/About_Cerner/Careers/Student_Development/College_Students/"
+    },
+    {
+      "pattern": "^http://terra-ui.herokuapp.com/home"
+    },
+    {
+      "pattern": "^https://ramcloud.stanford.edu/wiki/download/attachments/11370504/raft.pdf"
+    },
+    {
+      "pattern": "^https://www.monsterenergy.com/"
     }
   ],
   "replacementPatterns": [
     {
       "pattern": "^/",
       "replacement": "https://engineering.cerner.com/"
+    },
+    {
+      "pattern": "&quot;$",
+      "replacement": ""
+    },
+    {
+      "pattern": "&quot;&gt;$",
+      "replacement": ""
     }
   ]
 }
