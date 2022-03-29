@@ -1,6 +1,5 @@
 baseURL = "https://engineering.cerner.com"
 title = "Engineering Health"
-copyright = "Copyright © 2021"
 paginate = 10
 languageCode = "en"
 DefaultContentLanguage = "en"
@@ -30,6 +29,11 @@ theme = "eh-theme"
     name = "Tech Talks"
     url = "/tech-talks/"
     weight = 4
+  [[menu.main]]
+    identifier = "careers"
+    name = "Careers"
+    url = "/careers/"
+    weight = 5
 
 [taxonomies]
 category = "categories"
