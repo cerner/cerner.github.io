@@ -43,7 +43,7 @@ loosely based on the biography Alan Turing: The Enigma. It can be argued that
 computer science would not be what it is today without the mathematical
 imagination of Alan Turing. Cue the mic drop now.
 
-{{< figure src="alan-turing.jpg" alt="Alan" attr="alanturing.net" attrlink="http://www.alanturing.net/turing_archive/graphics/photos%20of%20Turing/pages/alan1_psd.htm">}}
+{{< figure src="alan-turing.jpg" alt="Alan" attr="alanturing.net" attrlink="http://www.alanturing.net/turing_archive/graphics/photos%20of%20Turing/pages/alan1_psd.htm" >}}
 {{< figure src="turing-machine.jpg" alt="Turing Machine" attr="nbcnews.com" attrlink="http://worldnews.nbcnews.com/_news/2013/12/23/22025978-queen-pardons-computing-giant-alan-turing-59-years-after-his-suicide" >}}
 
 ___
@@ -70,7 +70,7 @@ Computing Conference, the University of Missouri’s computer museum “Grace’
 Place”, and now Cerner’s Engineering mascot. Grace continues to serve as an
 inspiration to women in tech everywhere. Was there any other choice?
 
-{{< figure src="grace-hopper.jpg" alt="Grace Hopper" attr="womenatworkmuseum.org" attrlink="http://www.womenatworkmuseum.org/envision-engineering.html">}}
+{{< figure src="grace-hopper.jpg" alt="Grace Hopper" attr="womenatworkmuseum.org" attrlink="http://www.womenatworkmuseum.org/envision-engineering.html" >}}
 {{< figure src="grace-hopper-2.jpg" alt="Grace Hopper" attr="wikipedia.org" attrlink="https://en.wikipedia.org/wiki/Grace_Hopper" >}}
 
 Alan and Grace represent a beacon of inspiration, providing icons that
