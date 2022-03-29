@@ -32,7 +32,7 @@ Building a Processing Pipeline with Apache Crunch
 
 Apache Crunch allows developers to construct complicated processing workflows into [pipelines](http://crunch.apache.org/user-guide.html#mrpipeline).  Pipelines are directed acyclic graphs (DAG) comprised of input data that is then transformed through functions and groupings to produce output data.  When a developer is done constructing the pipeline Apache Crunch will calculate the appropriate processing steps and submit the steps to the execution engine.  In this example we will talk about using Apache Crunch in the context of MapReduce but it also supports running on [Apache Spark](http://spark.apache.org/).  It should be noted that pipelines are lazily executed.  This means that no work will be done until the pipeline is executed.
 
-To begin processing we need a pipeline instance on which we will construct our DAG.  To create a MRPipeline we need the typical Hadoop [Configuration](https://hadoop.apache.org/docs/r2.2.0/api/org/apache/hadoop/conf/Configuration.html) instance for the cluster and [the driver class](http://hadoop.apache.org/docs/r2.3.0/api/org/apache/hadoop/mapreduce/Job.html#setJarByClass(java.lang.Class)) for the processing.
+To begin processing we need a pipeline instance on which we will construct our DAG.  To create a MRPipeline we need the typical Hadoop [Configuration](https://hadoop.apache.org/docs/r2.2.0/api/org/apache/hadoop/conf/Configuration.html) instance for the cluster and [the driver class](https://hadoop.apache.org/docs/stable/api/org/apache/hadoop/mapreduce/Job.html#setJarByClass-java.lang.Class-) for the processing.
 
 ```java
 Pipeline pipeline = new MRPipeline(Driver.class, conf);

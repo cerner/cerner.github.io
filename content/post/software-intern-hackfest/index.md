@@ -101,4 +101,4 @@ We knew it had to be 2-d. We built the framework with a grid structure. We made 
 
 ### Learn More
 
-For more information about the Cerner Summer Intern Program, visit [Cerner Careers Opportunities for College Students](http://www.cerner.com/About_Cerner/Careers/Student_Development/College_Students/).
+For more information about the Cerner Summer Intern Program, visit [Cerner Careers Opportunities for College Students](https://careers.cerner.com/students-graduates).

@@ -60,7 +60,7 @@ While using Terra gives you a good head start on building an accessible applicat
 
 Developing applications for the web is inherently complex. Adding accessibility does not simplify development. By ensuring accessibility is applied to the Terra application framework and components, we are making the right thing, the easy thing to do for applications utilizing Terra. Furthermore, this has made our products more predictable in how users access their functionality since it is being consistently applied. It has been our experience that implementing a consistent semantic layout and a sensible keyboard navigation order lead directly to a logically organized information architecture.
 
-If you would like to learn more about Terra, [check out its documentation](https://engineering.cerner.com/terra-ui/home/terra-ui/index). It’s all open source and we’d love to hear what you think.
+If you would like to learn more about Terra, [check out its documentation](https://engineering.cerner.com/terra-ui/). It’s all open source and we’d love to hear what you think.
 
 In closing, I'd like to provide a quote from my friend, Neil Pfeiffer, UX Designer, that I think sums up our mission nicely.
 
