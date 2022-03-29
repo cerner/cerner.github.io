@@ -115,7 +115,7 @@ The first significant use of Hadoop at Cerner came in building search indexes fo
                     <div class="col-lg-8">
                         <div class="content">
                             <h2 id="from-mapreduce-to-realtime">From MapReduce to realtime</h2>
-<p>This post covers much of the <a href="http://na.apachecon.com/schedule/presentation/161/">Near-Realtime Processing Over HBase</a> talk I’m giving at <a href="http://na.apachecon.com/">ApacheCon NA 2013</a> in blog form. It also draws from the <a href="http://strataconf.com/stratany2012/public/schedule/detail/25387">Hadoop, HBase, and Healthcare</a> talk from StrataConf/Hadoop World 2012.</p>
+<p>This post covers much of the <a href="https://www.youtube.com/watch?v=MecziNEsg20">Near-Realtime Processing Over HBase</a> talk I’m giving at <a href="https://www.apachecon.com/history.html">ApacheCon NA 2013</a> in blog form. It also draws from the <a href="https://cdn.oreillystatic.com/en/assets/1/event/85/Hadoop,%20HBase,%20and%20Healthcare%20Presentation.pptx">Hadoop, HBase, and Healthcare</a> talk from StrataConf/Hadoop World 2012.</p>
 <p>The first significant use of Hadoop at Cerner came in building search indexes for patient charts. While creation of simple search indexes is almost commoditized, we wanted a better experience based on clinical semantics. For instance, if a user searches for &ldquo;heart disease&rdquo; and a patient has &ldquo;myocardial infarction&rdquo; documented, that document should be highly ranked in the results.</p>
 <p>Analyzing and semantically annotating can be computationally expensive, especially when building indexes that could grow into the billions. Algorithms in this space may be discussed in a future blog post, but for now we focus on creation of an infrastructure up to the computational demands. For this, Hadoop is a great fit. A search index is logically a function of a set of input data, and MapReduce allows us to apply such functions in parallel across an arbitrarily large data set.</p>
 <div align="center">
@@ -144,7 +144,7 @@ The first significant use of Hadoop at Cerner came in building search indexes fo
 <p>And despite these differences, our processing output must be the identical; we need to apply the same logic across very different processing models.</p>
 <h2 id="realtime-and-batch-layers">Realtime and batch layers</h2>
 <p>These significant differences mean different processing infrastructures. Nathan Marz described this well in his <a href="http://nathanmarz.com/blog/how-to-beat-the-cap-theorem.html">How to Beat the CAP Theorem</a> post. The result is a system that uses complementary technologies: stream-based processing with <a href="http://storm-project.net/%22">Storm</a> and batch processing with Hadoop.</p>
-<p>Interestingly, <a href="http://hbase.apache.org/%22">HBase</a> sits at a juncture between realtime and batch processing models. It offers aspects of batch processing; computation can be moved to the data via direct MapReduce support. It also supports realtime patterns with random access and fast</p>
+<p>Interestingly, <a href="http://hbase.apache.org/">HBase</a> sits at a juncture between realtime and batch processing models. It offers aspects of batch processing; computation can be moved to the data via direct MapReduce support. It also supports realtime patterns with random access and fast</p>
 <div align="center">
     <figure class="figure">
         <a href="realtime-layer-batch-layer.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
