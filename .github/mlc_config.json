@@ -75,6 +75,14 @@
     },
     {
       "pattern": "^https://www.vertica.com/"
+    },
+    {
+      "_comment": "Valid URL, though it does have the browser initially get a 404, then /terra-ui/ does a re-write on the referrer",
+      "pattern": "^https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#accessibility-a11y"
+    },
+    {
+      "_comment": "Valid URL, though it does have the browser initially get a 404, then /terra-ui/ does a re-write on the referrer",
+      "pattern": "^https://engineering.cerner.com/terra-ui/about/terra-ui/contributing/contribution-guidelines"
     }
   ],
   "replacementPatterns": [
