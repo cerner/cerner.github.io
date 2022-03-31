@@ -8,7 +8,7 @@ aliases: ["/2013/08/devcon/"]
 
 This past June, 2,500 associates from across Cerner came together for [DevCon](http://www.youtube.com/watch?v=cE0YoFg-hkE), our internal developers conference. Now in its 3rd year, DevCon is a two-day, engineering-led conference that was created to bring together Cerner associates involved in all aspects of development and technology. DevCon is organized and run like many other developer conferences, complete with a call for papers and a talk selection committee. This year, we had 80 talks covering a wide array of topics such as big data, user experience and design, DevOps, and mobile development.
 
-A keynote presentation kicks off each day followed by talks across multiple tracks. [Chris Brown](https://twitter.com/skeptomai), CTO of [Opscode](http://www.opscode.com/), the creators of the open-source [Chef Platform](http://wiki.opscode.com/display/chef/Home), kicked off DevCon this year with a talk on the emergence and importance of DevOps. Within engineering at Cerner, embracing DevOps has had a big cultural impact on how we approach the software and systems we write and operate.
+A keynote presentation kicks off each day followed by talks across multiple tracks. [Chris Brown](https://twitter.com/skeptomai), CTO of [Opscode](http://www.opscode.com/), the creators of the open-source [Chef Platform](https://docs.chef.io/platform_overview/), kicked off DevCon this year with a talk on the emergence and importance of DevOps. Within engineering at Cerner, embracing DevOps has had a big cultural impact on how we approach the software and systems we write and operate.
 
 {{< youtube D2hK5WpYaWc >}}
 
