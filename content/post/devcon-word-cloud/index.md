@@ -74,6 +74,6 @@ plt.show()
 
 {{< figure src="word_cloud.png" alt="Word Cloud" >}}
 
-Success! It is obvious what some of the most common themes are, such as "data" and "team". Possible future steps for cleaning up the data would be grouping noun phrases, such as "software engineer" into single words or possibly removing common spelling mistakes using a spell checking library like [PyEnchant](https://pythonhosted.org/pyenchant/).
+Success! It is obvious what some of the most common themes are, such as "data" and "team". Possible future steps for cleaning up the data would be grouping noun phrases, such as "software engineer" into single words or possibly removing common spelling mistakes using a spell checking library like [PyEnchant](https://pypi.org/project/pyenchant/).
 
 You can checkout the full code on [Github](https://github.com/ikottman/devcon-word-cloud).
