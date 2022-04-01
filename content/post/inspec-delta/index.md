@@ -8,8 +8,6 @@ thumbnail: "inspec-delta-bg.png"
 
 Today, we are excited to announce our newest addition in our open-source family, [Inspec Delta](https://github.com/cerner/inspec_delta)! In this blog post, we will explain how this is utilized at Cerner to reduce the time in comparing updated infrastructure security benchmarks. Whether you are new to automating your security compliance or have had to deal with maintaining updates to existing benchmarks, this blog post is for you!
 
-<!--more-->
-
 {{< figure src="inspec-delta-icon.png" width="300">}}
 
 ## Background
