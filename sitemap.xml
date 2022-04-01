@@ -2,13 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://engineering.cerner.com/authors/jeremy-perron/</loc>
-    <lastmod>2021-05-11T00:00:00+00:00</lastmod>
+    <loc>https://engineering.cerner.com/authors/carl-chesser/</loc>
+    <lastmod>2022-04-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://engineering.cerner.com/authors/</loc>
-    <lastmod>2021-05-11T00:00:00+00:00</lastmod>
+    <lastmod>2022-04-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://engineering.cerner.com/</loc>
+    <lastmod>2022-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://engineering.cerner.com/blog/information-flow-cultures/</loc>
+    <lastmod>2022-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://engineering.cerner.com/post/</loc>
+    <lastmod>2022-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://engineering.cerner.com/tags/</loc>
+    <lastmod>2022-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://engineering.cerner.com/tags/tech-talks/</loc>
+    <lastmod>2022-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://engineering.cerner.com/authors/jeremy-perron/</loc>
     <lastmod>2021-05-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://engineering.cerner.com/blog/inspec-delta/</loc>
@@ -17,13 +32,7 @@
     <loc>https://engineering.cerner.com/tags/oss/</loc>
     <lastmod>2021-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://engineering.cerner.com/post/</loc>
-    <lastmod>2021-05-11T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://engineering.cerner.com/tags/security/</loc>
-    <lastmod>2021-05-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://engineering.cerner.com/tags/</loc>
     <lastmod>2021-05-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://engineering.cerner.com/authors/whitney-roark/</loc>
@@ -67,9 +76,6 @@
   </url><url>
     <loc>https://engineering.cerner.com/tags/makerspace/</loc>
     <lastmod>2020-08-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://engineering.cerner.com/authors/carl-chesser/</loc>
-    <lastmod>2020-08-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://engineering.cerner.com/blog/we-are-back-w-new-look/</loc>
     <lastmod>2020-08-04T00:00:00+00:00</lastmod>
@@ -564,9 +570,6 @@
     <lastmod>2016-10-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://engineering.cerner.com/blog/devcon-word-cloud/</loc>
-    <lastmod>2016-09-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://engineering.cerner.com/tags/tech-talks/</loc>
     <lastmod>2016-09-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://engineering.cerner.com/tags/debugging/</loc>

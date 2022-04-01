@@ -1,6 +1,6 @@
 [
     {
-        "uri": "https://engineering.cerner.com/authors/jeremy-perron/",
+        "uri": "https://engineering.cerner.com/authors/carl-chesser/",
         "title": "",
         "tags": [],
         "description": "",
@@ -21,6 +21,41 @@
         "content": ""
     },
     {
+        "uri": "https://engineering.cerner.com/blog/information-flow-cultures/",
+        "title": "Information Flow Cultures with Dr. Ron Westrum",
+        "tags": ["tech talks"],
+        "description": "",
+        "content": "Last month, we had the pleasure of having Dr. Ron Westrum join us in our Tech Talk series at Cerner. Dr. Westrum is an Emeritus Professor of Sociology at Eastern Michigan University and author of the Westrum organizational typology model. In his talk, he discusses how an information flow culture reflects how managers shape values and behavior. The first part of this talk will discuss information flow in organizations, as well as provide a case study on Boeing. In the second part, he discusses the continuation of that research, which underscores the importance of his work.\nThrough his talk, there were several points he made that stood out to me. I loved the term organizational justice that he shares. This describes when people who do the good things get rewarded for doing the good things. It seems simple, but I feel the usage of justice reminds us of the importance in giving recognition for desired behaviors, else it is an injustice.\nAnother reference he shared that I found valuable was collective efficacy. When a team works together, they can achieve miracles. This allows you to act together as a team, you think together as a team, and believe together in what you can achieve as one (you have the will to believe). Finally, I enjoyed his reference to an arc of faith between us and our customers. The visualization of an arc reminds me of the importance of staying directly connected with those who use or experience our systems.\nHere is the recording of the talk and we hope you also enjoy the insights Dr. Westrum shares:\n  "
+    },
+    {
+        "uri": "https://engineering.cerner.com/post/",
+        "title": "Posts",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
+        "uri": "https://engineering.cerner.com/tags/",
+        "title": "Tags",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
+        "uri": "https://engineering.cerner.com/tags/tech-talks/",
+        "title": "tech talks",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
+        "uri": "https://engineering.cerner.com/authors/jeremy-perron/",
+        "title": "",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
         "uri": "https://engineering.cerner.com/blog/inspec-delta/",
         "title": "Introducing Inspec Delta",
         "tags": ["security", "oss"],
@@ -35,22 +70,8 @@
         "content": ""
     },
     {
-        "uri": "https://engineering.cerner.com/post/",
-        "title": "Posts",
-        "tags": [],
-        "description": "",
-        "content": ""
-    },
-    {
         "uri": "https://engineering.cerner.com/tags/security/",
         "title": "security",
-        "tags": [],
-        "description": "",
-        "content": ""
-    },
-    {
-        "uri": "https://engineering.cerner.com/tags/",
-        "title": "Tags",
         "tags": [],
         "description": "",
         "content": ""
@@ -149,13 +170,6 @@
     {
         "uri": "https://engineering.cerner.com/tags/makerspace/",
         "title": "makerspace",
-        "tags": [],
-        "description": "",
-        "content": ""
-    },
-    {
-        "uri": "https://engineering.cerner.com/authors/carl-chesser/",
-        "title": "",
         "tags": [],
         "description": "",
         "content": ""
@@ -1314,13 +1328,6 @@
         "tags": ["devcon", "tech talks"],
         "description": "",
         "content": "Every year we hold an internal developers conference called DevCon. This year we had 295 submissions for talks, ranging from a deep technical dive into the inner workings of Kafka to a reflection on the power of office pranks.‌ I wondered what, if anything, do these submissions have in common? Are there any common themes/topics being discussed? To find out I decided to visualize the talk submissions in a word cloud to create an easily understandable (and hopefully aesthetically pleasing) view of what topics were most common.\nThe first step was some basic data cleaning so I could get a good set of words to visualize. I used Python to read in the submissions into a single string, lowercase all words, and then remove all common contractions.\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  # read all submissions into a single string text = open(\u0026#39;./submissions.txt\u0026#39;).read()  # lower case text = text.lower()  # remove all contractions to prevent situations like \u0026#34;we\u0026#39;ll\u0026#34; becoming \u0026#34;well\u0026#34; once punctuation is removed # normally a regex tokenizer could be used for this but that assumes single quote is only ever used # in contractions with open(\u0026#34;./resources/contractions.txt\u0026#34;, \u0026#34;r\u0026#34;) as file:  contractions = file.read().splitlines()  for contraction in contractions:  text = text.replace(contraction, \u0026#34;\u0026#34;)    Next I replaced all punctuation with spaces. I did not just remove the punctuation so special cases such as hyphenated-words and the phrase \u0026#34;and/or\u0026#34; are preserved.  # replace all punctuation with spaces. for char in set(string.punctuation):  text = text.replace(char, \u0026#34; \u0026#34;)   At this point I had 32,987 total words. A word cloud of this dataset was too noisy, predominated by common words like \u0026ldquo;the\u0026rdquo; and \u0026ldquo;talk\u0026rdquo;. In natural language processing these unwanted common words are called \u0026ldquo;stop words\u0026rdquo;. To remove them I made a list out of the submissions and then only kept words that were not in a list of common English words, supplemented by words specific to this data set, such as \u0026ldquo;Cerner\u0026rdquo; and \u0026ldquo;presentation\u0026rdquo;.\n1 2 3 4 5 6 7  # get list of all words submission_words = re.sub(\u0026#34;[^\\w]\u0026#34;, \u0026#34; \u0026#34;, text).split()  # only keep words that are not in the stop words set stopwords = open(\u0026#39;./resources/stopwords.txt\u0026#39;).read() stopwords_set = set(stopwords.split(\u0026#34;\\n\u0026#34;)) filtered_word_list = [w for w in submission_words if w not in stopwords_set]   This left me with a list of 14,291 words and 4,264 distinct words. When visualized I noticed many similar words were taking the highest spots, such as \u0026ldquo;team\u0026rdquo; and \u0026ldquo;teams\u0026rdquo; or \u0026ldquo;technology\u0026rdquo; and \u0026ldquo;technologies\u0026rdquo;. To remove some of this noise I turned to lemmatization. Lemmatization is the process of finding a canonical representation of a word, i.e. its lemma. For example, the lemma for the words \u0026ldquo;runs\u0026rdquo; and \u0026ldquo;running\u0026rdquo; is run. I used the popular Python library Natural Language Toolkit for lemmatization.\n1 2 3 4 5  lemmatizer = WordNetLemmatizer() reduced_list = [] # find the lemma of each word for word in filtered_word_list:  reduced_list.append(lemmatizer.lemmatize(word))   This reduced the dataset to 3,834 distinct words. Now that the dataset was cleaned, common words filtered out, and similar words combined it was time to create the word cloud using a project called word_cloud.\n1 2 3 4 5 6 7 8 9 10  cloud = WordCloud(relative_scaling=.5, height=1024, width=760) cloud.generate(submissions)  # write to file cloud.to_file(path.join(path.dirname(__file__), \u0026#34;cloud.png\u0026#34;))  # show word cloud using matplotlib plt.imshow(cloud) plt.axis(\u0026#34;off\u0026#34;) plt.show()      Success! It is obvious what some of the most common themes are, such as \u0026ldquo;data\u0026rdquo; and \u0026ldquo;team\u0026rdquo;. Possible future steps for cleaning up the data would be grouping noun phrases, such as \u0026ldquo;software engineer\u0026rdquo; into single words or possibly removing common spelling mistakes using a spell checking library like PyEnchant.\nYou can checkout the full code on Github.\n"
-    },
-    {
-        "uri": "https://engineering.cerner.com/tags/tech-talks/",
-        "title": "tech talks",
-        "tags": [],
-        "description": "",
-        "content": ""
     },
     {
         "uri": "https://engineering.cerner.com/tags/debugging/",

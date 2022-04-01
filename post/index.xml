@@ -6,14 +6,24 @@
     <description>Recent content in Posts on Engineering Health</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 11 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://engineering.cerner.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://engineering.cerner.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Information Flow Cultures with Dr. Ron Westrum</title>
+      <link>https://engineering.cerner.com/blog/information-flow-cultures/</link>
+      <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/information-flow-cultures/</guid>
+      <description>Last month, we had the pleasure of having Dr. Ron Westrum join us in our Tech Talk series at Cerner. Dr. Westrum is an Emeritus Professor of Sociology at Eastern Michigan University and author of the Westrum organizational typology model. In his talk, he discusses how an information flow culture reflects how managers shape values and behavior. The first part of this talk will discuss information flow in organizations, as well as provide a case study on Boeing.</description>
+    </item>
+    
     <item>
       <title>Introducing Inspec Delta</title>
       <link>https://engineering.cerner.com/blog/inspec-delta/</link>
       <pubDate>Tue, 11 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.cerner.com/blog/inspec-delta/</guid>
-      <description>&lt;p&gt;Today, we are excited to announce our newest addition in our open-source family, &lt;a href=&#34;https://github.com/cerner/inspec_delta&#34;&gt;Inspec Delta&lt;/a&gt;! In this blog post, we will explain how this is utilized at Cerner to reduce the time in comparing updated infrastructure security benchmarks. Whether you are new to automating your security compliance or have had to deal with maintaining updates to existing benchmarks, this blog post is for you!&lt;/p&gt;</description>
+      <description>Today, we are excited to announce our newest addition in our open-source family, Inspec Delta! In this blog post, we will explain how this is utilized at Cerner to reduce the time in comparing updated infrastructure security benchmarks. Whether you are new to automating your security compliance or have had to deal with maintaining updates to existing benchmarks, this blog post is for you!
+   Background As security standards continuously evolve, the Defense Information Systems Agency (DISA) releases a new revision to their STIG (Security Technical Implementation Guide) for each Operating System major version, as well as certain applications.</description>
     </item>
     
     <item>
