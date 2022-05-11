@@ -6,7 +6,7 @@ tags: [culture, engineering]
 thumbnail: "asf-sponsorship-silver-logo.jpg"
 ---
 
-At the beginning of this year, [we announced that Cerner became a bronze-level sponsor]({%post_url 2014-01-28-sponsoring-the-apache-software-foundation%}) of the non-profit [Apache Software Foundation](http://www.apache.org/) (ASF). Many of the open source projects we use and contribute to are under the ASF umbrella, so supporting the mission and work of the ASF is important to us.
+At the beginning of this year, [we announced that Cerner became a bronze-level sponsor]({{<ref "sponsoring-the-apache-software-foundation">}}) of the non-profit [Apache Software Foundation](http://www.apache.org/) (ASF). Many of the open source projects we use and contribute to are under the ASF umbrella, so supporting the mission and work of the ASF is important to us.
 
 We're happy to announce that [Cerner has now increased our sponsorship of the ASF to become a silver-level sponsor](http://www.apache.org/foundation/thanks.html). Open source continues to play an integral role in both our architecture and engineering culture. We've blogged and spoken at conferences about how several ASF projects are core foundational components in our architecture and several of our [tech talks](http://www.youtube.com/playlist?list=PLSti19ysyJtDYa2JdSjVYWaKhuul1jPUP) have focused on ASF projects.
 
