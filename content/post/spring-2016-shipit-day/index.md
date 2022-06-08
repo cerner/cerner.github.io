@@ -62,7 +62,7 @@ Really Tardy Measurement mechanicS (Jeff Compton, Himanshi Gulati, Adam Splitter
 Vimaraju)
 
 > The _Response Time Measurement System (RTMS)_ framework, which our team owns, is dependent on many moving parts, such as: [Hadoop](http://hadoop.apache.org/) and [Jenkins](https://jenkins.io/index.html)
-in order to produce a timer. In addition, using [Vertica](http://www8.hp.com/us/en/software-solutions/advanced-sql-big-data-analytics/index.html), [Tableau](http://www.tableau.com/), [LightsOn Network](https://lightson.cerner.com/), and the Cerner Olympus portal for reporting
+in order to produce a timer. In addition, using [Vertica](https://www.vertica.com/), [Tableau](http://www.tableau.com/), [LightsOn Network](https://www.cerner.com/solutions/lights-on-network), and the Cerner Olympus portal for reporting
 timer data.  This framework has been consolidated into a single application which can be used for development or
 troubleshooting of timers.  Currently the application supports [Splunk](http://www.splunk.com/) (for [Millennium+](http://www.cerner.com/newsroom.aspx?id=17179872330)), [Millennium](http://www.cerner.com/solutions/hospitals_and_health_systems/) application-produced
 checkpoint CSV files, or produce timers real-time as a Millennium application sends checkpoint data to it.  After timers
