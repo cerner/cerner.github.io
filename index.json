@@ -21,11 +21,18 @@
         "content": ""
     },
     {
-        "uri": "https://engineering.cerner.com/blog/information-flow-cultures/",
-        "title": "Information Flow Cultures with Dr. Ron Westrum",
-        "tags": ["tech talks"],
+        "uri": "https://engineering.cerner.com/tags/graphql/",
+        "title": "graphql",
+        "tags": [],
         "description": "",
-        "content": "Last month, we had the pleasure of having Dr. Ron Westrum join us in our Tech Talk series at Cerner. Dr. Westrum is an Emeritus Professor of Sociology at Eastern Michigan University and author of the Westrum organizational typology model. In his talk, he discusses how an information flow culture reflects how managers shape values and behavior. The first part of this talk will discuss information flow in organizations, as well as provide a case study on Boeing. In the second part, he discusses the continuation of that research, which underscores the importance of his work.\nThrough his talk, there were several points he made that stood out to me. I loved the term organizational justice that he shares. This describes when people who do the good things get rewarded for doing the good things. It seems simple, but I feel the usage of justice reminds us of the importance in giving recognition for desired behaviors, else it is an injustice.\nAnother reference he shared that I found valuable was collective efficacy. When a team works together, they can achieve miracles. This allows you to act together as a team, you think together as a team, and believe together in what you can achieve as one (you have the will to believe). Finally, I enjoyed his reference to an arc of faith between us and our customers. The visualization of an arc reminds me of the importance of staying directly connected with those who use or experience our systems.\nHere is the recording of the talk and we hope you also enjoy the insights Dr. Westrum shares:\n  "
+        "content": ""
+    },
+    {
+        "uri": "https://engineering.cerner.com/tags/javascript/",
+        "title": "JavaScript",
+        "tags": [],
+        "description": "",
+        "content": ""
     },
     {
         "uri": "https://engineering.cerner.com/post/",
@@ -33,6 +40,13 @@
         "tags": [],
         "description": "",
         "content": ""
+    },
+    {
+        "uri": "https://engineering.cerner.com/blog/rock-solid-components-w-typescript-graphql/",
+        "title": "Rock Solid Components with Typescript and GraphQL",
+        "tags": ["tech talks", "javascript", "graphql"],
+        "description": "",
+        "content": "In June, we had the pleasure of having Mat Warger join us in our Tech Talk series at Oracle Cerner. Mat is a senior software developer based in Kansas City. He enjoys learning new concepts and has leveraged this curiosity in positions ranging from startups to the enterprise over the past decade. He is a co-organizer of the JavaScript KC meetup group and organizer of GraphQL KC meetup group. He can be found chasing the latest and (sometimes) greatest in a wide range of languages and platforms, including React, TypeScript, GraphQL, and the cloud.\nHis talk Rock Solid Components with Typescript and GraphQL will discusses how the features of TypeScript can be leveraged to bring clarity and dependability when constructing components with React. Using TypeScript can help to catch errors early in the development life-cycle. GraphQL and its type system can ensure confidence in your components while fetching remote data. This comprehensive approach ensures that your components behave as you expect, and allows you to eliminate run-time errors. Learn how using types can keep your users happy!\nWe hope you enjoy Mat\u0026rsquo;s talk!\n  "
     },
     {
         "uri": "https://engineering.cerner.com/tags/",
@@ -47,6 +61,13 @@
         "tags": [],
         "description": "",
         "content": ""
+    },
+    {
+        "uri": "https://engineering.cerner.com/blog/information-flow-cultures/",
+        "title": "Information Flow Cultures with Dr. Ron Westrum",
+        "tags": ["tech talks"],
+        "description": "",
+        "content": "Last month, we had the pleasure of having Dr. Ron Westrum join us in our Tech Talk series at Cerner. Dr. Westrum is an Emeritus Professor of Sociology at Eastern Michigan University and author of the Westrum organizational typology model. In his talk, he discusses how an information flow culture reflects how managers shape values and behavior. The first part of this talk will discuss information flow in organizations, as well as provide a case study on Boeing. In the second part, he discusses the continuation of that research, which underscores the importance of his work.\nThrough his talk, there were several points he made that stood out to me. I loved the term organizational justice that he shares. This describes when people who do the good things get rewarded for doing the good things. It seems simple, but I feel the usage of justice reminds us of the importance in giving recognition for desired behaviors, else it is an injustice.\nAnother reference he shared that I found valuable was collective efficacy. When a team works together, they can achieve miracles. This allows you to act together as a team, you think together as a team, and believe together in what you can achieve as one (you have the will to believe). Finally, I enjoyed his reference to an arc of faith between us and our customers. The visualization of an arc reminds me of the importance of staying directly connected with those who use or experience our systems.\nHere is the recording of the talk and we hope you also enjoy the insights Dr. Westrum shares:\n  "
     },
     {
         "uri": "https://engineering.cerner.com/authors/jeremy-perron/",
@@ -1269,13 +1290,6 @@
     {
         "uri": "https://engineering.cerner.com/tags/development/",
         "title": "development",
-        "tags": [],
-        "description": "",
-        "content": ""
-    },
-    {
-        "uri": "https://engineering.cerner.com/tags/javascript/",
-        "title": "JavaScript",
         "tags": [],
         "description": "",
         "content": ""
