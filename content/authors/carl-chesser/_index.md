@@ -1,5 +1,5 @@
 ---
 name: "Carl Chesser"
-images: ["carl.jpg"]
+images: ["carl.png"]
 twitter: "che55er"
 ---
