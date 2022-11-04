@@ -1,6 +1,6 @@
 [
     {
-        "uri": "https://engineering.cerner.com/authors/carl-chesser/",
+        "uri": "https://engineering.cerner.com/authors/caitie-tillo/",
         "title": "",
         "tags": [],
         "description": "",
@@ -21,18 +21,11 @@
         "content": ""
     },
     {
-        "uri": "https://engineering.cerner.com/tags/graphql/",
-        "title": "graphql",
-        "tags": [],
+        "uri": "https://engineering.cerner.com/blog/microservices-the-easy-way-is-the-wrong-way/",
+        "title": "Microservices - The Easy Way is the Wrong Way",
+        "tags": ["tech talks"],
         "description": "",
-        "content": ""
-    },
-    {
-        "uri": "https://engineering.cerner.com/tags/javascript/",
-        "title": "JavaScript",
-        "tags": [],
-        "description": "",
-        "content": ""
+        "content": "We had the great opportunity of inviting Sean Whitesell to join us for a virtual Tech Talk in August to share his knowledge on Microservices. Sean is based out of Tulsa, Oklahoma and is a Senior Cloud Architect, ASP Insider, and a Microsoft MVP. For the past nine years, Sean has served as the leader of the Tulsa.NET User Group. Last January, he also published his own book, Pro Microservices in .NET 6 With Examples Using ASP.NET Core 6, MassTransit, and Kubernetes, alongside two other Microsoft MVPs.\nSean shares his expertise in this session by demonstrating how a microservice architecture requires far more thought than one might assume. Throughout his presentation, Sean explores the benefits and drawbacks of creating microservices, and why it makes sense to establish them. The presentation goes into when and how to get started creating microservices through a high-level decompensation example and discussing domain driven design. There is a lot to consider as a team before creating a microservice, but Sean puts it best by saying “Microservices are hard, but so is good programming.” We hope you enjoy this Tech Talk!\n  "
     },
     {
         "uri": "https://engineering.cerner.com/post/",
@@ -40,13 +33,6 @@
         "tags": [],
         "description": "",
         "content": ""
-    },
-    {
-        "uri": "https://engineering.cerner.com/blog/rock-solid-components-w-typescript-graphql/",
-        "title": "Rock Solid Components with Typescript and GraphQL",
-        "tags": ["tech talks", "javascript", "graphql"],
-        "description": "",
-        "content": "In June, we had the pleasure of having Mat Warger join us in our Tech Talk series at Oracle Cerner. Mat is a senior software developer based in Kansas City. He enjoys learning new concepts and has leveraged this curiosity in positions ranging from startups to the enterprise over the past decade. He is a co-organizer of the JavaScript KC meetup group and organizer of GraphQL KC meetup group. He can be found chasing the latest and (sometimes) greatest in a wide range of languages and platforms, including React, TypeScript, GraphQL, and the cloud.\nHis talk Rock Solid Components with Typescript and GraphQL will discusses how the features of TypeScript can be leveraged to bring clarity and dependability when constructing components with React. Using TypeScript can help to catch errors early in the development life-cycle. GraphQL and its type system can ensure confidence in your components while fetching remote data. This comprehensive approach ensures that your components behave as you expect, and allows you to eliminate run-time errors. Learn how using types can keep your users happy!\nWe hope you enjoy Mat\u0026rsquo;s talk!\n  "
     },
     {
         "uri": "https://engineering.cerner.com/tags/",
@@ -61,6 +47,34 @@
         "tags": [],
         "description": "",
         "content": ""
+    },
+    {
+        "uri": "https://engineering.cerner.com/authors/carl-chesser/",
+        "title": "",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
+        "uri": "https://engineering.cerner.com/tags/graphql/",
+        "title": "graphql",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
+        "uri": "https://engineering.cerner.com/tags/javascript/",
+        "title": "JavaScript",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
+        "uri": "https://engineering.cerner.com/blog/rock-solid-components-w-typescript-graphql/",
+        "title": "Rock Solid Components with Typescript and GraphQL",
+        "tags": ["tech talks", "javascript", "graphql"],
+        "description": "",
+        "content": "In June, we had the pleasure of having Mat Warger join us in our Tech Talk series at Oracle Cerner. Mat is a senior software developer based in Kansas City. He enjoys learning new concepts and has leveraged this curiosity in positions ranging from startups to the enterprise over the past decade. He is a co-organizer of the JavaScript KC meetup group and organizer of GraphQL KC meetup group. He can be found chasing the latest and (sometimes) greatest in a wide range of languages and platforms, including React, TypeScript, GraphQL, and the cloud.\nHis talk Rock Solid Components with Typescript and GraphQL will discusses how the features of TypeScript can be leveraged to bring clarity and dependability when constructing components with React. Using TypeScript can help to catch errors early in the development life-cycle. GraphQL and its type system can ensure confidence in your components while fetching remote data. This comprehensive approach ensures that your components behave as you expect, and allows you to eliminate run-time errors. Learn how using types can keep your users happy!\nWe hope you enjoy Mat\u0026rsquo;s talk!\n  "
     },
     {
         "uri": "https://engineering.cerner.com/blog/information-flow-cultures/",

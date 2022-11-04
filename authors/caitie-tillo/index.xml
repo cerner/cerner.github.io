@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Engineering Health</title>
+    <link>https://engineering.cerner.com/authors/caitie-tillo/</link>
+    <description>Recent content on Engineering Health</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 04 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://engineering.cerner.com/authors/caitie-tillo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microservices - The Easy Way is the Wrong Way</title>
+      <link>https://engineering.cerner.com/blog/microservices-the-easy-way-is-the-wrong-way/</link>
+      <pubDate>Fri, 04 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.cerner.com/blog/microservices-the-easy-way-is-the-wrong-way/</guid>
+      <description>We had the great opportunity of inviting Sean Whitesell to join us for a virtual Tech Talk in August to share his knowledge on Microservices. Sean is based out of Tulsa, Oklahoma and is a Senior Cloud Architect, ASP Insider, and a Microsoft MVP. For the past nine years, Sean has served as the leader of the Tulsa.NET User Group. Last January, he also published his own book, Pro Microservices in .</description>
+    </item>
+    
+  </channel>
+</rss>
