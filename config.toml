@@ -5,7 +5,6 @@ languageCode = "en"
 DefaultContentLanguage = "en"
 enableInlineShortcodes = true
 footnoteReturnLinkContents = "^"
-googleAnalytics = "UA-37701128-1"
 theme = "eh-theme"
 
 [menu]
